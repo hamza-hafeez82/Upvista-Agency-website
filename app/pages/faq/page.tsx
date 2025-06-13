@@ -48,7 +48,7 @@ export default function FAQ() {
                 <p className="text-gray-300">
                   Project timelines vary based on complexity and requirements. A
                   basic website might take 2-4 weeks, while more complex
-                  projects could take 2-3 months. We'll provide a detailed
+                  projects could take 2-3 months. We will provide a detailed
                   timeline during our initial consultation.
                 </p>
               </div>
