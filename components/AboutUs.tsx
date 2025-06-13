@@ -109,7 +109,7 @@ export default function AboutUs() {
               Designing Experiences That Inspire Action
             </h1>
             <p className="text-lg text-gray-300 max-w-3xl mb-8">
-              From idea to execution, We don’t just build websites — we build
+              From idea to execution, We dont just build websites — we build
               journeys that connect with people, build trust, and convert
               visitors into loyal customers.
             </p>
@@ -146,7 +146,7 @@ export default function AboutUs() {
               We blend innovation with technical excellence to deliver solutions
               that exceed expectations. Our team crafts powerful, tailored
               digital experiences that help businesses grow, engage, and lead in
-              today&apos;s competitive landscape.
+              todays competitive landscape.
             </p>
             <p className="text-gray-300 mb-8">
               Upvista combines deep tech expertise with creative insight to
@@ -189,7 +189,7 @@ export default function AboutUs() {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-400">
-            From Code to Creativity, We&apos;ve Got You Covered
+            From Code to Creativity, We have Got You Covered
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto text-lg">
             With a broad and deep skillset, our team delivers high-performance
