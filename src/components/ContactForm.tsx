@@ -49,7 +49,7 @@ export default function ContactForm() {
         phone: "",
         message: "",
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -151,7 +151,7 @@ export default function ContactForm() {
             animate={{ opacity: 1 }}
             className="text-green-600 text-center"
           >
-            Thank you for your message! We'll get back to you soon.
+            Thank you for your message! We will get back to you soon.
           </motion.p>
         )}
 
