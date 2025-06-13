@@ -65,7 +65,7 @@ const ITServices = () => {
       {/* Main content */}
       <div className="max-w-5xl mx-auto pt-16 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-        Together, <br /> Let’s Create Something Remarkable
+        Together, <br /> Let us Create Something Remarkable
         </h1>
         <p className="text-gray-300 mb-8 mx-auto max-w-2xl font-light">
         From concept to code, we turn your digital goals into powerful, high-performance results.
