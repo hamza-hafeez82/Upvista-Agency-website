@@ -105,24 +105,37 @@ export const Header = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold text-[#ffc8dd]">
-        The Ultimate <br /> development studio
+        We Build What We Love <br /> And You Will Too
       </h1>
       <p className="max-w-2xl  md:text-xl mt-8  text-[#8e9aaf]">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+        We fuse design, code, and innovation to deliver standout web and mobile
+        experiences. Every line we write is built to impress — and built to
+        last.
       </p>
-       <Link href="/pages/portfolio" className="cusror-pointer">
-              <button className="relative max-w-[400px] w-full bg-[#3f37c9] text-white py-2 mt-6 rounded-full font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-[#3f37c9]/50">
-            <span className="relative z-10 group-hover:tracking-wider transition-all duration-300">See More</span>
-            <span className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-            <span className="absolute right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </span>
-          </button>
-       </Link>
+      <Link href="/pages/portfolio" className="cusror-pointer">
+        <button className="relative max-w-[400px] w-full bg-[#3f37c9] text-white py-2 mt-6 rounded-full font-medium overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-[#3f37c9]/50">
+          <span className="relative z-10 group-hover:tracking-wider transition-all duration-300">
+            See More
+          </span>
+          <span className="absolute inset-0 bg-blue-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+          <span className="absolute right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 inline-block"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </span>
+        </button>
+      </Link>
     </div>
   );
 };

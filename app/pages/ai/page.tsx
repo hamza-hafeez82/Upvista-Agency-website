@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-interface MaintenancePricingCardProps {
+interface AIPricingCardProps {
   color: "green" | "blue" | "purple";
   tier: string;
   subtitle?: string;
@@ -14,7 +14,7 @@ interface MaintenancePricingCardProps {
   buttonText?: string;
 }
 
-const MaintenancePricingCard = ({
+const AIPricingCard = ({
   color,
   tier,
   subtitle,
@@ -24,7 +24,7 @@ const MaintenancePricingCard = ({
   idealFor,
   emoji,
   buttonText,
-}: MaintenancePricingCardProps) => {
+}: AIPricingCardProps) => {
   return (
     <div
       className={`relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 p-8 shadow-lg transition-all duration-500 
@@ -187,17 +187,17 @@ const MaintenancePricingCard = ({
   );
 };
 
-const MaintenancePricingDemo = () => {
+const AIPricingDemo = () => {
   return (
     <section className="relative overflow-hidden bg-black text-white min-h-screen">
       {/* Back to Home Arrow */}
       <Link href="/" className="absolute left-6 top-6 z-20 group">
         <div className="flex items-center gap-2">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-0.5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/40 group-hover:scale-110">
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-purple-600 p-0.5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-violet-500/40 group-hover:scale-110">
             <div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-900">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-blue-400 transition-transform duration-300 group-hover:-translate-x-0.5"
+                className="h-5 w-5 text-violet-400 transition-transform duration-300 group-hover:-translate-x-0.5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -211,7 +211,7 @@ const MaintenancePricingDemo = () => {
               </svg>
             </div>
           </div>
-          <span className="text-sm font-medium text-blue-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <span className="text-sm font-medium text-violet-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             Back to Home
           </span>
         </div>
@@ -220,15 +220,15 @@ const MaintenancePricingDemo = () => {
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div
-          className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-blue-900/20 blur-3xl animate-pulse"
+          className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-violet-900/20 blur-3xl animate-pulse"
           style={{ animationDuration: "8s" }}
         ></div>
         <div
-          className="absolute right-0 top-1/3 h-60 w-60 rounded-full bg-blue-700/10 blur-3xl animate-pulse"
+          className="absolute right-0 top-1/3 h-60 w-60 rounded-full bg-violet-700/10 blur-3xl animate-pulse"
           style={{ animationDuration: "12s" }}
         ></div>
         <div
-          className="absolute bottom-0 left-1/3 h-40 w-60 rounded-full bg-blue-800/10 blur-3xl animate-pulse"
+          className="absolute bottom-0 left-1/3 h-40 w-60 rounded-full bg-violet-800/10 blur-3xl animate-pulse"
           style={{ animationDuration: "10s" }}
         ></div>
       </div>
@@ -236,76 +236,83 @@ const MaintenancePricingDemo = () => {
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 md:px-8">
         <div className="mb-12 space-y-3">
           <h2 className="text-center text-white text-3xl font-semibold leading-tight sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight transition-all duration-300">
-            <span className="inline-block"></span> Website Maintenance Plans
+            <span className="inline-block"></span> AI & Automation Solutions
           </h2>
           <p className="text-center text-base text-zinc-400 md:text-lg">
-            Keep your website fast, secure, and always up-to-date.
+            Transform your business with cutting-edge AI and automation.
           </p>
           <p className="mx-auto max-w-3xl text-center text-base text-zinc-400 md:text-lg mt-2">
-            Our maintenance packages ensure your site stays functional and
-            healthy with regular updates, security checks, backups, and expert{" "}
-            <strong className="text-white">support</strong>.
+            From chatbots to process automation, we help you leverage the power
+            of AI to{" "}
+            <strong className="text-white">streamline operations</strong> and
+            enhance customer experiences.
           </p>
         </div>
 
         <h3 className="mb-8 text-center text-2xl font-semibold text-white relative">
-          <span className="inline-block transform transition-transform duration-500 hover:scale-105 hover:text-blue-200">
-            {" "}
-            Choose a Plan
+          <span className="inline-block transform transition-transform duration-500 hover:scale-105 hover:text-violet-200">
+            Our AI & Automation Packages
           </span>
-          <span className="absolute -bottom-2 left-1/2 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform -translate-x-1/2 rounded-full"></span>
+          <span className="absolute -bottom-2 left-1/2 w-12 h-1 bg-gradient-to-r from-violet-500 to-purple-500 transform -translate-x-1/2 rounded-full"></span>
         </h3>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <MaintenancePricingCard
+          <AIPricingCard
             color="green"
             emoji=""
-            tier="Lite Refresh"
-            subtitle="Quick polish for small sites"
-            price="$99"
-            deliveryTime="3 days"
+            tier="Basic Automation"
+            subtitle="Essential AI Tools"
+            price="$299"
+            deliveryTime="2–3 weeks"
             benefits={[
-              "Up to 3 pages redesigned",
-              "Modern layout & responsive design",
-              "Basic performance improvements",
+              "Custom chatbot development",
+              "Basic process automation",
+              "Email automation setup",
+              "Integration with 2 platforms",
+              "Basic analytics dashboard",
             ]}
-            idealFor="Personal sites, blogs, simple landing pages"
-            buttonText="Choose Lite →"
+            idealFor="Small businesses and startups"
+            buttonText="Get Started →"
           />
 
-          <MaintenancePricingCard
+          <AIPricingCard
             color="blue"
             emoji=""
-            tier="Standard Rebuild"
-            subtitle="Popular choice"
-            price="$249"
-            deliveryTime="7 days"
+            tier="Advanced AI"
+            subtitle="Smart Solutions"
+            price="$799"
+            deliveryTime="4–6 weeks"
             benefits={[
-              "Up to 6 pages redesigned",
-              "Mobile-first layout",
-              "Improved performance & UX",
-              "SEO-friendly structure",
+              "Advanced chatbot with NLP",
+              "Workflow automation suite",
+              "Custom AI model training",
+              "Multi-platform integration",
+              "Advanced analytics & reporting",
+              "API development",
             ]}
-            idealFor="Freelancers, small businesses"
-            buttonText="Choose Standard →"
+            idealFor="Growing businesses and enterprises"
+            buttonText="Choose This Plan →"
           />
 
-          <MaintenancePricingCard
+          <AIPricingCard
             color="purple"
             emoji=""
-            tier="Pro Redesign"
-            subtitle="Full visual revamp"
-            price="$499"
-            deliveryTime="10–14 days"
+            tier="Enterprise AI"
+            subtitle="Full-Scale Automation"
+            price="$1,999"
+            deliveryTime="8–12 weeks"
             benefits={[
-              "Up to 10+ pages",
-              "Custom animations",
-              "Speed optimization",
-              "Basic SEO & image compression",
-              "Polished mobile UX",
+              "Custom AI solution development",
+              "End-to-end process automation",
+              "Machine learning integration",
+              "Unlimited platform integrations",
+              "Real-time analytics & monitoring",
+              "Dedicated support team",
+              "Custom API development",
+              "Training & documentation",
             ]}
-            idealFor="Growing brands, pros, entrepreneurs"
-            buttonText="Go Pro →"
+            idealFor="Large enterprises and organizations"
+            buttonText="Launch AI Solution →"
           />
         </div>
       </div>
@@ -313,4 +320,4 @@ const MaintenancePricingDemo = () => {
   );
 };
 
-export default MaintenancePricingDemo;
+export default AIPricingDemo;

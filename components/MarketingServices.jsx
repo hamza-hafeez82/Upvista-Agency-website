@@ -37,6 +37,13 @@ const ITServices = () => {
       title: "Branding & Digital",
       description: "Craft a unique brand identity and establish a strong digital presence with our expert branding and digital design services.",
       learnMoreLink: "/pages/services"
+    },
+    {
+      id: 6,
+      icon: "code",
+      title: "AI automation",
+      description: "Craft a unique brand identity and establish a strong digital presence with our expert branding and digital design services.",
+      learnMoreLink: "/pages/services"
     }
   ];
 
@@ -58,10 +65,10 @@ const ITServices = () => {
       {/* Main content */}
       <div className="max-w-5xl mx-auto pt-16 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-          Let's Build Your Online<br />Success Story
+        Together, <br /> Let’s Create Something Remarkable
         </h1>
         <p className="text-gray-300 mb-8 mx-auto max-w-2xl font-light">
-          We specialize in creating high-performance websites and digital solutions that drive results.
+        From concept to code, we turn your digital goals into powerful, high-performance results.
         </p>
         
          <Link href="/pages/services">
@@ -99,7 +106,7 @@ const ITServices = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                   </svg>
                 )}
-                {service.icon === "seo" && (
+                {service.icon === "AI automation" && (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                   </svg>

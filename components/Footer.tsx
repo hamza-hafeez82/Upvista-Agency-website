@@ -1,12 +1,23 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaWhatsapp, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaGithub,
+  FaDiscord,
+  FaInstagram,
+  FaLinkedinIn,
+  FaWhatsapp,
+  FaEnvelope,
+  FaPhoneAlt,
+} from "react-icons/fa";
 
 // Import your logo
-import Logoimg from "../assets/W-logo.png";
+//import Logoimg from "../assets/W-logo.png";
+import Logoimg from "../assets/u.png";
 
 // TypeScript interfaces
 interface SocialIconProps {
@@ -31,94 +42,131 @@ const Footer: React.FC = () => {
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          
           {/* Logo and About Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="relative h-10 w-10">
-                <Image 
-                  src={Logoimg} 
-                  alt="Agency Logo" 
-                  layout="fill" 
+              <div className="relative h-15 w-15">
+                <Image
+                  src={Logoimg}
+                  alt="Agency Logo"
+                  layout="fill"
                   objectFit="contain"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white">
-                Webloom
-              </h3>
+              <h3 className="text-xl font-bold text-white">Upvista</h3>
             </div>
             <p className="text-gray-400 text-sm">
-              We create cutting-edge digital solutions for businesses looking to make an impact in the digital world.
+              We create cutting-edge digital solutions for businesses looking to
+              make an impact in the digital world.
             </p>
             <div className="flex space-x-4 pt-2">
-              <SocialIcon icon={<FaFacebookF />} href="https://www.facebook.com/people/It-Services/61575871126416/" />
-              <SocialIcon icon={<FaInstagram />} href="https://www.instagram.com/webloom0805/?igsh=d2s5NWVqd2tqZ3Fy#" />
-              <SocialIcon icon={<FaLinkedinIn />} href="https://www.linkedin.com/in/web-loom-a9b546365/" />
+              <SocialIcon
+                icon={<FaFacebookF />}
+                href="https://www.facebook.com/share/1AAjzK33pz/"
+              />
+              <SocialIcon
+                icon={<FaInstagram />}
+                href="https://www.instagram.com/upvista_digital/"
+              />
+              <SocialIcon
+                icon={<FaLinkedinIn />}
+                href="https://www.linkedin.com/in/hamza-hafeez-00937436a/"
+              />
+              <SocialIcon
+                icon={<FaTwitter />}
+                href="https://x.com/Upvista_Digital/"
+              />
+              <SocialIcon
+                icon={<FaGithub />}
+                href="https://github.com/Upvista"
+              />
+              <SocialIcon
+                icon={<FaDiscord />}
+                href="https://discord.gg/96XN8R4y"
+              />
             </div>
           </div>
-          
+
           {/* Quick Links */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:bg-purple-600">
               Quick Links
             </h3>
             <ul className="space-y-2">
-              <FooterLink href="/about">About Us</FooterLink>
+              <FooterLink href="/pages/about">About Us</FooterLink>
+              <FooterLink href="/pages/community">Community</FooterLink>
               <FooterLink href="/pages/services">Services</FooterLink>
               <FooterLink href="/pages/portfolio">Portfolio</FooterLink>
               <FooterLink href="/pages/blog">Blog</FooterLink>
-              <FooterLink href="/faq">Q&A</FooterLink>
+              <FooterLink href="/pages/faq">Q&A</FooterLink>
             </ul>
           </div>
-          
+
           {/* Contact Information */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:bg-purple-600">
               Contact Us
             </h3>
             <div className="space-y-3">
-              
-              <ContactItem 
-                icon={<FaEnvelope />} 
-                text="itservices0805@gmail.com" 
+              <ContactItem
+                icon={<FaEnvelope />}
+                text="upvistadigital@gmail.com"
               />
-              <ContactItem 
-                icon={<FaPhoneAlt />} 
-                text="+212 702-308481" 
-              />
-              <ContactItem 
-                icon={<FaWhatsapp />} 
-                text="WhatsApp Us" 
+              <ContactItem icon={<FaPhoneAlt />} text="+92 332 0486955" />
+              <ContactItem
+                icon={<FaWhatsapp />}
+                text="WhatsApp Us"
+                href="https://wa.me/923320486955"
               />
             </div>
           </div>
-          
+
           {/* Newsletter Subscription */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:bg-purple-600">
               Newsletter
             </h3>
             <p className="text-gray-400 text-sm">
-              Subscribe to our newsletter for the latest updates and offers.
+              Subscribe to our newsletter for updates and exclusive content.
             </p>
-            <form className="space-y-2" onSubmit={(e) => e.preventDefault()}>
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded focus:outline-none focus:border-purple-500 transition-colors duration-300"
+            <div className="flex flex-col sm:flex-row gap-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full px-4 py-2 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
-              <button 
-                type="submit" 
-                className="w-full px-4 py-2 bg-purple-600 rounded hover:bg-purple-700 transition-colors duration-300 transform hover:scale-105"
-              >
+              <button className="w-full sm:w-auto px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors whitespace-nowrap">
                 Subscribe
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-      
-   
+
+      {/* Copyright Section */}
+      <div className="border-t border-gray-800 mt-12">
+        <div className="container mx-auto px-6 py-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm text-center sm:text-left">
+              © 2025 Upvista Digital. All rights reserved.
+            </p>
+            <div className="flex gap-6">
+              <Link
+                href="/pages/terms"
+                className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
+              >
+                Terms & Conditions
+              </Link>
+              <Link
+                href="/pages/privacy"
+                className="text-gray-400 hover:text-white text-sm transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
@@ -126,8 +174,8 @@ const Footer: React.FC = () => {
 // Social Media Icon Component
 const SocialIcon: React.FC<SocialIconProps> = ({ icon, href = "#" }) => {
   return (
-    <a 
-      href={href} 
+    <a
+      href={href}
       className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 transform hover:scale-110"
       target="_blank"
       rel="noopener noreferrer"
@@ -159,11 +207,11 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, text, href }) => {
     <div className="flex items-center space-x-3">
       <div className="text-purple-500">{icon}</div>
       {href ? (
-        <a 
-          href={href} 
+        <a
+          href={href}
           className="text-gray-400 hover:text-white transition-colors duration-300"
-          target={href.startsWith('http') ? "_blank" : undefined}
-          rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+          target={href.startsWith("http") ? "_blank" : undefined}
+          rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
         >
           {text}
         </a>
