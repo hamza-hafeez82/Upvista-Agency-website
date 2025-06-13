@@ -69,7 +69,7 @@ export default function FAQ() {
                   Our design process includes research, wireframing,
                   prototyping, and user testing. We focus on creating intuitive,
                   user-friendly interfaces that align with your brand and meet
-                  your users' needs.
+                  your user needs.
                 </p>
               </div>
               <div className="bg-gray-900 p-6 rounded-lg">
@@ -78,7 +78,7 @@ export default function FAQ() {
                 </h3>
                 <p className="text-gray-300">
                   Yes, we include a set number of revisions in our design
-                  packages to ensure you're completely satisfied with the final
+                  packages to ensure you are completely satisfied with the final
                   result. Additional revisions can be accommodated if needed.
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function FAQ() {
                 <p className="text-gray-300">
                   AI automation can improve efficiency, reduce costs, enhance
                   customer service, and provide valuable insights through data
-                  analysis. We'll help you identify the most beneficial
+                  analysis. We will help you identify the most beneficial
                   automation opportunities for your business.
                 </p>
               </div>
@@ -166,7 +166,7 @@ export default function FAQ() {
                 </h3>
                 <p className="text-gray-300">
                   We maintain regular communication through email, video calls,
-                  and project management tools. You'll have a dedicated project
+                  and project management tools. You will have a dedicated project
                   manager to ensure smooth communication throughout the project.
                 </p>
               </div>
@@ -180,7 +180,7 @@ export default function FAQ() {
             Still Have Questions?
           </h2>
           <p className="text-gray-300 mb-6">
-            We're here to help! Contact us for more information about our
+            We are here to help! Contact us for more information about our
             services.
           </p>
           <Link href="/pages/contactPage">
