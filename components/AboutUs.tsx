@@ -146,7 +146,7 @@ export default function AboutUs() {
               We blend innovation with technical excellence to deliver solutions
               that exceed expectations. Our team crafts powerful, tailored
               digital experiences that help businesses grow, engage, and lead in
-              today’s competitive landscape.
+              today&apos;s competitive landscape.
             </p>
             <p className="text-gray-300 mb-8">
               Upvista combines deep tech expertise with creative insight to
@@ -189,7 +189,7 @@ export default function AboutUs() {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-400">
-            From Code to Creativity, We've Got You Covered
+            From Code to Creativity, We&apos;ve Got You Covered
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto text-lg">
             With a broad and deep skillset, our team delivers high-performance
