@@ -1,0 +1,64 @@
+{
+  "name": "Upvista Digital",
+  "short_name": "Upvista",
+  "description": "We build stunning websites, intuitive user experiences, and scalable apps for startups and enterprises.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#240046",
+  "theme_color": "#240046",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/icon.PNG",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon.PNG",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon.PNG",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon.PNG",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon.PNG",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon.PNG",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon.PNG",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/icon.PNG",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "web development", "UI/UX designing", "software development", "developer community", "Upvista Digital", "Upvista", "software community", "software Agency", "software house", "design"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false
+}
