@@ -10,6 +10,8 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import Image from "next/image";
+import hamzaPic from "../../../assets/hamza pic.jpg";
 
 export default function ContactPage() {
   const socialLinks = [
@@ -152,6 +154,43 @@ export default function ContactPage() {
                   <span className="text-white font-medium">{link.name}</span>
                 </a>
               ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Founder Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Founder Image */}
+            <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden border-4 border-purple-500/30 shadow-lg shadow-purple-500/20">
+              <Image
+                src={hamzaPic}
+                alt="Hamza Hafeez Bhatti"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+
+            {/* Founder Message */}
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Hamza Hafeez Bhatti
+              </h2>
+              <p className="text-lg font-medium text-purple-300 mb-4">
+                Founder & CEO, Upvista Digital
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                &ldquo;At Upvista Digital, we believe in transforming ideas into
+                digital excellence. Our mission is to empower businesses with
+                innovative solutions that drive growth and success in the
+                digital landscape. With a team of passionate experts and
+                cutting-edge technology, we&apos;re committed to delivering
+                exceptional results that exceed expectations. Let&apos;s build
+                something extraordinary together.&rdquo;
+              </p>
             </div>
           </div>
         </div>
