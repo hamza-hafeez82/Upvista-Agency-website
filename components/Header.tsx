@@ -98,8 +98,17 @@ const Header = () => {
 
   // Close mobile menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = () => {
-      if (mobileMenuOpen) {
+    const handleClickOutside = (e: MouseEvent) => {
+      const mobileMenu = document.querySelector(".mobile-menu-container");
+      const mobileMenuButton = document.querySelector(".mobile-menu-button");
+
+      if (
+        mobileMenuOpen &&
+        mobileMenu &&
+        !mobileMenu.contains(e.target as Node) &&
+        mobileMenuButton &&
+        !mobileMenuButton.contains(e.target as Node)
+      ) {
         setMobileMenuOpen(false);
       }
     };
@@ -167,7 +176,7 @@ const Header = () => {
             e.stopPropagation();
             setMobileMenuOpen(!mobileMenuOpen);
           }}
-          className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none z-50"
+          className="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none z-50 mobile-menu-button"
           aria-label="Toggle menu"
         >
           <span
@@ -293,7 +302,7 @@ const Header = () => {
 
       {/* Mobile Menu - Redesigned */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-black/95 flex flex-col overflow-y-auto">
+        <div className="md:hidden fixed inset-0 z-40 bg-black/95 flex flex-col overflow-y-auto mobile-menu-container">
           <div className="pt-6 px-6 flex items-center justify-between border-b border-white/10 pb-6">
             {/* Logo in Mobile Menu */}
             <div className="flex items-center">
@@ -417,7 +426,11 @@ const Header = () => {
                 {/* Mobile Dropdown Menu */}
                 {packDropdownOpen && (
                   <div
-                    className="py-3 space-y-3 pl-2"
+                    className="py-3 space-y-3 pl-2 overflow-hidden transition-all duration-300 ease-in-out"
+                    style={{
+                      maxHeight: packDropdownOpen ? "500px" : "0",
+                      opacity: packDropdownOpen ? 1 : 0,
+                    }}
                     onClick={(e) => e.stopPropagation()}
                   >
                     {packs.map((pack) => (
@@ -426,7 +439,6 @@ const Header = () => {
                         href={pack.path}
                         onClick={(e) => {
                           e.stopPropagation();
-                          setMobileMenuOpen(false);
                           setPackDropdownOpen(false);
                         }}
                         className="flex items-center py-2 text-gray-300 hover:text-white transition-colors duration-200"

@@ -42,6 +42,7 @@ function InfiniteSliderEnhanced() {
           <div className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-8">
             <InfiniteSlider
               gap={44}
+              duration={50}
               reverse
               className="w-full flex items-center justify-center"
             >
