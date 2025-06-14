@@ -11,7 +11,6 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [packDropdownOpen, setPackDropdownOpen] = useState(false);
 
-  // Packs data
   const packs = [
     {
       id: "complete",
