@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { StaticImageData } from 'next/image'; // Import StaticImageData type
+import { motion, AnimatePresence } from 'framer-motion';
+import { XCircle } from 'lucide-react';
 
 // Import images using the original format
 import project1 from "@/assets/websites/project1.jpg";
@@ -27,6 +29,11 @@ interface Project {
   category: string;
   link: string;
 }
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.6, type: 'spring' } })
+};
 
 const PortfolioPage = () => {
   const projects: Project[] = [
@@ -88,8 +95,8 @@ const PortfolioPage = () => {
     },
       {
       id: 8,
-      title: "it agency landing page",
-      description: "it agency landing page with a focus on user engagement and lead generation.", 
+      title: "IT agency landing page",
+      description: "IT agency landing page with a focus on user engagement and lead generation.", 
       image: project9,
       category: "Landing Page",
       link: "#"
@@ -112,8 +119,8 @@ const PortfolioPage = () => {
     },
     {
       id: 11,
-      title: "ui/ux Designer portfolio",
-      description: "ui/ux Designer portfolio with a focus on user engagement and lead generation.",
+      title: "UI/UX Designer portfolio",
+      description: "UI/UX Designer portfolio with a focus on user engagement and lead generation.",
       image: project12,
       category: "Portfolio",
       link: "#"
@@ -166,6 +173,16 @@ const PortfolioPage = () => {
 
   return (
     <div className="bg-black min-h-screen text-white py-16 px-4 sm:px-6 lg:px-8 relative">
+      {/* VR Experience Section */}
+      <motion.section initial={{ opacity: 0, y: -40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-5xl mx-auto mb-16 rounded-3xl bg-gradient-to-br from-cyan-900/60 via-violet-900/60 to-emerald-900/40 p-8 sm:p-14 shadow-2xl flex flex-col items-center text-center">
+        <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-emerald-400 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_2px_12px_rgba(0,255,208,0.15)]">Experience a Virtual Reality Project</h2>
+        <p className="text-lg text-cyan-100 mb-6 max-w-2xl mx-auto">
+          Step into a virtual journey and see what it&apos;s like to build a real project with Upvista—from consultation and planning to development, deployment, and ongoing maintenance. Discover our transparent, collaborative, and innovative process in an immersive way.
+        </p>
+        <Link href="/vr" className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-violet-400 text-black font-bold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 text-lg">
+          Experience VR
+        </Link>
+      </motion.section>
       {/* Back to Home Arrow */}
       <Link href="/" className="absolute left-6 top-6 z-20 group">
         <div className="flex items-center gap-2">
@@ -188,150 +205,97 @@ const PortfolioPage = () => {
       </Link>
 
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our Portfolio</h1>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+        {/* Animated Section Header */}
+        <motion.div initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 bg-clip-text text-transparent animate-gradient-x">Our Portfolio</h1>
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.7 }} className="text-lg text-cyan-100 max-w-2xl mx-auto">
             Explore our collection of websites and landing pages that showcase our expertise in creating stunning digital experiences.
-          </p>
-        </div>
-
-        {/* Filter Section */}
-        <div className="flex flex-wrap justify-center mb-12 gap-4">
-          {categories.map((category) => (
+          </motion.p>
+        </motion.div>
+        {/* Filter Bar */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }} className="flex flex-wrap justify-center mb-12 gap-4">
+          {categories.map((cat) => (
             <button
-              key={category}
-              onClick={() => setFilter(category)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                filter === category
-                  ? 'bg-violet-800 text-white'
-                  : 'bg-gray-900 text-gray-400 hover:bg-gray-800'
-              }`}
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`px-5 py-2 rounded-full font-semibold border transition-all duration-300 ${filter === cat ? 'bg-gradient-to-r from-cyan-400 to-violet-400 text-black border-cyan-400 shadow-lg' : 'bg-black/30 text-cyan-100 border-cyan-900 hover:bg-cyan-900/30'}`}
             >
-              {category}
+              {cat}
             </button>
           ))}
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="group">
-              <div className="bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 transform group-hover:translate-y-2 group-hover:shadow-2xl">
-                {/* Project Image with Overlay - Using standard img tag */}
-                <div className="relative aspect-video overflow-hidden">
-                  <div className="absolute inset-0 bg-violet-900 opacity-0 group-hover:opacity-40 transition-opacity duration-300 z-10"></div>
-                  
-                  {/* Using original img tag format */}
-                  <Image
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover"
-                  />
-                  
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                    <button 
-                      onClick={(e) => openProjectModal(project, e)}
-                      className="bg-white text-black font-semibold px-6 py-3 rounded-lg transform transition-transform duration-300 hover:scale-105"
-                    >
-                      View Project
-                    </button>
+        </motion.div>
+        {/* Animated Project Grid */}
+        <motion.div initial="hidden" animate="visible" variants={{}} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <AnimatePresence>
+            {filteredProjects.map((project, i) => (
+              <motion.div
+                key={project.id}
+                custom={i}
+                variants={fadeInUp}
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                whileHover={{ scale: 1.04, boxShadow: '0 8px 32px 0 rgba(0,255,208,0.10)' }}
+                className="relative rounded-2xl bg-gradient-to-br from-gray-900/80 via-gray-800/80 to-cyan-900/10 border-2 border-transparent hover:border-cyan-400 transition-all duration-300 shadow-xl overflow-hidden group cursor-pointer"
+              >
+                <div className="relative w-full h-56 overflow-hidden">
+                  <Image src={project.image} alt={project.title + ' preview'} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <span className="absolute top-4 left-4 bg-gradient-to-r from-cyan-400 to-violet-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow">{project.category}</span>
+                </div>
+                <div className="p-6 flex flex-col gap-2">
+                  <h3 className="text-xl font-bold text-cyan-100 mb-1 group-hover:text-emerald-300 transition-colors">{project.title}</h3>
+                  <p className="text-cyan-200 text-base mb-2 line-clamp-3">{project.description}</p>
+                  <button
+                    onClick={(e) => openProjectModal(project, e)}
+                    className="mt-2 px-5 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 text-black font-bold shadow hover:scale-105 hover:shadow-xl transition-all duration-300"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+        {/* Project Modal */}
+        <AnimatePresence>
+          {isModalOpen && selectedProject && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+              <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ duration: 0.2 }} className="bg-gradient-to-br from-gray-900/90 via-gray-800/90 to-cyan-900/20 rounded-3xl shadow-2xl p-4 sm:p-10 w-full max-w-2xl border border-cyan-900 relative overflow-y-auto max-h-[90vh]">
+                <button onClick={closeModal} className="absolute top-4 right-4 text-cyan-300 hover:text-emerald-400 text-3xl font-bold"><XCircle className="w-8 h-8" /></button>
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  <div className="relative w-full md:w-1/2 h-56 md:h-72 rounded-xl overflow-hidden">
+                    <Image src={selectedProject.image} alt={selectedProject.title + ' preview'} fill className="object-cover" />
                   </div>
-                </div>
-                
-                {/* Project Info */}
-                <div className="p-6">
-                  <span className="text-violet-400 text-sm font-medium mb-2 inline-block">
-                    {project.category}
-                  </span>
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-gray-400">{project.description}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Modal/Popup for project details */}
-        {isModalOpen && selectedProject && (
-          <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
-            <div className="bg-gray-900 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-              {/* Close button */}
-              <div className="flex justify-end p-4">
-                <button 
-                  onClick={closeModal}
-                  className="text-gray-400 hover:text-white focus:outline-none"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </button>
-              </div>
-              
-              {/* Project content */}
-              <div className="px-8 pb-8">
-                <div className="mb-6 overflow-hidden rounded-lg">
-                  <Image
-                    src={selectedProject.image} 
-                    alt={selectedProject.title} 
-                    className="w-full h-auto" 
-                  />
-                </div>
-                
-                <span className="text-violet-400 text-sm font-medium mb-2 inline-block">
-                  {selectedProject.category}
-                </span>
-                <h2 className="text-2xl font-bold mb-4">{selectedProject.title}</h2>
-                <p className="text-gray-300 mb-6">{selectedProject.description}</p>
-                
-                {/* Additional project details could go here */}
-                <div className="bg-gray-800 p-6 rounded-lg mb-6">
-                  <h3 className="text-xl font-semibold mb-3">Project Details</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <p className="text-gray-400">Client:</p>
-                      <p className="text-white">Example Client</p>
+                  <div className="flex-1 flex flex-col gap-3">
+                    <h2 className="text-2xl font-extrabold text-cyan-100 mb-1">{selectedProject.title}</h2>
+                    <span className="inline-block bg-gradient-to-r from-cyan-400 to-violet-400 text-black text-xs font-bold px-3 py-1 rounded-full shadow mb-2">{selectedProject.category}</span>
+                    <p className="text-cyan-200 text-base mb-2">{selectedProject.description}</p>
+                    {/* Placeholder for tech stack and links */}
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      <span className="bg-cyan-900/40 text-cyan-200 px-3 py-1 rounded-full text-xs font-semibold">React</span>
+                      <span className="bg-cyan-900/40 text-cyan-200 px-3 py-1 rounded-full text-xs font-semibold">Next.js</span>
+                      <span className="bg-cyan-900/40 text-cyan-200 px-3 py-1 rounded-full text-xs font-semibold">Tailwind</span>
                     </div>
-                    <div>
-                      <p className="text-gray-400">Date:</p>
-                      <p className="text-white">March 2025</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-400">Services:</p>
-                      <p className="text-white">Web Design, Development</p>
-                    </div>
-                    <div>
-                      <p className="text-gray-400">Technologies:</p>
-                      <p className="text-white">React, Next.js, Tailwind CSS</p>
+                    <div className="flex gap-4 mt-4">
+                      <a href="#" className="text-cyan-300 hover:text-emerald-400 underline font-semibold">Live Demo</a>
+                      <a href="#" className="text-cyan-300 hover:text-emerald-400 underline font-semibold">GitHub</a>
                     </div>
                   </div>
                 </div>
-                
-             
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Call To Action */}
-        <div className="mt-20 text-center bg-gradient-to-r from-violet-900 to-violet-800 py-12 px-6 rounded-xl">
-          <h2 className="text-3xl font-bold mb-4">Ready to create your dream website?</h2>
-          <p className="text-lg text-gray-200 mb-8 max-w-2xl mx-auto">
-            Let s collaborate to build a stunning website that perfectly represents your brand and drives results.
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+        {/* CTA Section */}
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.7 }} className="mt-20 text-center">
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 bg-clip-text text-transparent">Ready to create your dream website?</h2>
+          <p className="text-lg text-cyan-100 mb-8 max-w-2xl mx-auto">
+            Let&apos;s collaborate to build a stunning website that perfectly represents your brand and drives results.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-        <Link href="/pages/contactPage"   className="bg-white text-black px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">
-             
-              Get in Touch
-            
-           </Link>
-           <Link href="/pages/services"  className="bg-white text-black px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors duration-300">
-             
-              View Services
-            
-        </Link>
-          </div>
-        </div>
+          <Link href="/pages/contactPage" className="bg-gradient-to-r from-cyan-400 to-emerald-400 text-black px-8 py-3 rounded-full font-bold hover:scale-105 hover:shadow-xl transition-colors duration-300 inline-block">
+            Book a Free Consultation
+          </Link>
+        </motion.div>
       </div>
     </div>
   );

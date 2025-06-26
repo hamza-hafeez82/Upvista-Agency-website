@@ -1,3 +1,11 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: https://www.upvistadigital.com/sitemap.xml
+Disallow: /admin/*
+Disallow: /api/*
+
+# Host
+Host: https://upvistadigital.com
+
+# Sitemaps
+Sitemap: https://upvistadigital.com/sitemap.xml

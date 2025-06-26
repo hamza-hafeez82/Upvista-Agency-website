@@ -195,13 +195,6 @@ const Header = () => {
             <span>Services</span>
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </Link>
-          <Link
-            href="/pages/portfolio"
-            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
-          >
-            <span>Portfolio</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-          </Link>
 
           {/* Community Link */}
           <Link
@@ -385,27 +378,6 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span>Services</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 ml-auto text-purple-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-              <Link
-                href="/pages/portfolio"
-                className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span>Portfolio</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 ml-auto text-purple-400"
