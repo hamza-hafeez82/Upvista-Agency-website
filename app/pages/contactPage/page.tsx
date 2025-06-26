@@ -8,10 +8,42 @@ import {
   FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { FaFacebook, FaXTwitter, FaDiscord, FaFacebookMessenger, FaGlobe } from "react-icons/fa6";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import hamzaPic from "../../../assets/hamza pic.jpg";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+
+const consultMethods = [
+  { label: "Chat", icon: <FaWhatsapp className="w-5 h-5" />, value: "chat" },
+  { label: "Call", icon: <FaPhone className="w-5 h-5" />, value: "call" },
+  { label: "Video Conferencing", icon: <FaEnvelope className="w-5 h-5" />, value: "video" },
+  { label: "Social Media", icon: <FaGlobe className="w-5 h-5" />, value: "social" },
+];
+const socialMediaLinks = [
+  { name: "Instagram", icon: <FaInstagram className="w-8 h-8" />, href: "https://www.instagram.com/direct/t/17842162812514678/#" },
+  { name: "Facebook", icon: <FaFacebook className="w-8 h-8" />, href: "https://www.facebook.com/share/1Mw8RxcNx2/" },
+  { name: "LinkedIn", icon: <FaLinkedin className="w-8 h-8" />, href: "https://www.linkedin.com/in/hamza-hafeez-00937436a" },
+  { name: "X", icon: <FaXTwitter className="w-8 h-8" />, href: "https://x.com/Upvista_Digital?s=09" },
+  { name: "Discord", icon: <FaDiscord className="w-8 h-8" />, href: "https://discord.gg/wYgrpdYh" },
+];
+const chatLinks = [
+  { name: "WhatsApp", icon: <FaWhatsapp className="w-8 h-8" />, href: "https://wa.me/923320486955" },
+  { name: "Messenger", icon: <FaFacebookMessenger className="w-8 h-8" />, href: "https://m.me/61576935582300?source=qr_link_share" },
+  { name: "Email", icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:upvistadigital@gmail.com" },
+];
+const callPlatforms = [
+  { label: "WhatsApp", value: "whatsapp" },
+  { label: "Phone", value: "phone" },
+  { label: "Messenger", value: "messenger" },
+];
+const videoPlatforms = [
+  { label: "Zoom", value: "zoom" },
+  { label: "Google Meet", value: "meet" },
+];
 
 export default function ContactPage() {
   const socialLinks = [
@@ -58,8 +90,121 @@ export default function ContactPage() {
     },
   ];
 
+  const [showModal, setShowModal] = useState(false);
+  const [method, setMethod] = useState<string | null>(null);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", platform: "", date: "", time: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    // Here you would send the form data to your backend or email service
+  };
+
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-gray-950 text-white relative">
+      {/* Consultation Button */}
+      <button
+        onClick={() => setShowModal(true)}
+        className="fixed top-8 right-8 z-50 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 text-black font-bold shadow-xl border-2 border-cyan-900 hover:scale-105 hover:shadow-2xl active:scale-95 transition-all duration-300 backdrop-blur-xl text-lg flex items-center gap-2"
+      >
+        Book a Free Consultation
+      </button>
+      {/* Consultation Modal */}
+      <AnimatePresence>
+        {showModal && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+            <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ duration: 0.2 }} className="bg-gray-900 rounded-3xl shadow-2xl p-4 sm:p-8 w-full max-w-lg border border-cyan-900 relative overflow-y-auto max-h-[90vh]">
+              <button onClick={() => { setShowModal(false); setMethod(null); setForm({ name: "", email: "", phone: "", platform: "", date: "", time: "", message: "" }); setSubmitted(false); }} className="absolute top-4 right-4 text-cyan-300 hover:text-emerald-400 text-2xl font-bold">&times;</button>
+              <h3 className="text-2xl font-bold text-cyan-200 mb-6 text-center">Book a Free Consultation</h3>
+              <div className="flex flex-wrap gap-4 justify-center mb-6">
+                {consultMethods.map((m) => (
+                  <button
+                    key={m.value}
+                    className={`flex items-center gap-2 px-5 py-2 rounded-full font-semibold border transition-all duration-300 ${method === m.value ? "bg-gradient-to-r from-cyan-400 to-emerald-400 text-black border-cyan-400" : "bg-black/30 text-cyan-100 border-cyan-900 hover:bg-cyan-900/30"}`}
+                    onClick={() => setMethod(m.value)}
+                    type="button"
+                  >
+                    {m.icon} {m.label}
+                  </button>
+                ))}
+              </div>
+              {/* Dynamic Booking UI */}
+              {method === "social" && (
+                <div className="flex flex-wrap gap-6 justify-center mt-4">
+                  {socialMediaLinks.map(link => (
+                    <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
+                      <span className="bg-gradient-to-br from-cyan-400 to-violet-400 p-4 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">{link.icon}</span>
+                      <span className="text-cyan-100 font-medium text-sm group-hover:text-emerald-300 transition-colors">{link.name}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+              {method === "chat" && (
+                <div className="flex flex-wrap gap-6 justify-center mt-4">
+                  {chatLinks.map(link => (
+                    <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
+                      <span className="bg-gradient-to-br from-cyan-400 to-emerald-400 p-4 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">{link.icon}</span>
+                      <span className="text-cyan-100 font-medium text-sm group-hover:text-violet-300 transition-colors">{link.name}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+              {method === "call" && (
+                <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5 mt-4">
+                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your name" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" required />
+                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Your email" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" required />
+                  <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="Your phone number (optional)" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" />
+                  <select name="platform" value={form.platform} onChange={handleSelectChange} className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required>
+                    <option value="" disabled>Select your platform</option>
+                    {callPlatforms.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
+                  </select>
+                  <input type="date" name="date" value={form.date} onChange={handleChange} placeholder="Choose any date" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" required min={new Date().toISOString().split('T')[0]} />
+                  <input type="time" name="time" value={form.time} onChange={handleChange} placeholder="Choose the time" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" required min="08:00" max="18:00" />
+                  <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your message..." className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 min-h-[80px] placeholder:text-cyan-300 placeholder:italic" required />
+                  <button type="submit" className="mt-2 px-8 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> Book Now
+                  </button>
+                  {submitted && (
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-2 text-center">
+                      <CheckCircle className="w-8 h-8 mx-auto text-emerald-400 mb-2 animate-bounce" />
+                      <p className="text-lg text-emerald-200 font-bold">Thank you! We&apos;ll be in touch soon.</p>
+                    </motion.div>
+                  )}
+                </form>
+              )}
+              {method === "video" && (
+                <form onSubmit={handleSubmit} className="w-full flex flex-col gap-5 mt-4">
+                  <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your name" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" required />
+                  <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Your email" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" required />
+                  <select name="platform" value={form.platform} onChange={handleSelectChange} className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required>
+                    <option value="" disabled>Select your platform</option>
+                    {videoPlatforms.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
+                  </select>
+                  <input type="date" name="date" value={form.date} onChange={handleChange} placeholder="Choose any date" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" required min={new Date().toISOString().split('T')[0]} />
+                  <input type="time" name="time" value={form.time} onChange={handleChange} placeholder="Choose the time" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 placeholder:text-cyan-300 placeholder:italic" required min="14:00" max="18:00" />
+                  <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your message..." className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 min-h-[80px] placeholder:text-cyan-300 placeholder:italic" required />
+                  <button type="submit" className="mt-2 px-8 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5" /> Book Now
+                  </button>
+                  {submitted && (
+                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-2 text-center">
+                      <CheckCircle className="w-8 h-8 mx-auto text-emerald-400 mb-2 animate-bounce" />
+                      <p className="text-lg text-emerald-200 font-bold">Thank you! We&apos;ll be in touch soon.</p>
+                    </motion.div>
+                  )}
+                </form>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Back to Home Arrow */}
       <Link href="/" className="absolute left-6 top-6 z-20 group">
         <div className="flex items-center gap-2">
