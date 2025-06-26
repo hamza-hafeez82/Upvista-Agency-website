@@ -16,7 +16,6 @@ const ServiceSVG = ({ name }: { name: string }) => {
   );
 };
 
-import type { FC } from "react";
 interface ServicePhase {
   title: string;
   description: string;
