@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Logoimg from "../../../assets/u.png";
 import HamzaPic from "../../../assets/hamza pic.jpg";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 // Typewriter effect for hero tagline
@@ -61,24 +61,6 @@ const testimonials = [
     quote: "Our partnership with Upvista led to incredible growth. Highly recommended!",
   },
 ];
-
-function AnimatedCounter({ value }: { value: number }) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    let start = 0;
-    const end = value;
-    if (start === end) return;
-    const totalMilSecDur = 1200;
-    const incrementTime = Math.abs(Math.floor(totalMilSecDur / end));
-    const timer = setInterval(() => {
-      start += 1;
-      setCount(start);
-      if (start === end) clearInterval(timer);
-    }, incrementTime);
-    return () => clearInterval(timer);
-  }, [value]);
-  return <span>{count}</span>;
-}
 
 export default function AboutUs() {
   const [testimonialIdx, setTestimonialIdx] = useState(0);
@@ -169,7 +151,7 @@ export default function AboutUs() {
           <h2 className="text-2xl font-bold mb-2 text-white">Meet the Founder</h2>
           <p className="text-lg text-purple-200 font-semibold mb-2">Hamza Hafeez</p>
           <blockquote className="italic text-gray-300 border-l-4 border-purple-500 pl-4 mb-2">
-            "At Upvista, we don't just deliver projects—we create movements. Our mission is to inspire, to innovate, and to set new standards of digital greatness. Join us, and let's build a legacy together."
+            &quot;At Upvista, we don&apos;t just deliver projects—we create movements. Our mission is to inspire, to innovate, and to set new standards of digital greatness. Join us, and let&apos;s build a legacy together.&quot;
           </blockquote>
           <div className="mt-4 flex justify-center md:justify-start gap-4">
             <a href="https://www.linkedin.com/in/hamza-hafeez-00937436a/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium shadow hover:scale-105 transition-transform">
@@ -253,7 +235,7 @@ export default function AboutUs() {
               transition={{ duration: 0.6 }}
               className="bg-gray-900/70 rounded-lg p-8 shadow-lg text-center"
             >
-              <p className="text-xl italic text-gray-200 mb-4">"{testimonials[testimonialIdx].quote}"</p>
+              <p className="text-xl italic text-gray-200 mb-4">&quot;{testimonials[testimonialIdx].quote}&quot;</p>
             </motion.div>
           </AnimatePresence>
         </div>
@@ -268,7 +250,7 @@ export default function AboutUs() {
       >
         <Link href="/pages/contactPage">
           <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-2xl shadow-2xl text-xl hover:scale-105 transition-transform">
-            Let's Build Something Legendary
+            Let&apos;s Build Something Legendary
           </button>
         </Link>
       </motion.div>
@@ -277,7 +259,7 @@ export default function AboutUs() {
       <div className="block md:hidden px-4 pb-6">
         <Link href="/pages/contactPage">
           <button className="w-full py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl shadow-lg text-lg">
-            Let's Build Something Legendary
+            Let&apos;s Build Something Legendary
           </button>
         </Link>
       </div>
