@@ -96,6 +96,7 @@ export const Vortex = (props: VortexProps) => {
         window.cancelAnimationFrame(animationFrameId.current);
       }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Fix: No dependencies needed
 
   const initParticles = () => {

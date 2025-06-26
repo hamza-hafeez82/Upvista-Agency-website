@@ -23,13 +23,6 @@ function Typewriter({ text, speed = 50 }: { text: string; speed?: number }) {
   return <span>{displayed}</span>;
 }
 
-// Animated stats
-const stats = [
-  { label: "Projects Delivered", value: 50 },
-  { label: "Community Members", value: 100 },
-  { label: "Global Partners", value: 20 },
-];
-
 // Pillars with icons
 const pillars = [
   {
