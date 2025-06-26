@@ -111,7 +111,7 @@ export default function ContactPage() {
       {/* Consultation Button */}
       <button
         onClick={() => setShowModal(true)}
-        className="fixed top-8 right-8 z-50 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 text-black font-bold shadow-xl border-2 border-cyan-900 hover:scale-105 hover:shadow-2xl active:scale-95 transition-all duration-300 backdrop-blur-xl text-lg flex items-center gap-2"
+        className="fixed bottom-6 right-6 z-50 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 text-black font-bold shadow-xl border-2 border-cyan-900 hover:scale-105 hover:shadow-2xl active:scale-95 transition-all duration-300 backdrop-blur-xl text-lg flex items-center gap-2"
       >
         Book a Free Consultation
       </button>
