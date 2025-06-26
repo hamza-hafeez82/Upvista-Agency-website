@@ -236,7 +236,7 @@ const UiUxPricingDemo = () => {
             Intuitive and Beautiful Experiences That Convert
           </p>
           <p className="mx-auto max-w-3xl text-base md:text-lg text-zinc-400">
-            Whether you&rsquo;re launching a product or redesigning your app,
+            Whether you&apos;re launching a product or redesigning your app,
             our UI/UX packages are tailored to deliver seamless, modern, and
             results-driven user experiences.
           </p>
@@ -303,7 +303,7 @@ const UiUxPricingDemo = () => {
               "Design system included",
             ]}
             idealFor="Founders launching new products or seeking investor-ready UI"
-            buttonText="Let's Build It →"
+            buttonText="Let&apos;s Build It →"
           />
         </div>
       </div>

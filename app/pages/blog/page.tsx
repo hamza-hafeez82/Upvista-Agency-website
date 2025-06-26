@@ -49,7 +49,7 @@ export default function ITServicesBlog() {
       title: "Branding Services",
       icon: <Paintbrush className="mb-4 text-violet-300" size={32} />,
       description:
-        "Comprehensive brand identity development that communicates your company's values, personality, and unique selling propositions.",
+        "Comprehensive brand identity development that communicates your company&apos;s values, personality, and unique selling propositions.",
       advantages: [
         "Cohesive visual identity across all touchpoints",
         "Memorable brand assets that resonate with target audiences",

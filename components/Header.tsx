@@ -72,28 +72,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Function to handle smooth scrolling
-  const scrollToSection = (
-    sectionId: string,
-    e: React.MouseEvent<HTMLAnchorElement> | null
-  ) => {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-
-    setMobileMenuOpen(false);
-    setPackDropdownOpen(false);
-
-    const section = document.getElementById(sectionId);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 80,
-        behavior: "smooth",
-      });
-    }
-  };
-
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -196,17 +174,34 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-1 lg:gap-2" role="navigation" aria-label="Main Navigation">
-          {["home", "about", "services", "portfolio"].map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
-              onClick={(e) => scrollToSection(item, e)}
-              className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
-            >
-              <span>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-            </a>
-          ))}
+          <Link
+            href="/"
+            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+          >
+            <span>Home</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          </Link>
+          <Link
+            href="/pages/about"
+            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+          >
+            <span>About</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          </Link>
+          <Link
+            href="/pages/services"
+            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+          >
+            <span>Services</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          </Link>
+          <Link
+            href="/pages/portfolio"
+            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+          >
+            <span>Portfolio</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          </Link>
 
           {/* Community Link */}
           <Link
@@ -342,30 +337,90 @@ const Header = () => {
           <div className="flex-1 flex flex-col justify-between">
             <div className="px-6 py-6 space-y-2">
               {/* Navigation Links */}
-              {["home", "about", "services", "portfolio"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item}`}
-                  onClick={(e) => scrollToSection(item, e)}
-                  className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
+              <Link
+                href="/"
+                className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span>Home</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-auto text-purple-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-                  <span>{item.charAt(0).toUpperCase() + item.slice(1)}</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 ml-auto text-purple-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </a>
-              ))}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/pages/about"
+                className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span>About</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-auto text-purple-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/pages/services"
+                className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span>Services</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-auto text-purple-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/pages/portfolio"
+                className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span>Portfolio</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-auto text-purple-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
 
               {/* Community Link */}
               <Link

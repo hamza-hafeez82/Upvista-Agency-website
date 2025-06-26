@@ -211,7 +211,7 @@ export default function CompleteServices() {
             </h2>
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Let us handle your complete digital solution. From design to
-              maintenance, we&apos;ve got you covered with our comprehensive
+              maintenance, we've got you covered with our comprehensive
               package.
             </p>
             <Link href="/pages/contactPage">
