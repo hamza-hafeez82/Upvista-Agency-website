@@ -54,6 +54,13 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#240046" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://www.upvistadigital.com/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Upvista Digital – Web & Software Solutions" />
+        <meta name="twitter:description" content="We build stunning websites, intuitive user experiences, and scalable apps for startups and enterprises. Elevate your digital presence with Upvista." />
+        <meta name="twitter:image" content="/assets/hero.jpeg" />
+        <meta name="twitter:site" content="@Upvista_Digital" />
         <Script
           id="schema-org"
           type="application/ld+json"
@@ -81,13 +88,31 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-FNDXWSLW30`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FNDXWSLW30');
+          `}
+        </Script>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#240046]`}
         suppressHydrationWarning
+        aria-label="Upvista Digital Web & Software Solutions"
       >
-        {children}
-        <Toaster position="bottom-right" />
+        <main role="main" id="main-content">
+          {children}
+        </main>
+        <div aria-live="polite" aria-atomic="true">
+          <Toaster position="bottom-right" />
+        </div>
       </body>
     </html>
   );

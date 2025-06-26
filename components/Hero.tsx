@@ -67,6 +67,7 @@ const Hero = () => {
                   alt="Dashboard Mockup"
                   layout="fill"
                   className="rounded-2xl transform hover:scale-105 transition-transform duration-300 w-[20px]"
+                  priority
                 />
               </div>
 

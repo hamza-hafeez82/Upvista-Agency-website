@@ -143,7 +143,7 @@ const Header = () => {
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center group cursor-pointer">
+        <Link href="/" className="flex items-center group cursor-pointer" aria-label="Upvista Home" role="link">
           <div
             className={`relative transition-all duration-300 ${
               scrolled ? "w-10 h-10" : "w-12 h-12"
@@ -195,7 +195,7 @@ const Header = () => {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <nav className="hidden md:flex items-center gap-1 lg:gap-2" role="navigation" aria-label="Main Navigation">
           {["home", "about", "services", "portfolio"].map((item) => (
             <a
               key={item}

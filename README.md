@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Upvista Digital – Web & Software Solutions
+
+## Overview
+Upvista Digital builds stunning websites, intuitive user experiences, and scalable apps for startups and enterprises. Elevate your digital presence with Upvista.
+
+## Features
+- Modern Next.js 15 app directory structure
+- TypeScript, TailwindCSS, Framer Motion
+- SEO & accessibility best practices
+- PWA support (manifest, offline, installable)
+- Automated code quality (ESLint, Prettier, Husky)
+- Google Analytics integration
+- Dynamic, responsive UI
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+
+- npm or yarn
 
+### Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Development
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Lint & Format
+```bash
+npm run lint
+npm run format
+```
 
-## Learn More
+## Contribution Guidelines
+- Fork the repo and create a feature branch
+- Use conventional commits
+- Run lint and format before pushing
+- Open a pull request with a clear description
 
-To learn more about Next.js, take a look at the following resources:
+## Analytics
+Google Analytics is integrated for user tracking. Update the tracking ID in `layout.tsx` if needed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## PWA
+- Manifest and icons are set up in `public/manifest.json`
+- Add to home screen supported
+- Offline support via service worker (see below)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Offline Support
+This app uses `next-pwa` to automatically generate a service worker for offline support. No manual service worker file is needed. Build and deploy to enable full PWA features.
 
-## Deploy on Vercel
+## Accessibility
+- Semantic HTML, ARIA roles, and labels
+- Color contrast and keyboard navigation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+MIT

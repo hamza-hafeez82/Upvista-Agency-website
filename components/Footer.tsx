@@ -38,7 +38,7 @@ interface ContactItemProps {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white" role="contentinfo" aria-label="Site Footer">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="border-t border-gray-800 mt-12">
+      <div className="border-t border-gray-800 mt-12" role="region" aria-label="Copyright and Policies">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center sm:text-left">

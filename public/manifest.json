@@ -60,5 +60,6 @@
   "categories": ["business", "web development", "UI/UX designing", "software development", "developer community", "Upvista Digital", "Upvista", "software community", "software Agency", "software house", "design"],
   "lang": "en-US",
   "dir": "ltr",
+  "scope": "/",
   "prefer_related_applications": false
 }
