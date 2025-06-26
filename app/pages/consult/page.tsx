@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { CheckCircle, User, Mail, Briefcase, Target, MessageCircle, Phone, Video, MessageSquare, Globe, FileText, FileCheck2, FileOutput, Rocket, Wrench, ArrowLeft } from "lucide-react";
+import { CheckCircle, Phone, Video, MessageSquare, Globe, FileText, FileCheck2, FileOutput, Rocket, Wrench, ArrowLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaFacebook, FaDiscord, FaXTwitter, FaFacebookMessenger } from "react-icons/fa6";
 
 const consultMethods = [
   { label: "Chat", icon: <MessageSquare className="w-5 h-5" />, value: "chat" },
@@ -51,21 +52,39 @@ const timeline = [
   },
 ];
 
-const steps = [
-  { label: "Your Name", icon: <User className="w-5 h-5" />, name: "name", type: "text", placeholder: "Enter your full name" },
-  { label: "Email Address", icon: <Mail className="w-5 h-5" />, name: "email", type: "email", placeholder: "Enter your email" },
-  { label: "Business/Organization", icon: <Briefcase className="w-5 h-5" />, name: "business", type: "text", placeholder: "Your business or organization" },
-  { label: "Your Goals", icon: <Target className="w-5 h-5" />, name: "goals", type: "text", placeholder: "What do you want to achieve?" },
-  { label: "Message", icon: <MessageCircle className="w-5 h-5" />, name: "message", type: "textarea", placeholder: "Tell us more about your needs..." },
+const socialMediaLinks = [
+  { name: "Instagram", icon: <FaInstagram className="w-8 h-8" />, href: "https://www.instagram.com/direct/t/17842162812514678/#" },
+  { name: "Facebook", icon: <FaFacebook className="w-8 h-8" />, href: "https://www.facebook.com/share/1Mw8RxcNx2/" },
+  { name: "LinkedIn", icon: <FaLinkedin className="w-8 h-8" />, href: "https://www.linkedin.com/in/hamza-hafeez-00937436a" },
+  { name: "X", icon: <FaXTwitter className="w-8 h-8" />, href: "https://x.com/Upvista_Digital?s=09" },
+  { name: "Discord", icon: <FaDiscord className="w-8 h-8" />, href: "https://discord.gg/wYgrpdYh" },
+];
+const chatLinks = [
+  { name: "WhatsApp", icon: <FaWhatsapp className="w-8 h-8" />, href: "https://wa.me/923320486955" },
+  { name: "Messenger", icon: <FaFacebookMessenger className="w-8 h-8" />, href: "https://m.me/61576935582300?source=qr_link_share" },
+  { name: "Email", icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:upvistadigital@gmail.com" },
+];
+const callPlatforms = [
+  { label: "WhatsApp", value: "whatsapp" },
+  { label: "Phone", value: "phone" },
+  { label: "Messenger", value: "messenger" },
+];
+const videoPlatforms = [
+  { label: "Zoom", value: "zoom" },
+  { label: "Google Meet", value: "meet" },
 ];
 
 export default function ConsultPage() {
   const router = useRouter();
-  const [form, setForm] = useState({ name: "", email: "", business: "", goals: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", platform: "", date: "", time: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [method, setMethod] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -115,34 +134,63 @@ export default function ConsultPage() {
                 </button>
               ))}
             </div>
-            {method && (
-              <form onSubmit={handleSubmit} className="w-full max-w-md flex flex-col gap-6 mt-4">
-                <h4 className="text-lg font-semibold text-cyan-100 mb-2">Book a Consultation ({consultMethods.find(m => m.value === method)?.label})</h4>
-                {steps.map((s) => (
-                  <div key={s.name} className="flex flex-col gap-1">
-                    <label className="text-cyan-200 font-medium flex items-center gap-2">{s.icon} {s.label}</label>
-                    {s.type === "textarea" ? (
-                      <textarea
-                        name={s.name}
-                        value={form[s.name as keyof typeof form]}
-                        onChange={handleChange}
-                        placeholder={s.placeholder}
-                        className="w-full rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all min-h-[80px]"
-                        required
-                      />
-                    ) : (
-                      <input
-                        type={s.type}
-                        name={s.name}
-                        value={form[s.name as keyof typeof form]}
-                        onChange={handleChange}
-                        placeholder={s.placeholder}
-                        className="w-full rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
-                        required
-                      />
-                    )}
-                  </div>
+            {/* Dynamic Booking UI */}
+            {method === "social" && (
+              <div className="flex flex-wrap gap-6 justify-center mt-4">
+                {socialMediaLinks.map(link => (
+                  <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
+                    <span className="bg-gradient-to-br from-cyan-400 to-violet-400 p-4 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">{link.icon}</span>
+                    <span className="text-cyan-100 font-medium text-sm group-hover:text-emerald-300 transition-colors">{link.name}</span>
+                  </a>
                 ))}
+              </div>
+            )}
+            {method === "chat" && (
+              <div className="flex flex-wrap gap-6 justify-center mt-4">
+                {chatLinks.map(link => (
+                  <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
+                    <span className="bg-gradient-to-br from-cyan-400 to-emerald-400 p-4 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">{link.icon}</span>
+                    <span className="text-cyan-100 font-medium text-sm group-hover:text-violet-300 transition-colors">{link.name}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+            {method === "call" && (
+              <form onSubmit={handleSubmit} className="w-full max-w-md flex flex-col gap-6 mt-4">
+                <h4 className="text-lg font-semibold text-cyan-100 mb-2">Book a Call</h4>
+                <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your Name" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required />
+                <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Your Email" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required />
+                <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="Your Phone" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required />
+                <select name="platform" value={form.platform} onChange={handleSelectChange} className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required>
+                  <option value="">Select Platform</option>
+                  {callPlatforms.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
+                </select>
+                <input type="date" name="date" value={form.date} onChange={handleChange} className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required min={new Date().toISOString().split('T')[0]} />
+                <input type="time" name="time" value={form.time} onChange={handleChange} className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required min="08:00" max="18:00" />
+                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your Message" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 min-h-[80px]" required />
+                <button type="submit" className="mt-2 px-8 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5" /> Book Now
+                </button>
+                {submitted && (
+                  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mt-2 text-center">
+                    <CheckCircle className="w-8 h-8 mx-auto text-emerald-400 mb-2 animate-bounce" />
+                    <p className="text-lg text-emerald-200 font-bold">Thank you! We&apos;ll be in touch soon.</p>
+                  </motion.div>
+                )}
+              </form>
+            )}
+            {method === "video" && (
+              <form onSubmit={handleSubmit} className="w-full max-w-md flex flex-col gap-6 mt-4">
+                <h4 className="text-lg font-semibold text-cyan-100 mb-2">Book a Video Consultation</h4>
+                <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="Your Name" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required />
+                <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Your Email" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required />
+                <select name="platform" value={form.platform} onChange={handleSelectChange} className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required>
+                  <option value="">Select Platform</option>
+                  {videoPlatforms.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
+                </select>
+                <input type="date" name="date" value={form.date} onChange={handleChange} className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required min={new Date().toISOString().split('T')[0]} />
+                <input type="time" name="time" value={form.time} onChange={handleChange} className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100" required min="14:00" max="18:00" />
+                <textarea name="message" value={form.message} onChange={handleChange} placeholder="Your Message" className="rounded-xl p-3 bg-black/30 border border-cyan-800 text-cyan-100 min-h-[80px]" required />
                 <button type="submit" className="mt-2 px-8 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-2">
                   <CheckCircle className="w-5 h-5" /> Book Now
                 </button>
