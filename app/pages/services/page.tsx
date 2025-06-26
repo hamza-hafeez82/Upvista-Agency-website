@@ -1,12 +1,14 @@
 "use client";
 import { Hero } from "@/components/ui/animated-hero"
-import { Feature } from "@/components/ui/feature-section-with-grid"
+import { StunningServices } from "@/components/ui/StunningServices"
+import Footer from "@/components/Footer";
 
 const ServicesPage = ()=> {
   return (
     <div className="block">
       <Hero />
-      <Feature/>
+      <StunningServices/>
+      <Footer />
     </div>
   );
 }
