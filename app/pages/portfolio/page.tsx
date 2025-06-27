@@ -175,7 +175,7 @@ const PortfolioPage = () => {
   return (
     <>
       <Header />
-      <div className="bg-black min-h-screen text-white py-16 px-4 sm:px-6 lg:px-8 relative">
+      <div className="bg-black min-h-screen text-white py-16 px-4 sm:px-6 lg:px-8 relative pt-32">
         {/* VR Experience Section */}
         <motion.section initial={{ opacity: 0, y: -40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-5xl mx-auto mb-16 rounded-3xl bg-gradient-to-br from-cyan-900/60 via-violet-900/60 to-emerald-900/40 p-8 sm:p-14 shadow-2xl flex flex-col items-center text-center">
           <h2 className="text-3xl sm:text-4xl font-extrabold mb-4 bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-emerald-400 bg-clip-text text-transparent animate-gradient-x drop-shadow-[0_2px_12px_rgba(0,255,208,0.15)]">Experience a Virtual Reality Project</h2>

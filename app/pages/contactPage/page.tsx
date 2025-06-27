@@ -44,7 +44,6 @@ const scheduleOptions = [
     name: "Calendly", 
     icon: <Calendar className="w-8 h-8" />, 
     href: "https://calendly.com/upvistadigital/30min",
-     
     desc: "Professional scheduling system" 
   },
   { 
