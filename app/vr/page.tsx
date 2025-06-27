@@ -606,15 +606,31 @@ const VRPage = () => {
         {/* Input Area */}
         <div className="border-t border-gray-700 p-4">
           {currentStep >= conversationFlow.length ? (
-            <div className="flex justify-center">
-              <button
-                onClick={() => setShowEndChat(true)}
-                className="px-8 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg font-semibold hover:from-green-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
-              >
-                <span>🎉</span>
-                <span>End Chat</span>
-              </button>
-            </div>
+            <>
+              {/* Fixed End Chat Button for Mobile */}
+              <div className="md:hidden">
+                <button
+                  onClick={() => setShowEndChat(true)}
+                  className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 px-8 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full font-semibold shadow-lg hover:from-green-600 hover:to-blue-600 transition-all duration-300 flex items-center space-x-2"
+                  style={{ minWidth: '200px' }}
+                >
+                  <span>🎉</span>
+                  <span>End Chat</span>
+                </button>
+                {/* Spacer to prevent overlap with chat */}
+                <div className="h-20" />
+              </div>
+              {/* Inline End Chat Button for Desktop */}
+              <div className="hidden md:flex justify-center">
+                <button
+                  onClick={() => setShowEndChat(true)}
+                  className="px-8 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg font-semibold hover:from-green-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2"
+                >
+                  <span>🎉</span>
+                  <span>End Chat</span>
+                </button>
+              </div>
+            </>
           ) : (
             <div className="flex items-end space-x-3">
               <div className="flex-1 bg-gray-700 rounded-2xl px-4 py-2">
