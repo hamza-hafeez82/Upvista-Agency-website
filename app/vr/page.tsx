@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Send, Phone, Video, CheckCircle, Clock, Bot, FileText, DollarSign } from 'lucide-react';
 import Link from 'next/link';
@@ -97,15 +97,16 @@ const VRPage = () => {
   const [showEndChat, setShowEndChat] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const conversationFlow = [
+  // Memoize conversationFlow to prevent re-creation on every render
+  const conversationFlow = useMemo(() => [
     {
       sender: 'agent',
-      text: "Hi! I&apos;m Agent from Upvista Agency. Welcome to our Virtual Reality Project Experience! 🚀",
+      text: "Hi! I'm Agent from Upvista Agency. Welcome to our Virtual Reality Project Experience! 🚀",
       delay: 1800
     },
     {
       sender: 'agent',
-      text: "This is a simulated consultation to show you how we work with clients. No real data will be saved - it&apos;s just for demonstration!",
+      text: "This is a simulated consultation to show you how we work with clients. No real data will be saved - it's just for demonstration!",
       delay: 3000
     },
     {
@@ -125,7 +126,7 @@ const VRPage = () => {
     },
     {
       sender: 'user',
-      text: "I&apos;m a fitness coach and I want clients to book sessions online",
+      text: "I'm a fitness coach and I want clients to book sessions online",
       delay: 1800
     },
     {
@@ -155,12 +156,12 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "That&apos;s a good client base! What&apos;s your current booking process like?",
+      text: "That's a good client base! What's your current booking process like?",
       delay: 2200
     },
     {
       sender: 'user',
-      text: "Right now I use WhatsApp and phone calls, but it&apos;s getting chaotic",
+      text: "Right now I use WhatsApp and phone calls, but it's getting chaotic",
       delay: 1800
     },
     {
@@ -205,7 +206,7 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "What&apos;s your timeline for this project?",
+      text: "What's your timeline for this project?",
       delay: 1800
     },
     {
@@ -215,7 +216,7 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "3-4 weeks is perfect! What&apos;s your budget range?",
+      text: "3-4 weeks is perfect! What's your budget range?",
       delay: 1800
     },
     {
@@ -225,12 +226,12 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "That&apos;s a great budget for a professional booking website! 💰",
+      text: "That's a great budget for a professional booking website! 💰",
       delay: 2200
     },
     {
       sender: 'agent',
-      text: "Based on your requirements, I&apos;ll create a comprehensive project module with complete technical specifications.",
+      text: "Based on your requirements, I'll create a comprehensive project module with complete technical specifications.",
       delay: 3000
     },
     {
@@ -255,7 +256,7 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "Perfect! I&apos;ll send you an invoice right now. You can pay via PayPal, credit card, or bank transfer.",
+      text: "Perfect! I'll send you an invoice right now. You can pay via PayPal, credit card, or bank transfer.",
       delay: 2600
     },
     {
@@ -266,7 +267,7 @@ const VRPage = () => {
     },
     {
       sender: 'user',
-      text: "Got it! I&apos;ll make the payment now.",
+      text: "Got it! I'll make the payment now.",
       delay: 1800
     },
     {
@@ -276,7 +277,7 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "You&apos;ll receive the complete documentation within 24-48 hours.",
+      text: "You'll receive the complete documentation within 24-48 hours.",
       delay: 2200
     },
     {
@@ -287,7 +288,7 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "I&apos;ve sent you a comprehensive 15-page project document with:",
+      text: "I've sent you a comprehensive 15-page project document with:",
       delay: 2600
     },
     {
@@ -302,12 +303,12 @@ const VRPage = () => {
     },
     {
       sender: 'user',
-      text: "Thanks! I&apos;ve reviewed the document. It looks comprehensive and professional.",
+      text: "Thanks! I've reviewed the document. It looks comprehensive and professional.",
       delay: 1800
     },
     {
       sender: 'agent',
-      text: "Excellent! I&apos;m glad you&apos;re satisfied with the project module.",
+      text: "Excellent! I'm glad you're satisfied with the project module.",
       delay: 2200
     },
     {
@@ -317,7 +318,7 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "What&apos;s your preferred time for the call? We&apos;re available weekdays 9 AM - 6 PM PST.",
+      text: "What's your preferred time for the call? We're available weekdays 9 AM - 6 PM PST.",
       delay: 3000
     },
     {
@@ -327,12 +328,12 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "Perfect! I&apos;ve scheduled your call with our team lead for tomorrow at 2 PM PST.",
+      text: "Perfect! I've scheduled your call with our team lead for tomorrow at 2 PM PST.",
       delay: 2600
     },
     {
       sender: 'agent',
-      text: "📅 Calendar invite sent! You&apos;ll receive a Zoom link 15 minutes before the call.",
+      text: "📅 Calendar invite sent! You'll receive a Zoom link 15 minutes before the call.",
       delay: 2600
     },
     {
@@ -342,10 +343,10 @@ const VRPage = () => {
     },
     {
       sender: 'agent',
-      text: "Ready to start your real project? Let&apos;s get your fitness coaching business online! 💪",
+      text: "Ready to start your real project? Let's get your fitness coaching business online! 💪",
       delay: 2600
     }
-  ];
+  ], []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -359,8 +360,7 @@ const VRPage = () => {
     if (chatStarted && currentStep < conversationFlow.length) {
       const message = conversationFlow[currentStep];
       setIsTyping(true);
-      
-      setTimeout(() => {
+      const timeout = setTimeout(() => {
         setIsTyping(false);
         setMessages(prev => [...prev, {
           id: Date.now(),
@@ -371,6 +371,8 @@ const VRPage = () => {
         }]);
         setCurrentStep(prev => prev + 1);
       }, message.delay);
+      // Cleanup: clear timeout if effect re-runs or component unmounts
+      return () => clearTimeout(timeout);
     }
   }, [currentStep, chatStarted, conversationFlow]);
 
@@ -468,7 +470,7 @@ const VRPage = () => {
                   </div>
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-2">Experience Complete! 🎉</h2>
-                <p className="text-gray-300">You&apos;ve just experienced our professional consultation process. Ready to start your real project?</p>
+                <p className="text-gray-300">You've just experienced our professional consultation process. Ready to start your real project?</p>
               </div>
               
               <div className="space-y-3">
