@@ -18,9 +18,7 @@ import {
   Handshake,
   ArrowRight,
   ExternalLink,
-  ArrowLeft,
 } from "lucide-react";
-import Link from "next/link";
 import Footer from "@/components/Footer";
 import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
@@ -102,19 +100,6 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
-      {/* Back Button */}
-      <div className="container mx-auto px-4 py-6">
-        <Link href="/">
-          <button className="group relative px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full text-white font-medium overflow-hidden shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all duration-300">
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-            <span className="relative flex items-center justify-center">
-              <ArrowLeft className="w-5 h-5 mr-2" />
-              Back to Home
-            </span>
-          </button>
-        </Link>
-      </div>
-
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-gray-900"></div>

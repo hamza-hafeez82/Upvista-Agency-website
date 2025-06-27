@@ -1,15 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Logoimg from "../assets/u.png";
 //import Logoimg from "../assets/u.png";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [packDropdownOpen, setPackDropdownOpen] = useState(false);
+  const pathname = usePathname();
 
   const packs = [
     {
@@ -130,7 +131,7 @@ const Header = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative bg-black rounded-lg p-0.5 w-full h-full flex items-center justify-center overflow-hidden">
               <Image
-                src={Logoimg}
+                src="/u.png"
                 alt="Company Logo"
                 width={scrolled ? 36 : 40}
                 height={scrolled ? 36 : 40}
@@ -176,40 +177,48 @@ const Header = () => {
         <nav className="hidden md:flex items-center gap-1 lg:gap-2" role="navigation" aria-label="Main Navigation">
           <Link
             href="/"
-            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group${pathname === '/' ? ' font-bold text-white' : ''}`}
           >
             <span>Home</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left${pathname === '/' ? ' scale-x-100' : ' scale-x-0 group-hover:scale-x-100'}`}></span>
           </Link>
           <Link
             href="/pages/about"
-            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/about') ? "font-bold text-white" : ""}`}
           >
             <span>About</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/about') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
           <Link
             href="/pages/services"
-            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/services') ? "font-bold text-white" : ""}`}
           >
             <span>Services</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/services') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
           <Link
             href="/pages/portfolio"
-            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/portfolio') ? "font-bold text-white" : ""}`}
           >
             <span>Portfolio</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/portfolio') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
 
           {/* Community Link */}
           <Link
             href="/pages/community"
-            className="text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/community') ? "font-bold text-white" : ""}`}
           >
             <span>Community</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/community') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
+          </Link>
+          {/* Partners Link */}
+          <Link
+            href="/pages/partners"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/partners') ? "font-bold text-white" : ""}`}
+          >
+            <span>Partners</span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/partners') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
 
           {/* Dropdown for Packs */}
@@ -270,7 +279,7 @@ const Header = () => {
           <Link
             href="/pages/contactPage"
             onClick={(e) => e.stopPropagation()}
-            className="ml-2 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-white transition-all duration-300 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg group hover:from-purple-700 hover:to-indigo-700"
+            className={`ml-2 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-white transition-all duration-300 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg group hover:from-purple-700 hover:to-indigo-700 ${pathname.startsWith('/pages/contactPage') ? "font-bold ring-2 ring-purple-400" : ""}`}
           >
             <span className="relative flex items-center">
               Contact
@@ -303,7 +312,7 @@ const Header = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg blur-sm opacity-70"></div>
                 <div className="relative bg-black rounded-lg p-0.5 w-full h-full flex items-center justify-center overflow-hidden">
                   <Image
-                    src={Logoimg}
+                    src="/u.png"
                     alt="Company Logo"
                     width={36}
                     height={36}
@@ -411,6 +420,31 @@ const Header = () => {
                 className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
               >
                 <span>Community</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-auto text-purple-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+              {/* Partners Link */}
+              <Link
+                href="/pages/partners"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setMobileMenuOpen(false);
+                }}
+                className={`text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200 ${pathname.startsWith('/pages/partners') ? "font-bold text-white" : ""}`}
+              >
+                <span>Partners</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 ml-auto text-purple-400"

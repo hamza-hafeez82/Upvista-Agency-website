@@ -24,27 +24,6 @@ function Hero() {
 
   return (
     <div className="w-full bg-black relative">
-      {/* Back to Home Arrow */}
-      <Link href="/" className="absolute left-6 top-6 z-20 group">
-        <div className="flex items-center gap-2">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 p-0.5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple-500/30">
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-background">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-purple-500 transition-transform duration-300 group-hover:-translate-x-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-            </div>
-          </div>
-          <span className="text-sm font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">Back to Home</span>
-        </div>
-      </Link>
-      
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
