@@ -470,7 +470,7 @@ const VRPage = () => {
                   </div>
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-2">Experience Complete! 🎉</h2>
-                <p className="text-gray-300">You've just experienced our professional consultation process. Ready to start your real project?</p>
+                <p className="text-gray-300">You&apos;ve just experienced our professional consultation process. Ready to start your real project?</p>
               </div>
               
               <div className="space-y-3">
