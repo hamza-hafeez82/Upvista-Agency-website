@@ -4,7 +4,6 @@ import { Toaster } from "react-hot-toast";
 import Script from "next/script";
 import "./globals.css";
 import { Dancing_Script } from "next/font/google";
-import { Herr_Von_Muellerhoff } from "next/font/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,12 +19,6 @@ const dancingScript = Dancing_Script({
   variable: "--font-dancing-script",
   subsets: ["latin"],
   weight: ["400", "700"],
-});
-
-const herrVon = Herr_Von_Muellerhoff({
-  variable: "--font-herr-von",
-  subsets: ["latin"],
-  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -117,7 +110,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} ${herrVon.variable} antialiased bg-[#240046]`}
+        className={`${geistSans.variable} ${geistMono.variable} ${dancingScript.variable} antialiased bg-[#240046]`}
         suppressHydrationWarning
         aria-label="Upvista Digital Web & Software Solutions"
       >

@@ -13,7 +13,9 @@ import {
   FaWhatsapp,
   FaEnvelope,
   FaPhoneAlt,
+  FaFacebookMessenger,
 } from "react-icons/fa";
+import { SiPatreon } from "react-icons/si";
 
 // Import your logo
 //import Logoimg from "../assets/W-logo.png";
@@ -84,6 +86,10 @@ const Footer: React.FC = () => {
                 icon={<FaDiscord />}
                 href="https://discord.gg/96XN8R4y"
               />
+              <SocialIcon
+                icon={<SiPatreon />}
+                href="https://www.patreon.com/Upvista_Digital?utm_campaign=creatorshare_creator"
+              />
             </div>
           </div>
 
@@ -118,6 +124,16 @@ const Footer: React.FC = () => {
                 icon={<FaWhatsapp />}
                 text="WhatsApp Us"
                 href="https://wa.me/923320486955"
+              />
+              <ContactItem
+                icon={<FaLinkedinIn />}
+                text="LinkedIn Us"
+                href="https://www.linkedin.com/in/hamza-hafeez-00937436a/"
+              />
+              <ContactItem
+                icon={<FaFacebookMessenger />}
+                text="Messenger Us"
+                href="https://www.facebook.com/share/1AAjzK33pz/"
               />
             </div>
           </div>

@@ -127,7 +127,7 @@ export default function AboutUs() {
                 Connect with Hamza
                 <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/></svg>
               </a>
-              <span className="font-[var(--font-herr-von)] text-2xl italic text-[#a78bfa] ml-2" style={{letterSpacing: '2px', fontWeight: 400, lineHeight: 1, textShadow: '0 2px 8px rgba(80,0,120,0.15)'}}>
+              <span className="text-2xl italic text-[#a78bfa] ml-2" style={{fontFamily: 'cursive', letterSpacing: '2px', fontWeight: 400, lineHeight: 1, textShadow: '0 2px 8px rgba(80,0,120,0.15)'}}>
                 Hamza Hafeez
               </span>
             </div>
