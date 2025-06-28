@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
               <ContactItem
                 icon={<FaFacebookMessenger />}
                 text="Messenger Us"
-                href="https://www.facebook.com/share/1AAjzK33pz/"
+                href="https://m.me/61576935582300?source=qr_link_share"
               />
             </div>
           </div>
