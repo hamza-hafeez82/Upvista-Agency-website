@@ -1,56 +1,16 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import React, { useState, useEffect, useRef, useMemo } from "react";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Home, 
-  Globe, 
-  Users,
-  Calendar, 
-  Award, 
-  Bell,
-  MessageCircle, 
-  Handshake, 
-  BookOpen,
-  Briefcase,
-  Rocket, 
-  Code, 
-  X,
-  Star,
-  Clock,
-  MessageSquare,
-  Eye,
-  Share2,
-  ThumbsUp,
-  ArrowRight,
-  Github,
-  Linkedin,
-  TrendingUp,
-  Heart,
-  Zap,
-  CheckCircle,
-  ExternalLink,
-  Users2,
-  Activity,
-  Trophy,
-  Lightbulb,
-  MapPin,
-  Phone,
-  Mail,
-  Globe2,
-  Video,
-  FileText,
-  FileCheck2,
-  FileOutput,
-  Wrench
-} from "lucide-react";
-import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { Badge } from "@/components/ui/badge";
+import { motion, AnimatePresence } from "framer-motion";
 import CountUp from "react-countup";
+import { Users, Calendar, Clock, Github, Linkedin, Globe, Star, Award, ArrowRight, X, Users2, Activity, Eye, Share2, ThumbsUp, Bell, MessageCircle, Handshake, BookOpen, Briefcase, Rocket } from "lucide-react";
+import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ULogo from "@/assets/u.png";
-import { motion } from "framer-motion";
 
 // Community Statistics Variables - Easy to update
 const COMMUNITY_STATS = {
@@ -523,11 +483,33 @@ export default function Component() {
   };
 
   const navSections = [
-    { id: "overview", label: "", icon: Home },
+    { id: "overview", label: "", icon: Users },
     { id: "platforms", label: "", icon: Globe },
-    { id: "members", label: "", icon: Users },
+    { id: "members", label: "", icon: Users2 },
     { id: "events", label: "", icon: Calendar },
     { id: "achievements", label: "", icon: Award },
+  ];
+
+  const recentActivities = [
+    {
+      type: "event",
+      title: "Inauguration ceremony of Upvista",
+      user: "Community Team",
+      time: "July, 1st  ",
+      platform: "Google meet",
+      icon: Calendar,
+      color: "text-purple-400",
+      description: "Hosted a ceremony to launch the Upvista community",
+      details: {
+        attendees: 8,
+        sessions: 1,
+        topics: ["Upvista", "Community", "Launch", "Launching"],
+        mentors: 2,
+        projects: 1,
+        certificates: "yes",
+        cost: "Free for members"
+      }
+    }
   ];
 
   const communityFeatures = [
@@ -567,29 +549,6 @@ export default function Component() {
       description: "Share ideas, get feedback, and collaborate on cutting-edge projects",
       color: "from-pink-500 to-rose-500",
     },
-  ];
-
-  const recentActivities = [
-    
-    {
-      type: "event",
-      title: "Inauguration ceremony of Upvista",
-      user: "Community Team",
-      time: "July, 1st  ",
-      platform: "Google meet",
-      icon: Calendar,
-      color: "text-purple-400",
-      description: "Hosted a ceremony to launch the Upvista community",
-      details: {
-        attendees: 8,
-        sessions: 1,
-        topics: ["Upvista", "Community", "Launch", "Launching"],
-        mentors: 2,
-        projects: 1,
-        certificates: "yes",
-        cost: "Free for members"
-      }
-    }
   ];
 
   const testimonials = [
