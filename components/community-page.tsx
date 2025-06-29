@@ -25,13 +25,32 @@ import {
   ThumbsUp,
   ArrowRight,
   Github,
-  Linkedin
+  Linkedin,
+  TrendingUp,
+  Heart,
+  Zap,
+  CheckCircle,
+  ExternalLink,
+  Users2,
+  Activity,
+  Trophy,
+  Lightbulb,
+  MapPin,
+  Phone,
+  Mail,
+  Globe2,
+  Video,
+  FileText,
+  FileCheck2,
+  FileOutput,
+  Wrench
 } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import CountUp from "react-countup";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ULogo from "@/assets/u.png";
+import { motion } from "framer-motion";
 
 // Community Statistics Variables - Easy to update
 const COMMUNITY_STATS = {
@@ -457,7 +476,7 @@ export default function Component() {
   const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null);
   const [selectedHighlight, setSelectedHighlight] = useState<Highlight | null>(null);
   const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial | null>(null);
-  const [radialOpen, setRadialOpen] = useState(false);
+  const [radialOpen, setRadialOpen] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
   const [animationKey, setAnimationKey] = useState(0);
 
@@ -660,7 +679,7 @@ export default function Component() {
   const featuredMembers = [
     {
       name: "Dawar Shaheer",
-      role: "Full Stack Developer",
+      role: "AI Automation",
       company: "TechCorp Inc.",
       avatar: "/assets/community/dawar.jpeg",
       contributions: 2,
@@ -1398,77 +1417,42 @@ export default function Component() {
       case "overview":
         return (
           <div className={`space-y-16 ${animationClass}`} key={animationKey}>
-      {/* Hero Section */}
-            <section className="relative overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-gray-900"></div>
-        <div className="relative container mx-auto px-4 py-16 text-center">
-          <div className="max-w-4xl mx-auto">
-                  <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse leading-tight floating-animation">
-                    Join Our Thriving Community
-            </h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed fade-in-up">
-              Connect with developers, designers, creators, and innovators. Get
-              exclusive updates, collaborate on projects, and unlock new
-              opportunities.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-12 stagger-animation">
-                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700 scale-in">
-                <Users className="w-5 h-5 text-blue-400" />
-                      <span className="text-gray-300">{COMMUNITY_STATS.totalMembers} Members</span>
-              </div>
-                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700 scale-in">
-                <Code className="w-5 h-5 text-green-400" />
-                      <span className="text-gray-300">{COMMUNITY_STATS.totalProjects} Projects</span>
-              </div>
-                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700 scale-in">
-                      <Calendar className="w-5 h-5 text-purple-400" />
-                      <span className="text-gray-300">{COMMUNITY_STATS.totalEvents} Events</span>
-                    </div>
-                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700 scale-in">
-                      <MessageSquare className="w-5 h-5 text-orange-400" />
-                      <span className="text-gray-300">{COMMUNITY_STATS.totalDiscussions} Discussions</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
             {/* Statistics Dashboard */}
             <section className="py-8 md:py-12">
-        <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12 fade-in-up">
+              <div className="container mx-auto px-4">
+                <div className="text-center mb-8 md:mb-12">
                   <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                     Community Growth
-            </h3>
+                  </h3>
                   <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
                     Watch our community flourish with real-time statistics and achievements
                   </p>
                 </div>
                 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 stagger-animation">
-                  <div className="text-center bounce-in">
-                    <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                  <div className="text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                       <CountUp end={COMMUNITY_STATS.totalMembers} duration={2} />
                     </div>
-                    <div className="text-sm md:text-base text-muted-foreground">Active Members</div>
+                    <div className="text-sm md:text-base text-gray-300">Active Members</div>
                   </div>
-                  <div className="text-center bounce-in">
-                    <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  <div className="text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                       <CountUp end={COMMUNITY_STATS.totalProjects} duration={2} />
                     </div>
-                    <div className="text-sm md:text-base text-muted-foreground">Ongoing Projects</div>
+                    <div className="text-sm md:text-base text-gray-300">Ongoing Projects</div>
                   </div>
-                  <div className="text-center bounce-in">
-                    <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  <div className="text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                       <CountUp end={COMMUNITY_STATS.totalEvents} duration={2} />
                     </div>
-                    <div className="text-sm md:text-base text-muted-foreground">Events This Month</div>
+                    <div className="text-sm md:text-base text-gray-300">Events This Month</div>
                   </div>
-                  <div className="text-center bounce-in">
-                    <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  <div className="text-center">
+                    <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                       <CountUp end={COMMUNITY_STATS.totalDiscussions} duration={2} />
                     </div>
-                    <div className="text-sm md:text-base text-muted-foreground">Active Discussions</div>
+                    <div className="text-sm md:text-base text-gray-300">Active Discussions</div>
                   </div>
                 </div>
               </div>
@@ -1477,7 +1461,7 @@ export default function Component() {
             {/* Recent Activities - Horizontal Slider */}
             <section className="py-8 md:py-12 bg-gray-900/30">
               <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12 fade-in-up">
+                <div className="text-center mb-8 md:mb-12">
                   <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                     Recent Activities
                   </h3>
@@ -1491,9 +1475,8 @@ export default function Component() {
                     {recentActivities.map((activity, index) => (
                       <Card
                         key={index}
-                        className="bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer scale-in"
+                        className="bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer"
                         onClick={() => setSelectedActivity(activity)}
-                        style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         <CardContent className="p-4 md:p-6">
                           <div className="flex items-center space-x-3 mb-3 md:mb-4">
@@ -1524,7 +1507,7 @@ export default function Component() {
             {/* Community Highlights - Horizontal Slider */}
             <section className="py-8 md:py-12">
               <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12 fade-in-up">
+                <div className="text-center mb-8 md:mb-12">
                   <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                     Community Highlights
                   </h3>
@@ -1538,9 +1521,8 @@ export default function Component() {
                     {communityHighlights.map((highlight, index) => (
                       <Card
                         key={index}
-                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group overflow-hidden hover:scale-105 flex-shrink-0 w-80 md:w-96 cursor-pointer scale-in"
+                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group overflow-hidden hover:scale-105 flex-shrink-0 w-80 md:w-96 cursor-pointer"
                         onClick={() => setSelectedHighlight(highlight)}
-                        style={{ animationDelay: `${index * 0.15}s` }}
                       >
                         <div className="relative">
                           <img
@@ -1573,7 +1555,7 @@ export default function Component() {
             {/* Testimonials - Horizontal Slider */}
             <section className="py-8 md:py-12 bg-gray-900/30">
               <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12 fade-in-up">
+                <div className="text-center mb-8 md:mb-12">
                   <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                     What Our Members Say
                   </h3>
@@ -1587,9 +1569,8 @@ export default function Component() {
                     {testimonials.map((testimonial, index) => (
                       <Card
                         key={index}
-                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer scale-in"
+                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer"
                         onClick={() => setSelectedTestimonial(testimonial)}
-                        style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         <CardContent className="p-4 md:p-6">
                           <div className="flex items-center space-x-3 mb-3 md:mb-4">
@@ -1620,44 +1601,6 @@ export default function Component() {
                 </div>
               </div>
             </section>
-
-            {/* What You'll Get Section */}
-            <section className="py-8 md:py-12">
-              <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12">
-                  <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
-                    What You&apos;ll Get
-                  </h3>
-                  <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Join our community and unlock access to exclusive content,
-              networking opportunities, and career growth.
-            </p>
-          </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
-            {communityFeatures.map((feature, index) => (
-              <Card
-                key={index}
-                      className="bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm group"
-                    >
-                      <CardHeader className="text-center p-3 md:p-6">
-                        <div className={`w-10 h-10 md:w-16 md:h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-2 md:mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                          <feature.icon className="w-5 h-5 md:w-8 md:h-8 text-white" />
-                  </div>
-                        <CardTitle className="text-white text-base md:text-xl leading-tight">
-                    {feature.title}
-                  </CardTitle>
-                </CardHeader>
-                      <CardContent className="p-3 md:p-6">
-                        <CardDescription className="text-gray-400 text-center leading-relaxed text-xs md:text-base">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
           </div>
         );
 
@@ -1973,9 +1916,34 @@ export default function Component() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#0f051d] via-[#1a1333] to-[#2d1e4f] text-white overflow-x-hidden flex flex-col">
       <style jsx global>{customStyles}</style>
       <Header />
+      
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 pt-32 pb-12 text-center relative">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl mx-auto"
+        >
+          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-gradient-to-r from-purple-700/60 to-indigo-700/60 shadow-lg mb-6 animate-pulse">
+            <Users className="w-6 h-6 text-cyan-300 animate-bounce" />
+            <span className="font-semibold text-lg tracking-wide text-cyan-100">Upvista&apos;s 2nd Pillar: Community & Collaboration</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-cyan-300 via-purple-400 to-violet-500 bg-clip-text text-transparent mb-6 drop-shadow-lg leading-snug md:leading-[1.25]">
+            Join Our Thriving Community
+          </h1>
+          <p className="text-lg md:text-2xl text-cyan-100/90 font-medium mb-8 max-w-2xl mx-auto">
+            Connect with like-minded developers, designers, and innovators. Share knowledge, collaborate on projects, and grow together in our supportive digital ecosystem.
+          </p>
+        </motion.div>
+        {/* Animated Divider */}
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="absolute left-0 right-0 -bottom-8 flex justify-center pointer-events-none">
+          <svg width="100%" height="40" viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 40C360 0 1080 0 1440 40V0H0V40Z" fill="url(#paint0_linear)"/><defs><linearGradient id="paint0_linear" x1="0" y1="0" x2="1440" y2="40" gradientUnits="userSpaceOnUse"><stop stopColor="#a78bfa"/><stop offset="1" stopColor="#06b6d4"/></linearGradient></defs></svg>
+        </motion.div>
+      </section>
       
       {/* Desktop: sticky top-center radial menu */}
       <div className="hidden md:block sticky z-40" style={{top: '72px'}}>
