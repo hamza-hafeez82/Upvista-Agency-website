@@ -68,7 +68,7 @@ export default function AboutUs() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gray-950 text-white pt-32">
+      <div className="min-h-screen w-screen bg-gray-950 text-white pt-32 overflow-x-hidden">
         {/* Animated Hero Section */}
         <section className="relative flex flex-col items-center justify-center min-h-[60vh] py-16 bg-transparent overflow-hidden">
           <div className="flex justify-center mb-6">
