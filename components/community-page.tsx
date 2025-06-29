@@ -9,7 +9,6 @@ import {
   Users,
   Calendar, 
   Award, 
-  Shield, 
   Bell,
   MessageCircle, 
   Handshake, 
@@ -25,9 +24,6 @@ import {
   Share2,
   ThumbsUp,
   ArrowRight,
-  Lightbulb,
-  Target,
-  Zap,
   Github,
   Linkedin
 } from "lucide-react";
@@ -35,7 +31,6 @@ import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import CountUp from "react-countup";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WLogo from "@/assets/W-logo.png";
 import ULogo from "@/assets/u.png";
 
 // Community Statistics Variables - Easy to update
@@ -827,7 +822,7 @@ export default function Component() {
   ];
 
   // Modal Components
-  const Modal = ({ isOpen, onClose, children, title }: { isOpen: boolean; onClose: () => void; children: React.ReactNode; title: string }) => {
+  const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode; }) => {
     if (!isOpen) return null;
 
     return (
@@ -851,7 +846,7 @@ export default function Component() {
   };
 
   const MemberModal = ({ member, isOpen, onClose }: { member: Member | null; isOpen: boolean; onClose: () => void }) => (
-    <Modal isOpen={isOpen} onClose={onClose} title={`${member?.name || 'Member'} - ${member?.role || 'Role'}`}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         <div className="flex items-center space-x-4">
           <img
@@ -961,7 +956,7 @@ export default function Component() {
   );
 
   const EventModal = ({ event, isOpen, onClose }: { event: Event | null; isOpen: boolean; onClose: () => void }) => (
-    <Modal isOpen={isOpen} onClose={onClose} title={event?.title || 'Event'}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-xl p-2">
           <div className="flex items-center justify-between mb-3">
@@ -1058,7 +1053,7 @@ export default function Component() {
   );
 
   const AchievementModal = ({ achievement, isOpen, onClose }: { achievement: Achievement | null; isOpen: boolean; onClose: () => void }) => (
-    <Modal isOpen={isOpen} onClose={onClose} title={achievement?.name || 'Achievement'}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         <div className="text-center">
           <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${
@@ -1138,7 +1133,7 @@ export default function Component() {
     const IconComponent = activity?.icon;
     
     return (
-      <Modal isOpen={isOpen} onClose={onClose} title={activity?.title || 'Activity'}>
+      <Modal isOpen={isOpen} onClose={onClose}>
         <div className="space-y-6">
           <div className="flex items-center space-x-3">
             <div className={`w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center`}>
@@ -1218,7 +1213,7 @@ export default function Component() {
   };
 
   const HighlightModal = ({ highlight, isOpen, onClose }: { highlight: Highlight | null; isOpen: boolean; onClose: () => void }) => (
-    <Modal isOpen={isOpen} onClose={onClose} title={highlight?.title || 'Highlight'}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         <div className="relative">
           <img
@@ -1332,7 +1327,7 @@ export default function Component() {
   );
 
   const TestimonialModal = ({ testimonial, isOpen, onClose }: { testimonial: Testimonial | null; isOpen: boolean; onClose: () => void }) => (
-    <Modal isOpen={isOpen} onClose={onClose} title={`${testimonial?.name || 'Member'} - ${testimonial?.role || 'Role'}`}>
+    <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         <div className="flex items-center space-x-4">
           <img

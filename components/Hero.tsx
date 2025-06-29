@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import imgHero from "@/assets/hero.jpeg";
 import Link from "next/link";
-import { ArrowRight, Code, Palette, Layout, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
