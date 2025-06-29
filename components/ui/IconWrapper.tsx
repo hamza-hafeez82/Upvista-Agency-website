@@ -4,7 +4,7 @@ import React from 'react';
 import { LucideIcon } from 'lucide-react';
 
 interface IconWrapperProps {
-  icon: React.ComponentType<any> | LucideIcon;
+  icon: React.ComponentType<unknown> | LucideIcon;
   className?: string;
   size?: number;
   fallback?: React.ReactNode;
@@ -38,7 +38,7 @@ export const IconWrapper: React.FC<IconWrapperProps> = ({
 };
 
 // Safe import wrapper for react-icons
-export const safeImportIcon = (importFn: () => Promise<any>) => {
+export const safeImportIcon = (importFn: () => Promise<{ default: React.ComponentType<unknown> }>) => {
   return React.lazy(() => 
     importFn().catch(() => ({
       default: () => <div className="w-5 h-5" />
