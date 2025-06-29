@@ -22,7 +22,7 @@ export default function ValueProposition() {
           </div>
 
           {/* Main heading with gradient text */}
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 leading-tight text-gray-200">
             We build{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
               affordable, custom, and scalable

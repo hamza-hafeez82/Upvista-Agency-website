@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Code, Cpu, Users } from "lucide-react";
+import { ArrowRight, Code, Cpu, Users, ShoppingCart, Cloud, Stethoscope, GraduationCap, CreditCard, Brush } from "lucide-react";
 import devImg from "../assets/openart-image_4QJTrC6j_1741402906187_raw.jpg";
 
 type Skill = {
@@ -189,60 +189,61 @@ export default function AboutUs() {
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-400">
-            From Code to Creativity, We have Got You Covered
+            Real Expertise Across Digital Niches
           </h2>
           <p className="text-gray-300 max-w-3xl mx-auto text-lg">
-            With a broad and deep skillset, our team delivers high-performance
-            solutions across development, design, and digital strategy. Whatever
-            the challenge, we have the tools and talent to solve it.
+            We deliver tailored solutions for a variety of industries and business models. Our team brings deep, hands-on experience in each niche—no fluff, just proven results.
           </p>
         </div>
 
-        {/* Skills bars with modern design */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 hover:border-violet-700/50 transition-all duration-300 group hover:shadow-lg hover:shadow-violet-900/10"
-            >
-              <div className="flex justify-between mb-3">
-                <span className="font-medium text-white group-hover:text-violet-300 transition-colors duration-300">
-                  {skill.name}
-                </span>
-                <span className="text-violet-400 font-bold">
-                  {skill.percentage}%
-                </span>
-              </div>
-              <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                <div
-                  className={`h-2 bg-gradient-to-r ${skill.color} rounded-full transform origin-left transition-all duration-1000 ease-out group-hover:scale-x-105`}
-                  style={{ width: `${skill.percentage}%` }}
-                ></div>
-              </div>
-            </div>
-          ))}
+        {/* Animated Niche Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+          {/* E-commerce */}
+          <div className="relative bg-gradient-to-br from-violet-800/80 to-indigo-900/80 border border-violet-700/40 rounded-2xl p-8 shadow-xl flex flex-col items-center group hover:scale-105 hover:shadow-2xl transition-all duration-400 animate-float">
+            <ShoppingCart className="w-14 h-14 mb-4 text-cyan-300 group-hover:animate-bounce transition-transform duration-300" />
+            <h3 className="text-xl font-bold text-white mb-2">E-commerce</h3>
+            <p className="text-cyan-100 text-center">Custom online stores, payment integration, product management, and conversion optimization for B2C & B2B brands.</p>
+          </div>
+          {/* SaaS */}
+          <div className="relative bg-gradient-to-br from-indigo-800/80 to-violet-900/80 border border-indigo-700/40 rounded-2xl p-8 shadow-xl flex flex-col items-center group hover:scale-105 hover:shadow-2xl transition-all duration-400 animate-float-delay">
+            <Cloud className="w-14 h-14 mb-4 text-fuchsia-300 group-hover:animate-bounce transition-transform duration-300" />
+            <h3 className="text-xl font-bold text-white mb-2">SaaS Platforms</h3>
+            <p className="text-fuchsia-100 text-center">Robust, scalable SaaS solutions with user management, billing, analytics, and cloud integration.</p>
+          </div>
+          {/* Healthcare */}
+          <div className="relative bg-gradient-to-br from-emerald-800/80 to-cyan-900/80 border border-emerald-700/40 rounded-2xl p-8 shadow-xl flex flex-col items-center group hover:scale-105 hover:shadow-2xl transition-all duration-400 animate-float-slow">
+            <Stethoscope className="w-14 h-14 mb-4 text-emerald-300 group-hover:animate-bounce transition-transform duration-300" />
+            <h3 className="text-xl font-bold text-white mb-2">Healthcare</h3>
+            <p className="text-emerald-100 text-center">HIPAA-compliant apps, patient portals, telemedicine, and secure health data management.</p>
+          </div>
+          {/* EdTech */}
+          <div className="relative bg-gradient-to-br from-pink-800/80 to-violet-900/80 border border-pink-700/40 rounded-2xl p-8 shadow-xl flex flex-col items-center group hover:scale-105 hover:shadow-2xl transition-all duration-400 animate-float">
+            <GraduationCap className="w-14 h-14 mb-4 text-pink-300 group-hover:animate-bounce transition-transform duration-300" />
+            <h3 className="text-xl font-bold text-white mb-2">EdTech</h3>
+            <p className="text-pink-100 text-center">Learning management systems, e-learning platforms, and interactive educational tools.</p>
+          </div>
+          {/* FinTech */}
+          <div className="relative bg-gradient-to-br from-cyan-800/80 to-blue-900/80 border border-cyan-700/40 rounded-2xl p-8 shadow-xl flex flex-col items-center group hover:scale-105 hover:shadow-2xl transition-all duration-400 animate-float-delay">
+            <CreditCard className="w-14 h-14 mb-4 text-cyan-300 group-hover:animate-bounce transition-transform duration-300" />
+            <h3 className="text-xl font-bold text-white mb-2">FinTech</h3>
+            <p className="text-cyan-100 text-center">Secure payment gateways, digital wallets, and financial analytics platforms.</p>
+          </div>
+          {/* Portfolio & Creative */}
+          <div className="relative bg-gradient-to-br from-indigo-800/80 to-pink-900/80 border border-indigo-700/40 rounded-2xl p-8 shadow-xl flex flex-col items-center group hover:scale-105 hover:shadow-2xl transition-all duration-400 animate-float-slow">
+            <Brush className="w-14 h-14 mb-4 text-indigo-300 group-hover:animate-bounce transition-transform duration-300" />
+            <h3 className="text-xl font-bold text-white mb-2">Portfolio & Creative</h3>
+            <p className="text-indigo-100 text-center">Personal portfolios, creative agency sites, and digital showcases for artists and professionals.</p>
+          </div>
         </div>
-
-        {/* Stats with modern card design */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-b from-gray-800 to-gray-900 p-8 rounded-xl text-center border border-gray-700/50 hover:border-violet-700/50 transition-all duration-300 group hover:shadow-lg hover:shadow-violet-900/20 relative overflow-hidden"
-            >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-violet-900/30 text-violet-400 group-hover:text-white group-hover:bg-violet-600 transition-all duration-300">
-                {stat.icon}
-              </div>
-              <div className="text-4xl font-bold mb-2 text-white group-hover:text-violet-300 transition-colors duration-300">
-                {stat.number}
-              </div>
-              <div className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+        <style jsx>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+          }
+          .animate-float { animation: float 3s ease-in-out infinite; }
+          .animate-float-delay { animation: float 3s 1s ease-in-out infinite; }
+          .animate-float-slow { animation: float 4s 0.5s ease-in-out infinite; }
+        `}</style>
       </section>
     </div>
   );

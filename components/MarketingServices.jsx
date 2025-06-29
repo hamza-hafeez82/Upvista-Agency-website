@@ -56,12 +56,6 @@ const ITServices = () => {
         </div>
       </div>
       
-      <div className="absolute top-32 right-10 transform rotate-12">
-        <div className="bg-black bg-opacity-60 rounded-lg p-3 shadow-lg w-16 h-16 flex items-center justify-center">
-          <span className="text-violet-400 text-lg font-bold">50%</span>
-        </div>
-      </div>
-      
       {/* Main content */}
       <div className="max-w-5xl mx-auto pt-16 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">

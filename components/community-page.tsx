@@ -825,17 +825,17 @@ export default function Component() {
   const Modal = ({ isOpen, onClose, children }: { isOpen: boolean; onClose: () => void; children: React.ReactNode; }) => {
     if (!isOpen) return null;
 
-    return (
+  return (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose}></div>
         <div className="relative bg-gray-900 border border-gray-700 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
           {/* Static close button at top-right */}
-          <button
-            onClick={onClose}
+              <button
+                onClick={onClose}
             className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10 bg-gray-800/80 rounded-full p-1"
             aria-label="Close modal"
-          >
-            <X className="w-6 h-6" />
+              >
+                <X className="w-6 h-6" />
           </button>
           <div className="p-4">
             {children}
@@ -1801,11 +1801,11 @@ export default function Component() {
                             <span
                               key={badgeIndex}
                               className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                            >
-                              {badge}
-                            </span>
-                          ))}
-                        </div>
+                          >
+                            {badge}
+                          </span>
+                        ))}
+                      </div>
                       </div>
                     </CardContent>
                   </Card>
@@ -1995,7 +1995,7 @@ export default function Component() {
           </div>
         </div>
       </div>
-
+      
       {/* Bottom Navigation */}
       <nav className="bottom-nav">
         <div className="container mx-auto px-4">
