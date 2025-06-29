@@ -35,6 +35,8 @@ import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import CountUp from "react-countup";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WLogo from "@/assets/W-logo.png";
+import ULogo from "@/assets/u.png";
 
 // Community Statistics Variables - Easy to update
 const COMMUNITY_STATS = {
@@ -69,6 +71,9 @@ const customStyles = `
     border-top: 1px solid rgba(139, 92, 246, 0.2);
     padding: 0.75rem 0;
   }
+  body.mobile-menu-open .bottom-nav {
+    display: none !important;
+  }
   .bottom-nav-item {
     display: flex;
     flex-direction: column;
@@ -78,6 +83,7 @@ const customStyles = `
     border-radius: 0.75rem;
     transition: all 0.2s ease;
     min-width: 4rem;
+    flex: 1 1 0%; /* Evenly distribute icons */
   }
   .bottom-nav-item.active {
     background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
@@ -99,12 +105,16 @@ const customStyles = `
   }
   @media (min-width: 768px) {
     .bottom-nav {
-      position: sticky;
-      top: 70px;
-      bottom: auto;
+      position: static;
       background: none;
       border-top: none;
-      padding: 1rem 0;
+      padding: 0;
+    }
+    .sticky {
+      position: sticky;
+      top: 72px;
+      z-index: 40;
+      background: transparent;
     }
     .bottom-nav-item {
       flex-direction: row;
@@ -122,11 +132,174 @@ const customStyles = `
     }
   }
   .content-wrapper {
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
   }
   @media (min-width: 768px) {
     .content-wrapper {
-      padding-bottom: 2rem;
+      padding-bottom: 8rem;
+    }
+  }
+  
+  /* Enhanced animations for section transitions */
+  .section-transition {
+    animation: sectionFadeIn 0.6s ease-out forwards;
+  }
+  
+  @keyframes sectionFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .section-slide-in {
+    animation: slideInFromRight 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideInFromRight {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .section-slide-out {
+    animation: slideOutToLeft 0.3s ease-in forwards;
+  }
+  
+  @keyframes slideOutToLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  }
+  
+  .stagger-animation > * {
+    animation: staggerFadeIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+  
+  @keyframes staggerFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+  
+  .floating-animation {
+    animation: floating 3s ease-in-out infinite;
+  }
+  
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .pulse-glow {
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+    }
+  }
+  
+  .scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  @keyframes scaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .bounce-in {
+    animation: bounceIn 0.6s ease-out forwards;
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3) translateY(-50px);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05) translateY(0);
+    }
+    70% {
+      transform: scale(0.9) translateY(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .rotate-in {
+    animation: rotateIn 0.6s ease-out forwards;
+  }
+  
+  @keyframes rotateIn {
+    0% {
+      opacity: 0;
+      transform: rotate(-180deg) scale(0.3);
+    }
+    100% {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
     }
   }
 `;
@@ -289,16 +462,41 @@ export default function Component() {
   const [selectedActivity, setSelectedActivity] = useState<Activity | null>(null);
   const [selectedHighlight, setSelectedHighlight] = useState<Highlight | null>(null);
   const [selectedTestimonial, setSelectedTestimonial] = useState<Testimonial | null>(null);
+  const [radialOpen, setRadialOpen] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [animationKey, setAnimationKey] = useState(0);
+
+  // Animation state for section transitions
+  const [sectionAnimation, setSectionAnimation] = useState<'entering' | 'entered' | 'exiting'>('entered');
+
+  // Handle section change with animation
+  const handleSectionChange = (newSection: string) => {
+    if (newSection === activeSection) return;
+    
+    setIsAnimating(true);
+    setSectionAnimation('exiting');
+    
+    setTimeout(() => {
+      setActiveSection(newSection);
+      setAnimationKey(prev => prev + 1);
+      setSectionAnimation('entering');
+      
+      setTimeout(() => {
+        setSectionAnimation('entered');
+        setIsAnimating(false);
+      }, 300);
+    }, 200);
+  };
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         closeModal();
       }
     };
 
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
   const closeModal = () => {
@@ -316,7 +514,6 @@ export default function Component() {
     { id: "members", label: "", icon: Users },
     { id: "events", label: "", icon: Calendar },
     { id: "achievements", label: "", icon: Award },
-    { id: "guidelines", label: "", icon: Shield },
   ];
 
   const communityFeatures = [
@@ -633,22 +830,19 @@ export default function Component() {
   const Modal = ({ isOpen, onClose, children, title }: { isOpen: boolean; onClose: () => void; children: React.ReactNode; title: string }) => {
     if (!isOpen) return null;
 
-  return (
+    return (
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose}></div>
         <div className="relative bg-gray-900 border border-gray-700 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-          <div className="sticky top-0 bg-gray-900 border-b border-gray-700 p-6 rounded-t-2xl">
-            <div className="flex items-center justify-between">
-              <h3 className="text-xl font-bold text-white">{title}</h3>
-              <button
-                onClick={onClose}
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <X className="w-6 h-6" />
+          {/* Static close button at top-right */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10 bg-gray-800/80 rounded-full p-1"
+            aria-label="Close modal"
+          >
+            <X className="w-6 h-6" />
           </button>
-      </div>
-          </div>
-          <div className="p-6">
+          <div className="p-4">
             {children}
           </div>
         </div>
@@ -769,7 +963,7 @@ export default function Component() {
   const EventModal = ({ event, isOpen, onClose }: { event: Event | null; isOpen: boolean; onClose: () => void }) => (
     <Modal isOpen={isOpen} onClose={onClose} title={event?.title || 'Event'}>
       <div className="space-y-6">
-        <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-xl p-4">
+        <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border border-blue-500/30 rounded-xl p-2">
           <div className="flex items-center justify-between mb-3">
             <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
               event?.type === 'Workshop' ? 'bg-blue-500/20 text-blue-300' :
@@ -1202,37 +1396,40 @@ export default function Component() {
   );
 
   const renderSection = () => {
+    const animationClass = sectionAnimation === 'entering' ? 'section-transition' : 
+                          sectionAnimation === 'exiting' ? 'section-slide-out' : '';
+    
     switch (activeSection) {
       case "overview":
         return (
-          <div className="space-y-16">
+          <div className={`space-y-16 ${animationClass}`} key={animationKey}>
       {/* Hero Section */}
             <section className="relative overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-gray-900"></div>
         <div className="relative container mx-auto px-4 py-16 text-center">
           <div className="max-w-4xl mx-auto">
-                  <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse leading-tight">
+                  <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-pulse leading-tight floating-animation">
                     Join Our Thriving Community
             </h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed fade-in-up">
               Connect with developers, designers, creators, and innovators. Get
               exclusive updates, collaborate on projects, and unlock new
               opportunities.
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
-                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700">
+            <div className="flex flex-wrap justify-center gap-3 mb-12 stagger-animation">
+                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700 scale-in">
                 <Users className="w-5 h-5 text-blue-400" />
                       <span className="text-gray-300">{COMMUNITY_STATS.totalMembers} Members</span>
               </div>
-                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700">
+                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700 scale-in">
                 <Code className="w-5 h-5 text-green-400" />
                       <span className="text-gray-300">{COMMUNITY_STATS.totalProjects} Projects</span>
               </div>
-                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700">
+                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700 scale-in">
                       <Calendar className="w-5 h-5 text-purple-400" />
                       <span className="text-gray-300">{COMMUNITY_STATS.totalEvents} Events</span>
                     </div>
-                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700">
+                    <div className="flex items-center space-x-2 bg-gray-800/50 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-700 scale-in">
                       <MessageSquare className="w-5 h-5 text-orange-400" />
                       <span className="text-gray-300">{COMMUNITY_STATS.totalDiscussions} Discussions</span>
               </div>
@@ -1244,7 +1441,7 @@ export default function Component() {
             {/* Statistics Dashboard */}
             <section className="py-8 md:py-12">
         <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12">
+                <div className="text-center mb-8 md:mb-12 fade-in-up">
                   <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                     Community Growth
             </h3>
@@ -1253,26 +1450,26 @@ export default function Component() {
                   </p>
                 </div>
                 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-                  <div className="text-center">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 stagger-animation">
+                  <div className="text-center bounce-in">
                     <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                       <CountUp end={COMMUNITY_STATS.totalMembers} duration={2} />
                     </div>
                     <div className="text-sm md:text-base text-muted-foreground">Active Members</div>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center bounce-in">
                     <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                       <CountUp end={COMMUNITY_STATS.totalProjects} duration={2} />
                     </div>
                     <div className="text-sm md:text-base text-muted-foreground">Ongoing Projects</div>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center bounce-in">
                     <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                       <CountUp end={COMMUNITY_STATS.totalEvents} duration={2} />
                     </div>
                     <div className="text-sm md:text-base text-muted-foreground">Events This Month</div>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center bounce-in">
                     <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                       <CountUp end={COMMUNITY_STATS.totalDiscussions} duration={2} />
                     </div>
@@ -1285,7 +1482,7 @@ export default function Component() {
             {/* Recent Activities - Horizontal Slider */}
             <section className="py-8 md:py-12 bg-gray-900/30">
               <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12">
+                <div className="text-center mb-8 md:mb-12 fade-in-up">
                   <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                     Recent Activities
                   </h3>
@@ -1299,8 +1496,9 @@ export default function Component() {
                     {recentActivities.map((activity, index) => (
                       <Card
                         key={index}
-                        className="bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer"
+                        className="bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer scale-in"
                         onClick={() => setSelectedActivity(activity)}
+                        style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         <CardContent className="p-4 md:p-6">
                           <div className="flex items-center space-x-3 mb-3 md:mb-4">
@@ -1331,7 +1529,7 @@ export default function Component() {
             {/* Community Highlights - Horizontal Slider */}
             <section className="py-8 md:py-12">
               <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12">
+                <div className="text-center mb-8 md:mb-12 fade-in-up">
                   <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                     Community Highlights
                   </h3>
@@ -1345,8 +1543,9 @@ export default function Component() {
                     {communityHighlights.map((highlight, index) => (
                       <Card
                         key={index}
-                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group overflow-hidden hover:scale-105 flex-shrink-0 w-80 md:w-96 cursor-pointer"
+                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group overflow-hidden hover:scale-105 flex-shrink-0 w-80 md:w-96 cursor-pointer scale-in"
                         onClick={() => setSelectedHighlight(highlight)}
+                        style={{ animationDelay: `${index * 0.15}s` }}
                       >
                         <div className="relative">
                           <img
@@ -1379,7 +1578,7 @@ export default function Component() {
             {/* Testimonials - Horizontal Slider */}
             <section className="py-8 md:py-12 bg-gray-900/30">
               <div className="container mx-auto px-4">
-                <div className="text-center mb-8 md:mb-12">
+                <div className="text-center mb-8 md:mb-12 fade-in-up">
                   <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                     What Our Members Say
                   </h3>
@@ -1393,8 +1592,9 @@ export default function Component() {
                     {testimonials.map((testimonial, index) => (
                       <Card
                         key={index}
-                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer"
+                        className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer scale-in"
                         onClick={() => setSelectedTestimonial(testimonial)}
+                        style={{ animationDelay: `${index * 0.1}s` }}
                       >
                         <CardContent className="p-4 md:p-6">
                           <div className="flex items-center space-x-3 mb-3 md:mb-4">
@@ -1542,52 +1742,75 @@ export default function Component() {
 
       case "members":
         return (
-          <section className="py-8 md:py-12">
+          <section className={`py-8 md:py-12 ${animationClass}`} key={animationKey}>
             <div className="container mx-auto px-4">
-              <div className="text-center mb-8 md:mb-12">
+              <div className="text-center mb-8 md:mb-12 fade-in-up">
                 <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
-                  Featured Members
+                  Community Members
                 </h3>
                 <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                  Meet some of our most active and inspiring community members
+                  Meet the talented individuals who make our community thrive
                 </p>
               </div>
 
-              <div className="grid grid-cols-3 md:grid-cols-3 gap-3 md:gap-8 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-animation">
                 {featuredMembers.map((member, index) => (
                   <Card
                     key={index}
-                    className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 cursor-pointer"
+                    className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 cursor-pointer scale-in"
                     onClick={() => setSelectedMember(member)}
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <CardContent className="p-3 md:p-6 text-center">
-                      <div className="relative mb-3 md:mb-6">
+                    <CardContent className="p-4 md:p-6">
+                      <div className="flex items-center space-x-4 mb-4">
                         <img
                           src={member.avatar}
                           alt={member.name}
-                          className="w-16 h-16 md:w-24 md:h-24 rounded-full mx-auto border-2 md:border-4 border-purple-500/30 group-hover:border-purple-500/60 transition-colors duration-300"
+                          className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover"
                         />
-                        <div className="absolute -bottom-1 -right-1 md:-bottom-2 md:-right-2 w-4 h-4 md:w-8 md:h-8 bg-green-500 rounded-full flex items-center justify-center">
-                          <div className="w-1 h-1 md:w-3 md:h-3 bg-white rounded-full"></div>
+                        <div>
+                          <h4 className="text-lg md:text-xl font-bold text-white leading-tight">{member.name}</h4>
+                          <p className="text-gray-400 text-sm md:text-base">{member.role}</p>
+                          <p className="text-gray-500 text-xs md:text-sm">{member.specialty}</p>
                         </div>
                       </div>
-                      <h4 className="text-sm md:text-xl font-bold text-white mb-1 md:mb-2 leading-tight">{member.name}</h4>
-                      <p className="text-gray-400 mb-1 text-xs md:text-base">{member.role}</p>
-                      <p className="text-purple-400 text-xs mb-2 md:mb-3">{member.specialty}</p>
-                      <div className="flex justify-center space-x-1 mb-2 md:mb-4">
-                        {member.badges.slice(0, 1).map((badge, idx) => (
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center justify-between text-xs md:text-sm">
+                          <span className="text-gray-400">Contributions:</span>
+                          <span className="text-white font-semibold">{member.contributions}</span>
+                        </div>
+                        <div className="flex items-center justify-between text-xs md:text-sm">
+                          <span className="text-gray-400">Projects:</span>
+                          <span className="text-white font-semibold">{member.projects}</span>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-1 mb-3">
+                        {member.skills.slice(0, 3).map((skill, skillIndex) => (
                           <span
-                            key={idx}
-                            className="px-1 py-0.5 md:px-3 md:py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full border border-purple-500/30"
+                            key={skillIndex}
+                            className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full"
                           >
-                            {badge}
+                            {skill}
                           </span>
                         ))}
+                        {member.skills.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-600/20 text-gray-300 text-xs rounded-full">
+                            +{member.skills.length - 3}
+                          </span>
+                        )}
                       </div>
-                      <div className="flex items-center justify-center space-x-1 md:space-x-4 text-xs text-gray-400">
-                        <span>{member.contributions}</span>
-                        <span className="hidden md:inline">•</span>
-                        <span className="hidden md:inline">{member.platform}</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-gray-400 text-xs md:text-sm">{member.platform}</span>
+                        <div className="flex space-x-1">
+                          {member.badges.slice(0, 2).map((badge, badgeIndex) => (
+                            <span
+                              key={badgeIndex}
+                              className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-xs font-bold text-white"
+                            >
+                              {badge}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </CardContent>
                   </Card>
@@ -1599,81 +1822,42 @@ export default function Component() {
 
       case "events":
         return (
-          <section className="py-8 md:py-12">
+          <section className={`py-8 md:py-12 ${animationClass}`} key={animationKey}>
             <div className="container mx-auto px-4">
-              <div className="text-center mb-8 md:mb-12">
+              <div className="text-center mb-8 md:mb-12 fade-in-up">
                 <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                   Upcoming Events
                 </h3>
                 <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                  Don&apos;t miss out on our exciting community events and workshops
+                  Join our exciting events and connect with fellow community members
                 </p>
               </div>
 
-              {/* Featured Event */}
-              <div className="mb-8 md:mb-12">
-                <Card className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 border-blue-500/30 backdrop-blur-sm hover:scale-105 transition-transform duration-300 cursor-pointer"
-                      onClick={() => setSelectedEvent(upcomingEvents[0])}>
-                  <CardContent className="p-6 md:p-8">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm font-semibold">
-                        {upcomingEvents[0].type}
-                      </span>
-                      <Calendar className="w-5 h-5 text-blue-400" />
-                    </div>
-                    <h4 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">{upcomingEvents[0].title}</h4>
-                    <p className="text-gray-300 text-base md:text-lg mb-4 leading-relaxed">{upcomingEvents[0].description}</p>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
-                      <div className="flex items-center space-x-2">
-                        <span className="text-gray-400">📅 {upcomingEvents[0].date}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <span className="text-gray-400">🕒 {upcomingEvents[0].time}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <span className="text-gray-400">💻 {upcomingEvents[0].platform}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <span className="text-gray-400">👥 {upcomingEvents[0].attendees} attending</span>
-                      </div>
-                    </div>
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 md:py-3">
-                      Register Now
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Other Events Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
-                {upcomingEvents.slice(1).map((event, index) => (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-animation">
+                {upcomingEvents.map((event, index) => (
                   <Card
                     key={index}
-                    className="bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 cursor-pointer"
+                    className="bg-gray-800/50 border-gray-700 hover:border-purple-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 cursor-pointer scale-in"
                     onClick={() => setSelectedEvent(event)}
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <CardContent className="p-4 md:p-6">
-                      <div className="flex items-center justify-between mb-3 md:mb-4">
-                        <span className={`px-2 py-1 md:px-3 md:py-1 rounded-full text-xs font-semibold ${
-                          event.type === 'Workshop' ? 'bg-blue-500/20 text-blue-300' :
-                          event.type === 'Hackathon' ? 'bg-green-500/20 text-green-300' :
-                          'bg-purple-500/20 text-purple-300'
-                        }`}>
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
                           {event.type}
                         </span>
-                        <Calendar className="w-4 h-4 md:w-5 md:h-5 text-gray-400" />
+                        <span className="text-gray-400 text-xs">{event.platform}</span>
                       </div>
-                      <h4 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3 leading-tight">{event.title}</h4>
-                      <p className="text-gray-400 text-xs md:text-sm mb-3 md:mb-4 leading-relaxed">{event.description}</p>
-                      <div className="space-y-1 md:space-y-2 text-gray-400 text-xs md:text-sm mb-3 md:mb-4">
-                        <div className="flex items-center space-x-2">
-                          <span>📅 {event.date}</span>
+                      <h4 className="text-lg md:text-xl font-bold text-white mb-2 leading-tight">{event.title}</h4>
+                      <p className="text-gray-400 text-sm md:text-base mb-4 leading-relaxed">{event.description}</p>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center space-x-2 text-xs md:text-sm">
+                          <Calendar className="w-4 h-4 text-gray-400" />
+                          <span className="text-gray-300">{event.date}</span>
                         </div>
-                        <div className="flex items-center space-x-2">
-                          <span>🕒 {event.time}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <span>💻 {event.platform}</span>
+                        <div className="flex items-center space-x-2 text-xs md:text-sm">
+                          <Clock className="w-4 h-4 text-gray-400" />
+                          <span className="text-gray-300">{event.time}</span>
                         </div>
                       </div>
                       <div className="flex items-center justify-between">
@@ -1694,9 +1878,9 @@ export default function Component() {
 
       case "achievements":
         return (
-          <section className="py-8 md:py-12">
+          <section className={`py-8 md:py-12 ${animationClass}`} key={animationKey}>
             <div className="container mx-auto px-4">
-              <div className="text-center mb-8 md:mb-12">
+              <div className="text-center mb-8 md:mb-12 fade-in-up">
                 <h3 className="text-2xl md:text-4xl font-bold mb-4 leading-tight">
                   Community Achievements
                 </h3>
@@ -1705,16 +1889,17 @@ export default function Component() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto stagger-animation">
                 {achievements.map((achievement, index) => (
                   <Card
                     key={index}
-                    className={`bg-gray-800/50 border-gray-700 transition-all duration-300 backdrop-blur-sm group hover:scale-105 cursor-pointer ${
+                    className={`bg-gray-800/50 border-gray-700 transition-all duration-300 backdrop-blur-sm group hover:scale-105 cursor-pointer scale-in ${
                       achievement.unlocked 
                         ? 'hover:border-green-500/50' 
                         : 'hover:border-gray-600/50 opacity-60'
                     }`}
                     onClick={() => setSelectedAchievement(achievement)}
+                    style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <CardContent className="p-3 md:p-6 text-center">
                       <div className={`w-10 h-10 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-full flex items-center justify-center ${
@@ -1753,127 +1938,100 @@ export default function Component() {
           </section>
         );
 
-      case "guidelines":
-        return (
-          <section className="py-12">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                  Community Guidelines
-                </h3>
-                <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                  Help us maintain a positive and inclusive environment for everyone
-                </p>
-              </div>
-
-              <div className="max-w-4xl mx-auto space-y-8">
-                <Card className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center space-x-2 leading-tight">
-                      <Shield className="w-6 h-6 text-blue-400" />
-                      <span>Be Respectful</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-400 leading-relaxed">
-                      Treat all community members with respect and kindness. Harassment, 
-                      discrimination, or any form of hate speech will not be tolerated.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center space-x-2 leading-tight">
-                      <Lightbulb className="w-6 h-6 text-yellow-400" />
-                      <span>Share Knowledge</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-400 leading-relaxed">
-                      Contribute positively by sharing your knowledge, helping others, 
-                      and participating in meaningful discussions.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center space-x-2 leading-tight">
-                      <Target className="w-6 h-6 text-green-400" />
-                      <span>Stay On Topic</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-400 leading-relaxed">
-                      Keep discussions relevant to technology, development, design, 
-                      and professional growth topics.
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card className="bg-gray-800/50 border-gray-700 backdrop-blur-sm hover:scale-105 transition-transform duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-white flex items-center space-x-2 leading-tight">
-                      <Zap className="w-6 h-6 text-purple-400" />
-                      <span>Be Active</span>
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-400 leading-relaxed">
-                      Participate regularly, attend events, and engage with other 
-                      community members to get the most out of your experience.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
-        );
-
       default:
         return (
-          <div className="text-center py-12">
-            <h1 className="text-4xl font-bold text-white">Coming Soon</h1>
-            <p className="text-gray-400 mt-4">This section is under development</p>
+          <div className={`text-center py-12 ${animationClass}`} key={animationKey}>
+            <h1 className="text-4xl font-bold text-white fade-in-up">Coming Soon</h1>
+            <p className="text-gray-400 mt-4 fade-in-up">This section is under development</p>
     </div>
   );
 }
   };
+
+  // Downward-facing D (semi-circle) arrangement for radial menu icons
+  const radialAngles = [185, 95, 48, 140, -5];
+  const radialIcons = navSections.map((section, i) => {
+    const angleDeg = radialAngles[i];
+    const angle = (angleDeg * Math.PI) / 180;
+    const radius = radialOpen ? 90 : 0; // px
+    const x = Math.cos(angle) * radius;
+    const y = Math.sin(angle) * radius;
+    return (
+      <button
+        key={section.id}
+        onClick={() => {
+          handleSectionChange(section.id);
+          setRadialOpen(false);
+        }}
+        className={`absolute transition-all duration-500 ease-out bg-gray-900/90 border border-purple-500/30 rounded-full p-3 shadow-lg flex flex-col items-center justify-center ${activeSection === section.id ? 'ring-2 ring-purple-400' : ''}`}
+        style={{
+          left: `calc(50% + ${x}px - 24px)`,
+          top: `calc(50% + ${y}px - 64px)`,
+          opacity: radialOpen ? 1 : 0,
+          pointerEvents: radialOpen ? 'auto' : 'none',
+          transform: `scale(${radialOpen ? 1 : 0.5}) rotate(${radialOpen ? 0 : 30}deg)`
+        }}
+      >
+        <section.icon className="w-6 h-6 text-purple-300" />
+      </button>
+    );
+  });
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
       <style jsx global>{customStyles}</style>
       <Header />
       
+      {/* Desktop: sticky top-center radial menu */}
+      <div className="hidden md:block sticky z-40" style={{top: '72px'}}>
+        <div className="relative flex justify-center items-center h-32">
+          {/* Main trigger icon */}
+          <button
+            className={`absolute left-1/2 top-10 -translate-x-1/2 bg-gradient-to-br from-indigo-900 to-purple-900 text-white rounded-full p-4 shadow-xl z-20 transition-all duration-300 ${radialOpen ? 'scale-110 pulse-glow' : 'scale-100'} floating-animation`}
+            onClick={() => setRadialOpen((v) => !v)}
+            aria-label="Open menu"
+            style={{ boxShadow: radialOpen ? '0 0 0 10px rgba(99,102,241,0.18)' : undefined }}
+          >
+            <img src={ULogo.src} alt="Upvista Logo" className="w-8 h-8 object-contain" />
+          </button>
+          {/* Radial icons */}
+          <div className="absolute left-1/2 top-10 -translate-x-1/2 w-48 h-48 pointer-events-none">
+            {radialIcons}
+          </div>
+        </div>
+      </div>
+
       {/* Bottom Navigation */}
       <nav className="bottom-nav">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-around md:justify-center md:space-x-2">
+          {/* Mobile: classic bar */}
+          <div className="flex items-center justify-around md:hidden">
             {navSections.map((section) => (
               <button
                 key={section.id}
-                onClick={() => setActiveSection(section.id)}
-                className={`bottom-nav-item ${
-                  activeSection === section.id ? 'active' : ''
-                }`}
+                onClick={() => handleSectionChange(section.id)}
+                className={`bottom-nav-item ${activeSection === section.id ? 'active' : ''}`}
               >
-                <section.icon className={`bottom-nav-icon ${
-                  activeSection === section.id ? 'text-white' : 'text-gray-400'
-                }`} />
-                <span className={`bottom-nav-label ${
-                  activeSection === section.id ? 'text-white' : 'text-gray-400'
-                }`}>
-                  {section.label}
-                </span>
+                <section.icon className={`bottom-nav-icon ${activeSection === section.id ? 'text-white' : 'text-gray-400'}`} />
+                <span className={`bottom-nav-label ${activeSection === section.id ? 'text-white' : 'text-gray-400'}`}>{section.label}</span>
               </button>
             ))}
           </div>
+          {/* Desktop: do not render the secondary navbar, only the sticky radial menu is shown above */}
         </div>
       </nav>
 
       <div className="content-wrapper">
         <main className="pt-20 md:pt-24">
+          {/* Loading indicator for section transitions */}
+          {isAnimating && (
+            <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+              <div className="flex items-center space-x-2 bg-gray-900/90 backdrop-blur-sm px-4 py-2 rounded-full border border-purple-500/30">
+                <div className="w-4 h-4 border-2 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+                <span className="text-purple-300 text-sm">Loading...</span>
+              </div>
+            </div>
+          )}
           {renderSection()}
         </main>
       </div>

@@ -6,7 +6,7 @@ import { ArrowRight, Code, Palette, Layout, Sparkles } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-purple-900 to-indigo-900 px-6 py-20 lg:py-38">
+    <section className="relative overflow-hidden bg-gradient-to-br from-black via-black/80 to-purple-950 px-6 py-20 lg:py-38">
       {/* Abstract background shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-purple-600/20 blur-3xl"></div>
@@ -71,22 +71,7 @@ const Hero = () => {
                 />
               </div>
 
-              {/* Floating service icons */}
-              <div className="absolute -top-4 -left-4 p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg transform rotate-6 hover:rotate-0 transition-all duration-300 animate-float">
-                <Code className="w-10 h-10 text-indigo-200" />
-              </div>
-
-              <div className="absolute top-80 -right-6 p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg transform -rotate-6 hover:rotate-0 transition-all duration-300 animate-float-delay">
-                <Palette className="w-10 h-10 text-purple-200" />
-              </div>
-
-              <div className="absolute -bottom-6 left-1/4 p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg transform rotate-12 hover:rotate-0 transition-all duration-300 animate-float-slow">
-                <Layout className="w-10 h-10 text-pink-200" />
-              </div>
-
-              <div className="absolute top-10 -right-10 p-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 shadow-lg transform -rotate-50 hover:rotate-0 transition-all duration-300 animate-float-slower">
-                <Sparkles className="w-10 h-10 text-indigo-200" />
-              </div>
+              {/* Floating service icons removed */}
             </div>
           </div>
         </div>

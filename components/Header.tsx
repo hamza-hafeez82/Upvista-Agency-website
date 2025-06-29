@@ -112,6 +112,18 @@ const Header = () => {
     };
   }, [mobileMenuOpen]);
 
+  // Add/remove global class for mobile menu open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <div
       className={`fixed top-0 w-full z-50 transition-all duration-300  ${
@@ -304,7 +316,7 @@ const Header = () => {
 
       {/* Mobile Menu - Redesigned */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-black/95 flex flex-col overflow-y-auto mobile-menu-container">
+        <div className="md:hidden fixed inset-0 z-40 bg-black/95 flex flex-col overflow-y-auto mobile-menu-container transition-all duration-500 ease-in-out animate-mobile-menu-fade-in">
           <div className="pt-6 px-6 flex items-center justify-between border-b border-white/10 pb-6">
             {/* Logo in Mobile Menu */}
             <div className="flex items-center">
@@ -343,7 +355,7 @@ const Header = () => {
             </button> */}
           </div>
 
-          <div className="flex-1 flex flex-col justify-between">
+          <div className="flex-1 flex flex-col justify-between transition-all duration-500 ease-in-out">
             <div className="px-6 py-6 space-y-2">
               {/* Navigation Links */}
               <Link
@@ -394,6 +406,27 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span>Services</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 ml-auto text-purple-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/pages/Market"
+                className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <span>Upvista&apos;s Online Market Place</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 ml-auto text-purple-400"
@@ -492,9 +525,9 @@ const Header = () => {
                 {/* Mobile Dropdown Menu */}
                 {packDropdownOpen && (
                   <div
-                    className="py-3 space-y-3 pl-2 overflow-hidden transition-all duration-300 ease-in-out"
+                    className="py-3 space-y-3 pl-2 overflow-y-auto transition-all duration-300 ease-in-out max-h-64"
                     style={{
-                      maxHeight: packDropdownOpen ? "500px" : "0",
+                      maxHeight: packDropdownOpen ? "16rem" : "0",
                       opacity: packDropdownOpen ? 1 : 0,
                     }}
                     onClick={(e) => e.stopPropagation()}
@@ -548,6 +581,23 @@ const Header = () => {
           </div>
         </div>
       )}
+
+      {/* Add global styles for animation */}
+      <style jsx global>{`
+        @keyframes mobileMenuFadeIn {
+          0% {
+            opacity: 0;
+            transform: translateY(-32px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-mobile-menu-fade-in {
+          animation: mobileMenuFadeIn 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+      `}</style>
     </div>
   );
 };
