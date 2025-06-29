@@ -3,9 +3,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight, ShoppingCart, Cloud, Stethoscope, GraduationCap, CreditCard, Brush } from "lucide-react";
-import devImg from "@/assets/openart-image_4QJTrC6j_1741402906187_raw.jpg";
 
 export default function AboutUs() {
   return (
@@ -60,50 +58,47 @@ export default function AboutUs() {
 
       {/* About Section with Card Design */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <div className="inline-block mb-2 px-3 py-1 rounded-full bg-violet-900/30 border border-violet-700/40">
-              <span className="text-violet-300 text-sm font-medium">
-                About Upvista
-              </span>
-            </div>
-            <h2 className="text-3xl p-1 md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-400">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="md:w-1/2 mb-8 md:mb-0">
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               Partnering for Your Digital Growth
             </h2>
-            <p className="text-gray-300 mb-6 text-lg">
-              We blend innovation with technical excellence to deliver solutions
-              that exceed expectations. Our team crafts powerful, tailored
-              digital experiences that help businesses grow, engage, and lead in
-              todays competitive landscape.
+            <p className="text-lg text-gray-300 mb-6">
+              We don&apos;t just deliver projects—we build long-term partnerships that empower your business to thrive in a digital-first world. Our approach is collaborative, transparent, and focused on your success.
             </p>
-            <p className="text-gray-300 mb-8">
-              Upvista combines deep tech expertise with creative insight to
-              build digital solutions that work — and wow. We listen,
-              collaborate, and deliver results that solve your challenges and
-              move your business forward.
-            </p>
-            <Link href="/pages/portfolio">
-              <button className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 border border-gray-700 flex items-center gap-2">
-                View Our Projects
-                <ArrowRight className="h-4 w-4" />
+            <Link href="/pages/partners">
+              <button className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-300 flex items-center gap-2 shadow-lg">
+                Explore Partnerships
+                <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
           </div>
-
-          <div className="order-1 lg:order-2 relative">
-            <div className="relative h-[500px] rounded-xl overflow-hidden shadow-2xl shadow-violet-900/20">
-              <div className="absolute inset-0 bg-gradient-to-tr from-violet-900/60 to-transparent mix-blend-overlay z-10 rounded-xl"></div>
-              <Image
-                src={devImg}
-                alt="Digital innovation team at work"
-                fill
-                style={{ objectFit: "cover" }}
-                className="rounded-xl"
-                priority
-              />
+          <div className="md:w-1/2 flex items-center justify-center">
+            {/* Animated, premium, interactive area */}
+            <div className="relative w-80 h-80 flex items-center justify-center">
+              {/* Animated gradient orbs */}
+              <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-tr from-purple-400 via-pink-400 to-cyan-400 rounded-full blur-3xl opacity-40 animate-blob"></div>
+              <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tr from-cyan-400 via-purple-400 to-pink-400 rounded-full blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
+              {/* Floating interactive icons */}
+              <div className="absolute top-10 left-16 animate-float-slow">
+                <Cloud className="w-10 h-10 text-cyan-300 drop-shadow-lg" />
+              </div>
+              <div className="absolute bottom-10 right-16 animate-float-fast">
+                <CreditCard className="w-10 h-10 text-pink-300 drop-shadow-lg" />
+              </div>
+              <div className="absolute top-24 right-8 animate-float-medium">
+                <Stethoscope className="w-10 h-10 text-purple-300 drop-shadow-lg" />
+              </div>
+              <div className="absolute bottom-16 left-8 animate-float-medium">
+                <GraduationCap className="w-10 h-10 text-blue-300 drop-shadow-lg" />
+              </div>
+              {/* Central interactive card */}
+              <div className="relative z-10 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 rounded-3xl shadow-2xl p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <Brush className="w-12 h-12 text-purple-400 mb-4 animate-spin-slow" />
+                <span className="text-xl font-semibold text-white mb-2">Premium Collaboration</span>
+                <span className="text-gray-200 text-base">Let&apos;s co-create digital solutions that set new standards for excellence.</span>
+              </div>
             </div>
-            <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-full blur-3xl opacity-30"></div>
-            <div className="absolute -top-5 -left-5 w-32 h-32 bg-gradient-to-br from-violet-600 to-indigo-600 rounded-full blur-3xl opacity-20"></div>
           </div>
         </div>
       </section>

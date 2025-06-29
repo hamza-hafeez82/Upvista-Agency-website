@@ -209,11 +209,11 @@ const Header = () => {
             <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/services') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
           <Link
-            href="/pages/Market"
-            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/portfolio') ? "font-bold text-white" : ""}`}
+            href="/pages/marketplace"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/marketplace') ? "font-bold text-white" : ""}`}
           >
-            <span>Upvista&apos;s Online Market Place</span>
-            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/portfolio') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
+            <span>Marketplace</span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/marketplace') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
 
           {/* Community Link */}
@@ -422,11 +422,11 @@ const Header = () => {
                 </svg>
               </Link>
               <Link
-                href="/pages/Market"
+                href="/pages/marketplace"
                 className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <span>Upvista&apos;s Online Market Place</span>
+                <span>Marketplace</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 ml-auto text-purple-400"

@@ -1,11 +1,52 @@
 # *
 User-agent: *
 Allow: /
-Disallow: /admin/*
-Disallow: /api/*
 
-# Host
-Host: https://upvistadigital.com
-
-# Sitemaps
+# Sitemap
 Sitemap: https://upvistadigital.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Disallow admin and API areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /404
+Disallow: /500
+
+# Allow important pages
+Allow: /pages/
+Allow: /assets/
+Allow: /community/
+Allow: /vr/
+
+# Specific page allowances
+Allow: /pages/about
+Allow: /pages/services
+Allow: /pages/portfolio
+Allow: /pages/contactPage
+Allow: /pages/blog
+Allow: /pages/marketplace
+Allow: /pages/faq
+Allow: /pages/terms
+Allow: /pages/privacy

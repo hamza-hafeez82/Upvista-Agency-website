@@ -12,11 +12,13 @@ import { FaFacebook, FaXTwitter, FaDiscord, FaFacebookMessenger } from "react-ic
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import hamzaPic from "../../../assets/hamza pic.jpg";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, Phone, Video, MessageSquare, Globe, Calendar, Mail, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 
 const consultMethods = [
   { label: "Chat", icon: <MessageSquare className="w-5 h-5" />, value: "chat" },
@@ -431,7 +433,7 @@ export default function ContactPage() {
             {/* Founder Image */}
             <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden border-4 border-purple-500/30 shadow-lg shadow-purple-500/20">
               <Image
-                src={hamzaPic}
+                src="/assets/hamza pic.jpg"
                 alt="Hamza Hafeez Bhatti"
                 fill
                 className="object-cover"

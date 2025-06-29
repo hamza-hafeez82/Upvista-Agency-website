@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import imgHero from "@/assets/hero.jpeg";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star, Users, Code, Globe } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -20,23 +20,42 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-6">
           {/* Content section */}
-          <div className="w-full lg:w-1/2 text-center lg:text-left">
+          <div className="w-full lg:w-1/2 text-center lg:text-left lg:ml-12">
             <div className="inline-flex items-center px-3 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-indigo-200 text-sm font-medium mb-6">
               <span className="flex h-2 w-2 rounded-full bg-indigo-400 mr-2"></span>
-              Trusted by many businesses worldwide
+              Upvista Digital - Pakistan&apos;s Premier Software Agency
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="block text-white">Your Vision, Our Code</span>
-              <span className="bg-gradient-to-r from-indigo-200 via-purple-300 to-pink-200 bg-clip-text text-transparent">
-                Scale and Succeed!
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              We&apos;re Building The Future
+              <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+                Of Digital Innovation
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-indigo-100/80 mb-8 max-w-xl mx-auto lg:mx-0">
-              Upvista builds future-ready digital products — blending
-              intelligent code, engaging UI/UX, and results-driven strategy.
+            <p className="text-lg md:text-xl text-gray-300 mb-8">
+              Don&apos;t just build websites. Build experiences that inspire, engage, and transform your business.
             </p>
+
+            {/* SEO-optimized service highlights */}
+            <div className="grid grid-cols-2 gap-4 mb-8 max-w-lg mx-auto lg:mx-0">
+              <div className="flex items-center gap-2 text-sm text-indigo-200">
+                <Code className="w-4 h-4 text-indigo-400" />
+                <span>Web Development</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-indigo-200">
+                <Globe className="w-4 h-4 text-indigo-400" />
+                <span>Digital Marketing</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-indigo-200">
+                <Users className="w-4 h-4 text-indigo-400" />
+                <span>UI/UX Design</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-indigo-200">
+                <Star className="w-4 h-4 text-indigo-400" />
+                <span>AI Automation</span>
+              </div>
+            </div>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
               <Link href="/pages/services">
@@ -51,6 +70,22 @@ const Hero = () => {
                 </button>
               </Link>
             </div>
+
+            {/* Trust indicators */}
+            <div className="mt-8 flex items-center justify-center lg:justify-start gap-6 text-sm text-indigo-200/80">
+              <div className="flex items-center gap-1">
+                <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                <span>4.8/5 Rating</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <Users className="w-4 h-4 text-indigo-400" />
+                <span>500+ Projects</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <Globe className="w-4 h-4 text-indigo-400" />
+                <span>Pakistan Based</span>
+              </div>
+            </div>
           </div>
 
           {/* Visual section */}
@@ -64,7 +99,7 @@ const Hero = () => {
               <div className="absolute inset-4 rounded-2xl bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-sm border border-white/10 shadow-xl transform  transition-all duration-700 overflow-hidden">
                 <Image
                   src={imgHero}
-                  alt="Dashboard Mockup"
+                  alt="Upvista Digital - Web Development & Software Agency Dashboard"
                   layout="fill"
                   className="rounded-2xl transform hover:scale-105 transition-transform duration-300 w-[20px]"
                   priority

@@ -4,113 +4,11 @@ import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import MarketingServices from "@/components/MarketingServices";
 import Footer from "@/components/Footer";
-import { HeroParallax } from "@/components/ui/hero-parallax";
 import Testimonials from "@/components/Reviews";
 import InfiniteSliderBasic from "@/components/InfinityCarousel";
 import { Vortex } from "@/components/ui/vortex";
 import Link from "next/link";
 import ValueProposition from "@/components/ValueProposition";
-
-const products = [
-  {
-    id: 1,
-    title: "Project_1",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/43/ae/4f/43ae4f74391da19c8002556643abee01.jpg",
-  },
-  {
-    id: 2,
-    title: "Project_2",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/ea/6e/94/ea6e9461504e45d004e6ce9e55c65750.jpg",
-  },
-  {
-    id: 3,
-    title: "Project_3",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/b0/33/4c/b0334caa4f6f092d8bb019a66a33c2d0.jpg",
-  },
-  {
-    id: 4,
-    title: "Project_4",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/dc/0c/46/dc0c46529061e684be6db846c4c3c86d.jpg",
-  },
-  {
-    id: 5,
-    title: "Project_5",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/43/ae/4f/43ae4f74391da19c8002556643abee01.jpg",
-  },
-  {
-    id: 6,
-    title: "Project_6",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/ea/6e/94/ea6e9461504e45d004e6ce9e55c65750.jpg",
-  },
-  {
-    id: 7,
-    title: "Project_7",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/b0/33/4c/b0334caa4f6f092d8bb019a66a33c2d0.jpg",
-  },
-  {
-    id: 8,
-    title: "Project_8",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/dc/0c/46/dc0c46529061e684be6db846c4c3c86d.jpg",
-  },
-  {
-    id: 9,
-    title: "Project_9",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/43/ae/4f/43ae4f74391da19c8002556643abee01.jpg",
-  },
-  {
-    id: 10,
-    title: "Project_10",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/ea/6e/94/ea6e9461504e45d004e6ce9e55c65750.jpg",
-  },
-  {
-    id: 11,
-    title: "Project_11",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/b0/33/4c/b0334caa4f6f092d8bb019a66a33c2d0.jpg",
-  },
-  {
-    id: 12,
-    title: "Project_12",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/dc/0c/46/dc0c46529061e684be6db846c4c3c86d.jpg",
-  },
-  {
-    id: 13,
-    title: "Project_13",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/b0/33/4c/b0334caa4f6f092d8bb019a66a33c2d0.jpg",
-  },
-  {
-    id: 14,
-    title: "Project_14",
-    link: "/pages/portfolio",
-    thumbnail:
-      "https://i.pinimg.com/736x/dc/0c/46/dc0c46529061e684be6db846c4c3c86d.jpg",
-  },
-];
 
 export default function Home() {
   return (
@@ -129,7 +27,7 @@ export default function Home() {
         <MarketingServices />
       </div>
       <div id="portfolio">
-        <HeroParallax products={products} />
+        {/* HeroParallax removed for a cleaner homepage */}
       </div>
       <div
         id="callToAction"
@@ -164,7 +62,7 @@ export default function Home() {
 
             {/* Description with increased readability */}
             <p className="text-gray-300 text-center text-lg max-w-2xl mb-10 leading-relaxed">
-              Upvista creates powerful digital experiences that don’t just look
+              Upvista creates powerful digital experiences that don&apos;t just look
               great — they deliver measurable growth and lasting impact.
             </p>
 
