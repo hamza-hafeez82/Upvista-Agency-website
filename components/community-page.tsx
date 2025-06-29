@@ -64,7 +64,7 @@ const customStyles = `
     z-index: 50;
     background: rgba(17, 24, 39, 0.95);
     border-top: 1px solid rgba(139, 92, 246, 0.2);
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
   }
   body.mobile-menu-open .bottom-nav {
     display: none !important;
@@ -74,10 +74,10 @@ const customStyles = `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
-    border-radius: 0.75rem;
+    padding: 0.375rem 0.25rem;
+    border-radius: 0.5rem;
     transition: all 0.2s ease;
-    min-width: 4rem;
+    min-width: 3.5rem;
     flex: 1 1 0%; /* Evenly distribute icons */
   }
   .bottom-nav-item.active {
@@ -86,15 +86,15 @@ const customStyles = `
   }
   .bottom-nav-item:hover {
     background: rgba(139, 92, 246, 0.1);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
   }
   .bottom-nav-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-bottom: 0.25rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-bottom: 0.125rem;
   }
   .bottom-nav-label {
-    font-size: 0.75rem;
+    font-size: 0.625rem;
     font-weight: 500;
     text-align: center;
   }
