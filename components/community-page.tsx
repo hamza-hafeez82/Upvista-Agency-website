@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import CountUp from "react-countup";
-import { Users, Calendar, Clock, Github, Linkedin, Globe, Star, Award, ArrowRight, X, Users2, Activity, Eye, Share2, ThumbsUp, Bell, MessageCircle, Handshake, BookOpen, Briefcase, Rocket } from "lucide-react";
+import { Users, Calendar, Clock, Github, Linkedin, Globe, Star, Award, ArrowRight, X, Users2, Activity, Eye, Share2, ThumbsUp } from "lucide-react";
 import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -510,45 +509,6 @@ export default function Component() {
         cost: "Free for members"
       }
     }
-  ];
-
-  const communityFeatures = [
-    {
-      icon: Bell,
-      title: "Latest Updates",
-      description: "Stay informed about new features, product releases, and company news",
-      color: "from-blue-500 to-cyan-500",
-    },
-    {
-      icon: MessageCircle,
-      title: "Announcements",
-      description: "Get notified about important events, hackathons, and opportunities",
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      icon: Handshake,
-      title: "Collaboration",
-      description: "Connect with like-minded professionals and work on exciting projects together",
-      color: "from-green-500 to-emerald-500",
-    },
-    {
-      icon: BookOpen,
-      title: "Learning",
-      description: "Access exclusive tutorials, workshops, and knowledge sharing sessions",
-      color: "from-orange-500 to-red-500",
-    },
-    {
-      icon: Briefcase,
-      title: "Job Opportunities",
-      description: "Discover career opportunities and connect with potential employers",
-      color: "from-indigo-500 to-purple-500",
-    },
-    {
-      icon: Rocket,
-      title: "Innovation Hub",
-      description: "Share ideas, get feedback, and collaborate on cutting-edge projects",
-      color: "from-pink-500 to-rose-500",
-    },
   ];
 
   const testimonials = [
