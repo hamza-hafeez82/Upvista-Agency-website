@@ -1,85 +1,13 @@
+"use client";
+
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Code, Cpu, Users, ShoppingCart, Cloud, Stethoscope, GraduationCap, CreditCard, Brush } from "lucide-react";
-import devImg from "../assets/openart-image_4QJTrC6j_1741402906187_raw.jpg";
-
-type Skill = {
-  name: string;
-  percentage: number;
-  color: string;
-};
-
-type Stat = {
-  number: string;
-  label: string;
-  icon: React.ReactNode;
-};
+import { ArrowRight, ShoppingCart, Cloud, Stethoscope, GraduationCap, CreditCard, Brush } from "lucide-react";
+import devImg from "@/assets/openart-image_4QJTrC6j_1741402906187_raw.jpg";
 
 export default function AboutUs() {
-  const skills: Skill[] = [
-    {
-      name: "Web Development",
-      percentage: 100,
-      color: "from-violet-500 to-indigo-600",
-    },
-    {
-      name: "UI/UX Design",
-      percentage: 100,
-      color: "from-blue-500 to-cyan-600",
-    },
-    {
-      name: "Maintenance",
-      percentage: 85,
-      color: "from-emerald-500 to-teal-600",
-    },
-    { name: "Branding", percentage: 77, color: "from-amber-500 to-orange-600" },
-
-    {
-      name: "App Development",
-      percentage: 77,
-      color: "from-amber-500 to-orange-600",
-    },
-
-    { name: "DevOps", percentage: 77, color: "from-blue-500 to-cyan-600" },
-
-    {
-      name: "AI automation",
-      percentage: 77,
-      color: "from-amber-500 to-orange-600",
-    },
-
-    {
-      name: "Graphics Designing",
-      percentage: 77,
-      color: "from-amber-500 to-orange-600",
-    },
-  ];
-
-  const stats: Stat[] = [
-    {
-      number: "",
-      label: "Years of Experience",
-      icon: <Users className="h-6 w-6" />,
-    },
-    {
-      number: "",
-      label: "Projects Completed",
-      icon: <Code className="h-6 w-6" />,
-    },
-    {
-      number: "",
-      label: "Satisfied Clients",
-      icon: <Users className="h-6 w-6" />,
-    },
-    {
-      number: "",
-      label: "Technologies Utilized",
-      icon: <Cpu className="h-6 w-6" />,
-    },
-  ];
-
   return (
     <div className="p-10 bg-gradient-to-b from-gray-950 to-black text-white min-h-screen">
       <Head>
