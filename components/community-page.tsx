@@ -664,7 +664,7 @@ export default function Component() {
       company: "TechCorp Inc.",
       avatar: "/assets/community/dawar.jpeg",
       contributions: 2,
-      badges: ["Helper", "Contributor"],
+      badges: ["Contributor"],
       platform: "Discord",
       specialty: "React & Node.js",
       joinDate: "June 2025",
