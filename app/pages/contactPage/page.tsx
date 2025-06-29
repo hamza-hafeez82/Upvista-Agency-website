@@ -264,38 +264,38 @@ export default function ContactPage() {
           </div>
         )}
 
-        {/* Main Content */}
-        <div className="container mx-auto px-4 py-12 max-w-4xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Contact Us
-            </h1>
-            <p className="text-gray-300 text-lg">
-              Get in touch with us to discuss your project
-            </p>
-          </div>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Contact Us
+          </h1>
+          <p className="text-gray-300 text-lg">
+            Get in touch with us to discuss your project
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Contact Information */}
-            <div className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300">
-              <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Contact Information
-                </span>
-              </h2>
-              <div className="space-y-6">
-                {contactInfo.map((info) => (
-                  <div key={info.title} className="flex items-start gap-4 group">
-                    <div className="p-3 rounded-lg bg-gray-800/50 group-hover:bg-purple-500/20 transition-colors duration-300">
-                      {info.icon}
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Contact Information */}
+          <div className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300">
+            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Contact Information
+              </span>
+            </h2>
+            <div className="space-y-6">
+              {contactInfo.map((info) => (
+                <div key={info.title} className="flex items-start gap-4 group">
+                  <div className="p-3 rounded-lg bg-gray-800/50 group-hover:bg-purple-500/20 transition-colors duration-300">
+                    {info.icon}
+                  </div>
                     <div className="flex-1">
-                      <h3 className="text-sm font-medium text-gray-400">
-                        {info.title}
-                      </h3>
-                      {info.href ? (
-                        <a
-                          href={info.href}
+                    <h3 className="text-sm font-medium text-gray-400">
+                      {info.title}
+                    </h3>
+                    {info.href ? (
+                      <a
+                        href={info.href}
                           target={info.title === "Location" ? "_blank" : undefined}
                           rel={info.title === "Location" ? "noopener noreferrer" : undefined}
                           className="text-white hover:text-purple-400 transition-colors duration-300 cursor-pointer group/link"
@@ -306,42 +306,42 @@ export default function ContactPage() {
                               (Open Map)
                             </span>
                           )}
-                        </a>
-                      ) : (
-                        <p className="text-white">{info.value}</p>
-                      )}
-                    </div>
+                      </a>
+                    ) : (
+                      <p className="text-white">{info.value}</p>
+                    )}
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {/* Social Links */}
-            <div className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300">
-              <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Connect With Us
-                </span>
-              </h2>
-              <div className="grid grid-cols-1 gap-4">
-                {socialLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${link.color} ${link.hoverColor} p-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-3 group`}
-                  >
-                    <div className="bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
-                      {link.icon}
-                    </div>
-                    <span className="text-white font-medium">{link.name}</span>
-                  </a>
-                ))}
-              </div>
+          {/* Social Links */}
+          <div className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300">
+            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Connect With Us
+              </span>
+            </h2>
+            <div className="grid grid-cols-1 gap-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${link.color} ${link.hoverColor} p-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-3 group`}
+                >
+                  <div className="bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
+                    {link.icon}
+                  </div>
+                  <span className="text-white font-medium">{link.name}</span>
+                </a>
+              ))}
             </div>
           </div>
         </div>
+      </div>
 
         {/* VR Experience Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -421,48 +421,48 @@ export default function ContactPage() {
                 Start VR Experience
               </Link>
             </motion.div>
-          </div>
         </div>
+      </div>
 
-        {/* Founder Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              {/* Founder Image */}
-              <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden border-4 border-purple-500/30 shadow-lg shadow-purple-500/20">
-                <Image
-                  src={hamzaPic}
-                  alt="Hamza Hafeez Bhatti"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
+      {/* Founder Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Founder Image */}
+            <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden border-4 border-purple-500/30 shadow-lg shadow-purple-500/20">
+              <Image
+                src={hamzaPic}
+                alt="Hamza Hafeez Bhatti"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
 
-              {/* Founder Message */}
-              <div className="flex-1 text-center md:text-left">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            {/* Founder Message */}
+            <div className="flex-1 text-center md:text-left">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
                   Hamza Hafeez
-                </h2>
-                <p className="text-lg font-medium text-purple-300 mb-4">
-                  Founder & CEO, Upvista Digital
-                </p>
-                <p className="text-gray-300 text-lg leading-relaxed">
-                  &ldquo;At Upvista Digital, we believe in transforming ideas into
-                  digital excellence. Our mission is to empower businesses with
-                  innovative solutions that drive growth and success in the
-                  digital landscape. With a team of passionate experts and
-                  cutting-edge technology, we&apos;re committed to delivering
-                  exceptional results that exceed expectations. Let&apos;s build
-                  something extraordinary together.&rdquo;
-                </p>
-              </div>
+              </h2>
+              <p className="text-lg font-medium text-purple-300 mb-4">
+                Founder & CEO, Upvista Digital
+              </p>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                &ldquo;At Upvista Digital, we believe in transforming ideas into
+                digital excellence. Our mission is to empower businesses with
+                innovative solutions that drive growth and success in the
+                digital landscape. With a team of passionate experts and
+                cutting-edge technology, we&apos;re committed to delivering
+                exceptional results that exceed expectations. Let&apos;s build
+                something extraordinary together.&rdquo;
+              </p>
             </div>
           </div>
         </div>
-
-        <Footer />
       </div>
+
+      <Footer />
+    </div>
     </>
   );
 }

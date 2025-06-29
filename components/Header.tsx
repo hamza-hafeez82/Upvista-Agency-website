@@ -197,10 +197,10 @@ const Header = () => {
             <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/services') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
           <Link
-            href="/pages/portfolio"
+            href="/pages/Market"
             className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/portfolio') ? "font-bold text-white" : ""}`}
           >
-            <span>Portfolio</span>
+            <span>Upvista&apos;s Online Market Place</span>
             <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/portfolio') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
 
