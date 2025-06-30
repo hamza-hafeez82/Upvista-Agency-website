@@ -41,7 +41,7 @@ interface ContactItemProps {
 const paymentMethods = [
   // {
   //   name: "Wise (Transferwise)",
-  //   img: require("../assets/payments/transferwise.jpg"),
+  //   img: "/assets/payments/transferwise.jpg",
   //   details: (
   //     <div>
   //       <h4 className="text-lg font-bold mb-2">Wise (Transferwise)</h4>
@@ -53,7 +53,7 @@ const paymentMethods = [
   // },
   {
     name: "Payoneer",
-    img: require("../assets/payments/payoneer.jpg"),
+    img: "/assets/payments/payoneer.jpg",
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">Payoneer</h4>
@@ -65,7 +65,7 @@ const paymentMethods = [
   },
   {
     name: "Bank Transfer",
-    img: require("../assets/payments/bank.jpg"),
+    img: "/assets/payments/bank.jpg",
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">Bank Transfer</h4>
@@ -81,7 +81,7 @@ const paymentMethods = [
 const landscapePayments = [
   {
     name: "JazzCash",
-    img: require("../assets/payments/jazzcash.png"),
+    img: "/assets/payments/jazzcash.png",
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">JazzCash</h4>
@@ -93,7 +93,7 @@ const landscapePayments = [
   },
   {
     name: "EasyPaisa",
-    img: require("../assets/payments/easypaisa2.png"),
+    img: "/assets/payments/easypaisa2.png",
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">EasyPaisa</h4>
