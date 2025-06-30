@@ -329,11 +329,11 @@ export default function FAQ() {
             We&apos;re here to help! Contact us for more information about our services, pricing, or to discuss your project requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pages/contactPage">
-              <button className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
-                Contact Us
-              </button>
-            </Link>
+          <Link href="/pages/contactPage">
+            <button className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+              Contact Us
+            </button>
+          </Link>
             <Link href="/pages/marketplace">
               <button className="px-8 py-3 border border-purple-400 text-white rounded-lg hover:bg-purple-900 hover:bg-opacity-20 transition-colors">
                 Join Marketplace Waitlist

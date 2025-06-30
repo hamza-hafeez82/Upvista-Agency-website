@@ -512,19 +512,19 @@ export default function ITServicesBlog() {
               <div>
                 <h4 className="text-lg font-semibold text-white mb-4">Research-Based Advantages</h4>
                 <ul className="space-y-3">
-                  {services[activeService].advantages.map((advantage, index) => (
-                    <li key={index} className="flex items-start">
+                {services[activeService].advantages.map((advantage, index) => (
+                  <li key={index} className="flex items-start">
                       <Star className="w-5 h-5 text-violet-400 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-gray-300">{advantage}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    <span className="text-gray-300">{advantage}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
               <div>
                 <h4 className="text-lg font-semibold text-white mb-4">Empirical Evidence</h4>
                 <p className="text-gray-300 leading-relaxed">
-                  {services[activeService].businessValue}
-                </p>
+                {services[activeService].businessValue}
+              </p>
               </div>
             </div>
 
@@ -548,10 +548,10 @@ export default function ITServicesBlog() {
       <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-violet-300 font-medium">Research Domains</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
             Interdisciplinary Research Areas
-          </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
+            </h2>
+            <p className="text-gray-300 max-w-2xl mx-auto">
             Our research spans multiple disciplines, from computer science and psychology to economics and neuroscience.
           </p>
         </div>
@@ -569,21 +569,21 @@ export default function ITServicesBlog() {
             <h3 className="text-lg font-semibold text-white mb-2">Blockchain & Web3</h3>
             <p className="text-gray-300 text-sm">
               Decentralized systems, smart contracts, and distributed ledger technology research.
-            </p>
-          </div>
+              </p>
+            </div>
           <div className="bg-gray-900 p-6 rounded-xl text-center group hover:bg-gray-800 transition-all">
             <Brain className="w-12 h-12 text-violet-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-lg font-semibold text-white mb-2">Neuroscience & UX</h3>
             <p className="text-gray-300 text-sm">
               Cognitive psychology, user behavior analysis, and brain-computer interface research.
-            </p>
-          </div>
+              </p>
+            </div>
           <div className="bg-gray-900 p-6 rounded-xl text-center group hover:bg-gray-800 transition-all">
             <Shield className="w-12 h-12 text-violet-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
             <h3 className="text-lg font-semibold text-white mb-2">Cybersecurity</h3>
             <p className="text-gray-300 text-sm">
               Threat analysis, encryption protocols, and security architecture research.
-            </p>
+              </p>
           </div>
         </div>
       </section>
