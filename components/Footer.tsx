@@ -38,12 +38,82 @@ interface ContactItemProps {
   href?: string;
 }
 
+const paymentMethods = [
+  // {
+  //   name: "Wise (Transferwise)",
+  //   img: require("../assets/payments/transferwise.jpg"),
+  //   details: (
+  //     <div>
+  //       <h4 className="text-lg font-bold mb-2">Wise (Transferwise)</h4>
+  //       <p className="text-gray-300 mb-1">Account Name: Upvista Digital</p>
+  //       <p className="text-gray-300 mb-1">IBAN: PK12SCBL0000001122334455</p>
+  //       <p className="text-gray-300">SWIFT/BIC: SCBLPKKXXXX</p>
+  //     </div>
+  //   ),
+  // },
+  {
+    name: "Payoneer",
+    img: require("../assets/payments/payoneer.jpg"),
+    details: (
+      <div>
+        <h4 className="text-lg font-bold mb-2">Payoneer</h4>
+        <p className="text-gray-300 mb-1">Account Name: Hamza Hafeez</p>
+        <p className="text-gray-300 mb-1">Email: hmza.hb82@gmail.com</p>
+        <p className="text-gray-300">Payoneer ID: 88114206</p>
+      </div>
+    ),
+  },
+  {
+    name: "Bank Transfer",
+    img: require("../assets/payments/bank.jpg"),
+    details: (
+      <div>
+        <h4 className="text-lg font-bold mb-2">Bank Transfer</h4>
+        <p className="text-gray-300 mb-1">Bank: United Bank Limited</p>
+        <p className="text-gray-300 mb-1">Account Name: Hamza Hafeez Bhatti</p>
+        <p className="text-gray-300 mb-1">Account #: 0508316675307</p>
+        <p className="text-gray-300">IBAN: PK66UNIL0109000316675307</p>
+      </div>
+    ),
+  },
+];
+
+const landscapePayments = [
+  {
+    name: "JazzCash",
+    img: require("../assets/payments/jazzcash.png"),
+    details: (
+      <div>
+        <h4 className="text-lg font-bold mb-2">JazzCash</h4>
+        <p className="text-gray-300 mb-1">Account Name: Hamza Hafeez</p>
+        <p className="text-gray-300 mb-1">Mobile Number: 0329-4022494</p>
+        <p className="text-gray-300">CNIC: 33101-3218460-5</p>
+      </div>
+    ),
+  },
+  {
+    name: "EasyPaisa",
+    img: require("../assets/payments/easypaisa2.png"),
+    details: (
+      <div>
+        <h4 className="text-lg font-bold mb-2">EasyPaisa</h4>
+        <p className="text-gray-300 mb-1">Account Name: Hamza Hafeez</p>
+        <p className="text-gray-300 mb-1">Mobile Number: 0329-4022494</p>
+        <p className="text-gray-300">CNIC: 33101-3218460-5</p>
+      </div>
+    ),
+  },
+];
+
 const Footer: React.FC = () => {
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const [selectedPayment, setSelectedPayment] = React.useState<number | null>(null);
+
   return (
     <footer className="bg-gray-900 text-white" role="contentinfo" aria-label="Site Footer">
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and About Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -137,7 +207,68 @@ const Footer: React.FC = () => {
               />
             </div>
           </div>
+
+          {/* Payment Methods Section */}
+          <div className="space-y-4 md:col-span-1 flex flex-col items-start md:items-end md:pr-8 md:max-w-xs w-full">
+            <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:bg-purple-600">
+              Payments
+            </h3>
+            <div className="flex space-x-4 mt-2">
+              {paymentMethods.map((method, idx) => (
+                <button
+                  key={method.name}
+                  className="focus:outline-none group"
+                  aria-label={`Show details for ${method.name}`}
+                  onClick={() => { setSelectedPayment(idx); setModalOpen(true); }}
+                >
+                  <Image
+                    src={method.img}
+                    alt={method.name}
+                    width={64}
+                    height={64}
+                    className="rounded-xl shadow-xl border-2 border-gray-800 group-hover:border-purple-500 group-hover:shadow-purple-400/40 transition-all duration-300 object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+            {/* Landscape Payment Methods */}
+            <div className="flex flex-row space-x-6 mt-6 w-full justify-center md:justify-end">
+              {landscapePayments.map((method, idx) => (
+                <button
+                  key={method.name}
+                  className="focus:outline-none group flex flex-col items-center"
+                  aria-label={`Show details for ${method.name}`}
+                  onClick={() => { setSelectedPayment(idx + paymentMethods.length); setModalOpen(true); }}
+                >
+                  <Image
+                    src={method.img}
+                    alt={method.name}
+                    width={96}
+                    height={48}
+                    className="rounded-2xl shadow-xl border-2 border-gray-800 group-hover:border-green-500 group-hover:shadow-green-400/40 transition-all duration-300 object-contain bg-white p-2"
+                  />
+                  <span className="text-xs text-gray-300 mt-2 font-semibold">{method.name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
+        {/* Payment Modal */}
+        {modalOpen && selectedPayment !== null && (
+          <PaymentModal
+            open={modalOpen}
+            onClose={() => setModalOpen(false)}
+            title={
+              selectedPayment < paymentMethods.length
+                ? paymentMethods[selectedPayment].name
+                : landscapePayments[selectedPayment - paymentMethods.length].name
+            }
+          >
+            {selectedPayment < paymentMethods.length
+              ? paymentMethods[selectedPayment].details
+              : landscapePayments[selectedPayment - paymentMethods.length].details}
+          </PaymentModal>
+        )}
       </div>
 
       {/* Copyright Section */}
@@ -215,6 +346,26 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, text, href }) => {
       ) : (
         <span className="text-gray-400">{text}</span>
       )}
+    </div>
+  );
+};
+
+// Simple PaymentModal component (inline for this file)
+const PaymentModal = ({ open, onClose, title, children }: { open: boolean; onClose: () => void; title: string; children: React.ReactNode }) => {
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+      <div className="bg-gray-900 border border-purple-500 rounded-2xl shadow-2xl p-6 w-[22rem] max-w-full relative animate-fade-in mx-4">
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-gray-300 hover:text-white text-2xl font-bold focus:outline-none"
+          aria-label="Close payment details"
+        >
+          &times;
+        </button>
+        <h3 className="text-xl font-bold text-purple-400 mb-4 text-center">{title}</h3>
+        <div className="text-gray-200 text-base space-y-1 text-center">{children}</div>
+      </div>
     </div>
   );
 };
