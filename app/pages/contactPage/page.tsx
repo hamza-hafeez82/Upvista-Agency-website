@@ -133,7 +133,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gray-950 text-white relative">
+      <div className="min-h-screen bg-gray-950 text-white relative pt-32">
         {/* Consultation Button */}
         <button
           onClick={() => setShowModal(true)}
@@ -268,80 +268,111 @@ export default function ContactPage() {
 
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center mb-12"
+        >
           <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Contact Us
           </h1>
           <p className="text-gray-300 text-lg">
             Get in touch with us to discuss your project
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <div className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300"
+          >
             <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
                 Contact Information
               </span>
             </h2>
             <div className="space-y-6">
-              {contactInfo.map((info) => (
-                <div key={info.title} className="flex items-start gap-4 group">
+              {contactInfo.map((info, idx) => (
+                <motion.div
+                  key={info.title}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="flex items-start gap-4 group"
+                  whileHover={{ scale: 1.03, backgroundColor: '#2d1e4f' }}
+                >
                   <div className="p-3 rounded-lg bg-gray-800/50 group-hover:bg-purple-500/20 transition-colors duration-300">
                     {info.icon}
                   </div>
-                    <div className="flex-1">
+                  <div className="flex-1">
                     <h3 className="text-sm font-medium text-gray-400">
                       {info.title}
                     </h3>
                     {info.href ? (
                       <a
                         href={info.href}
-                          target={info.title === "Location" ? "_blank" : undefined}
-                          rel={info.title === "Location" ? "noopener noreferrer" : undefined}
-                          className="text-white hover:text-purple-400 transition-colors duration-300 cursor-pointer group/link"
-                        >
-                          <span className="group-hover/link:underline">{info.value}</span>
-                          {info.title === "Location" && (
-                            <span className="ml-2 text-xs text-purple-400 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300">
-                              (Open Map)
-                            </span>
-                          )}
+                        target={info.title === "Location" ? "_blank" : undefined}
+                        rel={info.title === "Location" ? "noopener noreferrer" : undefined}
+                        className="text-white hover:text-purple-400 transition-colors duration-300 cursor-pointer group/link"
+                      >
+                        <span className="group-hover/link:underline">{info.value}</span>
+                        {info.title === "Location" && (
+                          <span className="ml-2 text-xs text-purple-400 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300">
+                            (Open Map)
+                          </span>
+                        )}
                       </a>
                     ) : (
                       <p className="text-white">{info.value}</p>
                     )}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Social Links */}
-          <div className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300"
+          >
             <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
               <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
                 Connect With Us
               </span>
             </h2>
             <div className="grid grid-cols-1 gap-4">
-              {socialLinks.map((link) => (
-                <a
+              {socialLinks.map((link, idx) => (
+                <motion.a
                   key={link.name}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  whileHover={{ scale: 1.05, backgroundColor: '#2d1e4f' }}
                   className={`${link.color} ${link.hoverColor} p-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-3 group`}
                 >
                   <div className="bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
                     {link.icon}
                   </div>
                   <span className="text-white font-medium">{link.name}</span>
-                </a>
+                </motion.a>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
