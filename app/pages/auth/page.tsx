@@ -9,10 +9,10 @@ import { Vortex } from "@/components/ui/vortex";
 
 const quotes = [
   "Join Upvista and shape the future of digital innovation.",
-  "Start your journey with us—where ideas become reality.",
-  "Let&apos;s create something extraordinary together at Upvista.",
+  "Start your journey with us, where ideas become reality.",
+  "Let's create something extraordinary together at Upvista.",
   "Empowering your digital dreams, one step at a time.",
-  "Be part of Pakistan&apos;s premier software agency!"
+  "Be part of Pakistan's premier software agency!"
 ];
 
 const AuthPage = () => {
@@ -200,7 +200,6 @@ const AuthPage = () => {
               transition={{ duration: 0.3, type: 'spring' }}
               className="relative bg-gradient-to-br from-[#232946]/90 via-[#393053]/80 to-[#18122B]/90 rounded-3xl shadow-2xl p-8 max-w-md w-full border border-purple-400/40 ring-2 ring-fuchsia-700/20 flex flex-col items-center text-center"
             >
-              {/* Close button */}
               <button
                 onClick={() => setSignupSuccess(false)}
                 className="absolute top-4 right-4 text-purple-300 hover:text-pink-400 text-2xl font-bold focus:outline-none"
@@ -208,29 +207,24 @@ const AuthPage = () => {
               >
                 &times;
               </button>
-              {/* Animated envelope */}
               <motion.div
                 initial={{ scale: 0.7, rotate: -10 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ type: "spring", stiffness: 200, damping: 10 }}
                 className="mb-2 mt-4"
               >
-                <span className="text-6xl drop-shadow-lg">📨</span>
+                <span className="text-6xl drop-shadow-lg">🎉</span>
               </motion.div>
-              {/* Gradient headline */}
               <h3 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent mb-2 drop-shadow">
                 Registration Successful!
               </h3>
-              {/* Subtext */}
               <p className="text-lg md:text-xl text-purple-100 font-medium max-w-md mx-auto">
-                We&apos;ve sent a verification email to <span className="font-bold text-pink-300">{form.email}</span>.<br />
-                Please check your inbox and click the link to get started.
+                Welcome to Upvista, <span className="font-bold text-pink-300">{form.name}</span>!<br />
+                Your account has been created successfully.
               </p>
               <p className="text-sm text-purple-300 mt-2">
-                Didn&apos;t get the email? Check your spam folder or
-                <button className="underline hover:text-pink-400 ml-1" onClick={() => setSignupSuccess(false)}>try again</button>.
+                You would be sent an email from our team soon.
               </p>
-              {/* Soft glowing background */}
               <div className="absolute -inset-4 z-[-1] rounded-3xl bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-indigo-500/20 blur-2xl opacity-80 animate-pulse" />
             </motion.div>
           </motion.div>
