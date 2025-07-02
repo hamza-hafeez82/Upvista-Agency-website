@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AuthModal from "./ui/AuthModal";
 import { supabase } from "@/lib/supabaseClient";
+import { ArrowRight } from "lucide-react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -168,6 +169,14 @@ const Header = () => {
               Digital Solutions
             </span>
           </div>
+        </Link>
+
+        {/* Register Button */}
+        <Link href="/pages/auth" className="hidden md:inline-block ml-6">
+          <button className="px-6 py-2 bg-white text-indigo-900 font-medium rounded-lg hover:shadow-lg transition duration-300 flex items-center gap-2 group">
+            Register
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
         </Link>
 
         {/* Mobile Menu Button */}
@@ -587,6 +596,17 @@ const Header = () => {
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   />
                 </svg>
+              </Link>
+              <Link
+                href="/pages/auth"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setMobileMenuOpen(false);
+                }}
+                className="w-full mt-4 bg-white text-indigo-900 py-2 rounded-lg text-center font-medium flex items-center justify-center shadow hover:shadow-lg transition duration-300 group"
+              >
+                <span>Register</span>
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>

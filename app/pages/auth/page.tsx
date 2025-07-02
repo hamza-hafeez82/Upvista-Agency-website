@@ -91,7 +91,7 @@ const AuthPage = () => {
       {/* Right: Registration Form */}
       <div className="w-full md:w-1/2 flex items-center justify-center min-h-screen relative overflow-hidden">
         <Vortex containerClassName="absolute inset-0 z-0" />
-        <div className="relative z-10 w-full max-w-md bg-gradient-to-br from-[#232946]/90 via-[#393053]/80 to-[#18122B]/90 backdrop-blur-2xl rounded-3xl shadow-2xl p-8 border border-purple-400/40 ring-2 ring-fuchsia-700/20">
+        <div className="relative z-10 w-full max-w-md mx-6 px-4 bg-white/10 rounded-3xl shadow-2xl p-8 border border-purple-400/40 ring-2 ring-fuchsia-700/20">
           <AnimatePresence mode="wait" initial={false}>
             {signupSuccess ? (
               <motion.div
@@ -138,36 +138,36 @@ const AuthPage = () => {
                 transition={{ duration: 0.4, type: "spring" }}
               >
                 <div>
-                  <label className="block text-sm font-medium text-purple-200 mb-1">Name</label>
+                  <label className="block text-sm font-medium text-white mb-1">Name</label>
                   <input
                     type="text"
                     required
                     value={form.name}
                     onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                    className="w-full px-4 py-2 rounded-lg bg-purple-950/60 border border-purple-800 text-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-2 rounded-lg bg-transparent border border-purple-500 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-white"
                     placeholder="Your Name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-purple-200 mb-1">Email</label>
+                  <label className="block text-sm font-medium text-white mb-1">Email</label>
                   <input
                     type="email"
                     required
                     value={form.email}
                     onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                    className="w-full px-4 py-2 rounded-lg bg-purple-950/60 border border-purple-800 text-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="w-full px-4 py-2 rounded-lg bg-transparent border border-purple-500 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-white"
                     placeholder="you@email.com"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-purple-200 mb-1">Role</label>
+                  <label className="block text-sm font-medium text-white mb-1">Role</label>
                   <input
                     type="text"
                     required
                     value={form.role}
                     onChange={e => setForm(f => ({ ...f, role: e.target.value }))}
-                    className="w-full px-4 py-2 rounded-lg bg-purple-950/60 border border-purple-800 text-purple-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                    placeholder="Your Role (e.g. Founder, Designer)"
+                    className="w-full px-4 py-2 rounded-lg bg-transparent border border-purple-500 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-white"
+                    placeholder="Your Role (e.g. Developer, Designer, etc.)"
                   />
                 </div>
                 <button
