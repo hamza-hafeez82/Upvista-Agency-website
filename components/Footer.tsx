@@ -142,7 +142,7 @@ const Footer: React.FC = () => {
               />
               <SocialIcon
                 icon={<FaLinkedinIn />}
-                href="https://www.linkedin.com/in/hamza-hafeez-00937436a/"
+                href="https://www.linkedin.com/groups/13302224"
               />
               <SocialIcon
                 icon={<FaTwitter />}
@@ -198,7 +198,7 @@ const Footer: React.FC = () => {
               <ContactItem
                 icon={<FaLinkedinIn />}
                 text="LinkedIn Us"
-                href="https://www.linkedin.com/in/hamza-hafeez-00937436a/"
+                href="https://www.linkedin.com/groups/13302224"
               />
               <ContactItem
                 icon={<FaFacebookMessenger />}

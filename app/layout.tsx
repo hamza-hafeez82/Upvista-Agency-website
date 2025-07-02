@@ -358,9 +358,13 @@ export default function RootLayout({
                 "description": "Founder and CEO of Upvista Digital, a visionary digital innovation powerhouse that transcends traditional software development. Hamza leads the company's mission to architect the future through cutting-edge AI, quantum-ready technologies, and human-centric design.",
                 "image": "https://upvistadigital.com/assets/hamza pic.jpg",
                 "sameAs": [
-                  "https://linkedin.com/in/hamza-hafeez-upvista",
-                  "https://twitter.com/HamzaHafeez_",
-                  "https://github.com/hamzahafeez"
+                  "https://www.facebook.com/share/1ZTVBZV6rT/",
+                  "https://x.com/Upvista_Digital/",
+                  "https://www.instagram.com/upvista_digital/",
+                  "https://github.com/Upvista",
+                  "https://discord.com/invite/RfJmxZPNRR",
+                  "https://www.linkedin.com/groups/13302224",
+                  "https://youtube.com/@upvistadigital"
                 ]
               },
               "founders": [
@@ -416,7 +420,7 @@ export default function RootLayout({
                 "https://www.instagram.com/upvista_digital/",
                 "https://github.com/Upvista",
                 "https://discord.com/invite/RfJmxZPNRR",
-                "https://linkedin.com/company/upvista-digital",
+                "https://www.linkedin.com/groups/13302224",
                 "https://youtube.com/@upvistadigital"
               ],
               "knowsAbout": [
@@ -682,7 +686,7 @@ export default function RootLayout({
                 "Project Management"
               ],
               "sameAs": [
-                "https://linkedin.com/in/hamza-hafeez-upvista",
+                "https://www.linkedin.com/groups/13302224",
                 "https://twitter.com/HamzaHafeez_",
                 "https://github.com/hamzahafeez",
                 "https://facebook.com/hamza.hafeez.upvista",

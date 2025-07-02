@@ -30,7 +30,7 @@ const consultMethods = [
 const socialMediaLinks = [
   { name: "Instagram", icon: <FaInstagram className="w-8 h-8" />, href: "https://www.instagram.com/direct/t/17842162812514678/#" },
   { name: "Facebook", icon: <FaFacebook className="w-8 h-8" />, href: "https://www.facebook.com/share/1Mw8RxcNx2/" },
-  { name: "LinkedIn", icon: <FaLinkedin className="w-8 h-8" />, href: "https://www.linkedin.com/in/hamza-hafeez-00937436a" },
+  { name: "LinkedIn", icon: <FaLinkedin className="w-8 h-8" />, href: "https://www.linkedin.com/groups/13302224" },
   { name: "X", icon: <FaXTwitter className="w-8 h-8" />, href: "https://x.com/Upvista_Digital?s=09" },
   { name: "Discord", icon: <FaDiscord className="w-8 h-8" />, href: "https://discord.gg/wYgrpdYh" },
 ];
@@ -85,7 +85,7 @@ export default function ContactPage() {
     {
       name: "LinkedIn",
       icon: <FaLinkedin className="w-6 h-6" />,
-      href: "https://www.linkedin.com/messaging/thread/new/",
+      href: "https://www.linkedin.com/groups/13302224",
       color: "bg-blue-600",
       hoverColor: "hover:bg-blue-700",
     },
