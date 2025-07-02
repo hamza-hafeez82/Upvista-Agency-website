@@ -16,7 +16,6 @@ const Header = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
   const pathname = usePathname();
-  const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
 
   const packs = [

@@ -10,9 +10,9 @@ import { Vortex } from "@/components/ui/vortex";
 const quotes = [
   "Join Upvista and shape the future of digital innovation.",
   "Start your journey with us—where ideas become reality.",
-  "Let's create something extraordinary together at Upvista.",
+  "Let&apos;s create something extraordinary together at Upvista.",
   "Empowering your digital dreams, one step at a time.",
-  "Be part of Pakistan's premier software agency!"
+  "Be part of Pakistan&apos;s premier software agency!"
 ];
 
 const AuthPage = () => {
@@ -83,7 +83,7 @@ const AuthPage = () => {
           </AnimatePresence>
           <div className="hidden md:block mt-8">
             <span className="inline-block px-4 py-2 bg-white/10 rounded-full text-purple-200 text-sm font-semibold backdrop-blur border border-white/10">
-              Upvista Digital - Pakistan's Premier Software Agency
+              Upvista Digital - Pakistan&apos;s Premier Software Agency
             </span>
           </div>
         </div>
