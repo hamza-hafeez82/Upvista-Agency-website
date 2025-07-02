@@ -589,7 +589,7 @@ export default function Component() {
       color: "from-blue-600 to-blue-700",
       hoverColor: "hover:from-blue-700 hover:to-blue-800",
       members: "counting",
-      link: "https://www.linkedin.com/in/hamza-hafeez-00937436a/",
+      link: "https://www.linkedin.com/groups/13302224",
       features: ["Professional networking", "Job postings", "Industry insights", "Skill endorsements"],
       activity: "Professional",
     },
