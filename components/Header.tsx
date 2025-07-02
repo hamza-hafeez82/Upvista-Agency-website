@@ -4,13 +4,20 @@ import React, { useState, useEffect } from "react";
 //import Logoimg from "../assets/u.png";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import AuthModal from "./ui/AuthModal";
+import { supabase } from "@/lib/supabaseClient";
+import type { User } from '@supabase/supabase-js';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [packDropdownOpen, setPackDropdownOpen] = useState(false);
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
   const pathname = usePathname();
+  const router = useRouter();
+  const [user, setUser] = useState<User | null>(null);
 
   const packs = [
     {
@@ -123,6 +130,14 @@ const Header = () => {
       document.body.classList.remove('mobile-menu-open');
     };
   }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    supabase.auth.getUser().then(({ data }) => setUser(data.user));
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+    return () => { listener?.subscription.unsubscribe(); };
+  }, []);
 
   return (
     <div
@@ -581,6 +596,9 @@ const Header = () => {
           </div>
         </div>
       )}
+
+      {/* Auth Modal */}
+      <AuthModal open={authModalOpen} mode={authMode} onClose={() => setAuthModalOpen(false)} onModeChange={setAuthMode} />
 
       {/* Add global styles for animation */}
       <style jsx global>{`

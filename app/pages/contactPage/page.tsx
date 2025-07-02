@@ -374,6 +374,34 @@ export default function ContactPage() {
             </div>
           </motion.div>
         </div>
+
+        <div className="flex justify-center mt-12">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, type: 'spring' }}
+            className="bg-gradient-to-br from-blue-900/60 via-purple-900/60 to-cyan-900/60 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/30 px-8 py-10 max-w-xl w-full flex flex-col items-center text-center relative overflow-hidden"
+          >
+            {/* Soft glowing background */}
+            <div className="absolute -inset-2 z-[-1] rounded-2xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-2xl opacity-70 animate-pulse" />
+            <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent drop-shadow">
+              Ready to Join Upvista?
+            </h3>
+            <p className="text-lg text-purple-100 mb-6 max-w-md">
+              Register now to become part of our digital community and unlock exclusive opportunities!
+            </p>
+            <a href="/pages/auth" className="w-full flex justify-center">
+              <motion.button
+                whileHover={{ scale: 1.07, boxShadow: '0 0 24px #a78bfa' }}
+                whileTap={{ scale: 0.97 }}
+                className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500 text-white font-bold shadow-lg hover:from-blue-500 hover:to-purple-600 transition-all duration-300 text-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2"
+              >
+                Register
+              </motion.button>
+            </a>
+          </motion.div>
+        </div>
       </div>
 
         {/* VR Experience Section */}
