@@ -4,10 +4,9 @@ import React, { useState, useEffect } from "react";
 //import Logoimg from "../assets/u.png";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import AuthModal from "./ui/AuthModal";
 import { supabase } from "@/lib/supabaseClient";
-import type { User } from '@supabase/supabase-js';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -16,7 +15,6 @@ const Header = () => {
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
   const pathname = usePathname();
-  const [user, setUser] = useState<User | null>(null);
 
   const packs = [
     {
@@ -131,9 +129,8 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => setUser(data.user));
-    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
+    const { data: listener } = supabase.auth.onAuthStateChange(() => {
+      // No-op, just keeping the listener for possible future use
     });
     return () => { listener?.subscription.unsubscribe(); };
   }, []);
