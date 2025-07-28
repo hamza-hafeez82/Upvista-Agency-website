@@ -28,17 +28,16 @@ type SectionKey = "overview" | "end-to-end" | "process" | "onboarding" | "refere
 
 const sectionContent = {
   overview: {
-    title: "Professional Management Services",
-    subtitle: "Streamlining Your Digital Operations for Maximum Efficiency",
+    title: "Software Development Services",
+    subtitle: "Building Scalable Solutions That Drive Innovation",
     content: (
       <div className="space-y-6">
         <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 p-6 rounded-xl border border-blue-500/20">
-          <h3 className="text-xl font-semibold text-blue-300 mb-3">Comprehensive Digital Management Solutions</h3>
+          <h3 className="text-xl font-semibold text-blue-300 mb-3">Transform Your Ideas Into Powerful Software</h3>
           <p className="text-gray-300 leading-relaxed">
-            At Upvista Digital, we understand that effective management is the backbone of 
-            successful digital operations. Our professional management services cover every 
-            aspect of your digital presence, from social media to project management, 
-            ensuring everything runs smoothly while you focus on growing your business.
+            At Upvista Digital, we specialize in creating robust, scalable software solutions that transform businesses. 
+            Our expert development team combines cutting-edge technology with industry best practices to deliver 
+            software that not only meets your current needs but grows with your business.
           </p>
         </div>
         
@@ -48,29 +47,29 @@ const sectionContent = {
             <ul className="space-y-2">
               <li className="flex items-center gap-2 text-gray-300">
                 <CheckCircle className="w-4 h-4 text-blue-400" />
-                Social media management & strategy
+                Custom software applications
               </li>
               <li className="flex items-center gap-2 text-gray-300">
                 <CheckCircle className="w-4 h-4 text-blue-400" />
-                Project management & coordination
+                Enterprise solutions
               </li>
               <li className="flex items-center gap-2 text-gray-300">
                 <CheckCircle className="w-4 h-4 text-blue-400" />
-                Content management & optimization
+                API development & integration
               </li>
               <li className="flex items-center gap-2 text-gray-300">
                 <CheckCircle className="w-4 h-4 text-blue-400" />
-                Community management & engagement
+                Database design & optimization
               </li>
             </ul>
           </div>
           
           <div className="space-y-4">
-            <h4 className="text-lg font-medium text-white">Management Areas</h4>
+            <h4 className="text-lg font-medium text-white">Technologies We Use</h4>
             <div className="flex flex-wrap gap-2">
-              {["Social Media", "Projects", "Content", "Community", "Digital Assets", "Websites", "Analytics", "Workflows"].map((area) => (
-                <span key={area} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30">
-                  {area}
+              {["Java", "Python", "C#", ".NET", "Spring Boot", "Django", "Flask", "SQL Server", "MySQL", "Redis", "Docker", "Kubernetes"].map((tech) => (
+                <span key={tech} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-sm border border-blue-500/30">
+                  {tech}
                 </span>
               ))}
             </div>
@@ -80,45 +79,45 @@ const sectionContent = {
     )
   },
   "end-to-end": {
-    title: "End-to-End Management Solutions",
-    subtitle: "From Strategy to Execution and Optimization",
+    title: "End-to-End Software Development",
+    subtitle: "Complete Software Lifecycle Management",
     content: (
       <div className="space-y-6">
-        <div className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 p-6 rounded-xl border border-indigo-500/20">
-          <h3 className="text-xl font-semibold text-indigo-300 mb-3">Comprehensive Management Ecosystem</h3>
+        <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-xl border border-emerald-500/20">
+          <h3 className="text-xl font-semibold text-emerald-300 mb-3">From Concept to Deployment and Beyond</h3>
           <p className="text-gray-300 leading-relaxed">
-            Our end-to-end management solutions provide a complete framework for 
-            organizing, executing, and optimizing your digital operations. We handle 
-            every aspect of management, ensuring seamless coordination and maximum efficiency.
+            Our comprehensive end-to-end software development approach ensures your project is handled with the utmost 
+            care and expertise. We manage every aspect of the development lifecycle, from initial planning to 
+            post-launch support.
           </p>
         </div>
         
         <div className="space-y-6">
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
-              <h4 className="text-lg font-medium text-white mb-2">Strategy & Planning</h4>
-              <p className="text-gray-400 text-sm">Management strategy development, workflow design, and process optimization.</p>
+              <h4 className="text-lg font-medium text-white mb-2">Requirements & Planning</h4>
+              <p className="text-gray-400 text-sm">Requirements analysis, system architecture design, and technology stack selection.</p>
             </div>
             <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
-              <h4 className="text-lg font-medium text-white mb-2">Execution & Monitoring</h4>
-              <p className="text-gray-400 text-sm">Daily management tasks, performance monitoring, and quality assurance.</p>
+              <h4 className="text-lg font-medium text-white mb-2">Development & Testing</h4>
+              <p className="text-gray-400 text-sm">Agile development with continuous integration, testing, and quality assurance.</p>
             </div>
             <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
-              <h4 className="text-lg font-medium text-white mb-2">Optimization & Growth</h4>
-              <p className="text-gray-400 text-sm">Continuous improvement, process refinement, and scalability planning.</p>
+              <h4 className="text-lg font-medium text-white mb-2">Deployment & DevOps</h4>
+              <p className="text-gray-400 text-sm">Automated deployment, monitoring, and infrastructure management.</p>
             </div>
           </div>
           
-          <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20">
-            <h4 className="text-lg font-medium text-green-300 mb-3">Management Tools & Platforms</h4>
+          <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-xl border border-blue-500/20">
+            <h4 className="text-lg font-medium text-blue-300 mb-3">Post-Launch Support</h4>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
               <div>
-                <h5 className="font-medium text-white mb-2">Project Management</h5>
-                <p>Asana, Trello, Monday.com, and other leading project management platforms.</p>
+                <h5 className="font-medium text-white mb-2">Maintenance & Updates</h5>
+                <p>Regular security updates, performance monitoring, and feature enhancements.</p>
               </div>
               <div>
-                <h5 className="font-medium text-white mb-2">Analytics & Reporting</h5>
-                <p>Google Analytics, social media insights, and comprehensive reporting dashboards.</p>
+                <h5 className="font-medium text-white mb-2">Scalability & Optimization</h5>
+                <p>Performance optimization, scaling strategies, and continuous improvement.</p>
               </div>
             </div>
           </div>
@@ -127,51 +126,50 @@ const sectionContent = {
     )
   },
   process: {
-    title: "Our Management Process",
-    subtitle: "Systematic, Efficient, and Results-Driven",
+    title: "Our Development Process",
+    subtitle: "Agile Methodology with Quality-First Approach",
     content: (
       <div className="space-y-6">
         <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-6 rounded-xl border border-purple-500/20">
-          <h3 className="text-xl font-semibold text-purple-300 mb-3">Proven Management Methodology</h3>
+          <h3 className="text-xl font-semibold text-purple-300 mb-3">Agile Development Methodology</h3>
           <p className="text-gray-300 leading-relaxed">
-            We follow a systematic management approach that ensures every aspect of your 
-            digital operations is handled efficiently and effectively. Our process is 
-            designed to deliver consistent results while maintaining flexibility for 
-            your unique needs.
+            We follow industry-standard agile development practices with a focus on quality, collaboration, and 
+            continuous improvement. Our process ensures transparency, flexibility, and rapid delivery of 
+            high-quality software solutions.
           </p>
         </div>
         
         <div className="space-y-4">
           {[
             {
-              phase: "Phase 1: Assessment & Analysis",
-              description: "Evaluating current management needs and identifying opportunities",
+              phase: "Phase 1: Discovery",
+              description: "Understanding your business, goals, and technical requirements",
+              duration: "1-2 weeks",
+              deliverables: ["Project brief", "Technical specification", "Timeline & milestones"]
+            },
+            {
+              phase: "Phase 2: Design",
+              description: "Creating wireframes, mockups, and user experience flows",
+              duration: "2-3 weeks",
+              deliverables: ["Wireframes", "UI mockups", "User flow diagrams"]
+            },
+            {
+              phase: "Phase 3: Development",
+              description: "Building your website with clean, scalable code",
+              duration: "4-8 weeks",
+              deliverables: ["Frontend development", "Backend integration", "Database setup"]
+            },
+            {
+              phase: "Phase 4: Testing",
+              description: "Comprehensive testing across devices and browsers",
+              duration: "1-2 weeks",
+              deliverables: ["Quality assurance", "Performance testing", "Security audit"]
+            },
+            {
+              phase: "Phase 5: Launch",
+              description: "Deployment and post-launch optimization",
               duration: "1 week",
-              deliverables: ["Management audit", "Process analysis", "Gap identification", "Strategy recommendations"]
-            },
-            {
-              phase: "Phase 2: Strategy Development",
-              description: "Creating comprehensive management strategies and workflows",
-              duration: "1-2 weeks",
-              deliverables: ["Management strategy", "Workflow design", "Tool selection", "Timeline planning"]
-            },
-            {
-              phase: "Phase 3: Implementation & Setup",
-              description: "Setting up management systems and beginning operations",
-              duration: "1-2 weeks",
-              deliverables: ["System setup", "Process implementation", "Team training", "Initial execution"]
-            },
-            {
-              phase: "Phase 4: Monitoring & Optimization",
-              description: "Ongoing management, monitoring, and continuous improvement",
-              duration: "Ongoing",
-              deliverables: ["Performance monitoring", "Process optimization", "Regular reporting", "Strategy refinement"]
-            },
-            {
-              phase: "Phase 5: Scaling & Growth",
-              description: "Expanding management capabilities and supporting business growth",
-              duration: "Ongoing",
-              deliverables: ["Process scaling", "Advanced automation", "Growth support", "Strategic planning"]
+              deliverables: ["Production deployment", "SEO optimization", "Analytics setup"]
             }
           ].map((phase, index) => (
             <div key={index} className="bg-black/50 p-6 rounded-lg border border-gray-800">
@@ -196,86 +194,86 @@ const sectionContent = {
     )
   },
   onboarding: {
-    title: "Getting Started with Management",
-    subtitle: "Smooth, Transparent, and Efficient",
+    title: "Getting Started",
+    subtitle: "Simple, Streamlined, and Stress-Free",
     content: (
       <div className="space-y-6">
         <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20">
-          <h3 className="text-xl font-semibold text-green-300 mb-3">Ready to Streamline Your Operations?</h3>
+          <h3 className="text-xl font-semibold text-green-300 mb-3">Ready to Begin Your Project?</h3>
           <p className="text-gray-300 leading-relaxed">
-            Starting your management journey with Upvista Digital is smooth and transparent. 
-            We&apos;ll work closely with you to understand your current processes and create 
-            efficient management solutions that free up your time to focus on what matters most.
+            Starting your web development journey with Upvista Digital is straightforward and 
+            transparent. We&apos;ll guide you through every step, ensuring you feel confident 
+            and informed throughout the process.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6">
           <div className="space-y-4">
-            <h4 className="text-lg font-medium text-white">Initial Management Consultation</h4>
+            <h4 className="text-lg font-medium text-white">Initial Consultation</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Free management assessment consultation</span>
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Free 30-minute discovery call</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Current process evaluation and analysis</span>
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Project requirements discussion</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Management needs and goals discussion</span>
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Budget and timeline alignment</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Service scope and timeline alignment</span>
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Team introduction and next steps</span>
               </div>
             </div>
-      </div>
-
+          </div>
+          
           <div className="space-y-4">
             <h4 className="text-lg font-medium text-white">Project Setup</h4>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Management service agreement and scope</span>
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Contract and payment terms</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Tool access and account setup</span>
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Project management tool access</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Communication and reporting setup</span>
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Communication channels setup</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
-                <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span>Kickoff meeting and process initiation</span>
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Kickoff meeting scheduling</span>
               </div>
             </div>
           </div>
         </div>
         
-        <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 p-6 rounded-xl border border-blue-500/20">
-          <h4 className="text-lg font-medium text-blue-300 mb-3">What You&apos;ll Need</h4>
+        <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 p-6 rounded-xl border border-violet-500/20">
+          <h4 className="text-lg font-medium text-violet-300 mb-3">What You&apos;ll Need</h4>
           <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-300">
             <div>
-              <h5 className="font-medium text-white mb-1">Access & Permissions</h5>
-              <p>Access to social media accounts, websites, and relevant platforms</p>
+              <h5 className="font-medium text-white mb-1">Brand Assets</h5>
+              <p>Logo, color palette, fonts, and brand guidelines</p>
             </div>
             <div>
-              <h5 className="font-medium text-white mb-1">Brand Guidelines</h5>
-              <p>Brand guidelines, content preferences, and communication style</p>
-                </div>
+              <h5 className="font-medium text-white mb-1">Content</h5>
+              <p>Text, images, and any existing marketing materials</p>
+            </div>
             <div>
-              <h5 className="font-medium text-white mb-1">Goals & Objectives</h5>
-              <p>Clear management goals, KPIs, and success metrics</p>
-              </div>
+              <h5 className="font-medium text-white mb-1">Requirements</h5>
+              <p>Detailed project brief and functional specifications</p>
+            </div>
           </div>
         </div>
         
         <div className="text-center">
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:from-blue-400 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105">
-            Start Your Management Journey
+          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:from-violet-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
+            Start Your Project
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -283,81 +281,80 @@ const sectionContent = {
     )
   },
   references: {
-    title: "Management Success Stories",
-    subtitle: "Real Results, Real Efficiency",
+    title: "Client Success Stories",
+    subtitle: "Real Results, Real Impact",
     content: (
       <div className="space-y-6">
         <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-6 rounded-xl border border-orange-500/20">
-          <h3 className="text-xl font-semibold text-orange-300 mb-3">Proven Management Excellence</h3>
+          <h3 className="text-xl font-semibold text-orange-300 mb-3">Proven Track Record</h3>
           <p className="text-gray-300 leading-relaxed">
-            Our management services have transformed operations across industries, 
-            delivering significant efficiency gains and operational improvements. 
-            Here are some examples of our work and the impact we&apos;ve created.
+            Our web development projects have helped businesses across industries achieve 
+            their digital goals. Here are some examples of our work and the results we&apos;ve delivered.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6">
           {[
             {
-              client: "E-commerce Brand",
-              project: "Social Media Management",
-              description: "Complete social media management for a growing e-commerce brand",
-              results: ["200% increase in social engagement", "50% reduction in management time", "Improved brand consistency"]
+              client: "TechStart Inc.",
+              project: "E-commerce Platform",
+              description: "Built a scalable e-commerce solution with advanced inventory management",
+              results: ["300% increase in online sales", "50% reduction in cart abandonment", "Mobile-first responsive design"]
             },
             {
-              client: "Tech Startup",
-              project: "Project Management",
-              description: "Project management and coordination for a fast-growing tech startup",
-              results: ["30% faster project delivery", "Improved team collaboration", "Enhanced project visibility"]
+              client: "Creative Agency",
+              project: "Portfolio Website",
+              description: "Modern, interactive portfolio showcasing creative work and services",
+              results: ["200% increase in lead generation", "Improved user engagement", "SEO-optimized structure"]
             },
             {
-              client: "Content Creator",
-              project: "Content Management",
-              description: "Content management and optimization for a professional content creator",
-              results: ["40% increase in content output", "Improved content quality", "Enhanced audience engagement"]
+              client: "Healthcare Provider",
+              project: "Patient Portal",
+              description: "Secure patient management system with appointment booking",
+              results: ["Streamlined patient experience", "Reduced administrative workload", "HIPAA-compliant design"]
             },
             {
-              client: "SaaS Company",
-              project: "Community Management",
-              description: "Community management and engagement for a SaaS platform",
-              results: ["300% increase in community engagement", "Improved customer satisfaction", "Enhanced brand loyalty"]
+              client: "Restaurant Chain",
+              project: "Multi-location Website",
+              description: "Unified website for multiple restaurant locations with online ordering",
+              results: ["Centralized brand presence", "Increased online orders", "Location-specific SEO"]
             }
           ].map((caseStudy, index) => (
             <div key={index} className="bg-black/50 p-6 rounded-lg border border-gray-800">
               <h4 className="text-lg font-medium text-white mb-2">{caseStudy.client}</h4>
-              <h5 className="text-blue-400 mb-2">{caseStudy.project}</h5>
+              <h5 className="text-violet-400 mb-2">{caseStudy.project}</h5>
               <p className="text-gray-400 mb-4 text-sm">{caseStudy.description}</p>
               <div className="space-y-2">
                 <h6 className="text-sm font-medium text-gray-300">Key Results:</h6>
                 <ul className="space-y-1">
                   {caseStudy.results.map((result, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm text-gray-400">
-                      <CheckCircle className="w-3 h-3 text-blue-400" />
+                      <CheckCircle className="w-3 h-3 text-violet-400" />
                       {result}
                     </li>
                   ))}
                 </ul>
               </div>
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
         
-        <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 p-6 rounded-xl border border-blue-500/20">
-          <h4 className="text-lg font-medium text-blue-300 mb-3">Ready to Streamline Your Operations?</h4>
+        <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 p-6 rounded-xl border border-violet-500/20">
+          <h4 className="text-lg font-medium text-violet-300 mb-3">Ready to Join Our Success Stories?</h4>
           <p className="text-gray-300 mb-4">
-            Let&apos;s discuss how our management expertise can help you achieve similar results.
+            Let&apos;s discuss how we can help you achieve similar results for your business.
           </p>
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-400 hover:to-indigo-500 transition-all duration-300">
-            Schedule a Management Consultation
+          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-violet-400 hover:to-purple-500 transition-all duration-300">
+            Schedule a Consultation
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-              </div>
+      </div>
     )
   }
 };
 
-export default function ManagementPage() {
+export default function WebsitePage() {
   const [activeSection, setActiveSection] = useState<SectionKey>("overview");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [serviceBarShrink, setServiceBarShrink] = useState(false);
@@ -390,8 +387,8 @@ export default function ManagementPage() {
               <span className={`text-[8px] md:text-base ${serviceBarShrink ? 'block md:hidden' : ''}`}>{section.label}</span>
             </button>
           ))}
-            </div>
-              </div>
+        </div>
+      </div>
 
       {/* Mobile Bottom Bar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 flex justify-around items-center bg-black/90 border-t border-gray-800 shadow-2xl rounded-t-2xl py-2 px-1" style={{backdropFilter: 'blur(8px)'}}>
@@ -401,14 +398,14 @@ export default function ManagementPage() {
             onClick={() => setActiveSection(section.key as SectionKey)}
             className={`flex flex-col items-center justify-center px-2 py-1 rounded-lg transition-all duration-200 ${
               activeSection === section.key
-                ? 'text-indigo-300' : 'text-gray-400 hover:text-white'
+                ? 'text-blue-300' : 'text-gray-400 hover:text-white'
             }`}
           >
             {React.cloneElement(section.icon, { className: 'w-6 h-6 mb-0.5' })}
             <span className="text-[10px] font-medium leading-tight">{section.label}</span>
           </button>
         ))}
-            </div>
+      </div>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
@@ -431,7 +428,7 @@ export default function ManagementPage() {
                 <span className="text-sm">{service.name}</span>
               </Link>
             ))}
-              </div>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -491,7 +488,7 @@ export default function ManagementPage() {
             </div>
           </div>
         </main>
-        </div>
+      </div>
     </div>
   );
 }

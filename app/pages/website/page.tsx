@@ -1,306 +1,494 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { Menu, X, Monitor, Code2, Brain, Brush, Users, Megaphone, Wrench, UserCheck, ArrowRight, LogOut, Globe, Palette, Settings, FileText, CheckCircle } from "lucide-react";
 
-interface LandingPricingCardProps {
-  color: "green" | "blue" | "purple";
-  tier: string;
-  subtitle?: string;
-  price: string;
-  deliveryTime: string;
-  benefits: string[];
-  pages: string;
-  idealFor: string;
-  emoji: string;
-  buttonText?: string;
-}
+const servicesList = [
+  { name: "Web Development", href: "/pages/website", icon: <Globe className="w-5 h-5" /> },
+  { name: "Software Development", href: "/pages/software-development", icon: <Code2 className="w-5 h-5" /> },
+  { name: "AI Automation", href: "/pages/ai", icon: <Brain className="w-5 h-5" /> },
+  { name: "Branding", href: "/pages/branding", icon: <Brush className="w-5 h-5" /> },
+  { name: "UI/UX Design", href: "/pages/uiuxPage", icon: <Palette className="w-5 h-5" /> },
+  { name: "Marketing", href: "/pages/marketing", icon: <Megaphone className="w-5 h-5" /> },
+  { name: "Management", href: "/pages/management", icon: <Users className="w-5 h-5" /> },
+  { name: "Maintenance", href: "/pages/Maintenance", icon: <Wrench className="w-5 h-5" /> },
+  { name: "Consulting", href: "/pages/consult", icon: <UserCheck className="w-5 h-5" /> },
+];
 
-const PricingCard = ({
-  color,
-  tier,
-  price,
-  deliveryTime,
-  benefits,
-  idealFor,
-  emoji,
-}: LandingPricingCardProps) => {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 p-8 shadow-lg transition-all duration-500 
-      hover:shadow-xl hover:shadow-${
-        color === "green" ? "emerald" : "violet"
-      }-500/20
-      hover:translate-y-[-8px] group
-      before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r 
-      ${
-        color === "green"
-          ? "before:from-emerald-500/0 before:via-emerald-500/5 before:to-emerald-500/0"
-          : color === "blue"
-          ? "before:from-violet-400/0 before:via-violet-400/5 before:to-violet-400/0"
-          : "before:from-violet-500/0 before:via-violet-500/5 before:to-violet-500/0"
-      } 
-      before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500
-    `}
-    >
-      {/* Corner glow effect */}
-      <div
-        className={`absolute right-0 top-0 h-32 w-32 opacity-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110 ${
-          color === "green"
-            ? "bg-emerald-500/20"
-            : color === "blue"
-            ? "bg-violet-400/20"
-            : "bg-violet-500/20"
-        } blur-2xl`}
-      ></div>
+const sidebarSections = [
+  { key: "overview", label: "Overview", icon: <Monitor className="w-5 h-5" /> },
+  { key: "end-to-end", label: "End-to-End", icon: <ArrowRight className="w-5 h-5" /> },
+  { key: "process", label: "Process", icon: <Settings className="w-5 h-5" /> },
+  { key: "onboarding", label: "Onboarding", icon: <UserCheck className="w-5 h-5" /> },
+  { key: "references", label: "References", icon: <FileText className="w-5 h-5" /> },
+];
 
-      {/* Border glow on hover */}
-      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div
-          className={`absolute inset-[-1px] rounded-xl bg-gradient-to-r ${
-            color === "green"
-              ? "from-emerald-500/50 via-transparent to-emerald-500/50"
-              : color === "blue"
-              ? "from-violet-400/50 via-transparent to-violet-400/50"
-              : "from-violet-500/50 via-transparent to-violet-500/50"
-          } blur-sm`}
-        ></div>
+type SectionKey = "overview" | "end-to-end" | "process" | "onboarding" | "references";
+
+const sectionContent = {
+  overview: {
+    title: "Web Development Services",
+    subtitle: "Building Digital Experiences That Matter",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 p-6 rounded-xl border border-violet-500/20">
+          <h3 className="text-xl font-semibold text-violet-300 mb-3">Transform Your Vision Into Reality</h3>
+          <p className="text-gray-300 leading-relaxed">
+            At Upvista Digital, we don&apos;t just build websites—we craft digital experiences that connect, 
+            convert, and inspire. Our web development services combine cutting-edge technology with 
+            human-centered design to create solutions that drive real business results.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <h4 className="text-lg font-medium text-white">What We Deliver</h4>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-gray-300">
+                <CheckCircle className="w-4 h-4 text-violet-400" />
+                Responsive, modern websites
+              </li>
+              <li className="flex items-center gap-2 text-gray-300">
+                <CheckCircle className="w-4 h-4 text-violet-400" />
+                E-commerce solutions
+              </li>
+              <li className="flex items-center gap-2 text-gray-300">
+                <CheckCircle className="w-4 h-4 text-violet-400" />
+                Custom web applications
+              </li>
+              <li className="flex items-center gap-2 text-gray-300">
+                <CheckCircle className="w-4 h-4 text-violet-400" />
+                Progressive Web Apps (PWA)
+              </li>
+            </ul>
+          </div>
+          
+          <div className="space-y-4">
+            <h4 className="text-lg font-medium text-white">Technologies We Use</h4>
+            <div className="flex flex-wrap gap-2">
+              {["React", "Next.js", "Node.js", "TypeScript", "Tailwind CSS", "MongoDB", "PostgreSQL"].map((tech) => (
+                <span key={tech} className="px-3 py-1 bg-violet-500/20 text-violet-300 rounded-full text-sm border border-violet-500/30">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  "end-to-end": {
+    title: "End-to-End Web Development",
+    subtitle: "From Concept to Launch and Beyond",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-xl border border-emerald-500/20">
+          <h3 className="text-xl font-semibold text-emerald-300 mb-3">Complete Development Lifecycle</h3>
+          <p className="text-gray-300 leading-relaxed">
+            We handle every aspect of your web development project, ensuring seamless delivery 
+            and long-term success. Our comprehensive approach covers everything from initial 
+            planning to post-launch support.
+          </p>
+        </div>
+        
+        <div className="space-y-6">
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-2">Discovery & Planning</h4>
+              <p className="text-gray-400 text-sm">Requirements gathering, architecture planning, and project roadmap creation.</p>
+            </div>
+            <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-2">Design & Development</h4>
+              <p className="text-gray-400 text-sm">UI/UX design, frontend and backend development, and integration.</p>
+            </div>
+            <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-2">Testing & Launch</h4>
+              <p className="text-gray-400 text-sm">Quality assurance, performance optimization, and deployment.</p>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 p-6 rounded-xl border border-blue-500/20">
+            <h4 className="text-lg font-medium text-blue-300 mb-3">Post-Launch Support</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
+              <div>
+                <h5 className="font-medium text-white mb-2">Maintenance & Updates</h5>
+                <p>Regular security updates, performance monitoring, and feature enhancements.</p>
+              </div>
+              <div>
+                <h5 className="font-medium text-white mb-2">Analytics & Optimization</h5>
+                <p>Data-driven insights, A/B testing, and continuous improvement strategies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  process: {
+    title: "Our Development Process",
+    subtitle: "Methodical, Transparent, and Results-Driven",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-6 rounded-xl border border-purple-500/20">
+          <h3 className="text-xl font-semibold text-purple-300 mb-3">Agile Methodology</h3>
+          <p className="text-gray-300 leading-relaxed">
+            We follow an iterative, collaborative approach that ensures your project stays on track 
+            and delivers maximum value. Regular check-ins and transparent communication keep you 
+            informed every step of the way.
+          </p>
+        </div>
+        
+        <div className="space-y-4">
+          {[
+            {
+              phase: "Phase 1: Discovery",
+              description: "Understanding your business, goals, and technical requirements",
+              duration: "1-2 weeks",
+              deliverables: ["Project brief", "Technical specification", "Timeline & milestones"]
+            },
+            {
+              phase: "Phase 2: Design",
+              description: "Creating wireframes, mockups, and user experience flows",
+              duration: "2-3 weeks",
+              deliverables: ["Wireframes", "UI mockups", "User flow diagrams"]
+            },
+            {
+              phase: "Phase 3: Development",
+              description: "Building your website with clean, scalable code",
+              duration: "4-8 weeks",
+              deliverables: ["Frontend development", "Backend integration", "Database setup"]
+            },
+            {
+              phase: "Phase 4: Testing",
+              description: "Comprehensive testing across devices and browsers",
+              duration: "1-2 weeks",
+              deliverables: ["Quality assurance", "Performance testing", "Security audit"]
+            },
+            {
+              phase: "Phase 5: Launch",
+              description: "Deployment and post-launch optimization",
+              duration: "1 week",
+              deliverables: ["Production deployment", "SEO optimization", "Analytics setup"]
+            }
+          ].map((phase, index) => (
+            <div key={index} className="bg-black/50 p-6 rounded-lg border border-gray-800">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-violet-500 rounded-full flex items-center justify-center text-sm font-medium text-white">
+                  {index + 1}
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-medium text-white mb-1">{phase.phase}</h4>
+                  <p className="text-gray-400 mb-2">{phase.description}</p>
+                  <div className="flex items-center gap-4 text-sm">
+                    <span className="text-violet-400">Duration: {phase.duration}</span>
+                    <span className="text-gray-500">|</span>
+                    <span className="text-gray-400">Deliverables: {phase.deliverables.join(", ")}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  },
+  onboarding: {
+    title: "Getting Started",
+    subtitle: "Simple, Streamlined, and Stress-Free",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20">
+          <h3 className="text-xl font-semibold text-green-300 mb-3">Ready to Begin Your Project?</h3>
+          <p className="text-gray-300 leading-relaxed">
+            Starting your web development journey with Upvista Digital is straightforward and 
+            transparent. We&apos;ll guide you through every step, ensuring you feel confident 
+            and informed throughout the process.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <h4 className="text-lg font-medium text-white">Initial Consultation</h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Free 30-minute discovery call</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Project requirements discussion</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Budget and timeline alignment</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Team introduction and next steps</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="space-y-4">
+            <h4 className="text-lg font-medium text-white">Project Setup</h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Contract and payment terms</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Project management tool access</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Communication channels setup</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <div className="w-2 h-2 bg-violet-400 rounded-full"></div>
+                <span>Kickoff meeting scheduling</span>
+              </div>
+            </div>
+          </div>
       </div>
 
-      <div className="relative z-10">
-        <div className="mb-4 flex items-center gap-3">
-          <span className="text-2xl transform transition-transform duration-500 group-hover:scale-125 group-hover:rotate-12">
-            {emoji}
-          </span>
-          <h3
-            className={`text-xl font-bold transition-all duration-300 ${
-              color === "green"
-                ? "text-emerald-400 group-hover:text-emerald-300"
-                : color === "blue"
-                ? "text-violet-400 group-hover:text-violet-300"
-                : "text-violet-300 group-hover:text-violet-200"
-            }`}
-          >
-            {tier}
-          </h3>
+        <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 p-6 rounded-xl border border-violet-500/20">
+          <h4 className="text-lg font-medium text-violet-300 mb-3">What You&apos;ll Need</h4>
+          <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-300">
+            <div>
+              <h5 className="font-medium text-white mb-1">Brand Assets</h5>
+              <p>Logo, color palette, fonts, and brand guidelines</p>
+            </div>
+            <div>
+              <h5 className="font-medium text-white mb-1">Content</h5>
+              <p>Text, images, and any existing marketing materials</p>
+            </div>
+            <div>
+              <h5 className="font-medium text-white mb-1">Requirements</h5>
+              <p>Detailed project brief and functional specifications</p>
+            </div>
+          </div>
         </div>
 
-        <div className="mb-6 transition-transform duration-300 group-hover:translate-x-1">
-          <p className="text-3xl font-bold text-white">{price}</p>
-          <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-            Delivery Time: {deliveryTime}
+        <div className="text-center">
+          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:from-violet-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
+            Start Your Project
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    )
+  },
+  references: {
+    title: "Client Success Stories",
+    subtitle: "Real Results, Real Impact",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 p-6 rounded-xl border border-orange-500/20">
+          <h3 className="text-xl font-semibold text-orange-300 mb-3">Proven Track Record</h3>
+          <p className="text-gray-300 leading-relaxed">
+            Our web development projects have helped businesses across industries achieve 
+            their digital goals. Here are some examples of our work and the results we&apos;ve delivered.
           </p>
         </div>
 
-        <div className="mb-6">
-          <h4 className="mb-3 font-medium text-white">
-            What&rsquo;s Included:
-          </h4>
-          <ul className="space-y-3">
-            {benefits.map((benefit, index) => (
-              <li
-                key={index}
-                className="flex items-start gap-2 transition-all duration-200 hover:translate-x-1"
-              >
-                <svg
-                  className={`mt-1 h-4 w-4 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${
-                    color === "green"
-                      ? "text-emerald-400"
-                      : color === "blue"
-                      ? "text-violet-400"
-                      : "text-violet-300"
-                  }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-                <span className="text-sm text-zinc-300 group-hover:text-zinc-200 transition-colors duration-300">
-                  {benefit}
-                </span>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              client: "TechStart Inc.",
+              project: "E-commerce Platform",
+              description: "Built a scalable e-commerce solution with advanced inventory management",
+              results: ["300% increase in online sales", "50% reduction in cart abandonment", "Mobile-first responsive design"]
+            },
+            {
+              client: "Creative Agency",
+              project: "Portfolio Website",
+              description: "Modern, interactive portfolio showcasing creative work and services",
+              results: ["200% increase in lead generation", "Improved user engagement", "SEO-optimized structure"]
+            },
+            {
+              client: "Healthcare Provider",
+              project: "Patient Portal",
+              description: "Secure patient management system with appointment booking",
+              results: ["Streamlined patient experience", "Reduced administrative workload", "HIPAA-compliant design"]
+            },
+            {
+              client: "Restaurant Chain",
+              project: "Multi-location Website",
+              description: "Unified website for multiple restaurant locations with online ordering",
+              results: ["Centralized brand presence", "Increased online orders", "Location-specific SEO"]
+            }
+          ].map((caseStudy, index) => (
+            <div key={index} className="bg-black/50 p-6 rounded-lg border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-2">{caseStudy.client}</h4>
+              <h5 className="text-violet-400 mb-2">{caseStudy.project}</h5>
+              <p className="text-gray-400 mb-4 text-sm">{caseStudy.description}</p>
+              <div className="space-y-2">
+                <h6 className="text-sm font-medium text-gray-300">Key Results:</h6>
+                <ul className="space-y-1">
+                  {caseStudy.results.map((result, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm text-gray-400">
+                      <CheckCircle className="w-3 h-3 text-violet-400" />
+                      {result}
               </li>
             ))}
           </ul>
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="mb-6 transition-all duration-300 group-hover:translate-x-1">
-          <h4 className="mb-1 text-sm font-medium text-zinc-400 group-hover:text-zinc-300">
-            Ideal For:
-          </h4>
-          <p className="text-sm text-zinc-300 group-hover:text-zinc-200">
-            {idealFor}
+        <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 p-6 rounded-xl border border-violet-500/20">
+          <h4 className="text-lg font-medium text-violet-300 mb-3">Ready to Join Our Success Stories?</h4>
+          <p className="text-gray-300 mb-4">
+            Let&apos;s discuss how we can help you achieve similar results for your business.
+          </p>
+          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-violet-400 hover:to-purple-500 transition-all duration-300">
+            Schedule a Consultation
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    )
+  }
+};
+
+export default function WebsitePage() {
+  const [activeSection, setActiveSection] = useState<SectionKey>("overview");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [serviceBarShrink, setServiceBarShrink] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setServiceBarShrink(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-black text-white flex">
+      {/* Left Sidebar (hidden on mobile) */}
+      <div className={`hidden md:block fixed left-0 top-0 h-full bg-black border-r border-gray-800 z-20 transition-all duration-300 ${serviceBarShrink ? 'w-16' : 'w-64'} md:relative md:translate-x-0`}>
+        <div className="p-4 space-y-6">
+          {sidebarSections.map((section) => (
+            <button
+              key={section.key}
+              onClick={() => setActiveSection(section.key as SectionKey)}
+              className={`w-full flex flex-col md:flex-row items-center gap-2 p-3 rounded-lg transition-all duration-200 ${
+                activeSection === section.key
+                  ? 'bg-violet-500/20 text-violet-300 border border-violet-500/30'
+                  : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+              }`}
+            >
+              <span className={`mb-0.5 md:mb-0 md:mr-3 flex items-center justify-center ${serviceBarShrink ? 'w-5 h-5' : 'w-5 h-5'}`}>{React.cloneElement(section.icon, { className: 'w-5 h-5' })}</span>
+              <span className={`text-[8px] md:text-base ${serviceBarShrink ? 'block md:hidden' : ''}`}>{section.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Bottom Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 flex justify-around items-center bg-black/90 border-t border-gray-800 shadow-2xl rounded-t-2xl py-2 px-1" style={{backdropFilter: 'blur(8px)'}}>
+        {sidebarSections.map((section) => (
+          <button
+            key={section.key}
+            onClick={() => setActiveSection(section.key as SectionKey)}
+            className={`flex flex-col items-center justify-center px-2 py-1 rounded-lg transition-all duration-200 ${
+              activeSection === section.key
+                ? 'text-violet-300' : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            {React.cloneElement(section.icon, { className: 'w-6 h-6 mb-0.5' })}
+            <span className="text-[10px] font-medium leading-tight">{section.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Top Bar */}
+        <header className="sticky top-0 z-30 w-full bg-black/80 border-b border-gray-800 flex items-center px-2 md:px-8 py-2 gap-2 shadow-lg">
+          {/* Exit Icon (far left) */}
+          <Link href="/pages/services" className="flex items-center mr-2 text-gray-300 hover:text-white p-2 rounded-full transition-colors duration-200">
+            <LogOut className="h-7 w-7" />
+          </Link>
+          
+          {/* Centered Services List (desktop) */}
+          <div className="hidden md:flex items-center justify-center flex-1 gap-6">
+            {servicesList.map((service) => (
+              <Link
+                key={service.name}
+                href={service.href}
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                {service.icon}
+                <span className="text-sm">{service.name}</span>
+              </Link>
+            ))}
+    </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden ml-auto p-2 text-gray-300 hover:text-white transition-colors duration-200"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </header>
+
+        {/* Mobile Services Sidebar */}
+        <div className={`fixed right-0 top-0 h-full w-64 bg-black border-l border-gray-800 z-40 transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-semibold text-white">Services</h3>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="space-y-2">
+              {servicesList.map((service) => (
+                <Link
+                  key={service.name}
+                  href={service.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
+                >
+                  {service.icon}
+                  <span>{service.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Main Content Area */}
+        <main className="flex-1 p-6 md:p-8 overflow-y-auto">
+          {/* Animated Gradient Background */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-violet-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
+          <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }}></div>
+          
+          <div className="relative z-10">
+            <div className="mb-8">
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                {sectionContent[activeSection].title}
+              </h1>
+              <p className="text-lg text-gray-400">
+                {sectionContent[activeSection].subtitle}
           </p>
         </div>
-
-        <Link
-          href="/pages/contactPage"
-          className="block relative overflow-hidden"
-        >
-          <div
-            className={`absolute inset-0 ${
-              color === "green"
-                ? "bg-gradient-to-r from-emerald-600/40 to-emerald-400/40"
-                : color === "blue"
-                ? "bg-gradient-to-r from-violet-600/40 to-violet-400/40"
-                : "bg-gradient-to-r from-violet-600/40 to-violet-400/40"
-            } translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-20 rounded-lg blur-sm`}
-          ></div>
-          <button
-            className={`w-full rounded-lg py-3 font-medium transition-all duration-300 
-            relative overflow-hidden
-            ${
-              color === "green"
-                ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-400 hover:to-emerald-500"
-                : color === "blue"
-                ? "bg-gradient-to-r from-violet-400 to-violet-500 text-white hover:from-violet-300 hover:to-violet-400"
-                : "bg-gradient-to-r from-violet-500 to-violet-600 text-white hover:from-violet-400 hover:to-violet-500"
-            }
-            hover:shadow-lg ${
-              color === "green"
-                ? "hover:shadow-emerald-500/30"
-                : "hover:shadow-violet-500/30"
-            }
-            transform group-hover:scale-[1.02]
-          `}
-          >
-            Get Started
-            <span className="absolute right-4 opacity-0 transition-all duration-300 transform translate-x-10 group-hover:opacity-100 group-hover:translate-x-0">
-              →
-            </span>
-          </button>
-        </Link>
+            
+            <div className="prose prose-invert max-w-none">
+              {sectionContent[activeSection].content}
+            </div>
+        </div>
+        </main>
       </div>
     </div>
   );
-};
-
-const PricingDemo = () => {
-  return (
-    <section className="relative overflow-hidden bg-black text-white min-h-screen">
-      {/* Back to Home Arrow */}
-      <Link href="/" className="absolute left-6 top-6 z-20 group">
-        <div className="flex items-center gap-2">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-purple-600 p-0.5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-violet-500/40 group-hover:scale-110">
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-900">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-violet-400 transition-transform duration-300 group-hover:-translate-x-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                />
-              </svg>
-            </div>
-          </div>
-          <span className="text-sm font-medium text-violet-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            Back to Home
-          </span>
-        </div>
-      </Link>
-
-      {/* Background elements */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-violet-900/20 blur-3xl animate-pulse"
-          style={{ animationDuration: "8s" }}
-        ></div>
-        <div
-          className="absolute right-0 top-1/3 h-60 w-60 rounded-full bg-violet-700/10 blur-3xl animate-pulse"
-          style={{ animationDuration: "12s" }}
-        ></div>
-        <div
-          className="absolute bottom-0 left-1/3 h-40 w-60 rounded-full bg-violet-800/10 blur-3xl animate-pulse"
-          style={{ animationDuration: "10s" }}
-        ></div>
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 md:px-8">
-        <div className="mb-12 space-y-3">
-          <h2 className="text-center text-white text-3xl font-semibold leading-tight  sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight transition-all duration-300">
-            Static Website Services
-          </h2>
-          <p className="text-center text-base text-zinc-400 md:text-lg">
-            Professional static website solutions tailored to your business
-            needs
-          </p>
-        </div>
-        <h3 className="mb-8 text-center text-2xl font-semibold text-white relative">
-          <span className="inline-block transform transition-transform duration-500 hover:scale-105 hover:text-violet-200">
-            Our Website Packages
-          </span>
-          <span className="absolute -bottom-2 left-1/2 w-12 h-1 bg-gradient-to-r from-violet-500 to-purple-500 transform -translate-x-1/2 rounded-full"></span>
-        </h3>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <PricingCard
-            color="green"
-            emoji=""
-            tier="Starter Package"
-            price="$199"
-            deliveryTime="3–5 days"
-            pages="3"
-            benefits={[
-              "Up to 3 static pages (Home, About, Contact)",
-              "Responsive design (mobile, tablet, desktop)",
-              "Custom layout to match your brand",
-              "Contact form (non-functional/static)",
-              "Basic SEO setup (meta tags, titles)",
-              "Fast loading and lightweight code",
-            ]}
-            idealFor="Personal portfolios, simple landing pages, early-stage startups"
-          />
-
-          <PricingCard
-            color="blue"
-            emoji=""
-            tier="Business Package"
-            price="$399"
-            deliveryTime="5–7 days"
-            pages="5"
-            benefits={[
-              "Up to 5 static pages",
-              "Responsive + optimized design",
-              "Working contact form integration",
-              "Basic animation effects (fade-in, slide-in)",
-              "Image optimization for faster load times",
-              "SEO-optimized structure",
-              "Deployment to hosting (e.g., Vercel or Netlify)",
-            ]}
-            idealFor="Small businesses, service providers, consultants"
-          />
-
-          <PricingCard
-            color="purple"
-            emoji=""
-            tier="Premium Package"
-            price="$699"
-            deliveryTime="7–10 days"
-            pages="10"
-            benefits={[
-              "Up to 10 static pages",
-              "Custom design with animations & interactive elements",
-              "Fully responsive and accessible",
-              "Blog-ready structure (static markdown-compatible)",
-              "Advanced SEO optimization",
-              "Google Analytics integration",
-              "Hosting setup + custom domain configuration",
-              "Performance tuning (Lighthouse-tested)",
-            ]}
-            idealFor="Agencies, professionals, or anyone needing a polished, high-performing static site"
-          />
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default PricingDemo;
+}

@@ -10,6 +10,7 @@ import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ULogo from "@/assets/u.png";
+import Image from "next/image";
 
 // Community Statistics Variables - Easy to update
 const COMMUNITY_STATS = {
@@ -787,10 +788,12 @@ export default function Component() {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         <div className="flex items-center space-x-4">
-          <img
-            src={member?.avatar}
-            alt={member?.name}
+          <Image
+            src={member?.avatar || '/default-avatar.png'}
+            alt={member?.name || 'User'}
             className="w-16 h-16 rounded-full"
+            width={64}
+            height={64}
           />
           <div>
             <h4 className="text-xl font-bold text-white">{member?.name}</h4>
@@ -1154,10 +1157,12 @@ export default function Component() {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         <div className="relative">
-          <img
-            src={highlight?.image}
-            alt={highlight?.title}
+          <Image
+            src={highlight?.image || '/default-image.png'}
+            alt={highlight?.title || 'Highlight'}
             className="w-full h-48 object-cover rounded-xl"
+            width={384}
+            height={192}
           />
           <div className="absolute top-4 right-4">
             <span className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-semibold border border-yellow-500/30">
@@ -1268,10 +1273,12 @@ export default function Component() {
     <Modal isOpen={isOpen} onClose={onClose}>
       <div className="space-y-6">
         <div className="flex items-center space-x-4">
-          <img
-            src={testimonial?.avatar}
-            alt={testimonial?.name}
+          <Image
+            src={testimonial?.avatar || '/default-avatar.png'}
+            alt={testimonial?.name || 'User'}
             className="w-16 h-16 rounded-full"
+            width={64}
+            height={64}
           />
           <div>
             <h4 className="text-xl font-bold text-white">{testimonial?.name}</h4>
@@ -1444,10 +1451,12 @@ export default function Component() {
                         onClick={() => setSelectedHighlight(highlight)}
                       >
                         <div className="relative">
-                          <img
-                            src={highlight.image}
-                            alt={highlight.title}
+                          <Image
+                            src={highlight.image || '/default-image.png'}
+                            alt={highlight.title || 'Highlight'}
                             className="w-full h-32 md:h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                            width={384}
+                            height={192}
                           />
                           <div className="absolute top-2 right-2 md:top-4 md:right-4">
                             <span className="px-2 py-1 md:px-3 md:py-1 bg-purple-600/80 backdrop-blur-sm text-white text-xs rounded-full">
@@ -1493,10 +1502,12 @@ export default function Component() {
                       >
                         <CardContent className="p-4 md:p-6">
                           <div className="flex items-center space-x-3 mb-3 md:mb-4">
-                            <img
-                              src={testimonial.avatar}
-                              alt={testimonial.name}
+                            <Image
+                              src={testimonial.avatar || '/default-avatar.png'}
+                              alt={testimonial.name || 'User'}
                               className="w-10 h-10 md:w-12 md:h-12 rounded-full"
+                              width={64}
+                              height={64}
                             />
                             <div>
                               <h4 className="text-white font-semibold leading-tight text-sm md:text-base">{testimonial.name}</h4>
@@ -1620,10 +1631,12 @@ export default function Component() {
                   >
                     <CardContent className="p-4 md:p-6">
                       <div className="flex items-center space-x-4 mb-4">
-                        <img
-                          src={member.avatar}
-                          alt={member.name}
+                        <Image
+                          src={member.avatar || '/default-avatar.png'}
+                          alt={member.name || 'User'}
                           className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover"
+                          width={64}
+                          height={64}
                         />
                         <div>
                           <h4 className="text-lg md:text-xl font-bold text-white leading-tight">{member.name}</h4>
@@ -1874,7 +1887,7 @@ export default function Component() {
             aria-label="Open menu"
             style={{ boxShadow: radialOpen ? '0 0 0 10px rgba(99,102,241,0.18)' : undefined }}
           >
-            <img src={ULogo.src} alt="Upvista Logo" className="w-8 h-8 object-contain" />
+            <Image src={ULogo.src} alt="Upvista Logo" className="w-8 h-8 object-contain" width={32} height={32} />
           </button>
           {/* Radial icons */}
           <div className="absolute left-1/2 top-10 -translate-x-1/2 w-48 h-48 pointer-events-none">

@@ -268,7 +268,7 @@ export default function PrivacyPolicy() {
               If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
             </p>
             <div className="space-y-2">
-              <p><strong>Email:</strong> upvistadigital@gmail.com</p>
+              <p><strong>Email:</strong> info@upvistadigital.com</p>
               <p><strong>Phone:</strong> +92 332 0486955</p>
               <p><strong>Website:</strong> <Link href="/pages/contactPage" className="text-purple-400 hover:text-purple-300">Contact Page</Link></p>
               <p><strong>Address:</strong> Pakistan</p>
