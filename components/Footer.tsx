@@ -128,8 +128,7 @@ const Footer: React.FC = () => {
               <h3 className="text-xl font-bold text-white">Upvista</h3>
             </div>
             <p className="text-gray-400 text-sm">
-              We create cutting-edge digital solutions for businesses looking to
-              make an impact in the digital world.
+            Upvista: Agency. Community. Trainings. Vision. We don’t just build digital solutions, we build the future. Join the movement.
             </p>
             <div className="flex space-x-4 pt-2">
               <SocialIcon
@@ -142,7 +141,7 @@ const Footer: React.FC = () => {
               />
               <SocialIcon
                 icon={<FaLinkedinIn />}
-                href="https://www.linkedin.com/in/hamza-hafeez-00937436a/"
+                href="https://www.linkedin.com/in/hamza-hafeez-b0233731a"
               />
               <SocialIcon
                 icon={<FaTwitter />}
@@ -187,7 +186,7 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <ContactItem
                 icon={<FaEnvelope />}
-                text="upvistadigital@gmail.com"
+                text="info@upvistadigital.com"
               />
               <ContactItem icon={<FaPhoneAlt />} text="+92 332 0486955" />
               <ContactItem
@@ -198,7 +197,7 @@ const Footer: React.FC = () => {
               <ContactItem
                 icon={<FaLinkedinIn />}
                 text="LinkedIn Us"
-                href="https://www.linkedin.com/in/hamza-hafeez-00937436a/"
+                href="https://www.linkedin.com/in/hamza-hafeez-b0233731a"
               />
               <ContactItem
                 icon={<FaFacebookMessenger />}
@@ -213,44 +212,18 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-12 after:bg-purple-600">
               Payments
             </h3>
-            <div className="flex space-x-4 mt-2">
-              {paymentMethods.map((method, idx) => (
+            <ul className="space-y-2 w-full">
+              {[...paymentMethods, ...landscapePayments].map((method, idx) => (
+                <li key={method.name}>
                 <button
-                  key={method.name}
-                  className="focus:outline-none group"
-                  aria-label={`Show details for ${method.name}`}
+                    className="text-purple-300 hover:text-white font-semibold text-base w-full text-left py-2 px-2 rounded-lg transition-all duration-200 bg-gray-800/60 hover:bg-purple-700/30 focus:outline-none focus:ring-2 focus:ring-purple-500"
                   onClick={() => { setSelectedPayment(idx); setModalOpen(true); }}
                 >
-                  <Image
-                    src={method.img}
-                    alt={method.name}
-                    width={64}
-                    height={64}
-                    className="rounded-xl shadow-xl border-2 border-gray-800 group-hover:border-purple-500 group-hover:shadow-purple-400/40 transition-all duration-300 object-cover"
-                  />
+                    {method.name}
                 </button>
+                </li>
               ))}
-            </div>
-            {/* Landscape Payment Methods */}
-            <div className="flex flex-row space-x-6 mt-6 w-full justify-center md:justify-end">
-              {landscapePayments.map((method, idx) => (
-                <button
-                  key={method.name}
-                  className="focus:outline-none group flex flex-col items-center"
-                  aria-label={`Show details for ${method.name}`}
-                  onClick={() => { setSelectedPayment(idx + paymentMethods.length); setModalOpen(true); }}
-                >
-                  <Image
-                    src={method.img}
-                    alt={method.name}
-                    width={96}
-                    height={48}
-                    className="rounded-2xl shadow-xl border-2 border-gray-800 group-hover:border-green-500 group-hover:shadow-green-400/40 transition-all duration-300 object-contain bg-white p-2"
-                  />
-                  <span className="text-xs text-gray-300 mt-2 font-semibold">{method.name}</span>
-                </button>
-              ))}
-            </div>
+            </ul>
           </div>
         </div>
         {/* Payment Modal */}

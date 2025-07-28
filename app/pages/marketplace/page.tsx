@@ -30,52 +30,52 @@ interface TimeLeft {
 
 const features = [
   {
-    icon: <Palette className="w-8 h-8" />,
-    title: "Design Templates",
-    description: "Premium UI/UX templates, logos, and design assets",
-    category: "Design"
+    icon: <Globe className="w-8 h-8" />,
+    title: "Custom E-Commerce Solutions",
+    description: "Complete ownership of fully custom e-commerce stores built with latest technologies, tailored to your business needs",
+    category: "E-Commerce"
   },
   {
     icon: <Code className="w-8 h-8" />,
-    title: "Code Components",
-    description: "Reusable React, Next.js, and web components",
-    category: "Development"
+    title: "Healthcare Tech Platforms",
+    description: "MedTech dashboards and telemedicine apps for hospitals, clinics, and healthcare providers",
+    category: "Healthcare"
   },
   {
-    icon: <Megaphone className="w-8 h-8" />,
-    title: "Marketing Tools",
-    description: "SEO tools, social media templates, and analytics",
-    category: "Marketing"
-  },
-  {
-    icon: <Globe className="w-8 h-8" />,
-    title: "Website Templates",
-    description: "Complete website templates for various industries",
-    category: "Websites"
+    icon: <Palette className="w-8 h-8" />,
+    title: "Enterprise Applications",
+    description: "Custom enterprise solutions for finance, education, manufacturing, and logistics industries",
+    category: "Enterprise"
   },
   {
     icon: <Zap className="w-8 h-8" />,
-    title: "AI Tools",
-    description: "AI-powered design and development tools",
+    title: "AI-Powered Solutions",
+    description: "Intelligent automation, analytics, and AI-driven applications for modern businesses",
     category: "AI"
   },
   {
+    icon: <Megaphone className="w-8 h-8" />,
+    title: "Digital Marketing Platforms",
+    description: "Complete marketing automation and analytics platforms for data-driven growth",
+    category: "Marketing"
+  },
+  {
     icon: <Users className="w-8 h-8" />,
-    title: "Expert Services",
-    description: "Connect with verified freelancers and agencies",
-    category: "Services"
+    title: "Maintenance & Support",
+    description: "Comprehensive maintenance packages with 24/7 support, updates, and iterative improvements",
+    category: "Support"
   }
 ];
 
 const stats = [
-  { number: "500+", label: "Digital Products" },
-  { number: "50+", label: "Expert Creators" },
-  { number: "10K+", label: "Happy Customers" },
-  { number: "24/7", label: "Support" }
+  { number: "100+", label: "Custom Solutions" },
+  { number: "25+", label: "Industry Sectors" },
+  { number: "500+", label: "Successful Deployments" },
+  { number: "24/7", label: "Expert Support" }
 ];
 
 export default function MarketplacePage() {
-  const launchDate = useMemo(() => new Date("2025-07-29T00:00:00"), []);
+  const launchDate = useMemo(() => new Date("2025-01-29T00:00:00"), []);
   
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
@@ -212,7 +212,7 @@ export default function MarketplacePage() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-300 text-center mb-12 max-w-4xl mx-auto leading-relaxed"
             >
-              We&apos;re building the ultimate digital marketplace for creators, developers, and businesses. Get ready to discover, buy, and sell premium digital products and services.
+              We&apos;re launching the ultimate marketplace for custom-built digital solutions. From complete e-commerce platforms to healthcare tech, we deliver enterprise-grade solutions with full ownership, maintenance, and iterative support.
             </motion.p>
 
             {/* Countdown Timer */}
@@ -356,7 +356,7 @@ export default function MarketplacePage() {
             transition={{ duration: 0.8 }}
             className="text-3xl md:text-4xl font-bold text-center text-white mb-16"
           >
-            What You&apos;ll Find in Our Marketplace
+            Custom-Built Solutions for Every Industry
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -396,10 +396,10 @@ export default function MarketplacePage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Why Choose Upvista Marketplace?
+              Why Choose Upvista Custom Solutions?
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Quality, security, and community - everything you need to succeed in the digital world.
+              Fast, reliable, iterative development with justified costs - transforming industries through custom technology.
             </p>
           </motion.div>
 
@@ -413,9 +413,9 @@ export default function MarketplacePage() {
               <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Star className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Curated Quality</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">Fast & Reliable</h3>
               <p className="text-gray-400">
-                Every product is hand-picked and quality-tested by our expert team.
+                Rapid development cycles with enterprise-grade reliability and performance.
               </p>
             </motion.div>
 
@@ -428,9 +428,9 @@ export default function MarketplacePage() {
               <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <TrendingUp className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Growth Platform</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">Iterative Excellence</h3>
               <p className="text-gray-400">
-                Built-in tools to help creators grow their business and reach more customers.
+                Continuous improvement through feedback loops and agile development methodologies.
               </p>
             </motion.div>
 
@@ -443,9 +443,9 @@ export default function MarketplacePage() {
               <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">Community Driven</h3>
+              <h3 className="text-xl font-semibold text-white mb-3">Justified Investment</h3>
               <p className="text-gray-400">
-                Connect with fellow creators, share knowledge, and build lasting relationships.
+                Transparent pricing with clear ROI and long-term value for your business.
               </p>
             </motion.div>
           </div>
@@ -460,10 +460,10 @@ export default function MarketplacePage() {
             className="text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Join the Future of Digital Commerce?
+              Ready to Transform Your Industry with Custom Technology?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Be among the first to experience the next generation of digital marketplace.
+              Join the revolution of custom-built solutions that drive real business transformation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/pages/contactPage">
