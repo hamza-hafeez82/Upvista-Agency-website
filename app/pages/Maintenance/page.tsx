@@ -1,316 +1,546 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { Menu, X, Monitor, Code2, Brain, Brush, Users, Megaphone, Wrench, UserCheck, ArrowRight, LogOut, Globe, Palette, Settings, FileText, CheckCircle, Eye, Zap, Search, Calendar } from "lucide-react";
 
-interface MaintenancePricingCardProps {
-  color: "green" | "blue" | "purple";
-  tier: string;
-  subtitle?: string;
-  price: string;
-  deliveryTime: string;
-  benefits: string[];
-  idealFor: string;
-  emoji: string;
-  buttonText?: string;
-}
+const servicesList = [
+  { name: "Web Development", href: "/pages/website", icon: <Globe className="w-5 h-5" /> },
+  { name: "Software Development", href: "/pages/software-development", icon: <Code2 className="w-5 h-5" /> },
+  { name: "AI Automation", href: "/pages/ai", icon: <Brain className="w-5 h-5" /> },
+  { name: "Branding", href: "/pages/branding", icon: <Brush className="w-5 h-5" /> },
+  { name: "UI/UX Design", href: "/pages/uiuxPage", icon: <Palette className="w-5 h-5" /> },
+  { name: "Marketing", href: "/pages/marketing", icon: <Megaphone className="w-5 h-5" /> },
+  { name: "Management", href: "/pages/management", icon: <Users className="w-5 h-5" /> },
+  { name: "Maintenance", href: "/pages/Maintenance", icon: <Wrench className="w-5 h-5" /> },
+  { name: "Consulting", href: "/pages/consult", icon: <UserCheck className="w-5 h-5" /> },
+];
 
-const MaintenancePricingCard = ({
-  color,
-  tier,
-  subtitle,
-  price,
-  deliveryTime,
-  benefits,
-  idealFor,
-  emoji,
-  buttonText,
-}: MaintenancePricingCardProps) => {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 p-8 shadow-lg transition-all duration-500 
-      hover:shadow-xl hover:shadow-${
-        color === "green" ? "emerald" : color === "blue" ? "blue" : "violet"
-      }-500/20
-      hover:translate-y-[-8px] group
-      before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r 
-      ${
-        color === "green"
-          ? "before:from-emerald-500/0 before:via-emerald-500/5 before:to-emerald-500/0"
-          : color === "blue"
-          ? "before:from-blue-400/0 before:via-blue-400/5 before:to-blue-400/0"
-          : "before:from-violet-500/0 before:via-violet-500/5 before:to-violet-500/0"
-      } 
-      before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-500
-    `}
-    >
-      {/* Corner glow effect */}
-      <div
-        className={`absolute right-0 top-0 h-32 w-32 opacity-50 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110 ${
-          color === "green"
-            ? "bg-emerald-500/20"
-            : color === "blue"
-            ? "bg-blue-500/20"
-            : "bg-violet-500/20"
-        } blur-2xl`}
-      ></div>
+const sidebarSections = [
+  { key: "overview", label: "Overview", icon: <Monitor className="w-5 h-5" /> },
+  { key: "end-to-end", label: "End-to-End", icon: <ArrowRight className="w-5 h-5" /> },
+  { key: "process", label: "Process", icon: <Settings className="w-5 h-5" /> },
+  { key: "onboarding", label: "Onboarding", icon: <UserCheck className="w-5 h-5" /> },
+  { key: "references", label: "References", icon: <FileText className="w-5 h-5" /> },
+];
 
-      {/* Border glow on hover */}
-      <div className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div
-          className={`absolute inset-[-1px] rounded-xl bg-gradient-to-r ${
-            color === "green"
-              ? "from-emerald-500/50 via-transparent to-emerald-500/50"
-              : color === "blue"
-              ? "from-blue-500/50 via-transparent to-blue-500/50"
-              : "from-violet-500/50 via-transparent to-violet-500/50"
-          } blur-sm`}
-        ></div>
+type SectionKey = "overview" | "end-to-end" | "process" | "onboarding" | "references";
+
+const sectionContent = {
+  overview: {
+    title: "Website & System Maintenance Services",
+    subtitle: "Keeping Your Digital Assets Running Smoothly and Securely",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20">
+          <h3 className="text-xl font-semibold text-green-300 mb-3">Proactive Maintenance Solutions</h3>
+          <p className="text-gray-300 leading-relaxed">
+            At Upvista Digital, we believe that prevention is better than cure. Our comprehensive 
+            maintenance services ensure your websites, applications, and digital systems remain 
+            secure, fast, and up-to-date. We handle everything from routine updates to emergency 
+            fixes, giving you peace of mind and uninterrupted digital operations.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <h4 className="text-lg font-medium text-white">What We Maintain</h4>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2 text-gray-300">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                Website performance & speed optimization
+              </li>
+              <li className="flex items-center gap-2 text-gray-300">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                Security updates & vulnerability patches
+              </li>
+              <li className="flex items-center gap-2 text-gray-300">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                Content management system updates
+              </li>
+              <li className="flex items-center gap-2 text-gray-300">
+                <CheckCircle className="w-4 h-4 text-green-400" />
+                Database optimization & backups
+              </li>
+            </ul>
+          </div>
+          
+          <div className="space-y-4">
+            <h4 className="text-lg font-medium text-white">Maintenance Types</h4>
+            <div className="flex flex-wrap gap-2">
+              {["Preventive", "Corrective", "Emergency", "Performance", "Security", "Updates", "Backups", "Monitoring"].map((type) => (
+                <span key={type} className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm border border-green-500/30">
+                  {type}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  "end-to-end": {
+    title: "End-to-End Maintenance Solutions",
+    subtitle: "From Monitoring to Optimization and Emergency Response",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-xl border border-emerald-500/20">
+          <h3 className="text-xl font-semibold text-emerald-300 mb-3">Comprehensive Maintenance Ecosystem</h3>
+          <p className="text-gray-300 leading-relaxed">
+            Our end-to-end maintenance approach covers every aspect of your digital infrastructure. 
+            From proactive monitoring and regular updates to emergency response and performance 
+            optimization, we ensure your systems remain reliable, secure, and efficient.
+          </p>
+        </div>
+        
+        <div className="space-y-6">
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-2">Monitoring & Alerts</h4>
+              <p className="text-gray-400 text-sm">24/7 system monitoring with instant alerts for any issues or performance degradation.</p>
+            </div>
+            <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-2">Regular Updates</h4>
+              <p className="text-gray-400 text-sm">Scheduled updates for security patches, CMS updates, and performance improvements.</p>
+            </div>
+            <div className="bg-black/50 p-4 rounded-lg border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-2">Emergency Response</h4>
+              <p className="text-gray-400 text-sm">Rapid response team for critical issues, downtime, and security incidents.</p>
+            </div>
       </div>
 
-      <div className="relative z-10">
-        <div className="mb-4 flex items-center gap-3">
-          <span className="text-2xl transform transition-transform duration-500 group-hover:scale-125 group-hover:rotate-12">
-            {emoji}
-          </span>
-          <div>
-            <h3
-              className={`text-xl font-bold transition-all duration-300 ${
-                color === "green"
-                  ? "text-emerald-400 group-hover:text-emerald-300"
-                  : color === "blue"
-                  ? "text-blue-400 group-hover:text-blue-300"
-                  : "text-violet-300 group-hover:text-violet-200"
+          <div className="bg-gradient-to-r from-teal-500/10 to-green-500/10 p-6 rounded-xl border border-teal-500/20">
+            <h4 className="text-lg font-medium text-white mb-3">Maintenance Workflow</h4>
+            <div className="grid md:grid-cols-4 gap-4 text-sm">
+              <div className="text-center">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Eye className="w-4 h-4 text-green-300" />
+                </div>
+                <p className="text-green-300 font-medium">Monitor</p>
+                <p className="text-gray-400">Continuous monitoring</p>
+              </div>
+              <div className="text-center">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Search className="w-4 h-4 text-green-300" />
+                </div>
+                <p className="text-green-300 font-medium">Analyze</p>
+                <p className="text-gray-400">Issue identification</p>
+              </div>
+              <div className="text-center">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <Zap className="w-4 h-4 text-green-300" />
+                </div>
+                <p className="text-green-300 font-medium">Fix</p>
+                <p className="text-gray-400">Quick resolution</p>
+              </div>
+              <div className="text-center">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <CheckCircle className="w-4 h-4 text-green-300" />
+                </div>
+                <p className="text-green-300 font-medium">Verify</p>
+                <p className="text-gray-400">Quality assurance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  process: {
+    title: "Maintenance Process & Methodology",
+    subtitle: "Systematic Approach to Digital Asset Management",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-teal-500/10 to-green-500/10 p-6 rounded-xl border border-teal-500/20">
+          <h3 className="text-xl font-semibold text-teal-300 mb-3">Structured Maintenance Methodology</h3>
+          <p className="text-gray-300 leading-relaxed">
+            Our maintenance process follows industry best practices and proven methodologies 
+            to ensure consistent, reliable service delivery. We combine automated monitoring 
+            with human expertise to provide the best possible maintenance experience.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <h4 className="text-lg font-medium text-white">Automated Monitoring</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Uptime monitoring & alerting
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Performance metrics tracking
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Security vulnerability scanning
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Automated backup verification
+                </li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="text-lg font-medium text-white">Manual Maintenance</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Code review & optimization
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Content updates & management
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  User experience improvements
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Strategic recommendations
+              </li>
+          </ul>
+            </div>
+          </div>
+          
+          <div className="bg-black/50 p-6 rounded-xl border border-gray-800">
+            <h4 className="text-lg font-medium text-white mb-4">Maintenance Schedule</h4>
+            <div className="grid md:grid-cols-3 gap-4 text-sm">
+              <div className="text-center p-3 bg-green-500/10 rounded-lg">
+                <Calendar className="w-6 h-6 text-green-300 mx-auto mb-2" />
+                <p className="text-green-300 font-medium">Daily</p>
+                <p className="text-gray-400">Monitoring & alerts</p>
+              </div>
+              <div className="text-center p-3 bg-green-500/10 rounded-lg">
+                <Calendar className="w-6 h-6 text-green-300 mx-auto mb-2" />
+                <p className="text-green-300 font-medium">Weekly</p>
+                <p className="text-gray-400">Performance review</p>
+              </div>
+              <div className="text-center p-3 bg-green-500/10 rounded-lg">
+                <Calendar className="w-6 h-6 text-green-300 mx-auto mb-2" />
+                <p className="text-green-300 font-medium">Monthly</p>
+                <p className="text-gray-400">Security updates</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  onboarding: {
+    title: "Maintenance Onboarding & Setup",
+    subtitle: "Smooth Transition to Professional Maintenance Services",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20">
+          <h3 className="text-xl font-semibold text-green-300 mb-3">Seamless Onboarding Experience</h3>
+          <p className="text-gray-300 leading-relaxed">
+            Our onboarding process is designed to get your maintenance services up and running 
+            quickly and efficiently. We assess your current systems, set up monitoring, and 
+            establish clear communication channels to ensure a smooth transition.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <h4 className="text-lg font-medium text-white">Initial Assessment</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  System architecture review
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Performance baseline establishment
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Security vulnerability assessment
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Maintenance requirements analysis
+                </li>
+              </ul>
+            </div>
+            
+            <div className="space-y-4">
+              <h4 className="text-lg font-medium text-white">Setup & Configuration</h4>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Monitoring tools installation
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Backup system configuration
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Alert system setup
+                </li>
+                <li className="flex items-center gap-2 text-gray-300">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  Access credentials management
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-6 rounded-xl border border-emerald-500/20">
+            <h4 className="text-lg font-medium text-white mb-4">Onboarding Timeline</h4>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-green-300 font-medium text-sm">1</span>
+                </div>
+                <div>
+                  <p className="text-white font-medium">Day 1-2: Assessment & Planning</p>
+                  <p className="text-gray-400 text-sm">System review and maintenance strategy development</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-green-300 font-medium text-sm">2</span>
+                </div>
+                <div>
+                  <p className="text-white font-medium">Day 3-4: Setup & Configuration</p>
+                  <p className="text-gray-400 text-sm">Monitoring tools and backup systems installation</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                  <span className="text-green-300 font-medium text-sm">3</span>
+                </div>
+                <div>
+                  <p className="text-white font-medium">Day 5-7: Testing & Handover</p>
+                  <p className="text-gray-400 text-sm">System testing and maintenance handover</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  references: {
+    title: "Maintenance References & Case Studies",
+    subtitle: "Proven Track Record of Reliable Maintenance Services",
+    content: (
+      <div className="space-y-6">
+        <div className="bg-gradient-to-r from-teal-500/10 to-green-500/10 p-6 rounded-xl border border-teal-500/20">
+          <h3 className="text-xl font-semibold text-teal-300 mb-3">Success Stories & Testimonials</h3>
+          <p className="text-gray-300 leading-relaxed">
+            Our maintenance services have helped numerous businesses maintain their digital 
+            presence with minimal downtime and maximum performance. Here are some examples 
+            of our successful maintenance partnerships and the results we&apos;ve achieved.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-black/50 p-6 rounded-xl border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-3">E-commerce Platform</h4>
+              <p className="text-gray-400 mb-4">Maintained a high-traffic e-commerce website with 99.9% uptime and improved page load speeds by 40%.</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">Performance</span>
+                <span className="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">Security</span>
+                <span className="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">Updates</span>
+              </div>
+            </div>
+            
+            <div className="bg-black/50 p-6 rounded-xl border border-gray-800">
+              <h4 className="text-lg font-medium text-white mb-3">Corporate Website</h4>
+              <p className="text-gray-400 mb-4">Managed a corporate website with automated backups, security updates, and content management.</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">Backups</span>
+                <span className="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">Security</span>
+                <span className="px-2 py-1 bg-green-500/20 text-green-300 rounded text-xs">Content</span>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 p-6 rounded-xl border border-green-500/20">
+            <h4 className="text-lg font-medium text-white mb-4">Maintenance Metrics</h4>
+            <div className="grid md:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-green-300">99.9%</p>
+                <p className="text-gray-400 text-sm">Average Uptime</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-green-300">&lt;2hrs</p>
+                <p className="text-gray-400 text-sm">Response Time</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-green-300">100%</p>
+                <p className="text-gray-400 text-sm">Backup Success</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-green-300">24/7</p>
+                <p className="text-gray-400 text-sm">Monitoring</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="bg-black/50 p-6 rounded-xl border border-gray-800">
+            <h4 className="text-lg font-medium text-white mb-4">Client Testimonials</h4>
+            <div className="space-y-4">
+              <div className="border-l-4 border-green-500 pl-4">
+                <p className="text-gray-300 italic">&quot;Upvista&apos;s maintenance service has been a game-changer for our business. Our website has never been more reliable.&quot;</p>
+                <p className="text-green-300 font-medium mt-2">- Sarah Johnson, CEO</p>
+              </div>
+              <div className="border-l-4 border-green-500 pl-4">
+                <p className="text-gray-300 italic">&quot;The proactive approach to maintenance has saved us countless hours and prevented potential issues before they became problems.&quot;</p>
+                <p className="text-green-300 font-medium mt-2">- Michael Chen, CTO</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+};
+
+export default function MaintenancePage() {
+  const [activeSection, setActiveSection] = useState<SectionKey>("overview");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [serviceBarShrink, setServiceBarShrink] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setServiceBarShrink(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-black text-white flex">
+      {/* Left Sidebar (hidden on mobile) */}
+      <div className={`hidden md:block fixed left-0 top-0 h-full bg-black border-r border-gray-800 z-20 transition-all duration-300 ${serviceBarShrink ? 'w-16' : 'w-64'} md:relative md:translate-x-0`}>
+        <div className="p-4 space-y-6">
+          {sidebarSections.map((section) => (
+            <button
+              key={section.key}
+              onClick={() => setActiveSection(section.key as SectionKey)}
+              className={`w-full flex flex-col md:flex-row items-center gap-2 p-3 rounded-lg transition-all duration-200 ${
+                activeSection === section.key
+                  ? 'bg-green-500/20 text-green-300 border border-green-500/30'
+                  : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
               }`}
             >
-              {tier}
-            </h3>
-            {subtitle && (
-              <p className="text-sm italic text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-                {subtitle}
-              </p>
-            )}
+              <span className={`mb-0.5 md:mb-0 md:mr-3 flex items-center justify-center ${serviceBarShrink ? 'w-5 h-5' : 'w-5 h-5'}`}>{React.cloneElement(section.icon, { className: 'w-5 h-5' })}</span>
+              <span className={`text-[8px] md:text-base ${serviceBarShrink ? 'block md:hidden' : ''}`}>{section.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Bottom Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 flex justify-around items-center bg-black/90 border-t border-gray-800 shadow-2xl rounded-t-2xl py-2 px-1" style={{backdropFilter: 'blur(8px)'}}>
+        {sidebarSections.map((section) => (
+          <button
+            key={section.key}
+            onClick={() => setActiveSection(section.key as SectionKey)}
+            className={`flex flex-col items-center justify-center px-2 py-1 rounded-lg transition-all duration-200 ${
+              activeSection === section.key
+                ? 'text-green-300' : 'text-gray-400 hover:text-white'
+            }`}
+          >
+            {React.cloneElement(section.icon, { className: 'w-6 h-6 mb-0.5' })}
+            <span className="text-[10px] font-medium leading-tight">{section.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        {/* Top Bar */}
+        <header className="sticky top-0 z-30 w-full bg-black/80 border-b border-gray-800 flex items-center px-2 md:px-8 py-2 gap-2 shadow-lg">
+          {/* Exit Icon (far left) */}
+          <Link href="/pages/services" className="flex items-center mr-2 text-gray-300 hover:text-white p-2 rounded-full transition-colors duration-200">
+            <LogOut className="h-7 w-7" />
+          </Link>
+
+          {/* Centered Services List (desktop) */}
+          <div className="hidden md:flex items-center justify-center flex-1 gap-6">
+            {servicesList.map((service) => (
+              <Link
+                key={service.name}
+                href={service.href}
+                className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors duration-200"
+              >
+                {service.icon}
+                <span className="text-sm">{service.name}</span>
+              </Link>
+            ))}
+    </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden ml-auto p-2 text-gray-300 hover:text-white transition-colors duration-200"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </header>
+
+        {/* Mobile Services Sidebar */}
+        <div className={`fixed right-0 top-0 h-full w-64 bg-black border-l border-gray-800 z-40 transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
+          <div className="p-4">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-lg font-semibold text-white">Services</h3>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="space-y-2">
+              {servicesList.map((service) => (
+                <Link
+                  key={service.name}
+                  href={service.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="flex items-center gap-3 p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
+                >
+                  {service.icon}
+                  <span>{service.name}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mb-6 transition-transform duration-300 group-hover:translate-x-1">
-          <p className="text-3xl font-bold text-white">{price}</p>
-          <p className="text-sm text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-            Delivery Time: {deliveryTime}
+        {/* Main Content Area */}
+        <main className="flex-1 p-6 md:p-8 overflow-y-auto">
+          {/* Animated Gradient Background */}
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-500/20 via-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
+          <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-teal-500/20 via-green-500/20 to-emerald-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }}></div>
+
+          <div className="relative z-10">
+            <div className="mb-8">
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+                {sectionContent[activeSection].title}
+              </h1>
+              <p className="text-lg text-gray-400">
+                {sectionContent[activeSection].subtitle}
           </p>
         </div>
 
-        <div className="mb-6">
-          <h4 className="mb-3 font-medium text-white">
-            What&rsquo;s Included:
-          </h4>
-          <ul className="space-y-3">
-            {benefits.map((benefit, index) => (
-              <li
-                key={index}
-                className="flex items-start gap-2 transition-all duration-200 hover:translate-x-1"
-              >
-                <svg
-                  className={`mt-1 h-4 w-4 flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ${
-                    color === "green"
-                      ? "text-emerald-400"
-                      : color === "blue"
-                      ? "text-blue-400"
-                      : "text-violet-300"
-                  }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-                <span className="text-sm text-zinc-300 group-hover:text-zinc-200 transition-colors duration-300">
-                  {benefit}
-                </span>
-              </li>
-            ))}
-          </ul>
+            <div className="prose prose-invert max-w-none">
+              {sectionContent[activeSection].content}
+            </div>
         </div>
-
-        <div className="mb-6 transition-all duration-300 group-hover:translate-x-1">
-          <h4 className="mb-1 text-sm font-medium text-zinc-400 group-hover:text-zinc-300">
-            Ideal For:
-          </h4>
-          <p className="text-sm text-zinc-300 group-hover:text-zinc-200">
-            {idealFor}
-          </p>
-        </div>
-
-        <Link
-          href="/pages/contactPage"
-          className="block relative overflow-hidden"
-        >
-          <div
-            className={`absolute inset-0 ${
-              color === "green"
-                ? "bg-gradient-to-r from-emerald-600/40 to-emerald-400/40"
-                : color === "blue"
-                ? "bg-gradient-to-r from-blue-600/40 to-blue-400/40"
-                : "bg-gradient-to-r from-violet-600/40 to-violet-400/40"
-            } translate-y-full group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-20 rounded-lg blur-sm`}
-          ></div>
-          <button
-            className={`w-full rounded-lg py-3 font-medium transition-all duration-300 
-            relative overflow-hidden
-            ${
-              color === "green"
-                ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-400 hover:to-emerald-500"
-                : color === "blue"
-                ? "bg-gradient-to-r from-blue-400 to-blue-500 text-white hover:from-blue-300 hover:to-blue-400"
-                : "bg-gradient-to-r from-violet-500 to-violet-600 text-white hover:from-violet-400 hover:to-violet-500"
-            }
-            hover:shadow-lg ${
-              color === "green"
-                ? "hover:shadow-emerald-500/30"
-                : color === "blue"
-                ? "hover:shadow-blue-500/30"
-                : "hover:shadow-violet-500/30"
-            }
-            transform group-hover:scale-[1.02]
-          `}
-          >
-            {buttonText || "Get Started"}
-            <span className="absolute right-4 opacity-0 transition-all duration-300 transform translate-x-10 group-hover:opacity-100 group-hover:translate-x-0">
-              →
-            </span>
-          </button>
-        </Link>
+        </main>
       </div>
     </div>
   );
-};
-
-const MaintenancePricingDemo = () => {
-  return (
-    <section className="relative overflow-hidden bg-black text-white min-h-screen">
-      {/* Back to Home Arrow */}
-      <Link href="/" className="absolute left-6 top-6 z-20 group">
-        <div className="flex items-center gap-2">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-0.5 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/40 group-hover:scale-110">
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-zinc-900">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-blue-400 transition-transform duration-300 group-hover:-translate-x-0.5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M10 19l-7-7m0 0l7-7m-7 7h18"
-                />
-              </svg>
-            </div>
-          </div>
-          <span className="text-sm font-medium text-blue-300 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            Back to Home
-          </span>
-        </div>
-      </Link>
-
-      {/* Background elements */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute -left-40 -top-40 h-80 w-80 rounded-full bg-blue-900/20 blur-3xl animate-pulse"
-          style={{ animationDuration: "8s" }}
-        ></div>
-        <div
-          className="absolute right-0 top-1/3 h-60 w-60 rounded-full bg-blue-700/10 blur-3xl animate-pulse"
-          style={{ animationDuration: "12s" }}
-        ></div>
-        <div
-          className="absolute bottom-0 left-1/3 h-40 w-60 rounded-full bg-blue-800/10 blur-3xl animate-pulse"
-          style={{ animationDuration: "10s" }}
-        ></div>
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 md:px-8">
-        <div className="mb-12 space-y-3">
-          <h2 className="text-center text-white text-3xl font-semibold leading-tight sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight transition-all duration-300">
-            <span className="inline-block"></span> Website Maintenance Plans
-          </h2>
-          <p className="text-center text-base text-zinc-400 md:text-lg">
-            Keep your website fast, secure, and always up-to-date.
-          </p>
-          <p className="mx-auto max-w-3xl text-center text-base text-zinc-400 md:text-lg mt-2">
-            Our maintenance packages ensure your site stays functional and
-            healthy with regular updates, security checks, backups, and expert{" "}
-            <strong className="text-white">support</strong>.
-          </p>
-        </div>
-
-        <h3 className="mb-8 text-center text-2xl font-semibold text-white relative">
-          <span className="inline-block transform transition-transform duration-500 hover:scale-105 hover:text-blue-200">
-            {" "}
-            Choose a Plan
-          </span>
-          <span className="absolute -bottom-2 left-1/2 w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform -translate-x-1/2 rounded-full"></span>
-        </h3>
-
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <MaintenancePricingCard
-            color="green"
-            emoji=""
-            tier="Lite Refresh"
-            subtitle="Quick polish for small sites"
-            price="$99"
-            deliveryTime="3 days"
-            benefits={[
-              "Up to 3 pages redesigned",
-              "Modern layout & responsive design",
-              "Basic performance improvements",
-            ]}
-            idealFor="Personal sites, blogs, simple landing pages"
-            buttonText="Choose Lite →"
-          />
-
-          <MaintenancePricingCard
-            color="blue"
-            emoji=""
-            tier="Standard Rebuild"
-            subtitle="Popular choice"
-            price="$249"
-            deliveryTime="7 days"
-            benefits={[
-              "Up to 6 pages redesigned",
-              "Mobile-first layout",
-              "Improved performance & UX",
-              "SEO-friendly structure",
-            ]}
-            idealFor="Freelancers, small businesses"
-            buttonText="Choose Standard →"
-          />
-
-          <MaintenancePricingCard
-            color="purple"
-            emoji=""
-            tier="Pro Redesign"
-            subtitle="Full visual revamp"
-            price="$499"
-            deliveryTime="10–14 days"
-            benefits={[
-              "Up to 10+ pages",
-              "Custom animations",
-              "Speed optimization",
-              "Basic SEO & image compression",
-              "Polished mobile UX",
-            ]}
-            idealFor="Growing brands, pros, entrepreneurs"
-            buttonText="Go Pro →"
-          />
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default MaintenancePricingDemo;
+} 
