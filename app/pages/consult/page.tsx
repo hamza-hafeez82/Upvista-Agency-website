@@ -2,8 +2,7 @@
 import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { CheckCircle, Phone, Video, MessageSquare, Globe, FileText, FileCheck2, FileOutput, Rocket, Wrench, ArrowLeft, Calendar, Mail, MessageCircle, ArrowRight, Users, Target, Zap } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { Phone, Video, MessageSquare, Globe, Calendar, Mail, MessageCircle, Users, Target, Zap, Rocket } from "lucide-react";
 import { FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaFacebook, FaDiscord, FaXTwitter, FaFacebookMessenger } from "react-icons/fa6";
 import Head from "next/head";
 import Link from "next/link";
@@ -96,12 +95,11 @@ const videoOptions = [
 
 export default function ConsultPage() {
   const [selectedMethod, setSelectedMethod] = useState("chat");
-  const router = useRouter();
 
   const renderConsultMethod = () => {
     switch (selectedMethod) {
       case "chat":
-        return (
+  return (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {chatLinks.map((link, index) => (
               <motion.a
@@ -116,11 +114,11 @@ export default function ConsultPage() {
               >
                 <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
                   {link.icon}
-                </div>
+            </div>
                 <h3 className="text-white font-semibold text-lg">{link.name}</h3>
               </motion.a>
-            ))}
-          </div>
+                ))}
+              </div>
         );
       case "schedule":
         return (
@@ -138,7 +136,7 @@ export default function ConsultPage() {
               >
                 <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
                   {option.icon}
-                </div>
+              </div>
                 <h3 className="text-white font-semibold text-lg mb-2">{option.name}</h3>
                 <p className="text-gray-400 text-sm text-center">{option.desc}</p>
               </motion.a>
@@ -159,12 +157,12 @@ export default function ConsultPage() {
                 <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mr-4">
                   {option.icon}
                 </div>
-                <div>
+                    <div>
                   <h3 className="text-white font-semibold text-lg">{option.name}</h3>
                   <p className="text-gray-400 text-sm">{option.desc}</p>
-                </div>
+                    </div>
               </motion.div>
-            ))}
+                ))}
           </div>
         );
       case "social":
@@ -183,7 +181,7 @@ export default function ConsultPage() {
               >
                 <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
                   {link.icon}
-                </div>
+        </div>
                 <h3 className="text-white font-semibold text-sm">{link.name}</h3>
               </motion.a>
             ))}
@@ -197,16 +195,16 @@ export default function ConsultPage() {
   return (
     <>
       <Head>
-        <title>Consultation | Upvista Digital | Let's Build Together</title>
+        <title>Consultation | Upvista Digital | Let&apos;s Build Together</title>
         <meta name="description" content="Connect with Upvista Digital for expert consultation. Choose your preferred method - chat, schedule call, video meeting, or social media." />
         <meta name="keywords" content="Upvista, Upvista Digital, Consultation, Business Talk, Digital Solutions, Expert Advice" />
-        <meta property="og:title" content="Consultation | Upvista Digital | Let's Build Together" />
+        <meta property="og:title" content="Consultation | Upvista Digital | Let&apos;s Build Together" />
         <meta property="og:description" content="Connect with Upvista Digital for expert consultation. Choose your preferred method - chat, schedule call, video meeting, or social media." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://upvistadigital.com/pages/consult" />
         <meta property="og:image" content="https://upvistadigital.com/assets/heroimg.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Consultation | Upvista Digital | Let's Build Together" />
+        <meta name="twitter:title" content="Consultation | Upvista Digital | Let&apos;s Build Together" />
         <meta name="twitter:description" content="Connect with Upvista Digital for expert consultation. Choose your preferred method - chat, schedule call, video meeting, or social media." />
         <meta name="twitter:image" content="https://upvistadigital.com/assets/heroimg.png" />
         <link rel="canonical" href="https://upvistadigital.com/pages/consult" />
@@ -284,11 +282,11 @@ export default function ConsultPage() {
                       <span className="text-sm font-medium">{method.label}</span>
                     </button>
                   ))}
-                </div>
-
+            </div>
+            
                 <div className="mt-8">
                   {renderConsultMethod()}
-                </div>
+              </div>
               </div>
             </motion.div>
 
@@ -326,9 +324,9 @@ export default function ConsultPage() {
                       <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}>
                         <div className="text-white">
                           {step.icon}
-                        </div>
-                      </div>
-                      
+              </div>
+            </div>
+            
                       <div className="text-center">
                         <div className="text-purple-400 text-sm font-bold mb-2">STEP {step.step}</div>
                         <h3 className="text-white font-bold text-lg mb-3">{step.title}</h3>
@@ -355,7 +353,7 @@ export default function ConsultPage() {
                   Let&apos;s transform your ideas into powerful digital solutions together.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button
+              <button
                     onClick={() => setSelectedMethod("chat")}
                     className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 font-semibold"
                   >
@@ -364,14 +362,14 @@ export default function ConsultPage() {
                   <Link href="/pages/contactPage">
                     <button className="px-8 py-3 border border-purple-500/30 text-purple-400 rounded-lg hover:bg-purple-500/10 transition-colors duration-300 font-semibold">
                       Learn More
-                    </button>
+              </button>
                   </Link>
                 </div>
-              </div>
+            </div>
             </motion.div>
           </div>
         </div>
-      </div>
+    </div>
       
       <Footer />
     </>

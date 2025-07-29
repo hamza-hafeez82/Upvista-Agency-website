@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Users, Building2, ArrowLeft } from "lucide-react";
+import { Briefcase, Users, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Head from "next/head";
 import Header from "@/components/Header";
