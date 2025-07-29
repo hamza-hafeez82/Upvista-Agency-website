@@ -241,7 +241,7 @@ export default function RootLayout({
               "description": "Leading software agency in Pakistan specializing in web development, UI/UX design, and digital marketing",
               "url": "https://upvistadigital.com",
               "telephone": "+92-332-0486955",
-              "email": "upvistadigital@gmail.com",
+              "email": "info@upvistadigital.com",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Lahore, Pakistan",
