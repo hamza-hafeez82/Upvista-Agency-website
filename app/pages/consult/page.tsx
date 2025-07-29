@@ -2,9 +2,11 @@
 import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { CheckCircle, Phone, Video, MessageSquare, Globe, FileText, FileCheck2, FileOutput, Rocket, Wrench, ArrowLeft, Calendar, Mail, MessageCircle } from "lucide-react";
+import { CheckCircle, Phone, Video, MessageSquare, Globe, FileText, FileCheck2, FileOutput, Rocket, Wrench, ArrowLeft, Calendar, Mail, MessageCircle, ArrowRight, Users, Target, Zap } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaFacebook, FaDiscord, FaXTwitter, FaFacebookMessenger } from "react-icons/fa6";
+import Head from "next/head";
+import Link from "next/link";
 
 const consultMethods = [
   { label: "Chat", icon: <MessageSquare className="w-5 h-5" />, value: "chat" },
@@ -13,43 +15,35 @@ const consultMethods = [
   { label: "Social Media", icon: <Globe className="w-5 h-5" />, value: "social" },
 ];
 
-const timeline = [
+const consultationProcess = [
   {
-    title: "Consultation",
-    icon: <MessageSquare className="w-6 h-6 text-cyan-300" />,
-    desc: "Connect with us via chat, scheduling, video, or your favorite platform. We listen, understand, and guide you from the very first conversation.",
+    step: "01",
+    title: "Discovery & Connect",
+    description: "We start by understanding your vision, challenges, and goals through our initial consultation.",
+    icon: <Users className="w-8 h-8" />,
+    color: "from-purple-500 to-pink-500"
   },
   {
-    title: "Planning & Docs",
-    icon: <FileText className="w-6 h-6 text-violet-300" />,
-    desc: (
-      <span>
-        We craft and document every detail:<br/>
-        <b>Project Explanation Docx</b>, <b>Requirement Gathering Docx</b>, <b>Development Process Docx</b>, <b>Budget & Resources Analysis Docx</b>, <b>End Product Estimation Docx</b>.<br/>
-        All combined in a <b>Project Module PDF</b> for your review.
-      </span>
-    ),
+    step: "02",
+    title: "Strategy & Planning",
+    description: "Our experts craft a comprehensive strategy and detailed project roadmap tailored to your needs.",
+    icon: <Target className="w-8 h-8" />,
+    color: "from-blue-500 to-cyan-500"
   },
   {
-    title: "Approval",
-    icon: <FileCheck2 className="w-6 h-6 text-emerald-300" />,
-    desc: "The Project Module PDF is submitted to stakeholders and you for approval. We iterate until you are fully satisfied and ready to proceed.",
+    step: "03",
+    title: "Development & Execution",
+    description: "We bring your vision to life with cutting-edge technology and agile development methodologies.",
+    icon: <Zap className="w-8 h-8" />,
+    color: "from-green-500 to-emerald-500"
   },
   {
-    title: "Development",
-    icon: <Rocket className="w-6 h-6 text-cyan-400" />,
-    desc: "Our team brings your vision to life with agile, transparent, and high-quality development. You get regular updates and demos.",
-  },
-  {
-    title: "Deployment",
-    icon: <FileOutput className="w-6 h-6 text-violet-400" />,
-    desc: "We launch your solution with zero-downtime strategies, ensuring everything is secure, optimized, and ready for users.",
-  },
-  {
-    title: "Maintenance",
-    icon: <Wrench className="w-6 h-6 text-emerald-400" />,
-    desc: "Ongoing support, updates, and optimization to keep your digital assets performing at their best.",
-  },
+    step: "04",
+    title: "Launch & Support",
+    description: "We ensure seamless deployment and provide ongoing support to keep your solution performing optimally.",
+    icon: <Rocket className="w-8 h-8" />,
+    color: "from-orange-500 to-red-500"
+  }
 ];
 
 const socialMediaLinks = [
@@ -98,201 +92,288 @@ const videoOptions = [
     icon: <Video className="w-8 h-8" />, 
     desc: "Easy browser-based meeting via Google Meet" 
   },
-  { 
-    name: "WhatsApp Video", 
-    icon: <MessageCircle className="w-8 h-8" />, 
-    desc: "Quick video call setup via WhatsApp" 
-  },
 ];
 
 export default function ConsultPage() {
+  const [selectedMethod, setSelectedMethod] = useState("chat");
   const router = useRouter();
-  const [method, setMethod] = useState<string | null>(null);
-  const [showVideoPopup, setShowVideoPopup] = useState(false);
 
-  return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#0f172a] via-[#312e81] to-[#00ffd0]/10">
-      {/* Back Button */}
-      <button
-        onClick={() => router.back()}
-        className="fixed top-6 left-6 z-50 flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 text-black font-bold shadow-xl border-2 border-cyan-900 hover:scale-105 hover:shadow-2xl active:scale-95 transition-all duration-300 backdrop-blur-xl"
-        style={{boxShadow: '0 4px 24px 0 rgba(0,255,208,0.12)'}}
-        aria-label="Go Back"
-      >
-        <ArrowLeft className="w-5 h-5" />
-        <span className="hidden sm:inline">Back</span>
-      </button>
-      {/* Hero Section */}
-      <section className="w-full py-20 flex flex-col items-center justify-center">
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400 text-center mb-6 tracking-tight">
-          Start Your Consulting Journey
-        </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.7 }} className="text-lg md:text-2xl text-cyan-100 text-center max-w-2xl mb-8">
-          Unlock your business&apos;s full potential with Upvista&apos;s expert digital consulting. Let&apos;s build your roadmap to success—together.
-        </motion.p>
-      </section>
-      {/* Main Content: Left Timeline & Booking, Right Process/Benefits */}
-      <section className="flex flex-col md:flex-row gap-12 max-w-7xl mx-auto w-full px-4 mb-24">
-        {/* Left: Timeline & Booking */}
-        <div className="flex-1 flex flex-col gap-10">
-          {/* Consulting Methods */}
-          <div className="bg-black/40 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border border-cyan-900 flex flex-col items-center mb-4">
-            <h3 className="text-xl font-bold text-cyan-200 mb-4">Consult via</h3>
-            <div className="flex flex-wrap gap-4 justify-center mb-4">
-              {consultMethods.map((m) => (
-                <button
-                  key={m.value}
-                  className={`flex items-center gap-2 px-5 py-2 rounded-full font-semibold border transition-all duration-300 ${method === m.value ? "bg-gradient-to-r from-cyan-400 to-emerald-400 text-black border-cyan-400" : "bg-black/30 text-cyan-100 border-cyan-900 hover:bg-cyan-900/30"}`}
-                  onClick={() => setMethod(m.value)}
-                  type="button"
-                >
-                  {m.icon} {m.label}
-                </button>
-              ))}
-            </div>
-            {/* Dynamic Booking UI */}
-            {method === "social" && (
-              <div className="flex flex-wrap gap-6 justify-center mt-4">
-                {socialMediaLinks.map(link => (
-                  <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
-                    <span className="bg-gradient-to-br from-cyan-400 to-violet-400 p-4 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">{link.icon}</span>
-                    <span className="text-cyan-100 font-medium text-sm group-hover:text-emerald-300 transition-colors">{link.name}</span>
-                  </a>
-                ))}
-              </div>
-            )}
-            {method === "chat" && (
-              <div className="flex flex-wrap gap-6 justify-center mt-4">
-                {chatLinks.map(link => (
-                  <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
-                    <span className="bg-gradient-to-br from-cyan-400 to-emerald-400 p-4 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">{link.icon}</span>
-                    <span className="text-cyan-100 font-medium text-sm group-hover:text-violet-300 transition-colors">{link.name}</span>
-                  </a>
-                ))}
-              </div>
-            )}
-            {method === "schedule" && (
-              <div className="flex flex-wrap gap-6 justify-center mt-4">
-                {scheduleOptions.map(option => (
-                  <a key={option.name} href={option.href} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 group">
-                    <span className="bg-gradient-to-br from-cyan-400 to-violet-400 p-4 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">{option.icon}</span>
-                    <span className="text-cyan-100 font-medium text-sm group-hover:text-emerald-300 transition-colors">{option.name}</span>
-                  </a>
-                ))}
-              </div>
-            )}
-            {method === "video" && (
-              <div className="flex flex-wrap gap-6 justify-center mt-4">
-                {videoOptions.map(option => (
-                  <button key={option.name} onClick={() => setShowVideoPopup(true)} className="flex flex-col items-center gap-2 group cursor-pointer">
-                    <span className="bg-gradient-to-br from-cyan-400 to-violet-400 p-4 rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">{option.icon}</span>
-                    <span className="text-cyan-100 font-medium text-sm group-hover:text-emerald-300 transition-colors">{option.name}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-          {/* Vertical Timeline */}
-          <div className="bg-black/40 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border border-cyan-900 flex flex-col gap-8">
-            <h3 className="text-xl font-bold text-cyan-200 mb-4">How We Work</h3>
-            <div className="relative pl-6">
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 via-violet-400 to-emerald-400 rounded-full" />
-              <ul className="space-y-10">
-                {timeline.map((phase, i) => (
-                  <li key={phase.title} className="relative flex gap-4 items-start">
-                    <div className="absolute -left-7 top-0">{phase.icon}</div>
-                    <div>
-                      <h4 className="text-lg font-bold text-cyan-100 mb-1">{i + 1}. {phase.title}</h4>
-                      <div className="text-cyan-200 text-base" style={{lineHeight: '1.7'}}>{phase.desc}</div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-        {/* Right: Process & Benefits */}
-        <div className="flex-1 flex flex-col gap-12 justify-center">
-          <div className="rounded-3xl bg-gradient-to-br from-[#0f172a]/80 via-[#312e81]/70 to-[#00ffd0]/10 backdrop-blur-xl shadow-2xl p-10 md:p-16 border border-cyan-900">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400 mb-4">Our Consulting Process</h2>
-            <ul className="space-y-4 text-cyan-100 text-lg">
-              <li className="flex items-start gap-3"><CheckCircle className="text-emerald-400 mt-1" /> <span><b>Discovery:</b> We listen, learn, and analyze your business, goals, and challenges.</span></li>
-              <li className="flex items-start gap-3"><CheckCircle className="text-emerald-400 mt-1" /> <span><b>Strategy:</b> We craft a tailored roadmap and actionable plan for your digital growth.</span></li>
-              <li className="flex items-start gap-3"><CheckCircle className="text-emerald-400 mt-1" /> <span><b>Execution:</b> We guide you through implementation, ensuring clarity and confidence at every step.</span></li>
-              <li className="flex items-start gap-3"><CheckCircle className="text-emerald-400 mt-1" /> <span><b>Support:</b> We provide ongoing advice, optimization, and partnership for lasting success.</span></li>
-            </ul>
-          </div>
-          <div className="rounded-3xl bg-black/40 backdrop-blur-xl shadow-2xl p-10 md:p-16 border border-cyan-900">
-            <h3 className="text-2xl font-bold text-cyan-200 mb-2">Why Consult with Upvista?</h3>
-            <ul className="space-y-3 text-cyan-100 text-lg">
-              <li className="flex items-center gap-2"><CheckCircle className="text-cyan-400" /> 100% tailored, actionable advice</li>
-              <li className="flex items-center gap-2"><CheckCircle className="text-cyan-400" /> Proven digital transformation expertise</li>
-              <li className="flex items-center gap-2"><CheckCircle className="text-cyan-400" /> Transparent, collaborative process</li>
-              <li className="flex items-center gap-2"><CheckCircle className="text-cyan-400" /> Ongoing partnership & support</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <Footer />
-
-      {/* Video Consultation Popup */}
-      {showVideoPopup && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 max-w-md w-full border border-gray-700 shadow-2xl">
-            <div className="text-center mb-6">
-              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500/20 to-violet-500/20 rounded-full flex items-center justify-center">
-                <Video className="w-8 h-8 text-cyan-400" />
-              </div>
-              <h2 className="text-2xl font-bold text-white mb-2">Video Consultation</h2>
-              <p className="text-gray-300">Video consultations are available for premium clients. Please contact us to schedule a video call.</p>
-            </div>
-            
-            <div className="space-y-4 text-sm text-gray-300">
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                <p>Professional video consultation via Zoom or Google Meet</p>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                <p>Screen sharing and presentation capabilities</p>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                <p>High-quality audio and video</p>
-              </div>
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                <p>Recording option available</p>
-              </div>
-            </div>
-            
-            <div className="mt-6 space-y-3">
-              <a 
-                href="https://wa.me/923320486955?text=Hi! I'd like to schedule a premium video consultation."
+  const renderConsultMethod = () => {
+    switch (selectedMethod) {
+      case "chat":
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {chatLinks.map((link, index) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-gradient-to-r from-cyan-500 to-violet-500 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-violet-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group"
               >
-                <MessageCircle className="w-5 h-5" />
-                <span>Contact via WhatsApp</span>
-              </a>
-              <a 
-                href="mailto:support@upvistadigital.com?subject=Premium Video Consultation Request&body=Hi! I'd like to schedule a premium video consultation. Please let me know the details and pricing."
-                className="w-full py-3 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2"
+                <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
+                  {link.icon}
+                </div>
+                <h3 className="text-white font-semibold text-lg">{link.name}</h3>
+              </motion.a>
+            ))}
+          </div>
+        );
+      case "schedule":
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {scheduleOptions.map((option, index) => (
+              <motion.a
+                key={option.name}
+                href={option.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group"
               >
-                <Mail className="w-5 h-5" />
-                <span>Contact via Email</span>
-              </a>
-              <button
-                onClick={() => setShowVideoPopup(false)}
-                className="w-full py-2 text-gray-400 hover:text-white transition-colors text-sm"
+                <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
+                  {option.icon}
+                </div>
+                <h3 className="text-white font-semibold text-lg mb-2">{option.name}</h3>
+                <p className="text-gray-400 text-sm text-center">{option.desc}</p>
+              </motion.a>
+            ))}
+          </div>
+        );
+      case "video":
+        return (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {videoOptions.map((option, index) => (
+              <motion.div
+                key={option.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group"
               >
-                Close
-              </button>
-            </div>
+                <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mr-4">
+                  {option.icon}
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-lg">{option.name}</h3>
+                  <p className="text-gray-400 text-sm">{option.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        );
+      case "social":
+        return (
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+            {socialMediaLinks.map((link, index) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group"
+              >
+                <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
+                  {link.icon}
+                </div>
+                <h3 className="text-white font-semibold text-sm">{link.name}</h3>
+              </motion.a>
+            ))}
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <>
+      <Head>
+        <title>Consultation | Upvista Digital | Let's Build Together</title>
+        <meta name="description" content="Connect with Upvista Digital for expert consultation. Choose your preferred method - chat, schedule call, video meeting, or social media." />
+        <meta name="keywords" content="Upvista, Upvista Digital, Consultation, Business Talk, Digital Solutions, Expert Advice" />
+        <meta property="og:title" content="Consultation | Upvista Digital | Let's Build Together" />
+        <meta property="og:description" content="Connect with Upvista Digital for expert consultation. Choose your preferred method - chat, schedule call, video meeting, or social media." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://upvistadigital.com/pages/consult" />
+        <meta property="og:image" content="https://upvistadigital.com/assets/heroimg.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Consultation | Upvista Digital | Let's Build Together" />
+        <meta name="twitter:description" content="Connect with Upvista Digital for expert consultation. Choose your preferred method - chat, schedule call, video meeting, or social media." />
+        <meta name="twitter:image" content="https://upvistadigital.com/assets/heroimg.png" />
+        <link rel="canonical" href="https://upvistadigital.com/pages/consult" />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white pt-20 relative overflow-hidden">
+        {/* 3D Background with Purple Wave */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+          {/* Animated Purple Wave SVG */}
+          <svg className="absolute top-0 left-0 w-full h-full opacity-20" viewBox="0 0 1200 800" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.3" />
+                <stop offset="50%" stopColor="#A855F7" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.3" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,400 Q300,300 600,400 T1200,400 L1200,800 L0,800 Z"
+              fill="url(#waveGradient)"
+              className="animate-pulse"
+            />
+            <path
+              d="M0,500 Q300,400 600,500 T1200,500 L1200,800 L0,800 Z"
+              fill="url(#waveGradient)"
+              className="animate-pulse"
+              style={{ animationDelay: '1s' }}
+            />
+          </svg>
+          
+          {/* Floating Elements */}
+          <div className="absolute top-20 left-20 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 bg-blue-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-32 left-1/3 w-40 h-40 bg-pink-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+        </div>
+
+        <div className="relative z-10">
+          {/* Header */}
+          <div className="container mx-auto px-4 py-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-center mb-12"
+            >
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
+                Let&apos;s Talk Business
+              </h1>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Choose your preferred way to connect with us and start building your digital future.
+              </p>
+            </motion.div>
+
+            {/* Consult Methods Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="max-w-4xl mx-auto mb-16"
+            >
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                <h2 className="text-2xl font-bold text-white mb-6 text-center">How would you like to connect?</h2>
+                
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  {consultMethods.map((method) => (
+                    <button
+                      key={method.value}
+                      onClick={() => setSelectedMethod(method.value)}
+                      className={`p-4 rounded-xl transition-all duration-300 flex flex-col items-center ${
+                        selectedMethod === method.value
+                          ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
+                          : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white"
+                      }`}
+                    >
+                      <div className="mb-2">{method.icon}</div>
+                      <span className="text-sm font-medium">{method.label}</span>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-8">
+                  {renderConsultMethod()}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Consultation Process Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="max-w-6xl mx-auto mb-16"
+            >
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Our Consultation Process
+                </h2>
+                <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                  A simple, transparent pathway from your vision to digital reality.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {consultationProcess.map((step, index) => (
+                  <motion.div
+                    key={step.step}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 + index * 0.1 }}
+                    className="relative group"
+                  >
+                    {/* Connection Line */}
+                    {index < consultationProcess.length - 1 && (
+                      <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-purple-500/50 to-transparent transform -translate-y-1/2 z-0"></div>
+                    )}
+                    
+                    <div className="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group-hover:scale-105">
+                      <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform duration-300`}>
+                        <div className="text-white">
+                          {step.icon}
+                        </div>
+                      </div>
+                      
+                      <div className="text-center">
+                        <div className="text-purple-400 text-sm font-bold mb-2">STEP {step.step}</div>
+                        <h3 className="text-white font-bold text-lg mb-3">{step.title}</h3>
+                        <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* CTA Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="text-center"
+            >
+              <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 max-w-2xl mx-auto">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Ready to Start Your Journey?
+                </h3>
+                <p className="text-gray-300 mb-6">
+                  Let&apos;s transform your ideas into powerful digital solutions together.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button
+                    onClick={() => setSelectedMethod("chat")}
+                    className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 font-semibold"
+                  >
+                    Start Consultation
+                  </button>
+                  <Link href="/pages/contactPage">
+                    <button className="px-8 py-3 border border-purple-500/30 text-purple-400 rounded-lg hover:bg-purple-500/10 transition-colors duration-300 font-semibold">
+                      Learn More
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
-      )}
-    </div>
+      </div>
+      
+      <Footer />
+    </>
   );
 } 

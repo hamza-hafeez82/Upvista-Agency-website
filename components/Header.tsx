@@ -595,7 +595,7 @@ const Header = () => {
             </button>
           </Link>
           {/* Let's Talk Business Button */}
-          <Link href="/contact-business" className="ml-2">
+          <Link href="/pages/consult" className="ml-2">
             <button className="px-5 py-2 bg-transparent text-white font-semibold rounded-lg border border-white shadow hover:bg-white hover:text-black transition-all duration-300">
               Let&apos;s Talk Business
             </button>
@@ -868,7 +868,7 @@ const Header = () => {
                     Explore Careers
                   </button>
                 </Link>
-                <Link href="/contact-business" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/pages/consult" onClick={() => setMobileMenuOpen(false)}>
                   <button className="w-full px-5 py-3 bg-transparent text-white font-semibold rounded-lg border border-white shadow hover:bg-white hover:text-black transition-all duration-300">
                     Let&apos;s Talk Business
                   </button>
