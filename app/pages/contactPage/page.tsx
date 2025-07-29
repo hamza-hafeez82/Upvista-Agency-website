@@ -38,7 +38,7 @@ const socialMediaLinks = [
 const chatLinks = [
   { name: "WhatsApp", icon: <FaWhatsapp className="w-8 h-8" />, href: "https://wa.me/923320486955" },
   { name: "Messenger", icon: <FaFacebookMessenger className="w-8 h-8" />, href: "https://m.me/61576935582300?source=qr_link_share" },
-  { name: "Email", icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:upvistadigital@gmail.com" },
+  { name: "Email", icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:info@upvistadigital.com" },
 ];
 
 const scheduleOptions = [
@@ -57,7 +57,7 @@ const scheduleOptions = [
   { 
     name: "Email", 
     icon: <Mail className="w-8 h-8" />, 
-    href: "mailto:upvistadigital@gmail.com?subject=Consultation Request&body=Hi! I'd like to schedule a consultation call. Please let me know your available times.", 
+    href: "mailto:support@upvistadigital.com?subject=Consultation Request&body=Hi! I'd like to schedule a consultation call. Please let me know your available times.", 
     desc: "Traditional email scheduling" 
   },
 ];
@@ -109,8 +109,8 @@ export default function ContactPage() {
     {
       icon: <FaEnvelope className="w-6 h-6" />,
       title: "Email",
-      value: "upvistadigital@gmail.com",
-      href: "mailto:upvistadigital@gmail.com",
+      value: "info@upvistadigital.com",
+      href: "mailto:info@upvistadigital.com",
     },
     {
       icon: <FaPhone className="w-6 h-6" />,
@@ -249,7 +249,7 @@ export default function ContactPage() {
                   <span>Contact via WhatsApp</span>
                 </a>
                 <a 
-                  href="mailto:upvistadigital@gmail.com?subject=Premium Video Consultation Request&body=Hi! I'd like to schedule a premium video consultation. Please let me know the details and pricing."
+                  href="mailto:support@upvistadigital.com?subject=Premium Video Consultation Request&body=Hi! I'd like to schedule a premium video consultation. Please let me know the details and pricing."
                   className="w-full py-3 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <Mail className="w-5 h-5" />
