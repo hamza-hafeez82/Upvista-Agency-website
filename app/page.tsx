@@ -9,10 +9,46 @@ import InfiniteSliderBasic from "@/components/InfinityCarousel";
 import { Vortex } from "@/components/ui/vortex";
 import Link from "next/link";
 import ValueProposition from "@/components/ValueProposition";
+import Head from 'next/head';
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Upvista Digital | Transforming Lives Through Digital Innovation</title>
+        <meta name="description" content="Upvista Digital is more than an agency, we are a movement. We empower visionaries, nurture talent, and build lasting relationships. Join us to co-create the digital future." />
+        <meta name="keywords" content="Upvista, Upvista Digital, upvista, upvista digital Digital Agency, Web Development, AI Training, Software Training, Community, Digital Transformation, Pakistan, Global, Innovation, Collaboration, Research, Empowerment" />
+        <meta property="og:title" content="Upvista Digital | Transforming Lives Through Digital Innovation" />
+        <meta property="og:description" content="Upvista Digital is more than an agency, we are a movement. We empower visionaries, nurture talent, and build lasting relationships. Join us to co-create the digital future." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://upvistadigital.com/" />
+        <meta property="og:image" content="https://upvistadigital.com/assets/heroimg.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Upvista Digital | Transforming Lives Through Digital Innovation" />
+        <meta name="twitter:description" content="Upvista Digital is more than an agency, we are a movement. We empower visionaries, nurture talent, and build lasting relationships. Join us to co-create the digital future." />
+        <meta name="twitter:image" content="https://upvistadigital.com/assets/heroimg.png" />
+        <link rel="canonical" href="https://upvistadigital.com/" />
+        {/* Organization Structured Data */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Upvista Digital',
+          url: 'https://upvistadigital.com/',
+          logo: 'https://upvistadigital.com/assets/u.png',
+          sameAs: [
+            'https://www.linkedin.com/in/hamza-hafeez-b0233731a',
+            'https://www.facebook.com/share/1DXUJFcwit/',
+            'https://x.com/Upvista_Digital?s=09',
+            'https://www.instagram.com/upvista_digital?igsh=aTJ1dDFqMXdlMTBk',
+          ],
+          description: 'Upvista Digital is a visionary digital powerhouse and movement, empowering visionaries, nurturing talent, and building lasting relationships through innovation, research, and collaboration.',
+          contactPoint: [{
+            '@type': 'ContactPoint',
+            email: 'info@upvistadigital.com',
+            contactType: 'customer support',
+          }],
+        }) }} />
+      </Head>
       <Header />
       <div id="hero">
         <Hero />
