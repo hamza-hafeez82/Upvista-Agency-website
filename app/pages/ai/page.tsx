@@ -442,33 +442,77 @@ export default function AIPage() {
           </button>
         </header>
 
-        {/* Mobile Services Sidebar */}
-        <div className={`fixed right-0 top-0 h-full w-64 bg-black border-l border-gray-800 z-40 transform transition-transform duration-300 ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden`}>
-          <div className="p-4">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-white">Services</h3>
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="p-2 text-gray-300 hover:text-white transition-colors duration-200"
-              >
-                <X className="h-5 w-5" />
-              </button>
+        {/* Mobile Services Sidebar - Improved */}
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop Overlay */}
+            <div 
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            
+            {/* Mobile Services Sidebar */}
+            <div className={`fixed right-0 top-0 h-full w-80 bg-gradient-to-b from-gray-900 via-black to-gray-900 border-l border-purple-500/30 z-50 transform transition-all duration-300 ease-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} md:hidden shadow-2xl shadow-purple-500/20`}>
+              <div className="p-6 h-full flex flex-col">
+                {/* Header */}
+                <div className="flex items-center justify-between mb-8 pb-4 border-b border-purple-500/20">
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Our Services</h3>
+                    <p className="text-purple-300/80 text-sm mt-1">Choose your path to success</p>
+                  </div>
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 text-gray-300 hover:text-white hover:bg-purple-500/20 rounded-lg transition-all duration-200 group"
+                  >
+                    <X className="h-5 w-5 group-hover:rotate-90 transition-transform duration-200" />
+                  </button>
+                </div>
+                
+                {/* Services List - Scrollable */}
+                <div className="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-thin scrollbar-thumb-purple-500/40 scrollbar-track-transparent">
+                  {servicesList.map((service, index) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center gap-4 p-4 text-gray-300 hover:text-white hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-pink-600/20 rounded-xl transition-all duration-300 border border-transparent hover:border-purple-500/30 group"
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <div className="text-purple-400 group-hover:text-purple-300 transition-colors duration-200 group-hover:scale-110 transform">
+                        {service.icon}
+                      </div>
+                      <div className="flex-1">
+                        <span className="font-medium group-hover:font-semibold transition-all duration-200">{service.name}</span>
+                      </div>
+                      <svg
+                        className="h-4 w-4 text-purple-400/60 group-hover:text-purple-300 group-hover:translate-x-1 transition-all duration-200"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  ))}
+                </div>
+                
+                {/* Footer CTA */}
+                <div className="mt-6 pt-4 border-t border-purple-500/20">
+                  <Link
+                    href="/pages/contactPage"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl shadow-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 transform"
+                  >
+                    <span>Get Started</span>
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="space-y-2">
-              {servicesList.map((service) => (
-                <Link
-                  key={service.name}
-                  href={service.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center gap-3 p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-200"
-                >
-                  {service.icon}
-                  <span>{service.name}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
+          </>
+        )}
 
         {/* Main Content Area */}
         <main className="flex-1 p-6 md:p-8 overflow-y-auto">
