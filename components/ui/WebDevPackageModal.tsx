@@ -2,74 +2,99 @@ import React, { useState } from "react";
 
 const packages = [
   {
-    key: "frontend",
-    title: "Frontend Web Development",
-    description:
-      "Master HTML, CSS, JavaScript, and modern frameworks like React. Build responsive, accessible, and high-performance web interfaces. Learn best practices, UI/UX principles, and use AI tools to boost productivity.",
+    key: "free",
+    title: "Community Access",
+    tier: "FREE",
+    description: "Get a taste of quality web development education. Perfect for exploring if tech is right for you.",
     features: [
+      "1 live session every Sunday (1.5 hours)",
+      "Access to community Discord/Slack",
+      "Basic learning resources & recordings",
+      "Q&A sessions with instructors",
+      "Networking opportunities with peers",
+      "HTML/CSS/JavaScript basics overview",
+    ],
+    notIncluded: [
+      "No certificates",
+      "No personalized feedback", 
+      "No individual projects",
+      "No job preparation",
+      "No direct mentor access"
+    ],
+    price: "FREE",
+    duration: "Ongoing",
+    highlight: "Perfect for beginners",
+  },
+  {
+    key: "starter",
+    title: "Foundation Builder",
+    tier: "STARTER",
+    description: "Build solid web development foundations without breaking the bank. Ideal for committed beginners.",
+    features: [
+      "3 live classes per week (4.5 hours total)",
       "HTML, CSS, JavaScript fundamentals",
-      "React & modern frontend frameworks",
-      "Responsive & accessible design",
-      "UI/UX best practices",
-      "Performance optimization",
-      "AI tools for frontend dev",
-      "Project-based learning",
-      "Team collaboration",
+      "Introduction to React & modern frameworks",
+      "Responsive design principles",
+      "Group projects & team collaboration",
+      "Basic completion certificate",
+      "Resume building workshop (group)",
+      "Access to all course materials & recordings",
     ],
-    price: "30,000 PKR (2 months)",
-    duration: "2 months",
+    price: "18,000 PKR/month",
+    duration: "3 months",
+    highlight: "Most popular choice",
   },
   {
-    key: "backend",
-    title: "Backend Web Development",
-    description:
-      "Learn to build robust backend systems with Node.js, Express, databases (SQL/NoSQL), authentication, APIs, and deployment. Focus on security, testing, and integration with frontend and external services.",
+    key: "premium",
+    title: "Professional Development", 
+    tier: "PREMIUM",
+    description: "Get job-ready skills with professional mentorship. Comprehensive training for serious career changers.",
     features: [
-      "Node.js, Express, REST APIs",
-      "Database integration (SQL/NoSQL)",
-      "Authentication & security",
-      "Testing & debugging",
-      "Deployment & scaling",
-      "Best practices & real-world projects",
+      "5 live classes per week + weekend sessions",
+      "1-on-1 monthly mentorship (2 hours/month)",
+      "Personalized project assignments & feedback",
+      "Individual portfolio development",
+      "Frontend & Backend development",
+      "Real-world client projects (supervised)",
+      "Mock interviews & technical assessments",
+      "Industry-recognized certifications",
+      "Alumni network access",
+      "Job referral network",
+      "Direct instructor access",
     ],
-    price: "30,000 PKR (2 months)",
-    duration: "2 months",
-  },
-  {
-    key: "fullstack",
-    title: "Fullstack Web Development",
-    description:
-      "Become a complete web developer! Learn frontend and backend, build and deploy full-featured web apps. Master system architecture, design patterns, best practices, and use AI tools to maximize productivity.",
-    features: [
-      "All modules included (Frontend, Backend, UI/UX)",
-      "System architecture & design",
-      "UI/UX, design patterns",
-      "Frontend (React, etc.)",
-      "Backend (Node.js, Express, etc.)",
-      "AI tools for web dev",
-      "Portfolio development & mentorship",
-      "End-to-end projects & job prep",
-    ],
-    price: "60,000 PKR (4 months)",
-    perMonth: "17,000 PKR/month",
+    price: "45,000 PKR/month",
     duration: "4 months",
+    highlight: "Job-ready skills",
   },
   {
-    key: "uiux",
-    title: "UI/UX Design for Web",
-    description:
-      "Learn the principles of user interface and user experience design for the web. Master Figma, wireframing, prototyping, usability testing, and design systems. Build beautiful, user-friendly web products.",
+    key: "jobready",
+    title: "Career Guarantee",
+    tier: "JOB READY",
+    description: "Intensive program with guaranteed job placement. Pay only when you land a job earning 50k+ PKR/month.",
     features: [
-      "UI/UX fundamentals",
-      "Figma & design tools",
-      "Wireframing & prototyping",
-      "Usability testing",
-      "Design systems",
-      "Collaboration with dev teams",
-      "Portfolio projects",
+      "Intensive daily training (6 hours/day, 5 days/week)",
+      "Weekly 1-on-1 mentorship (4 hours/week)", 
+      "Full-stack development mastery",
+      "Real client projects with revenue sharing",
+      "Advanced frameworks & technologies",
+      "Interview preparation bootcamp",
+      "Salary negotiation training",
+      "3-month post-placement support",
+      "Industry connections & direct referrals",
+      "Advanced certifications (AWS, etc.)",
+      "Guaranteed job placement or full refund",
     ],
-    price: "25,000 PKR (1.5 months)",
-    duration: "1.5 months",
+    prerequisites: [
+      "Pass technical assessment",
+      "Complete foundation courses",
+      "Demonstrate basic programming competency", 
+      "Available for full-time intensive program",
+      "Sign commitment contract"
+    ],
+    price: "15% of first year salary",
+    priceNote: "(capped at 150,000 PKR)",
+    duration: "6 months + 3 months support",
+    highlight: "Guaranteed placement",
   },
 ];
 
@@ -86,10 +111,20 @@ export default function WebDevPackageModal({ open, onClose }: { open: boolean; o
             {packages.map((p, idx) => (
               <button
                 key={p.key}
-                className={`px-3 sm:px-4 py-2 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200 focus:outline-none whitespace-nowrap ${current === idx ? 'bg-violet-400 text-[#18181b] shadow-lg' : 'bg-violet-900/40 text-violet-200 hover:bg-violet-800/60'}`}
+                className={`px-3 sm:px-4 py-2 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200 focus:outline-none whitespace-nowrap relative ${current === idx ? 'bg-violet-400 text-[#18181b] shadow-lg' : 'bg-violet-900/40 text-violet-200 hover:bg-violet-800/60'}`}
                 onClick={() => setCurrent(idx)}
               >
-                {p.title.split(' ')[0]}
+                <div className="flex flex-col items-center">
+                  <span className={`text-xs font-bold ${current === idx ? 'text-[#18181b]' : 'text-violet-300'}`}>
+                    {p.tier}
+                  </span>
+                  <span>{p.title.split(' ')[0]}</span>
+                </div>
+                {p.highlight && (
+                  <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                    {p.highlight === "Most popular choice" ? "🔥" : p.highlight === "Guaranteed placement" ? "💎" : "✨"}
+                  </div>
+                )}
               </button>
             ))}
           </div>
@@ -104,22 +139,64 @@ export default function WebDevPackageModal({ open, onClose }: { open: boolean; o
         {/* Content */}
         <div className="w-full max-w-xl sm:max-w-2xl mx-auto flex flex-col items-center overflow-y-auto max-h-[60vh] px-2 py-4 sm:py-6 flex-1">
           <div className="w-full text-center mb-4 sm:mb-6">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className={`px-3 py-1 rounded-full text-xs font-bold ${pkg.key === 'free' ? 'bg-green-500 text-white' : pkg.key === 'starter' ? 'bg-blue-500 text-white' : pkg.key === 'premium' ? 'bg-purple-500 text-white' : 'bg-gold-500 text-black'}`}>
+                {pkg.tier}
+              </span>
+              {pkg.highlight && (
+                <span className="text-green-400 text-xs font-semibold">• {pkg.highlight}</span>
+              )}
+            </div>
             <h3 className="text-xl sm:text-3xl md:text-4xl font-bold text-violet-100 drop-shadow-glow mb-2">{pkg.title}</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-2 sm:gap-4 mb-2">
               <span className="text-violet-300 font-bold text-lg sm:text-2xl">{pkg.price}</span>
-              <span className="text-violet-200 text-sm sm:text-lg">{pkg.duration}</span>
+              {pkg.priceNote && (
+                <span className="text-violet-400 text-sm">{pkg.priceNote}</span>
+              )}
+              <span className="text-violet-200 text-sm sm:text-lg">• {pkg.duration}</span>
             </div>
-            <div className="mb-2 text-green-400 text-xs sm:text-base font-semibold">1 week free trial included</div>
-            {pkg.key === "fullstack" && (
-              <div className="mb-2 text-violet-400 text-xs sm:text-base font-semibold">or {pkg.perMonth} (all modules included)</div>
+            {pkg.key === "free" && (
+              <div className="mb-2 text-green-400 text-xs sm:text-base font-semibold">✨ No commitment required</div>
+            )}
+            {pkg.key === "jobready" && (
+              <div className="mb-2 text-yellow-400 text-xs sm:text-base font-semibold">💎 Pay only when you get a job</div>
             )}
           </div>
           <p className="text-violet-100/90 mb-4 sm:mb-6 text-center text-base sm:text-lg">{pkg.description}</p>
-          <ul className="list-disc list-inside text-violet-200/90 mb-4 sm:mb-6 pl-2 w-full text-sm sm:text-base">
-            {pkg.features.map((f) => (
-              <li key={f}>{f}</li>
-            ))}
-          </ul>
+          
+          {/* Features */}
+          <div className="w-full mb-4 sm:mb-6">
+            <h4 className="font-bold text-violet-200 text-lg mb-2">✅ What's Included:</h4>
+            <ul className="list-disc list-inside text-violet-200/90 pl-2 w-full text-sm sm:text-base">
+              {pkg.features.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Not Included (for Free tier) */}
+          {pkg.notIncluded && (
+            <div className="w-full mb-4 sm:mb-6">
+              <h4 className="font-bold text-red-400 text-lg mb-2">❌ Not Included:</h4>
+              <ul className="list-disc list-inside text-red-300/90 pl-2 w-full text-sm sm:text-base">
+                {pkg.notIncluded.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Prerequisites (for Job Ready tier) */}
+          {pkg.prerequisites && (
+            <div className="w-full mb-4 sm:mb-6">
+              <h4 className="font-bold text-yellow-400 text-lg mb-2">📋 Prerequisites:</h4>
+              <ul className="list-disc list-inside text-yellow-300/90 pl-2 w-full text-sm sm:text-base">
+                {pkg.prerequisites.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           {/* Timeline & details */}
           <div className="space-y-6 w-full">
             <div>
@@ -155,10 +232,21 @@ export default function WebDevPackageModal({ open, onClose }: { open: boolean; o
         {/* Sticky Footer */}
         <div className="w-full flex flex-col sm:flex-row justify-end gap-2 sm:gap-4 px-2 sm:px-10 py-4 sm:py-6 border-t border-violet-400/20 bg-violet-950/30 rounded-b-3xl sticky bottom-0 z-10">
           <button
-            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-gradient-to-r from-violet-400 to-indigo-600 text-white font-bold rounded-xl shadow hover:from-violet-500 hover:to-indigo-700 transition-all duration-300 glow-btn text-base sm:text-lg"
+            className={`w-full sm:w-auto px-6 sm:px-8 py-3 font-bold rounded-xl shadow transition-all duration-300 text-base sm:text-lg ${
+              pkg.key === 'free' 
+                ? 'bg-gradient-to-r from-green-400 to-green-600 text-white hover:from-green-500 hover:to-green-700' 
+                : pkg.key === 'starter'
+                ? 'bg-gradient-to-r from-blue-400 to-blue-600 text-white hover:from-blue-500 hover:to-blue-700'
+                : pkg.key === 'premium'
+                ? 'bg-gradient-to-r from-purple-400 to-purple-600 text-white hover:from-purple-500 hover:to-purple-700'
+                : 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-black hover:from-yellow-500 hover:to-yellow-700'
+            } glow-btn`}
             onClick={() => {/* TODO: registration logic or scroll to enroll */}}
           >
-            Register for free (1 week)
+            {pkg.key === 'free' ? 'Join Community' :
+             pkg.key === 'starter' ? 'Start Learning' :
+             pkg.key === 'premium' ? 'Go Premium' :
+             'Apply for Program'}
           </button>
           <button
             className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-white/10 text-violet-100 font-bold rounded-xl border border-violet-400/30 backdrop-blur-md hover:bg-violet-900/30 transition-all duration-300 text-base sm:text-lg"

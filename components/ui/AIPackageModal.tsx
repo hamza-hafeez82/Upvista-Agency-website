@@ -2,67 +2,101 @@ import React, { useState } from "react";
 
 const packages = [
   {
-    key: "foundations",
-    title: "AI Foundations",
-    description:
-      "Build a strong foundation in Artificial Intelligence. Learn core concepts, Python for AI, data handling, and essential math for AI (linear algebra, probability, calculus).",
+    key: "free",
+    title: "Community Access",
+    tier: "FREE",
+    description: "Explore the exciting world of AI and machine learning. Perfect for discovering if AI is your passion.",
     features: [
-      "Python for AI",
+      "1 live session every Sunday (1.5 hours)",
+      "Access to community Discord/Slack",
+      "Basic AI concepts & resources",
+      "Q&A sessions with AI experts",
+      "Networking with AI enthusiasts",
+      "Introduction to Python for AI basics",
+    ],
+    notIncluded: [
+      "No certificates",
+      "No personalized feedback",
+      "No individual projects",
+      "No job preparation", 
+      "No direct mentor access"
+    ],
+    price: "FREE",
+    duration: "Ongoing",
+    highlight: "Perfect for beginners",
+  },
+  {
+    key: "starter",
+    title: "AI Foundation Builder",
+    tier: "STARTER", 
+    description: "Build strong AI fundamentals with Python, math, and basic machine learning. Perfect for AI beginners.",
+    features: [
+      "3 live classes per week (4.5 hours total)",
+      "Python for AI programming",
+      "Math for AI (linear algebra, statistics)",
+      "Machine learning fundamentals",
       "Data handling & preprocessing",
-      "Math for AI (linear algebra, probability, calculus)",
-      "Core AI concepts",
-      "Project-based learning",
-      "Team collaboration",
+      "Group AI projects & experiments",
+      "Basic completion certificate",
+      "Resume building workshop (group)",
+      "Access to all course materials & recordings",
     ],
-    price: "30,000 PKR (2 months)",
-    duration: "2 months",
+    price: "25,000 PKR/month",
+    duration: "3 months",
+    highlight: "Most popular choice",
   },
   {
-    key: "ml",
-    title: "Machine Learning",
-    description:
-      "Learn to build, train, and deploy machine learning models. Cover supervised/unsupervised learning, model evaluation, and use of popular ML libraries (scikit-learn, pandas, etc.).",
+    key: "premium", 
+    title: "AI Professional Development",
+    tier: "PREMIUM",
+    description: "Advanced AI skills with deep learning, neural networks, and real-world applications. Get job-ready with mentorship.",
     features: [
-      "Supervised & unsupervised learning",
-      "Model evaluation & selection",
-      "scikit-learn, pandas, numpy",
-      "Feature engineering",
-      "Real-world ML projects",
+      "5 live classes per week + weekend sessions",
+      "1-on-1 monthly mentorship (2 hours/month)",
+      "Deep learning & neural networks",
+      "Computer vision & NLP projects",
+      "AI frameworks (TensorFlow, PyTorch)",
+      "Real-world AI project development",
+      "Industry case studies & applications",
+      "AI ethics & responsible development",
+      "Portfolio development & showcasing",
+      "Job referral network",
+      "Direct instructor access",
     ],
-    price: "35,000 PKR (2 months)",
-    duration: "2 months",
+    price: "55,000 PKR/month",
+    duration: "4 months", 
+    highlight: "Job-ready skills",
   },
   {
-    key: "dl",
-    title: "Deep Learning",
-    description:
-      "Master deep learning with neural networks, CNNs, RNNs, and modern frameworks (TensorFlow, PyTorch). Work on image, text, and generative AI projects.",
+    key: "jobready",
+    title: "AI Career Guarantee",
+    tier: "JOB READY", 
+    description: "Intensive AI program with guaranteed placement. Master cutting-edge AI technologies and land your dream AI job.",
     features: [
-      "Neural networks, CNNs, RNNs",
-      "TensorFlow & PyTorch",
-      "Image & text AI projects",
-      "Generative AI basics",
-      "AI for real-world applications",
+      "Intensive daily training (6 hours/day, 5 days/week)",
+      "Weekly 1-on-1 mentorship (4 hours/week)",
+      "Advanced AI specializations (CV, NLP, MLOps)",
+      "Real client AI projects with revenue sharing",
+      "Research paper implementation & analysis",
+      "AI product development lifecycle",
+      "Technical interview preparation (coding + AI theory)",
+      "Salary negotiation training",
+      "3-month post-placement support",
+      "Industry connections & direct referrals",
+      "Advanced certifications (Google AI, AWS ML)",
+      "Guaranteed AI job placement or full refund",
     ],
-    price: "40,000 PKR (2 months)",
-    duration: "2 months",
-  },
-  {
-    key: "engineering",
-    title: "AI Engineering & Deployment",
-    description:
-      "Learn to deploy, scale, and integrate AI models into products. Cover MLOps, cloud deployment, APIs, and responsible AI practices.",
-    features: [
-      "MLOps & model deployment",
-      "Cloud AI (AWS, GCP, Azure)",
-      "Building AI APIs",
-      "Responsible & ethical AI",
-      "Portfolio development & mentorship",
-      "End-to-end projects & job prep",
+    prerequisites: [
+      "Pass comprehensive AI/ML assessment",
+      "Complete foundation AI courses",
+      "Demonstrate Python & math competency",
+      "Available for full-time intensive program",
+      "Sign commitment contract"
     ],
-    price: "45,000 PKR (2 months)",
-    perMonth: "20,000 PKR/month",
-    duration: "2 months",
+    price: "18% of first year salary",
+    priceNote: "(capped at 180,000 PKR)",
+    duration: "6 months + 3 months support",
+    highlight: "Guaranteed placement",
   },
 ];
 
@@ -79,10 +113,20 @@ export default function AIPackageModal({ open, onClose }: { open: boolean; onClo
             {packages.map((p, idx) => (
               <button
                 key={p.key}
-                className={`px-3 sm:px-4 py-2 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200 focus:outline-none whitespace-nowrap ${current === idx ? 'bg-violet-400 text-[#18181b] shadow-lg' : 'bg-violet-900/40 text-violet-200 hover:bg-violet-800/60'}`}
+                className={`px-3 sm:px-4 py-2 rounded-xl font-semibold text-sm sm:text-base transition-all duration-200 focus:outline-none whitespace-nowrap relative ${current === idx ? 'bg-violet-400 text-[#18181b] shadow-lg' : 'bg-violet-900/40 text-violet-200 hover:bg-violet-800/60'}`}
                 onClick={() => setCurrent(idx)}
               >
-                {p.title.split(' ')[0]}
+                <div className="flex flex-col items-center">
+                  <span className={`text-xs font-bold ${current === idx ? 'text-[#18181b]' : 'text-violet-300'}`}>
+                    {p.tier}
+                  </span>
+                  <span>{p.title.split(' ')[0]}</span>
+                </div>
+                {p.highlight && (
+                  <div className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                    {p.highlight === "Most popular choice" ? "🔥" : p.highlight === "Guaranteed placement" ? "💎" : "✨"}
+                  </div>
+                )}
               </button>
             ))}
           </div>
@@ -97,22 +141,64 @@ export default function AIPackageModal({ open, onClose }: { open: boolean; onClo
         {/* Content */}
         <div className="w-full max-w-xl sm:max-w-2xl mx-auto flex flex-col items-center overflow-y-auto max-h-[60vh] px-2 py-4 sm:py-6 flex-1">
           <div className="w-full text-center mb-4 sm:mb-6">
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <span className={`px-3 py-1 rounded-full text-xs font-bold ${pkg.key === 'free' ? 'bg-green-500 text-white' : pkg.key === 'starter' ? 'bg-blue-500 text-white' : pkg.key === 'premium' ? 'bg-purple-500 text-white' : 'bg-gold-500 text-black'}`}>
+                {pkg.tier}
+              </span>
+              {pkg.highlight && (
+                <span className="text-green-400 text-xs font-semibold">• {pkg.highlight}</span>
+              )}
+            </div>
             <h3 className="text-xl sm:text-3xl md:text-4xl font-bold text-violet-100 drop-shadow-glow mb-2">{pkg.title}</h3>
             <div className="flex flex-col md:flex-row items-center justify-center gap-2 sm:gap-4 mb-2">
               <span className="text-violet-300 font-bold text-lg sm:text-2xl">{pkg.price}</span>
-              <span className="text-violet-200 text-sm sm:text-lg">{pkg.duration}</span>
+              {pkg.priceNote && (
+                <span className="text-violet-400 text-sm">{pkg.priceNote}</span>
+              )}
+              <span className="text-violet-200 text-sm sm:text-lg">• {pkg.duration}</span>
             </div>
-            <div className="mb-2 text-green-400 text-xs sm:text-base font-semibold">1 week free trial included</div>
-            {pkg.key === "engineering" && (
-              <div className="mb-2 text-violet-400 text-xs sm:text-base font-semibold">or {pkg.perMonth} (all modules included)</div>
+            {pkg.key === "free" && (
+              <div className="mb-2 text-green-400 text-xs sm:text-base font-semibold">✨ No commitment required</div>
+            )}
+            {pkg.key === "jobready" && (
+              <div className="mb-2 text-yellow-400 text-xs sm:text-base font-semibold">💎 Pay only when you get a job</div>
             )}
           </div>
           <p className="text-violet-100/90 mb-4 sm:mb-6 text-center text-base sm:text-lg">{pkg.description}</p>
-          <ul className="list-disc list-inside text-violet-200/90 mb-4 sm:mb-6 pl-2 w-full text-sm sm:text-base">
-            {pkg.features.map((f) => (
-              <li key={f}>{f}</li>
-            ))}
-          </ul>
+          
+          {/* Features */}
+          <div className="w-full mb-4 sm:mb-6">
+            <h4 className="font-bold text-violet-200 text-lg mb-2">✅ What's Included:</h4>
+            <ul className="list-disc list-inside text-violet-200/90 pl-2 w-full text-sm sm:text-base">
+              {pkg.features.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Not Included (for Free tier) */}
+          {pkg.notIncluded && (
+            <div className="w-full mb-4 sm:mb-6">
+              <h4 className="font-bold text-red-400 text-lg mb-2">❌ Not Included:</h4>
+              <ul className="list-disc list-inside text-red-300/90 pl-2 w-full text-sm sm:text-base">
+                {pkg.notIncluded.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Prerequisites (for Job Ready tier) */}
+          {pkg.prerequisites && (
+            <div className="w-full mb-4 sm:mb-6">
+              <h4 className="font-bold text-yellow-400 text-lg mb-2">📋 Prerequisites:</h4>
+              <ul className="list-disc list-inside text-yellow-300/90 pl-2 w-full text-sm sm:text-base">
+                {pkg.prerequisites.map((f) => (
+                  <li key={f}>{f}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           {/* Timeline & details */}
           <div className="space-y-6 w-full">
             <div>
@@ -148,10 +234,21 @@ export default function AIPackageModal({ open, onClose }: { open: boolean; onClo
         {/* Sticky Footer */}
         <div className="w-full flex flex-col sm:flex-row justify-end gap-2 sm:gap-4 px-2 sm:px-10 py-4 sm:py-6 border-t border-violet-400/20 bg-violet-950/30 rounded-b-3xl sticky bottom-0 z-10">
           <button
-            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-gradient-to-r from-violet-400 to-indigo-600 text-white font-bold rounded-xl shadow hover:from-violet-500 hover:to-indigo-700 transition-all duration-300 glow-btn text-base sm:text-lg"
+            className={`w-full sm:w-auto px-6 sm:px-8 py-3 font-bold rounded-xl shadow transition-all duration-300 text-base sm:text-lg ${
+              pkg.key === 'free' 
+                ? 'bg-gradient-to-r from-green-400 to-green-600 text-white hover:from-green-500 hover:to-green-700' 
+                : pkg.key === 'starter'
+                ? 'bg-gradient-to-r from-blue-400 to-blue-600 text-white hover:from-blue-500 hover:to-blue-700'
+                : pkg.key === 'premium'
+                ? 'bg-gradient-to-r from-purple-400 to-purple-600 text-white hover:from-purple-500 hover:to-purple-700'
+                : 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-black hover:from-yellow-500 hover:to-yellow-700'
+            } glow-btn`}
             onClick={() => {/* TODO: registration logic or scroll to enroll */}}
           >
-            Register for free (1 week)
+            {pkg.key === 'free' ? 'Join Community' :
+             pkg.key === 'starter' ? 'Start Learning' :
+             pkg.key === 'premium' ? 'Go Premium' :
+             'Apply for Program'}
           </button>
           <button
             className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-white/10 text-violet-100 font-bold rounded-xl border border-violet-400/30 backdrop-blur-md hover:bg-violet-900/30 transition-all duration-300 text-base sm:text-lg"
