@@ -393,7 +393,7 @@ export default function BrandingPage() {
       </div>
 
       {/* Mobile Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 flex justify-around items-center bg-black/90 border-t border-gray-800 shadow-2xl py-2 px-1" style={{backdropFilter: 'blur(8px)'}}>
+      <div className="md:hidden fixed bottom-0 inset-x-0 z-30 flex justify-around items-center bg-black/90 border-t border-gray-800 shadow-2xl py-2" style={{backdropFilter: 'blur(8px)', width: '100vw'}}>
         {sidebarSections.map((section) => (
           <button
             key={section.key}
