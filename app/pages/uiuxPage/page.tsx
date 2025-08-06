@@ -393,7 +393,7 @@ export default function UiUxPage() {
       </div>
 
       {/* Mobile Bottom Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 flex justify-around items-center bg-black/90 border-t border-gray-800 shadow-2xl rounded-t-2xl py-2 px-1" style={{backdropFilter: 'blur(8px)'}}>
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 flex justify-around items-center bg-black/90 border-t border-gray-800 shadow-2xl py-2 px-1" style={{backdropFilter: 'blur(8px)'}}>
         {sidebarSections.map((section) => (
           <button
             key={section.key}
@@ -470,7 +470,7 @@ export default function UiUxPage() {
         </div>
 
         {/* Main Content Area */}
-        <main className="flex-1 p-6 md:p-8 overflow-y-auto">
+        <main className="flex-1 p-6 md:p-8 overflow-y-auto pb-20 md:pb-8">
           {/* Animated Gradient Background */}
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-violet-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
           <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-500/20 via-cyan-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }}></div>

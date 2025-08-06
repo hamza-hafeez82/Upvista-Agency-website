@@ -478,8 +478,8 @@ const Header = () => {
       </div>
 
       {/* Secondary Navbar */}
-      <div className="hidden md:flex w-full bg-transparent flex-row items-center justify-end px-4 md:px-8 py-1 sticky top-[var(--header-height,56px)] z-40 secondary-navbar">
-        <div className="flex flex-row gap-2 md:gap-4 items-center ml-auto">
+      <div className="hidden md:flex w-full bg-transparent flex-row items-center justify-end py-1 sticky top-[var(--header-height,56px)] z-40 secondary-navbar">
+        <div className="container mx-auto px-4 lg:px-8 flex flex-row gap-2 md:gap-4 items-center justify-end">
           {/* Research Dropdown - Full Width */}
           <div
             className="relative group"
