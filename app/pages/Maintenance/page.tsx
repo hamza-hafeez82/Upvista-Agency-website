@@ -421,7 +421,7 @@ export default function MaintenancePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white flex">
+    <div className="h-screen overflow-hidden bg-black text-white flex">
       {/* Left Sidebar (hidden on mobile) */}
       <div className={`hidden md:block fixed left-0 top-0 h-full bg-black border-r border-gray-800 z-20 transition-all duration-300 ${serviceBarShrink ? 'w-16' : 'w-64'} md:relative md:translate-x-0`}>
         <div className="p-4 space-y-6">
@@ -522,9 +522,6 @@ export default function MaintenancePage() {
         {/* Main Content Area */}
         <main className="flex-1 p-6 md:p-8 overflow-y-auto pb-20 md:pb-8">
           {/* Animated Gradient Background */}
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-500/20 via-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
-          <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-teal-500/20 via-green-500/20 to-emerald-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s' }}></div>
-
           <div className="relative z-10">
             <div className="mb-8">
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
