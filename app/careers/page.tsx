@@ -7,7 +7,6 @@ import {
   Users, 
   ArrowLeft, 
   MapPin, 
-  Clock, 
   DollarSign,
   Target,
   Code,
@@ -63,8 +62,8 @@ interface ProcessStep {
 
 const jobCategories: JobCategory[] = [
   { id: "all", label: "All Jobs", count: 6 },
-  { id: "fresh", label: "Fresh Graduate", count: 1 },
-  { id: "experienced", label: "Experienced Professional", count: 3 },
+  { id: "fresh", label: "Fresh Graduate", count: 2 },
+  { id: "experienced", label: "Experienced Professional", count: 2 },
   { id: "internee", label: "Internee", count: 2 }
 ];
 
@@ -101,6 +100,7 @@ const openPositions: JobPosition[] = [
     salary: "Project-based",
     description: "Create stunning and astonishing graphics, posters, video content, and advanced visual designs that captivate audiences and elevate brand presence.",
     requirements: [
+      "Currently pursuing or recently completed degree in Graphic Design/Visual Arts",
       "Proficiency in Adobe Creative Suite (Photoshop, Illustrator, After Effects, Premiere Pro)",
       "Strong portfolio showcasing creative design work",
       "Knowledge of typography, color theory, and composition",
