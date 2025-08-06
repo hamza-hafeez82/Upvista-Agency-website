@@ -111,6 +111,24 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gray-900 text-white" role="contentinfo" aria-label="Site Footer">
+      {/* Palestine Support Banner */}
+      <div className="bg-gradient-to-r from-red-600 via-white to-green-600 text-center py-3 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+            <span className="text-black font-semibold text-sm sm:text-base">
+              🇵🇸 Upvista stands with Palestine and its people
+            </span>
+            <Link 
+              href="/pages/stand-with-palestine"
+              className="bg-black/80 hover:bg-black text-white px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 border border-white/20"
+            >
+              Join Us 
+            </Link>
+          </div>
+        </div>
+      </div>
+      
       {/* Main Footer Content */}
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
