@@ -75,7 +75,7 @@ const stats = [
 ];
 
 export default function MarketplacePage() {
-  const launchDate = useMemo(() => new Date("2025-01-29T00:00:00"), []);
+  const launchDate = useMemo(() => new Date("2025-10-01T00:00:00"), []);
   
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
