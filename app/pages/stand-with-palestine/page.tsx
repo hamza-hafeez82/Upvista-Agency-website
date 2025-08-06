@@ -91,7 +91,7 @@ const StandWithPalestinePage: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <blockquote className="text-2xl md:text-3xl text-white font-light italic mb-8 leading-relaxed">
-              &apos;&apos; Injustice anywhere is a threat to justice everywhere. We cannot be silent in the face of oppression.&apos;&apos;
+              &apos;&apos;Injustice anywhere is a threat to justice everywhere. We cannot be silent in the face of oppression.&apos;&apos;
             </blockquote>
             <p className="text-lg text-gray-300 mb-8">
               As a technology company, we believe in the power of connection, communication, and community. 
