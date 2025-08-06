@@ -424,7 +424,7 @@ export default function CareersPage() {
                     >
                       {selectedJob === job.id ? "Show Less" : "View Details"}
                     </button>
-                    <Link href="#" className="flex-1">
+                    <Link href="https://forms.gle/tpXYTJ9qMqv2Pxhj6" className="flex-1">
                       <button className="w-full py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
                         Apply Now
                         <ArrowRight className="w-4 h-4" />
