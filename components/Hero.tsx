@@ -45,11 +45,11 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-2 text-sm text-indigo-200">
                 <Globe className="w-4 h-4 text-indigo-400" />
-                <span>Digital Marketing</span>
+                <span>Software Engineering</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-indigo-200">
                 <Users className="w-4 h-4 text-indigo-400" />
-                <span>UI/UX Design</span>
+                <span>Graphics & Design</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-indigo-200">
                 <Star className="w-4 h-4 text-indigo-400" />
@@ -70,23 +70,6 @@ const Hero = () => {
                 </button>
               </Link>
             </div>
-
-            {/* Trust indicators */}
-            <div className="mt-8 flex items-center justify-center lg:justify-start gap-6 text-sm text-indigo-200/80">
-              <div className="flex items-center gap-1">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span>4.8/5 Rating</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Users className="w-4 h-4 text-indigo-400" />
-                <span>50+ Projects</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Globe className="w-4 h-4 text-indigo-400" />
-                <span>Pakistan Based</span>
-              </div>
-            </div>
-          </div>
 
           {/* Visual section */}
           <div className="w-full lg:w-1/2 relative">
