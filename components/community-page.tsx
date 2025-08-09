@@ -501,7 +501,7 @@ export default function Component() {
       color: "text-purple-400",
       description: "Hosted a ceremony to launch the Upvista community",
       details: {
-        attendees: 8,
+        attendees: 6,
         sessions: 1,
         topics: ["Upvista", "Community", "Launch", "Launching"],
         mentors: 2,
@@ -510,9 +510,84 @@ export default function Component() {
         cost: "Free for members"
       }
     }
+    {
+      type: "event",
+      title: "Monthly meetup of community members",
+      user: "Community Team",
+      time: "August, 1st  ",
+      platform: "Google meet",
+      icon: Calendar,
+      color: "text-purple-400",
+      description: "An event was organized for the community members to introduce themselves and have a chit-chat with each others",
+      details: {
+        attendees: 8,
+        sessions: 1,
+        topics: ["Upvista", "Community", "Launch", "Launching"],
+        mentors: 1,
+        projects: 0,
+        certificates: "no",
+        cost: "Free for members"
+      }
+    }
   ];
 
   const testimonials = [
+    {
+      name: "Umair",
+      role: "Software Engineer",
+      company: "Systems Limited",
+      avatar: "/assets/community/umair.jpeg",
+      content: "It is a great place for collaboration. People are friendly and brilliant",
+      rating: 5,
+      platform: "Whatsapp",
+      joinDate: "July 2025",
+      projects: 1,
+      contributions: 2,
+      skills: ["web development", "JavaScript", "React", "System Architecture"],
+      story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
+    }, 
+    {
+      name: "Moaz",
+      role: "Full Stack Developer",
+      company: "codestable",
+      avatar: "/assets/community/moaz.jpeg",
+      content: "I love spending time with engineers and critical here... Splendid work by Hamza Hafeez",
+      rating: 5,
+      platform: "Whatsapp",
+      joinDate: "June 2025",
+      projects: 1,
+      contributions: 2,
+      skills: ["web development", "JavaScript", "React", "Database"],
+      story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
+    },
+    {
+      name: "Laraib Iffat",
+      role: "Graphic Designer",
+      company: "NUML",
+      avatar: "/assets/community/laraib.jpeg",
+      content: "People and culture at Upvista is very fascinating.. there are many growth oppertunities and collaboration",
+      rating: 5,
+      platform: "Whatsapp",
+      joinDate: "July 2025",
+      projects: 0,
+      contributions: 1,
+      skills: ["Photoshop", "Illustrator", "Premier pro", "Canva"],
+      story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
+    },
+     {
+      name: "Malaika Javed",
+      role: "Learning Data Science",
+      company: "NUML",
+      avatar: "/assets/community/malaika.jpeg",
+      content: "I dont have enough knowledge in my domain but I have joined the community and found it an amazing place. Here I get mentorship, projects, trainings, support, guidance from the senior engineers and it's all free of any cost... this community is far better then any university. ",
+      rating: 5,
+      platform: "Whatsapp",
+      joinDate: "July 2025",
+      projects: 1,
+      contributions: 0,
+      skills: ["Python", "Data Science", "SQL", "Database"],
+      story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
+    },
     {
       name: "Dawar Shaheer",
       role: "Full Stack Developer",
@@ -520,14 +595,41 @@ export default function Component() {
       avatar: "/assets/community/dawar.jpeg",
       content: "The Upvista community has been amazing for my growth. I have learned so much from fellow developers and even led our first collaborative project. The support here is incredible.",
       rating: 5,
-      platform: "Discord",
+      platform: "Whatsapp",
       joinDate: "June 2025",
       projects: 1,
       contributions: 2,
       skills: ["React", "Node.js", "TypeScript", "MongoDB"],
       story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
     },
-    
+    {
+      name: "Abdullah Shafique",
+      role: "Graphic Designer",
+      company: "Ideo Versity",
+      avatar: "/assets/community/abdullah.jpeg",
+      content: "Being a graphic designer, I am amazed by the potential and developments that Upvista have acomplished in such a short period of time... the vision of Upvista is very broad, I respect it and am wiling to cooperate in this mission.",
+      rating: 5,
+      platform: "Whatsapp",
+      joinDate: "June 2025",
+      projects: 0,
+      contributions: 1,
+      skills: ["Photoshop", "Illustrator", "Premier pro", "Figma"],
+      story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
+    },
+    {
+      name: "Zainab Irfan",
+      role: "Graphic Designer",
+      company: "NUML",
+      avatar: "/assets/community/zainab.jpeg",
+      content: "I've been doing freelance work in graphic designing for years and now I find a place where I can make friends, can show my talent in projects and can actually guide anyone...",
+      rating: 5,
+      platform: "Whatsapp",
+      joinDate: "July 2025",
+      projects: 0,
+      contributions: 1,
+      skills: ["Photoshop", "Illustrator", "Premier pro", "Figma"],
+      story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
+    },
   ];
 
   const communityHighlights = [
@@ -535,11 +637,11 @@ export default function Component() {
       title: "First Community Project Started",
       description: "Xpertaide is a platform inspired by preply, which will help coaches to deal with the clients via call, video or chat, and can manage their schedule for the clients. The client will choose the coach, will pay his fee and will start taking coachings",
       image: "/assets/community/xpertaide.png",
-      stats: { participants: 2, projects: 1, contributors: 2 },
+      stats: { participants: 6, projects: 1, contributors: 21 },
       badge: "Ongoing",
       details: {
         projectName: "Xpertaide",
-        team: ["Hamza Hafeez", "Dawar Shaheer"],
+        team: ["Hamza Hafeez", "Dawar Shaheer", "Moaz", "Laraib Iffat", "Malaika Javed", "Abdullah Shafique"],
         technologies: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS", "MySQL"],
         description: "A collaborative project to help coaches and trainers to manage their clients and their progress.",
         impact: "Showcasing community talent and fostering collaboration",
@@ -598,23 +700,63 @@ export default function Component() {
 
   const featuredMembers = [
     {
-      name: "Dawar Shaheer",
-      role: "AI Automation",
-      company: "TechCorp Inc.",
-      avatar: "/assets/community/dawar.jpeg",
+      name: "moaz",
+      role: "Full Stack Developer",
+      company: "codestable",
+      avatar: "/assets/community/moaz.jpeg",
       contributions: 2,
       badges: ["Contributor"],
-      platform: "Discord",
+      platform: "Whatsapp",
       specialty: "React & Node.js",
-      joinDate: "June 2025",
+      joinDate: "July 2025",
       projects: 1,
       skills: ["React", "Node.js", "TypeScript", "MongoDB"],
       bio: "Passionate developer who loves building scalable web applications and helping others learn.",
       achievements: ["First Community Project", "Active Helper"],
       contact: {
-        github: "https://github.com/dawarshaheer",
-        linkedin: "https://linkedin.com/in/dawarshaheer",
-        portfolio: "https://dawarshaheer.dev"
+        github: "#",
+        linkedin: "#",
+        portfolio: "#"
+      }
+    }
+    {
+      name: "Dawar Shaheer",
+      role: "Full Stack Developer",
+      company: "TechCorp Inc.",
+      avatar: "/assets/community/dawar.jpeg",
+      contributions: 2,
+      badges: ["Contributor"],
+      platform: "Whatsapp",
+      specialty: "React & Node.js",
+      joinDate: "July 2025",
+      projects: 1,
+      skills: ["React", "Node.js", "TypeScript", "MongoDB"],
+      bio: "Passionate developer who loves building scalable web applications and helping others learn.",
+      achievements: ["First Community Project", "Active Helper"],
+      contact: {
+        github: "#",
+        linkedin: "#",
+        portfolio: "#"
+      }
+    }
+    {
+      name: "Abdullah Shafique",
+      role: "Graphic Designer",
+      company: "Ideoversity",
+      avatar: "/assets/community/abdullah.jpeg",
+      contributions: 2,
+      badges: ["Contributor"],
+      platform: "Whatsapp",
+      specialty: "Photoshop, Illustrator",
+      joinDate: "July 2025",
+      projects: 1,
+      skills: ["Photoshop", "Illustrator", "Premier pro", "Figma"],
+      bio: "Passionate designer who loves designing Astonishing visuals and helping others learn.",
+      achievements: ["First Community Project", "Active Helper"],
+      contact: {
+        github: "#",
+        linkedin: "#",
+        portfolio: "#"
       }
     }
   ];
@@ -623,7 +765,7 @@ export default function Component() {
     {
       title: "Orientation Session",
       date: "July 07, 2025",
-      time: "will be announced soon in the community",
+      time: "6:00 pm",
       platform: "Google Meet",
       attendees: 8,
       type: "Session",
@@ -652,7 +794,7 @@ export default function Component() {
         duration: "2.5 hours",
         level: "Intermediate",
         topics: ["System Designing principles", "Software Development Lifecycle", "Component Libraries", "Documentation", "Implementation", "Designing System design of any sample project"],
-        instructor: "Hamza Hafeez",
+        instructor: "-",
         prerequisites: ["Basic design knowledge", "Figma experience"],
         materials: ["Powerpoint slides", "Documentation templates", "Best practices guide"],
         maxAttendees: 100,
@@ -685,7 +827,7 @@ export default function Component() {
       description: "Complete your first community project", 
       icon: "🎯", 
       unlocked: true, 
-      progress: 10,
+      progress: 30,
       details: {
         requirements: "Submit a project to the community",
         rewards: ["Profile badge", "Community recognition"],
@@ -698,7 +840,7 @@ export default function Component() {
       description: "Help 10 other community members", 
       icon: "🤝", 
       unlocked: true, 
-      progress: 10,
+      progress: 70,
       details: {
         requirements: "Provide helpful answers or assistance to 10 members",
         rewards: ["Helper badge", "Priority support access"],
@@ -711,7 +853,7 @@ export default function Component() {
       description: "Attend 5 workshops or events", 
       icon: "📚", 
       unlocked: true, 
-      progress: 25,
+      progress: 50,
       details: {
         requirements: "Participate in 5 community events",
         rewards: ["Learning badge", "Early access to events"],
@@ -750,7 +892,7 @@ export default function Component() {
       description: "Mentor 5 new members", 
       icon: "👨‍🏫", 
       unlocked: false, 
-      progress: 40,
+      progress: 80,
       details: {
         requirements: "Successfully mentor 5 community members",
         rewards: ["Mentor badge", "Exclusive mentor network"],
