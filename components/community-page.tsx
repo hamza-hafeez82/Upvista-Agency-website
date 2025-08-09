@@ -510,25 +510,8 @@ export default function Component() {
         cost: "Free for members"
       }
     }
-    {
-      type: "event",
-      title: "Monthly meetup of community members",
-      user: "Community Team",
-      time: "August, 1st  ",
-      platform: "Google meet",
-      icon: Calendar,
-      color: "text-purple-400",
-      description: "An event was organized for the community members to introduce themselves and have a chit-chat with each others",
-      details: {
-        attendees: 8,
-        sessions: 1,
-        topics: ["Upvista", "Community", "Launch", "Launching"],
-        mentors: 1,
-        projects: 0,
-        certificates: "no",
-        cost: "Free for members"
-      }
-    }
+
+    
   ];
 
   const testimonials = [
