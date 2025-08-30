@@ -1499,14 +1499,12 @@ export default function Component() {
                         <CardContent className="p-4 md:p-6">
                           <div className="flex items-center space-x-3 mb-3 md:mb-4">
                             <div className="w-8 h-8 md:w-10 md:h-10 bg-gray-700 rounded-full flex items-center justify-center">
-                               {(() => {
-                                 const Icon = activity.icon; // Capitalize variable so JSX accepts it
-                                 return <Icon className={`w-4 h-4 md:w-5 md:h-5 ${activity.color}`} />;
-                               })()}
-                            </div>
-                            {/*<div className={`w-8 h-8 md:w-10 md:h-10 bg-gray-700 rounded-full flex items-center justify-center`}>
-                              <activity.icon className={`w-4 h-4 md:w-5 md:h-5 ${activity.color}`} />
-                            </div> */}
+                                {activity.icon ? (
+                                  <activity.icon className={`w-4 h-4 md:w-5 md:h-5 ${activity.color}`} />
+                                ) : (
+                                  <span className="text-xs text-gray-400">?</span> // fallback if no icon
+                                )}
+                              </div>
                             <div>
                               <p className="text-white font-semibold text-xs md:text-sm">{activity.user}</p>
                               <p className="text-gray-400 text-xs">{activity.time}</p>
