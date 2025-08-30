@@ -358,9 +358,9 @@ interface Activity {
   user?: string;
   time: string;
   platform: string;
-  icon: React.ComponentType<{ className?: string }>;
-  color: string;
-  description: string;
+  icon?: React.ComponentType<{ className?: string }>;
+  color?: string;
+  description?: string;
   details: {
     technologies?: string[];
     contributors?: number;
