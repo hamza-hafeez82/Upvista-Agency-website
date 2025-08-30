@@ -45,6 +45,9 @@ const paymentMethods = [
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">Payoneer</h4>
+        <p className="text-gray-300 mb-1">Account Name: Upvista Digital</p>
+        <p className="text-gray-300 mb-1">Email: upvistadigital@gmail.com/p>
+        <p className="text-gray-300">Payoneer ID: will be provided by inquiry</p>
       </div>
     ),
   },
@@ -55,7 +58,9 @@ const paymentMethods = [
       <div>
         <h4 className="text-lg font-bold mb-2">Bank Transfer</h4>
         <p className="text-gray-300 mb-1">Bank: United Bank Limited</p>
-        <p className="text-gray-300">IBAN: PK66UNIL0109000316675307</p>
+        <p className="text-gray-300 mb-1">Account Name: Upvista Digital</p>
+        <p className="text-gray-300 mb-1">Account #: will be provided by inquiry</p>
+        <p className="text-gray-300">IBAN & SWIFT: will be provided by inquiry</p>
       </div>
     ),
   },
@@ -67,7 +72,10 @@ const landscapePayments = [
     img: "/assets/payments/jazzcash.png",
     details: (
       <div>
-        <h4 className="text-lg font-bold mb-2">JazzCash</h4>
+         <h4 className="text-lg font-bold mb-2">JazzCash</h4>
+        <p className="text-gray-300 mb-1">Account Name: Upvista Digital</p>
+        <p className="text-gray-300 mb-1">Mobile Number: will be provided by inquiry</p>
+        <p className="text-gray-300"></p>
       </div>
     ),
   },
@@ -77,6 +85,9 @@ const landscapePayments = [
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">EasyPaisa</h4>
+        <p className="text-gray-300 mb-1">Account Name: Upvista Digital</p>
+        <p className="text-gray-300 mb-1">Mobile Number: will be provided by inquiry</p>
+        <p className="text-gray-300"></p>
       </div>
     ),
   },
