@@ -355,7 +355,7 @@ interface Achievement {
 interface Activity {
   type: string;
   title: string;
-  user: string;
+  user?: string;
   time: string;
   platform: string;
   icon: React.ComponentType<{ className?: string }>;
@@ -1494,7 +1494,7 @@ export default function Component() {
                       <Card
                         key={index}
                         className="bg-gray-800/50 border-gray-700 hover:border-blue-500/50 transition-all duration-300 backdrop-blur-sm group hover:scale-105 flex-shrink-0 w-72 md:w-80 cursor-pointer"
-                        onClick={() => setSelectedActivity(Activity)}
+                        onClick={() => setSelectedActivity(activity)}
                       >
                         <CardContent className="p-4 md:p-6">
                           <div className="flex items-center space-x-3 mb-3 md:mb-4">
