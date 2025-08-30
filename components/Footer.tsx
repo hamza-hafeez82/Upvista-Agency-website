@@ -46,7 +46,7 @@ const paymentMethods = [
       <div>
         <h4 className="text-lg font-bold mb-2">Payoneer</h4>
         <p className="text-gray-300 mb-1">Account Name: Upvista Digital</p>
-        <p className="text-gray-300 mb-1">Email: upvistadigital@gmail.com/p>
+        <p className="text-gray-300 mb-1">Email: upvistadigital@gmail.com</p>
         <p className="text-gray-300">Payoneer ID: will be provided by inquiry</p>
       </div>
     ),
