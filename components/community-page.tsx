@@ -506,10 +506,30 @@ export default function Component() {
         topics: ["Upvista", "Community", "Launch", "Launching"],
         mentors: 2,
         projects: 1,
-        certificates: "yes",
+        certificates: "No",
         cost: "Free for members"
       }
-    }
+    },
+    {
+      title: "Orientation Session",
+      date: "July 07, 2025",
+      time: "6:00 pm",
+      platform: "Google Meet",
+      attendees: 8,
+      type: "Session",
+      description: "introduced each other and had a chit chat",
+      details: {
+        duration: "1 hours",
+        level: "Beginner",
+        topics: ["introducing Upvista Digital", "introducing community", "introducing members", "introducing projects", "introducing events", "introducing achievements", "introducing guidelines"],
+        instructor: "Hamza Hafeez",
+        prerequisites: ["none"],
+        materials: ["Slides", "Recording"],
+        maxAttendees: 100,
+        cost: "Free for members",
+        certificate: "No"
+      }
+    },
 
     
   ];
@@ -520,7 +540,7 @@ export default function Component() {
       role: "Software Engineer",
       company: "Systems Limited",
       avatar: "/assets/community/umair.jpeg",
-      content: "It is a great place for collaboration. People are friendly and brilliant",
+      content: "It is a great place for collaboration.",
       rating: 5,
       platform: "Whatsapp",
       joinDate: "July 2025",
@@ -548,7 +568,7 @@ export default function Component() {
       role: "Graphic Designer",
       company: "NUML",
       avatar: "/assets/community/laraib.jpeg",
-      content: "People and culture at Upvista is very fascinating.. there are many growth oppertunities and collaboration",
+      content: "The vision is Good",
       rating: 5,
       platform: "Whatsapp",
       joinDate: "July 2025",
@@ -562,27 +582,13 @@ export default function Component() {
       role: "Learning Data Science",
       company: "NUML",
       avatar: "/assets/community/malaika.jpeg",
-      content: "I dont have enough knowledge in my domain but I have joined the community and found it an amazing place. Here I get mentorship, projects, trainings, support, guidance from the senior engineers and it's all free of any cost... this community is far better then any university. ",
+      content: "I dont have enough knowledge in my domain but I have joined the community and found it an amazing place. Here I get mentorship, support, guidance from the senior engineers and it's all free of any cost... this community is far better then any university. ",
       rating: 5,
       platform: "Whatsapp",
       joinDate: "July 2025",
       projects: 1,
       contributions: 0,
       skills: ["Python", "Data Science", "SQL", "Database"],
-      story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
-    },
-    {
-      name: "Dawar Shaheer",
-      role: "Full Stack Developer",
-      company: "TechCorp Inc.",
-      avatar: "/assets/community/dawar.jpeg",
-      content: "The Upvista community has been amazing for my growth. I have learned so much from fellow developers and even led our first collaborative project. The support here is incredible.",
-      rating: 5,
-      platform: "Whatsapp",
-      joinDate: "June 2025",
-      projects: 1,
-      contributions: 2,
-      skills: ["React", "Node.js", "TypeScript", "MongoDB"],
       story: "Started as a regular member and now actively helps others. The community collaborative spirit is what makes it special."
     },
     {
@@ -604,7 +610,7 @@ export default function Component() {
       role: "Graphic Designer",
       company: "NUML",
       avatar: "/assets/community/zainab.jpeg",
-      content: "I've been doing freelance work in graphic designing for years and now I find a place where I can make friends, can show my talent in projects and can actually guide anyone...",
+      content: "That's a Great Initiative",
       rating: 5,
       platform: "Whatsapp",
       joinDate: "July 2025",
@@ -624,7 +630,7 @@ export default function Component() {
       badge: "Ongoing",
       details: {
         projectName: "Xpertaide",
-        team: ["Hamza Hafeez", "Dawar Shaheer", "Moaz", "Laraib Iffat", "Malaika Javed", "Abdullah Shafique"],
+        team: ["Currently under discussion and positions are open"],
         technologies: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS", "MySQL"],
         description: "A collaborative project to help coaches and trainers to manage their clients and their progress.",
         impact: "Showcasing community talent and fostering collaboration",
@@ -701,27 +707,7 @@ export default function Component() {
         linkedin: "#",
         portfolio: "#"
       }
-    }
-    {
-      name: "Dawar Shaheer",
-      role: "Full Stack Developer",
-      company: "TechCorp Inc.",
-      avatar: "/assets/community/dawar.jpeg",
-      contributions: 2,
-      badges: ["Contributor"],
-      platform: "Whatsapp",
-      specialty: "React & Node.js",
-      joinDate: "July 2025",
-      projects: 1,
-      skills: ["React", "Node.js", "TypeScript", "MongoDB"],
-      bio: "Passionate developer who loves building scalable web applications and helping others learn.",
-      achievements: ["First Community Project", "Active Helper"],
-      contact: {
-        github: "#",
-        linkedin: "#",
-        portfolio: "#"
-      }
-    }
+    },
     {
       name: "Abdullah Shafique",
       role: "Graphic Designer",
@@ -745,26 +731,7 @@ export default function Component() {
   ];
 
   const upcomingEvents = [
-    {
-      title: "Orientation Session",
-      date: "July 07, 2025",
-      time: "6:00 pm",
-      platform: "Google Meet",
-      attendees: 8,
-      type: "Session",
-      description: "introduce each other and have a chit chat",
-      details: {
-        duration: "1 hours",
-        level: "Beginner",
-        topics: ["introducing Upvista Digital", "introducing community", "introducing members", "introducing projects", "introducing events", "introducing achievements", "introducing guidelines"],
-        instructor: "Hamza Hafeez",
-        prerequisites: ["none"],
-        materials: ["Slides", "Recording"],
-        maxAttendees: 100,
-        cost: "Free for members",
-        certificate: "No"
-      }
-    },
+    
     {
       title: "System Design Workshop",
       date: "to be decided",
