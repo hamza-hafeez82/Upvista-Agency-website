@@ -39,27 +39,12 @@ interface ContactItemProps {
 }
 
 const paymentMethods = [
-  // {
-  //   name: "Wise (Transferwise)",
-  //   img: "/assets/payments/transferwise.jpg",
-  //   details: (
-  //     <div>
-  //       <h4 className="text-lg font-bold mb-2">Wise (Transferwise)</h4>
-  //       <p className="text-gray-300 mb-1">Account Name: Upvista Digital</p>
-  //       <p className="text-gray-300 mb-1">IBAN: PK12SCBL0000001122334455</p>
-  //       <p className="text-gray-300">SWIFT/BIC: SCBLPKKXXXX</p>
-  //     </div>
-  //   ),
-  // },
   {
     name: "Payoneer",
     img: "/assets/payments/payoneer.jpg",
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">Payoneer</h4>
-        <p className="text-gray-300 mb-1">Account Name: Hamza Hafeez</p>
-        <p className="text-gray-300 mb-1">Email: hmza.hb82@gmail.com</p>
-        <p className="text-gray-300">Payoneer ID: 88114206</p>
       </div>
     ),
   },
@@ -70,8 +55,6 @@ const paymentMethods = [
       <div>
         <h4 className="text-lg font-bold mb-2">Bank Transfer</h4>
         <p className="text-gray-300 mb-1">Bank: United Bank Limited</p>
-        <p className="text-gray-300 mb-1">Account Name: Hamza Hafeez Bhatti</p>
-        <p className="text-gray-300 mb-1">Account #: 0508316675307</p>
         <p className="text-gray-300">IBAN: PK66UNIL0109000316675307</p>
       </div>
     ),
@@ -85,9 +68,6 @@ const landscapePayments = [
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">JazzCash</h4>
-        <p className="text-gray-300 mb-1">Account Name: Hamza Hafeez</p>
-        <p className="text-gray-300 mb-1">Mobile Number: 0329-4022494</p>
-        <p className="text-gray-300">CNIC: 33101-3218460-5</p>
       </div>
     ),
   },
@@ -97,9 +77,6 @@ const landscapePayments = [
     details: (
       <div>
         <h4 className="text-lg font-bold mb-2">EasyPaisa</h4>
-        <p className="text-gray-300 mb-1">Account Name: Hamza Hafeez</p>
-        <p className="text-gray-300 mb-1">Mobile Number: 0329-4022494</p>
-        <p className="text-gray-300">CNIC: 33101-3218460-5</p>
       </div>
     ),
   },
