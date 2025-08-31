@@ -16,13 +16,6 @@ import { Brain, Cpu, Link2, Shield, Cloud, Heart, Smartphone, Wifi, FileText, Ne
 // Add secondary navbar dropdown data
 const researchLinks = [
   { label: "AGI (Artificial General Intelligence)", href: "/Researches/AGI" },
-  { label: "Quantum Computing", href: "/research/quantum-computing" },
-  { label: "Blockchain", href: "/research/blockchain" },
-  { label: "Cybersecurity", href: "/research/cybersecurity" },
-  { label: "Cloud Computing", href: "/research/cloud" },
-  { label: "AI Ethics", href: "/research/ai-ethics" },
-  { label: "Edge Computing", href: "/research/edge-computing" },
-  { label: "IoT", href: "/research/iot" },
 ];
 const industriesLinks = [
   { label: "Healthcare", href: "/industries/healthcare" },
@@ -48,13 +41,13 @@ const insightsLinks = [
 // 1. Add icon mapping for dropdown items
 const researchIcons: { [key: string]: JSX.Element } = {
   "AGI (Artificial General Intelligence)": <Brain className="w-5 h-5 text-purple-400" />, 
-  "Quantum Computing": <Cpu className="w-5 h-5 text-blue-400" />, 
+  /*"Quantum Computing": <Cpu className="w-5 h-5 text-blue-400" />, 
   "Blockchain": <Link2 className="w-5 h-5 text-emerald-400" />, 
   "Cybersecurity": <Shield className="w-5 h-5 text-red-400" />, 
   "Cloud Computing": <Cloud className="w-5 h-5 text-cyan-400" />, 
   "AI Ethics": <Heart className="w-5 h-5 text-pink-400" />, 
   "Edge Computing": <Smartphone className="w-5 h-5 text-yellow-400" />, 
-  "IoT": <Wifi className="w-5 h-5 text-green-400" />
+  "IoT": <Wifi className="w-5 h-5 text-green-400" />*/
 };
 const industriesIcons: { [key: string]: JSX.Element } = {
   "Healthcare": <Heart className="w-5 h-5 text-pink-400" />, 
@@ -111,13 +104,13 @@ const trainingIcons: { [key: string]: JSX.Element } = {
   "Web Development": <Globe className="w-5 h-5 text-blue-400" />,
   "Software Development": <Code className="w-5 h-5 text-green-400" />,
   "Artificial Intelligence": <Brain className="w-5 h-5 text-purple-400" />,
-  "Digital Marketing": <TrendingUp className="w-5 h-5 text-orange-400" />,
-  "Design & UI/UX": <Palette className="w-5 h-5 text-pink-400" />,
-  "Business Management": <Briefcase className="w-5 h-5 text-indigo-400" />,
-  "Cloud & DevOps": <Cloud className="w-5 h-5 text-cyan-400" />,
-  "Cybersecurity": <Shield className="w-5 h-5 text-red-400" />,
-  "Data Science & AI": <BarChart3 className="w-5 h-5 text-emerald-400" />,
-  "Industry Specific": <Building className="w-5 h-5 text-gray-400" />
+  // "Digital Marketing": <TrendingUp className="w-5 h-5 text-orange-400" />,
+  // "Design & UI/UX": <Palette className="w-5 h-5 text-pink-400" />,
+  // "Business Management": <Briefcase className="w-5 h-5 text-indigo-400" />,
+  // "Cloud & DevOps": <Cloud className="w-5 h-5 text-cyan-400" />,
+  // "Cybersecurity": <Shield className="w-5 h-5 text-red-400" />,
+  // "Data Science & AI": <BarChart3 className="w-5 h-5 text-emerald-400" />,
+  // "Industry Specific": <Building className="w-5 h-5 text-gray-400" />
 };
 
 const Header = () => {
@@ -132,12 +125,12 @@ const Header = () => {
     { name: 'Web Development', href: '/pages/trainings/web-development' },
     { name: 'Software Development', href: '/pages/trainings/software-development' },
     { name: 'Artificial Intelligence', href: '/pages/trainings/artificial-intelligence' },
-    { name: 'Digital Marketing', href: '/pages/trainings/digital-marketing' },
-    { name: 'Design & UI/UX', href: '/pages/trainings/design-uiux' },
-    { name: 'Business & Management', href: '/pages/trainings/business-management' },
-    { name: 'Cybersecurity', href: '/pages/trainings/cybersecurity' },
-    { name: 'Cloud & DevOps', href: '/pages/trainings/cloud-devops' },
-    { name: 'Industry-Specific', href: '/pages/trainings/industry-specific' },
+    // { name: 'Digital Marketing', href: '/pages/trainings/digital-marketing' },
+    // { name: 'Design & UI/UX', href: '/pages/trainings/design-uiux' },
+    // { name: 'Business & Management', href: '/pages/trainings/business-management' },
+    // { name: 'Cybersecurity', href: '/pages/trainings/cybersecurity' },
+    // { name: 'Cloud & DevOps', href: '/pages/trainings/cloud-devops' },
+    // { name: 'Industry-Specific', href: '/pages/trainings/industry-specific' },
   ];
 
   // New state for mobile secondary navbars
