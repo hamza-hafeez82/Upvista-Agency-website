@@ -728,6 +728,7 @@ export default function AGIResearchPage() {
                     height={48}
                     className="w-full h-full object-cover"
                   />
+                </div>
 
                 {/* Text Info */}
                 <div className="text-left">
