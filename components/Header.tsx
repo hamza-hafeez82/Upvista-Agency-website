@@ -15,7 +15,7 @@ import { Brain, Cpu, Link2, Shield, Cloud, Heart, Smartphone, Wifi, FileText, Ne
 
 // Add secondary navbar dropdown data
 const researchLinks = [
-  { label: "AGI (Artificial General Intelligence)", href: "/research/agi" },
+  { label: "AGI (Artificial General Intelligence)", href: "/Research/AGI" },
   { label: "Quantum Computing", href: "/research/quantum-computing" },
   { label: "Blockchain", href: "/research/blockchain" },
   { label: "Cybersecurity", href: "/research/cybersecurity" },
