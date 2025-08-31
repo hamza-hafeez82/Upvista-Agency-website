@@ -9,7 +9,7 @@ import AuthModal from "./ui/AuthModal";
 import { supabase } from "@/lib/supabaseClient";
 import { ArrowRight } from "lucide-react";
 import type { JSX } from "react";
-import { Brain, Cpu, Link2, Shield, Cloud, Heart, Smartphone, Wifi, FileText, Newspaper, PenTool, Calendar, Monitor, Book, Building, Camera, Home, BarChart3, Truck, Zap, ShoppingCart, Factory, Globe, Code, Palette, TrendingUp, Bot, Brush, Users, Wrench, Layout, Search, ImageIcon, Briefcase } from "lucide-react";
+import { Brain, Heart, FileText, Newspaper, PenTool, Calendar, Monitor, Book, Building, Camera, Home, BarChart3, Truck, Zap, ShoppingCart, Factory, Globe, Code, Palette, TrendingUp, Bot, Brush, Users, Wrench, Layout, Search, ImageIcon } from "lucide-react";
 
 // 1. Add icons for each section
 
