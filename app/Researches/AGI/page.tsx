@@ -614,26 +614,13 @@ export default function AGIResearchPage() {
           ))}
         </div>
 
-        {/* Page Header - Non-sticky, properly spaced (default header removed) */}
-        <div className={`sticky top-0 w-full ${theme.glassBg} backdrop-blur-xl border-b ${theme.border} transition-all duration-300 z-50`}>
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
-
-    {/* Left: Logo & Project Info */}
-    <div className="flex items-center space-x-3 sm:space-x-4 w-full sm:w-auto justify-center sm:justify-start">
-      <Brain className={`w-8 h-8 ${theme.accent}`} />
-      <div className="text-center sm:text-left">
-        <h1 className={`text-lg sm:text-xl md:text-2xl font-bold ${theme.text}`}>Project Cortex</h1>
-        <p className={`text-xs sm:text-sm ${darkMode ? 'text-violet-300' : 'text-indigo-600'}`}>AGI Research Initiative</p>
-      </div>
-      <span className={`hidden sm:block px-2 py-0.5 rounded-full text-xs font-bold ${darkMode ? 'bg-red-500/20 text-red-400' : 'bg-red-100 text-red-600'} border border-red-400/30`}>
-        In Development
-      </span>
-    </div>
-
-    {/* Right: Actions */}
-    <div className="flex items-center space-x-2 sm:space-x-3 w-full sm:w-auto justify-center sm:justify-end">
-
-      {/* Exit Screen */}
+    {/* Page Header */}
+<div className={`sticky top-0 w-full ${theme.glassBg} backdrop-blur-xl border-b ${theme.border} transition-all duration-300 z-50`}>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+    
+    {/* -------- Mobile Header -------- */}
+    <div className="flex w-full items-center justify-between sm:hidden">
+      {/* Left: Exit */}
       <button
         onClick={() => window.history.back()}
         aria-label="Exit screen"
@@ -642,56 +629,88 @@ export default function AGIResearchPage() {
         <X className={`w-5 h-5 ${theme.accent}`} />
       </button>
 
-      {/* Navigate Dropdown */}
-      <div className="relative group w-full sm:w-auto">
-        <button className={`flex items-center justify-center sm:justify-between space-x-2 px-4 py-2 w-full sm:w-auto rounded-xl ${theme.glassBg} border ${theme.border} transition-all duration-300 hover:scale-105`}>
-          <span className={`font-medium ${theme.text} text-sm md:text-base`}>Navigate</span>
-          <ChevronDown className={`w-4 h-4 ${theme.accent} group-hover:rotate-180 transition-transform duration-300`} />
-        </button>
+      {/* Middle: Title */}
+      <h1 className={`text-base font-bold ${theme.text}`}>Project Cortex</h1>
 
-        <div
-          className={`absolute right-0 top-full mt-2 w-full sm:w-64 ${theme.glassBg} backdrop-blur-2xl ${darkMode ? "bg-slate-900/70" : "bg-white/70"} border ${theme.border} rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50`}
-        >
-          <div className="p-4">
-            <p className={`text-xs font-bold ${theme.accent} uppercase tracking-wider mb-3`}>Page Sections</p>
-            <div className="space-y-1">
-              {sections.map((section) => (
-                <button
-                  key={section.id}
-                  onClick={() => {
-                    document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth" });
-                    setActiveSection(section.id);
-                  }}
-                  className={`w-full flex items-center space-x-3 px-3 py-2 rounded-xl transition-all duration-200 text-left ${
-                    activeSection === section.id
-                      ? `bg-gradient-to-r ${
-                          darkMode ? "from-violet-600 to-purple-700" : "from-indigo-600 to-purple-700"
-                        } text-white`
-                      : `${theme.text} hover:bg-white/10`
-                  }`}
-                >
-                  <div className={activeSection === section.id ? "text-white" : theme.accent}>{section.icon}</div>
-                  <span className="font-medium text-sm">{section.title}</span>
-                  <ArrowRight
-                    className={`w-4 h-4 ml-auto opacity-0 group-hover/item:opacity-100 transform translate-x-2 group-hover/item:translate-x-0 transition-all duration-200 ${
-                      activeSection === section.id ? "text-white" : theme.accent
-                    }`}
-                  />
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Theme Toggle */}
+      {/* Right: Theme Toggle */}
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className={`p-2 rounded-lg ${theme.glassBg} border ${theme.border} transition-all duration-300 hover:scale-105`}
         aria-label="Toggle theme"
+        className={`p-2 rounded-lg ${theme.glassBg} border ${theme.border} transition-all duration-300 hover:scale-105`}
       >
         {darkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-indigo-600" />}
       </button>
+    </div>
+
+    {/* -------- Desktop Header -------- */}
+    <div className="hidden sm:flex w-full items-center justify-between gap-4">
+      {/* Left: Logo & Project Info */}
+      <div className="flex items-center space-x-4">
+        <Brain className={`w-8 h-8 ${theme.accent}`} />
+        <div>
+          <h1 className={`text-xl md:text-2xl font-bold ${theme.text}`}>Project Cortex</h1>
+          <p className={`text-sm ${darkMode ? 'text-violet-300' : 'text-indigo-600'}`}>AGI Research Initiative</p>
+        </div>
+        <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${darkMode ? 'bg-red-500/20 text-red-400' : 'bg-red-100 text-red-600'} border border-red-400/30`}>
+          In Development
+        </span>
+      </div>
+
+      {/* Right: Actions */}
+      <div className="flex items-center space-x-3">
+        {/* Exit */}
+        <button
+          onClick={() => window.history.back()}
+          aria-label="Exit screen"
+          className={`p-2 rounded-lg ${theme.glassBg} border ${theme.border} transition-all duration-300 hover:scale-105`}
+        >
+          <X className={`w-5 h-5 ${theme.accent}`} />
+        </button>
+
+        {/* Navigate Dropdown */}
+        <div className="relative group">
+          <button className={`flex items-center space-x-2 px-4 py-2 rounded-xl ${theme.glassBg} border ${theme.border} transition-all duration-300 hover:scale-105`}>
+            <span className={`font-medium ${theme.text} text-sm md:text-base`}>Navigate</span>
+            <ChevronDown className={`w-4 h-4 ${theme.accent} group-hover:rotate-180 transition-transform duration-300`} />
+          </button>
+
+          {/* Dropdown Menu */}
+          <div className={`absolute right-0 top-full mt-2 w-64 ${theme.glassBg} backdrop-blur-2xl ${darkMode ? "bg-slate-900/70" : "bg-white/70"} border ${theme.border} rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50`}>
+            <div className="p-4">
+              <p className={`text-xs font-bold ${theme.accent} uppercase tracking-wider mb-3`}>Page Sections</p>
+              <div className="space-y-1">
+                {sections.map((section) => (
+                  <button
+                    key={section.id}
+                    onClick={() => {
+                      document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth" });
+                      setActiveSection(section.id);
+                    }}
+                    className={`w-full flex items-center space-x-3 px-3 py-2 rounded-xl transition-all duration-200 text-left ${
+                      activeSection === section.id
+                        ? `bg-gradient-to-r ${darkMode ? "from-violet-600 to-purple-700" : "from-indigo-600 to-purple-700"} text-white`
+                        : `${theme.text} hover:bg-white/10`
+                    }`}
+                  >
+                    <div className={activeSection === section.id ? "text-white" : theme.accent}>{section.icon}</div>
+                    <span className="font-medium text-sm">{section.title}</span>
+                    <ArrowRight className={`w-4 h-4 ml-auto opacity-0 group-hover/item:opacity-100 transform translate-x-2 group-hover/item:translate-x-0 transition-all duration-200 ${activeSection === section.id ? "text-white" : theme.accent}`} />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Theme Toggle */}
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          aria-label="Toggle theme"
+          className={`p-2 rounded-lg ${theme.glassBg} border ${theme.border} transition-all duration-300 hover:scale-105`}
+        >
+          {darkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-indigo-600" />}
+        </button>
+      </div>
     </div>
   </div>
 </div>
