@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Brain, Lightbulb, Zap, Network, Eye, Moon, Sun, ArrowRight, Cpu, GitBranch, Shield, BarChart3, Code, Calendar, Users, Mail, Github, ExternalLink, ChevronDown } from 'lucide-react';
 import GlowingCubesBackground from "@/components/ui/GlowingCubesBackground";
 import Head from 'next/head';
+import Image from 'next/image';
 import { X } from "lucide-react";
 
 export default function AGIResearchPage() {
@@ -720,12 +721,13 @@ export default function AGIResearchPage() {
               <div className="flex items-center space-x-2">
                 {/* Profile Image */}
                 <div className="w-12 h-12 rounded-full overflow-hidden shadow-lg">
-                  <img
+                  <Image
                     src="/assets/hamza-pic.jpg" 
                     alt="Hamza Hafeez"
+                    width={48}
+                    height={48}
                     className="w-full h-full object-cover"
                   />
-                </div>
 
                 {/* Text Info */}
                 <div className="text-left">
@@ -1101,7 +1103,7 @@ export default function AGIResearchPage() {
                 
                 <div className={`p-8 rounded-3xl bg-gradient-to-r ${darkMode ? 'from-violet-900/50 to-purple-900/50' : 'from-indigo-100 to-purple-100'} border ${theme.border} backdrop-blur-sm`}>
                   <p className={`text-lg md:text-xl ${theme.text} leading-relaxed font-medium italic`}>
-                    "Project Cortex represents a paradigm shift from reactive AI to proactive artificial general intelligence."
+                    &ldquo;Project Cortex represents a paradigm shift from reactive AI to proactive artificial general intelligence.&rdquo;
                   </p>
                 </div>
               </div>
@@ -1162,11 +1164,13 @@ export default function AGIResearchPage() {
       {/* Profile Image */}
       <div className="flex-shrink-0">
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden shadow-2xl mb-4">
-          <img
-            src="/assets/hamza-pic.jpg" 
-            alt="Hamza Hafeez"
-            className="w-full h-full object-cover"
-          />
+          <Image
+                        src="/assets/hamza-pic.jpg" 
+                        alt="Hamza Hafeez"
+                        width={160}
+                        height={160}
+                        className="w-full h-full object-cover"
+                      />
         </div>
       </div>
       
@@ -1175,12 +1179,12 @@ export default function AGIResearchPage() {
         <h4 className={`text-2xl md:text-3xl font-bold ${theme.text} mb-2`}>Hamza Hafeez</h4>
         <p className={`text-lg md:text-xl ${theme.accent} font-semibold mb-4`}>Chief Executive Officer, Upvista Digital</p>
         <p className={`text-base md:text-lg ${darkMode ? 'text-slate-300' : 'text-slate-600'} leading-relaxed mb-6 max-w-2xl`}>
-        "I started Project Cortex to challenge myself and the whole AI community.  
+        &ldquo;I started Project Cortex to challenge myself and the whole AI community.  
         It&apos;s about building something bigger than anything existed today, a system that dares to rethink how machines can learn, reason,  
         and work alongside us not as tools, but as partners in progress. I know this road is long, full of failures, doubts, and sleepless nights that test your patience,  
         but that&apos;s exactly why it matters. This journey isn&apos;t about chasing recognition or empty numbers… it&apos;s about building
         a foundation strong enough to inspire the next generation of builders, dreamers, and thinkers.<br></br> To me, research is the heart of everything. Whatever we pursue in life, we must constantly seek knowledge,
-        because without knowledge we stop growing and without growth, we lose our purpose."
+        because without knowledge we stop growing and without growth, we lose our purpose.&rdquo;
         </p>
         
         {/* Buttons */}
