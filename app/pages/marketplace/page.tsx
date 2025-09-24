@@ -267,7 +267,7 @@ export default function MarketplacePage() {
                   Share
                 </motion.button>
 
-                <Link href="/pages/contactPage">
+                <Link href="/contact">
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -466,7 +466,7 @@ export default function MarketplacePage() {
               Join the revolution of custom-built solutions that drive real business transformation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/pages/contactPage">
+              <Link href="/contact">
                 <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-300 flex items-center">
                   Get in Touch
                   <ArrowRight className="ml-2 w-5 h-5" />

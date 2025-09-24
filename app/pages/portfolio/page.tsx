@@ -33,7 +33,7 @@ interface Project {
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08, duration: 0.6, type: 'spring' } })
+  visible: { opacity: 1, y: 0 }
 };
 
 const PortfolioPage = () => {
@@ -275,7 +275,7 @@ const PortfolioPage = () => {
             <p className="text-lg text-cyan-100 mb-8 max-w-2xl mx-auto">
               Let&apos;s collaborate to build a stunning website that perfectly represents your brand and drives results.
             </p>
-            <Link href="/pages/contactPage" className="bg-gradient-to-r from-cyan-400 to-emerald-400 text-black px-8 py-3 rounded-full font-bold hover:scale-105 hover:shadow-xl transition-colors duration-300 inline-block">
+            <Link href="/contact" className="bg-gradient-to-r from-cyan-400 to-emerald-400 text-black px-8 py-3 rounded-full font-bold hover:scale-105 hover:shadow-xl transition-colors duration-300 inline-block">
               Book a Free Consultation
             </Link>
           </motion.div>

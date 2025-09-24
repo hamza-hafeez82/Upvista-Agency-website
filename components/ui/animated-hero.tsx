@@ -68,7 +68,7 @@ function Hero() {
             </p>
           </div>
           <div className="flex flex-row gap-3">
-           <Link href="/pages/consult">
+           <Link href="/Consult">
               <Button size="lg" className="gap-4" variant="outline">
               Get a free consultation <PhoneCall className="w-4 h-4" />
             </Button>

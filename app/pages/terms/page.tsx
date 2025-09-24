@@ -214,7 +214,7 @@ export default function TermsAndConditions() {
             <div className="mt-4 space-y-2">
               <p><strong>Email:</strong> upvistadigital@gmail.com</p>
               <p><strong>Phone:</strong> +92 332 0486955</p>
-              <p><strong>Website:</strong> <Link href="/pages/contactPage" className="text-purple-400 hover:text-purple-300">Contact Page</Link></p>
+              <p><strong>Website:</strong> <Link href="/contact" className="text-purple-400 hover:text-purple-300">Contact Page</Link></p>
             </div>
           </section>
         </div>

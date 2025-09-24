@@ -273,7 +273,7 @@ const sectionContent = {
         </div>
 
         <div className="text-center">
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-3 rounded-lg font-medium hover:from-orange-400 hover:to-red-500 transition-all duration-300 transform hover:scale-105">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-3 rounded-lg font-medium hover:from-orange-400 hover:to-red-500 transition-all duration-300 transform hover:scale-105">
             Start Your Brand Journey
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -346,7 +346,7 @@ const sectionContent = {
           <p className="text-gray-300 mb-4">
             Let&apos;s discuss how our branding expertise can help you create a memorable and effective brand identity.
           </p>
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-lg font-medium hover:from-orange-400 hover:to-red-500 transition-all duration-300">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-lg font-medium hover:from-orange-400 hover:to-red-500 transition-all duration-300">
             Schedule a Brand Consultation
             <ArrowRight className="w-4 h-4" />
           </Link>

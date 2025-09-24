@@ -329,7 +329,7 @@ export default function FAQ() {
             We&apos;re here to help! Contact us for more information about our services, pricing, or to discuss your project requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/pages/contactPage">
+          <Link href="/contact">
             <button className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
               Contact Us
             </button>

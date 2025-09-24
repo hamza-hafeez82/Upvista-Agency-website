@@ -270,7 +270,7 @@ export default function PrivacyPolicy() {
             <div className="space-y-2">
               <p><strong>Email:</strong> info@upvistadigital.com</p>
               <p><strong>Phone:</strong> +92 332 0486955</p>
-              <p><strong>Website:</strong> <Link href="/pages/contactPage" className="text-purple-400 hover:text-purple-300">Contact Page</Link></p>
+              <p><strong>Website:</strong> <Link href="/contact" className="text-purple-400 hover:text-purple-300">Contact Page</Link></p>
               <p><strong>Address:</strong> Pakistan</p>
             </div>
             <p className="leading-relaxed mt-4">

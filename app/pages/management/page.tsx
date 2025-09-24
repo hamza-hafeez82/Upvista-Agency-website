@@ -274,7 +274,7 @@ const sectionContent = {
         </div>
         
         <div className="text-center">
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:from-blue-400 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-lg font-medium hover:from-blue-400 hover:to-indigo-500 transition-all duration-300 transform hover:scale-105">
             Start Your Management Journey
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -347,7 +347,7 @@ const sectionContent = {
           <p className="text-gray-300 mb-4">
             Let&apos;s discuss how our management expertise can help you achieve similar results.
           </p>
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-400 hover:to-indigo-500 transition-all duration-300">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-400 hover:to-indigo-500 transition-all duration-300">
             Schedule a Management Consultation
             <ArrowRight className="w-4 h-4" />
           </Link>

@@ -274,7 +274,7 @@ export default function CompleteServices() {
                     <li>Resource library & support</li>
                   </ul>
                   <div className="mt-6">
-            <Link href="/pages/contactPage">
+            <Link href="/contact">
                       <button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 flex items-center gap-2 shadow-lg mx-auto">
                         Meet Your Team
                         <Users className="h-4 w-4" />

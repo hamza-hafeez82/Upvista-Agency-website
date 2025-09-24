@@ -373,7 +373,7 @@ export const StunningServices = () => {
               </div>
             </div>
             <div className="w-full flex flex-col items-center mt-10">
-              <a href="/pages/contactPage" className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold text-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-3">
+              <a href="/contact" className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold text-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-3">
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M2 12h20M12 2v20" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 Start Your Transformation
               </a>

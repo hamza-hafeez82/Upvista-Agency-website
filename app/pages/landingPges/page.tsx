@@ -143,7 +143,7 @@ const LandingPricingCard = ({
         </div>
 
         <Link
-          href="/pages/contactPage"
+          href="/contact"
           className="block relative overflow-hidden"
         >
           <div

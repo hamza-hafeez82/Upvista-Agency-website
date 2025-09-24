@@ -1,6 +1,7 @@
 "use client";
 
-import Component from "../../components/community-page";
+import Component from "@/components/community-page";
+import Header from "@/components/Header";
 import Head from 'next/head';
 
 export default function CommunityPage() {
@@ -41,7 +42,8 @@ export default function CommunityPage() {
           }],
         }) }} />
       </Head>
-      <Component />;
+      <Header />
+      <Component />
     </>
   );
 }

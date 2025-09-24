@@ -1,614 +1,790 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { 
-  Briefcase, 
-  Users, 
-  ArrowLeft, 
-  MapPin, 
-  DollarSign,
-  Target,
-  Code,
-  Brain,
-  TrendingUp,
-  Filter,
-  CheckCircle,
-  UserCheck,
-  MessageCircle,
-  Award,
-  Coffee,
-  Heart,
-  Zap,
-  Shield,
-  Globe,
-  ArrowRight,
-  Palette
-} from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import Head from "next/head";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
-interface JobPosition {
-  id: number;
-  title: string;
-  category: string;
-  type: string;
-  location: string;
-  salary: string;
-  description: string;
-  requirements: string[];
-  responsibilities: string[];
-}
-
-interface JobCategory {
-  id: string;
-  label: string;
-  count: number;
-}
-
-interface WorkingBenefit {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-interface ProcessStep {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-const jobCategories: JobCategory[] = [
-  { id: "all", label: "All Jobs", count: 6 },
-  { id: "fresh", label: "Fresh Graduate", count: 2 },
-  { id: "experienced", label: "Experienced Professional", count: 2 },
-  { id: "internee", label: "Internee", count: 2 }
-];
-
-const openPositions: JobPosition[] = [
-  {
-    id: 1,
-    title: "Marketing & Sales Manager",
-    category: "experienced",
-    type: "Full-time Remote",
-    location: "Remote",
-    salary: "Project-based",
-    description: "Drive business growth by acquiring new projects and managing client relationships for our software development services.",
-    requirements: [
-      "3+ years experience in B2B sales and marketing",
-      "Proven track record in software/IT services sales",
-      "Strong communication and negotiation skills",
-      "Experience with CRM systems and lead generation",
-      "Knowledge of digital marketing strategies"
-    ],
-    responsibilities: [
-      "Generate leads and convert them into projects",
-      "Build and maintain client relationships",
-      "Develop marketing strategies for software services",
-      "Negotiate project contracts and pricing",
-      "Collaborate with development team on project requirements"
-    ]
-  },
-  {
-    id: 6,
-    title: "Graphic Designer (Internee)",
-    category: "internee",
-    type: "Internship Remote",
-    location: "Remote",
-    salary: "Project-based",
-    description: "Create stunning and astonishing graphics, posters, video content, and advanced visual designs that captivate audiences and elevate brand presence.",
-    requirements: [
-      "Currently pursuing or recently completed degree in Graphic Design/Visual Arts",
-      "Proficiency in Adobe Creative Suite (Photoshop, Illustrator, After Effects, Premiere Pro)",
-      "Strong portfolio showcasing creative design work",
-      "Knowledge of typography, color theory, and composition",
-      "Basic understanding of motion graphics and video editing"
-    ],
-    responsibilities: [
-      "Design stunning graphics, posters, and promotional materials",
-      "Create engaging social media visuals and digital content",
-      "Edit and produce compelling video content and animations",
-      "Develop brand-consistent visual assets and marketing materials",
-      "Collaborate with marketing team on creative campaigns",
-      "Learn advanced design techniques and industry best practices"
-    ]
-  },
-  {
-    id: 2,
-    title: "Senior Software Engineer",
-    category: "experienced",
-    type: "Full-time Remote",
-    location: "Remote",
-    salary: "Project-based",
-    description: "Lead complex software development projects and mentor junior developers in building scalable solutions.",
-    requirements: [
-      "5+ years of software development experience",
-      "Expertise in multiple programming languages",
-      "Strong system design and architecture skills",
-      "Experience with cloud platforms (AWS, Azure, GCP)",
-      "Leadership and mentoring experience"
-    ],
-    responsibilities: [
-      "Lead end-to-end software development projects",
-      "Design scalable and maintainable architectures",
-      "Mentor junior developers and conduct code reviews",
-      "Collaborate with clients on technical requirements",
-      "Ensure code quality and best practices"
-    ]
-  },
-  {
-    id: 3,
-    title: "MERN Stack Developer",
-    category: "fresh",
-    type: "Full-time Remote",
-    location: "Remote",
-    salary: "Project-based",
-    description: "Build modern web applications using MongoDB, Express.js, React, and Node.js technologies.",
-    requirements: [
-      "Strong proficiency in JavaScript and TypeScript",
-      "Experience with React.js and its ecosystem",
-      "Knowledge of Node.js and Express.js",
-      "Familiarity with MongoDB and database design",
-      "Understanding of RESTful APIs and GraphQL"
-    ],
-    responsibilities: [
-      "Develop responsive web applications using MERN stack",
-      "Create and consume RESTful APIs",
-      "Implement user interfaces with React.js",
-      "Work with databases and optimize queries",
-      "Collaborate with design and backend teams"
-    ]
-  },
-  {
-    id: 4,
-    title: "Senior AI Engineer",
-    category: "experienced",
-    type: "Full-time Remote",
-    location: "Remote",
-    salary: "Project-based",
-    description: "Develop cutting-edge AI solutions and machine learning models to solve complex business problems.",
-    requirements: [
-      "Master's degree in AI, ML, or related field",
-      "3+ years experience in machine learning",
-      "Proficiency in Python, TensorFlow, PyTorch",
-      "Experience with NLP, computer vision, or deep learning",
-      "Strong mathematical and statistical background"
-    ],
-    responsibilities: [
-      "Design and implement AI/ML solutions",
-      "Develop and train machine learning models",
-      "Research and implement latest AI technologies",
-      "Optimize model performance and scalability",
-      "Collaborate with clients on AI strategy"
-    ]
-  },
-  {
-    id: 5,
-    title: "Full Stack Web Developer (Internee)",
-    category: "internee",
-    type: "Internship Remote",
-    location: "Remote",
-    salary: "Project-based",
-    description: "Learn and contribute to full-stack web development projects while gaining hands-on experience with modern technologies.",
-    requirements: [
-      "Currently pursuing or recently completed degree in CS/IT",
-      "Basic knowledge of HTML, CSS, JavaScript",
-      "Familiarity with at least one frontend framework (React, Vue, Angular)",
-      "Understanding of basic backend concepts",
-      "Eager to learn and grow in web development"
-    ],
-    responsibilities: [
-      "Assist in developing web applications under supervision",
-      "Learn and implement best coding practices",
-      "Participate in code reviews and team meetings",
-      "Work on assigned features and bug fixes",
-      "Document learning progress and project contributions"
-    ]
-  }
-];
-
-const workingBenefits: WorkingBenefit[] = [
-  {
-    icon: <Globe className="w-8 h-8" />,
-    title: "100% Remote Work",
-    description: "Work from anywhere in the world with complete flexibility and work-life balance."
-  },
-  {
-    icon: <Target className="w-8 h-8" />,
-    title: "Project-Based Structure",
-    description: "Engage in diverse projects with clear deliverables and competitive project-based compensation."
-  },
-  {
-    icon: <Zap className="w-8 h-8" />,
-    title: "Cutting-Edge Technology",
-    description: "Work with the latest technologies and tools to build innovative solutions."
-  },
-  {
-    icon: <Heart className="w-8 h-8" />,
-    title: "Collaborative Culture",
-    description: "Join a supportive team environment focused on growth and knowledge sharing."
-  },
-  {
-    icon: <Award className="w-8 h-8" />,
-    title: "Professional Growth",
-    description: "Continuous learning opportunities and skill development programs."
-  },
-  {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Performance Bonuses",
-    description: "Earn additional rewards based on project success and performance metrics."
-  }
-];
-
-const processSteps: ProcessStep[] = [
-  {
-    icon: <CheckCircle className="w-12 h-12" />,
-    title: "Application",
-    description: "Submit your application through our Google Form with your resume and portfolio."
-  },
-  {
-    icon: <Filter className="w-12 h-12" />,
-    title: "Screening",
-    description: "Our HR team reviews applications and conducts initial screening calls."
-  },
-  {
-    icon: <MessageCircle className="w-12 h-12" />,
-    title: "Interview",
-    description: "Technical and cultural fit interviews with our team leads and founders."
-  },
-  {
-    icon: <UserCheck className="w-12 h-12" />,
-    title: "Onboarding",
-    description: "Welcome to the team! Complete onboarding and start your first project."
-  }
-];
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, ChevronDown, Search, ExternalLink, Briefcase } from "lucide-react";
+import CareersHeader from "./components/CareersHeader";
+import CareersFooter from "./components/CareersFooter";
+import { Vortex } from "@/components/ui/vortex";
+import { searchJobs, getJobByTitle, getAllJobTitles, type JobMapping } from "./data/jobMappings";
 
 export default function CareersPage() {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-  const [selectedJob, setSelectedJob] = useState<number | null>(null);
+  const [selectedJob, setSelectedJob] = useState("");
+  const [selectedRecruitmentType, setSelectedRecruitmentType] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [searchResults, setSearchResults] = useState<JobMapping[]>([]);
+  const [showResults, setShowResults] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const filteredJobs = activeCategory === "all" 
-    ? openPositions 
-    : openPositions.filter(job => job.category === activeCategory);
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
 
-  const getJobIcon = (title: string) => {
-    if (title.includes("Marketing")) return <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />;
-    if (title.includes("Software Engineer")) return <Code className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />;
-    if (title.includes("MERN")) return <Code className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />;
-    if (title.includes("AI")) return <Brain className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />;
-    if (title.includes("Full Stack")) return <Code className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />;
-    if (title.includes("Graphic Designer")) return <Palette className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />;
-    return <Code className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0" />;
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+
+  
+  const recruitmentTypes = [
+    "Career Recruitment",
+    "Potential Recruitment", 
+    "New Graduate Recruitment"
+  ];
+
+  // Get job positions from the mapping
+  const jobPositions = getAllJobTitles();
+
+  // Handle search functionality
+  const handleSearch = async () => {
+    setIsSearching(true);
+    
+    // Simulate search delay for better UX
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    const results = searchJobs(selectedJob, selectedRecruitmentType);
+    setSearchResults(results);
+    setShowResults(true);
+    setIsSearching(false);
+  };
+
+  // Handle direct job selection
+  const handleJobSelect = (jobTitle: string) => {
+    const job = getJobByTitle(jobTitle);
+    if (job) {
+      window.location.href = job.href;
+    }
+  };
+
+  // Handle recruitment type selection
+  const handleRecruitmentTypeChange = (type: string) => {
+    setSelectedRecruitmentType(type);
   };
 
   return (
     <>
-      <Head>
-        <title>Careers | Upvista Digital | Join Our Team</title>
-        <meta name="description" content="Explore career opportunities at Upvista Digital. Join our team of innovators and creators building the future of digital technology." />
-        <meta name="keywords" content="Upvista, Upvista Digital, Careers, Jobs, Employment, Digital Agency, Technology, Innovation" />
-        <meta property="og:title" content="Careers | Upvista Digital | Join Our Team" />
-        <meta property="og:description" content="Explore career opportunities at Upvista Digital. Join our team of innovators and creators building the future of digital technology." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://upvistadigital.com/careers" />
-        <meta property="og:image" content="https://upvistadigital.com/assets/heroimg.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Careers | Upvista Digital | Join Our Team" />
-        <meta name="twitter:description" content="Explore career opportunities at Upvista Digital. Join our team of innovators and creators building the future of digital technology." />
-        <meta name="twitter:image" content="https://upvistadigital.com/assets/heroimg.png" />
-        <link rel="canonical" href="https://upvistadigital.com/careers" />
-      </Head>
-      <Header />
+      <CareersHeader />
       
-      <div className="min-h-screen bg-black text-white pt-20">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-purple-900/10"></div>
-          
-          <div className="relative z-10 container mx-auto py-16 sm:py-20 lg:py-24">
+      <div className="min-h-screen bg-black text-white pt-20 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+          {/* Animated Background */}
+          <div className="absolute top-20 left-20 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 bg-blue-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-32 left-1/3 w-40 h-40 bg-pink-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+        </div>
+
+        <div className="relative z-10">
+        {/* Hero Section with Vortex Background */}
+        <Vortex
+          backgroundColor="transparent"
+          particleCount={200}
+          baseHue={260}
+          className="w-full h-full"
+          containerClassName="container mx-auto px-4 py-16"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-16"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+              Building a Society
+              <br />
+              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Overflowing with Teamwork
+              </span>
+              </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+              Upvista Digital is<br />
+              waiting for members to work together.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/careers/apply">
+                <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25">
+                  Job Openings & Applications
+                </button>
+              </Link>
+              <Link href="/careers/basics">
+                <button className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+                  Learn the Basics
+                </button>
+              </Link>
+            </div>
+          </motion.div>
+        </Vortex>
+
+            {/* Find Recruitment Information Section */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center max-w-4xl mx-auto"
+              transition={{ delay: 0.3 }}
+              className="mb-16"
             >
-              <div className="flex items-center justify-center mb-6">
-                <Briefcase className="w-10 h-10 sm:w-12 sm:h-12 text-purple-400 mr-3" />
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                  Join Our Team
-                </h1>
+              <div className="bg-gradient-to-r from-purple-600/10 to-indigo-600/10 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
+                  Find Recruitment Information
+                </h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  {/* Recruitment Type Selection */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-white mb-3">Recruitment Type</h3>
+                    <div className="space-y-3">
+                      {recruitmentTypes.map((type) => (
+                        <label key={Math.random()} className="flex items-center space-x-3 cursor-pointer group">
+                          <input
+                            type="radio"
+                            name="recruitmentType"
+                            value={type}
+                            checked={selectedRecruitmentType === type}
+                            onChange={(e) => handleRecruitmentTypeChange(e.target.value)}
+                            className="w-4 h-4 text-purple-600 bg-gray-800 border-gray-600 focus:ring-purple-500 focus:ring-2"
+                          />
+                          <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
+                            {type}
+                          </span>
+                        </label>
+                      ))}
               </div>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 px-4">
-                Shape the future of digital innovation with Upvista Digital. Work remotely on exciting projects with cutting-edge technology.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-gray-400">
-                <div className="flex items-center gap-2">
-                  <Globe className="w-4 h-4 text-purple-400" />
-                  <span>100% Remote</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Target className="w-4 h-4 text-purple-400" />
-                  <span>Project-Based</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-4 h-4 text-purple-400" />
-                  <span>6 Open Positions</span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
 
-        {/* Job Categories Filter */}
-        <section className="px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto py-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8"
-            >
-              {jobCategories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 text-sm sm:text-base ${
-                    activeCategory === category.id
-                      ? "bg-purple-600 text-white shadow-lg shadow-purple-500/25"
-                      : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-purple-500/20"
-                  }`}
-                >
-                  {category.label} ({category.count})
-                </button>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Open Positions */}
-        <section className="px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto py-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-                Open Positions
-              </h2>
-              <p className="text-gray-400 text-base sm:text-lg px-4">
-                Discover your next career opportunity with us
-              </p>
-            </motion.div>
-
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-              {filteredJobs.map((job, index) => (
-                <motion.div
-                  key={job.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-900/50 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-6 sm:p-8 hover:border-purple-500/40 transition-all duration-300 group"
-                >
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2 flex-wrap">
-                        {getJobIcon(job.title)}
-                        <h3 className="text-lg sm:text-xl font-bold text-white break-words">{job.title}</h3>
-                      </div>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        <span className="px-2 sm:px-3 py-1 bg-purple-600/20 text-purple-300 rounded-full text-xs sm:text-sm">
-                          {job.type}
+                  {/* Job Category Dropdown */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-white mb-3">Select the Job</h3>
+                    <div className="relative" ref={dropdownRef}>
+                      <button
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 cursor-pointer text-left flex items-center justify-between hover:border-purple-400 transition-colors duration-200"
+                      >
+                        <span className={selectedJob ? "text-white" : "text-gray-400"}>
+                          {selectedJob || "Select a position"}
                         </span>
-                        <span className="px-2 sm:px-3 py-1 bg-gray-700/50 text-gray-300 rounded-full text-xs sm:text-sm flex items-center gap-1">
-                          <MapPin className="w-3 h-3" />
-                          {job.location}
-                        </span>
-                        <span className="px-2 sm:px-3 py-1 bg-green-600/20 text-green-300 rounded-full text-xs sm:text-sm flex items-center gap-1">
-                          <DollarSign className="w-3 h-3" />
-                          {job.salary}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-400 mb-6 text-sm sm:text-base">{job.description}</p>
-
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                    <button
-                      onClick={() => setSelectedJob(selectedJob === job.id ? null : job.id)}
-                      className="flex-1 py-3 border border-purple-500/30 text-purple-400 rounded-lg hover:bg-purple-500/10 transition-colors duration-300 text-sm sm:text-base"
-                    >
-                      {selectedJob === job.id ? "Show Less" : "View Details"}
-                    </button>
-                    <Link href="https://forms.gle/tpXYTJ9qMqv2Pxhj6" className="flex-1">
-                      <button className="w-full py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
-                        Apply Now
-                        <ArrowRight className="w-4 h-4" />
+                        <ChevronDown 
+                          className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
+                            isDropdownOpen ? 'rotate-180' : ''
+                          }`} 
+                        />
                       </button>
-                    </Link>
-                  </div>
+                      
+                      <AnimatePresence>
+                        {isDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute bottom-full left-0 right-0 mb-1 bg-black/98 backdrop-blur-lg border border-purple-500/50 rounded-xl shadow-2xl shadow-purple-500/30 z-[99999] max-h-64 overflow-hidden"
+                          >
+                            <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-gray-700">
+                              <div
+                                onClick={() => {
+                                  setSelectedJob("");
+                                  setIsDropdownOpen(false);
+                                }}
+                                className="px-4 py-3 text-gray-400 hover:bg-gradient-to-r hover:from-purple-600/30 hover:to-indigo-600/30 hover:text-white cursor-pointer transition-all duration-200 border-b border-gray-700/50"
+                              >
+                                Select a position
+                </div>
+                              {jobPositions
+                                .filter(job => 
+                                  job.toLowerCase().includes(selectedJob.toLowerCase()) ||
+                                  selectedJob === ""
+                                )
+                                .map((job) => {
+                                  const jobMapping = getJobByTitle(job);
+                                  return (
+                                    <div
+                                      key={Math.random()}
+                                      onClick={() => {
+                                        setSelectedJob(job);
+                                        setIsDropdownOpen(false);
+                                      }}
+                                      className="px-4 py-3 text-white hover:bg-gradient-to-r hover:from-purple-600/30 hover:to-indigo-600/30 cursor-pointer transition-all duration-200 border-b border-gray-700/50 last:border-b-0 group"
+                                    >
+                                      <div className="flex items-center justify-between">
+                                        <span className="group-hover:text-purple-300 transition-colors">
+                                          {job}
+                                        </span>
+                                        {jobMapping && (
+                                          <span className={`text-xs px-2 py-1 rounded-full ${
+                                            jobMapping.type === 'full-time' ? 'bg-green-500/20 text-green-400' :
+                                            jobMapping.type === 'intern' ? 'bg-blue-500/20 text-blue-400' :
+                                            'bg-orange-500/20 text-orange-400'
+                                          }`}>
+                                            {jobMapping.type === 'full-time' ? 'Active' :
+                                             jobMapping.type === 'intern' ? 'Intern' : 'Future'}
+                                          </span>
+                                        )}
+                                      </div>
+                                    </div>
+                                  );
+                                })}
+              </div>
+            </motion.div>
+                        )}
+                      </AnimatePresence>
+                </div>
+          </div>
 
-                  {selectedJob === job.id && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-6 pt-6 border-t border-gray-700/50"
+                  {/* Search Button */}
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-white mb-3">Find Opportunities</h3>
+                    <button 
+                      onClick={handleSearch}
+                      disabled={isSearching}
+                      className={`w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 flex items-center justify-center space-x-2 ${
+                        isSearching ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
                     >
-                      <div className="grid gap-6 md:grid-cols-2">
-                        <div>
-                          <h4 className="font-semibold text-white mb-3 text-sm sm:text-base">Requirements:</h4>
-                          <ul className="space-y-2">
-                            {job.requirements.map((req, i) => (
-                              <li key={i} className="text-gray-400 text-xs sm:text-sm flex items-start gap-2">
-                                <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 mt-0.5 flex-shrink-0" />
-                                <span className="break-words">{req}</span>
-                              </li>
-                            ))}
-                          </ul>
+                      {isSearching ? (
+                        <>
+                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          <span>Searching...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Search className="w-5 h-5" />
+                          <span>Find Recruitment Information</span>
+                        </>
+                      )}
+                </button>
+                </div>
+          </div>
+
+                <div className="text-center">
+                  <p className="text-gray-400 text-sm">
+                    Can't find what you&apos;re looking for? 
+                    <Link href="/careers/apply" className="text-purple-400 hover:text-purple-300 ml-1 underline">
+                      View all open positions
+                    </Link>
+                  </p>
+                </div>
+
+                {/* Search Results */}
+                <AnimatePresence>
+                  {showResults && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-8"
+                    >
+                      <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
+                        <div className="flex items-center justify-between mb-6">
+                          <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                            <Briefcase className="w-6 h-6 text-purple-400" />
+                            Search Results
+                          </h3>
+                          <button
+                            onClick={() => setShowResults(false)}
+                            className="text-gray-400 hover:text-white transition-colors"
+                          >
+                            ✕
+                          </button>
                         </div>
-                        <div>
-                          <h4 className="font-semibold text-white mb-3 text-sm sm:text-base">Responsibilities:</h4>
-                          <ul className="space-y-2">
-                            {job.responsibilities.map((resp, i) => (
-                              <li key={i} className="text-gray-400 text-xs sm:text-sm flex items-start gap-2">
-                                <Target className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 mt-0.5 flex-shrink-0" />
-                                <span className="break-words">{resp}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+
+                        {searchResults.length > 0 ? (
+                          <div className="space-y-4">
+                            <p className="text-gray-300 text-sm mb-4">
+                              Found {searchResults.length} position{searchResults.length !== 1 ? 's' : ''} matching your criteria:
+                            </p>
+                            
+                            <div className="grid gap-4">
+                              {searchResults.map((job) => (
+                                <motion.div
+                                  key={job.slug}
+                                  initial={{ opacity: 0, x: -20 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  transition={{ delay: 0.1 }}
+                                  className="bg-gray-700/50 border border-gray-600/50 rounded-lg p-4 hover:bg-gray-700/70 transition-all duration-300 group"
+                                >
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex-1">
+                                      <div className="flex items-center gap-3 mb-2">
+                                        <h4 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors">
+                                          {job.title}
+                                        </h4>
+                                        <span className={`px-2 py-1 text-xs font-medium rounded-full ${
+                                          job.type === 'full-time' ? 'bg-green-500/20 text-green-400' :
+                                          job.type === 'intern' ? 'bg-blue-500/20 text-blue-400' :
+                                          'bg-orange-500/20 text-orange-400'
+                                        }`}>
+                                          {job.type === 'full-time' ? 'Full-time' :
+                                           job.type === 'intern' ? 'Intern' : 'Potential'}
+                                        </span>
+                                      </div>
+                                      <p className="text-gray-400 text-sm mb-2">
+                                        {job.category} • {job.description}
+                                      </p>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                      <button
+                                        onClick={() => handleJobSelect(job.title)}
+                                        className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-2 group-hover:scale-105"
+                                      >
+                                        <ExternalLink className="w-4 h-4" />
+                                        View Details
+                                      </button>
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="text-center py-8">
+                            <div className="w-16 h-16 bg-gray-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                              <Search className="w-8 h-8 text-gray-400" />
+                            </div>
+                            <h4 className="text-lg font-semibold text-white mb-2">No positions found</h4>
+                            <p className="text-gray-400 text-sm mb-4">
+                              Try adjusting your search criteria or browse all available positions.
+                            </p>
+                            <Link href="/careers/apply">
+                              <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300">
+                                View All Positions
+                              </button>
+                            </Link>
+                          </div>
+                        )}
                       </div>
                     </motion.div>
                   )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Working with Upvista */}
-        <section className="px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto py-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-                Why Work With Upvista?
-              </h2>
-              <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
-                Experience a new way of working that prioritizes flexibility, innovation, and professional growth.
-              </p>
+                </AnimatePresence>
+              </div>
             </motion.div>
 
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {workingBenefits.map((benefit, index) => (
+            {/* Learn the Basics Section */}
                 <motion.div
-                  key={index}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-900/30 backdrop-blur-sm border border-purple-500/20 rounded-xl p-6 sm:p-8 hover:border-purple-500/40 transition-all duration-300 group hover:bg-gray-900/50"
-                >
-                  <div className="text-purple-400 mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">{benefit.title}</h3>
-                  <p className="text-gray-400 text-sm sm:text-base">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Application Process */}
-        <section className="px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto py-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="mb-16"
             >
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-                Application Process
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+                {/* Left side - Basics Video */}
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <video
+                    src="/assets/careers/top-page/basics.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+          </div>
+
+                {/* Right side - Learn the Basics */}
+                <div className="pl-0 lg:pl-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                    <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
+                    Learn the Basics
               </h2>
-              <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto px-4">
-                Our streamlined hiring process is designed to find the perfect fit for both you and our team.
-              </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Link href="/careers/basics" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Upvista Digital in 3 minutes</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/basics" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Message from the CEO</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/basics" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>New graduate recruitment starts here</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/basics" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Corporate philosophy</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/basics" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>What is important in recruitment</span>
+                      </div>
+                    </Link>
+                      </div>
+                    </div>
+                  </div>
             </motion.div>
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-              {processSteps.map((step, index) => (
+            {/* Learn About Business Section */}
                 <motion.div
-                  key={index}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="text-center relative"
-                >
-                  <div className="bg-purple-600/20 rounded-full w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center mx-auto mb-6 relative">
-                    <div className="text-purple-400">
-                      {step.icon}
-                    </div>
-                    <div className="absolute -top-2 -right-2 bg-purple-600 text-white rounded-full w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center text-xs sm:text-sm font-bold">
-                      {index + 1}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mb-16"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+                {/* Left side - Learn About Business */}
+                <div className="pr-0 lg:pr-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                    <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
+                    Learn About Business
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Link href="/careers/business" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Upvista Digital's Business Strategy</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/business" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Upvista Digital Products</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/business" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Upvista Digital's Global Strategy</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/business" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Digital Solutions and Teamwork</span>
+                      </div>
+                    </Link>
                     </div>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-gray-400 text-sm sm:text-base px-2">{step.description}</p>
+
+                {/* Right side - Business Video */}
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <video
+                    src="/assets/careers/top-page/learn-business.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                        </div>
+                      </div>
+                    </motion.div>
+
+            {/* Learn About Job Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="mb-16"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+                {/* Left side - Job Video */}
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <video
+                    src="/assets/careers/top-page/learn-job.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+
+                {/* Right side - Learn About Job */}
+                <div className="pl-0 lg:pl-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                    <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
+                    Learn About Job
+              </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Link href="/careers/jobs" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Development and Operation</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/jobs" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Marketing</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/jobs" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Customer Service</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/jobs" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Sales</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/jobs" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>System Consulting</span>
+                      </div>
+                    </Link>
+                    <Link href="/careers/jobs" className="group">
+                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <span>Corporate</span>
+                      </div>
+                    </Link>
+                        </div>
+                        </div>
+                      </div>
+            </motion.div>
+
+            {/* Get to Know People Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="mb-16"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+                {/* Left side - Get to Know People */}
+                <div className="pr-0 lg:pr-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                    <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
+                    Get to Know People
+                  </h2>
                   
-                  {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-12 -right-4 w-8 h-0.5 bg-purple-500/30"></div>
-                  )}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+                  <div className="space-y-6 mb-8">
+                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
+                        Engineer/Designer
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        Our engineering and design teams are the creative minds behind innovative digital solutions. 
+                        Engineers work on cutting-edge technologies, building scalable systems and applications that 
+                        drive business success. Designers craft intuitive user experiences and visually stunning 
+                        interfaces that users love.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
+                        Corporate Positions
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        Our corporate team ensures smooth operations and strategic growth. From human resources 
+                        managing talent acquisition to finance overseeing budgets and investments, these roles 
+                        provide the foundation that enables our technical teams to focus on innovation and delivery.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
+                        Business Jobs
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        Business roles at Upvista Digital focus on growth, customer success, and market expansion. 
+                        From marketing specialists driving brand awareness to sales representatives building client 
+                        relationships, these positions are crucial for our company's continued success and expansion.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-        {/* Call to Action */}
-        <section className="px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto py-16">
+                {/* Right side - People Video */}
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <video
+                    src="/assets/careers/top-page/get-to-know-people.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Get to Know Workspace Section */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="mb-16"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+                {/* Left side - Workspace Video */}
+                <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+                  <video
+                    src="/assets/careers/top-page/workspace.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+
+                {/* Right side - Get to Know Workspace */}
+                <div className="pl-0 lg:pl-8">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                    <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
+                    Get to Know Workspace
+                  </h2>
+                  
+                  <div className="space-y-6">
+                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
+                        Office & Remote Work
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        We offer flexible work arrangements with modern office spaces and comprehensive remote work support. 
+                        Our offices are designed for collaboration and productivity, while our remote work policies ensure 
+                        you can work effectively from anywhere.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
+                        Communication & Internal Systems
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        We use cutting-edge communication tools and internal systems to ensure seamless collaboration. 
+                        From project management platforms to instant messaging systems, we've built an infrastructure 
+                        that keeps teams connected and productive.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
+                        Learning & Career Development
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        Our comprehensive onboarding process and continuous learning systems help you grow professionally. 
+                        We provide career support, skill development programs, and regular performance evaluations to 
+                        ensure your success and advancement.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                        <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
+                        Company Culture & Benefits
+                      </h3>
+                      <p className="text-gray-300 leading-relaxed">
+                        We foster a vibrant company culture with regular team events, competitive salary packages, 
+                        and comprehensive benefits. Our evaluation system recognizes and rewards excellence while 
+                        supporting continuous improvement and growth.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+
+            {/* About Upvista Digital Section */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-r from-purple-900/30 via-purple-800/20 to-purple-900/30 rounded-3xl p-8 sm:p-12 text-center border border-purple-500/20"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9 }}
+              className="mb-16"
             >
-              <Coffee className="w-12 h-12 sm:w-16 sm:h-16 text-purple-400 mx-auto mb-6" />
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
-                Ready to Join Our Team?
-              </h2>
-              <p className="text-gray-400 text-base sm:text-lg mb-8 max-w-2xl mx-auto px-4">
-                Take the first step towards an exciting career in digital innovation. Apply now and become part of our remote-first, project-driven team.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="#" className="inline-flex">
-                  <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
-                    View All Positions
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              <div className="max-w-6xl mx-auto px-6">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                    What Upvista Digital Is
+                  </h2>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                  <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                    <h3 className="text-xl font-semibold text-white mb-3">Innovation Leader</h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      Upvista Digital is a pioneering force in digital transformation, constantly pushing boundaries 
+                      and creating innovative solutions that shape the future of technology and business.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                    <h3 className="text-xl font-semibold text-white mb-3">Global Impact</h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      We're building solutions that make a global impact while respecting local cultures and values. 
+                      Our work touches millions of lives worldwide through technology that matters.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
+                    <h3 className="text-xl font-semibold text-white mb-3">Team Excellence</h3>
+                    <p className="text-gray-300 leading-relaxed">
+                      Our strength lies in our people - talented individuals who come together to create something 
+                      greater than the sum of its parts through collaboration, innovation, and shared vision.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* CTA Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.0 }}
+              className="text-center mb-16"
+            >
+              <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto mx-4 md:mx-auto">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 text-center">
+                  Ready to Make Your Impact?
+                </h3>
+                <p className="text-gray-300 mb-6 md:mb-8 text-base md:text-lg text-center leading-relaxed">
+                  Join a team that&apos;s building the future of digital solutions.<br className="hidden sm:block" />
+                  Explore our open positions and start your journey with Upvista Digital today.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
+                  <Link href="/careers/apply" className="w-full sm:w-auto">
+                    <button className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 text-sm sm:text-base">
+                      View Job Openings
                   </button>
                 </Link>
-                <Link href="/pages/contactPage">
-                  <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border border-purple-500/30 text-purple-400 rounded-lg hover:bg-purple-500/10 transition-colors duration-300 text-sm sm:text-base">
-                    Contact Us
+                  <Link href="/careers/events" className="w-full sm:w-auto">
+                    <button className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20 text-sm sm:text-base">
+                      Recruitment Events
                   </button>
                 </Link>
               </div>
+          </div>
             </motion.div>
           </div>
-        </section>
-
-        {/* Back to Home */}
-        <section className="px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto py-8">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-center"
-            >
-              <Link href="/">
-                <button className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base">
-                  <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Back to Home
-                </button>
-              </Link>
-            </motion.div>
-          </div>
-        </section>
       </div>
       
-      <Footer />
+      <CareersFooter />
     </>
   );
 }

@@ -40,7 +40,7 @@ export default function ComingSoon() {
         <p className="text-xl md:text-2xl text-purple-200 mb-8 animate-fade-in-up delay-100">Stay connected for something amazing.<br/>We&apos;re working hard to bring you this page!</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-200">
           <Link href="/" className="px-8 py-3 bg-gradient-to-r from-purple-400 to-indigo-600 text-white text-lg font-bold rounded-xl shadow-lg hover:from-purple-500 hover:to-indigo-700 transition-all duration-300 glow-btn">Back to Home</Link>
-          <Link href="/pages/contactPage" className="px-8 py-3 bg-white/10 text-purple-100 font-bold rounded-xl shadow hover:shadow-lg transition-all duration-300 border border-purple-400/30 backdrop-blur-md glow-btn">Contact Us</Link>
+          <Link href="/contact" className="px-8 py-3 bg-white/10 text-purple-100 font-bold rounded-xl shadow hover:shadow-lg transition-all duration-300 border border-purple-400/30 backdrop-blur-md glow-btn">Contact Us</Link>
         </div>
       </div>
       {/* Animations */}

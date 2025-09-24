@@ -40,13 +40,13 @@ export default function AboutUs() {
               visitors into loyal customers.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/pages/services">
+              <Link href="/Services">
                 <button className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 flex items-center gap-2 shadow-lg shadow-violet-900/30">
                   Explore Our Services
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </Link>
-              <Link href="/pages/contactPage">
+              <Link href="/contactPage">
                 <button className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 border border-gray-700">
                   Contact Us
                 </button>

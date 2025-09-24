@@ -174,9 +174,9 @@ const Footer: React.FC = () => {
               Quick Links
             </h3>
             <ul className="space-y-2">
-              <FooterLink href="/pages/about">About Us</FooterLink>
-              <FooterLink href="/pages/community">Community</FooterLink>
-              <FooterLink href="/pages/services">Services</FooterLink>
+              <FooterLink href="/About">About Us</FooterLink>
+              <FooterLink href="/community">Community</FooterLink>
+              <FooterLink href="/Services">Services</FooterLink>
               <FooterLink href="/pages/portfolio">Portfolio</FooterLink>
               <FooterLink href="/pages/blog">Blog</FooterLink>
               <FooterLink href="/pages/faq">Q&A</FooterLink>

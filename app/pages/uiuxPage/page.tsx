@@ -273,7 +273,7 @@ const sectionContent = {
         </div>
 
         <div className="text-center">
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:from-pink-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
+          <Link href="/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:from-pink-400 hover:to-purple-500 transition-all duration-300 transform hover:scale-105">
             Start Your Design Project
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -346,7 +346,7 @@ const sectionContent = {
           <p className="text-gray-300 mb-4">
             Let&apos;s discuss how our design expertise can help you create exceptional user experiences.
           </p>
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-pink-400 hover:to-purple-500 transition-all duration-300">
+          <Link href="/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-pink-400 hover:to-purple-500 transition-all duration-300">
             Schedule a Design Consultation
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -414,7 +414,7 @@ export default function UiUxPage() {
         {/* Top Bar */}
         <header className="sticky top-0 z-30 w-full bg-black/80 border-b border-gray-800 flex items-center px-2 md:px-8 py-2 gap-2 shadow-lg">
           {/* Exit Icon (far left) */}
-          <Link href="/pages/services" className="flex items-center mr-2 text-gray-300 hover:text-white p-2 rounded-full transition-colors duration-200">
+          <Link href="/Services" className="flex items-center mr-2 text-gray-300 hover:text-white p-2 rounded-full transition-colors duration-200">
             <LogOut className="h-7 w-7" />
           </Link>
           

@@ -304,11 +304,11 @@ const Header = () => {
             <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left${pathname === '/' ? ' scale-x-100' : ' scale-x-0 group-hover:scale-x-100'}`}></span>
           </Link>
           <Link
-            href="/pages/about"
-            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/about') ? "font-bold text-white" : ""}`}
+            href="/About"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/About') ? "font-bold text-white" : ""}`}
           >
             <span>About</span>
-            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/about') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/About') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
           {/* Services Dropdown */}
           <div
@@ -338,7 +338,7 @@ const Header = () => {
                 <div className="max-w-6xl mx-auto py-8 px-8">
                   {/* Services Button */}
                   <div className="flex flex-col items-center mb-6">
-                  <Link href="/pages/services">
+                  <Link href="/Services">
                       <button className="px-8 py-3 bg-white text-indigo-900 font-semibold rounded-xl hover:shadow-xl transition duration-300 flex items-center gap-3 group text-lg shadow-lg cursor-pointer hover:bg-gray-50">
                       Services
                       <span className="inline-block">
@@ -428,11 +428,11 @@ const Header = () => {
 
           {/* Community Link */}
           <Link
-            href="/pages/community"
-            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/pages/community') ? "font-bold text-white" : ""}`}
+            href="/community"
+            className={`text-white/90 hover:text-white px-3 py-2 text-sm font-medium transition-all duration-300 relative group ${pathname.startsWith('/community') ? "font-bold text-white" : ""}`}
           >
             <span>Community</span>
-            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/pages/community') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
+            <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 transition-transform duration-300 origin-left ${pathname.startsWith('/community') ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
           </Link>
           {/* Partners Link */}
           <Link
@@ -445,9 +445,9 @@ const Header = () => {
 
           {/* Contact Button */}
           <Link
-            href="/pages/contactPage"
+            href="/contact"
             onClick={(e) => e.stopPropagation()}
-            className={`ml-2 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-white transition-all duration-300 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg group hover:from-purple-700 hover:to-indigo-700 ${pathname.startsWith('/pages/contactPage') ? "font-bold ring-2 ring-purple-400" : ""}`}
+            className={`ml-2 relative inline-flex items-center justify-center px-4 py-2 overflow-hidden font-medium text-white transition-all duration-300 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg group hover:from-purple-700 hover:to-indigo-700 ${pathname.startsWith('/contact') ? "font-bold ring-2 ring-purple-400" : ""}`}
           >
             <span className="relative flex items-center">
               Contact
@@ -588,7 +588,7 @@ const Header = () => {
             </button>
           </Link>
           {/* Let's Talk Business Button */}
-          <Link href="/pages/consult" className="ml-2">
+          <Link href="/Consult" className="ml-2">
             <button className="px-5 py-2 bg-transparent text-white font-semibold rounded-lg border border-white shadow hover:bg-white hover:text-black transition-all duration-300">
               Let&apos;s Talk Business
             </button>
@@ -662,7 +662,7 @@ const Header = () => {
                 </svg>
               </Link>
               <Link
-                href="/pages/about"
+                href="/About"
                 className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -725,7 +725,7 @@ const Header = () => {
 
               {/* Community Link */}
               <Link
-                href="/pages/community"
+                href="/community"
                 onClick={(e) => {
                   e.stopPropagation();
                   setMobileMenuOpen(false);
@@ -861,7 +861,7 @@ const Header = () => {
                     Explore Careers
                   </button>
                 </Link>
-                <Link href="/pages/consult" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/Consult" onClick={() => setMobileMenuOpen(false)}>
                   <button className="w-full px-5 py-3 bg-transparent text-white font-semibold rounded-lg border border-white shadow hover:bg-white hover:text-black transition-all duration-300">
                     Let&apos;s Talk Business
                   </button>
@@ -872,7 +872,7 @@ const Header = () => {
             {/* Mobile Contact Button at Bottom */}
             <div className="px-6 py-8 border-t border-white/10 mt-auto">
               <Link
-                href="/pages/contactPage"
+                href="/contactPage"
                 onClick={(e) => {
                   e.stopPropagation();
                   setMobileMenuOpen(false);

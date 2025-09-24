@@ -529,7 +529,7 @@ export default function ITServicesBlog() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/pages/contactPage">
+              <Link href="/contact">
                 <button className="bg-violet-600 hover:bg-violet-700 text-white px-6 py-3 rounded-lg font-medium transition-all flex items-center">
                   Start Research Project <ArrowRight className="ml-2" size={16} />
                 </button>
@@ -598,7 +598,7 @@ export default function ITServicesBlog() {
             Join our research network and contribute to cutting-edge studies in digital technology and business innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pages/contactPage">
+            <Link href="/contact">
               <button className="bg-white text-violet-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-all">
                 Start Research Collaboration
               </button>

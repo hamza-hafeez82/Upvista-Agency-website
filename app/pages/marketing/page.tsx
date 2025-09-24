@@ -274,7 +274,7 @@ const sectionContent = {
         </div>
         
         <div className="text-center">
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-3 rounded-lg font-medium hover:from-emerald-400 hover:to-teal-500 transition-all duration-300 transform hover:scale-105">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-8 py-3 rounded-lg font-medium hover:from-emerald-400 hover:to-teal-500 transition-all duration-300 transform hover:scale-105">
             Start Your Marketing Journey
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -347,7 +347,7 @@ const sectionContent = {
           <p className="text-gray-300 mb-4">
             Let&apos;s discuss how our marketing expertise can help you achieve your growth goals.
           </p>
-          <Link href="/pages/contactPage" className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-lg font-medium hover:from-emerald-400 hover:to-teal-500 transition-all duration-300">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-lg font-medium hover:from-emerald-400 hover:to-teal-500 transition-all duration-300">
             Schedule a Marketing Consultation
             <ArrowRight className="w-4 h-4" />
           </Link>
