@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
-import women1 from "@/assets/services/women1.jpg"
-import women2 from "@/assets/services/women2.png"
-import women3 from "@/assets/services/women3.jpg"
-import women4 from "@/assets/services/women4.jpg"
-import women5 from "@/assets/services/women5.jpg"
-import men1 from "@/assets/services/men1.jpg"
-import men2 from "@/assets/services/men2.jpg"
-import men3 from "@/assets/services/men3.jpg"
-import men4 from "@/assets/services/men4.jpg"
+import women1 from "@/assets/heroimg.png"
+import women2 from "@/assets/heroimg.png"
+import women3 from "@/assets/heroimg.png"
+import women4 from "@/assets/heroimg.png"
+import women5 from "@/assets/heroimg.png"
+import men1 from "@/assets/heroimg.png"
+import men2 from "@/assets/heroimg.png"
+import men3 from "@/assets/heroimg.png"
+import men4 from "@/assets/heroimg.png"
 
 // Define the Testimonial interface
 interface Testimonial {

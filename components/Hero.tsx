@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import imgHero from "@/assets/hero.jpeg";
+import imgHero from "@/assets/heroimg.png";
 import Link from "next/link";
 import { ArrowRight, Star, Users, Code, Globe } from "lucide-react";
 

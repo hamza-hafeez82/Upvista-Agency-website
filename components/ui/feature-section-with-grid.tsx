@@ -1,10 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import website from "@/assets/services/dev.jpg";
-import uiux from "@/assets/services/uiux.jpg";
-import landingPage from "@/assets/services/ui.jpg";
-import branding from "@/assets/services/branding.jpg";
-import maintenance from "@/assets/services/maintence.jpg";
+import website from "@/assets/heroimg.png";
+import uiux from "@/assets/heroimg.png";
+import landingPage from "@/assets/heroimg.png";
+import branding from "@/assets/heroimg.png";
+import maintenance from "@/assets/heroimg.png";
 import Image from "next/image";
 import Link from "next/link";
 

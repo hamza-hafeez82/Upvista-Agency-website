@@ -7,20 +7,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { XCircle } from 'lucide-react';
 import Header from "@/components/Header";
 
-// Import images using the original format
-import project1 from "@/assets/websites/project1.jpg";
-import project2 from "@/assets/websites/project2.jpg";
-import project3 from "@/assets/websites/project3.jpg";
-import project4 from "@/assets/websites/project4.jpg";
-import project5 from "@/assets/websites/project5.jpg";
-import project7 from "@/assets/websites/project7.jpg";
-import project8 from "@/assets/websites/project8.jpg";
-import project9 from "@/assets/websites/project9.jpg";
-import project10 from "@/assets/websites/project10.jpg";
-import project11 from "@/assets/websites/project11.jpg";
-import project12 from "@/assets/websites/project12.jpg";
-import project13 from "@/assets/websites/project13.jpg";
-import project14 from "@/assets/websites/project14.png";
+// Import placeholder images
+import project1 from "@/assets/heroimg.png";
+import project2 from "@/assets/heroimg.png";
+import project3 from "@/assets/heroimg.png";
+import project4 from "@/assets/heroimg.png";
+import project5 from "@/assets/heroimg.png";
+import project7 from "@/assets/heroimg.png";
+import project8 from "@/assets/heroimg.png";
+import project9 from "@/assets/heroimg.png";
+import project10 from "@/assets/heroimg.png";
+import project11 from "@/assets/heroimg.png";
+import project12 from "@/assets/heroimg.png";
+import project13 from "@/assets/heroimg.png";
+import project14 from "@/assets/heroimg.png";
 
 interface Project {
   id: number;
