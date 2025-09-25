@@ -1,3 +1,7 @@
 {
-  "installCommand": "npm install --include=optional"
+  "installCommand": "npm install --include=optional",
+  "buildCommand": "npm run build",
+  "env": {
+    "NEXT_SHARP": "false"
+  }
 }

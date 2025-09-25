@@ -4,7 +4,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import Logoimg from "../../assets/u.png";
-import HamzaPic from "../../assets/hamza pic.jpg";
+import HamzaPic from "../../assets/heroimg.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
