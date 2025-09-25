@@ -3,8 +3,9 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import Logoimg from "../../assets/u.png";
-import HamzaPic from "../../assets/heroimg.png";
+// Images loaded directly from public folder to bypass Sharp
+const Logoimg = "/assets/u.png";
+const HamzaPic = "/assets/heroimg.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";

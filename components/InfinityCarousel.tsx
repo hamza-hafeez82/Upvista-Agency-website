@@ -1,21 +1,22 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import react from "@/assets/heroimg.png";
-import js from "@/assets/heroimg.png";
-import html from "@/assets/heroimg.png";
-import css from "@/assets/heroimg.png";
-import figma from "@/assets/heroimg.png";
-import next from "@/assets/heroimg.png";
-import ps from "@/assets/heroimg.png";
-import mern from "@/assets/heroimg.png";
-import AI from "@/assets/heroimg.png";
-import flutter from "@/assets/heroimg.png";
-import AWS from "@/assets/heroimg.png";
-import dotnet from "@/assets/heroimg.png";
-import devops from "@/assets/heroimg.png";
-import googleCloud from "@/assets/heroimg.png";
-import mysql from "@/assets/heroimg.png";
-import illustrator from "@/assets/heroimg.png";
-import springboot from "@/assets/heroimg.png";
+// Images loaded directly from public folder to bypass Sharp
+const react = "/assets/heroimg.png";
+const js = "/assets/heroimg.png";
+const html = "/assets/heroimg.png";
+const css = "/assets/heroimg.png";
+const figma = "/assets/heroimg.png";
+const next = "/assets/heroimg.png";
+const ps = "/assets/heroimg.png";
+const mern = "/assets/heroimg.png";
+const AI = "/assets/heroimg.png";
+const flutter = "/assets/heroimg.png";
+const AWS = "/assets/heroimg.png";
+const dotnet = "/assets/heroimg.png";
+const devops = "/assets/heroimg.png";
+const googleCloud = "/assets/heroimg.png";
+const mysql = "/assets/heroimg.png";
+const illustrator = "/assets/heroimg.png";
+const springboot = "/assets/heroimg.png";
 import Image from "next/image";
 
 function InfiniteSliderEnhanced() {

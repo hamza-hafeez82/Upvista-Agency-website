@@ -9,7 +9,8 @@ import { Users, Calendar, Clock, Github, Linkedin, Globe, Star, Award, ArrowRigh
 import { FaDiscord, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ULogo from "@/assets/u.png";
+// Image loaded directly from public folder to bypass Sharp
+const ULogo = "/assets/u.png";
 import Image from "next/image";
 
 // Community Statistics Variables - Easy to update
@@ -1983,7 +1984,7 @@ export default function Component() {
             aria-label="Open menu"
             style={{ boxShadow: radialOpen ? '0 0 0 10px rgba(99,102,241,0.18)' : undefined }}
           >
-            <Image src={ULogo.src} alt="Upvista Logo" className="w-8 h-8 object-contain" width={32} height={32} />
+            <Image src={ULogo} alt="Upvista Logo" className="w-8 h-8 object-contain" width={32} height={32} />
           </button>
           {/* Radial icons */}
           <div className="absolute left-1/2 top-10 -translate-x-1/2 w-48 h-48 pointer-events-none">

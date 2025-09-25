@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import imgHero from "@/assets/heroimg.png";
+// Image loaded directly from public folder to bypass Sharp
+const imgHero = "/assets/heroimg.png";
 import Link from "next/link";
 import { ArrowRight, Star, Users, Code, Globe } from "lucide-react";
 

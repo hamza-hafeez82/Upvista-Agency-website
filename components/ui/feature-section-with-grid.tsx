@@ -1,10 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import website from "@/assets/heroimg.png";
-import uiux from "@/assets/heroimg.png";
-import landingPage from "@/assets/heroimg.png";
-import branding from "@/assets/heroimg.png";
-import maintenance from "@/assets/heroimg.png";
+// Images loaded directly from public folder to bypass Sharp
+const website = "/assets/heroimg.png";
+const uiux = "/assets/heroimg.png";
+const landingPage = "/assets/heroimg.png";
+const branding = "/assets/heroimg.png";
+const maintenance = "/assets/heroimg.png";
 import Image from "next/image";
 import Link from "next/link";
 

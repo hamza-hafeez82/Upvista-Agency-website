@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/lib/supabaseClient";
 import Image from "next/image";
-import heroImg from "@/assets/pvista Digital.jpeg";
+// Image loaded directly from public folder to bypass Sharp
+const heroImg = "/assets/pvista Digital.jpeg";
 import { Vortex } from "@/components/ui/vortex";
 
 const quotes = [

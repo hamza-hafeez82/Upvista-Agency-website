@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
-import women1 from "@/assets/heroimg.png"
-import women2 from "@/assets/heroimg.png"
-import women3 from "@/assets/heroimg.png"
-import women4 from "@/assets/heroimg.png"
-import women5 from "@/assets/heroimg.png"
-import men1 from "@/assets/heroimg.png"
-import men2 from "@/assets/heroimg.png"
-import men3 from "@/assets/heroimg.png"
-import men4 from "@/assets/heroimg.png"
+// Images loaded directly from public folder to bypass Sharp
+const women1 = "/assets/heroimg.png"
+const women2 = "/assets/heroimg.png"
+const women3 = "/assets/heroimg.png"
+const women4 = "/assets/heroimg.png"
+const women5 = "/assets/heroimg.png"
+const men1 = "/assets/heroimg.png"
+const men2 = "/assets/heroimg.png"
+const men3 = "/assets/heroimg.png"
+const men4 = "/assets/heroimg.png"
 
 // Define the Testimonial interface
 interface Testimonial {
@@ -23,55 +24,55 @@ import { TestimonialsColumn } from "./testimonials-columns-1";
 const testimonials: Testimonial[] = [
   {
     text: "Their team crafted a beautiful and functional website for us. It boosted our visibility and client trust dramatically.",
-    image: women1.src, // Use .src to convert StaticImageData to string
+    image: women1,
     name: "Briana Patton",
     role: "Operations Manager",
   },
   {
     text: "We needed a landing page that converts — and they delivered. Clean design, fast loading, and optimized perfectly.",
-    image: men1.src,
+    image: men1,
     name: "Bilal Ahmed",
     role: "Marketing Lead",
   },
   {
     text: "The UI/UX design exceeded our expectations. Intuitive layouts and consistent branding helped elevate our digital product.",
-    image: women2.src,
+    image: women2,
     name: "Saman Malik",
     role: "Product Owner",
   },
   {
     text: "From branding to website development, everything was handled with creativity and professionalism.",
-    image: men2.src,
+    image: men2,
     name: "Omar Raza",
     role: "CEO",
   },
   {
     text: "Their landing page design helped us increase conversions by 35% — visually stunning and mobile-friendly.",
-    image: women3.src,
+    image: women3,
     name: "Zainab Hussain",
     role: "Digital Strategist",
   },
   {
     text: "Great collaboration and clear process. They understood our needs and built a custom solution that reflects our brand.",
-    image: women4.src,
+    image: women4,
     name: "Aliza Khan",
     role: "Creative Director",
   },
   {
     text: "Professional team and timely delivery. Our branding is now modern, bold, and consistent across platforms.",
-    image: men3.src,
+    image: men3,
     name: "Farhan Siddiqui",
     role: "Brand Manager",
   },
   {
     text: "They helped us rebrand and redesign our website — the result was a sleek and modern experience that stands out.",
-    image: women5.src,
+    image: women5,
     name: "Sana Sheikh",
     role: "Marketing Manager",
   },
   {
     text: "UI/UX revamp brought clarity to our service offering. Our users now stay longer and explore more.",
-    image: men4.src,
+    image: men4,
     name: "Hassan Ali",
     role: "E-commerce Manager",
   },

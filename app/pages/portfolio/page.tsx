@@ -2,31 +2,31 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { StaticImageData } from 'next/image'; // Import StaticImageData type
+// Removed StaticImageData import since we're using direct URLs
 import { motion, AnimatePresence } from 'framer-motion';
 import { XCircle } from 'lucide-react';
 import Header from "@/components/Header";
 
-// Import placeholder images
-import project1 from "@/assets/heroimg.png";
-import project2 from "@/assets/heroimg.png";
-import project3 from "@/assets/heroimg.png";
-import project4 from "@/assets/heroimg.png";
-import project5 from "@/assets/heroimg.png";
-import project7 from "@/assets/heroimg.png";
-import project8 from "@/assets/heroimg.png";
-import project9 from "@/assets/heroimg.png";
-import project10 from "@/assets/heroimg.png";
-import project11 from "@/assets/heroimg.png";
-import project12 from "@/assets/heroimg.png";
-import project13 from "@/assets/heroimg.png";
-import project14 from "@/assets/heroimg.png";
+// Images loaded directly from public folder to bypass Sharp
+const project1 = "/assets/heroimg.png";
+const project2 = "/assets/heroimg.png";
+const project3 = "/assets/heroimg.png";
+const project4 = "/assets/heroimg.png";
+const project5 = "/assets/heroimg.png";
+const project7 = "/assets/heroimg.png";
+const project8 = "/assets/heroimg.png";
+const project9 = "/assets/heroimg.png";
+const project10 = "/assets/heroimg.png";
+const project11 = "/assets/heroimg.png";
+const project12 = "/assets/heroimg.png";
+const project13 = "/assets/heroimg.png";
+const project14 = "/assets/heroimg.png";
 
 interface Project {
   id: number;
   title: string;
   description: string;
-  image: StaticImageData; // Use StaticImageData for the image type
+  image: string; // Changed to string for direct public URLs
   category: string;
   link: string;
 }
