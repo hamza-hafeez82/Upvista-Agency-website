@@ -1,12 +1,5 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require('next-pwa')({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development', // Disable PWA in development for better Turbopack compatibility
-});
-
-const nextConfig = withPWA({
+const nextConfig = {
   images: {
     domains: ['i.pinimg.com', 'randomuser.me' , 'thumbs.dreamstime.com'], // Correctly formatted array
   },
@@ -52,6 +45,6 @@ const nextConfig = withPWA({
     }
     return config;
   },
-});
+};
 
 module.exports = nextConfig;
