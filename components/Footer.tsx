@@ -19,7 +19,8 @@ import { SiPatreon } from "react-icons/si";
 
 // Import your logo
 //import Logoimg from "../assets/W-logo.png";
-import Logoimg from "../assets/u.png";
+// Image loaded directly from public folder to bypass Sharp
+const Logoimg = "/assets/u.png";
 
 // TypeScript interfaces
 interface SocialIconProps {

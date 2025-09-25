@@ -17,7 +17,8 @@ import {
 } from "react-icons/fa";
 
 // Import your logo
-import Logoimg from "../../../assets/u.png";
+// Image loaded directly from public folder to bypass Sharp
+const Logoimg = "/assets/u.png";
 
 // TypeScript interfaces
 interface SocialIconProps {
