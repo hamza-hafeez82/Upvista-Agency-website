@@ -2,6 +2,7 @@
 const nextConfig = {
   images: {
     domains: ['i.pinimg.com', 'randomuser.me' , 'thumbs.dreamstime.com'], // Correctly formatted array
+    unoptimized: true, // Disable Sharp optimization to avoid runtime errors
   },
   // Turbopack-specific optimizations
   experimental: {
