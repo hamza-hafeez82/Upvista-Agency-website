@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "postinstall": "npm rebuild sharp"
   },
   "dependencies": {
     "@auth/supabase-adapter": "^1.10.0",
@@ -39,6 +40,7 @@
     "react-icons": "^5.5.0",
     "react-use-measure": "^2.1.7",
     "resend": "^6.1.0",
+    "sharp": "^0.33.5",
     "simplex-noise": "^4.0.3",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7"
@@ -51,7 +53,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
-    "sharp": "^0.33.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
