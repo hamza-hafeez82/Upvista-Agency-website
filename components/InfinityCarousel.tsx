@@ -1,22 +1,22 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 // Images loaded directly from public folder to bypass Sharp
-const react = "/assets/heroimg.png";
-const js = "/assets/heroimg.png";
-const html = "/assets/heroimg.png";
-const css = "/assets/heroimg.png";
-const figma = "/assets/heroimg.png";
-const next = "/assets/heroimg.png";
-const ps = "/assets/heroimg.png";
-const mern = "/assets/heroimg.png";
-const AI = "/assets/heroimg.png";
-const flutter = "/assets/heroimg.png";
-const AWS = "/assets/heroimg.png";
-const dotnet = "/assets/heroimg.png";
-const devops = "/assets/heroimg.png";
-const googleCloud = "/assets/heroimg.png";
-const mysql = "/assets/heroimg.png";
-const illustrator = "/assets/heroimg.png";
-const springboot = "/assets/heroimg.png";
+const react = "/assets/logoSliders/react.png";
+const js = "/assets/logoSliders/js.png";
+const html = "/assets/logoSliders/html.png";
+const css = "/assets/logoSliders/css.png";
+const figma = "/assets/logoSliders/figma.png";
+const next = "/assets/logoSliders/next.png";
+const ps = "/assets/logoSliders/ps.png";
+const mern = "/assets/logoSliders/mern.png";
+const AI = "/assets/logoSliders/AI.png";
+const flutter = "/assets/logoSliders/flutter.png";
+const AWS = "/assets/logoSliders/AWS.png";
+const dotnet = "/assets/logoSliders/dotnet.png";
+const devops = "/assets/logoSliders/devops.png";
+const googleCloud = "/assets/logoSliders/googleCloud.png";
+const mysql = "/assets/logoSliders/MySQL.png";
+const illustrator = "/assets/logoSliders/illustrator.png";
+const springboot = "/assets/logoSliders/springboot.png";
 import Image from "next/image";
 
 function InfiniteSliderEnhanced() {
@@ -56,6 +56,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={react}
                   alt="React logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-[100px] object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -71,6 +73,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={next}
                   alt="Next.js logo"
+                  width={120}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -86,6 +90,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={js}
                   alt="JavaScript logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -101,6 +107,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={html}
                   alt="HTML logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -116,6 +124,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={css}
                   alt="CSS logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -131,6 +141,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={AWS}
                   alt="AWS logo"
+                  width={120}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -146,6 +158,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={googleCloud}
                   alt="googleCloud logo"
+                  width={120}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -161,6 +175,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={dotnet}
                   alt="dotnet logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -176,6 +192,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={devops}
                   alt="devops logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -191,6 +209,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={mysql}
                   alt="MySQL logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -206,6 +226,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={springboot}
                   alt="springboot logo"
+                  width={120}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -221,6 +243,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={AI}
                   alt="AI logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -236,6 +260,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={mern}
                   alt="mern stack logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -251,6 +277,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={flutter}
                   alt="flutter logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -266,6 +294,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={figma}
                   alt="Figma logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -281,6 +311,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={illustrator}
                   alt="illustrator logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">
@@ -296,6 +328,8 @@ function InfiniteSliderEnhanced() {
                 <Image
                   src={ps}
                   alt="Photoshop logo"
+                  width={100}
+                  height={64}
                   className="h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-110 relative z-10"
                 />
                 <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-0 transition-all duration-300 text-xs font-medium text-white bg-indigo-500/70 px-3 py-1 rounded-full z-20">

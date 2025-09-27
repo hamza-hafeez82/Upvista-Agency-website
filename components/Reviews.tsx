@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 // Images loaded directly from public folder to bypass Sharp
-const women1 = "/assets/heroimg.png"
-const women2 = "/assets/heroimg.png"
-const women3 = "/assets/heroimg.png"
-const women4 = "/assets/heroimg.png"
-const women5 = "/assets/heroimg.png"
-const men1 = "/assets/heroimg.png"
-const men2 = "/assets/heroimg.png"
-const men3 = "/assets/heroimg.png"
-const men4 = "/assets/heroimg.png"
+const women1 = "/assets/services/women1.jpg"
+const women2 = "/assets/services/women2.png"
+const women3 = "/assets/services/women3.jpg"
+const women4 = "/assets/services/women4.jpg"
+const women5 = "/assets/services/women5.jpg"
+const men1 = "/assets/services/men1.jpg"
+const men2 = "/assets/services/men2.jpg"
+const men3 = "/assets/services/men3.jpg"
+const men4 = "/assets/services/men4.jpg"
 
 // Define the Testimonial interface
 interface Testimonial {

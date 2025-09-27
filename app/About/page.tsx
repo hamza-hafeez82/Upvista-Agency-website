@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 // Images loaded directly from public folder to bypass Sharp
 const Logoimg = "/assets/u.png";
-const HamzaPic = "/assets/heroimg.png";
+const HamzaPic = "/assets/hamza-pic.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
@@ -126,7 +126,7 @@ export default function AboutUs() {
               <Typewriter text="Where Visionaries Build the Future" speed={40} />
             </p>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-              We are not just a software company—we are a movement. We inspire, empower, and elevate brands to legendary status.
+              We are not just a software company, we are a movement. We inspire, empower, and elevate brands to legendary status.
             </p>
           </motion.div>
         </section>
@@ -157,7 +157,7 @@ export default function AboutUs() {
             <h2 className="text-2xl font-bold mb-2 text-white">Meet the Founder</h2>
             <p className="text-lg text-purple-200 font-semibold mb-2">Hamza Hafeez</p>
             <blockquote className="italic text-gray-300 border-l-4 border-purple-500 pl-4 mb-2">
-              &quot;At Upvista, we don&apos;t just deliver projects—we create movements. Our mission is to inspire, to innovate, and to set new standards of digital greatness. Join us, and let&apos;s build a legacy together.&quot;
+              &quot;At Upvista, we don&apos;t just deliver projects, we create movements. Our mission is to inspire, to innovate, and to set new standards of digital greatness. Join us, and let&apos;s build a legacy together.&quot;
             </blockquote>
             <div className="mt-4 flex justify-center md:justify-start gap-4">
               <a href="https://www.linkedin.com/in/hamza-hafeez-b0233731a" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-medium shadow hover:scale-105 transition-transform">

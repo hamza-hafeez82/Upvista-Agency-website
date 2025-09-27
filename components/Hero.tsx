@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 // Image loaded directly from public folder to bypass Sharp
-const imgHero = "/assets/heroimg.png";
+const imgHero = "/assets/pvista Digital.jpeg";
 import Link from "next/link";
 import { ArrowRight, Star, Users, Code, Globe } from "lucide-react";
 
@@ -58,33 +58,33 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <div className="flex flex-wrap gap-6 justify-center lg:justify-start mb-12">
               <Link href="/pages/services">
-                <button className="px-6 py-3 bg-white text-indigo-900 font-medium rounded-lg hover:shadow-lg transition duration-300 flex items-center gap-2 group">
-                  Start Your Project
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <button className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-2xl hover:shadow-indigo-500/25 transition-all duration-300 flex items-center gap-3 group transform hover:scale-105">
+                  Get Free Consultation
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
               <Link href="/pages/portfolio">
-                <button className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/10 text-white rounded-lg hover:bg-white/20 transition duration-300">
-                  View Our Work
+                <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 hover:border-white/30 transition-all duration-300">
+                  View Case Studies
                 </button>
               </Link>
             </div>
 
-            {/* Trust indicators */}
-            <div className="mt-8 flex items-center justify-center lg:justify-start gap-6 text-sm text-indigo-200/80">
-              <div className="flex items-center gap-1">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span>4.8/5 Rating</span>
+            {/* Enhanced trust indicators */}
+            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto lg:mx-0">
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-white mb-1">50+</div>
+                <div className="text-sm text-indigo-200/80">Projects Delivered</div>
               </div>
-              <div className="flex items-center gap-1">
-                <Users className="w-4 h-4 text-indigo-400" />
-                <span>50+ Projects</span>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-white mb-1">4.9/5</div>
+                <div className="text-sm text-indigo-200/80">Client Rating</div>
               </div>
-              <div className="flex items-center gap-1">
-                <Globe className="w-4 h-4 text-indigo-400" />
-                <span>Pakistan Based</span>
+              <div className="text-center lg:text-left">
+                <div className="text-3xl font-bold text-white mb-1">24/7</div>
+                <div className="text-sm text-indigo-200/80">Support</div>
               </div>
             </div>
           </div>
