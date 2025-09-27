@@ -582,7 +582,7 @@ const Header = () => {
             )}
           </div>
           {/* Explore Careers Button */}
-          <Link href="/careers" className="ml-2">
+          <Link href="/careers" className="ml-2" target="_blank" rel="noopener noreferrer">
             <button className="px-5 py-2 bg-white text-black font-semibold rounded-lg shadow hover:bg-transparent hover:text-white hover:border hover:border-white transition-all duration-300 border border-transparent">
               Explore Careers
             </button>
@@ -856,7 +856,7 @@ const Header = () => {
               </div>
               {/* Buttons */}
               <div className="flex flex-col gap-3 mt-4">
-                <Link href="/careers" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/careers" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                   <button className="w-full px-5 py-3 bg-white text-black font-semibold rounded-lg shadow hover:bg-transparent hover:text-white hover:border hover:border-white transition-all duration-300 border border-transparent">
                     Explore Careers
                   </button>
