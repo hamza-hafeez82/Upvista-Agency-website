@@ -132,14 +132,13 @@ const ITServices = memo(() => {
       
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const IconComponent = service.icon;
             const colorClasses = getColorClasses(service.color);
             
             return (
-              <Link href={service.learnMoreLink}>
+              <Link key={index} href={service.learnMoreLink}>
                 <div 
-                  key={service.id} 
                   className={`group backdrop-blur-lg border rounded-2xl p-6 transition-all duration-300 cursor-pointer h-full ${
                     isDark 
                       ? 'bg-white/5 border-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 hover:bg-white/10 hover:border-gradient-to-r hover:from-blue-400/50 hover:via-purple-400/50 hover:to-pink-400/50'

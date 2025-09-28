@@ -10,11 +10,14 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className={`relative w-10 h-10 rounded-lg transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl ${
+      className={`relative px-3 py-2 transition-all duration-300 flex items-center justify-center group shadow-lg hover:shadow-xl ${
         isDark 
           ? 'bg-gradient-to-br from-white/15 to-white/5 hover:from-white/25 hover:to-white/10 border border-white/20' 
           : 'bg-gradient-to-br from-blue-100/90 to-purple-100/80 hover:from-blue-200/90 hover:to-purple-200/80 border border-blue-200/60 shadow-blue-200/20'
       }`}
+      style={{
+        borderRadius: '0.5rem 0 0 0.5rem'
+      }}
       aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
     >
       <div className="relative w-5 h-5">

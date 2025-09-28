@@ -195,7 +195,7 @@ const Header = () => {
         <Link href="/" className="flex items-center group cursor-pointer" aria-label="Upvista Home" role="link">
           <div
             className={`relative transition-all duration-300 ${
-              scrolled ? "w-8 h-8 md:w-10 md:h-10" : "w-9 h-9 md:w-12 md:h-12"
+              scrolled ? "w-6 h-6 md:w-10 md:h-10" : "w-7 h-7 md:w-12 md:h-12"
             }`}
           >
             <div className={`absolute inset-0 rounded-lg blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300 ${
@@ -207,14 +207,14 @@ const Header = () => {
               <Image
                 src="/u.png"
                 alt="Company Logo"
-                width={scrolled ? 28 : 32}
-                height={scrolled ? 28 : 32}
+                width={scrolled ? 20 : 24}
+                height={scrolled ? 20 : 24}
                 className="rounded-md transition-all duration-300 md:w-[36px] md:h-[36px]"
               />
             </div>
           </div>
           <div className="ml-2 md:ml-3">
-            <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h3>
+            <h3 className={`text-base md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h3>
             <span className={`block text-xs font-medium -mt-0 tracking-wider ${
               isDark ? 'text-purple-300/80' : 'text-blue-600/80'
             }`}>
@@ -224,19 +224,21 @@ const Header = () => {
         </Link>
 
         {/* Toggle Buttons - Desktop Only */}
-        <div className="hidden md:flex items-center gap-2 ml-6">
-          <ThemeToggle />
-          <LanguageToggle />
+        <div className="hidden md:flex items-center ml-6">
+          <div className="flex items-center">
+            <ThemeToggle />
+            <div className="-ml-px">
+              <LanguageToggle />
+            </div>
+          </div>
         </div>
 
         {/* Mobile Toggle Buttons + Menu Button */}
         <div className="md:hidden flex items-center gap-2">
            {/* Compact Mobile Toggle Buttons */}
-           <div className="flex items-center">
-             <div className="transform scale-75">
-               <ThemeToggle />
-             </div>
-             <div className="transform scale-75">
+           <div className="flex items-center transform scale-75">
+             <ThemeToggle />
+             <div className="-ml-px">
                <LanguageToggle />
              </div>
            </div>
@@ -503,13 +505,13 @@ const Header = () => {
         <div className="md:hidden fixed inset-0 z-40 flex">
           {/* Backdrop */}
           <div 
-            className={`absolute inset-0 backdrop-blur-sm transition-opacity duration-300 ${
-              isDark ? 'bg-black/50' : 'bg-gray-900/50'
+            className={`absolute inset-0 backdrop-blur-md transition-all duration-250 ease-out ${
+              isDark ? 'bg-black/60' : 'bg-gray-900/60'
             }`}
             onClick={() => setMobileMenuOpen(false)}
           />
           {/* Slide-in Panel */}
-          <div className={`relative ml-auto w-80 max-w-[85vw] h-full flex flex-col shadow-2xl mobile-menu-slide-in ${
+          <div className={`relative w-full h-full flex flex-col shadow-2xl mobile-menu-slide-in ${
             isDark 
               ? 'bg-gradient-to-b from-gray-900 to-black' 
               : 'bg-gradient-to-b from-white to-gray-50'
@@ -565,13 +567,19 @@ const Header = () => {
               {/* Navigation Links */}
               <Link
                 href="/"
-                className="text-white/90 hover:text-white flex items-center py-3 text-lg font-medium border-b border-white/5 transition-all duration-200"
+                className={`flex items-center py-3 text-lg font-medium border-b transition-all duration-200 ${
+                  isDark 
+                    ? 'text-white/90 hover:text-white border-white/5' 
+                    : 'text-gray-900/90 hover:text-gray-900 border-gray-200/50'
+                }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span>{t('nav.home')}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 ml-auto text-white/60"
+                  className={`h-5 w-5 ml-auto ${
+                    isDark ? 'text-white/60' : 'text-gray-600/60'
+                  }`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -588,16 +596,26 @@ const Header = () => {
               {/* Company Accordion */}
               <div className="mb-2">
                 <button
-                  className="w-full flex items-center justify-between text-white/90 font-semibold py-3 px-2 text-lg focus:outline-none border-b border-white/5"
+                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                    isDark 
+                      ? 'text-white/90 border-white/5' 
+                      : 'text-gray-900/90 border-gray-200/50'
+                  }`}
                   onClick={() => setMobileCompanyOpen(prev => !prev)}
               >
                   <span>{t('nav.company')}</span>
-                  <svg className={`w-5 h-5 ml-2 text-white/60 transition-transform duration-300 ${mobileCompanyOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileCompanyOpen ? "rotate-180" : ""} ${
+                    isDark ? 'text-white/60' : 'text-gray-600/60'
+                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                       </button>
                 {mobileCompanyOpen && (
                   <div className="pl-4 py-2 space-y-1">
                     {companyLinks.map(link => (
-                      <Link key={link.label} href={link.href} className="block text-white/80 hover:text-white py-2 text-base rounded-lg" onClick={() => setMobileMenuOpen(false)}>
+                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                        isDark 
+                          ? 'text-white/80 hover:text-white' 
+                          : 'text-gray-700/80 hover:text-gray-900'
+                      }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                     </Link>
                   ))}
@@ -608,16 +626,26 @@ const Header = () => {
               {/* Services Accordion */}
               <div className="mb-2">
                 <button
-                  className="w-full flex items-center justify-between text-white/90 font-semibold py-3 px-2 text-lg focus:outline-none border-b border-white/5"
+                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                    isDark 
+                      ? 'text-white/90 border-white/5' 
+                      : 'text-gray-900/90 border-gray-200/50'
+                  }`}
                   onClick={() => setMobileServicesOpen(prev => !prev)}
                 >
                   <span>{t('nav.services')}</span>
-                  <svg className={`w-5 h-5 ml-2 text-white/60 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""} ${
+                    isDark ? 'text-white/60' : 'text-gray-600/60'
+                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileServicesOpen && (
                   <div className="pl-4 py-2 space-y-1">
                     {servicesLinks.map(link => (
-                      <Link key={link.label} href={link.href} className="block text-white/80 hover:text-white py-2 text-base rounded-lg" onClick={() => setMobileMenuOpen(false)}>
+                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                        isDark 
+                          ? 'text-white/80 hover:text-white' 
+                          : 'text-gray-700/80 hover:text-gray-900'
+                      }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
                     ))}
@@ -628,16 +656,26 @@ const Header = () => {
               {/* Community Accordion */}
               <div className="mb-2">
                 <button
-                  className="w-full flex items-center justify-between text-white/90 font-semibold py-3 px-2 text-lg focus:outline-none border-b border-white/5"
+                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                    isDark 
+                      ? 'text-white/90 border-white/5' 
+                      : 'text-gray-900/90 border-gray-200/50'
+                  }`}
                   onClick={() => setMobileCommunityOpen(prev => !prev)}
                 >
                   <span>{t('nav.community')}</span>
-                  <svg className={`w-5 h-5 ml-2 text-white/60 transition-transform duration-300 ${mobileCommunityOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileCommunityOpen ? "rotate-180" : ""} ${
+                    isDark ? 'text-white/60' : 'text-gray-600/60'
+                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                         </button>
                 {mobileCommunityOpen && (
                   <div className="pl-4 py-2 space-y-1">
                     {communityLinks.map(link => (
-                      <Link key={link.label} href={link.href} className="block text-white/80 hover:text-white py-2 text-base rounded-lg" onClick={() => setMobileMenuOpen(false)}>
+                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                        isDark 
+                          ? 'text-white/80 hover:text-white' 
+                          : 'text-gray-700/80 hover:text-gray-900'
+                      }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
                     ))}
@@ -648,16 +686,26 @@ const Header = () => {
               {/* Researches Accordion */}
               <div className="mb-2">
                 <button
-                  className="w-full flex items-center justify-between text-white/90 font-semibold py-3 px-2 text-lg focus:outline-none border-b border-white/5"
+                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                    isDark 
+                      ? 'text-white/90 border-white/5' 
+                      : 'text-gray-900/90 border-gray-200/50'
+                  }`}
                   onClick={() => setMobileResearchesOpen(prev => !prev)}
                 >
                   <span>{t('nav.researches')}</span>
-                  <svg className={`w-5 h-5 ml-2 text-white/60 transition-transform duration-300 ${mobileResearchesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileResearchesOpen ? "rotate-180" : ""} ${
+                    isDark ? 'text-white/60' : 'text-gray-600/60'
+                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileResearchesOpen && (
                   <div className="pl-4 py-2 space-y-1">
                     {researchesLinks.map(link => (
-                      <Link key={link.label} href={link.href} className="block text-white/80 hover:text-white py-2 text-base rounded-lg" onClick={() => setMobileMenuOpen(false)}>
+                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                        isDark 
+                          ? 'text-white/80 hover:text-white' 
+                          : 'text-gray-700/80 hover:text-gray-900'
+                      }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                         </Link>
                       ))}
@@ -668,16 +716,26 @@ const Header = () => {
               {/* Insights Accordion */}
               <div className="mb-2">
                 <button
-                  className="w-full flex items-center justify-between text-white/90 font-semibold py-3 px-2 text-lg focus:outline-none border-b border-white/5"
+                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                    isDark 
+                      ? 'text-white/90 border-white/5' 
+                      : 'text-gray-900/90 border-gray-200/50'
+                  }`}
                   onClick={() => setMobileInsightsOpen(prev => !prev)}
                 >
                   <span>{t('nav.insights')}</span>
-                  <svg className={`w-5 h-5 ml-2 text-white/60 transition-transform duration-300 ${mobileInsightsOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileInsightsOpen ? "rotate-180" : ""} ${
+                    isDark ? 'text-white/60' : 'text-gray-600/60'
+                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileInsightsOpen && (
                   <div className="pl-4 py-2 space-y-1">
                     {insightsLinks.map(link => (
-                      <Link key={link.label} href={link.href} className="block text-white/80 hover:text-white py-2 text-base rounded-lg" onClick={() => setMobileMenuOpen(false)}>
+                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                        isDark 
+                          ? 'text-white/80 hover:text-white' 
+                          : 'text-gray-700/80 hover:text-gray-900'
+                      }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
                     ))}
@@ -715,31 +773,27 @@ const Header = () => {
         @keyframes slideInFromRight {
           0% {
             transform: translateX(100%);
-            opacity: 0;
           }
           100% {
             transform: translateX(0);
-            opacity: 1;
           }
         }
         
         @keyframes slideOutToRight {
           0% {
             transform: translateX(0);
-            opacity: 1;
           }
           100% {
             transform: translateX(100%);
-            opacity: 0;
           }
         }
         
         .mobile-menu-slide-in {
-          animation: slideInFromRight 0.3s cubic-bezier(0.4,0,0.2,1);
+          animation: slideInFromRight 0.25s ease-out;
         }
         
         .mobile-menu-slide-out {
-          animation: slideOutToRight 0.3s cubic-bezier(0.4,0,0.2,1);
+          animation: slideOutToRight 0.2s ease-in;
         }
         
         @keyframes dropdownFadeIn {

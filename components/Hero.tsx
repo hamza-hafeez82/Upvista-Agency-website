@@ -5,9 +5,7 @@ import { ArrowRight, Star, Users, Code, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTheme } from "@/contexts/ThemeContext";
 
-// Video poster images loaded directly from public folder
-const darkVideoPoster = "/assets/careers/Upvista Digital.png";
-const lightVideoPoster = "/assets/careers/Upvista Digital.png";
+// Video sources for theme-based switching
 
 const Hero = memo(() => {
   const { t } = useLanguage();
@@ -19,10 +17,6 @@ const Hero = memo(() => {
     [isDark]
   );
   
-  const currentPoster = useMemo(() => 
-    isDark ? darkVideoPoster : lightVideoPoster, 
-    [isDark]
-  );
   
   // Memoized video key for proper re-rendering
   const videoKey = useMemo(() => 
@@ -194,7 +188,6 @@ const Hero = memo(() => {
                   loop
                   muted
                   playsInline
-                  poster={currentPoster}
                   onLoadStart={handleVideoLoadStart}
                   onError={handleVideoError}
                 >
@@ -202,16 +195,10 @@ const Hero = memo(() => {
                     src={videoSource} 
                     type="video/mp4" 
                   />
-                  {/* Optimized fallback image */}
-                  <Image
-                    src={currentPoster}
-                    alt="Upvista Digital - Company Showcase"
-                    fill
-                    className="rounded-2xl object-cover"
-                    style={{ objectPosition: '10% center' }}
-                    priority
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                  {/* Fallback for unsupported video formats */}
+                  <div className="w-full h-full bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-2xl flex items-center justify-center">
+                    <span className="text-white/60 text-sm">Video not supported</span>
+                  </div>
                 </video>
               </div>
 
