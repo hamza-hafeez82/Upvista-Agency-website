@@ -516,9 +516,7 @@ const Header = () => {
               ? 'bg-gradient-to-b from-gray-900 to-black' 
               : 'bg-gradient-to-b from-white to-gray-50'
           }`}>
-          <div className={`pt-6 px-6 flex items-center justify-between border-b pb-6 ${
-            isDark ? 'border-white/10' : 'border-gray-200/50'
-          }`}>
+          <div className="pt-6 px-6 flex items-center justify-between pb-6">
             {/* Logo in Mobile Menu */}
             <div className="flex items-center">
               <div className="relative w-10 h-10">
@@ -563,14 +561,14 @@ const Header = () => {
           </div>
 
             {/* Navigation Content */}
-            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-2">
+            <div className="flex-1 overflow-y-auto px-6 py-4 space-y-1">
               {/* Navigation Links */}
               <Link
                 href="/"
-                className={`flex items-center py-3 text-lg font-medium border-b transition-all duration-200 ${
+                className={`flex items-center py-2 text-base font-medium transition-all duration-200 ${
                   isDark 
-                    ? 'text-white/90 hover:text-white border-white/5' 
-                    : 'text-gray-900/90 hover:text-gray-900 border-gray-200/50'
+                    ? 'text-white/90 hover:text-white' 
+                    : 'text-gray-900/90 hover:text-gray-900'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -594,12 +592,12 @@ const Header = () => {
               </Link>
 
               {/* Company Accordion */}
-              <div className="mb-2">
+              <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
                     isDark 
-                      ? 'text-white/90 border-white/5' 
-                      : 'text-gray-900/90 border-gray-200/50'
+                      ? 'text-white/90' 
+                      : 'text-gray-900/90'
                   }`}
                   onClick={() => setMobileCompanyOpen(prev => !prev)}
               >
@@ -609,9 +607,9 @@ const Header = () => {
                   }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                       </button>
                 {mobileCompanyOpen && (
-                  <div className="pl-4 py-2 space-y-1">
+                  <div className="pl-4 py-1 space-y-1">
                     {companyLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
                         isDark 
                           ? 'text-white/80 hover:text-white' 
                           : 'text-gray-700/80 hover:text-gray-900'
@@ -624,12 +622,12 @@ const Header = () => {
               </div>
 
               {/* Services Accordion */}
-              <div className="mb-2">
+              <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
                     isDark 
-                      ? 'text-white/90 border-white/5' 
-                      : 'text-gray-900/90 border-gray-200/50'
+                      ? 'text-white/90' 
+                      : 'text-gray-900/90'
                   }`}
                   onClick={() => setMobileServicesOpen(prev => !prev)}
                 >
@@ -639,9 +637,9 @@ const Header = () => {
                   }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileServicesOpen && (
-                  <div className="pl-4 py-2 space-y-1">
+                  <div className="pl-4 py-1 space-y-1">
                     {servicesLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
                         isDark 
                           ? 'text-white/80 hover:text-white' 
                           : 'text-gray-700/80 hover:text-gray-900'
@@ -654,12 +652,12 @@ const Header = () => {
                 </div>
 
               {/* Community Accordion */}
-              <div className="mb-2">
+              <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
                     isDark 
-                      ? 'text-white/90 border-white/5' 
-                      : 'text-gray-900/90 border-gray-200/50'
+                      ? 'text-white/90' 
+                      : 'text-gray-900/90'
                   }`}
                   onClick={() => setMobileCommunityOpen(prev => !prev)}
                 >
@@ -669,9 +667,9 @@ const Header = () => {
                   }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                         </button>
                 {mobileCommunityOpen && (
-                  <div className="pl-4 py-2 space-y-1">
+                  <div className="pl-4 py-1 space-y-1">
                     {communityLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
                         isDark 
                           ? 'text-white/80 hover:text-white' 
                           : 'text-gray-700/80 hover:text-gray-900'
@@ -684,12 +682,12 @@ const Header = () => {
                     </div>
 
               {/* Researches Accordion */}
-              <div className="mb-2">
+              <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
                     isDark 
-                      ? 'text-white/90 border-white/5' 
-                      : 'text-gray-900/90 border-gray-200/50'
+                      ? 'text-white/90' 
+                      : 'text-gray-900/90'
                   }`}
                   onClick={() => setMobileResearchesOpen(prev => !prev)}
                 >
@@ -699,9 +697,9 @@ const Header = () => {
                   }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileResearchesOpen && (
-                  <div className="pl-4 py-2 space-y-1">
+                  <div className="pl-4 py-1 space-y-1">
                     {researchesLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
                         isDark 
                           ? 'text-white/80 hover:text-white' 
                           : 'text-gray-700/80 hover:text-gray-900'
@@ -714,12 +712,12 @@ const Header = () => {
               </div>
 
               {/* Insights Accordion */}
-              <div className="mb-2">
+              <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-semibold py-3 px-2 text-lg focus:outline-none border-b ${
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
                     isDark 
-                      ? 'text-white/90 border-white/5' 
-                      : 'text-gray-900/90 border-gray-200/50'
+                      ? 'text-white/90' 
+                      : 'text-gray-900/90'
                   }`}
                   onClick={() => setMobileInsightsOpen(prev => !prev)}
                 >
@@ -729,9 +727,9 @@ const Header = () => {
                   }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileInsightsOpen && (
-                  <div className="pl-4 py-2 space-y-1">
+                  <div className="pl-4 py-1 space-y-1">
                     {insightsLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-2 text-base rounded-lg transition-colors duration-200 ${
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
                         isDark 
                           ? 'text-white/80 hover:text-white' 
                           : 'text-gray-700/80 hover:text-gray-900'
@@ -746,16 +744,24 @@ const Header = () => {
               </div>
 
             {/* Bottom Section */}
-            <div className="p-6 border-t border-white/10 bg-black/50 backdrop-blur-sm">
+            <div className="p-6">
               {/* Main Buttons */}
               <div className="flex flex-col gap-3">
                 <Link href="/careers" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
-                  <button className="w-full px-5 py-3 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-gray-300 transform hover:scale-105">
+                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
+                    isDark 
+                      ? 'bg-white text-black hover:bg-gray-100' 
+                      : 'bg-gray-900 text-white hover:bg-gray-800'
+                  }`}>
       {t('nav.careers')}
                   </button>
                 </Link>
                 <Link href="/Consult" onClick={() => setMobileMenuOpen(false)}>
-                  <button className="w-full px-5 py-3 bg-transparent text-white font-semibold rounded-lg border-2 border-white shadow-lg hover:bg-white hover:text-gray-900 transition-all duration-300 hover:shadow-xl transform hover:scale-105">
+                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border transition-all duration-200 ${
+                    isDark 
+                      ? 'bg-transparent text-white border-white/30 hover:bg-white/10' 
+                      : 'bg-transparent text-gray-900 border-gray-300 hover:bg-gray-100'
+                  }`}>
       {t('nav.contact')}
                   </button>
                 </Link>
