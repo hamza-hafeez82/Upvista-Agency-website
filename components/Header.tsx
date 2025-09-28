@@ -218,7 +218,7 @@ const Header = () => {
             <span className={`block text-xs font-medium -mt-0 tracking-wider ${
               isDark ? 'text-purple-300/80' : 'text-blue-600/80'
             }`}>
-              Solutions
+              Digital Solutions
             </span>
           </div>
         </Link>
