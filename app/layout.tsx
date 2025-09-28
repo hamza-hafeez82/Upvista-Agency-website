@@ -4,6 +4,8 @@ import { Toaster } from "react-hot-toast";
 import Script from "next/script";
 import "./globals.css";
 import { Dancing_Script } from "next/font/google";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -846,12 +848,16 @@ export default function RootLayout({
         suppressHydrationWarning
         aria-label="Upvista Digital Web & Software Solutions"
       >
-        <main role="main" id="main-content">
-          {children}
-        </main>
-        <div aria-live="polite" aria-atomic="true">
-          <Toaster position="bottom-right" />
-        </div>
+        <ThemeProvider>
+          <LanguageProvider>
+            <main role="main" id="main-content">
+              {children}
+            </main>
+            <div aria-live="polite" aria-atomic="true">
+              <Toaster position="bottom-right" />
+            </div>
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

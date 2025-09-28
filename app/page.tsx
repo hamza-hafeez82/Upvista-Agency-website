@@ -10,8 +10,13 @@ import { Vortex } from "@/components/ui/vortex";
 import Link from "next/link";
 import ValueProposition from "@/components/ValueProposition";
 import Head from 'next/head';
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+  const { isDark } = useTheme();
+  
   return (
     <>
       <Head>
@@ -67,14 +72,38 @@ export default function Home() {
       </div>
       <div
         id="callToAction"
-        className="h-screen w-full overflow-hidden items-center justify-center"
+        className={`h-screen w-full overflow-hidden items-center justify-center relative ${
+          isDark 
+            ? 'bg-gradient-to-br from-black via-black/80 to-purple-950'
+            : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
+        }`}
       >
+        {/* Abstract background shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
+            isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+          }`}></div>
+          <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
+            isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+          }`}></div>
+          <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
+            isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
+          }`}></div>
+        </div>
+
+        {/* Grid pattern overlay */}
+        <div className={`absolute inset-0 ${
+          isDark 
+            ? "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iLjUiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-20"
+            : "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2U9InJnYmEoMTUsMjMsNDIsMC4wMykiIHN0cm9rZS13aWR0aD0iLjUiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlPSJyZ2JhKDE1LDIzLDQyLDAuMDMpIiBzdHJva2Utd2lkdGg9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-10"
+        }`}></div>
+
         <Vortex
           particleCount={700}
           baseHue={220}
-          backgroundColor="#000000"
-          className="text-white flex items-center justify-center"
-          containerClassName="h-full w-full"
+          backgroundColor={isDark ? "#000000" : "transparent"}
+          className={`flex items-center justify-center ${isDark ? 'text-white' : 'text-gray-900'}`}
+          containerClassName="h-full w-full relative z-10"
           baseSpeed={0.1}
           rangeSpeed={1.5}
           baseRadius={1}
@@ -82,33 +111,42 @@ export default function Home() {
         >
           <div className="relative w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center mt-20">
             {/* Modern gradient badge */}
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-600/30 to-purple-600/30 text-indigo-300 text-sm font-medium mb-6 backdrop-blur-sm border border-indigo-500/20">
-              <span className="w-2 h-2 rounded-full bg-indigo-400 mr-2 animate-pulse"></span>
-              Web Design Experts
+        <div className={`inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm ${
+          isDark 
+            ? 'bg-gradient-to-r from-indigo-600/30 to-purple-600/30 text-indigo-300 border border-indigo-500/20'
+            : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white border border-blue-500/70 shadow-lg'
+        }`}>
+              <span className={`w-2 h-2 rounded-full mr-2 animate-pulse ${
+                isDark ? 'bg-indigo-400' : 'bg-white'
+              }`}></span>
+              {t('home.webDesign.title')}
             </div>
 
             {/* Main heading with gradient text */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-6 leading-tight">
-              Establish Your{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-                Digital Presence
-              </span>{" "}
-              with Confidence
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-6 leading-tight text-white">
+              {t('home.webDesign.subtitle')}
             </h1>
 
             {/* Description with increased readability */}
-            <p className="text-gray-300 text-center text-lg max-w-2xl mb-10 leading-relaxed">
-              Upvista creates powerful digital experiences that don&apos;t just look
-              great — they deliver measurable growth and lasting impact.
+            <p className="text-center text-lg max-w-2xl mb-10 leading-relaxed text-gray-300">
+              {t('home.webDesign.description')}
             </p>
 
             {/* Modern CTA buttons with hover effects */}
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <Link href="/pages/services">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full text-white font-medium overflow-hidden shadow-lg shadow-indigo-500/20 hover:shadow-indigo-500/40 transition-all duration-300">
-                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <button className={`group relative px-8 py-4 rounded-full font-medium overflow-hidden shadow-lg transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-indigo-500/20 hover:shadow-indigo-500/40'
+                    : 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white shadow-purple-500/20 hover:shadow-purple-500/40'
+                }`}>
+                  <span className={`absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    isDark 
+                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600'
+                      : 'bg-gradient-to-r from-indigo-600 to-blue-600'
+                  }`}></span>
                   <span className="relative flex items-center justify-center">
-                    Get Started Now
+                    {t('home.webDesign.getStarted')}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-200"
@@ -128,8 +166,12 @@ export default function Home() {
               </Link>
 
               <Link href="/pages/portfolio">
-                <button className="px-8 py-4 border border-indigo-500/30 rounded-full text-indigo-300 font-medium backdrop-blur-sm hover:bg-indigo-500/10 transition-all duration-300">
-                  View Our Work
+                <button className={`px-8 py-4 border rounded-full font-medium backdrop-blur-sm transition-all duration-300 ${
+                  isDark 
+                    ? 'border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/10'
+                    : 'border-blue-300/50 text-blue-700 hover:bg-blue-100/50'
+                }`}>
+                  {t('home.webDesign.viewWork')}
                 </button>
               </Link>
             </div>

@@ -254,7 +254,7 @@ export const StunningServices = () => {
         <div className="flex flex-col items-center mb-16">
           <span className="bg-violet-500 text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">Our Services</span>
           <h2 className="text-4xl md:text-6xl font-bold text-white text-center mb-4 tracking-tight">Transform Your Business<br/>with Upvista</h2>
-          <p className="text-lg text-violet-200 max-w-2xl text-center">From custom software to AI, branding, and beyond—discover how we deliver world-class digital transformation for ambitious businesses.</p>
+          <p className="text-lg text-violet-200 max-w-2xl text-center">From custom software to AI, branding, and beyond - discover how we deliver world-class digital transformation for ambitious businesses.</p>
         </div>
         <div className="flex flex-col gap-16">
           {modules.map((module) => (

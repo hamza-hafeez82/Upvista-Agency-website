@@ -1,6 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface Testimonial {
   text: string;
@@ -9,11 +10,13 @@ interface Testimonial {
   role: string;
 }
 
-export const TestimonialsColumn = (props: {
+export const TestimonialsColumn = memo((props: {
   className?: string;
   testimonials: Testimonial[]; // Define the type for testimonials
   duration?: number;
 }) => {
+  const { isDark } = useTheme();
+  
   return (
     <div className={props.className}>
       <motion.div
@@ -33,10 +36,16 @@ export const TestimonialsColumn = (props: {
             <React.Fragment key={index}>
               {props.testimonials.map(({ text, image, name, role }, i) => (
                 <div
-                  className="p-10 rounded-3xl border shadow-lg bg-violet-100 shadow-primary/10 max-w-xs w-full"
+                  className={`p-10 rounded-3xl backdrop-blur-sm max-w-xs w-full transition-all duration-300 ${
+                    isDark 
+                      ? 'border border-white/20 shadow-lg bg-white/10 hover:bg-white/20'
+                      : 'border border-gray-200/60 shadow-lg bg-white/90 hover:bg-white'
+                  }`}
                   key={i}
                 >
-                  <div>{text}</div>
+                  <div className={`text-sm leading-relaxed mb-4 ${
+                    isDark ? 'text-white' : 'text-gray-700'
+                  }`}>{text}</div>
                   <div className="flex items-center gap-2 mt-5">
                     <Image
                       width={40}
@@ -46,10 +55,14 @@ export const TestimonialsColumn = (props: {
                       className="h-10 w-10 rounded-full"
                     />
                     <div className="flex flex-col">
-                      <div className="font-medium tracking-tight leading-5">
+                      <div className={`font-medium tracking-tight leading-5 ${
+                        isDark ? 'text-white' : 'text-gray-900'
+                      }`}>
                         {name}
                       </div>
-                      <div className="leading-5 opacity-60 tracking-tight">
+                      <div className={`leading-5 tracking-tight ${
+                        isDark ? 'text-gray-300' : 'text-gray-600'
+                      }`}>
                         {role}
                       </div>
                     </div>
@@ -62,4 +75,6 @@ export const TestimonialsColumn = (props: {
       </motion.div>
     </div>
   );
-};
+});
+
+TestimonialsColumn.displayName = 'TestimonialsColumn';

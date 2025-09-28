@@ -1,4 +1,7 @@
+import React, { memo, useMemo } from "react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 // Images loaded directly from public folder to bypass Sharp
 const react = "/assets/logoSliders/react.png";
 const js = "/assets/logoSliders/js.png";
@@ -19,28 +22,53 @@ const illustrator = "/assets/logoSliders/illustrator.png";
 const springboot = "/assets/logoSliders/springboot.png";
 import Image from "next/image";
 
-function InfiniteSliderEnhanced() {
+const InfiniteSliderEnhanced = memo(() => {
+  const { t } = useLanguage();
+  const { isDark } = useTheme();
+  
   return (
-    <div className="relative w-full overflow-hidden">
-      {/* Backdrop with blur effect */}
-      <div className="absolute inset-0 bg-black backdrop-blur-md"></div>
+    <div className={`relative w-full overflow-hidden ${
+      isDark 
+        ? 'bg-gradient-to-br from-black via-black/80 to-purple-950'
+        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
+    }`}>
+      {/* Abstract background shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
+          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+        }`}></div>
+        <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
+          isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+        }`}></div>
+        <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
+          isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
+        }`}></div>
+      </div>
 
-      {/* Light effect overlay */}
-      <div className="absolute inset-0 bg-white/5 backdrop-blur-sm"></div>
-
-      {/* Glow effects */}
-      <div className="absolute -top-24 -left-24 w-48 h-48 bg-blue-500/30 rounded-full blur-3xl"></div>
-      <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-purple-500/30 rounded-full blur-3xl"></div>
+      {/* Grid pattern overlay */}
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iLjUiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-20"
+          : "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2U9InJnYmEoMTUsMjMsNDIsMC4wMykiIHN0cm9rZS13aWR0aD0iLjUiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlPSJyZ2JhKDE1LDIzLDQyLDAuMDMpIiBzdHJva2Utd2lkdGg9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-10"
+      }`}></div>
 
       {/* Content container */}
       <div className="relative z-10 py-12">
         <div className="max-w-7xl mx-auto px-4">
-          <h3 className="text-center font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-600 text-2xl mb-8">
-            Technologies We Use
+          <h3 className={`text-center font-bold text-transparent bg-clip-text text-2xl mb-8 ${
+            isDark 
+              ? 'bg-gradient-to-r from-white to-purple-600' 
+              : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700'
+          }`}>
+            {t('carousel.technologies')}
           </h3>
 
           {/* Slider container with glass effect */}
-          <div className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl border border-white/20 p-8">
+          <div className={`backdrop-blur-lg rounded-2xl shadow-xl p-8 ${
+            isDark 
+              ? 'bg-white/10 border border-white/20' 
+              : 'bg-white/80 border border-blue-200/50 shadow-blue-200/20'
+          }`}>
             <InfiniteSlider
               gap={44}
               duration={50}
@@ -342,6 +370,8 @@ function InfiniteSliderEnhanced() {
       </div>
     </div>
   );
-}
+});
+
+InfiniteSliderEnhanced.displayName = 'InfiniteSliderEnhanced';
 
 export default InfiniteSliderEnhanced;

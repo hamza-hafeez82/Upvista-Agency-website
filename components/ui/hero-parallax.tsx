@@ -109,7 +109,7 @@ export const Header = () => {
       </h1>
       <p className="max-w-2xl  md:text-xl mt-8  text-[#8e9aaf]">
         We fuse design, code, and innovation to deliver standout web and mobile
-        experiences. Every line we write is built to impress — and built to
+        experiences. Every line we write is built to impress - and built to
         last.
       </p>
       <Link href="/pages/portfolio" className="cusror-pointer">

@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import React, { memo, useMemo } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 // Images loaded directly from public folder to bypass Sharp
 const women1 = "/assets/services/women1.jpg"
 const women2 = "/assets/services/women2.png"
@@ -21,74 +24,100 @@ interface Testimonial {
 // Updated TestimonialsColumn component import (adjust path as needed)
 import { TestimonialsColumn } from "./testimonials-columns-1";
 
-const testimonials: Testimonial[] = [
+const Testimonials = memo(() => {
+  const { t } = useLanguage();
+  const { isDark } = useTheme();
+  
+  // Memoized testimonials data for better performance
+  const testimonials: Testimonial[] = useMemo(() => [
   {
-    text: "Their team crafted a beautiful and functional website for us. It boosted our visibility and client trust dramatically.",
+    text: t('home.testimonials.testimonial1'),
     image: women1,
     name: "Briana Patton",
     role: "Operations Manager",
   },
   {
-    text: "We needed a landing page that converts — and they delivered. Clean design, fast loading, and optimized perfectly.",
+    text: t('home.testimonials.testimonial2'),
     image: men1,
     name: "Bilal Ahmed",
     role: "Marketing Lead",
   },
   {
-    text: "The UI/UX design exceeded our expectations. Intuitive layouts and consistent branding helped elevate our digital product.",
+    text: t('home.testimonials.testimonial3'),
     image: women2,
     name: "Saman Malik",
     role: "Product Owner",
   },
   {
-    text: "From branding to website development, everything was handled with creativity and professionalism.",
+    text: t('home.testimonials.testimonial4'),
     image: men2,
     name: "Omar Raza",
     role: "CEO",
   },
   {
-    text: "Their landing page design helped us increase conversions by 35% — visually stunning and mobile-friendly.",
+    text: t('home.testimonials.testimonial5'),
     image: women3,
     name: "Zainab Hussain",
     role: "Digital Strategist",
   },
   {
-    text: "Great collaboration and clear process. They understood our needs and built a custom solution that reflects our brand.",
+    text: t('home.testimonials.testimonial6'),
     image: women4,
     name: "Aliza Khan",
     role: "Creative Director",
   },
   {
-    text: "Professional team and timely delivery. Our branding is now modern, bold, and consistent across platforms.",
+    text: t('home.testimonials.testimonial7'),
     image: men3,
     name: "Farhan Siddiqui",
     role: "Brand Manager",
   },
   {
-    text: "They helped us rebrand and redesign our website — the result was a sleek and modern experience that stands out.",
+    text: t('home.testimonials.testimonial8'),
     image: women5,
     name: "Sana Sheikh",
     role: "Marketing Manager",
   },
   {
-    text: "UI/UX revamp brought clarity to our service offering. Our users now stay longer and explore more.",
+    text: t('home.testimonials.testimonial9'),
     image: men4,
     name: "Hassan Ali",
     role: "E-commerce Manager",
   },
-];
+], [t]);
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+  // Memoized column data
+  const firstColumn = useMemo(() => testimonials.slice(0, 3), [testimonials]);
+  const secondColumn = useMemo(() => testimonials.slice(3, 6), [testimonials]);
+  const thirdColumn = useMemo(() => testimonials.slice(6, 9), [testimonials]);
 
-const Testimonials = () => {
   return (
-    <section className="bg-black p-20 relative overflow-hidden">
-      {/* Gradient background effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-violet-950 to-black opacity-80 z-0"></div>
+    <section className={`relative overflow-hidden p-20 ${
+      isDark 
+        ? 'bg-gradient-to-br from-black via-black/80 to-purple-950'
+        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
+    }`}>
+      {/* Abstract background shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
+          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+        }`}></div>
+        <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
+          isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+        }`}></div>
+        <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
+          isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
+        }`}></div>
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iLjUiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-20"
+          : "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2U9InJnYmEoMTUsMjMsNDIsMC4wMykiIHN0cm9rZS13aWR0aD0iLjUiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlPSJyZ2JhKDE1LDIzLDQyLDAuMDMpIiBzdHJva2Utd2lkdGg9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-10"
+      }`}></div>
       
-      <div className="container z-10 mx-auto relative">
+      <div className="container z-20 mx-auto relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,16 +126,26 @@ const Testimonials = () => {
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto"
         >
           <div className="flex justify-center">
-            <div className="border border-violet-400 py-1 px-4 rounded-lg text-violet-300">
-              Testimonials
+            <div className={`border py-1 px-4 rounded-lg ${
+              isDark 
+                ? 'border-violet-400 text-violet-300'
+                : 'border-blue-500 text-white bg-gradient-to-r from-blue-600/90 to-purple-600/90 shadow-lg'
+            }`}>
+              {t('home.testimonials.title')}
             </div>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tighter mt-5 text-white">
-            What our users say
+          <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mt-5 leading-tight ${
+            isDark 
+              ? 'text-white'
+              : 'bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600'
+          }`}>
+            {t('home.testimonials.subtitle')}
           </h2>
-          <p className="text-center mt-5 text-violet-200">
-            See what our customers have to say about us.
+          <p className={`text-center mt-5 ${
+            isDark ? 'text-violet-200' : 'text-gray-700'
+          }`}>
+            {t('home.testimonials.description')}
           </p>
         </motion.div>
 
@@ -118,6 +157,8 @@ const Testimonials = () => {
       </div>
     </section>
   );
-};
+});
+
+Testimonials.displayName = 'Testimonials';
 
 export default Testimonials;

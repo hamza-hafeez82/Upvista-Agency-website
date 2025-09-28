@@ -224,7 +224,7 @@ export default function CareersPage() {
                                              jobMapping.type === 'intern' ? 'Intern' : 'Future'}
                                           </span>
                                         )}
-                                      </div>
+                </div>
                                     </div>
                                   );
                                 })}
@@ -267,13 +267,13 @@ export default function CareersPage() {
                       View all open positions
                     </Link>
                   </p>
-                </div>
+          </div>
 
                 {/* Search Results */}
                 <AnimatePresence>
                   {showResults && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.3 }}
@@ -285,13 +285,13 @@ export default function CareersPage() {
                             <Briefcase className="w-6 h-6 text-purple-400" />
                             Search Results
                           </h3>
-                          <button
+                <button
                             onClick={() => setShowResults(false)}
                             className="text-gray-400 hover:text-white transition-colors"
                           >
                             ✕
-                          </button>
-                        </div>
+                </button>
+          </div>
 
                         {searchResults.length > 0 ? (
                           <div className="space-y-4">
@@ -301,7 +301,7 @@ export default function CareersPage() {
                             
                             <div className="grid gap-4">
                               {searchResults.map((job) => (
-                                <motion.div
+                <motion.div
                                   key={job.slug}
                                   initial={{ opacity: 0, x: -20 }}
                                   animate={{ opacity: 1, x: 0 }}
@@ -309,7 +309,7 @@ export default function CareersPage() {
                                   className="bg-gray-700/50 border border-gray-600/50 rounded-lg p-4 hover:bg-gray-700/70 transition-all duration-300 group"
                                 >
                                   <div className="flex items-center justify-between">
-                                    <div className="flex-1">
+                    <div className="flex-1">
                                       <div className="flex items-center gap-3 mb-2">
                                         <h4 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors">
                                           {job.title}
@@ -321,20 +321,20 @@ export default function CareersPage() {
                                         }`}>
                                           {job.type === 'full-time' ? 'Full-time' :
                                            job.type === 'intern' ? 'Intern' : 'Potential'}
-                                        </span>
-                                      </div>
+                        </span>
+                      </div>
                                       <p className="text-gray-400 text-sm mb-2">
                                         {job.category} • {job.description}
                                       </p>
-                                    </div>
+                    </div>
                                     <div className="flex items-center gap-2">
-                                      <button
+                    <button
                                         onClick={() => handleJobSelect(job.title)}
                                         className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-2 group-hover:scale-105"
-                                      >
+                    >
                                         <ExternalLink className="w-4 h-4" />
                                         View Details
-                                      </button>
+                    </button>
                                     </div>
                                   </div>
                                 </motion.div>
@@ -353,9 +353,9 @@ export default function CareersPage() {
                             <Link href="/careers/apply">
                               <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300">
                                 View All Positions
-                              </button>
-                            </Link>
-                          </div>
+                      </button>
+                    </Link>
+                  </div>
                         )}
                       </div>
                     </motion.div>
@@ -365,7 +365,7 @@ export default function CareersPage() {
             </motion.div>
 
             {/* Learn the Basics Section */}
-                <motion.div
+                    <motion.div
                   initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
@@ -423,10 +423,10 @@ export default function CareersPage() {
                         <span>What is important in recruitment</span>
                       </div>
                     </Link>
+                        </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-            </motion.div>
+                    </motion.div>
 
             {/* Learn About Business Section */}
                 <motion.div
@@ -482,8 +482,8 @@ export default function CareersPage() {
                   >
                     Your browser does not support the video tag.
                   </video>
-                        </div>
-                      </div>
+            </div>
+          </div>
                     </motion.div>
 
             {/* Learn About Job Section */}
@@ -609,7 +609,7 @@ export default function CareersPage() {
                       </p>
                     </div>
                   </div>
-                </div>
+                  </div>
 
                 {/* Right side - People Video */}
                 <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
@@ -623,13 +623,13 @@ export default function CareersPage() {
                   >
                     Your browser does not support the video tag.
                   </video>
-                </div>
-              </div>
+            </div>
+          </div>
             </motion.div>
 
             {/* Get to Know Workspace Section */}
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
               className="mb-16"
@@ -654,7 +654,7 @@ export default function CareersPage() {
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
                     Get to Know Workspace
-                  </h2>
+              </h2>
                   
                   <div className="space-y-6">
                     <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
@@ -711,8 +711,8 @@ export default function CareersPage() {
 
 
             {/* About Upvista Digital Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
               className="mb-16"
@@ -722,7 +722,7 @@ export default function CareersPage() {
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                     What Upvista Digital Is
                   </h2>
-                </div>
+                    </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                   <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
@@ -731,7 +731,7 @@ export default function CareersPage() {
                       Upvista Digital is a pioneering force in digital transformation, constantly pushing boundaries 
                       and creating innovative solutions that shape the future of technology and business.
                     </p>
-                  </div>
+                    </div>
                   
                   <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
                     <h3 className="text-xl font-semibold text-white mb-3">Global Impact</h3>
@@ -748,8 +748,8 @@ export default function CareersPage() {
                       greater than the sum of its parts through collaboration, innovation, and shared vision.
                     </p>
                   </div>
-                </div>
-              </div>
+            </div>
+          </div>
             </motion.div>
 
             {/* CTA Section */}

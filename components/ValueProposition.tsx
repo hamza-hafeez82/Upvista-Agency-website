@@ -1,53 +1,94 @@
 "use client";
 
 import { CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function ValueProposition() {
+  const { t } = useLanguage();
+  const { isDark } = useTheme();
+  
   return (
-    <section className="relative w-full py-24 overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 via-purple-900/20 to-gray-900/50"></div>
+    <section className={`relative w-full py-24 overflow-hidden ${
+      isDark 
+        ? 'bg-gradient-to-br from-black via-black/80 to-purple-950'
+        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
+    }`}>
+      {/* Abstract background shapes */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
+          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+        }`}></div>
+        <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
+          isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+        }`}></div>
+        <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
+          isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
+        }`}></div>
+      </div>
 
-      {/* Animated gradient orbs */}
-      <div className="absolute top-0 -left-20 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-      <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
-      <div className="absolute top-0 -right-20 w-72 h-72 bg-pink-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+      {/* Grid pattern overlay */}
+      <div className={`absolute inset-0 ${
+        isDark 
+          ? "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiIHN0cm9rZS13aWR0aD0iLjUiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-20"
+          : "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2U9InJnYmEoMTUsMjMsNDIsMC4wMykiIHN0cm9rZS13aWR0aD0iLjUiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlPSJyZ2JhKDE1LDIzLDQyLDAuMDMpIiBzdHJva2Utd2lkdGg9Ii41Ii8+PC9nPjwvc3ZnPg==')] opacity-10"
+      }`}></div>
 
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Modern gradient badge */}
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-600/30 to-purple-600/30 text-indigo-300 text-sm font-medium mb-6 backdrop-blur-sm border border-indigo-500/20">
-            <span className="w-2 h-2 rounded-full bg-indigo-400 mr-2 animate-pulse"></span>
-            Why Choose Us
+          <div className={`inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border ${
+            isDark 
+              ? 'bg-gradient-to-r from-indigo-600/30 to-purple-600/30 text-indigo-300 border-indigo-500/20'
+              : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white border-blue-500/70 shadow-lg'
+          }`}>
+            <span className={`w-2 h-2 rounded-full mr-2 animate-pulse ${
+              isDark ? 'bg-indigo-400' : 'bg-white'
+            }`}></span>
+            {t('home.whyChoose.title')}
           </div>
 
           {/* Main heading with gradient text */}
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 leading-tight text-gray-200">
-            We build{" "}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-              affordable, custom, and scalable
-            </span>{" "}
-            digital solutions for modern businesses — fast.
+          <h2 className={`text-3xl md:text-4xl font-bold mb-8 leading-tight ${
+            isDark 
+              ? 'text-gray-200'
+              : 'text-gray-900'
+          }`}>
+            {t('home.whyChoose.description')}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {[
-              "Transparent pricing",
-              "Fixed deadlines",
-              "Clean design",
-              "Free consultation",
-              "Long-term support",
-              "Flexible tech stack",
+              t('home.whyChoose.transparentPricing'),
+              t('home.whyChoose.fixedDeadlines'),
+              t('home.whyChoose.cleanDesign'),
+              t('home.whyChoose.freeConsultation'),
+              t('home.whyChoose.longTermSupport'),
+              t('home.whyChoose.flexibleTech'),
             ].map((feature, index) => (
               <div
                 key={index}
-                className="group relative flex items-center space-x-3 bg-gray-800/30 p-4 rounded-xl backdrop-blur-sm border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10"
+                className={`group relative flex items-center space-x-3 p-4 rounded-xl backdrop-blur-sm border transition-all duration-300 hover:shadow-lg ${
+                  isDark 
+                    ? 'bg-gray-800/30 border-purple-500/10 hover:border-purple-500/30 hover:shadow-purple-500/10'
+                    : 'bg-white/80 border-blue-200/50 hover:border-blue-300/70 hover:shadow-blue-200/20'
+                }`}
               >
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full blur-md group-hover:blur-lg transition-all duration-300"></div>
-                  <CheckCircle2 className="relative w-6 h-6 text-green-400" />
+                  <div className={`absolute inset-0 rounded-full blur-md group-hover:blur-lg transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20'
+                      : 'bg-gradient-to-r from-blue-400/20 to-purple-400/20'
+                  }`}></div>
+                  <CheckCircle2 className={`relative w-6 h-6 ${
+                    isDark ? 'text-green-400' : 'text-green-500'
+                  }`} />
                 </div>
-                <span className="text-gray-300 group-hover:text-white transition-colors duration-300">
+                <span className={`transition-colors duration-300 ${
+                  isDark 
+                    ? 'text-gray-300 group-hover:text-white'
+                    : 'text-gray-700 group-hover:text-gray-900'
+                }`}>
                   {feature}
                 </span>
               </div>
