@@ -214,11 +214,11 @@ const Header = () => {
             </div>
           </div>
           <div className="ml-2 md:ml-3">
-            <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h3>
+            <h3 className={`text-lg md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista</h3>
             <span className={`block text-xs font-medium -mt-0 tracking-wider ${
               isDark ? 'text-purple-300/80' : 'text-blue-600/80'
             }`}>
-              Solutions
+              Digital
             </span>
           </div>
         </Link>
