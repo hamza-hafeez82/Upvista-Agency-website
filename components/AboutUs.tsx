@@ -257,7 +257,7 @@ const AboutUs = memo(() => {
               <Cloud className={`w-8 h-8 ${
                 isDark ? 'text-blue-400' : 'text-blue-600'
               }`} />
-            </div>
+          </div>
             <h3 className={`text-2xl font-semibold mb-4 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>{t('home.expertise.saas.title')}</h3>
