@@ -129,9 +129,9 @@ export default function SustainabilityPage() {
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${
-                      isDark ? 'from-black/60 to-transparent' : 'from-black/40 to-transparent'
-                    }`}></div>
+                    {isDark && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    )}
                   </div>
 
                   {/* Content */}
