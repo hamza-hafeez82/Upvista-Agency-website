@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 //import Logoimg from "../assets/u.png";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AuthModal from "./ui/AuthModal";
 import { supabase } from "@/lib/supabaseClient";
-import { ArrowRight } from "lucide-react";
 import ThemeToggle from "./ui/ThemeToggle";
 import LanguageToggle from "./ui/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -23,7 +22,6 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
-  const pathname = usePathname();
   const { t } = useLanguage();
   const { isDark } = useTheme();
 
@@ -297,7 +295,7 @@ const Header = () => {
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
               }`}>
                 <div className="py-3">
-                  {companyLinks.map((link, index) => (
+                  {companyLinks.map((link) => (
                     <Link 
                       key={link.label} 
                       href={link.href} 
@@ -341,7 +339,7 @@ const Header = () => {
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
               }`}>
                 <div className="py-3">
-                  {servicesLinks.map((link, index) => (
+                  {servicesLinks.map((link) => (
                     <Link 
                       key={link.label} 
                       href={link.href} 
@@ -381,7 +379,7 @@ const Header = () => {
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
               }`}>
                 <div className="py-3">
-                  {communityLinks.map((link, index) => (
+                  {communityLinks.map((link)  => (
                     <Link 
                       key={link.label} 
                       href={link.href} 
@@ -421,7 +419,7 @@ const Header = () => {
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
               }`}>
                 <div className="py-3">
-                  {researchesLinks.map((link, index) => (
+                  {researchesLinks.map((link) => (
                     <Link 
                       key={link.label} 
                       href={link.href} 
@@ -461,7 +459,7 @@ const Header = () => {
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
               }`}>
                 <div className="py-3">
-                  {insightsLinks.map((link, index) => (
+                  {insightsLinks.map((link) => (
                     <Link 
                       key={link.label} 
                       href={link.href} 

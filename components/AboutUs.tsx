@@ -1,6 +1,6 @@
 "use client";
 
-import React, { memo, useMemo } from "react";
+import React, { memo } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { ArrowRight, ShoppingCart, Cloud, Stethoscope, GraduationCap, CreditCard, Brush } from "lucide-react";
@@ -12,44 +12,44 @@ const AboutUs = memo(() => {
   const { isDark } = useTheme();
   
   // Memoized expertise data for better performance
-  const expertiseData = useMemo(() => [
-    {
-      icon: ShoppingCart,
-      title: t('home.expertise.ecommerce.title'),
-      description: t('home.expertise.ecommerce.description'),
-      color: 'blue'
-    },
-    {
-      icon: Cloud,
-      title: t('home.expertise.saas.title'),
-      description: t('home.expertise.saas.description'),
-      color: 'cyan'
-    },
-    {
-      icon: Stethoscope,
-      title: t('home.expertise.healthcare.title'),
-      description: t('home.expertise.healthcare.description'),
-      color: 'green'
-    },
-    {
-      icon: GraduationCap,
-      title: t('home.expertise.edtech.title'),
-      description: t('home.expertise.edtech.description'),
-      color: 'purple'
-    },
-    {
-      icon: CreditCard,
-      title: t('home.expertise.fintech.title'),
-      description: t('home.expertise.fintech.description'),
-      color: 'orange'
-    },
-    {
-      icon: Brush,
-      title: t('home.expertise.portfolio.title'),
-      description: t('home.expertise.portfolio.description'),
-      color: 'pink'
-    }
-  ], [t]);
+  // const expertiseData = useMemo(() => [
+  //   {
+  //     icon: ShoppingCart,
+  //     title: t('home.expertise.ecommerce.title'),
+  //     description: t('home.expertise.ecommerce.description'),
+  //     color: 'blue'
+  //   },
+  //   {
+  //     icon: Cloud,
+  //     title: t('home.expertise.saas.title'),
+  //     description: t('home.expertise.saas.description'),
+  //     color: 'cyan'
+  //   },
+  //   {
+  //     icon: Stethoscope,
+  //     title: t('home.expertise.healthcare.title'),
+  //     description: t('home.expertise.healthcare.description'),
+  //     color: 'green'
+  //   },
+  //   {
+  //     icon: GraduationCap,
+  //     title: t('home.expertise.edtech.title'),
+  //     description: t('home.expertise.edtech.description'),
+  //     color: 'purple'
+  //   },
+  //   {
+  //     icon: CreditCard,
+  //     title: t('home.expertise.fintech.title'),
+  //     description: t('home.expertise.fintech.description'),
+  //     color: 'orange'
+  //   },
+  //   {
+  //     icon: Brush,
+  //     title: t('home.expertise.portfolio.title'),
+  //     description: t('home.expertise.portfolio.description'),
+  //     color: 'pink'
+  //   }
+  // ], [t]);
   
   return (
     <div className={`relative overflow-hidden p-10 min-h-screen ${

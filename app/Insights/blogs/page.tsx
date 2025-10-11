@@ -30,7 +30,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export const dynamic = 'force-dynamic';
 
 export default function ITServicesBlog() {
-  const { isDark } = useTheme();
   const { t } = useLanguage();
   const [activeService, setActiveService] = useState(0);
 

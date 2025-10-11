@@ -6,12 +6,10 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowLeft, Calendar, Users, Clock, Award, ExternalLink, CheckCircle, Star, Quote, Globe, Zap, Shield, BarChart3 } from 'lucide-react';
+import { ArrowLeft, Calendar, Users, Award, Star, Quote, Globe } from 'lucide-react';
 
 export default function AonCorporateCaseStudyPage() {
   const { isDark } = useTheme();
-  const { t } = useLanguage();
 
   const caseStudy = {
     title: 'AON Corporate Website Development',

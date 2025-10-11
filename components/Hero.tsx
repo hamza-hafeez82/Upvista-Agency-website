@@ -1,5 +1,4 @@
 import React, { memo, useMemo, useCallback } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Star, Users, Code, Globe } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -29,7 +28,7 @@ const Hero = memo(() => {
     console.log('Video loading:', isDark ? 'dark' : 'light');
   }, [isDark]);
   
-  const handleVideoError = useCallback((e: any) => {
+  const handleVideoError = useCallback((e: React.SyntheticEvent<HTMLVideoElement>) => {
     console.error('Video error:', e);
   }, []);
   

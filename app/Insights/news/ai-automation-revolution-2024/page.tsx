@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
-import { ArrowLeft, Calendar, Clock, User, Share2, BookmarkPlus, Twitter, Linkedin, Facebook, TrendingUp, Award, Users, Zap, Target, BarChart3, Quote, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Share2, BookmarkPlus, Twitter, Linkedin, Facebook } from 'lucide-react';
 
 export default function AIAutomationArticlePage() {
   const { isDark } = useTheme();

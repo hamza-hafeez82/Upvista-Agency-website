@@ -1,15 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function MarketingServicesPage() {
   const { isDark } = useTheme();
-  const { t } = useLanguage();
   const [expandedProcess, setExpandedProcess] = useState<string | null>('digital-marketing');
   const [expandedProjectTypes, setExpandedProjectTypes] = useState<boolean>(true);
   const [expandedTechStack, setExpandedTechStack] = useState<boolean>(true);
@@ -793,7 +791,7 @@ export default function MarketingServicesPage() {
                                     }`}>
                                       {step.description}
                                     </p>
-                                    {(step as any).details && (
+                                    {(step as {details: string}).details && (
                                       <div className={`p-4 rounded-lg ${
                                         isDark
                                           ? 'bg-white/5 border border-white/10'
@@ -802,7 +800,7 @@ export default function MarketingServicesPage() {
                                         <p className={`text-sm ${
                                           isDark ? 'text-gray-300' : 'text-gray-600'
                                         }`}>
-                                          {(step as any).details}
+                                          {(step as {details: string}).details}
                                         </p>
                                       </div>
                                     )}
@@ -817,7 +815,7 @@ export default function MarketingServicesPage() {
                                     : 'bg-gray-100 border border-gray-200'
                                 }`}>
                                   <Image
-                                    src={(step as any).image || '/assets/services/marketing-process.jpg'}
+                                    src={(step as {image: string}).image || '/assets/services/marketing-process.jpg'}
                                     alt={step.title}
                                     fill
                                     className="object-cover"

@@ -85,7 +85,7 @@ export default function TechnicalAssessment({ onComplete }: TechnicalAssessmentP
   }
 
   const currentAnswer = answers[currentQuestion] || "";
-  const currentQ = questions[currentQuestion] as any;
+  const currentQ = questions[currentQuestion] as { question: string; type: string; options: string[] };
 
   return (
     <motion.div

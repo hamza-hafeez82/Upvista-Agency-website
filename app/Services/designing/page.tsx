@@ -1,15 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
-import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function DesignServicesPage() {
   const { isDark } = useTheme();
-  const { t } = useLanguage();
   const [expandedProcess, setExpandedProcess] = useState<string | null>('brand-identity');
   const [expandedProjectTypes, setExpandedProjectTypes] = useState<boolean>(true);
   const [expandedTechStack, setExpandedTechStack] = useState<boolean>(true);
@@ -795,7 +793,7 @@ export default function DesignServicesPage() {
                                     }`}>
                                       {step.description}
                                     </p>
-                                    {(step as any).details && (
+                                    {(step as {details: string}).details && (
                                       <div className={`p-4 rounded-lg ${
                                         isDark
                                           ? 'bg-white/5 border border-white/10'
@@ -804,7 +802,7 @@ export default function DesignServicesPage() {
                                         <p className={`text-sm ${
                                           isDark ? 'text-gray-300' : 'text-gray-600'
                                         }`}>
-                                          {(step as any).details}
+                                          {(step as {details: string}).details}
                                         </p>
                                       </div>
                                     )}
@@ -819,7 +817,7 @@ export default function DesignServicesPage() {
                                     : 'bg-gray-100 border border-gray-200'
                                 }`}>
                                   <Image
-                                    src={(step as any).image || '/assets/services/design-process.jpg'}
+                                    src={(step as {image: string}).image || '/assets/services/design-process.jpg'}
                                     alt={step.title}
                                     fill
                                     className="object-cover"

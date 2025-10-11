@@ -1,17 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight, Users, Code, Cloud, Brain, Palette, Target, Award, Star, ExternalLink } from 'lucide-react';
+import { ArrowRight, Users, Code, Cloud, Target, Award, Star, ExternalLink } from 'lucide-react';
 
 export default function TeamPage() {
   const { isDark } = useTheme();
-  const { t } = useLanguage();
 
   // Department data
   const departments = [

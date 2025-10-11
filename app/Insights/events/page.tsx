@@ -6,12 +6,10 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Search, Filter, Calendar, Clock, MapPin, Users, TrendingUp, Award, ArrowRight, ExternalLink, Share2, BookmarkPlus, Mail, Video, Globe, Building } from 'lucide-react';
+import { Search, Filter, Calendar, Clock, TrendingUp, ArrowRight, Mail, Video, Globe, Building } from 'lucide-react';
 
 export default function EventsPage() {
   const { isDark } = useTheme();
-  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedType, setSelectedType] = useState('all');
@@ -285,7 +283,7 @@ export default function EventsPage() {
 
   // Filter and sort events
   const filteredEvents = useMemo(() => {
-    let filtered = events.filter(event => {
+    const filtered = events.filter(event => {
       const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            event.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            event.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
