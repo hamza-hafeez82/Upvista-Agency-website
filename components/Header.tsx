@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 //import Logoimg from "../assets/u.png";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import AuthModal from "./ui/AuthModal";
 import { supabase } from "@/lib/supabaseClient";
 import ThemeToggle from "./ui/ThemeToggle";
@@ -62,11 +61,11 @@ const Header = () => {
   ];
 
   const insightsLinks = [
-    { label: t('dropdown.insights.caseStudies'), href: "/insights/case-studies" },
-    { label: t('dropdown.insights.news'), href: "/insights/news" },
-    { label: t('dropdown.insights.blogs'), href: "/insights/blogs" },
-    { label: t('dropdown.insights.whitepapers'), href: "/insights/whitepapers" },
-    { label: t('dropdown.insights.events'), href: "/insights/events" },
+    { label: t('dropdown.insights.caseStudies'), href: "/Insights/case-studies" },
+    { label: t('dropdown.insights.news'), href: "/Insights/news" },
+    { label: t('dropdown.insights.blogs'), href: "/Insights/blogs" },
+    { label: t('dropdown.insights.whitepapers'), href: "/Insights/whitepapers" },
+    { label: t('dropdown.insights.events'), href: "/Insights/events" },
   ];
 
   // Dropdown states for desktop navigation
