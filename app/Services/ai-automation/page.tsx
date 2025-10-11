@@ -7,10 +7,10 @@ import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function WebDevelopmentPage() {
+export default function AIAutomationPage() {
   const { isDark } = useTheme();
   const { t } = useLanguage();
-  const [expandedProcess, setExpandedProcess] = useState<string | null>('custom-coded');
+  const [expandedProcess, setExpandedProcess] = useState<string | null>('ai-development');
   const [expandedProjectTypes, setExpandedProjectTypes] = useState<boolean>(true);
   const [expandedTechStack, setExpandedTechStack] = useState<boolean>(true);
   const [currentTechIndex, setCurrentTechIndex] = useState<number>(0);
@@ -30,43 +30,43 @@ export default function WebDevelopmentPage() {
   const caseStudies = [
     {
       id: 1,
-      image: '/assets/services/ecommerce.jpeg',
-      title: t('webdev.caseStudies.aon.title'),
-      description: t('webdev.caseStudies.aon.description'),
-      tag: t('webdev.caseStudies.aon.tag'),
-      href: '/case-studies/aon-corporate'
+      image: '/assets/services/health.jpeg',
+      title: 'AI-Powered Healthcare Assistant',
+      description: 'Intelligent healthcare chatbot with natural language processing and medical knowledge integration.',
+      tag: 'AI Chatbot',
+      href: '/case-studies/ai-healthcare-assistant'
     },
     {
       id: 2,
-      image: '/assets/services/health.jpeg',
-      title: t('webdev.caseStudies.vigours.title'),
-      description: t('webdev.caseStudies.vigours.description'),
-      tag: t('webdev.caseStudies.vigours.tag'),
-      href: '/case-studies/vigours-organic'
+      image: '/assets/services/ecommerce.jpeg',
+      title: 'Smart E-commerce Automation',
+      description: 'Automated inventory management and customer service system with machine learning predictions.',
+      tag: 'Business Automation',
+      href: '/case-studies/smart-ecommerce'
     },
     {
       id: 3,
-      image: '/assets/services/edutech.jpeg',
-      title: t('webdev.caseStudies.celtis.title'),
-      description: t('webdev.caseStudies.celtis.description'),
-      tag: t('webdev.caseStudies.celtis.tag'),
-      href: '/case-studies/celtis-ngo'
+      image: '/assets/services/saas.jpeg',
+      title: 'Intelligent Document Processing',
+      description: 'AI-powered document analysis and data extraction system for enterprise workflows.',
+      tag: 'Document AI',
+      href: '/case-studies/document-ai'
     }
   ];
 
   const techStackItems = [
-    { name: 'React', image: '/assets/tech/react.jpg', logo: '/assets/logos/react.svg', description: 'Modern UI Library' },
-    { name: 'Next.js', image: '/assets/tech/nextjs.jpg', logo: '/assets/logos/nextjs.svg', description: 'Full-Stack Framework' },
-    { name: 'Vue.js', image: '/assets/tech/vuejs.jpg', logo: '/assets/logos/vuejs.svg', description: 'Progressive Framework' },
-    { name: 'Angular', image: '/assets/tech/angular.jpg', logo: '/assets/logos/angular.svg', description: 'Enterprise Framework' },
-    { name: 'Node.js', image: '/assets/tech/nodejs.jpg', logo: '/assets/logos/nodejs.svg', description: 'Backend Runtime' },
-    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: 'Versatile Language' },
-    { name: 'PHP', image: '/assets/tech/php.jpg', logo: '/assets/logos/php.svg', description: 'Web Development' },
-    { name: 'MySQL', image: '/assets/tech/mysql.jpg', logo: '/assets/logos/mysql.svg', description: 'Relational Database' },
-    { name: 'MongoDB', image: '/assets/tech/mongodb.jpg', logo: '/assets/logos/mongodb.svg', description: 'NoSQL Database' },
-    { name: 'WordPress', image: '/assets/tech/wordpress.jpg', logo: '/assets/logos/wordpress.svg', description: 'CMS Platform' },
-    { name: 'Webflow', image: '/assets/tech/webflow.jpg', logo: '/assets/logos/webflow.svg', description: 'No-Code Platform' },
-    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: 'Containerization' }
+    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: 'AI Development' },
+    { name: 'TensorFlow', image: '/assets/tech/tensorflow.jpg', logo: '/assets/logos/tensorflow.svg', description: 'Machine Learning' },
+    { name: 'PyTorch', image: '/assets/tech/pytorch.jpg', logo: '/assets/logos/pytorch.svg', description: 'Deep Learning' },
+    { name: 'OpenAI GPT', image: '/assets/tech/openai.jpg', logo: '/assets/logos/openai.svg', description: 'Large Language Models' },
+    { name: 'Hugging Face', image: '/assets/tech/huggingface.jpg', logo: '/assets/logos/huggingface.svg', description: 'NLP Models' },
+    { name: 'LangChain', image: '/assets/tech/langchain.jpg', logo: '/assets/logos/langchain.svg', description: 'AI Frameworks' },
+    { name: 'RAG Systems', image: '/assets/tech/rag.jpg', logo: '/assets/logos/rag.svg', description: 'Retrieval Systems' },
+    { name: 'Vector DB', image: '/assets/tech/vector.jpg', logo: '/assets/logos/vector.svg', description: 'Vector Databases' },
+    { name: 'AWS AI', image: '/assets/tech/aws-ai.jpg', logo: '/assets/logos/aws.svg', description: 'Cloud AI Services' },
+    { name: 'Azure AI', image: '/assets/tech/azure-ai.jpg', logo: '/assets/logos/azure.svg', description: 'Microsoft AI' },
+    { name: 'Google AI', image: '/assets/tech/google-ai.jpg', logo: '/assets/logos/google.svg', description: 'Google AI Platform' },
+    { name: 'Computer Vision', image: '/assets/tech/cv.jpg', logo: '/assets/logos/cv.svg', description: 'Image Processing' }
   ];
 
   // Infinite carousel effect
@@ -75,167 +75,114 @@ export default function WebDevelopmentPage() {
       setCurrentTechIndex((prevIndex) => 
         prevIndex === techStackItems.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [techStackItems.length]);
 
   const developmentProcesses = [
     {
-      type: 'custom-coded',
-      title: 'Custom Coded Solutions',
-      description: 'Complete development from scratch using modern frameworks and best practices',
-      platforms: ['React', 'Vue.js', 'Angular', 'Node.js', 'Python', 'PHP'],
+      type: 'ai-development',
+      title: 'AI Solution Development',
+      description: 'Custom AI solutions built from scratch to solve specific business challenges',
+      platforms: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI', 'Hugging Face', 'LangChain'],
       services: [
-        'Frontend Development (HTML, CSS, JavaScript)',
-        'Backend API Development',
-        'Database Design & Implementation',
-        'Authentication & Security',
+        'AI Strategy & Planning',
+        'Data Collection & Preparation',
+        'Model Development & Training',
+        'API Integration',
         'Performance Optimization',
-        'Testing & Quality Assurance'
+        'Testing & Validation',
+        'Deployment & Monitoring',
+        'Continuous Learning'
       ],
       roadmap: [
         { 
           step: 1, 
-          title: 'Consultation & Discovery', 
-          description: 'Understanding your business needs, target audience, and project requirements through detailed consultation sessions.',
-          details: 'We conduct thorough discovery sessions to understand your business goals, target market, and technical requirements. This includes stakeholder interviews, competitor analysis, and technical feasibility assessment.',
+          title: 'AI Strategy & Discovery', 
+          description: 'Comprehensive analysis of business processes to identify automation opportunities and AI implementation strategies.',
+          details: 'We conduct detailed business process analysis, identify pain points, and design AI solutions that deliver measurable value and ROI.',
           image: '/assets/services/consultation.jpg'
         },
         { 
           step: 2, 
-          title: 'Project Proposal', 
-          description: 'Comprehensive project module with timeline, milestones, and deliverables sent for your confirmation and approval.',
-          details: 'Our detailed project proposal includes technical specifications, timeline with milestones, resource allocation, and clear deliverables. We ensure transparency and set realistic expectations.',
-          image: '/assets/services/proposal.jpg'
+          title: 'Data Assessment', 
+          description: 'Evaluation of existing data quality, availability, and preparation for AI model training and deployment.',
+          details: 'Our data scientists analyze your data landscape, clean and prepare datasets, and ensure data quality for optimal AI performance.',
+          image: '/assets/services/data-analysis.jpg'
         },
         { 
           step: 3, 
-          title: 'UI/UX Design', 
-          description: 'Complete Figma design including wireframes, mockups, and interactive prototypes tailored to your brand identity.',
-          details: 'We create pixel-perfect designs with user experience focus, including wireframes, high-fidelity mockups, interactive prototypes, and design system documentation.',
-          image: '/assets/services/design.jpg'
+          title: 'AI Model Development', 
+          description: 'Custom AI model development using cutting-edge machine learning and deep learning techniques.',
+          details: 'We develop custom AI models tailored to your specific use case, using state-of-the-art algorithms and frameworks.',
+          image: '/assets/services/ai-development.jpg'
         },
         { 
           step: 4, 
-          title: 'Development Phase', 
-          description: 'Full-stack development with frontend, backend, database integration, and third-party service connections.',
-          details: 'Agile development process with regular updates, code reviews, and testing. We implement modern development practices, version control, and continuous integration.',
-          image: '/assets/services/development.jpg'
+          title: 'Integration & Testing', 
+          description: 'Seamless integration of AI solutions into existing business systems with comprehensive testing.',
+          details: 'Our engineers ensure smooth integration with your existing infrastructure and conduct thorough testing for reliability.',
+          image: '/assets/services/integration.jpg'
         },
         { 
           step: 5, 
-          title: 'QA Testing', 
-          description: 'Comprehensive testing including functionality, performance, security, and cross-browser compatibility checks.',
-          details: 'Rigorous testing across multiple browsers, devices, and scenarios. We perform automated testing, manual testing, performance optimization, and security audits.',
-          image: '/assets/services/testing.jpg'
-        },
-        { 
-          step: 6, 
-          title: 'Deployment & Launch', 
-          description: 'Professional deployment with SSL certificates, CDN setup, and performance optimization for production.',
-          details: 'Smooth deployment with zero downtime, SSL configuration, CDN setup, performance monitoring, and comprehensive backup systems.',
+          title: 'Deployment & Monitoring', 
+          description: 'Production deployment with real-time monitoring and performance optimization.',
+          details: 'We deploy your AI solutions with comprehensive monitoring systems and continuous performance optimization.',
           image: '/assets/services/deployment.jpg'
         },
         { 
-          step: 7, 
-          title: 'Maintenance & Support', 
-          description: 'Ongoing maintenance, updates, monitoring, and 1-month free support with operation manual provided.',
-          details: 'Comprehensive maintenance plan including regular updates, security patches, performance monitoring, and detailed operation manual for long-term success.',
-          image: '/assets/services/support.jpg'
+          step: 6, 
+          title: 'Training & Support', 
+          description: 'User training and ongoing support for AI solution adoption and optimization.',
+          details: 'We provide comprehensive training for your team and ongoing support to maximize AI solution effectiveness.',
+          image: '/assets/services/training.jpg'
         }
       ]
     },
     {
-      type: 'wordpress',
-      title: 'WordPress Development',
-      description: 'Custom WordPress themes, plugins, and full-site development with advanced functionality',
-      platforms: ['WordPress', 'WooCommerce', 'Custom Plugins', 'Themes'],
+      type: 'automation-workflows',
+      title: 'Business Process Automation',
+      description: 'Intelligent automation of repetitive business processes for improved efficiency',
+      platforms: ['Zapier', 'Microsoft Power Automate', 'UiPath', 'Python', 'Node.js'],
       services: [
-        'Custom Theme Development',
-        'Plugin Development',
-        'E-commerce Integration',
-        'Performance Optimization',
-        'Security Implementation',
-        'Content Management Setup'
+        'Process Analysis',
+        'Workflow Design',
+        'Automation Development',
+        'Integration Setup',
+        'Testing & Validation',
+        'Monitoring & Maintenance'
       ],
       roadmap: [
-        { step: 1, title: 'Requirements Analysis', description: 'Detailed analysis of your content structure, functionality needs, and WordPress-specific requirements.' },
-        { step: 2, title: 'Site Architecture', description: 'Planning site structure, database schema, and WordPress configuration for optimal performance.' },
-        { step: 3, title: 'Design & Prototyping', description: 'Custom theme design with responsive layouts, typography, and brand-specific styling.' },
-        { step: 4, title: 'Theme Development', description: 'Custom WordPress theme development with clean code, SEO optimization, and accessibility features.' },
-        { step: 5, title: 'Plugin Integration', description: 'Integration of essential plugins, custom functionality, and third-party service connections.' },
-        { step: 6, title: 'Content Migration', description: 'Seamless content migration from existing platforms with data integrity and SEO preservation.' },
-        { step: 7, title: 'Launch & Training', description: 'Site launch with admin training, documentation, and ongoing maintenance support.' }
+        { step: 1, title: 'Process Discovery', description: 'Detailed analysis of current business processes to identify automation opportunities.' },
+        { step: 2, title: 'Automation Design', description: 'Design efficient automation workflows that improve productivity and reduce errors.' },
+        { step: 3, title: 'Development', description: 'Build robust automation solutions using industry-leading tools and platforms.' },
+        { step: 4, title: 'Integration', description: 'Seamlessly integrate automation solutions with existing business systems.' },
+        { step: 5, title: 'Testing', description: 'Comprehensive testing to ensure automation reliability and performance.' },
+        { step: 6, title: 'Deployment', description: 'Smooth deployment with monitoring and ongoing optimization.' }
       ]
     },
     {
-      type: 'webflow',
-      title: 'Webflow Development',
-      description: 'No-code web development with custom interactions, animations, and CMS integration',
-      platforms: ['Webflow', 'Figma Integration', 'CMS', 'Interactions'],
+      type: 'chatbots-voice',
+      title: 'Intelligent Chatbots & Voice AI',
+      description: 'Advanced conversational AI solutions for customer service and business automation',
+      platforms: ['OpenAI GPT', 'Google Dialogflow', 'Amazon Lex', 'Microsoft Bot Framework'],
       services: [
-        'Design to Webflow Conversion',
-        'Custom Interactions & Animations',
-        'CMS Integration',
-        'E-commerce Setup',
-        'Responsive Design',
-        'SEO Optimization'
+        'Conversation Design',
+        'NLP Implementation',
+        'Multi-channel Integration',
+        'Voice Recognition',
+        'Sentiment Analysis',
+        'Continuous Learning'
       ],
       roadmap: [
-        { step: 1, title: 'Design Consultation', description: 'Understanding your brand requirements and converting existing designs or creating new ones for Webflow.' },
-        { step: 2, title: 'Webflow Planning', description: 'Planning site structure, CMS collections, and interactive elements for optimal user experience.' },
-        { step: 3, title: 'Design Implementation', description: 'Converting designs to Webflow with pixel-perfect accuracy and responsive behavior across all devices.' },
-        { step: 4, title: 'CMS Setup', description: 'Creating dynamic content collections and setting up easy-to-use CMS for content management.' },
-        { step: 5, title: 'Interactions & Animations', description: 'Implementing custom interactions, scroll animations, and micro-interactions for enhanced user engagement.' },
-        { step: 6, title: 'SEO & Performance', description: 'Optimizing for search engines, implementing meta tags, and ensuring fast loading times.' },
-        { step: 7, title: 'Launch & Handover', description: 'Site launch with CMS training, documentation, and ongoing support for content updates.' }
-      ]
-    },
-    {
-      type: 'migration',
-      title: 'Platform Migration',
-      description: 'Seamless migration between different platforms with data preservation and SEO maintenance',
-      platforms: ['Any to Any', 'Data Migration', 'URL Preservation', 'SEO Maintenance'],
-      services: [
-        'Data Analysis & Planning',
-        'Content Migration',
-        'Design Recreation',
-        'Functionality Replication',
-        'SEO Preservation',
-        'Testing & Launch'
-      ],
-      roadmap: [
-        { step: 1, title: 'Migration Assessment', description: 'Comprehensive analysis of existing site, content audit, and planning migration strategy with minimal downtime.' },
-        { step: 2, title: 'Data Backup', description: 'Complete backup of existing data, content, and assets to ensure no data loss during migration process.' },
-        { step: 3, title: 'New Platform Setup', description: 'Setting up new platform with optimized configuration and preparing for content migration.' },
-        { step: 4, title: 'Design Recreation', description: 'Recreating existing design and functionality on new platform with enhanced features and performance.' },
-        { step: 5, title: 'Content Migration', description: 'Systematic migration of all content, images, and data with format preservation and optimization.' },
-        { step: 6, title: 'SEO Preservation', description: 'Maintaining all SEO elements, redirects, and ensuring search engine visibility remains intact.' },
-        { step: 7, title: 'Testing & Launch', description: 'Comprehensive testing and smooth launch with monitoring and immediate support for any issues.' }
-      ]
-    },
-    {
-      type: 'maintenance',
-      title: 'Maintenance & Updates',
-      description: 'Ongoing support, bug fixes, security updates, and feature additions for existing websites',
-      platforms: ['All Platforms', 'Bug Fixes', 'Security Updates', 'Feature Additions'],
-      services: [
-        'Bug Fixes & Debugging',
-        'Security Updates',
-        'Performance Monitoring',
-        'Feature Additions',
-        'Content Updates',
-        'Backup & Recovery'
-      ],
-      roadmap: [
-        { step: 1, title: 'Site Audit', description: 'Comprehensive analysis of current site performance, security vulnerabilities, and areas for improvement.' },
-        { step: 2, title: 'Maintenance Plan', description: 'Creating customized maintenance schedule with priority-based tasks and regular update cycles.' },
-        { step: 3, title: 'Security Hardening', description: 'Implementing security measures, updating plugins, and ensuring protection against vulnerabilities.' },
-        { step: 4, title: 'Performance Optimization', description: 'Optimizing loading speeds, database performance, and implementing caching strategies.' },
-        { step: 5, title: 'Content Updates', description: 'Regular content updates, image optimization, and ensuring fresh, relevant information.' },
-        { step: 6, title: 'Feature Enhancements', description: 'Adding new features, improving functionality, and implementing user feedback suggestions.' },
-        { step: 7, title: 'Monitoring & Reporting', description: 'Continuous monitoring with regular reports on performance, security, and maintenance activities.' }
+        { step: 1, title: 'Conversation Design', description: 'Design natural and effective conversation flows for optimal user experience.' },
+        { step: 2, title: 'AI Training', description: 'Train AI models with domain-specific knowledge and conversation patterns.' },
+        { step: 3, title: 'Integration', description: 'Integrate chatbots with existing communication channels and systems.' },
+        { step: 4, title: 'Testing', description: 'Comprehensive testing of conversation flows and AI responses.' },
+        { step: 5, title: 'Deployment', description: 'Launch chatbots with monitoring and continuous improvement capabilities.' },
+        { step: 6, title: 'Optimization', description: 'Continuous optimization based on user interactions and feedback.' }
       ]
     }
   ];
@@ -251,9 +198,7 @@ export default function WebDevelopmentPage() {
       {/* Hero Section */}
       <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Side - Text Content */}
             <div className="text-left">
               <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-8 ${
                 isDark
@@ -263,27 +208,26 @@ export default function WebDevelopmentPage() {
                 <span className={`w-2 h-2 rounded-full mr-3 ${
                   isDark ? 'bg-blue-400' : 'bg-white'
                 }`}></span>
-                {t('webdev.badge')}
+                AI & Automation Excellence
               </div>
               <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight ${
                 isDark
                   ? 'bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent'
                   : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700 bg-clip-text text-transparent'
               }`}>
-                {t('webdev.title')}
+                AI & Automation
               </h1>
               <p className={`text-lg sm:text-xl leading-relaxed ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                {t('webdev.subtitle')}
+                Transform your business with intelligent automation and AI solutions that enhance productivity and drive innovation.
               </p>
             </div>
             
-            {/* Right Side - Hero Image */}
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
               <Image
-                src="/assets/services/web-dev-banner.jpeg"
-                alt="Web Development Services"
+                src="/assets/services/ai-automation-banner.jpeg"
+                alt="AI & Automation Services"
                 fill
                 className="object-cover rounded-3xl"
               />
@@ -295,7 +239,6 @@ export default function WebDevelopmentPage() {
         </div>
       </div>
 
-
       {/* Project Types Section */}
       <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -303,12 +246,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.projectTypes.title')}
+              Types of AI & Automation Solutions
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.projectTypes.subtitle')}
+              We develop comprehensive AI and automation solutions tailored to your business needs
             </p>
           </div>
 
@@ -330,12 +273,12 @@ export default function WebDevelopmentPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    {t('webdev.projectTypes.title')}
+                    Types of AI & Automation Solutions
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    {t('webdev.projectTypes.subtitle')}
+                    We develop comprehensive AI and automation solutions tailored to your business needs
                   </p>
                 </div>
                 <svg
@@ -367,12 +310,12 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.projectTypes.custom.title')}
+                        AI-Powered Solutions
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.projectTypes.custom.description')}
+                        Custom AI models and machine learning solutions that analyze data, make predictions, and automate complex decision-making processes for enhanced business intelligence.
                       </p>
                     </div>
 
@@ -384,12 +327,12 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.projectTypes.migration.title')}
+                        Business Process Automation
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.projectTypes.migration.description')}
+                        Intelligent automation of repetitive tasks and workflows to improve efficiency, reduce errors, and free up human resources for more strategic activities.
                       </p>
                     </div>
 
@@ -401,12 +344,12 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.projectTypes.fixes.title')}
+                        Conversational AI
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.projectTypes.fixes.description')}
+                        Advanced chatbots and voice assistants that provide intelligent customer service, support, and engagement across multiple communication channels.
                       </p>
                     </div>
 
@@ -418,12 +361,12 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.projectTypes.features.title')}
+                        Document Intelligence
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.projectTypes.features.description')}
+                        AI-powered document processing, analysis, and data extraction systems that transform unstructured data into actionable business insights.
                       </p>
                     </div>
                   </div>
@@ -441,12 +384,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.techStack.title')}
+              Our AI & Automation Technology Stack
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.techStack.subtitle')}
+              Cutting-edge AI technologies and frameworks for intelligent automation solutions
             </p>
           </div>
 
@@ -468,12 +411,12 @@ export default function WebDevelopmentPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    {t('webdev.techStack.title')}
+                    Our AI & Automation Technology Stack
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    {t('webdev.techStack.subtitle')}
+                    Cutting-edge AI technologies and frameworks for intelligent automation solutions
                   </p>
                 </div>
                 <svg
@@ -509,7 +452,6 @@ export default function WebDevelopmentPage() {
                                 : 'bg-white/70 border border-gray-200 shadow-lg'
                             }`}>
                               <div className="flex flex-col lg:flex-row items-center gap-8">
-                                {/* Tech Image */}
                                 <div className="flex-shrink-0 w-full lg:w-80 h-48 rounded-xl overflow-hidden relative">
                                   <Image
                                     src={tech.image}
@@ -517,7 +459,6 @@ export default function WebDevelopmentPage() {
                                     fill
                                     className="object-contain"
                                   />
-                                  {/* Logo Overlay */}
                                   <div className="absolute top-3 right-3 w-12 h-12 rounded-lg overflow-hidden shadow-lg">
                                     <Image
                                       src={tech.logo}
@@ -528,7 +469,6 @@ export default function WebDevelopmentPage() {
                                   </div>
                                 </div>
                                 
-                                {/* Tech Info */}
                                 <div className="flex-1 text-center lg:text-left">
                                   <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
                                     <div className="w-12 h-12 rounded-xl overflow-hidden shadow-md">
@@ -557,7 +497,7 @@ export default function WebDevelopmentPage() {
                                       : 'bg-blue-100 text-blue-700 border border-blue-200'
                                   }`}>
                                     <span className="w-2 h-2 rounded-full bg-blue-500 mr-3 animate-pulse"></span>
-                                    In Our Tech Stack
+                                    In Our AI Stack
                                   </div>
                                 </div>
                               </div>
@@ -566,7 +506,6 @@ export default function WebDevelopmentPage() {
                         ))}
                       </div>
                       
-                      {/* Navigation Dots */}
                       <div className="flex justify-center mt-6 space-x-2">
                         {techStackItems.map((_, index) => (
                           <button
@@ -597,17 +536,17 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.techStack.frontend')}
+                        Machine Learning & AI
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.frontend.desc1')}
+                        We specialize in custom machine learning models using TensorFlow, PyTorch, and scikit-learn for predictive analytics and intelligent automation.
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.frontend.desc2')}
+                        Our AI solutions include natural language processing, computer vision, and deep learning applications tailored to your specific business needs.
                       </p>
                     </div>
 
@@ -619,17 +558,17 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.techStack.backend')}
+                        Large Language Models
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.backend.desc1')}
+                        We leverage advanced LLMs including OpenAI GPT, Claude, and custom fine-tuned models for intelligent content generation and analysis.
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.backend.desc2')}
+                        Our solutions include RAG systems, prompt engineering, and custom training for domain-specific AI applications with enterprise-grade security.
                       </p>
                     </div>
 
@@ -641,17 +580,17 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.techStack.database')}
+                        Automation Platforms
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.database.desc1')}
+                        We implement intelligent automation using platforms like Zapier, Microsoft Power Automate, and custom workflow solutions.
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.database.desc2')}
+                        Our automation solutions include robotic process automation, intelligent document processing, and seamless system integrations.
                       </p>
                     </div>
 
@@ -663,17 +602,17 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.techStack.platforms')}
+                        Cloud AI Services
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.platforms.desc1')}
+                        We leverage cloud AI services from AWS, Azure, and Google Cloud for scalable, enterprise-grade AI solutions.
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.platforms.desc2')}
+                        Our cloud AI implementations include managed ML services, AI APIs, and hybrid cloud architectures for optimal performance and cost efficiency.
                       </p>
                     </div>
                   </div>
@@ -691,12 +630,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.caseStudies.title')}
+              AI & Automation Case Studies
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.caseStudies.subtitle')}
+              Explore our successful AI and automation projects across various industries
             </p>
           </div>
 
@@ -744,7 +683,7 @@ export default function WebDevelopmentPage() {
                       isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
                     } transition-colors`}
                   >
-                    {t('webdev.caseStudies.readMore')}
+                    Read More
                     <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -763,12 +702,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.process.title')}
+              AI & Automation Development Process
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.process.subtitle')}
+              Our proven methodology ensures successful AI implementation with quality and efficiency
             </p>
           </div>
 
@@ -823,7 +762,6 @@ export default function WebDevelopmentPage() {
                     isDark ? 'border-white/10' : 'border-gray-200'
                   }`}>
                     <div className="pt-6">
-                      {/* Enhanced Roadmap with Zig-Zag Layout */}
                       <div className="mb-8">
                         <h4 className={`text-lg font-semibold mb-6 ${
                           isDark ? 'text-white' : 'text-gray-900'
@@ -835,7 +773,6 @@ export default function WebDevelopmentPage() {
                             <div key={index} className={`flex flex-col ${
                               index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                             } items-center gap-8`}>
-                              {/* Content */}
                               <div className={`flex-1 ${
                                 index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'
                               }`}>
@@ -875,7 +812,6 @@ export default function WebDevelopmentPage() {
                                 </div>
                               </div>
                               
-                              {/* Image */}
                               <div className="flex-shrink-0 w-full max-w-sm lg:w-80">
                                 <div className={`relative h-48 rounded-xl overflow-hidden ${
                                   isDark
@@ -905,13 +841,12 @@ export default function WebDevelopmentPage() {
                         </div>
                       </div>
 
-                      {/* Services Grid */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Platforms & Technologies
+                            Technologies & Platforms
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -966,15 +901,14 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.consultation.title')}
+              Free AI & Automation Consultation
             </h2>
             <p className={`text-lg sm:text-xl mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.consultation.content')}
+              Get expert advice on your AI and automation project with our complimentary consultation and 1-month free support after project completion.
             </p>
             
-            {/* Additional Services */}
             <div className={`mb-8 p-6 rounded-2xl ${
               isDark
                 ? 'bg-white/5 border border-white/10'
@@ -989,20 +923,20 @@ export default function WebDevelopmentPage() {
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Basic SEO</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Meta tags, sitemap, optimization</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>AI Strategy Planning</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Comprehensive AI roadmap and strategy</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Graphic Content</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Images, icons, visual assets</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Data Preparation</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Data cleaning and preparation services</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Complete Design</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Full Figma design included</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Training & Support</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Team training and ongoing support</p>
                 </div>
               </div>
             </div>
@@ -1013,7 +947,7 @@ export default function WebDevelopmentPage() {
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
                   : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
               }`}>
-                {t('webdev.consultation.button')}
+                Start Free Consultation
               </button>
               <a
                 href="/assets/sample-operation-manual.pdf"
@@ -1044,12 +978,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.mission.title')}
+              Our Mission
             </h2>
             <p className={`text-lg sm:text-xl leading-relaxed mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.mission.content')}
+              We are committed to democratizing AI and automation technology, making intelligent solutions accessible to businesses of all sizes. Our mission is to empower organizations with cutting-edge AI that enhances productivity, reduces costs, and drives innovation.
             </p>
           </div>
 
@@ -1057,39 +991,39 @@ export default function WebDevelopmentPage() {
             <h3 className={`text-2xl font-semibold mb-8 text-center ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.mission.industries')}
+              Industries We Serve
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { 
-                  name: 'E-commerce', 
-                  image: '/assets/services/ecommerce.jpeg',
-                  description: 'Custom online stores, payment integration, product management, and conversion optimization for B2C & B2B brands.'
-                },
-                { 
-                  name: 'SaaS Platforms', 
-                  image: '/assets/services/saas.jpeg',
-                  description: 'Robust, scalable SaaS solutions with user management, billing, analytics, and cloud integration.'
-                },
-                { 
                   name: 'Healthcare', 
                   image: '/assets/services/health.jpeg',
-                  description: 'HIPAA-compliant apps, patient portals, telemedicine, and secure health data management.'
+                  description: 'AI-powered diagnostic tools, patient monitoring systems, automated medical record processing, and intelligent healthcare assistants for improved patient care.'
                 },
                 { 
-                  name: 'EdTech', 
-                  image: '/assets/services/edutech.jpeg',
-                  description: 'Learning management systems, e-learning platforms, and interactive educational tools.'
-                },
-                { 
-                  name: 'FinTech', 
+                  name: 'Finance', 
                   image: '/assets/services/fintech.jpeg',
-                  description: 'Secure payment gateways, digital wallets, and financial analytics platforms.'
+                  description: 'Automated fraud detection, intelligent trading systems, risk assessment algorithms, and AI-powered customer service for enhanced financial operations.'
                 },
                 { 
-                  name: 'Portfolio & Creative', 
-                  image: '/assets/services/creativity.jpeg',
-                  description: 'Personal portfolios, creative agency sites, and digital showcases for artists and professionals.'
+                  name: 'E-commerce', 
+                  image: '/assets/services/ecommerce.jpeg',
+                  description: 'Intelligent recommendation engines, automated inventory management, AI chatbots for customer service, and predictive analytics for sales optimization.'
+                },
+                { 
+                  name: 'Manufacturing', 
+                  image: '/assets/services/manufacturing.jpeg',
+                  description: 'Predictive maintenance systems, quality control automation, supply chain optimization, and intelligent production planning for increased efficiency.'
+                },
+                { 
+                  name: 'Education', 
+                  image: '/assets/services/edutech.jpeg',
+                  description: 'Personalized learning platforms, automated grading systems, intelligent tutoring systems, and AI-powered content generation for enhanced education.'
+                },
+                { 
+                  name: 'Customer Service', 
+                  image: '/assets/services/customer-service.jpeg',
+                  description: 'Intelligent chatbots, automated ticket routing, sentiment analysis, and AI-powered customer insights for improved service delivery.'
                 }
               ].map((industry, index) => (
                 <div
@@ -1108,9 +1042,7 @@ export default function WebDevelopmentPage() {
                       : 'bg-gradient-to-t from-white/95 via-white/60 to-transparent opacity-80 group-hover:opacity-90'
                   }`}></div>
                   
-                  {/* Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    {/* Default State */}
                     <div className="group-hover:opacity-0 transition-opacity duration-300">
                       <h4 className={`text-xl font-bold mb-2 ${
                         isDark ? 'text-white' : 'text-gray-900'
@@ -1119,7 +1051,6 @@ export default function WebDevelopmentPage() {
                       </h4>
                     </div>
                     
-                    {/* Hover State */}
                     <div className="absolute inset-0 p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                       <h4 className={`text-2xl font-bold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
@@ -1134,7 +1065,6 @@ export default function WebDevelopmentPage() {
                     </div>
                   </div>
                   
-                  {/* Overlay Gradient for Better Text Readability */}
                   <div className={`absolute inset-0 pointer-events-none ${
                     isDark 
                       ? 'bg-gradient-to-t from-black/60 via-transparent to-transparent'
@@ -1153,7 +1083,7 @@ export default function WebDevelopmentPage() {
             <p className={`text-lg font-medium ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.mission.ending')}
+              Ready to transform your business with AI and automation? Let's build intelligent solutions that drive real results.
             </p>
           </div>
         </div>

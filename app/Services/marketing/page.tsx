@@ -7,10 +7,10 @@ import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function WebDevelopmentPage() {
+export default function MarketingServicesPage() {
   const { isDark } = useTheme();
   const { t } = useLanguage();
-  const [expandedProcess, setExpandedProcess] = useState<string | null>('custom-coded');
+  const [expandedProcess, setExpandedProcess] = useState<string | null>('digital-marketing');
   const [expandedProjectTypes, setExpandedProjectTypes] = useState<boolean>(true);
   const [expandedTechStack, setExpandedTechStack] = useState<boolean>(true);
   const [currentTechIndex, setCurrentTechIndex] = useState<number>(0);
@@ -31,42 +31,42 @@ export default function WebDevelopmentPage() {
     {
       id: 1,
       image: '/assets/services/ecommerce.jpeg',
-      title: t('webdev.caseStudies.aon.title'),
-      description: t('webdev.caseStudies.aon.description'),
-      tag: t('webdev.caseStudies.aon.tag'),
-      href: '/case-studies/aon-corporate'
+      title: 'E-commerce Growth Campaign',
+      description: 'Comprehensive digital marketing campaign that increased online sales by 300% and improved brand visibility across multiple channels.',
+      tag: 'Digital Marketing',
+      href: '/case-studies/ecommerce-growth-campaign'
     },
     {
       id: 2,
-      image: '/assets/services/health.jpeg',
-      title: t('webdev.caseStudies.vigours.title'),
-      description: t('webdev.caseStudies.vigours.description'),
-      tag: t('webdev.caseStudies.vigours.tag'),
-      href: '/case-studies/vigours-organic'
+      image: '/assets/services/saas.jpeg',
+      title: 'SaaS Product Launch',
+      description: 'Strategic product launch campaign that achieved 50,000 signups in the first month and established strong market presence.',
+      tag: 'Product Launch',
+      href: '/case-studies/saas-product-launch'
     },
     {
       id: 3,
-      image: '/assets/services/edutech.jpeg',
-      title: t('webdev.caseStudies.celtis.title'),
-      description: t('webdev.caseStudies.celtis.description'),
-      tag: t('webdev.caseStudies.celtis.tag'),
-      href: '/case-studies/celtis-ngo'
+      image: '/assets/services/health.jpeg',
+      title: 'Healthcare Brand Awareness',
+      description: 'Healthcare brand awareness campaign that improved patient engagement and increased appointment bookings by 250%.',
+      tag: 'Brand Awareness',
+      href: '/case-studies/healthcare-brand-awareness'
     }
   ];
 
   const techStackItems = [
-    { name: 'React', image: '/assets/tech/react.jpg', logo: '/assets/logos/react.svg', description: 'Modern UI Library' },
-    { name: 'Next.js', image: '/assets/tech/nextjs.jpg', logo: '/assets/logos/nextjs.svg', description: 'Full-Stack Framework' },
-    { name: 'Vue.js', image: '/assets/tech/vuejs.jpg', logo: '/assets/logos/vuejs.svg', description: 'Progressive Framework' },
-    { name: 'Angular', image: '/assets/tech/angular.jpg', logo: '/assets/logos/angular.svg', description: 'Enterprise Framework' },
-    { name: 'Node.js', image: '/assets/tech/nodejs.jpg', logo: '/assets/logos/nodejs.svg', description: 'Backend Runtime' },
-    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: 'Versatile Language' },
-    { name: 'PHP', image: '/assets/tech/php.jpg', logo: '/assets/logos/php.svg', description: 'Web Development' },
-    { name: 'MySQL', image: '/assets/tech/mysql.jpg', logo: '/assets/logos/mysql.svg', description: 'Relational Database' },
-    { name: 'MongoDB', image: '/assets/tech/mongodb.jpg', logo: '/assets/logos/mongodb.svg', description: 'NoSQL Database' },
-    { name: 'WordPress', image: '/assets/tech/wordpress.jpg', logo: '/assets/logos/wordpress.svg', description: 'CMS Platform' },
-    { name: 'Webflow', image: '/assets/tech/webflow.jpg', logo: '/assets/logos/webflow.svg', description: 'No-Code Platform' },
-    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: 'Containerization' }
+    { name: 'Google Ads', image: '/assets/tech/google-ads.jpg', logo: '/assets/logos/google-ads.svg', description: 'Search & Display Advertising' },
+    { name: 'Facebook Ads', image: '/assets/tech/facebook-ads.jpg', logo: '/assets/logos/facebook-ads.svg', description: 'Social Media Advertising' },
+    { name: 'HubSpot', image: '/assets/tech/hubspot.jpg', logo: '/assets/logos/hubspot.svg', description: 'Marketing Automation' },
+    { name: 'Mailchimp', image: '/assets/tech/mailchimp.jpg', logo: '/assets/logos/mailchimp.svg', description: 'Email Marketing' },
+    { name: 'Google Analytics', image: '/assets/tech/google-analytics.jpg', logo: '/assets/logos/google-analytics.svg', description: 'Web Analytics' },
+    { name: 'Hootsuite', image: '/assets/tech/hootsuite.jpg', logo: '/assets/logos/hootsuite.svg', description: 'Social Media Management' },
+    { name: 'Canva', image: '/assets/tech/canva.jpg', logo: '/assets/logos/canva.svg', description: 'Graphic Design' },
+    { name: 'Buffer', image: '/assets/tech/buffer.jpg', logo: '/assets/logos/buffer.svg', description: 'Content Scheduling' },
+    { name: 'SEMrush', image: '/assets/tech/semrush.jpg', logo: '/assets/logos/semrush.svg', description: 'SEO & Competitor Analysis' },
+    { name: 'Ahrefs', image: '/assets/tech/ahrefs.jpg', logo: '/assets/logos/ahrefs.svg', description: 'SEO Tools' },
+    { name: 'LinkedIn Ads', image: '/assets/tech/linkedin-ads.jpg', logo: '/assets/logos/linkedin-ads.svg', description: 'B2B Advertising' },
+    { name: 'TikTok Ads', image: '/assets/tech/tiktok-ads.jpg', logo: '/assets/logos/tiktok-ads.svg', description: 'Video Advertising' }
   ];
 
   // Infinite carousel effect
@@ -75,167 +75,112 @@ export default function WebDevelopmentPage() {
       setCurrentTechIndex((prevIndex) => 
         prevIndex === techStackItems.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [techStackItems.length]);
 
   const developmentProcesses = [
     {
-      type: 'custom-coded',
-      title: 'Custom Coded Solutions',
-      description: 'Complete development from scratch using modern frameworks and best practices',
-      platforms: ['React', 'Vue.js', 'Angular', 'Node.js', 'Python', 'PHP'],
+      type: 'digital-marketing',
+      title: 'Digital Marketing Strategy',
+      description: 'Comprehensive digital marketing campaigns that drive growth and maximize ROI',
+      platforms: ['Google Ads', 'Facebook Ads', 'HubSpot', 'Mailchimp'],
       services: [
-        'Frontend Development (HTML, CSS, JavaScript)',
-        'Backend API Development',
-        'Database Design & Implementation',
-        'Authentication & Security',
-        'Performance Optimization',
-        'Testing & Quality Assurance'
+        'Campaign Strategy & Planning',
+        'Audience Research & Targeting',
+        'Ad Creative Development',
+        'Landing Page Optimization',
+        'Performance Tracking & Analytics',
+        'A/B Testing & Optimization'
       ],
       roadmap: [
         { 
           step: 1, 
-          title: 'Consultation & Discovery', 
-          description: 'Understanding your business needs, target audience, and project requirements through detailed consultation sessions.',
-          details: 'We conduct thorough discovery sessions to understand your business goals, target market, and technical requirements. This includes stakeholder interviews, competitor analysis, and technical feasibility assessment.',
-          image: '/assets/services/consultation.jpg'
+          title: 'Market Research & Analysis', 
+          description: 'Comprehensive market research to understand your audience, competitors, and market opportunities.',
+          details: 'We conduct thorough market analysis, competitor research, and audience profiling to create data-driven marketing strategies.',
+          image: '/assets/services/market-research.jpg'
         },
         { 
           step: 2, 
-          title: 'Project Proposal', 
-          description: 'Comprehensive project module with timeline, milestones, and deliverables sent for your confirmation and approval.',
-          details: 'Our detailed project proposal includes technical specifications, timeline with milestones, resource allocation, and clear deliverables. We ensure transparency and set realistic expectations.',
-          image: '/assets/services/proposal.jpg'
+          title: 'Strategy Development', 
+          description: 'Creating comprehensive marketing strategies tailored to your business goals and target audience.',
+          details: 'Our team develops multi-channel marketing strategies that align with your business objectives and maximize ROI.',
+          image: '/assets/services/strategy-development.jpg'
         },
         { 
           step: 3, 
-          title: 'UI/UX Design', 
-          description: 'Complete Figma design including wireframes, mockups, and interactive prototypes tailored to your brand identity.',
-          details: 'We create pixel-perfect designs with user experience focus, including wireframes, high-fidelity mockups, interactive prototypes, and design system documentation.',
-          image: '/assets/services/design.jpg'
+          title: 'Campaign Creation', 
+          description: 'Designing and developing high-converting marketing campaigns across multiple platforms.',
+          details: 'We create compelling ad creatives, landing pages, and marketing materials that drive engagement and conversions.',
+          image: '/assets/services/campaign-creation.jpg'
         },
         { 
           step: 4, 
-          title: 'Development Phase', 
-          description: 'Full-stack development with frontend, backend, database integration, and third-party service connections.',
-          details: 'Agile development process with regular updates, code reviews, and testing. We implement modern development practices, version control, and continuous integration.',
-          image: '/assets/services/development.jpg'
+          title: 'Launch & Optimization', 
+          description: 'Launching campaigns and continuously optimizing for maximum performance and ROI.',
+          details: 'We monitor campaign performance in real-time and make data-driven optimizations to improve results.',
+          image: '/assets/services/launch-optimization.jpg'
         },
         { 
           step: 5, 
-          title: 'QA Testing', 
-          description: 'Comprehensive testing including functionality, performance, security, and cross-browser compatibility checks.',
-          details: 'Rigorous testing across multiple browsers, devices, and scenarios. We perform automated testing, manual testing, performance optimization, and security audits.',
-          image: '/assets/services/testing.jpg'
+          title: 'Analytics & Reporting', 
+          description: 'Comprehensive tracking and reporting of campaign performance and business impact.',
+          details: 'We provide detailed analytics and regular reports on campaign performance, ROI, and business growth metrics.',
+          image: '/assets/services/analytics-reporting.jpg'
         },
         { 
           step: 6, 
-          title: 'Deployment & Launch', 
-          description: 'Professional deployment with SSL certificates, CDN setup, and performance optimization for production.',
-          details: 'Smooth deployment with zero downtime, SSL configuration, CDN setup, performance monitoring, and comprehensive backup systems.',
-          image: '/assets/services/deployment.jpg'
-        },
-        { 
-          step: 7, 
-          title: 'Maintenance & Support', 
-          description: 'Ongoing maintenance, updates, monitoring, and 1-month free support with operation manual provided.',
-          details: 'Comprehensive maintenance plan including regular updates, security patches, performance monitoring, and detailed operation manual for long-term success.',
-          image: '/assets/services/support.jpg'
+          title: 'Scaling & Growth', 
+          description: 'Scaling successful campaigns and expanding marketing efforts for sustained growth.',
+          details: 'We identify successful strategies and scale them while exploring new opportunities for continued growth.',
+          image: '/assets/services/scaling-growth.jpg'
         }
       ]
     },
     {
-      type: 'wordpress',
-      title: 'WordPress Development',
-      description: 'Custom WordPress themes, plugins, and full-site development with advanced functionality',
-      platforms: ['WordPress', 'WooCommerce', 'Custom Plugins', 'Themes'],
+      type: 'content-marketing',
+      title: 'Content Marketing',
+      description: 'Strategic content creation that engages audiences and drives business results',
+      platforms: ['HubSpot', 'Canva', 'Hootsuite', 'Buffer'],
       services: [
-        'Custom Theme Development',
-        'Plugin Development',
-        'E-commerce Integration',
-        'Performance Optimization',
-        'Security Implementation',
-        'Content Management Setup'
+        'Content Strategy',
+        'Blog Writing',
+        'Social Media Content',
+        'Video Production',
+        'Email Marketing',
+        'Content Distribution'
       ],
       roadmap: [
-        { step: 1, title: 'Requirements Analysis', description: 'Detailed analysis of your content structure, functionality needs, and WordPress-specific requirements.' },
-        { step: 2, title: 'Site Architecture', description: 'Planning site structure, database schema, and WordPress configuration for optimal performance.' },
-        { step: 3, title: 'Design & Prototyping', description: 'Custom theme design with responsive layouts, typography, and brand-specific styling.' },
-        { step: 4, title: 'Theme Development', description: 'Custom WordPress theme development with clean code, SEO optimization, and accessibility features.' },
-        { step: 5, title: 'Plugin Integration', description: 'Integration of essential plugins, custom functionality, and third-party service connections.' },
-        { step: 6, title: 'Content Migration', description: 'Seamless content migration from existing platforms with data integrity and SEO preservation.' },
-        { step: 7, title: 'Launch & Training', description: 'Site launch with admin training, documentation, and ongoing maintenance support.' }
+        { step: 1, title: 'Content Strategy', description: 'Developing comprehensive content strategies that align with business goals.' },
+        { step: 2, title: 'Content Creation', description: 'Creating high-quality, engaging content across multiple formats.' },
+        { step: 3, title: 'Content Distribution', description: 'Distributing content across relevant channels and platforms.' },
+        { step: 4, title: 'Performance Tracking', description: 'Monitoring content performance and engagement metrics.' },
+        { step: 5, title: 'Optimization', description: 'Optimizing content based on performance data and feedback.' },
+        { step: 6, title: 'Scaling', description: 'Scaling successful content strategies for continued growth.' }
       ]
     },
     {
-      type: 'webflow',
-      title: 'Webflow Development',
-      description: 'No-code web development with custom interactions, animations, and CMS integration',
-      platforms: ['Webflow', 'Figma Integration', 'CMS', 'Interactions'],
+      type: 'seo-optimization',
+      title: 'SEO & Organic Growth',
+      description: 'Search engine optimization strategies that improve visibility and drive organic traffic',
+      platforms: ['SEMrush', 'Ahrefs', 'Google Analytics', 'Google Search Console'],
       services: [
-        'Design to Webflow Conversion',
-        'Custom Interactions & Animations',
-        'CMS Integration',
-        'E-commerce Setup',
-        'Responsive Design',
-        'SEO Optimization'
+        'SEO Audit & Analysis',
+        'Keyword Research',
+        'On-Page Optimization',
+        'Technical SEO',
+        'Link Building',
+        'Local SEO'
       ],
       roadmap: [
-        { step: 1, title: 'Design Consultation', description: 'Understanding your brand requirements and converting existing designs or creating new ones for Webflow.' },
-        { step: 2, title: 'Webflow Planning', description: 'Planning site structure, CMS collections, and interactive elements for optimal user experience.' },
-        { step: 3, title: 'Design Implementation', description: 'Converting designs to Webflow with pixel-perfect accuracy and responsive behavior across all devices.' },
-        { step: 4, title: 'CMS Setup', description: 'Creating dynamic content collections and setting up easy-to-use CMS for content management.' },
-        { step: 5, title: 'Interactions & Animations', description: 'Implementing custom interactions, scroll animations, and micro-interactions for enhanced user engagement.' },
-        { step: 6, title: 'SEO & Performance', description: 'Optimizing for search engines, implementing meta tags, and ensuring fast loading times.' },
-        { step: 7, title: 'Launch & Handover', description: 'Site launch with CMS training, documentation, and ongoing support for content updates.' }
-      ]
-    },
-    {
-      type: 'migration',
-      title: 'Platform Migration',
-      description: 'Seamless migration between different platforms with data preservation and SEO maintenance',
-      platforms: ['Any to Any', 'Data Migration', 'URL Preservation', 'SEO Maintenance'],
-      services: [
-        'Data Analysis & Planning',
-        'Content Migration',
-        'Design Recreation',
-        'Functionality Replication',
-        'SEO Preservation',
-        'Testing & Launch'
-      ],
-      roadmap: [
-        { step: 1, title: 'Migration Assessment', description: 'Comprehensive analysis of existing site, content audit, and planning migration strategy with minimal downtime.' },
-        { step: 2, title: 'Data Backup', description: 'Complete backup of existing data, content, and assets to ensure no data loss during migration process.' },
-        { step: 3, title: 'New Platform Setup', description: 'Setting up new platform with optimized configuration and preparing for content migration.' },
-        { step: 4, title: 'Design Recreation', description: 'Recreating existing design and functionality on new platform with enhanced features and performance.' },
-        { step: 5, title: 'Content Migration', description: 'Systematic migration of all content, images, and data with format preservation and optimization.' },
-        { step: 6, title: 'SEO Preservation', description: 'Maintaining all SEO elements, redirects, and ensuring search engine visibility remains intact.' },
-        { step: 7, title: 'Testing & Launch', description: 'Comprehensive testing and smooth launch with monitoring and immediate support for any issues.' }
-      ]
-    },
-    {
-      type: 'maintenance',
-      title: 'Maintenance & Updates',
-      description: 'Ongoing support, bug fixes, security updates, and feature additions for existing websites',
-      platforms: ['All Platforms', 'Bug Fixes', 'Security Updates', 'Feature Additions'],
-      services: [
-        'Bug Fixes & Debugging',
-        'Security Updates',
-        'Performance Monitoring',
-        'Feature Additions',
-        'Content Updates',
-        'Backup & Recovery'
-      ],
-      roadmap: [
-        { step: 1, title: 'Site Audit', description: 'Comprehensive analysis of current site performance, security vulnerabilities, and areas for improvement.' },
-        { step: 2, title: 'Maintenance Plan', description: 'Creating customized maintenance schedule with priority-based tasks and regular update cycles.' },
-        { step: 3, title: 'Security Hardening', description: 'Implementing security measures, updating plugins, and ensuring protection against vulnerabilities.' },
-        { step: 4, title: 'Performance Optimization', description: 'Optimizing loading speeds, database performance, and implementing caching strategies.' },
-        { step: 5, title: 'Content Updates', description: 'Regular content updates, image optimization, and ensuring fresh, relevant information.' },
-        { step: 6, title: 'Feature Enhancements', description: 'Adding new features, improving functionality, and implementing user feedback suggestions.' },
-        { step: 7, title: 'Monitoring & Reporting', description: 'Continuous monitoring with regular reports on performance, security, and maintenance activities.' }
+        { step: 1, title: 'SEO Audit', description: 'Comprehensive analysis of current SEO performance and opportunities.' },
+        { step: 2, title: 'Keyword Strategy', description: 'Research and strategy development for target keywords.' },
+        { step: 3, title: 'On-Page Optimization', description: 'Optimizing website content and structure for search engines.' },
+        { step: 4, title: 'Technical SEO', description: 'Improving website technical aspects for better search performance.' },
+        { step: 5, title: 'Link Building', description: 'Building high-quality backlinks to improve domain authority.' },
+        { step: 6, title: 'Monitoring & Growth', description: 'Continuous monitoring and optimization for sustained growth.' }
       ]
     }
   ];
@@ -251,9 +196,7 @@ export default function WebDevelopmentPage() {
       {/* Hero Section */}
       <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          {/* Hero Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Side - Text Content */}
             <div className="text-left">
               <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-8 ${
                 isDark
@@ -263,27 +206,26 @@ export default function WebDevelopmentPage() {
                 <span className={`w-2 h-2 rounded-full mr-3 ${
                   isDark ? 'bg-blue-400' : 'bg-white'
                 }`}></span>
-                {t('webdev.badge')}
+                Marketing Excellence
               </div>
               <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight ${
                 isDark
                   ? 'bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent'
                   : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700 bg-clip-text text-transparent'
               }`}>
-                {t('webdev.title')}
+                Marketing Services
               </h1>
               <p className={`text-lg sm:text-xl leading-relaxed ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                {t('webdev.subtitle')}
+                Accelerate your business growth with data-driven marketing strategies that reach the right audience, drive engagement, and deliver measurable results.
               </p>
             </div>
             
-            {/* Right Side - Hero Image */}
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
               <Image
-                src="/assets/services/web-dev-banner.jpeg"
-                alt="Web Development Services"
+                src="/assets/services/marketing-banner.jpeg"
+                alt="Marketing Services"
                 fill
                 className="object-cover rounded-3xl"
               />
@@ -295,7 +237,6 @@ export default function WebDevelopmentPage() {
         </div>
       </div>
 
-
       {/* Project Types Section */}
       <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -303,12 +244,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.projectTypes.title')}
+              Types of Marketing Services
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.projectTypes.subtitle')}
+              We provide comprehensive marketing solutions tailored to your business goals and target audience
             </p>
           </div>
 
@@ -330,12 +271,12 @@ export default function WebDevelopmentPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    {t('webdev.projectTypes.title')}
+                    Types of Marketing Services
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    {t('webdev.projectTypes.subtitle')}
+                    We provide comprehensive marketing solutions tailored to your business goals and target audience
                   </p>
                 </div>
                 <svg
@@ -367,12 +308,12 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.projectTypes.custom.title')}
+                        Digital Marketing
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.projectTypes.custom.description')}
+                        Comprehensive digital marketing campaigns including PPC, social media advertising, email marketing, and conversion optimization.
                       </p>
                     </div>
 
@@ -384,12 +325,12 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.projectTypes.migration.title')}
+                        Content Marketing
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.projectTypes.migration.description')}
+                        Strategic content creation including blog writing, social media content, video production, and content distribution.
                       </p>
                     </div>
 
@@ -401,12 +342,12 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.projectTypes.fixes.title')}
+                        SEO & Organic Growth
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.projectTypes.fixes.description')}
+                        Search engine optimization strategies that improve visibility, drive organic traffic, and build long-term online presence.
                       </p>
                     </div>
 
@@ -418,12 +359,12 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.projectTypes.features.title')}
+                        Brand Development
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.projectTypes.features.description')}
+                        Comprehensive brand development including brand strategy, identity design, messaging, and brand awareness campaigns.
                       </p>
                     </div>
                   </div>
@@ -441,12 +382,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.techStack.title')}
+              Our Marketing Technology Stack
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.techStack.subtitle')}
+              Leading marketing tools and platforms for data-driven campaigns and measurable results
             </p>
           </div>
 
@@ -468,12 +409,12 @@ export default function WebDevelopmentPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    {t('webdev.techStack.title')}
+                    Our Marketing Technology Stack
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    {t('webdev.techStack.subtitle')}
+                    Leading marketing tools and platforms for data-driven campaigns and measurable results
                   </p>
                 </div>
                 <svg
@@ -509,7 +450,6 @@ export default function WebDevelopmentPage() {
                                 : 'bg-white/70 border border-gray-200 shadow-lg'
                             }`}>
                               <div className="flex flex-col lg:flex-row items-center gap-8">
-                                {/* Tech Image */}
                                 <div className="flex-shrink-0 w-full lg:w-80 h-48 rounded-xl overflow-hidden relative">
                                   <Image
                                     src={tech.image}
@@ -517,7 +457,6 @@ export default function WebDevelopmentPage() {
                                     fill
                                     className="object-contain"
                                   />
-                                  {/* Logo Overlay */}
                                   <div className="absolute top-3 right-3 w-12 h-12 rounded-lg overflow-hidden shadow-lg">
                                     <Image
                                       src={tech.logo}
@@ -528,7 +467,6 @@ export default function WebDevelopmentPage() {
                                   </div>
                                 </div>
                                 
-                                {/* Tech Info */}
                                 <div className="flex-1 text-center lg:text-left">
                                   <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
                                     <div className="w-12 h-12 rounded-xl overflow-hidden shadow-md">
@@ -557,7 +495,7 @@ export default function WebDevelopmentPage() {
                                       : 'bg-blue-100 text-blue-700 border border-blue-200'
                                   }`}>
                                     <span className="w-2 h-2 rounded-full bg-blue-500 mr-3 animate-pulse"></span>
-                                    In Our Tech Stack
+                                    In Our Marketing Stack
                                   </div>
                                 </div>
                               </div>
@@ -566,7 +504,6 @@ export default function WebDevelopmentPage() {
                         ))}
                       </div>
                       
-                      {/* Navigation Dots */}
                       <div className="flex justify-center mt-6 space-x-2">
                         {techStackItems.map((_, index) => (
                           <button
@@ -597,17 +534,17 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.techStack.frontend')}
+                        Advertising Platforms
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.frontend.desc1')}
+                        We manage campaigns across Google Ads, Facebook Ads, LinkedIn Ads, and TikTok Ads to reach your target audience effectively.
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.frontend.desc2')}
+                        Our expertise includes audience targeting, ad creative optimization, and bid management for maximum ROI.
                       </p>
                     </div>
 
@@ -619,17 +556,17 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.techStack.backend')}
+                        Marketing Automation
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.backend.desc1')}
+                        We use HubSpot and Mailchimp for email marketing automation, lead nurturing, and customer relationship management.
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.backend.desc2')}
+                        Our automation strategies include lead scoring, behavioral triggers, and personalized customer journeys.
                       </p>
                     </div>
 
@@ -641,17 +578,17 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.techStack.database')}
+                        Analytics & SEO Tools
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.database.desc1')}
+                        We leverage Google Analytics, SEMrush, and Ahrefs for comprehensive performance tracking and SEO optimization.
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.database.desc2')}
+                        Our data-driven approach includes competitor analysis, keyword research, and performance optimization.
                       </p>
                     </div>
 
@@ -663,17 +600,17 @@ export default function WebDevelopmentPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {t('webdev.techStack.platforms')}
+                        Content & Social Media
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.platforms.desc1')}
+                        We use Hootsuite, Buffer, and Canva for social media management, content creation, and brand consistency.
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        {t('webdev.techStack.platforms.desc2')}
+                        Our content strategy includes visual design, social media scheduling, and community engagement.
                       </p>
                     </div>
                   </div>
@@ -691,12 +628,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.caseStudies.title')}
+              Marketing Services Case Studies
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.caseStudies.subtitle')}
+              Explore our successful marketing campaigns and growth strategies
             </p>
           </div>
 
@@ -744,7 +681,7 @@ export default function WebDevelopmentPage() {
                       isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
                     } transition-colors`}
                   >
-                    {t('webdev.caseStudies.readMore')}
+                    Read More
                     <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -763,12 +700,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.process.title')}
+              Marketing Services Process
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.process.subtitle')}
+              Our proven methodology ensures successful marketing campaigns with measurable results
             </p>
           </div>
 
@@ -823,19 +760,17 @@ export default function WebDevelopmentPage() {
                     isDark ? 'border-white/10' : 'border-gray-200'
                   }`}>
                     <div className="pt-6">
-                      {/* Enhanced Roadmap with Zig-Zag Layout */}
                       <div className="mb-8">
                         <h4 className={`text-lg font-semibold mb-6 ${
                           isDark ? 'text-white' : 'text-gray-900'
                         }`}>
-                          Development Roadmap
+                          Marketing Process Roadmap
                         </h4>
                         <div className="space-y-12">
                           {process.roadmap.map((step, index) => (
                             <div key={index} className={`flex flex-col ${
                               index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                             } items-center gap-8`}>
-                              {/* Content */}
                               <div className={`flex-1 ${
                                 index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'
                               }`}>
@@ -875,7 +810,6 @@ export default function WebDevelopmentPage() {
                                 </div>
                               </div>
                               
-                              {/* Image */}
                               <div className="flex-shrink-0 w-full max-w-sm lg:w-80">
                                 <div className={`relative h-48 rounded-xl overflow-hidden ${
                                   isDark
@@ -883,7 +817,7 @@ export default function WebDevelopmentPage() {
                                     : 'bg-gray-100 border border-gray-200'
                                 }`}>
                                   <Image
-                                    src={(step as any).image || '/assets/services/process-step.jpg'}
+                                    src={(step as any).image || '/assets/services/marketing-process.jpg'}
                                     alt={step.title}
                                     fill
                                     className="object-cover"
@@ -905,13 +839,12 @@ export default function WebDevelopmentPage() {
                         </div>
                       </div>
 
-                      {/* Services Grid */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Platforms & Technologies
+                            Tools & Platforms
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -966,15 +899,14 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.consultation.title')}
+              Free Marketing Consultation
             </h2>
             <p className={`text-lg sm:text-xl mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.consultation.content')}
+              Get expert marketing advice and growth strategy with our complimentary consultation and marketing audit.
             </p>
             
-            {/* Additional Services */}
             <div className={`mb-8 p-6 rounded-2xl ${
               isDark
                 ? 'bg-white/5 border border-white/10'
@@ -989,20 +921,20 @@ export default function WebDevelopmentPage() {
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Basic SEO</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Meta tags, sitemap, optimization</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Marketing Audit</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Comprehensive analysis of your current marketing efforts</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Graphic Content</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Images, icons, visual assets</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Growth Strategy</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Custom growth strategy tailored to your business goals</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Complete Design</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Full Figma design included</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Competitor Analysis</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Detailed competitor research and market positioning</p>
                 </div>
               </div>
             </div>
@@ -1013,7 +945,7 @@ export default function WebDevelopmentPage() {
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
                   : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
               }`}>
-                {t('webdev.consultation.button')}
+                Start Free Consultation
               </button>
               <a
                 href="/assets/sample-operation-manual.pdf"
@@ -1044,12 +976,12 @@ export default function WebDevelopmentPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.mission.title')}
+              Our Mission
             </h2>
             <p className={`text-lg sm:text-xl leading-relaxed mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              {t('webdev.mission.content')}
+              We are committed to accelerating business growth through data-driven marketing strategies that connect brands with their ideal customers. Our mission is to deliver measurable results that drive sustainable business success.
             </p>
           </div>
 
@@ -1057,39 +989,39 @@ export default function WebDevelopmentPage() {
             <h3 className={`text-2xl font-semibold mb-8 text-center ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.mission.industries')}
+              Industries We Serve
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { 
                   name: 'E-commerce', 
                   image: '/assets/services/ecommerce.jpeg',
-                  description: 'Custom online stores, payment integration, product management, and conversion optimization for B2C & B2B brands.'
+                  description: 'Conversion-optimized marketing campaigns, product launches, and customer acquisition strategies for online retailers.'
                 },
                 { 
-                  name: 'SaaS Platforms', 
+                  name: 'SaaS & Technology', 
                   image: '/assets/services/saas.jpeg',
-                  description: 'Robust, scalable SaaS solutions with user management, billing, analytics, and cloud integration.'
+                  description: 'Product-led growth strategies, user acquisition campaigns, and retention marketing for software companies.'
                 },
                 { 
                   name: 'Healthcare', 
                   image: '/assets/services/health.jpeg',
-                  description: 'HIPAA-compliant apps, patient portals, telemedicine, and secure health data management.'
+                  description: 'Compliance-focused marketing, patient acquisition, and healthcare brand awareness campaigns.'
                 },
                 { 
-                  name: 'EdTech', 
+                  name: 'Education', 
                   image: '/assets/services/edutech.jpeg',
-                  description: 'Learning management systems, e-learning platforms, and interactive educational tools.'
+                  description: 'Student recruitment, course promotion, and educational content marketing strategies.'
                 },
                 { 
-                  name: 'FinTech', 
+                  name: 'Finance & FinTech', 
                   image: '/assets/services/fintech.jpeg',
-                  description: 'Secure payment gateways, digital wallets, and financial analytics platforms.'
+                  description: 'Trust-building marketing campaigns, financial product promotion, and regulatory-compliant strategies.'
                 },
                 { 
-                  name: 'Portfolio & Creative', 
-                  image: '/assets/services/creativity.jpeg',
-                  description: 'Personal portfolios, creative agency sites, and digital showcases for artists and professionals.'
+                  name: 'Manufacturing', 
+                  image: '/assets/services/manufacturing.jpeg',
+                  description: 'B2B marketing strategies, industrial lead generation, and supply chain marketing solutions.'
                 }
               ].map((industry, index) => (
                 <div
@@ -1108,9 +1040,7 @@ export default function WebDevelopmentPage() {
                       : 'bg-gradient-to-t from-white/95 via-white/60 to-transparent opacity-80 group-hover:opacity-90'
                   }`}></div>
                   
-                  {/* Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    {/* Default State */}
                     <div className="group-hover:opacity-0 transition-opacity duration-300">
                       <h4 className={`text-xl font-bold mb-2 ${
                         isDark ? 'text-white' : 'text-gray-900'
@@ -1119,7 +1049,6 @@ export default function WebDevelopmentPage() {
                       </h4>
                     </div>
                     
-                    {/* Hover State */}
                     <div className="absolute inset-0 p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                       <h4 className={`text-2xl font-bold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
@@ -1134,7 +1063,6 @@ export default function WebDevelopmentPage() {
                     </div>
                   </div>
                   
-                  {/* Overlay Gradient for Better Text Readability */}
                   <div className={`absolute inset-0 pointer-events-none ${
                     isDark 
                       ? 'bg-gradient-to-t from-black/60 via-transparent to-transparent'
@@ -1153,7 +1081,7 @@ export default function WebDevelopmentPage() {
             <p className={`text-lg font-medium ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              {t('webdev.mission.ending')}
+              Ready to accelerate your business growth with strategic marketing? Let's create campaigns that drive results and build lasting customer relationships.
             </p>
           </div>
         </div>

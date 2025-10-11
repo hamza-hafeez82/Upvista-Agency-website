@@ -109,7 +109,7 @@ export default function Home() {
           baseRadius={1}
           rangeRadius={2}
         >
-          <div className="relative w-full max-w-4xl mx-auto px-6 flex flex-col items-center justify-center mt-20">
+          <div className="relative w-full max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center justify-center mt-16 sm:mt-20">
             {/* Modern gradient badge */}
         <div className={`inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm ${
           isDark 
@@ -123,19 +123,19 @@ export default function Home() {
             </div>
 
             {/* Main heading with gradient text */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-6 leading-tight text-white">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 sm:mb-6 leading-tight text-white">
               {t('home.webDesign.subtitle')}
             </h1>
 
             {/* Description with increased readability */}
-            <p className="text-center text-lg max-w-2xl mb-10 leading-relaxed text-gray-300">
+            <p className="text-center text-base sm:text-lg max-w-2xl mb-6 sm:mb-8 lg:mb-10 leading-relaxed text-gray-300 px-4">
               {t('home.webDesign.description')}
             </p>
 
             {/* Modern CTA buttons with hover effects */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-2">
-              <Link href="/pages/services">
-                <button className={`group relative px-8 py-4 rounded-full font-medium overflow-hidden shadow-lg transition-all duration-300 ${
+            <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto">
+              <Link href="/Services/web-development">
+                <button className={`group relative px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium overflow-hidden shadow-lg transition-all duration-300 w-full sm:w-auto ${
                   isDark 
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-indigo-500/20 hover:shadow-indigo-500/40'
                     : 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white shadow-purple-500/20 hover:shadow-purple-500/40'
@@ -165,8 +165,8 @@ export default function Home() {
                 </button>
               </Link>
 
-              <Link href="/pages/portfolio">
-                <button className={`px-8 py-4 border rounded-full font-medium backdrop-blur-sm transition-all duration-300 ${
+              <Link href="/Services/software-development">
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 border rounded-full font-medium backdrop-blur-sm transition-all duration-300 w-full sm:w-auto ${
                   isDark 
                     ? 'border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/10'
                     : 'border-blue-300/50 text-blue-700 hover:bg-blue-100/50'

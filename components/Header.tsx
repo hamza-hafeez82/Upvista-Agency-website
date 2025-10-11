@@ -29,7 +29,7 @@ const Header = () => {
 
   // Navigation dropdown data with translations
   const companyLinks = [
-    { label: t('dropdown.company.about'), href: "/About" },
+    //{ label: t('dropdown.company.about'), href: "/About" },
     { label: t('dropdown.company.profile'), href: "/company/profile" },
     { label: t('dropdown.company.sustainability'), href: "/company/sustainability" },
     { label: t('dropdown.company.investors'), href: "/company/investors" },
@@ -808,7 +808,7 @@ const Header = () => {
             transform: translateY(-8px) scale(0.95); 
           }
           to { 
-            opacity: 1; 
+            opacity: 1;
             transform: translateY(0) scale(1); 
           }
         }

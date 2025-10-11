@@ -17,6 +17,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, Phone, Video, MessageSquare, Globe, Calendar, Mail, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Head from "next/head";
+import { useTheme } from "@/contexts/ThemeContext";
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
@@ -82,6 +83,7 @@ const videoOptions = [
 ];
 
 export default function ContactPage() {
+  const { isDark } = useTheme();
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -178,11 +180,11 @@ export default function ContactPage() {
         />
       </Head>
       <Header />
-      <div className="min-h-screen bg-gray-950 text-white relative pt-32">
+      <div className={`min-h-screen ${isDark ? 'bg-gray-950 text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'} relative pt-32`}>
         {/* Consultation Button */}
         <button
           onClick={() => setShowModal(true)}
-          className="fixed bottom-6 right-6 z-50 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 text-black font-bold shadow-xl border-2 border-cyan-900 hover:scale-105 hover:shadow-2xl active:scale-95 transition-all duration-300 backdrop-blur-xl text-lg flex items-center gap-2"
+          className={`fixed bottom-6 right-6 z-50 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 ${isDark ? 'text-black border-cyan-900' : 'text-white border-blue-600'} font-bold shadow-xl border-2 hover:scale-105 hover:shadow-2xl active:scale-95 transition-all duration-300 backdrop-blur-xl text-lg flex items-center gap-2`}
         >
           Book a Free Consultation
         </button>
@@ -191,14 +193,14 @@ export default function ContactPage() {
         <AnimatePresence>
           {showModal && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-              <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ duration: 0.2 }} className="bg-gray-900 rounded-3xl shadow-2xl p-4 sm:p-8 w-full max-w-lg border border-cyan-900 relative overflow-y-auto max-h-[90vh]">
-                <button onClick={() => { setShowModal(false); setMethod(null); }} className="absolute top-4 right-4 text-cyan-300 hover:text-emerald-400 text-2xl font-bold">&times;</button>
-                <h3 className="text-2xl font-bold text-cyan-200 mb-6 text-center">Book a Free Consultation</h3>
+              <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ duration: 0.2 }} className={`${isDark ? 'bg-gray-900 border-cyan-900' : 'bg-white border-blue-300'} rounded-3xl shadow-2xl p-4 sm:p-8 w-full max-w-lg border relative overflow-y-auto max-h-[90vh]`}>
+                <button onClick={() => { setShowModal(false); setMethod(null); }} className={`absolute top-4 right-4 ${isDark ? 'text-cyan-300 hover:text-emerald-400' : 'text-blue-600 hover:text-blue-800'} text-2xl font-bold`}>&times;</button>
+                <h3 className={`text-2xl font-bold ${isDark ? 'text-cyan-200' : 'text-blue-600'} mb-6 text-center`}>Book a Free Consultation</h3>
                 <div className="flex flex-wrap gap-4 justify-center mb-6">
                   {consultMethods.map((m) => (
                     <button
                       key={m.value}
-                      className={`flex items-center gap-2 px-5 py-2 rounded-full font-semibold border transition-all duration-300 ${method === m.value ? "bg-gradient-to-r from-cyan-400 to-emerald-400 text-black border-cyan-400" : "bg-black/30 text-cyan-100 border-cyan-900 hover:bg-cyan-900/30"}`}
+                      className={`flex items-center gap-2 px-5 py-2 rounded-full font-semibold border transition-all duration-300 ${method === m.value ? "bg-gradient-to-r from-cyan-400 to-emerald-400 text-white border-cyan-400" : isDark ? "bg-black/30 text-cyan-100 border-cyan-900 hover:bg-cyan-900/30" : "bg-gray-100 text-gray-700 border-gray-300 hover:bg-gray-200"}`}
                       onClick={() => setMethod(m.value)}
                       type="button"
                     >
@@ -320,10 +322,10 @@ export default function ContactPage() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className={`text-4xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-blue-400 via-purple-400 to-pink-400' : 'from-blue-600 via-purple-600 to-pink-600'} bg-clip-text text-transparent`}>
             Contact Us
           </h1>
-          <p className="text-gray-300 text-lg">
+          <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} text-lg`}>
             Get in touch with us to discuss your project
           </p>
         </motion.div>
@@ -335,10 +337,10 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300"
+            className={`${isDark ? 'bg-gray-900/50 border-gray-800/50 hover:border-purple-500/30' : 'bg-white border-gray-200 hover:border-blue-300'} p-8 rounded-lg backdrop-blur-sm border transition-all duration-300 shadow-lg`}
           >
-            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'} flex items-center gap-2`}>
+              <span className={`bg-gradient-to-r ${isDark ? 'from-blue-500 to-purple-600' : 'from-blue-600 to-purple-700'} bg-clip-text text-transparent`}>
                 Contact Information
               </span>
             </h2>
@@ -351,13 +353,13 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className="flex items-start gap-4 group"
-                  whileHover={{ scale: 1.03, backgroundColor: '#2d1e4f' }}
+                  whileHover={{ scale: 1.03, backgroundColor: isDark ? '#2d1e4f' : '#eff6ff' }}
                 >
-                  <div className="p-3 rounded-lg bg-gray-800/50 group-hover:bg-purple-500/20 transition-colors duration-300">
+                  <div className={`p-3 rounded-lg ${isDark ? 'bg-gray-800/50 group-hover:bg-purple-500/20' : 'bg-blue-100 group-hover:bg-blue-200'} transition-colors duration-300`}>
                     {info.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-sm font-medium text-gray-400">
+                    <h3 className={`text-sm font-medium ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                       {info.title}
                     </h3>
                     {info.href ? (
@@ -365,17 +367,17 @@ export default function ContactPage() {
                         href={info.href}
                         target={info.title === "Location" ? "_blank" : undefined}
                         rel={info.title === "Location" ? "noopener noreferrer" : undefined}
-                        className="text-white hover:text-purple-400 transition-colors duration-300 cursor-pointer group/link"
+                        className={`${isDark ? 'text-white hover:text-purple-400' : 'text-gray-900 hover:text-blue-600'} transition-colors duration-300 cursor-pointer group/link`}
                       >
                         <span className="group-hover/link:underline">{info.value}</span>
                         {info.title === "Location" && (
-                          <span className="ml-2 text-xs text-purple-400 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300">
+                          <span className={`ml-2 text-xs ${isDark ? 'text-purple-400' : 'text-blue-600'} opacity-0 group-hover/link:opacity-100 transition-opacity duration-300`}>
                             (Open Map)
                           </span>
                         )}
                       </a>
                     ) : (
-                      <p className="text-white">{info.value}</p>
+                      <p className={isDark ? 'text-white' : 'text-gray-900'}>{info.value}</p>
                     )}
                   </div>
                 </motion.div>
@@ -389,10 +391,10 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="bg-gray-900/50 p-8 rounded-lg backdrop-blur-sm border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300"
+            className={`${isDark ? 'bg-gray-900/50 border-gray-800/50 hover:border-purple-500/30' : 'bg-white border-gray-200 hover:border-blue-300'} p-8 rounded-lg backdrop-blur-sm border transition-all duration-300 shadow-lg`}
           >
-            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'} flex items-center gap-2`}>
+              <span className={`bg-gradient-to-r ${isDark ? 'from-blue-500 to-purple-600' : 'from-blue-600 to-purple-700'} bg-clip-text text-transparent`}>
                 Connect With Us
               </span>
             </h2>
@@ -407,10 +409,10 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  whileHover={{ scale: 1.05, backgroundColor: '#2d1e4f' }}
+                  whileHover={{ scale: 1.05, backgroundColor: isDark ? '#2d1e4f' : '#e0e7ff' }}
                   className={`${link.color} ${link.hoverColor} p-4 rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-3 group`}
                 >
-                  <div className="bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors duration-300">
+                  <div className={`${isDark ? 'bg-white/10 group-hover:bg-white/20' : 'bg-white/30 group-hover:bg-white/50'} p-2 rounded-lg transition-colors duration-300`}>
                     {link.icon}
                   </div>
                   <span className="text-white font-medium">{link.name}</span>
@@ -451,13 +453,13 @@ export default function ContactPage() {
 
         {/* VR Experience Section */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="bg-gradient-to-br from-gray-900 via-purple-900/20 to-cyan-900/20 rounded-3xl p-8 md:p-12 border border-purple-500/30 shadow-2xl">
+          <div className={`${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-cyan-900/20 border-purple-500/30' : 'bg-white border-gray-200'} rounded-3xl p-8 md:p-12 border shadow-2xl`}>
             <div className="text-center mb-12">
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent"
+                className={`text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-cyan-400 via-purple-400 to-emerald-400' : 'from-cyan-600 via-purple-600 to-emerald-600'} bg-clip-text text-transparent`}
               >
                 Experience Our VR Consultation
               </motion.h2>
@@ -465,7 +467,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg text-gray-300 max-w-2xl mx-auto"
+                className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'} max-w-2xl mx-auto`}
               >
                 Step into the future of project consultation with our immersive Virtual Reality experience. 
                 See how we work with clients in real-time through an interactive simulation.
@@ -479,11 +481,11 @@ export default function ContactPage() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-full flex items-center justify-center">
-                  <MessageSquare className="w-8 h-8 text-cyan-400" />
+                <div className={`w-16 h-16 mx-auto mb-4 ${isDark ? 'bg-gradient-to-br from-cyan-500/20 to-purple-500/20' : 'bg-gradient-to-br from-cyan-500/10 to-purple-500/10'} rounded-full flex items-center justify-center`}>
+                  <MessageSquare className={`w-8 h-8 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Interactive Chat</h3>
-                <p className="text-gray-300">Experience a realistic consultation conversation with our AI agent</p>
+                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>Interactive Chat</h3>
+                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Experience a realistic consultation conversation with our AI agent</p>
               </motion.div>
 
               <motion.div 
@@ -492,11 +494,11 @@ export default function ContactPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500/20 to-emerald-500/20 rounded-full flex items-center justify-center">
-                  <CheckCircle className="w-8 h-8 text-purple-400" />
+                <div className={`w-16 h-16 mx-auto mb-4 ${isDark ? 'bg-gradient-to-br from-purple-500/20 to-emerald-500/20' : 'bg-gradient-to-br from-purple-500/10 to-emerald-500/10'} rounded-full flex items-center justify-center`}>
+                  <CheckCircle className={`w-8 h-8 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Project Process</h3>
-                <p className="text-gray-300">See our complete workflow from consultation to project delivery</p>
+                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>Project Process</h3>
+                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>See our complete workflow from consultation to project delivery</p>
               </motion.div>
 
               <motion.div 
@@ -505,11 +507,11 @@ export default function ContactPage() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 rounded-full flex items-center justify-center">
-                  <Video className="w-8 h-8 text-emerald-400" />
+                <div className={`w-16 h-16 mx-auto mb-4 ${isDark ? 'bg-gradient-to-br from-emerald-500/20 to-cyan-500/20' : 'bg-gradient-to-br from-emerald-500/10 to-cyan-500/10'} rounded-full flex items-center justify-center`}>
+                  <Video className={`w-8 h-8 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Real-time Demo</h3>
-                <p className="text-gray-300">Watch as we create project documentation and proposals live</p>
+                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>Real-time Demo</h3>
+                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Watch as we create project documentation and proposals live</p>
               </motion.div>
             </div>
 
@@ -532,10 +534,10 @@ export default function ContactPage() {
 
       {/* Founder Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 md:p-12">
+        <div className={`${isDark ? 'bg-gradient-to-br from-gray-900 to-gray-800' : 'bg-white border border-gray-200'} rounded-2xl p-8 md:p-12 shadow-2xl`}>
           <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Founder Image */}
-            <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden border-4 border-purple-500/30 shadow-lg shadow-purple-500/20">
+            <div className={`w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden border-4 ${isDark ? 'border-purple-500/30 shadow-purple-500/20' : 'border-blue-300 shadow-blue-300/20'} shadow-lg`}>
               <Image
                 src="/assets/hamza-pic.jpg"
                 alt="Hamza Hafeez Bhatti"
@@ -547,13 +549,13 @@ export default function ContactPage() {
 
             {/* Founder Message */}
             <div className="flex-1 text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+              <h2 className={`text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-purple-400 to-blue-400' : 'from-purple-600 to-blue-600'} bg-clip-text text-transparent`}>
                   Hamza Hafeez
               </h2>
-              <p className="text-lg font-medium text-purple-300 mb-4">
+              <p className={`text-lg font-medium ${isDark ? 'text-purple-300' : 'text-blue-600'} mb-4`}>
                 Founder & CEO, Upvista Digital
               </p>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} text-lg leading-relaxed`}>
                 &ldquo;At Upvista Digital, we believe in transforming ideas into
                 digital excellence. Our mission is to empower businesses with
                 innovative solutions that drive growth and success in the

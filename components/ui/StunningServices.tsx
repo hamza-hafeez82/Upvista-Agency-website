@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { ServiceModal } from "@/components/ui/ServiceModal";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "@/contexts/ThemeContext";
 
 // Placeholder SVGs for each service (replace with custom SVGs or Lottie animations)
 const ServiceSVG = ({ name }: { name: string }) => {
@@ -233,6 +234,7 @@ const modules: Module[] = [
 ];
 
 export const StunningServices = () => {
+  const { isDark } = useTheme();
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState<Service | null>(null);
   const [currentPhase, setCurrentPhase] = useState(0);
@@ -249,12 +251,12 @@ export const StunningServices = () => {
   };
 
   return (
-    <section className="w-full py-20 bg-gradient-to-br from-black via-violet-950 to-black">
+    <section className={`w-full py-20 ${isDark ? 'bg-gradient-to-br from-black via-violet-950 to-black' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'}`}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-16">
-          <span className="bg-violet-500 text-white px-4 py-1 rounded-full text-sm font-semibold mb-4">Our Services</span>
-          <h2 className="text-4xl md:text-6xl font-bold text-white text-center mb-4 tracking-tight">Transform Your Business<br/>with Upvista</h2>
-          <p className="text-lg text-violet-200 max-w-2xl text-center">From custom software to AI, branding, and beyond - discover how we deliver world-class digital transformation for ambitious businesses.</p>
+          <span className={`${isDark ? 'bg-violet-500' : 'bg-blue-600'} text-white px-4 py-1 rounded-full text-sm font-semibold mb-4`}>Our Services</span>
+          <h2 className={`text-4xl md:text-6xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} text-center mb-4 tracking-tight`}>Transform Your Business<br/>with Upvista</h2>
+          <p className={`text-lg ${isDark ? 'text-violet-200' : 'text-gray-600'} max-w-2xl text-center`}>From custom software to AI, branding, and beyond - discover how we deliver world-class digital transformation for ambitious businesses.</p>
         </div>
         <div className="flex flex-col gap-16">
           {modules.map((module) => (
@@ -264,18 +266,18 @@ export const StunningServices = () => {
               transition={{ layout: { duration: 0.5, type: "spring" } }}
               className={`rounded-3xl p-1 bg-gradient-to-br ${module.accent} shadow-2xl`}
             >
-              <div className="rounded-[inherit] bg-black/80 p-8 md:p-12 flex flex-col items-center">
-                <motion.h3 layout className="text-2xl md:text-3xl font-bold mb-4 text-white tracking-tight flex items-center gap-3">
-                  <span className="inline-block w-3 h-3 rounded-full bg-gradient-to-br from-white/80 to-violet-400 shadow-md"></span>
+              <div className={`rounded-[inherit] ${isDark ? 'bg-black/80' : 'bg-white/95'} p-8 md:p-12 flex flex-col items-center`}>
+                <motion.h3 layout className={`text-2xl md:text-3xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'} tracking-tight flex items-center gap-3`}>
+                  <span className={`inline-block w-3 h-3 rounded-full ${isDark ? 'bg-gradient-to-br from-white/80 to-violet-400' : 'bg-gradient-to-br from-blue-500 to-purple-500'} shadow-md`}></span>
                   {module.name}
                 </motion.h3>
-                <motion.p layout className="text-lg text-cyan-200 mb-6 text-center max-w-xl">
+                <motion.p layout className={`text-lg ${isDark ? 'text-cyan-200' : 'text-gray-600'} mb-6 text-center max-w-xl`}>
                   {module.description}
                 </motion.p>
                 {expandedModule !== module.name && (
                   <motion.button
                     layout
-                    className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
+                    className={`px-8 py-3 rounded-full ${isDark ? 'bg-gradient-to-r from-cyan-400 to-emerald-500 text-black' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'} font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300`}
                     onClick={() => setExpandedModule(module.name)}
                   >
                     Explore Suite
@@ -300,19 +302,19 @@ export const StunningServices = () => {
                           {module.services.map((service) => (
                             <motion.div
                               key={service.name}
-                              whileHover={{ scale: 1.06, boxShadow: "0 8px 32px 0 rgba(0,255,208,0.15)" }}
-                              className="relative bg-gradient-to-br from-cyan-900/60 to-emerald-900/60 border border-cyan-700 rounded-3xl p-8 shadow-xl cursor-pointer flex flex-col items-center min-h-[260px] max-w-xs w-full backdrop-blur-md transition-all duration-300"
+                              whileHover={{ scale: 1.06, boxShadow: isDark ? "0 8px 32px 0 rgba(0,255,208,0.15)" : "0 8px 32px 0 rgba(59,130,246,0.2)" }}
+                              className={`relative ${isDark ? 'bg-gradient-to-br from-cyan-900/60 to-emerald-900/60 border-cyan-700' : 'bg-white border-blue-200'} border rounded-3xl p-8 shadow-xl cursor-pointer flex flex-col items-center min-h-[260px] max-w-xs w-full backdrop-blur-md transition-all duration-300`}
                               onClick={() => openModal(service)}
                             >
                               <ServiceSVG name={service.name} />
-                              <h4 className="text-lg font-semibold text-cyan-100 mb-2 text-center">{service.title}</h4>
-                              <p className="text-cyan-200 mb-2 text-center">{service.summary}</p>
+                              <h4 className={`text-lg font-semibold ${isDark ? 'text-cyan-100' : 'text-gray-900'} mb-2 text-center`}>{service.title}</h4>
+                              <p className={`${isDark ? 'text-cyan-200' : 'text-gray-600'} mb-2 text-center`}>{service.summary}</p>
                             </motion.div>
                           ))}
                         </div>
                         <div className="flex justify-center mt-8">
                           <button
-                            className="px-6 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300"
+                            className={`px-6 py-2 rounded-full ${isDark ? 'bg-gradient-to-r from-cyan-400 to-emerald-500 text-black' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'} font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300`}
                             onClick={() => setExpandedModule(null)}
                           >
                             Collapse Suite
@@ -337,47 +339,47 @@ export const StunningServices = () => {
         )}
         {/* Insights & Impact Section */}
         <section className="mt-32 mb-8">
-          <div className="max-w-5xl mx-auto rounded-3xl bg-gradient-to-br from-[#0f172a]/80 via-[#312e81]/70 to-[#00ffd0]/10 backdrop-blur-xl shadow-2xl p-10 md:p-16 flex flex-col items-center gap-12 border border-cyan-900">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-violet-400 text-center mb-4 tracking-tight flex items-center gap-3" style={{lineHeight: '1.25'}}>
-              <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#00FFD0" fillOpacity="0.15"/><path d="M16 8v8l6 3" stroke="#00FFD0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          <div className={`max-w-5xl mx-auto rounded-3xl ${isDark ? 'bg-gradient-to-br from-[#0f172a]/80 via-[#312e81]/70 to-[#00ffd0]/10 border-cyan-900' : 'bg-white border-gray-200'} backdrop-blur-xl shadow-2xl p-10 md:p-16 flex flex-col items-center gap-12 border`}>
+            <h2 className={`text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text ${isDark ? 'bg-gradient-to-r from-cyan-300 to-violet-400' : 'bg-gradient-to-r from-blue-600 to-purple-600'} text-center mb-4 tracking-tight flex items-center gap-3`} style={{lineHeight: '1.25'}}>
+              <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill={isDark ? "#00FFD0" : "#3B82F6"} fillOpacity="0.15"/><path d="M16 8v8l6 3" stroke={isDark ? "#00FFD0" : "#3B82F6"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
               Insights & Impact
             </h2>
             <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div className="flex flex-col items-center">
-                <span className="text-5xl font-bold text-cyan-300 animate-pulse">98%</span>
-                <span className="text-lg text-cyan-100 mt-2 text-center" style={{lineHeight: '1.7'}}>Client Satisfaction Rate</span>
+                <span className={`text-5xl font-bold ${isDark ? 'text-cyan-300' : 'text-cyan-600'} animate-pulse`}>98%</span>
+                <span className={`text-lg ${isDark ? 'text-cyan-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>Client Satisfaction Rate</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-5xl font-bold text-violet-300 animate-pulse">1.2h</span>
-                <span className="text-lg text-violet-100 mt-2 text-center" style={{lineHeight: '1.7'}}>Avg. Response Time (hrs/mins)</span>
+                <span className={`text-5xl font-bold ${isDark ? 'text-violet-300' : 'text-violet-600'} animate-pulse`}>1.2h</span>
+                <span className={`text-lg ${isDark ? 'text-violet-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>Avg. Response Time (hrs/mins)</span>
               </div>
               <div className="flex flex-col items-center">
-                <span className="text-5xl font-bold text-emerald-300 animate-pulse">4.9/5</span>
-                <span className="text-lg text-emerald-100 mt-2 text-center" style={{lineHeight: '1.7'}}>Average Client Rating</span>
+                <span className={`text-5xl font-bold ${isDark ? 'text-emerald-300' : 'text-emerald-600'} animate-pulse`}>4.9/5</span>
+                <span className={`text-lg ${isDark ? 'text-emerald-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>Average Client Rating</span>
               </div>
             </div>
             <div className="w-full flex flex-col md:flex-row gap-8 items-center justify-center">
-              <div className="flex-1 bg-black/30 backdrop-blur-lg rounded-2xl p-6 border border-cyan-900 shadow-lg flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-cyan-200 mb-4 tracking-tight">Our Vision</h3>
-                <p className="text-lg text-cyan-100 mb-4 text-center" style={{lineHeight: '1.7'}}>
+              <div className={`flex-1 ${isDark ? 'bg-black/30 border-cyan-900' : 'bg-gray-50 border-gray-200'} backdrop-blur-lg rounded-2xl p-6 border shadow-lg flex flex-col items-center`}>
+                <h3 className={`text-2xl font-bold ${isDark ? 'text-cyan-200' : 'text-blue-700'} mb-4 tracking-tight`}>Our Vision</h3>
+                <p className={`text-lg ${isDark ? 'text-cyan-100' : 'text-gray-700'} mb-4 text-center`} style={{lineHeight: '1.7'}}>
                   To ignite a digital mindset in every business, empowering them to innovate, grow, and lead in a rapidly evolving world. We envision Upvista as the catalyst for digital transformation, inspiring confidence and delivering excellence at every step.
                 </p>
-                <h4 className="text-xl font-semibold text-cyan-100 mb-2 mt-4 tracking-tight">Our Standards</h4>
-                <ul className="text-cyan-100 text-base space-y-2 list-disc list-inside text-left max-w-md mx-auto" style={{lineHeight: '1.7'}}>
-                  <li><span className="font-bold text-cyan-300">Client-Centricity:</span> Every solution is tailored to our clients&apos; unique needs and goals.</li>
-                  <li><span className="font-bold text-cyan-300">Innovation:</span> We embrace the latest technologies and creative thinking in all we do.</li>
-                  <li><span className="font-bold text-cyan-300">Transparency:</span> Open, honest communication and clear processes at every stage.</li>
-                  <li><span className="font-bold text-cyan-300">Quality & Security:</span> Rigorous standards for code, design, and data protection.</li>
-                  <li><span className="font-bold text-cyan-300">Continuous Improvement:</span> We learn, adapt, and grow with every project.</li>
+                <h4 className={`text-xl font-semibold ${isDark ? 'text-cyan-100' : 'text-blue-700'} mb-2 mt-4 tracking-tight`}>Our Standards</h4>
+                <ul className={`${isDark ? 'text-cyan-100' : 'text-gray-700'} text-base space-y-2 list-disc list-inside text-left max-w-md mx-auto`} style={{lineHeight: '1.7'}}>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Client-Centricity:</span> Every solution is tailored to our clients&apos; unique needs and goals.</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Innovation:</span> We embrace the latest technologies and creative thinking in all we do.</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Transparency:</span> Open, honest communication and clear processes at every stage.</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Quality & Security:</span> Rigorous standards for code, design, and data protection.</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Continuous Improvement:</span> We learn, adapt, and grow with every project.</li>
                 </ul>
               </div>
             </div>
             <div className="w-full flex flex-col items-center mt-10">
-              <a href="/contact" className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold text-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-3">
-                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M2 12h20M12 2v20" stroke="#0f172a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              <a href="/contact" className={`px-8 py-4 rounded-full ${isDark ? 'bg-gradient-to-r from-cyan-400 to-emerald-500 text-black' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'} font-bold text-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-3`}>
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M2 12h20M12 2v20" stroke={isDark ? "#0f172a" : "#ffffff"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 Start Your Transformation
               </a>
-              <span className="text-cyan-200 mt-4 text-lg" style={{lineHeight: '1.7'}}>Ready to elevate your business? Let&apos;s build something extraordinary together.</span>
+              <span className={`${isDark ? 'text-cyan-200' : 'text-gray-700'} mt-4 text-lg`} style={{lineHeight: '1.7'}}>Ready to elevate your business? Let&apos;s build something extraordinary together.</span>
             </div>
           </div>
         </section>

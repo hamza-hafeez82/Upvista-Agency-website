@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { MoveRight, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTheme } from "@/contexts/ThemeContext";
 
 function Hero() {
+  const { isDark } = useTheme();
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
     () => ["stunning", "responsive", "high-converting", "user-friendly", "optimized"],
@@ -23,7 +25,7 @@ function Hero() {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full bg-black relative">
+    <div className={`w-full ${isDark ? 'bg-black' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'} relative`}>
       <div className="container mx-auto">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
@@ -35,13 +37,13 @@ function Hero() {
           </div>
           <div className="flex gap-4 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
-              <span className="text-spektr-cyan-50 text-white">We build</span>
+              <span className={isDark ? 'text-white' : 'text-gray-900'}>We build</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-semibold text-violet-400"
+                    className={`absolute font-semibold ${isDark ? 'text-violet-400' : 'text-violet-600'}`}
                     initial={{ opacity: 0, y: "-100" }}
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={
@@ -60,10 +62,10 @@ function Hero() {
                   </motion.span>
                 ))}
               </span>
-              <span className="text-spektr-cyan-50 text-white">digital solutions</span>
+              <span className={isDark ? 'text-white' : 'text-gray-900'}>digital solutions</span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+            <p className={`text-lg md:text-xl leading-relaxed tracking-tight ${isDark ? 'text-gray-400' : 'text-gray-600'} max-w-2xl text-center`}>
               From captivating websites and high-converting landing pages to comprehensive branding and SEO optimization - we craft digital experiences that drive results. Our end-to-end solutions ensure your online presence works as hard as you do.
             </p>
           </div>

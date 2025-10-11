@@ -34,7 +34,7 @@ const Hero = memo(() => {
   }, []);
   
   return (
-    <section className={`relative overflow-hidden px-6 py-20 lg:py-38 ${
+    <section className={`relative overflow-hidden px-4 sm:px-6 py-16 sm:py-20 lg:py-32 ${
       isDark 
         ? 'bg-gradient-to-br from-black via-black/80 to-purple-950'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -60,7 +60,7 @@ const Hero = memo(() => {
       }`}></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-6">
           {/* Content section */}
           <div className="w-full lg:w-1/2 text-center lg:text-left lg:ml-12">
         <div className={`inline-flex items-center px-3 py-2 rounded-full backdrop-blur-sm border text-sm font-medium mb-6 ${
@@ -74,7 +74,7 @@ const Hero = memo(() => {
               {t('hero.badge')}
             </div>
 
-            <h1 className={`text-4xl md:text-6xl font-bold mb-6 leading-tight ${
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight ${
               isDark 
                 ? 'bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent' 
                 : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700 bg-clip-text text-transparent'
@@ -82,14 +82,14 @@ const Hero = memo(() => {
               {t('hero.title')}
             </h1>
 
-            <p className={`text-lg md:text-xl mb-8 ${
+            <p className={`text-base sm:text-lg md:text-xl mb-6 sm:mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
               {t('hero.subtitle')}
             </p>
 
             {/* SEO-optimized service highlights */}
-            <div className="grid grid-cols-2 gap-4 mb-8 max-w-lg mx-auto lg:mx-0">
+            <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
               <div className={`flex items-center gap-2 text-sm ${
                 isDark ? 'text-indigo-200' : 'text-gray-700'
               }`}>
@@ -116,9 +116,9 @@ const Hero = memo(() => {
               </div>
             </div>
 
-            <div className="flex flex-wrap gap-6 justify-center lg:justify-start mb-12">
-              <Link href="/pages/services">
-                <button className={`px-8 py-4 font-semibold rounded-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-3 group transform hover:scale-105 ${
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-8 sm:mb-12">
+              <Link href="/Services/web-development">
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 group transform hover:scale-105 w-full sm:w-auto ${
                   isDark 
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-indigo-500/25'
                     : 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white hover:shadow-purple-500/25'
@@ -128,7 +128,7 @@ const Hero = memo(() => {
                 </button>
               </Link>
               <Link href="/pages/auth">
-                <button className={`px-8 py-4 font-semibold rounded-xl transition-all duration-300 flex items-center gap-2 group ${
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto ${
                   isDark 
                     ? 'bg-white text-indigo-900 hover:bg-gray-50'
                     : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700'
@@ -140,9 +140,9 @@ const Hero = memo(() => {
             </div>
 
             {/* Enhanced trust indicators */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto lg:mx-0">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto lg:mx-0">
               <div className="text-center lg:text-left">
-                <div className={`text-3xl font-bold mb-1 ${
+                <div className={`text-2xl sm:text-3xl font-bold mb-1 ${
                   isDark 
                     ? 'text-white' 
                     : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600'
@@ -152,7 +152,7 @@ const Hero = memo(() => {
                 }`}>{t('hero.stats1')}</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className={`text-3xl font-bold mb-1 ${
+                <div className={`text-2xl sm:text-3xl font-bold mb-1 ${
                   isDark 
                     ? 'text-white' 
                     : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600'
@@ -162,7 +162,7 @@ const Hero = memo(() => {
                 }`}>{t('hero.stats2')}</div>
               </div>
               <div className="text-center lg:text-left">
-                <div className={`text-3xl font-bold mb-1 ${
+                <div className={`text-2xl sm:text-3xl font-bold mb-1 ${
                   isDark 
                     ? 'text-white' 
                     : 'text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600'
@@ -177,7 +177,7 @@ const Hero = memo(() => {
           {/* Visual section */}
           <div className="w-full lg:w-1/2 relative">
               {/* Main visual element */}
-              <div className="relative w-full aspect-square max-w-lg mx-auto">
+              <div className="relative w-full aspect-square max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
                 {/* Embedded video container */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <video

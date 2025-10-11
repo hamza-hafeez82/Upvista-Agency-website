@@ -15,7 +15,7 @@ const ITServices = memo(() => {
       icon: Code,
       title: t('home.services.software.title'),
       description: t('home.services.software.description'),
-      learnMoreLink: "/pages/services",
+      learnMoreLink: "/Services/software-development",
       color: "blue"
     },
     {
@@ -23,7 +23,7 @@ const ITServices = memo(() => {
       icon: Globe,
       title: t('home.services.web.title'),
       description: t('home.services.web.description'),
-      learnMoreLink: "/pages/services",
+      learnMoreLink: "/Services/web-development",
       color: "green"
     },
     {
@@ -31,7 +31,7 @@ const ITServices = memo(() => {
       icon: Cloud,
       title: t('home.services.cloud.title'),
       description: t('home.services.cloud.description'),
-      learnMoreLink: "/pages/services",
+      learnMoreLink: "/Services/cloud",
       color: "cyan"
     },
     {
@@ -39,7 +39,7 @@ const ITServices = memo(() => {
       icon: Brain,
       title: t('home.services.ai.title'),
       description: t('home.services.ai.description'),
-      learnMoreLink: "/pages/services",
+      learnMoreLink: "/Services/ai-automation",
       color: "purple"
     },
     {
@@ -47,7 +47,7 @@ const ITServices = memo(() => {
       icon: Palette,
       title: t('home.services.design.title'),
       description: t('home.services.design.description'),
-      learnMoreLink: "/pages/services",
+      learnMoreLink: "/Services/designing",
       color: "pink"
     },
     {
@@ -55,7 +55,7 @@ const ITServices = memo(() => {
       icon: Target,
       title: t('home.services.marketing.title'),
       description: t('home.services.marketing.description'),
-      learnMoreLink: "/pages/services",
+      learnMoreLink: "/Services/marketing",
       color: "orange"
     }
   ], [t]);
@@ -74,7 +74,7 @@ const ITServices = memo(() => {
   }, []);
 
   return (
-    <section className={`relative overflow-hidden py-24 px-4 sm:px-6 lg:px-8 ${
+    <section className={`relative overflow-hidden py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 ${
       isDark 
         ? 'bg-gradient-to-br from-black via-black/80 to-purple-950 text-white'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 text-gray-900'
@@ -101,7 +101,7 @@ const ITServices = memo(() => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className={`inline-flex items-center px-4 py-2 rounded-full backdrop-blur-sm border mb-6 ${
             isDark 
               ? 'bg-blue-50/10 border-blue-200/20'
@@ -116,14 +116,14 @@ const ITServices = memo(() => {
               {t('home.services.title')}
             </span>
         </div>
-          <h2 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight ${
             isDark 
               ? 'text-white'
               : 'bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600'
           }`}>
             {t('home.services.subtitle')}
           </h2>
-          <p className={`max-w-4xl mx-auto text-xl leading-relaxed ${
+          <p className={`max-w-4xl mx-auto text-lg sm:text-xl leading-relaxed px-4 ${
             isDark ? 'text-gray-300' : 'text-gray-700'
           }`}>
             {t('home.services.description')}
@@ -131,7 +131,7 @@ const ITServices = memo(() => {
       </div>
       
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             const colorClasses = getColorClasses(service.color);
@@ -139,7 +139,7 @@ const ITServices = memo(() => {
             return (
               <Link key={index} href={service.learnMoreLink}>
                 <div 
-                  className={`group backdrop-blur-lg border rounded-2xl p-6 transition-all duration-300 cursor-pointer h-full ${
+                  className={`group backdrop-blur-lg border rounded-2xl p-4 sm:p-6 transition-all duration-300 cursor-pointer h-full ${
                     isDark 
                       ? 'bg-white/5 border-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 hover:bg-white/10 hover:border-gradient-to-r hover:from-blue-400/50 hover:via-purple-400/50 hover:to-pink-400/50'
                       : 'bg-white/20 border-gradient-to-r from-blue-500/40 via-purple-500/40 to-indigo-500/40 hover:bg-white/30 hover:border-gradient-to-r hover:from-blue-400/60 hover:via-purple-400/60 hover:to-indigo-400/60'
@@ -153,7 +153,7 @@ const ITServices = memo(() => {
                       : 'linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(147, 51, 234, 0.4), rgba(99, 102, 241, 0.4)) 1'
                   }}
                 >
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 ${
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 ${
                   isDark 
                     ? `bg-gradient-to-br ${colorClasses.split(' ')[0]} ${colorClasses.split(' ')[1]}`
                     : 'bg-gradient-to-br from-blue-100 to-purple-100 group-hover:from-blue-200 group-hover:to-purple-200'
@@ -162,10 +162,10 @@ const ITServices = memo(() => {
                     isDark ? colorClasses.split(' ')[2] : 'text-blue-600'
                   }`} />
               </div>
-                <h3 className={`text-xl font-semibold mb-3 ${
+                <h3 className={`text-lg sm:text-xl font-semibold mb-2 sm:mb-3 ${
                   isDark ? 'text-white' : 'text-gray-900'
                 }`}>{service.title}</h3>
-                <p className={`text-sm leading-relaxed mb-4 line-clamp-3 ${
+                <p className={`text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-3 ${
                   isDark ? 'text-gray-300' : 'text-gray-700'
                 }`}>
                   {service.description}
@@ -184,8 +184,8 @@ const ITServices = memo(() => {
 
         {/* CTA Section */}
         <div className="text-center">
-         <Link href="/pages/services">
-            <button className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors duration-300 shadow-lg shadow-blue-600/25">
+         <Link href="/Services/web-development">
+            <button className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors duration-300 shadow-lg shadow-blue-600/25 w-full sm:w-auto">
               <span>{t('home.services.exploreAll')}</span>
               <ArrowRight className="w-5 h-5" />
         </button>
