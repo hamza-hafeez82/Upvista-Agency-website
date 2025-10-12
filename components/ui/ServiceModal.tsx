@@ -147,7 +147,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ open, onClose, phase
               </button>
               {currentPhase === phases.length - 1 ? (
                 <a
-                  href="/pages/consult"
+                  href="/Consult"
                   className="px-6 py-2 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-500 text-black font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-2"
                 >
                   <Sparkles className="w-5 h-5" /> Start Consulting

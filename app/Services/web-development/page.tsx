@@ -55,18 +55,18 @@ export default function WebDevelopmentPage() {
   ];
 
   const techStackItems = [
-    { name: 'React', image: '/assets/tech/react.jpg', logo: '/assets/logos/react.svg', description: 'Modern UI Library' },
-    { name: 'Next.js', image: '/assets/tech/nextjs.jpg', logo: '/assets/logos/nextjs.svg', description: 'Full-Stack Framework' },
-    { name: 'Vue.js', image: '/assets/tech/vuejs.jpg', logo: '/assets/logos/vuejs.svg', description: 'Progressive Framework' },
-    { name: 'Angular', image: '/assets/tech/angular.jpg', logo: '/assets/logos/angular.svg', description: 'Enterprise Framework' },
-    { name: 'Node.js', image: '/assets/tech/nodejs.jpg', logo: '/assets/logos/nodejs.svg', description: 'Backend Runtime' },
-    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: 'Versatile Language' },
-    { name: 'PHP', image: '/assets/tech/php.jpg', logo: '/assets/logos/php.svg', description: 'Web Development' },
-    { name: 'MySQL', image: '/assets/tech/mysql.jpg', logo: '/assets/logos/mysql.svg', description: 'Relational Database' },
-    { name: 'MongoDB', image: '/assets/tech/mongodb.jpg', logo: '/assets/logos/mongodb.svg', description: 'NoSQL Database' },
-    { name: 'WordPress', image: '/assets/tech/wordpress.jpg', logo: '/assets/logos/wordpress.svg', description: 'CMS Platform' },
-    { name: 'Webflow', image: '/assets/tech/webflow.jpg', logo: '/assets/logos/webflow.svg', description: 'No-Code Platform' },
-    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: 'Containerization' }
+    { name: 'React', image: '/assets/tech/react.jpg', logo: '/assets/logos/react.svg', description: t('webdev.tech.react') },
+    { name: 'Next.js', image: '/assets/tech/nextjs.jpg', logo: '/assets/logos/nextjs.svg', description: t('webdev.tech.nextjs') },
+    { name: 'Vue.js', image: '/assets/tech/vuejs.jpg', logo: '/assets/logos/vuejs.svg', description: t('webdev.tech.vuejs') },
+    { name: 'Angular', image: '/assets/tech/angular.jpg', logo: '/assets/logos/angular.svg', description: t('webdev.tech.angular') },
+    { name: 'Node.js', image: '/assets/tech/nodejs.jpg', logo: '/assets/logos/nodejs.svg', description: t('webdev.tech.nodejs') },
+    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: t('webdev.tech.python') },
+    { name: 'PHP', image: '/assets/tech/php.jpg', logo: '/assets/logos/php.svg', description: t('webdev.tech.php') },
+    { name: 'MySQL', image: '/assets/tech/mysql.jpg', logo: '/assets/logos/mysql.svg', description: t('webdev.tech.mysql') },
+    { name: 'MongoDB', image: '/assets/tech/mongodb.jpg', logo: '/assets/logos/mongodb.svg', description: t('webdev.tech.mongodb') },
+    { name: 'WordPress', image: '/assets/tech/wordpress.jpg', logo: '/assets/logos/wordpress.svg', description: t('webdev.tech.wordpress') },
+    { name: 'Webflow', image: '/assets/tech/webflow.jpg', logo: '/assets/logos/webflow.svg', description: t('webdev.tech.webflow') },
+    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: t('webdev.tech.docker') }
   ];
 
   // Infinite carousel effect
@@ -83,159 +83,159 @@ export default function WebDevelopmentPage() {
   const developmentProcesses = [
     {
       type: 'custom-coded',
-      title: 'Custom Coded Solutions',
-      description: 'Complete development from scratch using modern frameworks and best practices',
+      title: t('webdev.processes.custom.title'),
+      description: t('webdev.processes.custom.description'),
       platforms: ['React', 'Vue.js', 'Angular', 'Node.js', 'Python', 'PHP'],
       services: [
-        'Frontend Development (HTML, CSS, JavaScript)',
-        'Backend API Development',
-        'Database Design & Implementation',
-        'Authentication & Security',
-        'Performance Optimization',
-        'Testing & Quality Assurance'
+        t('webdev.processes.custom.service1'),
+        t('webdev.processes.custom.service2'),
+        t('webdev.processes.custom.service3'),
+        t('webdev.processes.custom.service4'),
+        t('webdev.processes.custom.service5'),
+        t('webdev.processes.custom.service6')
       ],
       roadmap: [
         { 
           step: 1, 
-          title: 'Consultation & Discovery', 
-          description: 'Understanding your business needs, target audience, and project requirements through detailed consultation sessions.',
-          details: 'We conduct thorough discovery sessions to understand your business goals, target market, and technical requirements. This includes stakeholder interviews, competitor analysis, and technical feasibility assessment.',
+          title: t('webdev.processes.custom.roadmap1.title'), 
+          description: t('webdev.processes.custom.roadmap1.description'),
+          details: t('webdev.processes.custom.roadmap1.details'),
           image: '/assets/services/consultation.jpg'
         },
         { 
           step: 2, 
-          title: 'Project Proposal', 
-          description: 'Comprehensive project module with timeline, milestones, and deliverables sent for your confirmation and approval.',
-          details: 'Our detailed project proposal includes technical specifications, timeline with milestones, resource allocation, and clear deliverables. We ensure transparency and set realistic expectations.',
+          title: t('webdev.processes.custom.roadmap2.title'), 
+          description: t('webdev.processes.custom.roadmap2.description'),
+          details: t('webdev.processes.custom.roadmap2.details'),
           image: '/assets/services/proposal.jpg'
         },
         { 
           step: 3, 
-          title: 'UI/UX Design', 
-          description: 'Complete Figma design including wireframes, mockups, and interactive prototypes tailored to your brand identity.',
-          details: 'We create pixel-perfect designs with user experience focus, including wireframes, high-fidelity mockups, interactive prototypes, and design system documentation.',
+          title: t('webdev.processes.custom.roadmap3.title'), 
+          description: t('webdev.processes.custom.roadmap3.description'),
+          details: t('webdev.processes.custom.roadmap3.details'),
           image: '/assets/services/design.jpg'
         },
         { 
           step: 4, 
-          title: 'Development Phase', 
-          description: 'Full-stack development with frontend, backend, database integration, and third-party service connections.',
-          details: 'Agile development process with regular updates, code reviews, and testing. We implement modern development practices, version control, and continuous integration.',
+          title: t('webdev.processes.custom.roadmap4.title'), 
+          description: t('webdev.processes.custom.roadmap4.description'),
+          details: t('webdev.processes.custom.roadmap4.details'),
           image: '/assets/services/development.jpg'
         },
         { 
           step: 5, 
-          title: 'QA Testing', 
-          description: 'Comprehensive testing including functionality, performance, security, and cross-browser compatibility checks.',
-          details: 'Rigorous testing across multiple browsers, devices, and scenarios. We perform automated testing, manual testing, performance optimization, and security audits.',
+          title: t('webdev.processes.custom.roadmap5.title'), 
+          description: t('webdev.processes.custom.roadmap5.description'),
+          details: t('webdev.processes.custom.roadmap5.details'),
           image: '/assets/services/testing.jpg'
         },
         { 
           step: 6, 
-          title: 'Deployment & Launch', 
-          description: 'Professional deployment with SSL certificates, CDN setup, and performance optimization for production.',
-          details: 'Smooth deployment with zero downtime, SSL configuration, CDN setup, performance monitoring, and comprehensive backup systems.',
+          title: t('webdev.processes.custom.roadmap6.title'), 
+          description: t('webdev.processes.custom.roadmap6.description'),
+          details: t('webdev.processes.custom.roadmap6.details'),
           image: '/assets/services/deployment.jpg'
         },
         { 
           step: 7, 
-          title: 'Maintenance & Support', 
-          description: 'Ongoing maintenance, updates, monitoring, and 1-month free support with operation manual provided.',
-          details: 'Comprehensive maintenance plan including regular updates, security patches, performance monitoring, and detailed operation manual for long-term success.',
+          title: t('webdev.processes.custom.roadmap7.title'), 
+          description: t('webdev.processes.custom.roadmap7.description'),
+          details: t('webdev.processes.custom.roadmap7.details'),
           image: '/assets/services/support.jpg'
         }
       ]
     },
     {
       type: 'wordpress',
-      title: 'WordPress Development',
-      description: 'Custom WordPress themes, plugins, and full-site development with advanced functionality',
+      title: t('webdev.processes.wordpress.title'),
+      description: t('webdev.processes.wordpress.description'),
       platforms: ['WordPress', 'WooCommerce', 'Custom Plugins', 'Themes'],
       services: [
-        'Custom Theme Development',
-        'Plugin Development',
-        'E-commerce Integration',
-        'Performance Optimization',
-        'Security Implementation',
-        'Content Management Setup'
+        t('webdev.processes.wordpress.service1'),
+        t('webdev.processes.wordpress.service2'),
+        t('webdev.processes.wordpress.service3'),
+        t('webdev.processes.wordpress.service4'),
+        t('webdev.processes.wordpress.service5'),
+        t('webdev.processes.wordpress.service6')
       ],
       roadmap: [
-        { step: 1, title: 'Requirements Analysis', description: 'Detailed analysis of your content structure, functionality needs, and WordPress-specific requirements.' },
-        { step: 2, title: 'Site Architecture', description: 'Planning site structure, database schema, and WordPress configuration for optimal performance.' },
-        { step: 3, title: 'Design & Prototyping', description: 'Custom theme design with responsive layouts, typography, and brand-specific styling.' },
-        { step: 4, title: 'Theme Development', description: 'Custom WordPress theme development with clean code, SEO optimization, and accessibility features.' },
-        { step: 5, title: 'Plugin Integration', description: 'Integration of essential plugins, custom functionality, and third-party service connections.' },
-        { step: 6, title: 'Content Migration', description: 'Seamless content migration from existing platforms with data integrity and SEO preservation.' },
-        { step: 7, title: 'Launch & Training', description: 'Site launch with admin training, documentation, and ongoing maintenance support.' }
+        { step: 1, title: t('webdev.processes.wordpress.roadmap1.title'), description: t('webdev.processes.wordpress.roadmap1.description') },
+        { step: 2, title: t('webdev.processes.wordpress.roadmap2.title'), description: t('webdev.processes.wordpress.roadmap2.description') },
+        { step: 3, title: t('webdev.processes.wordpress.roadmap3.title'), description: t('webdev.processes.wordpress.roadmap3.description') },
+        { step: 4, title: t('webdev.processes.wordpress.roadmap4.title'), description: t('webdev.processes.wordpress.roadmap4.description') },
+        { step: 5, title: t('webdev.processes.wordpress.roadmap5.title'), description: t('webdev.processes.wordpress.roadmap5.description') },
+        { step: 6, title: t('webdev.processes.wordpress.roadmap6.title'), description: t('webdev.processes.wordpress.roadmap6.description') },
+        { step: 7, title: t('webdev.processes.wordpress.roadmap7.title'), description: t('webdev.processes.wordpress.roadmap7.description') }
       ]
     },
     {
       type: 'webflow',
-      title: 'Webflow Development',
-      description: 'No-code web development with custom interactions, animations, and CMS integration',
+      title: t('webdev.processes.webflow.title'),
+      description: t('webdev.processes.webflow.description'),
       platforms: ['Webflow', 'Figma Integration', 'CMS', 'Interactions'],
       services: [
-        'Design to Webflow Conversion',
-        'Custom Interactions & Animations',
-        'CMS Integration',
-        'E-commerce Setup',
-        'Responsive Design',
-        'SEO Optimization'
+        t('webdev.processes.webflow.service1'),
+        t('webdev.processes.webflow.service2'),
+        t('webdev.processes.webflow.service3'),
+        t('webdev.processes.webflow.service4'),
+        t('webdev.processes.webflow.service5'),
+        t('webdev.processes.webflow.service6')
       ],
       roadmap: [
-        { step: 1, title: 'Design Consultation', description: 'Understanding your brand requirements and converting existing designs or creating new ones for Webflow.' },
-        { step: 2, title: 'Webflow Planning', description: 'Planning site structure, CMS collections, and interactive elements for optimal user experience.' },
-        { step: 3, title: 'Design Implementation', description: 'Converting designs to Webflow with pixel-perfect accuracy and responsive behavior across all devices.' },
-        { step: 4, title: 'CMS Setup', description: 'Creating dynamic content collections and setting up easy-to-use CMS for content management.' },
-        { step: 5, title: 'Interactions & Animations', description: 'Implementing custom interactions, scroll animations, and micro-interactions for enhanced user engagement.' },
-        { step: 6, title: 'SEO & Performance', description: 'Optimizing for search engines, implementing meta tags, and ensuring fast loading times.' },
-        { step: 7, title: 'Launch & Handover', description: 'Site launch with CMS training, documentation, and ongoing support for content updates.' }
+        { step: 1, title: t('webdev.processes.webflow.roadmap1.title'), description: t('webdev.processes.webflow.roadmap1.description') },
+        { step: 2, title: t('webdev.processes.webflow.roadmap2.title'), description: t('webdev.processes.webflow.roadmap2.description') },
+        { step: 3, title: t('webdev.processes.webflow.roadmap3.title'), description: t('webdev.processes.webflow.roadmap3.description') },
+        { step: 4, title: t('webdev.processes.webflow.roadmap4.title'), description: t('webdev.processes.webflow.roadmap4.description') },
+        { step: 5, title: t('webdev.processes.webflow.roadmap5.title'), description: t('webdev.processes.webflow.roadmap5.description') },
+        { step: 6, title: t('webdev.processes.webflow.roadmap6.title'), description: t('webdev.processes.webflow.roadmap6.description') },
+        { step: 7, title: t('webdev.processes.webflow.roadmap7.title'), description: t('webdev.processes.webflow.roadmap7.description') }
       ]
     },
     {
       type: 'migration',
-      title: 'Platform Migration',
-      description: 'Seamless migration between different platforms with data preservation and SEO maintenance',
+      title: t('webdev.processes.migration.title'),
+      description: t('webdev.processes.migration.description'),
       platforms: ['Any to Any', 'Data Migration', 'URL Preservation', 'SEO Maintenance'],
       services: [
-        'Data Analysis & Planning',
-        'Content Migration',
-        'Design Recreation',
-        'Functionality Replication',
-        'SEO Preservation',
-        'Testing & Launch'
+        t('webdev.processes.migration.service1'),
+        t('webdev.processes.migration.service2'),
+        t('webdev.processes.migration.service3'),
+        t('webdev.processes.migration.service4'),
+        t('webdev.processes.migration.service5'),
+        t('webdev.processes.migration.service6')
       ],
       roadmap: [
-        { step: 1, title: 'Migration Assessment', description: 'Comprehensive analysis of existing site, content audit, and planning migration strategy with minimal downtime.' },
-        { step: 2, title: 'Data Backup', description: 'Complete backup of existing data, content, and assets to ensure no data loss during migration process.' },
-        { step: 3, title: 'New Platform Setup', description: 'Setting up new platform with optimized configuration and preparing for content migration.' },
-        { step: 4, title: 'Design Recreation', description: 'Recreating existing design and functionality on new platform with enhanced features and performance.' },
-        { step: 5, title: 'Content Migration', description: 'Systematic migration of all content, images, and data with format preservation and optimization.' },
-        { step: 6, title: 'SEO Preservation', description: 'Maintaining all SEO elements, redirects, and ensuring search engine visibility remains intact.' },
-        { step: 7, title: 'Testing & Launch', description: 'Comprehensive testing and smooth launch with monitoring and immediate support for any issues.' }
+        { step: 1, title: t('webdev.processes.migration.roadmap1.title'), description: t('webdev.processes.migration.roadmap1.description') },
+        { step: 2, title: t('webdev.processes.migration.roadmap2.title'), description: t('webdev.processes.migration.roadmap2.description') },
+        { step: 3, title: t('webdev.processes.migration.roadmap3.title'), description: t('webdev.processes.migration.roadmap3.description') },
+        { step: 4, title: t('webdev.processes.migration.roadmap4.title'), description: t('webdev.processes.migration.roadmap4.description') },
+        { step: 5, title: t('webdev.processes.migration.roadmap5.title'), description: t('webdev.processes.migration.roadmap5.description') },
+        { step: 6, title: t('webdev.processes.migration.roadmap6.title'), description: t('webdev.processes.migration.roadmap6.description') },
+        { step: 7, title: t('webdev.processes.migration.roadmap7.title'), description: t('webdev.processes.migration.roadmap7.description') }
       ]
     },
     {
       type: 'maintenance',
-      title: 'Maintenance & Updates',
-      description: 'Ongoing support, bug fixes, security updates, and feature additions for existing websites',
+      title: t('webdev.processes.maintenance.title'),
+      description: t('webdev.processes.maintenance.description'),
       platforms: ['All Platforms', 'Bug Fixes', 'Security Updates', 'Feature Additions'],
       services: [
-        'Bug Fixes & Debugging',
-        'Security Updates',
-        'Performance Monitoring',
-        'Feature Additions',
-        'Content Updates',
-        'Backup & Recovery'
+        t('webdev.processes.maintenance.service1'),
+        t('webdev.processes.maintenance.service2'),
+        t('webdev.processes.maintenance.service3'),
+        t('webdev.processes.maintenance.service4'),
+        t('webdev.processes.maintenance.service5'),
+        t('webdev.processes.maintenance.service6')
       ],
       roadmap: [
-        { step: 1, title: 'Site Audit', description: 'Comprehensive analysis of current site performance, security vulnerabilities, and areas for improvement.' },
-        { step: 2, title: 'Maintenance Plan', description: 'Creating customized maintenance schedule with priority-based tasks and regular update cycles.' },
-        { step: 3, title: 'Security Hardening', description: 'Implementing security measures, updating plugins, and ensuring protection against vulnerabilities.' },
-        { step: 4, title: 'Performance Optimization', description: 'Optimizing loading speeds, database performance, and implementing caching strategies.' },
-        { step: 5, title: 'Content Updates', description: 'Regular content updates, image optimization, and ensuring fresh, relevant information.' },
-        { step: 6, title: 'Feature Enhancements', description: 'Adding new features, improving functionality, and implementing user feedback suggestions.' },
-        { step: 7, title: 'Monitoring & Reporting', description: 'Continuous monitoring with regular reports on performance, security, and maintenance activities.' }
+        { step: 1, title: t('webdev.processes.maintenance.roadmap1.title'), description: t('webdev.processes.maintenance.roadmap1.description') },
+        { step: 2, title: t('webdev.processes.maintenance.roadmap2.title'), description: t('webdev.processes.maintenance.roadmap2.description') },
+        { step: 3, title: t('webdev.processes.maintenance.roadmap3.title'), description: t('webdev.processes.maintenance.roadmap3.description') },
+        { step: 4, title: t('webdev.processes.maintenance.roadmap4.title'), description: t('webdev.processes.maintenance.roadmap4.description') },
+        { step: 5, title: t('webdev.processes.maintenance.roadmap5.title'), description: t('webdev.processes.maintenance.roadmap5.description') },
+        { step: 6, title: t('webdev.processes.maintenance.roadmap6.title'), description: t('webdev.processes.maintenance.roadmap6.description') },
+        { step: 7, title: t('webdev.processes.maintenance.roadmap7.title'), description: t('webdev.processes.maintenance.roadmap7.description') }
       ]
     }
   ];
@@ -557,7 +557,7 @@ export default function WebDevelopmentPage() {
                                       : 'bg-blue-100 text-blue-700 border border-blue-200'
                                   }`}>
                                     <span className="w-2 h-2 rounded-full bg-blue-500 mr-3 animate-pulse"></span>
-                                    In Our Tech Stack
+                                    {t('webdev.techStack.badge')}
                                   </div>
                                 </div>
                               </div>
@@ -828,7 +828,7 @@ export default function WebDevelopmentPage() {
                         <h4 className={`text-lg font-semibold mb-6 ${
                           isDark ? 'text-white' : 'text-gray-900'
                         }`}>
-                          Development Roadmap
+                          {t('webdev.processes.roadmapHeading')}
                         </h4>
                         <div className="space-y-12">
                           {process.roadmap.map((step, index) => (
@@ -895,7 +895,7 @@ export default function WebDevelopmentPage() {
                                         ? 'bg-blue-600/80 text-white'
                                         : 'bg-blue-600 text-white'
                                     }`}>
-                                      Step {step.step}
+                                      {t('webdev.processes.step')} {step.step}
                                     </span>
                                   </div>
                                 </div>
@@ -911,7 +911,7 @@ export default function WebDevelopmentPage() {
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Platforms & Technologies
+                            {t('webdev.processes.platformsHeading')}
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -930,7 +930,7 @@ export default function WebDevelopmentPage() {
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Services Included
+                            {t('webdev.processes.servicesHeading')}
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -983,26 +983,26 @@ export default function WebDevelopmentPage() {
               <h3 className={`text-xl font-semibold mb-4 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
-                Additional Services Included
+                {t('webdev.consultation.additionalServices')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Basic SEO</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Meta tags, sitemap, optimization</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('webdev.consultation.service1.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('webdev.consultation.service1.description')}</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Graphic Content</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Images, icons, visual assets</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('webdev.consultation.service2.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('webdev.consultation.service2.description')}</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Complete Design</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Full Figma design included</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('webdev.consultation.service3.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('webdev.consultation.service3.description')}</p>
                 </div>
               </div>
             </div>
@@ -1029,7 +1029,7 @@ export default function WebDevelopmentPage() {
                   <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
                 </svg>
                 <span className="text-blue-600 underline hover:text-blue-700 transition-colors">
-                  Sample Operation Manual (PDF)
+                  {t('webdev.consultation.manualLink')}
                 </span>
               </a>
             </div>
@@ -1062,34 +1062,34 @@ export default function WebDevelopmentPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { 
-                  name: 'E-commerce', 
+                  name: t('webdev.mission.industry1.name'), 
                   image: '/assets/services/ecommerce.jpeg',
-                  description: 'Custom online stores, payment integration, product management, and conversion optimization for B2C & B2B brands.'
+                  description: t('webdev.mission.industry1.description')
                 },
                 { 
-                  name: 'SaaS Platforms', 
+                  name: t('webdev.mission.industry2.name'), 
                   image: '/assets/services/saas.jpeg',
-                  description: 'Robust, scalable SaaS solutions with user management, billing, analytics, and cloud integration.'
+                  description: t('webdev.mission.industry2.description')
                 },
                 { 
-                  name: 'Healthcare', 
+                  name: t('webdev.mission.industry3.name'), 
                   image: '/assets/services/health.jpeg',
-                  description: 'HIPAA-compliant apps, patient portals, telemedicine, and secure health data management.'
+                  description: t('webdev.mission.industry3.description')
                 },
                 { 
-                  name: 'EdTech', 
+                  name: t('webdev.mission.industry4.name'), 
                   image: '/assets/services/edutech.jpeg',
-                  description: 'Learning management systems, e-learning platforms, and interactive educational tools.'
+                  description: t('webdev.mission.industry4.description')
                 },
                 { 
-                  name: 'FinTech', 
+                  name: t('webdev.mission.industry5.name'), 
                   image: '/assets/services/fintech.jpeg',
-                  description: 'Secure payment gateways, digital wallets, and financial analytics platforms.'
+                  description: t('webdev.mission.industry5.description')
                 },
                 { 
-                  name: 'Portfolio & Creative', 
+                  name: t('webdev.mission.industry6.name'), 
                   image: '/assets/services/creativity.jpeg',
-                  description: 'Personal portfolios, creative agency sites, and digital showcases for artists and professionals.'
+                  description: t('webdev.mission.industry6.description')
                 }
               ].map((industry, index) => (
                 <div

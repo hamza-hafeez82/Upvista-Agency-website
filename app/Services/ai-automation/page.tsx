@@ -5,9 +5,11 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AIAutomationPage() {
   const { isDark } = useTheme();
+  const { t } = useLanguage();
   const [expandedProcess, setExpandedProcess] = useState<string | null>('ai-development');
   const [expandedProjectTypes, setExpandedProjectTypes] = useState<boolean>(true);
   const [expandedTechStack, setExpandedTechStack] = useState<boolean>(true);
@@ -29,42 +31,42 @@ export default function AIAutomationPage() {
     {
       id: 1,
       image: '/assets/services/health.jpeg',
-      title: 'AI-Powered Healthcare Assistant',
-      description: 'Intelligent healthcare chatbot with natural language processing and medical knowledge integration.',
-      tag: 'AI Chatbot',
+      title: t('ai.caseStudy1.title'),
+      description: t('ai.caseStudy1.description'),
+      tag: t('ai.caseStudy1.tag'),
       href: '/case-studies/ai-healthcare-assistant'
     },
     {
       id: 2,
       image: '/assets/services/ecommerce.jpeg',
-      title: 'Smart E-commerce Automation',
-      description: 'Automated inventory management and customer service system with machine learning predictions.',
-      tag: 'Business Automation',
+      title: t('ai.caseStudy2.title'),
+      description: t('ai.caseStudy2.description'),
+      tag: t('ai.caseStudy2.tag'),
       href: '/case-studies/smart-ecommerce'
     },
     {
       id: 3,
       image: '/assets/services/saas.jpeg',
-      title: 'Intelligent Document Processing',
-      description: 'AI-powered document analysis and data extraction system for enterprise workflows.',
-      tag: 'Document AI',
+      title: t('ai.caseStudy3.title'),
+      description: t('ai.caseStudy3.description'),
+      tag: t('ai.caseStudy3.tag'),
       href: '/case-studies/document-ai'
     }
   ];
 
   const techStackItems = [
-    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: 'AI Development' },
-    { name: 'TensorFlow', image: '/assets/tech/tensorflow.jpg', logo: '/assets/logos/tensorflow.svg', description: 'Machine Learning' },
-    { name: 'PyTorch', image: '/assets/tech/pytorch.jpg', logo: '/assets/logos/pytorch.svg', description: 'Deep Learning' },
-    { name: 'OpenAI GPT', image: '/assets/tech/openai.jpg', logo: '/assets/logos/openai.svg', description: 'Large Language Models' },
-    { name: 'Hugging Face', image: '/assets/tech/huggingface.jpg', logo: '/assets/logos/huggingface.svg', description: 'NLP Models' },
-    { name: 'LangChain', image: '/assets/tech/langchain.jpg', logo: '/assets/logos/langchain.svg', description: 'AI Frameworks' },
-    { name: 'RAG Systems', image: '/assets/tech/rag.jpg', logo: '/assets/logos/rag.svg', description: 'Retrieval Systems' },
-    { name: 'Vector DB', image: '/assets/tech/vector.jpg', logo: '/assets/logos/vector.svg', description: 'Vector Databases' },
-    { name: 'AWS AI', image: '/assets/tech/aws-ai.jpg', logo: '/assets/logos/aws.svg', description: 'Cloud AI Services' },
-    { name: 'Azure AI', image: '/assets/tech/azure-ai.jpg', logo: '/assets/logos/azure.svg', description: 'Microsoft AI' },
-    { name: 'Google AI', image: '/assets/tech/google-ai.jpg', logo: '/assets/logos/google.svg', description: 'Google AI Platform' },
-    { name: 'Computer Vision', image: '/assets/tech/cv.jpg', logo: '/assets/logos/cv.svg', description: 'Image Processing' }
+    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: t('ai.tech.python') },
+    { name: 'TensorFlow', image: '/assets/tech/tensorflow.jpg', logo: '/assets/logos/tensorflow.svg', description: t('ai.tech.tensorflow') },
+    { name: 'PyTorch', image: '/assets/tech/pytorch.jpg', logo: '/assets/logos/pytorch.svg', description: t('ai.tech.pytorch') },
+    { name: 'OpenAI GPT', image: '/assets/tech/openai.jpg', logo: '/assets/logos/openai.svg', description: t('ai.tech.openai') },
+    { name: 'Hugging Face', image: '/assets/tech/huggingface.jpg', logo: '/assets/logos/huggingface.svg', description: t('ai.tech.huggingface') },
+    { name: 'LangChain', image: '/assets/tech/langchain.jpg', logo: '/assets/logos/langchain.svg', description: t('ai.tech.langchain') },
+    { name: 'RAG Systems', image: '/assets/tech/rag.jpg', logo: '/assets/logos/rag.svg', description: t('ai.tech.rag') },
+    { name: 'Vector DB', image: '/assets/tech/vector.jpg', logo: '/assets/logos/vector.svg', description: t('ai.tech.vectordb') },
+    { name: 'AWS AI', image: '/assets/tech/aws-ai.jpg', logo: '/assets/logos/aws.svg', description: t('ai.tech.aws') },
+    { name: 'Azure AI', image: '/assets/tech/azure-ai.jpg', logo: '/assets/logos/azure.svg', description: t('ai.tech.azure') },
+    { name: 'Google AI', image: '/assets/tech/google-ai.jpg', logo: '/assets/logos/google.svg', description: t('ai.tech.google') },
+    { name: 'Computer Vision', image: '/assets/tech/cv.jpg', logo: '/assets/logos/cv.svg', description: t('ai.tech.cv') }
   ];
 
   // Infinite carousel effect
@@ -81,106 +83,106 @@ export default function AIAutomationPage() {
   const developmentProcesses = [
     {
       type: 'ai-development',
-      title: 'AI Solution Development',
-      description: 'Custom AI solutions built from scratch to solve specific business challenges',
+      title: t('ai.processes.aidev.title'),
+      description: t('ai.processes.aidev.description'),
       platforms: ['Python', 'TensorFlow', 'PyTorch', 'OpenAI', 'Hugging Face', 'LangChain'],
       services: [
-        'AI Strategy & Planning',
-        'Data Collection & Preparation',
-        'Model Development & Training',
-        'API Integration',
-        'Performance Optimization',
-        'Testing & Validation',
-        'Deployment & Monitoring',
-        'Continuous Learning'
+        t('ai.processes.aidev.service1'),
+        t('ai.processes.aidev.service2'),
+        t('ai.processes.aidev.service3'),
+        t('ai.processes.aidev.service4'),
+        t('ai.processes.aidev.service5'),
+        t('ai.processes.aidev.service6'),
+        t('ai.processes.aidev.service7'),
+        t('ai.processes.aidev.service8')
       ],
       roadmap: [
         { 
           step: 1, 
-          title: 'AI Strategy & Discovery', 
-          description: 'Comprehensive analysis of business processes to identify automation opportunities and AI implementation strategies.',
-          details: 'We conduct detailed business process analysis, identify pain points, and design AI solutions that deliver measurable value and ROI.',
+          title: t('ai.processes.aidev.roadmap1.title'), 
+          description: t('ai.processes.aidev.roadmap1.description'),
+          details: t('ai.processes.aidev.roadmap1.details'),
           image: '/assets/services/consultation.jpg'
         },
         { 
           step: 2, 
-          title: 'Data Assessment', 
-          description: 'Evaluation of existing data quality, availability, and preparation for AI model training and deployment.',
-          details: 'Our data scientists analyze your data landscape, clean and prepare datasets, and ensure data quality for optimal AI performance.',
+          title: t('ai.processes.aidev.roadmap2.title'), 
+          description: t('ai.processes.aidev.roadmap2.description'),
+          details: t('ai.processes.aidev.roadmap2.details'),
           image: '/assets/services/data-analysis.jpg'
         },
         { 
           step: 3, 
-          title: 'AI Model Development', 
-          description: 'Custom AI model development using cutting-edge machine learning and deep learning techniques.',
-          details: 'We develop custom AI models tailored to your specific use case, using state-of-the-art algorithms and frameworks.',
+          title: t('ai.processes.aidev.roadmap3.title'), 
+          description: t('ai.processes.aidev.roadmap3.description'),
+          details: t('ai.processes.aidev.roadmap3.details'),
           image: '/assets/services/ai-development.jpg'
         },
         { 
           step: 4, 
-          title: 'Integration & Testing', 
-          description: 'Seamless integration of AI solutions into existing business systems with comprehensive testing.',
-          details: 'Our engineers ensure smooth integration with your existing infrastructure and conduct thorough testing for reliability.',
+          title: t('ai.processes.aidev.roadmap4.title'), 
+          description: t('ai.processes.aidev.roadmap4.description'),
+          details: t('ai.processes.aidev.roadmap4.details'),
           image: '/assets/services/integration.jpg'
         },
         { 
           step: 5, 
-          title: 'Deployment & Monitoring', 
-          description: 'Production deployment with real-time monitoring and performance optimization.',
-          details: 'We deploy your AI solutions with comprehensive monitoring systems and continuous performance optimization.',
+          title: t('ai.processes.aidev.roadmap5.title'), 
+          description: t('ai.processes.aidev.roadmap5.description'),
+          details: t('ai.processes.aidev.roadmap5.details'),
           image: '/assets/services/deployment.jpg'
         },
         { 
           step: 6, 
-          title: 'Training & Support', 
-          description: 'User training and ongoing support for AI solution adoption and optimization.',
-          details: 'We provide comprehensive training for your team and ongoing support to maximize AI solution effectiveness.',
+          title: t('ai.processes.aidev.roadmap6.title'), 
+          description: t('ai.processes.aidev.roadmap6.description'),
+          details: t('ai.processes.aidev.roadmap6.details'),
           image: '/assets/services/training.jpg'
         }
       ]
     },
     {
       type: 'automation-workflows',
-      title: 'Business Process Automation',
-      description: 'Intelligent automation of repetitive business processes for improved efficiency',
+      title: t('ai.processes.automation.title'),
+      description: t('ai.processes.automation.description'),
       platforms: ['Zapier', 'Microsoft Power Automate', 'UiPath', 'Python', 'Node.js'],
       services: [
-        'Process Analysis',
-        'Workflow Design',
-        'Automation Development',
-        'Integration Setup',
-        'Testing & Validation',
-        'Monitoring & Maintenance'
+        t('ai.processes.automation.service1'),
+        t('ai.processes.automation.service2'),
+        t('ai.processes.automation.service3'),
+        t('ai.processes.automation.service4'),
+        t('ai.processes.automation.service5'),
+        t('ai.processes.automation.service6')
       ],
       roadmap: [
-        { step: 1, title: 'Process Discovery', description: 'Detailed analysis of current business processes to identify automation opportunities.' },
-        { step: 2, title: 'Automation Design', description: 'Design efficient automation workflows that improve productivity and reduce errors.' },
-        { step: 3, title: 'Development', description: 'Build robust automation solutions using industry-leading tools and platforms.' },
-        { step: 4, title: 'Integration', description: 'Seamlessly integrate automation solutions with existing business systems.' },
-        { step: 5, title: 'Testing', description: 'Comprehensive testing to ensure automation reliability and performance.' },
-        { step: 6, title: 'Deployment', description: 'Smooth deployment with monitoring and ongoing optimization.' }
+        { step: 1, title: t('ai.processes.automation.roadmap1.title'), description: t('ai.processes.automation.roadmap1.description') },
+        { step: 2, title: t('ai.processes.automation.roadmap2.title'), description: t('ai.processes.automation.roadmap2.description') },
+        { step: 3, title: t('ai.processes.automation.roadmap3.title'), description: t('ai.processes.automation.roadmap3.description') },
+        { step: 4, title: t('ai.processes.automation.roadmap4.title'), description: t('ai.processes.automation.roadmap4.description') },
+        { step: 5, title: t('ai.processes.automation.roadmap5.title'), description: t('ai.processes.automation.roadmap5.description') },
+        { step: 6, title: t('ai.processes.automation.roadmap6.title'), description: t('ai.processes.automation.roadmap6.description') }
       ]
     },
     {
       type: 'chatbots-voice',
-      title: 'Intelligent Chatbots & Voice AI',
-      description: 'Advanced conversational AI solutions for customer service and business automation',
+      title: t('ai.processes.chatbot.title'),
+      description: t('ai.processes.chatbot.description'),
       platforms: ['OpenAI GPT', 'Google Dialogflow', 'Amazon Lex', 'Microsoft Bot Framework'],
       services: [
-        'Conversation Design',
-        'NLP Implementation',
-        'Multi-channel Integration',
-        'Voice Recognition',
-        'Sentiment Analysis',
-        'Continuous Learning'
+        t('ai.processes.chatbot.service1'),
+        t('ai.processes.chatbot.service2'),
+        t('ai.processes.chatbot.service3'),
+        t('ai.processes.chatbot.service4'),
+        t('ai.processes.chatbot.service5'),
+        t('ai.processes.chatbot.service6')
       ],
       roadmap: [
-        { step: 1, title: 'Conversation Design', description: 'Design natural and effective conversation flows for optimal user experience.' },
-        { step: 2, title: 'AI Training', description: 'Train AI models with domain-specific knowledge and conversation patterns.' },
-        { step: 3, title: 'Integration', description: 'Integrate chatbots with existing communication channels and systems.' },
-        { step: 4, title: 'Testing', description: 'Comprehensive testing of conversation flows and AI responses.' },
-        { step: 5, title: 'Deployment', description: 'Launch chatbots with monitoring and continuous improvement capabilities.' },
-        { step: 6, title: 'Optimization', description: 'Continuous optimization based on user interactions and feedback.' }
+        { step: 1, title: t('ai.processes.chatbot.roadmap1.title'), description: t('ai.processes.chatbot.roadmap1.description') },
+        { step: 2, title: t('ai.processes.chatbot.roadmap2.title'), description: t('ai.processes.chatbot.roadmap2.description') },
+        { step: 3, title: t('ai.processes.chatbot.roadmap3.title'), description: t('ai.processes.chatbot.roadmap3.description') },
+        { step: 4, title: t('ai.processes.chatbot.roadmap4.title'), description: t('ai.processes.chatbot.roadmap4.description') },
+        { step: 5, title: t('ai.processes.chatbot.roadmap5.title'), description: t('ai.processes.chatbot.roadmap5.description') },
+        { step: 6, title: t('ai.processes.chatbot.roadmap6.title'), description: t('ai.processes.chatbot.roadmap6.description') }
       ]
     }
   ];
@@ -206,19 +208,19 @@ export default function AIAutomationPage() {
                 <span className={`w-2 h-2 rounded-full mr-3 ${
                   isDark ? 'bg-blue-400' : 'bg-white'
                 }`}></span>
-                AI & Automation Excellence
+                {t('ai.hero.badge')}
               </div>
               <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight ${
                 isDark
                   ? 'bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent'
                   : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700 bg-clip-text text-transparent'
               }`}>
-                AI & Automation
+                {t('ai.hero.title')}
               </h1>
               <p className={`text-lg sm:text-xl leading-relaxed ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                Transform your business with intelligent automation and AI solutions that enhance productivity and drive innovation.
+                {t('ai.hero.description')}
               </p>
             </div>
             
@@ -244,12 +246,12 @@ export default function AIAutomationPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Types of AI & Automation Solutions
+              {t('ai.projectTypes.heading')}
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              We develop comprehensive AI and automation solutions tailored to your business needs
+              {t('ai.projectTypes.subtitle')}
             </p>
           </div>
 
@@ -271,12 +273,12 @@ export default function AIAutomationPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    Types of AI & Automation Solutions
+                    {t('ai.projectTypes.heading')}
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    We develop comprehensive AI and automation solutions tailored to your business needs
+                    {t('ai.projectTypes.subtitle')}
                   </p>
                 </div>
                 <svg
@@ -308,12 +310,12 @@ export default function AIAutomationPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        AI-Powered Solutions
+                        {t('ai.projectTypes.aiPowered.title')}
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Custom AI models and machine learning solutions that analyze data, make predictions, and automate complex decision-making processes for enhanced business intelligence.
+                        {t('ai.projectTypes.aiPowered.description')}
                       </p>
                     </div>
 
@@ -325,12 +327,12 @@ export default function AIAutomationPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Business Process Automation
+                        {t('ai.projectTypes.automation.title')}
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Intelligent automation of repetitive tasks and workflows to improve efficiency, reduce errors, and free up human resources for more strategic activities.
+                        {t('ai.projectTypes.automation.description')}
                       </p>
                     </div>
 
@@ -342,12 +344,12 @@ export default function AIAutomationPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Conversational AI
+                        {t('ai.projectTypes.conversational.title')}
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Advanced chatbots and voice assistants that provide intelligent customer service, support, and engagement across multiple communication channels.
+                        {t('ai.projectTypes.conversational.description')}
                       </p>
                     </div>
 
@@ -359,12 +361,12 @@ export default function AIAutomationPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Document Intelligence
+                        {t('ai.projectTypes.document.title')}
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        AI-powered document processing, analysis, and data extraction systems that transform unstructured data into actionable business insights.
+                        {t('ai.projectTypes.document.description')}
                       </p>
                     </div>
                   </div>
@@ -382,12 +384,12 @@ export default function AIAutomationPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Our AI & Automation Technology Stack
+              {t('ai.techStack.heading')}
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Cutting-edge AI technologies and frameworks for intelligent automation solutions
+              {t('ai.techStack.subtitle')}
             </p>
           </div>
 
@@ -409,12 +411,12 @@ export default function AIAutomationPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    Our AI & Automation Technology Stack
+                    {t('ai.techStack.heading')}
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    Cutting-edge AI technologies and frameworks for intelligent automation solutions
+                    {t('ai.techStack.subtitle')}
                   </p>
                 </div>
                 <svg
@@ -495,7 +497,7 @@ export default function AIAutomationPage() {
                                       : 'bg-blue-100 text-blue-700 border border-blue-200'
                                   }`}>
                                     <span className="w-2 h-2 rounded-full bg-blue-500 mr-3 animate-pulse"></span>
-                                    In Our AI Stack
+                                    {t('ai.techStack.badge')}
                                   </div>
                                 </div>
                               </div>
@@ -534,17 +536,17 @@ export default function AIAutomationPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Machine Learning & AI
+                        {t('ai.techStack.ml.title')}
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        We specialize in custom machine learning models using TensorFlow, PyTorch, and scikit-learn for predictive analytics and intelligent automation.
+                        {t('ai.techStack.ml.description1')}
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Our AI solutions include natural language processing, computer vision, and deep learning applications tailored to your specific business needs.
+                        {t('ai.techStack.ml.description2')}
                       </p>
                     </div>
 
@@ -556,17 +558,17 @@ export default function AIAutomationPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Large Language Models
+                        {t('ai.techStack.llm.title')}
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        We leverage advanced LLMs including OpenAI GPT, Claude, and custom fine-tuned models for intelligent content generation and analysis.
+                        {t('ai.techStack.llm.description1')}
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Our solutions include RAG systems, prompt engineering, and custom training for domain-specific AI applications with enterprise-grade security.
+                        {t('ai.techStack.llm.description2')}
                       </p>
                     </div>
 
@@ -578,17 +580,17 @@ export default function AIAutomationPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Automation Platforms
+                        {t('ai.techStack.platforms.title')}
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        We implement intelligent automation using platforms like Zapier, Microsoft Power Automate, and custom workflow solutions.
+                        {t('ai.techStack.platforms.description1')}
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Our automation solutions include robotic process automation, intelligent document processing, and seamless system integrations.
+                        {t('ai.techStack.platforms.description2')}
                       </p>
                     </div>
 
@@ -600,17 +602,17 @@ export default function AIAutomationPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Cloud AI Services
+                        {t('ai.techStack.cloud.title')}
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        We leverage cloud AI services from AWS, Azure, and Google Cloud for scalable, enterprise-grade AI solutions.
+                        {t('ai.techStack.cloud.description1')}
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Our cloud AI implementations include managed ML services, AI APIs, and hybrid cloud architectures for optimal performance and cost efficiency.
+                        {t('ai.techStack.cloud.description2')}
                       </p>
                     </div>
                   </div>
@@ -628,12 +630,12 @@ export default function AIAutomationPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              AI & Automation Case Studies
+              {t('ai.caseStudies.heading')}
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Explore our successful AI and automation projects across various industries
+              {t('ai.caseStudies.subtitle')}
             </p>
           </div>
 
@@ -681,7 +683,7 @@ export default function AIAutomationPage() {
                       isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
                     } transition-colors`}
                   >
-                    Read More
+                    {t('ai.caseStudies.readMore')}
                     <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -700,12 +702,12 @@ export default function AIAutomationPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              AI & Automation Development Process
+              {t('ai.processes.heading')}
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Our proven methodology ensures successful AI implementation with quality and efficiency
+              {t('ai.processes.subtitle')}
             </p>
           </div>
 
@@ -764,7 +766,7 @@ export default function AIAutomationPage() {
                         <h4 className={`text-lg font-semibold mb-6 ${
                           isDark ? 'text-white' : 'text-gray-900'
                         }`}>
-                          Development Roadmap
+                          {t('ai.processes.roadmapHeading')}
                         </h4>
                         <div className="space-y-12">
                           {process.roadmap.map((step, index) => (
@@ -829,7 +831,7 @@ export default function AIAutomationPage() {
                                         ? 'bg-blue-600/80 text-white'
                                         : 'bg-blue-600 text-white'
                                     }`}>
-                                      Step {step.step}
+                                      {t('ai.processes.step')} {step.step}
                                     </span>
                                   </div>
                                 </div>
@@ -844,7 +846,7 @@ export default function AIAutomationPage() {
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Technologies & Platforms
+                            {t('ai.processes.platformsHeading')}
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -863,7 +865,7 @@ export default function AIAutomationPage() {
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Services Included
+                            {t('ai.processes.servicesHeading')}
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -899,12 +901,12 @@ export default function AIAutomationPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Free AI & Automation Consultation
+              {t('ai.consultation.title')}
             </h2>
             <p className={`text-lg sm:text-xl mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Get expert advice on your AI and automation project with our complimentary consultation and 1-month free support after project completion.
+              {t('ai.consultation.description')}
             </p>
             
             <div className={`mb-8 p-6 rounded-2xl ${
@@ -915,26 +917,26 @@ export default function AIAutomationPage() {
               <h3 className={`text-xl font-semibold mb-4 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
-                Additional Services Included
+                {t('ai.consultation.additionalServices')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>AI Strategy Planning</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Comprehensive AI roadmap and strategy</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('ai.consultation.service1.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('ai.consultation.service1.description')}</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Data Preparation</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Data cleaning and preparation services</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('ai.consultation.service2.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('ai.consultation.service2.description')}</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Training & Support</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Team training and ongoing support</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('ai.consultation.service3.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('ai.consultation.service3.description')}</p>
                 </div>
               </div>
             </div>
@@ -945,7 +947,7 @@ export default function AIAutomationPage() {
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
                   : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
               }`}>
-                Start Free Consultation
+                {t('ai.consultation.button')}
               </button>
               <a
                 href="/assets/sample-operation-manual.pdf"
@@ -961,7 +963,7 @@ export default function AIAutomationPage() {
                   <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
                 </svg>
                 <span className="text-blue-600 underline hover:text-blue-700 transition-colors">
-                  Sample Operation Manual (PDF)
+                  {t('ai.consultation.manualLink')}
                 </span>
               </a>
             </div>
@@ -976,12 +978,12 @@ export default function AIAutomationPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Our Mission
+              {t('ai.mission.title')}
             </h2>
             <p className={`text-lg sm:text-xl leading-relaxed mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              We are committed to democratizing AI and automation technology, making intelligent solutions accessible to businesses of all sizes. Our mission is to empower organizations with cutting-edge AI that enhances productivity, reduces costs, and drives innovation.
+              {t('ai.mission.description')}
             </p>
           </div>
 
@@ -989,39 +991,39 @@ export default function AIAutomationPage() {
             <h3 className={`text-2xl font-semibold mb-8 text-center ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Industries We Serve
+              {t('ai.mission.industriesHeading')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { 
-                  name: 'Healthcare', 
+                  name: t('ai.mission.industry1.name'), 
                   image: '/assets/services/health.jpeg',
-                  description: 'AI-powered diagnostic tools, patient monitoring systems, automated medical record processing, and intelligent healthcare assistants for improved patient care.'
+                  description: t('ai.mission.industry1.description')
                 },
                 { 
-                  name: 'Finance', 
+                  name: t('ai.mission.industry2.name'), 
                   image: '/assets/services/fintech.jpeg',
-                  description: 'Automated fraud detection, intelligent trading systems, risk assessment algorithms, and AI-powered customer service for enhanced financial operations.'
+                  description: t('ai.mission.industry2.description')
                 },
                 { 
-                  name: 'E-commerce', 
+                  name: t('ai.mission.industry3.name'), 
                   image: '/assets/services/ecommerce.jpeg',
-                  description: 'Intelligent recommendation engines, automated inventory management, AI chatbots for customer service, and predictive analytics for sales optimization.'
+                  description: t('ai.mission.industry3.description')
                 },
                 { 
-                  name: 'Manufacturing', 
+                  name: t('ai.mission.industry4.name'), 
                   image: '/assets/services/manufacturing.jpeg',
-                  description: 'Predictive maintenance systems, quality control automation, supply chain optimization, and intelligent production planning for increased efficiency.'
+                  description: t('ai.mission.industry4.description')
                 },
                 { 
-                  name: 'Education', 
+                  name: t('ai.mission.industry5.name'), 
                   image: '/assets/services/edutech.jpeg',
-                  description: 'Personalized learning platforms, automated grading systems, intelligent tutoring systems, and AI-powered content generation for enhanced education.'
+                  description: t('ai.mission.industry5.description')
                 },
                 { 
-                  name: 'Customer Service', 
+                  name: t('ai.mission.industry6.name'), 
                   image: '/assets/services/customer-service.jpeg',
-                  description: 'Intelligent chatbots, automated ticket routing, sentiment analysis, and AI-powered customer insights for improved service delivery.'
+                  description: t('ai.mission.industry6.description')
                 }
               ].map((industry, index) => (
                 <div
@@ -1081,7 +1083,7 @@ export default function AIAutomationPage() {
             <p className={`text-lg font-medium ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Ready to transform your business with AI and automation? Let's build intelligent solutions that drive real results.
+              {t('ai.mission.ending')}
             </p>
           </div>
         </div>

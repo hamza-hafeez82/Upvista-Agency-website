@@ -482,7 +482,7 @@ const VRPage = () => {
                   <span>Start Your Project</span>
                 </Link>
                 <Link 
-                  href="/pages/consult"
+                  href="/Consult"
                   className="w-full py-3 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <span>💬</span>

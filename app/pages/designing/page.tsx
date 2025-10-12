@@ -13,7 +13,7 @@ const servicesList = [
   { name: "Marketing", href: "/pages/marketing", icon: <Megaphone className="w-5 h-5" /> },
   { name: "Management", href: "/pages/management", icon: <Users className="w-5 h-5" /> },
   { name: "Maintenance", href: "/pages/Maintenance", icon: <Wrench className="w-5 h-5" /> },
-  { name: "Consulting", href: "/pages/consult", icon: <UserCheck className="w-5 h-5" /> },
+  { name: "Consulting", href: "/Consult", icon: <UserCheck className="w-5 h-5" /> },
 ];
 
 const sidebarSections = [

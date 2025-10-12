@@ -18,89 +18,91 @@ import { CheckCircle, Phone, Video, MessageSquare, Globe, Calendar, Mail, Messag
 import Header from "@/components/Header";
 import Head from "next/head";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Force dynamic rendering
 export const dynamic = 'force-dynamic';
 
-const consultMethods = [
-  { label: "Chat", icon: <MessageSquare className="w-5 h-5" />, value: "chat" },
-  { label: "Schedule Call", icon: <Phone className="w-5 h-5" />, value: "schedule" },
-  { label: "Video Meeting", icon: <Video className="w-5 h-5" />, value: "video" },
-  { label: "Social Media", icon: <Globe className="w-5 h-5" />, value: "social" },
-];
-
-const socialMediaLinks = [
-  { name: "Instagram", icon: <FaInstagram className="w-8 h-8" />, href: "https://www.instagram.com/direct/t/17842162812514678/#" },
-  { name: "Facebook", icon: <FaFacebook className="w-8 h-8" />, href: "https://www.facebook.com/share/1Mw8RxcNx2/" },
-  { name: "LinkedIn", icon: <FaLinkedin className="w-8 h-8" />, href: "https://www.linkedin.com/groups/13302224" },
-  { name: "X", icon: <FaXTwitter className="w-8 h-8" />, href: "https://x.com/Upvista_Digital?s=09" },
-  { name: "Discord", icon: <FaDiscord className="w-8 h-8" />, href: "https://discord.gg/wYgrpdYh" },
-];
-
-const chatLinks = [
-  { name: "WhatsApp", icon: <FaWhatsapp className="w-8 h-8" />, href: "https://wa.me/923320486955" },
-  { name: "Messenger", icon: <FaFacebookMessenger className="w-8 h-8" />, href: "https://m.me/61576935582300?source=qr_link_share" },
-  { name: "Email", icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:info@upvistadigital.com" },
-];
-
-const scheduleOptions = [
-  { 
-    name: "Calendly", 
-    icon: <Calendar className="w-8 h-8" />, 
-    href: "https://calendly.com/upvistadigital/30min",
-    desc: "Professional scheduling system" 
-  },
-  { 
-    name: "WhatsApp", 
-    icon: <MessageCircle className="w-8 h-8" />, 
-    href: "https://wa.me/923320486955?text=Hi! I'd like to schedule a consultation call.", 
-    desc: "Quick scheduling via chat" 
-  },
-  { 
-    name: "Email", 
-    icon: <Mail className="w-8 h-8" />, 
-    href: "mailto:support@upvistadigital.com?subject=Consultation Request&body=Hi! I'd like to schedule a consultation call. Please let me know your available times.", 
-    desc: "Traditional email scheduling" 
-  },
-];
-
-const videoOptions = [
-  { 
-    name: "Zoom Meeting", 
-    icon: <Video className="w-8 h-8" />, 
-    desc: "Professional video consultation via Zoom" 
-  },
-  { 
-    name: "Google Meet", 
-    icon: <Video className="w-8 h-8" />, 
-    desc: "Easy browser-based meeting via Google Meet" 
-  },
-  { 
-    name: "WhatsApp Video", 
-    icon: <MessageCircle className="w-8 h-8" />, 
-    desc: "Quick video call setup via WhatsApp" 
-  },
-];
-
 export default function ContactPage() {
   const { isDark } = useTheme();
+  const { t } = useLanguage();
+
+  const consultMethods = [
+    { label: t('contact.consultMethod.chat'), icon: <MessageSquare className="w-5 h-5" />, value: "chat" },
+    { label: t('contact.consultMethod.schedule'), icon: <Phone className="w-5 h-5" />, value: "schedule" },
+    { label: t('contact.consultMethod.video'), icon: <Video className="w-5 h-5" />, value: "video" },
+    { label: t('contact.consultMethod.social'), icon: <Globe className="w-5 h-5" />, value: "social" },
+  ];
+
+  const socialMediaLinks = [
+    { name: t('contact.social.instagram'), icon: <FaInstagram className="w-8 h-8" />, href: "https://www.instagram.com/direct/t/17842162812514678/#" },
+    { name: t('contact.social.facebook'), icon: <FaFacebook className="w-8 h-8" />, href: "https://www.facebook.com/share/1Mw8RxcNx2/" },
+    { name: t('contact.social.linkedin'), icon: <FaLinkedin className="w-8 h-8" />, href: "https://www.linkedin.com/groups/13302224" },
+    { name: t('contact.social.x'), icon: <FaXTwitter className="w-8 h-8" />, href: "https://x.com/Upvista_Digital?s=09" },
+    { name: t('contact.social.discord'), icon: <FaDiscord className="w-8 h-8" />, href: "https://discord.gg/wYgrpdYh" },
+  ];
+
+  const chatLinks = [
+    { name: t('contact.chat.whatsapp'), icon: <FaWhatsapp className="w-8 h-8" />, href: "https://wa.me/923320486955" },
+    { name: t('contact.chat.messenger'), icon: <FaFacebookMessenger className="w-8 h-8" />, href: "https://m.me/61576935582300?source=qr_link_share" },
+    { name: t('contact.chat.email'), icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:info@upvistadigital.com" },
+  ];
+
+  const scheduleOptions = [
+    { 
+      name: t('contact.schedule.calendly'), 
+      icon: <Calendar className="w-8 h-8" />, 
+      href: "https://calendly.com/upvistadigital/30min",
+      desc: t('contact.schedule.calendlyDesc')
+    },
+    { 
+      name: t('contact.schedule.whatsapp'), 
+      icon: <MessageCircle className="w-8 h-8" />, 
+      href: "https://wa.me/923320486955?text=Hi! I'd like to schedule a consultation call.", 
+      desc: t('contact.schedule.whatsappDesc')
+    },
+    { 
+      name: t('contact.schedule.email'), 
+      icon: <Mail className="w-8 h-8" />, 
+      href: "mailto:support@upvistadigital.com?subject=Consultation Request&body=Hi! I'd like to schedule a consultation call. Please let me know your available times.", 
+      desc: t('contact.schedule.emailDesc')
+    },
+  ];
+
+  const videoOptions = [
+    { 
+      name: t('contact.video.zoom'), 
+      icon: <Video className="w-8 h-8" />, 
+      desc: t('contact.video.zoomDesc')
+    },
+    { 
+      name: t('contact.video.meet'), 
+      icon: <Video className="w-8 h-8" />, 
+      desc: t('contact.video.meetDesc')
+    },
+    { 
+      name: t('contact.video.whatsapp'), 
+      icon: <MessageCircle className="w-8 h-8" />, 
+      desc: t('contact.video.whatsappDesc')
+    },
+  ];
   const socialLinks = [
     {
-      name: "LinkedIn",
+      name: t('contact.social.linkedin'),
       icon: <FaLinkedin className="w-6 h-6" />,
       href: "https://www.linkedin.com/groups/13302224",
       color: "bg-blue-600",
       hoverColor: "hover:bg-blue-700",
     },
     {
-      name: "WhatsApp",
+      name: t('contact.social.whatsapp'),
       icon: <FaWhatsapp className="w-6 h-6" />,
       href: "https://wa.me/3320486955",
       color: "bg-green-500",
       hoverColor: "hover:bg-green-600",
     },
     {
-      name: "Instagram",
+      name: t('contact.social.instagram'),
       icon: <FaInstagram className="w-6 h-6" />,
       href: "https://www.instagram.com/direct/t/17842162812514678",
       color: "bg-pink-700",
@@ -111,20 +113,20 @@ export default function ContactPage() {
   const contactInfo = [
     {
       icon: <FaEnvelope className="w-6 h-6" />,
-      title: "Email",
+      title: t('contact.info.email'),
       value: "info@upvistadigital.com",
       href: "mailto:info@upvistadigital.com",
     },
     {
       icon: <FaPhone className="w-6 h-6" />,
-      title: "Phone",
+      title: t('contact.info.phone'),
       value: "+92 (0) 3320 486955",
       href: "tel:+923320486955",
     },
     {
       icon: <FaMapMarkerAlt className="w-6 h-6" />,
-      title: "Location",
-      value: "Lahore, Pakistan",
+      title: t('contact.info.location'),
+      value: t('contact.info.locationValue'),
       href: "https://maps.google.com/?q=Lahore,Pakistan",
     },
   ];
@@ -186,7 +188,7 @@ export default function ContactPage() {
           onClick={() => setShowModal(true)}
           className={`fixed bottom-6 right-6 z-50 px-6 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-violet-400 to-emerald-400 ${isDark ? 'text-black border-cyan-900' : 'text-white border-blue-600'} font-bold shadow-xl border-2 hover:scale-105 hover:shadow-2xl active:scale-95 transition-all duration-300 backdrop-blur-xl text-lg flex items-center gap-2`}
         >
-          Book a Free Consultation
+          {t('contact.bookConsultation')}
         </button>
 
         {/* Consultation Modal */}
@@ -195,7 +197,7 @@ export default function ContactPage() {
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
               <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ duration: 0.2 }} className={`${isDark ? 'bg-gray-900 border-cyan-900' : 'bg-white border-blue-300'} rounded-3xl shadow-2xl p-4 sm:p-8 w-full max-w-lg border relative overflow-y-auto max-h-[90vh]`}>
                 <button onClick={() => { setShowModal(false); setMethod(null); }} className={`absolute top-4 right-4 ${isDark ? 'text-cyan-300 hover:text-emerald-400' : 'text-blue-600 hover:text-blue-800'} text-2xl font-bold`}>&times;</button>
-                <h3 className={`text-2xl font-bold ${isDark ? 'text-cyan-200' : 'text-blue-600'} mb-6 text-center`}>Book a Free Consultation</h3>
+                <h3 className={`text-2xl font-bold ${isDark ? 'text-cyan-200' : 'text-blue-600'} mb-6 text-center`}>{t('contact.bookConsultation')}</h3>
                 <div className="flex flex-wrap gap-4 justify-center mb-6">
                   {consultMethods.map((m) => (
                     <button
@@ -262,26 +264,26 @@ export default function ContactPage() {
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500/20 to-violet-500/20 rounded-full flex items-center justify-center">
                   <Video className="w-8 h-8 text-cyan-400" />
                 </div>
-                <h2 className="text-2xl font-bold text-white mb-2">Video Consultation</h2>
-                <p className="text-gray-300">Video consultations are available for premium clients. Please contact us to schedule a video call.</p>
+                <h2 className="text-2xl font-bold text-white mb-2">{t('contact.videoPopup.title')}</h2>
+                <p className="text-gray-300">{t('contact.videoPopup.description')}</p>
               </div>
               
               <div className="space-y-4 text-sm text-gray-300">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                  <p>Professional video consultation via Zoom or Google Meet</p>
+                  <p>{t('contact.videoPopup.feature1')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                  <p>Screen sharing and presentation capabilities</p>
+                  <p>{t('contact.videoPopup.feature2')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                  <p>High-quality audio and video</p>
+                  <p>{t('contact.videoPopup.feature3')}</p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
-                  <p>Recording option available</p>
+                  <p>{t('contact.videoPopup.feature4')}</p>
                 </div>
               </div>
               
@@ -293,20 +295,20 @@ export default function ContactPage() {
                   className="w-full py-3 bg-gradient-to-r from-cyan-500 to-violet-500 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-violet-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  <span>Contact via WhatsApp</span>
+                  <span>{t('contact.videoPopup.whatsappButton')}</span>
                 </a>
                 <a 
                   href="mailto:support@upvistadigital.com?subject=Premium Video Consultation Request&body=Hi! I'd like to schedule a premium video consultation. Please let me know the details and pricing."
                   className="w-full py-3 border border-white/20 text-white rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2"
                 >
                   <Mail className="w-5 h-5" />
-                  <span>Contact via Email</span>
+                  <span>{t('contact.videoPopup.emailButton')}</span>
                 </a>
                 <button
                   onClick={() => setShowVideoPopup(false)}
                   className="w-full py-2 text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  Close
+                  {t('contact.videoPopup.close')}
                 </button>
               </div>
             </div>
@@ -323,10 +325,10 @@ export default function ContactPage() {
           className="text-center mb-12"
         >
           <h1 className={`text-4xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-blue-400 via-purple-400 to-pink-400' : 'from-blue-600 via-purple-600 to-pink-600'} bg-clip-text text-transparent`}>
-            Contact Us
+            {t('contact.title')}
           </h1>
           <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} text-lg`}>
-            Get in touch with us to discuss your project
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -341,7 +343,7 @@ export default function ContactPage() {
           >
             <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'} flex items-center gap-2`}>
               <span className={`bg-gradient-to-r ${isDark ? 'from-blue-500 to-purple-600' : 'from-blue-600 to-purple-700'} bg-clip-text text-transparent`}>
-                Contact Information
+                {t('contact.contactInformation')}
               </span>
             </h2>
             <div className="space-y-6">
@@ -370,9 +372,9 @@ export default function ContactPage() {
                         className={`${isDark ? 'text-white hover:text-purple-400' : 'text-gray-900 hover:text-blue-600'} transition-colors duration-300 cursor-pointer group/link`}
                       >
                         <span className="group-hover/link:underline">{info.value}</span>
-                        {info.title === "Location" && (
+                        {info.title === t('contact.info.location') && (
                           <span className={`ml-2 text-xs ${isDark ? 'text-purple-400' : 'text-blue-600'} opacity-0 group-hover/link:opacity-100 transition-opacity duration-300`}>
-                            (Open Map)
+                            ({t('contact.openMap')})
                           </span>
                         )}
                       </a>
@@ -395,7 +397,7 @@ export default function ContactPage() {
           >
             <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'} flex items-center gap-2`}>
               <span className={`bg-gradient-to-r ${isDark ? 'from-blue-500 to-purple-600' : 'from-blue-600 to-purple-700'} bg-clip-text text-transparent`}>
-                Connect With Us
+                {t('contact.connectWithUs')}
               </span>
             </h2>
             <div className="grid grid-cols-1 gap-4">
@@ -433,10 +435,10 @@ export default function ContactPage() {
             {/* Soft glowing background */}
             <div className="absolute -inset-2 z-[-1] rounded-2xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-cyan-500/20 blur-2xl opacity-70 animate-pulse" />
             <h3 className="text-2xl md:text-3xl font-bold mb-2 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent drop-shadow">
-              Ready to Join Upvista?
+              {t('contact.cta.title')}
             </h3>
             <p className="text-lg text-purple-100 mb-6 max-w-md">
-              Register now to become part of our digital community and unlock exclusive opportunities!
+              {t('contact.cta.description')}
             </p>
             <a href="/pages/auth" className="w-full flex justify-center">
               <motion.button
@@ -444,7 +446,7 @@ export default function ContactPage() {
                 whileTap={{ scale: 0.97 }}
                 className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500 text-white font-bold shadow-lg hover:from-blue-500 hover:to-purple-600 transition-all duration-300 text-lg focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2"
               >
-                Register
+                {t('contact.cta.register')}
               </motion.button>
             </a>
           </motion.div>
@@ -461,7 +463,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.6 }}
                 className={`text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-cyan-400 via-purple-400 to-emerald-400' : 'from-cyan-600 via-purple-600 to-emerald-600'} bg-clip-text text-transparent`}
               >
-                Experience Our VR Consultation
+                {t('contact.vr.title')}
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -469,8 +471,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'} max-w-2xl mx-auto`}
               >
-                Step into the future of project consultation with our immersive Virtual Reality experience. 
-                See how we work with clients in real-time through an interactive simulation.
+                {t('contact.vr.description')}
               </motion.p>
             </div>
 
@@ -484,8 +485,8 @@ export default function ContactPage() {
                 <div className={`w-16 h-16 mx-auto mb-4 ${isDark ? 'bg-gradient-to-br from-cyan-500/20 to-purple-500/20' : 'bg-gradient-to-br from-cyan-500/10 to-purple-500/10'} rounded-full flex items-center justify-center`}>
                   <MessageSquare className={`w-8 h-8 ${isDark ? 'text-cyan-400' : 'text-cyan-600'}`} />
                 </div>
-                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>Interactive Chat</h3>
-                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Experience a realistic consultation conversation with our AI agent</p>
+                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>{t('contact.vr.feature1.title')}</h3>
+                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('contact.vr.feature1.description')}</p>
               </motion.div>
 
               <motion.div 
@@ -497,8 +498,8 @@ export default function ContactPage() {
                 <div className={`w-16 h-16 mx-auto mb-4 ${isDark ? 'bg-gradient-to-br from-purple-500/20 to-emerald-500/20' : 'bg-gradient-to-br from-purple-500/10 to-emerald-500/10'} rounded-full flex items-center justify-center`}>
                   <CheckCircle className={`w-8 h-8 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
                 </div>
-                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>Project Process</h3>
-                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>See our complete workflow from consultation to project delivery</p>
+                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>{t('contact.vr.feature2.title')}</h3>
+                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('contact.vr.feature2.description')}</p>
               </motion.div>
 
               <motion.div 
@@ -510,8 +511,8 @@ export default function ContactPage() {
                 <div className={`w-16 h-16 mx-auto mb-4 ${isDark ? 'bg-gradient-to-br from-emerald-500/20 to-cyan-500/20' : 'bg-gradient-to-br from-emerald-500/10 to-cyan-500/10'} rounded-full flex items-center justify-center`}>
                   <Video className={`w-8 h-8 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />
                 </div>
-                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>Real-time Demo</h3>
-                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Watch as we create project documentation and proposals live</p>
+                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} mb-2`}>{t('contact.vr.feature3.title')}</h3>
+                <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('contact.vr.feature3.description')}</p>
               </motion.div>
             </div>
 
@@ -526,7 +527,7 @@ export default function ContactPage() {
                 className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-emerald-500 text-white font-bold rounded-full hover:scale-105 hover:shadow-2xl transition-all duration-300 shadow-lg"
               >
                 <Video className="w-6 h-6" />
-                Start VR Experience
+                {t('contact.vr.button')}
               </Link>
             </motion.div>
         </div>
@@ -550,19 +551,13 @@ export default function ContactPage() {
             {/* Founder Message */}
             <div className="flex-1 text-center md:text-left">
               <h2 className={`text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r ${isDark ? 'from-purple-400 to-blue-400' : 'from-purple-600 to-blue-600'} bg-clip-text text-transparent`}>
-                  Hamza Hafeez
+                  {t('contact.founder.name')}
               </h2>
               <p className={`text-lg font-medium ${isDark ? 'text-purple-300' : 'text-blue-600'} mb-4`}>
-                Founder & CEO, Upvista Digital
+                {t('contact.founder.title')}
               </p>
               <p className={`${isDark ? 'text-gray-300' : 'text-gray-600'} text-lg leading-relaxed`}>
-                &ldquo;At Upvista Digital, we believe in transforming ideas into
-                digital excellence. Our mission is to empower businesses with
-                innovative solutions that drive growth and success in the
-                digital landscape. With a team of passionate experts and
-                cutting-edge technology, we&apos;re committed to delivering
-                exceptional results that exceed expectations. Let&apos;s build
-                something extraordinary together.&rdquo;
+                &ldquo;{t('contact.founder.quote')}&rdquo;
               </p>
             </div>
           </div>

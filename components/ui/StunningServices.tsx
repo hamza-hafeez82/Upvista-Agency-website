@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ServiceModal } from "@/components/ui/ServiceModal";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Placeholder SVGs for each service (replace with custom SVGs or Lottie animations)
 const ServiceSVG = ({ name }: { name: string }) => {
@@ -34,211 +35,212 @@ interface Module {
   services: Service[];
 }
 
+export const StunningServices = () => {
+  const { isDark } = useTheme();
+  const { t } = useLanguage();
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [currentPhase, setCurrentPhase] = useState(0);
+  const [expandedModule, setExpandedModule] = useState<string | null>(null);
+
 const modules: Module[] = [
   {
-    name: "Digital Transformation Suite",
+    name: t('services.module1.name'),
     accent: "from-cyan-900 via-emerald-800 to-blue-950",
-    description: "The complete suite for digital transformation: software, web, apps, AI, cloud, and data.",
+    description: t('services.module1.description'),
     services: [
       {
-        name: "Custom Software",
-        title: "End-to-End Custom Software Development",
-        summary: "Enterprise-grade software tailored to your business needs.",
+        name: t('services.module1.service1.name'),
+        title: t('services.module1.service1.title'),
+        summary: t('services.module1.service1.summary'),
         phases: [
-          { title: "Discovery & Consultation", description: "We start by deeply understanding your business, goals, and challenges through in-depth consultation. Our team conducts stakeholder interviews, market research, and competitive analysis to ensure we grasp your unique needs. We identify pain points and opportunities for innovation. This phase sets the foundation for a solution that truly fits your vision." },
-          { title: "Planning & Strategy", description: "We create a detailed project roadmap, define milestones, and set clear expectations for deliverables and timelines. Our strategists collaborate with you to prioritize features and align the project with your business objectives. We assess technical requirements, risks, and dependencies. Transparent planning ensures everyone is on the same page from day one." },
-          { title: "Design & Prototyping", description: "Our designers craft wireframes and interactive prototypes for your feedback and approval. We focus on user experience, accessibility, and visual appeal. Multiple iterations and collaborative reviews ensure the design meets your brand standards and user needs. You see and interact with your solution before development begins." },
-          { title: "Development", description: "Our engineers build your solution using best practices, agile methods, and regular updates. We use modern frameworks and scalable architectures. Frequent demos and sprint reviews keep you involved and confident in progress. Code quality, security, and performance are top priorities throughout this phase." },
-          { title: "QA & Testing", description: "We rigorously test for quality, security, and performance using automated and manual methods. Our QA team covers functional, integration, and user acceptance testing. We address bugs and optimize for speed and reliability. Only thoroughly vetted solutions move to launch." },
-          { title: "Deployment & Support", description: "We launch your product with zero-downtime strategies and provide ongoing support and maintenance. Our team monitors performance, applies updates, and is available 24/7 for any issues. We ensure your solution remains secure, up-to-date, and continues to deliver value as your business grows." },
+          { title: t('services.module1.service1.phase1.title'), description: t('services.module1.service1.phase1.description') },
+          { title: t('services.module1.service1.phase2.title'), description: t('services.module1.service1.phase2.description') },
+          { title: t('services.module1.service1.phase3.title'), description: t('services.module1.service1.phase3.description') },
+          { title: t('services.module1.service1.phase4.title'), description: t('services.module1.service1.phase4.description') },
+          { title: t('services.module1.service1.phase5.title'), description: t('services.module1.service1.phase5.description') },
+          { title: t('services.module1.service1.phase6.title'), description: t('services.module1.service1.phase6.description') },
         ],
       },
       {
-        name: "Web",
-        title: "Website Design & Development",
-        summary: "Stunning, responsive websites that convert.",
+        name: t('services.module1.service2.name'),
+        title: t('services.module1.service2.title'),
+        summary: t('services.module1.service2.summary'),
         phases: [
-          { title: "Strategy & Research", description: "We analyze your market, audience, and goals to inform design and content. Our team reviews analytics, benchmarks competitors, and identifies opportunities for differentiation. We define user personas and map out key journeys. This research ensures your website is built for impact and engagement." },
-          { title: "Wireframing & UI/UX", description: "We create wireframes and design beautiful, user-friendly interfaces. Our process includes mood boards, style guides, and interactive prototypes. We focus on usability, accessibility, and brand consistency. You review and approve every step before development begins." },
-          { title: "Development", description: "We build your site with modern tech, ensuring speed, SEO, and accessibility. Our developers use responsive frameworks and optimize for all devices. We integrate CMS, analytics, and any required third-party tools. Rigorous testing ensures a flawless launch." },
-          { title: "Launch & Optimization", description: "We launch, monitor, and optimize your site for ongoing success. Our team tracks performance, user behavior, and conversion rates. We provide training, documentation, and ongoing support. Continuous improvements keep your site ahead of the competition." },
+          { title: t('services.module1.service2.phase1.title'), description: t('services.module1.service2.phase1.description') },
+          { title: t('services.module1.service2.phase2.title'), description: t('services.module1.service2.phase2.description') },
+          { title: t('services.module1.service2.phase3.title'), description: t('services.module1.service2.phase3.description') },
+          { title: t('services.module1.service2.phase4.title'), description: t('services.module1.service2.phase4.description') },
         ],
       },
       {
-        name: "App",
-        title: "Mobile App Development",
-        summary: "iOS & Android apps for modern businesses.",
+        name: t('services.module1.service3.name'),
+        title: t('services.module1.service3.title'),
+        summary: t('services.module1.service3.summary'),
         phases: [
-          { title: "Ideation & Planning", description: "We define your app&apos;s purpose, features, and user flows through collaborative workshops. Our team researches user needs, market trends, and platform guidelines. We create detailed specifications and wireframes. This phase ensures your app is set up for success from the start." },
-          { title: "Design & Prototyping", description: "We design intuitive, engaging app interfaces and interactive prototypes. Our designers focus on usability, accessibility, and platform best practices. You review and test prototypes to ensure the app meets your vision and user expectations." },
-          { title: "Development", description: "We develop your app for iOS/Android with regular demos and feedback cycles. Our engineers use agile sprints, automated testing, and code reviews. We ensure performance, security, and scalability are built in from day one." },
-          { title: "Testing & Launch", description: "We test thoroughly and launch your app to the stores. Our QA team covers functional, device, and user acceptance testing. We handle app store submissions, compliance, and launch marketing. Your app goes live with confidence and support." },
-          { title: "Support & Updates", description: "We provide ongoing support, updates, and feature enhancements. Our team monitors analytics, user feedback, and platform changes. We proactively address issues and help your app evolve with your business." },
+          { title: t('services.module1.service3.phase1.title'), description: t('services.module1.service3.phase1.description') },
+          { title: t('services.module1.service3.phase2.title'), description: t('services.module1.service3.phase2.description') },
+          { title: t('services.module1.service3.phase3.title'), description: t('services.module1.service3.phase3.description') },
+          { title: t('services.module1.service3.phase4.title'), description: t('services.module1.service3.phase4.description') },
+          { title: t('services.module1.service3.phase5.title'), description: t('services.module1.service3.phase5.description') },
         ],
       },
       {
-        name: "AI",
-        title: "AI & Automation Solutions",
-        summary: "Leverage AI to automate and innovate.",
+        name: t('services.module1.service4.name'),
+        title: t('services.module1.service4.title'),
+        summary: t('services.module1.service4.summary'),
         phases: [
-          { title: "Needs Assessment", description: "We evaluate your business for AI and automation opportunities. Our experts analyze workflows, data sources, and pain points. We identify high-impact areas for automation and innovation. This phase ensures AI is applied where it delivers real value." },
-          { title: "Solution Design", description: "We architect AI workflows and automation strategies tailored to your needs. Our team selects the right models, tools, and platforms. We design for scalability, security, and ethical use. You review and approve the solution before implementation." },
-          { title: "Implementation", description: "We build and integrate AI solutions into your business processes. Our engineers handle data integration, model training, and deployment. We ensure seamless adoption and minimal disruption to your operations." },
-          { title: "Monitoring & Optimization", description: "We monitor, optimize, and support your AI systems post-launch. Our team tracks performance, retrains models, and addresses issues proactively. Continuous improvement ensures your AI delivers ongoing value." },
+          { title: t('services.module1.service4.phase1.title'), description: t('services.module1.service4.phase1.description') },
+          { title: t('services.module1.service4.phase2.title'), description: t('services.module1.service4.phase2.description') },
+          { title: t('services.module1.service4.phase3.title'), description: t('services.module1.service4.phase3.description') },
+          { title: t('services.module1.service4.phase4.title'), description: t('services.module1.service4.phase4.description') },
         ],
       },
       {
-        name: "Cloud",
-        title: "Cloud & DevOps",
-        summary: "Scale with secure, modern infrastructure.",
+        name: t('services.module1.service5.name'),
+        title: t('services.module1.service5.title'),
+        summary: t('services.module1.service5.summary'),
         phases: [
-          { title: "Assessment & Planning", description: "We assess your infrastructure and plan migration or optimization. Our team reviews current systems, identifies bottlenecks, and sets clear goals. We design a cloud strategy that aligns with your business needs and budget." },
-          { title: "Migration & Setup", description: "We migrate, set up, and configure your cloud environment. Our engineers ensure data integrity, security, and minimal downtime. We handle all technical details, so you can focus on your business." },
-          { title: "Automation & Monitoring", description: "We implement DevOps practices and monitor systems for performance and security. Automated pipelines, alerts, and dashboards keep your infrastructure running smoothly. We proactively address issues before they impact your business." },
-          { title: "Optimization & Support", description: "We optimize for cost, performance, and provide ongoing support. Our team reviews usage, recommends improvements, and ensures your cloud environment evolves with your needs." },
+          { title: t('services.module1.service5.phase1.title'), description: t('services.module1.service5.phase1.description') },
+          { title: t('services.module1.service5.phase2.title'), description: t('services.module1.service5.phase2.description') },
+          { title: t('services.module1.service5.phase3.title'), description: t('services.module1.service5.phase3.description') },
+          { title: t('services.module1.service5.phase4.title'), description: t('services.module1.service5.phase4.description') },
         ],
       },
       {
-        name: "Data",
-        title: "Data Analytics & BI",
-        summary: "Unlock insights, drive smarter decisions.",
+        name: t('services.module1.service6.name'),
+        title: t('services.module1.service6.title'),
+        summary: t('services.module1.service6.summary'),
         phases: [
-          { title: "Data Audit", description: "We audit your data sources and quality to ensure accuracy and reliability. Our team maps data flows, identifies gaps, and recommends improvements. Clean, trustworthy data is the foundation for actionable insights." },
-          { title: "Dashboard Design", description: "We design insightful dashboards and reports tailored to your KPIs. Our designers focus on clarity, usability, and real-time data visualization. You get the information you need, when you need it." },
-          { title: "Implementation", description: "We build and integrate analytics solutions with your existing systems. Our engineers ensure secure data pipelines, scalable storage, and seamless access. We train your team to use and interpret the tools effectively." },
-          { title: "Insights & Support", description: "We deliver actionable insights and ongoing support. Our analysts help you interpret results, identify trends, and make data-driven decisions. Continuous support ensures your analytics evolve with your business." },
+          { title: t('services.module1.service6.phase1.title'), description: t('services.module1.service6.phase1.description') },
+          { title: t('services.module1.service6.phase2.title'), description: t('services.module1.service6.phase2.description') },
+          { title: t('services.module1.service6.phase3.title'), description: t('services.module1.service6.phase3.description') },
+          { title: t('services.module1.service6.phase4.title'), description: t('services.module1.service6.phase4.description') },
         ],
       },
     ],
   },
   {
-    name: "Brand & Experience",
+    name: t('services.module2.name'),
     accent: "from-pink-600 via-fuchsia-700 to-violet-900",
-    description: "Branding, design, and marketing to elevate your business experience.",
+    description: t('services.module2.description'),
     services: [
       {
-        name: "Branding",
-        title: "Branding & Identity Design",
-        summary: "Crafting memorable brands that stand out.",
+        name: t('services.module2.service1.name'),
+        title: t('services.module2.service1.title'),
+        summary: t('services.module2.service1.summary'),
         phases: [
-          { title: "Brand Discovery", description: "We explore your story, values, and audience to build a strong foundation." },
-          { title: "Concept & Strategy", description: "We develop creative concepts and a brand strategy tailored to your goals." },
-          { title: "Visual Identity Design", description: "We design logos, color palettes, and brand assets for a cohesive identity." },
-          { title: "Guidelines & Delivery", description: "We deliver brand guidelines and assets for consistent application." },
+          { title: t('services.module2.service1.phase1.title'), description: t('services.module2.service1.phase1.description') },
+          { title: t('services.module2.service1.phase2.title'), description: t('services.module2.service1.phase2.description') },
+          { title: t('services.module2.service1.phase3.title'), description: t('services.module2.service1.phase3.description') },
+          { title: t('services.module2.service1.phase4.title'), description: t('services.module2.service1.phase4.description') },
         ],
       },
       {
-        name: "Design",
-        title: "Graphics & UI/UX Design",
-        summary: "Beautiful, intuitive designs for web and mobile.",
+        name: t('services.module2.service2.name'),
+        title: t('services.module2.service2.title'),
+        summary: t('services.module2.service2.summary'),
         phases: [
-          { title: "Research & Inspiration", description: "We gather inspiration and analyze user needs for effective design." },
-          { title: "Wireframing", description: "We create wireframes to map out user flows and layouts." },
-          { title: "Visual Design", description: "We craft stunning, user-friendly interfaces and graphics." },
-          { title: "Prototyping & Handoff", description: "We build interactive prototypes and hand off assets to development." },
+          { title: t('services.module2.service2.phase1.title'), description: t('services.module2.service2.phase1.description') },
+          { title: t('services.module2.service2.phase2.title'), description: t('services.module2.service2.phase2.description') },
+          { title: t('services.module2.service2.phase3.title'), description: t('services.module2.service2.phase3.description') },
+          { title: t('services.module2.service2.phase4.title'), description: t('services.module2.service2.phase4.description') },
         ],
       },
       {
-        name: "Marketing",
-        title: "Digital Marketing",
-        summary: "Grow your reach with data-driven marketing.",
+        name: t('services.module2.service3.name'),
+        title: t('services.module2.service3.title'),
+        summary: t('services.module2.service3.summary'),
         phases: [
-          { title: "Market Research", description: "We analyze your audience and competitors." },
-          { title: "Campaign Planning", description: "We plan creative, data-driven marketing campaigns." },
-          { title: "Execution", description: "We launch and manage campaigns across channels." },
-          { title: "Analytics & Optimization", description: "We track results and optimize for growth." },
+          { title: t('services.module2.service3.phase1.title'), description: t('services.module2.service3.phase1.description') },
+          { title: t('services.module2.service3.phase2.title'), description: t('services.module2.service3.phase2.description') },
+          { title: t('services.module2.service3.phase3.title'), description: t('services.module2.service3.phase3.description') },
+          { title: t('services.module2.service3.phase4.title'), description: t('services.module2.service3.phase4.description') },
         ],
       },
     ],
   },
   {
-    name: "Business Operations",
+    name: t('services.module3.name'),
     accent: "from-teal-600 via-cyan-700 to-blue-900",
-    description: "Consultation, management, billing, support, and assistance for seamless business operations.",
+    description: t('services.module3.description'),
     services: [
       {
-        name: "Consult",
-        title: "Business Consultation & Strategy",
-        summary: "Expert guidance for digital transformation.",
+        name: t('services.module3.service1.name'),
+        title: t('services.module3.service1.title'),
+        summary: t('services.module3.service1.summary'),
         phases: [
-          { title: "Business Analysis", description: "We analyze your business, market, and goals." },
-          { title: "Opportunity Mapping", description: "We identify digital opportunities and growth areas." },
-          { title: "Strategy Development", description: "We craft a tailored digital transformation strategy." },
-          { title: "Implementation Roadmap", description: "We provide a clear, actionable roadmap for success." },
+          { title: t('services.module3.service1.phase1.title'), description: t('services.module3.service1.phase1.description') },
+          { title: t('services.module3.service1.phase2.title'), description: t('services.module3.service1.phase2.description') },
+          { title: t('services.module3.service1.phase3.title'), description: t('services.module3.service1.phase3.description') },
+          { title: t('services.module3.service1.phase4.title'), description: t('services.module3.service1.phase4.description') },
         ],
       },
       {
-        name: "Manage",
-        title: "Project Management",
-        summary: "Seamless execution from start to finish.",
+        name: t('services.module3.service2.name'),
+        title: t('services.module3.service2.title'),
+        summary: t('services.module3.service2.summary'),
         phases: [
-          { title: "Planning & Kickoff", description: "We define scope, timelines, and deliverables." },
-          { title: "Execution & Tracking", description: "We manage tasks, teams, and progress transparently." },
-          { title: "Quality Control", description: "We ensure deliverables meet the highest standards." },
-          { title: "Delivery & Review", description: "We deliver, review, and optimize project outcomes." },
+          { title: t('services.module3.service2.phase1.title'), description: t('services.module3.service2.phase1.description') },
+          { title: t('services.module3.service2.phase2.title'), description: t('services.module3.service2.phase2.description') },
+          { title: t('services.module3.service2.phase3.title'), description: t('services.module3.service2.phase3.description') },
+          { title: t('services.module3.service2.phase4.title'), description: t('services.module3.service2.phase4.description') },
         ],
       },
       {
-        name: "Billing",
-        title: "Billing & Invoicing Solutions",
-        summary: "Streamlined, secure billing for your business.",
+        name: t('services.module3.service3.name'),
+        title: t('services.module3.service3.title'),
+        summary: t('services.module3.service3.summary'),
         phases: [
-          { title: "Requirements Gathering", description: "We understand your billing needs and compliance requirements." },
-          { title: "System Setup", description: "We configure and integrate billing systems." },
-          { title: "Testing & Training", description: "We test the system and train your team." },
-          { title: "Go Live & Support", description: "We launch and provide ongoing support." },
+          { title: t('services.module3.service3.phase1.title'), description: t('services.module3.service3.phase1.description') },
+          { title: t('services.module3.service3.phase2.title'), description: t('services.module3.service3.phase2.description') },
+          { title: t('services.module3.service3.phase3.title'), description: t('services.module3.service3.phase3.description') },
+          { title: t('services.module3.service3.phase4.title'), description: t('services.module3.service3.phase4.description') },
         ],
       },
       {
-        name: "Support",
-        title: "Maintenance & Support",
-        summary: "Ongoing care for your digital assets.",
+        name: t('services.module3.service4.name'),
+        title: t('services.module3.service4.title'),
+        summary: t('services.module3.service4.summary'),
         phases: [
-          { title: "Onboarding & Audit", description: "We audit your systems and onboard you to our support platform." },
-          { title: "Proactive Maintenance", description: "We provide regular updates and preventive care." },
-          { title: "24/7 Support", description: "We offer round-the-clock support for any issues." },
-          { title: "Reporting & Optimization", description: "We deliver regular reports and optimize performance." },
+          { title: t('services.module3.service4.phase1.title'), description: t('services.module3.service4.phase1.description') },
+          { title: t('services.module3.service4.phase2.title'), description: t('services.module3.service4.phase2.description') },
+          { title: t('services.module3.service4.phase3.title'), description: t('services.module3.service4.phase3.description') },
+          { title: t('services.module3.service4.phase4.title'), description: t('services.module3.service4.phase4.description') },
         ],
       },
       {
-        name: "Assist",
-        title: "Virtual Assistance",
-        summary: "Delegate tasks, focus on growth.",
+        name: t('services.module3.service5.name'),
+        title: t('services.module3.service5.title'),
+        summary: t('services.module3.service5.summary'),
         phases: [
-          { title: "Needs Assessment", description: "We identify tasks and areas for virtual assistance." },
-          { title: "Onboarding", description: "We onboard you and set up communication channels." },
-          { title: "Task Execution", description: "We handle your tasks efficiently and confidentially." },
-          { title: "Feedback & Optimization", description: "We gather feedback and optimize our service." },
+          { title: t('services.module3.service5.phase1.title'), description: t('services.module3.service5.phase1.description') },
+          { title: t('services.module3.service5.phase2.title'), description: t('services.module3.service5.phase2.description') },
+          { title: t('services.module3.service5.phase3.title'), description: t('services.module3.service5.phase3.description') },
+          { title: t('services.module3.service5.phase4.title'), description: t('services.module3.service5.phase4.description') },
         ],
       },
     ],
   },
   {
-    name: "Security & Compliance",
+    name: t('services.module4.name'),
     accent: "from-amber-700 via-yellow-700 to-yellow-900",
-    description: "Protect your business with top-tier security and compliance services.",
+    description: t('services.module4.description'),
     services: [
       {
-        name: "Security",
-        title: "Cybersecurity & Compliance",
-        summary: "Protect your business with top-tier security.",
+        name: t('services.module4.service1.name'),
+        title: t('services.module4.service1.title'),
+        summary: t('services.module4.service1.summary'),
         phases: [
-          { title: "Risk Assessment", description: "We audit your systems and identify vulnerabilities." },
-          { title: "Implementation", description: "We deploy security measures and ensure compliance." },
-          { title: "Monitoring", description: "We monitor your systems for threats and respond proactively." },
-          { title: "Ongoing Compliance", description: "We provide regular updates and compliance checks." },
+          { title: t('services.module4.service1.phase1.title'), description: t('services.module4.service1.phase1.description') },
+          { title: t('services.module4.service1.phase2.title'), description: t('services.module4.service1.phase2.description') },
+          { title: t('services.module4.service1.phase3.title'), description: t('services.module4.service1.phase3.description') },
+          { title: t('services.module4.service1.phase4.title'), description: t('services.module4.service1.phase4.description') },
         ],
       },
     ],
   },
 ];
-
-export const StunningServices = () => {
-  const { isDark } = useTheme();
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState<Service | null>(null);
-  const [currentPhase, setCurrentPhase] = useState(0);
-  const [expandedModule, setExpandedModule] = useState<string | null>(null);
 
   const openModal = (service: Service) => {
     setSelectedService(service);
@@ -254,9 +256,9 @@ export const StunningServices = () => {
     <section className={`w-full py-20 ${isDark ? 'bg-gradient-to-br from-black via-violet-950 to-black' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50'}`}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-16">
-          <span className={`${isDark ? 'bg-violet-500' : 'bg-blue-600'} text-white px-4 py-1 rounded-full text-sm font-semibold mb-4`}>Our Services</span>
-          <h2 className={`text-4xl md:text-6xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} text-center mb-4 tracking-tight`}>Transform Your Business<br/>with Upvista</h2>
-          <p className={`text-lg ${isDark ? 'text-violet-200' : 'text-gray-600'} max-w-2xl text-center`}>From custom software to AI, branding, and beyond - discover how we deliver world-class digital transformation for ambitious businesses.</p>
+          <span className={`${isDark ? 'bg-violet-500' : 'bg-blue-600'} text-white px-4 py-1 rounded-full text-sm font-semibold mb-4`}>{t('services.badge')}</span>
+          <h2 className={`text-4xl md:text-6xl font-bold ${isDark ? 'text-white' : 'text-gray-900'} text-center mb-4 tracking-tight`}>{t('services.title')}</h2>
+          <p className={`text-lg ${isDark ? 'text-violet-200' : 'text-gray-600'} max-w-2xl text-center`}>{t('services.subtitle')}</p>
         </div>
         <div className="flex flex-col gap-16">
           {modules.map((module) => (
@@ -280,7 +282,7 @@ export const StunningServices = () => {
                     className={`px-8 py-3 rounded-full ${isDark ? 'bg-gradient-to-r from-cyan-400 to-emerald-500 text-black' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'} font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300`}
                     onClick={() => setExpandedModule(module.name)}
                   >
-                    Explore Suite
+                    {t('services.exploreSuite')}
                   </motion.button>
                 )}
                 <AnimatePresence initial={false}>
@@ -317,7 +319,7 @@ export const StunningServices = () => {
                             className={`px-6 py-2 rounded-full ${isDark ? 'bg-gradient-to-r from-cyan-400 to-emerald-500 text-black' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'} font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300`}
                             onClick={() => setExpandedModule(null)}
                           >
-                            Collapse Suite
+                            {t('services.collapseSuite')}
                           </button>
                         </div>
                       </motion.div>
@@ -342,44 +344,44 @@ export const StunningServices = () => {
           <div className={`max-w-5xl mx-auto rounded-3xl ${isDark ? 'bg-gradient-to-br from-[#0f172a]/80 via-[#312e81]/70 to-[#00ffd0]/10 border-cyan-900' : 'bg-white border-gray-200'} backdrop-blur-xl shadow-2xl p-10 md:p-16 flex flex-col items-center gap-12 border`}>
             <h2 className={`text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text ${isDark ? 'bg-gradient-to-r from-cyan-300 to-violet-400' : 'bg-gradient-to-r from-blue-600 to-purple-600'} text-center mb-4 tracking-tight flex items-center gap-3`} style={{lineHeight: '1.25'}}>
               <svg width="32" height="32" fill="none" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill={isDark ? "#00FFD0" : "#3B82F6"} fillOpacity="0.15"/><path d="M16 8v8l6 3" stroke={isDark ? "#00FFD0" : "#3B82F6"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              Insights & Impact
+              {t('services.insights.title')}
             </h2>
             <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               <div className="flex flex-col items-center">
                 <span className={`text-5xl font-bold ${isDark ? 'text-cyan-300' : 'text-cyan-600'} animate-pulse`}>98%</span>
-                <span className={`text-lg ${isDark ? 'text-cyan-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>Client Satisfaction Rate</span>
+                <span className={`text-lg ${isDark ? 'text-cyan-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>{t('services.insights.stat1')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <span className={`text-5xl font-bold ${isDark ? 'text-violet-300' : 'text-violet-600'} animate-pulse`}>1.2h</span>
-                <span className={`text-lg ${isDark ? 'text-violet-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>Avg. Response Time (hrs/mins)</span>
+                <span className={`text-lg ${isDark ? 'text-violet-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>{t('services.insights.stat2')}</span>
               </div>
               <div className="flex flex-col items-center">
                 <span className={`text-5xl font-bold ${isDark ? 'text-emerald-300' : 'text-emerald-600'} animate-pulse`}>4.9/5</span>
-                <span className={`text-lg ${isDark ? 'text-emerald-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>Average Client Rating</span>
+                <span className={`text-lg ${isDark ? 'text-emerald-100' : 'text-gray-700'} mt-2 text-center`} style={{lineHeight: '1.7'}}>{t('services.insights.stat3')}</span>
               </div>
             </div>
             <div className="w-full flex flex-col md:flex-row gap-8 items-center justify-center">
               <div className={`flex-1 ${isDark ? 'bg-black/30 border-cyan-900' : 'bg-gray-50 border-gray-200'} backdrop-blur-lg rounded-2xl p-6 border shadow-lg flex flex-col items-center`}>
-                <h3 className={`text-2xl font-bold ${isDark ? 'text-cyan-200' : 'text-blue-700'} mb-4 tracking-tight`}>Our Vision</h3>
+                <h3 className={`text-2xl font-bold ${isDark ? 'text-cyan-200' : 'text-blue-700'} mb-4 tracking-tight`}>{t('services.vision.title')}</h3>
                 <p className={`text-lg ${isDark ? 'text-cyan-100' : 'text-gray-700'} mb-4 text-center`} style={{lineHeight: '1.7'}}>
-                  To ignite a digital mindset in every business, empowering them to innovate, grow, and lead in a rapidly evolving world. We envision Upvista as the catalyst for digital transformation, inspiring confidence and delivering excellence at every step.
+                  {t('services.vision.content')}
                 </p>
-                <h4 className={`text-xl font-semibold ${isDark ? 'text-cyan-100' : 'text-blue-700'} mb-2 mt-4 tracking-tight`}>Our Standards</h4>
+                <h4 className={`text-xl font-semibold ${isDark ? 'text-cyan-100' : 'text-blue-700'} mb-2 mt-4 tracking-tight`}>{t('services.standards.title')}</h4>
                 <ul className={`${isDark ? 'text-cyan-100' : 'text-gray-700'} text-base space-y-2 list-disc list-inside text-left max-w-md mx-auto`} style={{lineHeight: '1.7'}}>
-                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Client-Centricity:</span> Every solution is tailored to our clients&apos; unique needs and goals.</li>
-                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Innovation:</span> We embrace the latest technologies and creative thinking in all we do.</li>
-                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Transparency:</span> Open, honest communication and clear processes at every stage.</li>
-                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Quality & Security:</span> Rigorous standards for code, design, and data protection.</li>
-                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>Continuous Improvement:</span> We learn, adapt, and grow with every project.</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>{t('services.standards.item1.title')}:</span> {t('services.standards.item1.description')}</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>{t('services.standards.item2.title')}:</span> {t('services.standards.item2.description')}</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>{t('services.standards.item3.title')}:</span> {t('services.standards.item3.description')}</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>{t('services.standards.item4.title')}:</span> {t('services.standards.item4.description')}</li>
+                  <li><span className={`font-bold ${isDark ? 'text-cyan-300' : 'text-blue-700'}`}>{t('services.standards.item5.title')}:</span> {t('services.standards.item5.description')}</li>
                 </ul>
               </div>
             </div>
             <div className="w-full flex flex-col items-center mt-10">
               <a href="/contact" className={`px-8 py-4 rounded-full ${isDark ? 'bg-gradient-to-r from-cyan-400 to-emerald-500 text-black' : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'} font-bold text-xl shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 flex items-center gap-3`}>
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M2 12h20M12 2v20" stroke={isDark ? "#0f172a" : "#ffffff"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                Start Your Transformation
+                {t('services.cta.button')}
               </a>
-              <span className={`${isDark ? 'text-cyan-200' : 'text-gray-700'} mt-4 text-lg`} style={{lineHeight: '1.7'}}>Ready to elevate your business? Let&apos;s build something extraordinary together.</span>
+              <span className={`${isDark ? 'text-cyan-200' : 'text-gray-700'} mt-4 text-lg`} style={{lineHeight: '1.7'}}>{t('services.cta.text')}</span>
             </div>
           </div>
         </section>

@@ -55,18 +55,18 @@ export default function SoftwareDevelopmentPage() {
   ];
 
   const techStackItems = [
-    { name: 'React Native', image: '/assets/tech/react-native.jpg', logo: '/assets/logos/react.svg', description: 'Cross-Platform Mobile' },
-    { name: 'Flutter', image: '/assets/tech/flutter.jpg', logo: '/assets/logos/flutter.svg', description: 'Mobile Development' },
-    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: 'Backend & AI' },
-    { name: 'Java', image: '/assets/tech/java.jpg', logo: '/assets/logos/java.svg', description: 'Enterprise Solutions' },
-    { name: 'C#', image: '/assets/tech/csharp.jpg', logo: '/assets/logos/csharp.svg', description: '.NET Development' },
-    { name: 'Go', image: '/assets/tech/golang.jpg', logo: '/assets/logos/golang.svg', description: 'Microservices' },
-    { name: 'Kubernetes', image: '/assets/tech/kubernetes.jpg', logo: '/assets/logos/kubernetes.svg', description: 'Container Orchestration' },
-    { name: 'AWS', image: '/assets/tech/aws.jpg', logo: '/assets/logos/aws.svg', description: 'Cloud Platform' },
-    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: 'Containerization' },
-    { name: 'PostgreSQL', image: '/assets/tech/postgresql.jpg', logo: '/assets/logos/postgresql.svg', description: 'Advanced Database' },
-    { name: 'Redis', image: '/assets/tech/redis.jpg', logo: '/assets/logos/redis.svg', description: 'Caching & Sessions' },
-    { name: 'Elasticsearch', image: '/assets/tech/elasticsearch.jpg', logo: '/assets/logos/elasticsearch.svg', description: 'Search & Analytics' }
+    { name: 'React Native', image: '/assets/tech/react-native.jpg', logo: '/assets/logos/react.svg', description: t('softdev.tech.reactNative') },
+    { name: 'Flutter', image: '/assets/tech/flutter.jpg', logo: '/assets/logos/flutter.svg', description: t('softdev.tech.flutter') },
+    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: t('softdev.tech.python') },
+    { name: 'Java', image: '/assets/tech/java.jpg', logo: '/assets/logos/java.svg', description: t('softdev.tech.java') },
+    { name: 'C#', image: '/assets/tech/csharp.jpg', logo: '/assets/logos/csharp.svg', description: t('softdev.tech.csharp') },
+    { name: 'Go', image: '/assets/tech/go.jpg', logo: '/assets/logos/golang.svg', description: t('softdev.tech.go') },
+    { name: 'Kubernetes', image: '/assets/tech/kubernetes.jpg', logo: '/assets/logos/kubernetes.svg', description: t('softdev.tech.kubernetes') },
+    { name: 'AWS', image: '/assets/tech/aws.jpg', logo: '/assets/logos/aws.svg', description: t('softdev.tech.aws') },
+    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: t('softdev.tech.docker') },
+    { name: 'PostgreSQL', image: '/assets/tech/postgresql.jpg', logo: '/assets/logos/postgresql.svg', description: t('softdev.tech.postgresql') },
+    { name: 'Redis', image: '/assets/tech/redis.jpg', logo: '/assets/logos/redis.svg', description: t('softdev.tech.redis') },
+    { name: 'Elasticsearch', image: '/assets/tech/elasticsearch.jpg', logo: '/assets/logos/elasticsearch.svg', description: t('softdev.tech.elasticsearch') }
   ];
 
   // Infinite carousel effect
@@ -83,169 +83,169 @@ export default function SoftwareDevelopmentPage() {
   const developmentProcesses = [
     {
       type: 'custom-software',
-      title: 'Custom Software Development',
-      description: 'Tailored software solutions built from scratch to meet your specific business requirements',
+      title: t('softdev.processes.custom.title'),
+      description: t('softdev.processes.custom.description'),
       platforms: ['React Native', 'Flutter', 'Python', 'Java', 'C#', 'Go'],
       services: [
-        'Requirements Analysis & Planning',
-        'Architecture Design',
-        'Frontend Development',
-        'Backend Development',
-        'Database Design',
-        'API Integration',
-        'Testing & Quality Assurance',
-        'Deployment & DevOps'
+        t('softdev.processes.custom.service1'),
+        t('softdev.processes.custom.service2'),
+        t('softdev.processes.custom.service3'),
+        t('softdev.processes.custom.service4'),
+        t('softdev.processes.custom.service5'),
+        t('softdev.processes.custom.service6'),
+        t('softdev.processes.custom.service7'),
+        t('softdev.processes.custom.service8')
       ],
       roadmap: [
         { 
           step: 1, 
-          title: 'Discovery & Analysis', 
-          description: 'Deep dive into your business processes, requirements, and technical constraints to create a comprehensive project blueprint.',
-          details: 'We conduct extensive stakeholder interviews, workflow analysis, and technical feasibility studies to understand your unique challenges and opportunities.',
+          title: t('softdev.processes.custom.roadmap1.title'), 
+          description: t('softdev.processes.custom.roadmap1.description'),
+          details: t('softdev.processes.custom.roadmap1.details'),
           image: '/assets/services/consultation.jpg'
         },
         { 
           step: 2, 
-          title: 'System Architecture', 
-          description: 'Design scalable, maintainable system architecture with security, performance, and future growth in mind.',
-          details: 'Our architects create detailed technical specifications, database schemas, API designs, and deployment strategies for optimal system performance.',
+          title: t('softdev.processes.custom.roadmap2.title'), 
+          description: t('softdev.processes.custom.roadmap2.description'),
+          details: t('softdev.processes.custom.roadmap2.details'),
           image: '/assets/services/architecture.jpg'
         },
         { 
           step: 3, 
-          title: 'UI/UX Design', 
-          description: 'Intuitive user interface design focused on user experience, accessibility, and business workflow optimization.',
-          details: 'We create wireframes, interactive prototypes, and design systems that align with your brand while ensuring exceptional user experience.',
+          title: t('softdev.processes.custom.roadmap3.title'), 
+          description: t('softdev.processes.custom.roadmap3.description'),
+          details: t('softdev.processes.custom.roadmap3.details'),
           image: '/assets/services/design.jpg'
         },
         { 
           step: 4, 
-          title: 'Development Phase', 
-          description: 'Agile development with regular iterations, code reviews, and continuous integration for quality assurance.',
-          details: 'Our development team follows industry best practices with automated testing, version control, and regular client updates throughout the process.',
+          title: t('softdev.processes.custom.roadmap4.title'), 
+          description: t('softdev.processes.custom.roadmap4.description'),
+          details: t('softdev.processes.custom.roadmap4.details'),
           image: '/assets/services/development.jpg'
         },
         { 
           step: 5, 
-          title: 'Quality Assurance', 
-          description: 'Comprehensive testing including unit tests, integration tests, performance testing, and security audits.',
-          details: 'We perform thorough testing across multiple scenarios, devices, and environments to ensure reliability and performance standards.',
+          title: t('softdev.processes.custom.roadmap5.title'), 
+          description: t('softdev.processes.custom.roadmap5.description'),
+          details: t('softdev.processes.custom.roadmap5.details'),
           image: '/assets/services/testing.jpg'
         },
         { 
           step: 6, 
-          title: 'Deployment & Launch', 
-          description: 'Professional deployment with monitoring, backup systems, and performance optimization for production.',
-          details: 'Smooth deployment with zero downtime, automated monitoring, backup systems, and comprehensive documentation for long-term success.',
+          title: t('softdev.processes.custom.roadmap6.title'), 
+          description: t('softdev.processes.custom.roadmap6.description'),
+          details: t('softdev.processes.custom.roadmap6.details'),
           image: '/assets/services/deployment.jpg'
         },
         { 
           step: 7, 
-          title: 'Support & Maintenance', 
-          description: 'Ongoing support, updates, and maintenance with detailed documentation and training provided.',
-          details: 'Comprehensive support plan including bug fixes, feature updates, performance monitoring, and user training for sustained success.',
+          title: t('softdev.processes.custom.roadmap7.title'), 
+          description: t('softdev.processes.custom.roadmap7.description'),
+          details: t('softdev.processes.custom.roadmap7.details'),
           image: '/assets/services/support.jpg'
         }
       ]
     },
     {
       type: 'mobile-apps',
-      title: 'Mobile Application Development',
-      description: 'Native and cross-platform mobile applications for iOS and Android with seamless user experience',
+      title: t('softdev.processes.mobile.title'),
+      description: t('softdev.processes.mobile.description'),
       platforms: ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Xamarin'],
       services: [
-        'Cross-Platform Development',
-        'Native iOS Development',
-        'Native Android Development',
-        'UI/UX Design',
-        'API Integration',
-        'Push Notifications',
-        'App Store Optimization',
-        'Performance Optimization'
+        t('softdev.processes.mobile.service1'),
+        t('softdev.processes.mobile.service2'),
+        t('softdev.processes.mobile.service3'),
+        t('softdev.processes.mobile.service4'),
+        t('softdev.processes.mobile.service5'),
+        t('softdev.processes.mobile.service6'),
+        t('softdev.processes.mobile.service7'),
+        t('softdev.processes.mobile.service8')
       ],
       roadmap: [
-        { step: 1, title: 'Mobile Strategy', description: 'Defining mobile strategy, platform selection, and technical approach for optimal user engagement.' },
-        { step: 2, title: 'Wireframing', description: 'Creating detailed wireframes and user flow diagrams for intuitive mobile experience.' },
-        { step: 3, title: 'Design System', description: 'Developing consistent design system with mobile-first approach and platform guidelines.' },
-        { step: 4, title: 'Development', description: 'Agile development with regular testing on multiple devices and screen sizes.' },
-        { step: 5, title: 'Testing', description: 'Comprehensive testing including device compatibility, performance, and user acceptance testing.' },
-        { step: 6, title: 'App Store Submission', description: 'Preparing app store submissions with optimized metadata and compliance requirements.' },
-        { step: 7, title: 'Launch & Marketing', description: 'App launch with marketing support and ongoing updates based on user feedback.' }
+        { step: 1, title: t('softdev.processes.mobile.roadmap1.title'), description: t('softdev.processes.mobile.roadmap1.description') },
+        { step: 2, title: t('softdev.processes.mobile.roadmap2.title'), description: t('softdev.processes.mobile.roadmap2.description') },
+        { step: 3, title: t('softdev.processes.mobile.roadmap3.title'), description: t('softdev.processes.mobile.roadmap3.description') },
+        { step: 4, title: t('softdev.processes.mobile.roadmap4.title'), description: t('softdev.processes.mobile.roadmap4.description') },
+        { step: 5, title: t('softdev.processes.mobile.roadmap5.title'), description: t('softdev.processes.mobile.roadmap5.description') },
+        { step: 6, title: t('softdev.processes.mobile.roadmap6.title'), description: t('softdev.processes.mobile.roadmap6.description') },
+        { step: 7, title: t('softdev.processes.mobile.roadmap7.title'), description: t('softdev.processes.mobile.roadmap7.description') }
       ]
     },
     {
       type: 'enterprise-solutions',
-      title: 'Enterprise Software Solutions',
-      description: 'Large-scale enterprise applications with advanced features, security, and integration capabilities',
+      title: t('softdev.processes.enterprise.title'),
+      description: t('softdev.processes.enterprise.description'),
       platforms: ['Java', 'C#', 'Python', 'Microservices', 'Cloud Platforms'],
       services: [
-        'Enterprise Architecture',
-        'Microservices Development',
-        'API Gateway Implementation',
-        'Security & Compliance',
-        'Data Integration',
-        'Scalability Solutions',
-        'Legacy System Integration',
-        'Cloud Migration'
+        t('softdev.processes.enterprise.service1'),
+        t('softdev.processes.enterprise.service2'),
+        t('softdev.processes.enterprise.service3'),
+        t('softdev.processes.enterprise.service4'),
+        t('softdev.processes.enterprise.service5'),
+        t('softdev.processes.enterprise.service6'),
+        t('softdev.processes.enterprise.service7'),
+        t('softdev.processes.enterprise.service8')
       ],
       roadmap: [
-        { step: 1, title: 'Enterprise Analysis', description: 'Comprehensive analysis of enterprise requirements, existing systems, and integration needs.' },
-        { step: 2, title: 'Architecture Planning', description: 'Designing enterprise-grade architecture with scalability, security, and performance considerations.' },
-        { step: 3, title: 'Security Framework', description: 'Implementing enterprise security standards, compliance requirements, and access controls.' },
-        { step: 4, title: 'Development', description: 'Enterprise development with microservices architecture and continuous integration practices.' },
-        { step: 5, title: 'Integration Testing', description: 'Testing integration with existing systems, third-party services, and data migration.' },
-        { step: 6, title: 'Deployment', description: 'Enterprise deployment with monitoring, backup, and disaster recovery systems.' },
-        { step: 7, title: 'Training & Support', description: 'Comprehensive user training and ongoing enterprise support with documentation.' }
+        { step: 1, title: t('softdev.processes.enterprise.roadmap1.title'), description: t('softdev.processes.enterprise.roadmap1.description') },
+        { step: 2, title: t('softdev.processes.enterprise.roadmap2.title'), description: t('softdev.processes.enterprise.roadmap2.description') },
+        { step: 3, title: t('softdev.processes.enterprise.roadmap3.title'), description: t('softdev.processes.enterprise.roadmap3.description') },
+        { step: 4, title: t('softdev.processes.enterprise.roadmap4.title'), description: t('softdev.processes.enterprise.roadmap4.description') },
+        { step: 5, title: t('softdev.processes.enterprise.roadmap5.title'), description: t('softdev.processes.enterprise.roadmap5.description') },
+        { step: 6, title: t('softdev.processes.enterprise.roadmap6.title'), description: t('softdev.processes.enterprise.roadmap6.description') },
+        { step: 7, title: t('softdev.processes.enterprise.roadmap7.title'), description: t('softdev.processes.enterprise.roadmap7.description') }
       ]
     },
     {
       type: 'cloud-solutions',
-      title: 'Cloud-Based Solutions',
-      description: 'Scalable cloud applications with modern DevOps practices and infrastructure automation',
+      title: t('softdev.processes.cloud.title'),
+      description: t('softdev.processes.cloud.description'),
       platforms: ['AWS', 'Azure', 'Google Cloud', 'Docker', 'Kubernetes'],
       services: [
-        'Cloud Architecture Design',
-        'Containerization',
-        'DevOps Implementation',
-        'Auto-scaling Solutions',
-        'Cloud Security',
-        'Monitoring & Analytics',
-        'Cost Optimization',
-        'Disaster Recovery'
+        t('softdev.processes.cloud.service1'),
+        t('softdev.processes.cloud.service2'),
+        t('softdev.processes.cloud.service3'),
+        t('softdev.processes.cloud.service4'),
+        t('softdev.processes.cloud.service5'),
+        t('softdev.processes.cloud.service6'),
+        t('softdev.processes.cloud.service7'),
+        t('softdev.processes.cloud.service8')
       ],
       roadmap: [
-        { step: 1, title: 'Cloud Assessment', description: 'Evaluating current infrastructure and determining optimal cloud migration strategy.' },
-        { step: 2, title: 'Cloud Architecture', description: 'Designing scalable cloud architecture with security, performance, and cost optimization.' },
-        { step: 3, title: 'Migration Planning', description: 'Planning migration strategy with minimal downtime and data integrity preservation.' },
-        { step: 4, title: 'Implementation', description: 'Implementing cloud solutions with automation, monitoring, and security best practices.' },
-        { step: 5, title: 'Testing', description: 'Comprehensive testing of cloud infrastructure, applications, and disaster recovery procedures.' },
-        { step: 6, title: 'Go-Live', description: 'Smooth migration with monitoring and immediate support for any issues.' },
-        { step: 7, title: 'Optimization', description: 'Continuous optimization of cloud resources, costs, and performance monitoring.' }
+        { step: 1, title: t('softdev.processes.cloud.roadmap1.title'), description: t('softdev.processes.cloud.roadmap1.description') },
+        { step: 2, title: t('softdev.processes.cloud.roadmap2.title'), description: t('softdev.processes.cloud.roadmap2.description') },
+        { step: 3, title: t('softdev.processes.cloud.roadmap3.title'), description: t('softdev.processes.cloud.roadmap3.description') },
+        { step: 4, title: t('softdev.processes.cloud.roadmap4.title'), description: t('softdev.processes.cloud.roadmap4.description') },
+        { step: 5, title: t('softdev.processes.cloud.roadmap5.title'), description: t('softdev.processes.cloud.roadmap5.description') },
+        { step: 6, title: t('softdev.processes.cloud.roadmap6.title'), description: t('softdev.processes.cloud.roadmap6.description') },
+        { step: 7, title: t('softdev.processes.cloud.roadmap7.title'), description: t('softdev.processes.cloud.roadmap7.description') }
       ]
     },
     {
       type: 'integration-services',
-      title: 'System Integration Services',
-      description: 'Seamless integration of disparate systems with APIs, middleware, and data synchronization',
+      title: t('softdev.processes.integration.title'),
+      description: t('softdev.processes.integration.description'),
       platforms: ['REST APIs', 'GraphQL', 'Message Queues', 'ETL Tools', 'Middleware'],
       services: [
-        'API Development',
-        'Legacy System Integration',
-        'Data Migration',
-        'Real-time Synchronization',
-        'Workflow Automation',
-        'Third-party Integrations',
-        'Data Transformation',
-        'Monitoring & Alerts'
+        t('softdev.processes.integration.service1'),
+        t('softdev.processes.integration.service2'),
+        t('softdev.processes.integration.service3'),
+        t('softdev.processes.integration.service4'),
+        t('softdev.processes.integration.service5'),
+        t('softdev.processes.integration.service6'),
+        t('softdev.processes.integration.service7'),
+        t('softdev.processes.integration.service8')
       ],
       roadmap: [
-        { step: 1, title: 'Integration Assessment', description: 'Analyzing existing systems, data formats, and integration requirements.' },
-        { step: 2, title: 'Integration Design', description: 'Designing integration architecture with APIs, middleware, and data flow optimization.' },
-        { step: 3, title: 'API Development', description: 'Developing robust APIs with proper documentation, versioning, and security.' },
-        { step: 4, title: 'Data Mapping', description: 'Creating data transformation rules and mapping between different system formats.' },
-        { step: 5, title: 'Integration Testing', description: 'Testing integration flows, data accuracy, and error handling mechanisms.' },
-        { step: 6, title: 'Deployment', description: 'Deploying integration solutions with monitoring and rollback capabilities.' },
-        { step: 7, title: 'Monitoring', description: 'Continuous monitoring of integration health, performance, and data quality.' }
+        { step: 1, title: t('softdev.processes.integration.roadmap1.title'), description: t('softdev.processes.integration.roadmap1.description') },
+        { step: 2, title: t('softdev.processes.integration.roadmap2.title'), description: t('softdev.processes.integration.roadmap2.description') },
+        { step: 3, title: t('softdev.processes.integration.roadmap3.title'), description: t('softdev.processes.integration.roadmap3.description') },
+        { step: 4, title: t('softdev.processes.integration.roadmap4.title'), description: t('softdev.processes.integration.roadmap4.description') },
+        { step: 5, title: t('softdev.processes.integration.roadmap5.title'), description: t('softdev.processes.integration.roadmap5.description') },
+        { step: 6, title: t('softdev.processes.integration.roadmap6.title'), description: t('softdev.processes.integration.roadmap6.description') },
+        { step: 7, title: t('softdev.processes.integration.roadmap7.title'), description: t('softdev.processes.integration.roadmap7.description') }
       ]
     }
   ];
@@ -339,7 +339,7 @@ export default function SoftwareDevelopmentPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    Types of Software Solutions
+                    {t('softdev.projectTypes.heading')}
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
@@ -477,7 +477,7 @@ export default function SoftwareDevelopmentPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    Our Technology Stack
+                    {t('softdev.techStack.heading')}
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
@@ -566,7 +566,7 @@ export default function SoftwareDevelopmentPage() {
                                       : 'bg-blue-100 text-blue-700 border border-blue-200'
                                   }`}>
                                     <span className="w-2 h-2 rounded-full bg-blue-500 mr-3 animate-pulse"></span>
-                                    In Our Tech Stack
+                                    {t('softdev.techStack.badge')}
                                   </div>
                                 </div>
                               </div>
@@ -837,7 +837,7 @@ export default function SoftwareDevelopmentPage() {
                         <h4 className={`text-lg font-semibold mb-6 ${
                           isDark ? 'text-white' : 'text-gray-900'
                         }`}>
-                          Development Roadmap
+                          {t('softdev.processes.roadmapHeading')}
                         </h4>
                         <div className="space-y-12">
                           {process.roadmap.map((step, index) => (
@@ -904,7 +904,7 @@ export default function SoftwareDevelopmentPage() {
                                         ? 'bg-blue-600/80 text-white'
                                         : 'bg-blue-600 text-white'
                                     }`}>
-                                      Step {step.step}
+                                      {t('softdev.processes.step')} {step.step}
                                     </span>
                                   </div>
                                 </div>
@@ -920,7 +920,7 @@ export default function SoftwareDevelopmentPage() {
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Technologies & Platforms
+                            {t('softdev.processes.technologiesHeading')}
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -939,7 +939,7 @@ export default function SoftwareDevelopmentPage() {
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Services Included
+                            {t('softdev.processes.servicesHeading')}
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -992,26 +992,26 @@ export default function SoftwareDevelopmentPage() {
               <h3 className={`text-xl font-semibold mb-4 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
-                Additional Services Included
+                {t('softdev.consultation.additionalServices')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Code Documentation</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Comprehensive technical documentation</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('softdev.consultation.service1.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('softdev.consultation.service1.description')}</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Deployment Support</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Complete deployment and setup assistance</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('softdev.consultation.service2.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('softdev.consultation.service2.description')}</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Training & Support</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>User training and ongoing support</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('softdev.consultation.service3.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('softdev.consultation.service3.description')}</p>
                 </div>
               </div>
             </div>
@@ -1038,7 +1038,7 @@ export default function SoftwareDevelopmentPage() {
                   <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
                 </svg>
                 <span className="text-blue-600 underline hover:text-blue-700 transition-colors">
-                  Sample Operation Manual (PDF)
+                  {t('softdev.consultation.manualLink')}
                 </span>
               </a>
             </div>
@@ -1071,34 +1071,34 @@ export default function SoftwareDevelopmentPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { 
-                  name: 'Healthcare', 
+                  name: t('softdev.mission.industry1.name'), 
                   image: '/assets/services/health.jpeg',
-                  description: 'HIPAA-compliant healthcare software, patient management systems, telemedicine platforms, and secure medical data management solutions.'
+                  description: t('softdev.mission.industry1.description')
                 },
                 { 
-                  name: 'FinTech', 
+                  name: t('softdev.mission.industry2.name'), 
                   image: '/assets/services/fintech.jpeg',
-                  description: 'Secure financial applications, payment gateways, digital banking solutions, cryptocurrency platforms, and compliance management systems.'
+                  description: t('softdev.mission.industry2.description')
                 },
                 { 
-                  name: 'E-commerce', 
+                  name: t('softdev.mission.industry3.name'), 
                   image: '/assets/services/ecommerce.jpeg',
-                  description: 'Custom e-commerce platforms, inventory management systems, payment processing solutions, and customer relationship management tools.'
+                  description: t('softdev.mission.industry3.description')
                 },
                 { 
-                  name: 'EdTech', 
+                  name: t('softdev.mission.industry4.name'), 
                   image: '/assets/services/edutech.jpeg',
-                  description: 'Learning management systems, online education platforms, student information systems, and interactive educational applications.'
+                  description: t('softdev.mission.industry4.description')
                 },
                 { 
-                  name: 'SaaS Platforms', 
+                  name: t('softdev.mission.industry5.name'), 
                   image: '/assets/services/saas.jpeg',
-                  description: 'Scalable software-as-a-service solutions, multi-tenant applications, subscription management, and cloud-based business tools.'
+                  description: t('softdev.mission.industry5.description')
                 },
                 { 
-                  name: 'Manufacturing', 
+                  name: t('softdev.mission.industry6.name'), 
                   image: '/assets/services/manufacturing.jpeg',
-                  description: 'Enterprise resource planning systems, supply chain management, production monitoring, and industrial automation software.'
+                  description: t('softdev.mission.industry6.description')
                 }
               ].map((industry, index) => (
                 <div

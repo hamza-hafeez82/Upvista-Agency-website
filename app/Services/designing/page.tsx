@@ -5,9 +5,11 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function DesignServicesPage() {
   const { isDark } = useTheme();
+  const { t } = useLanguage();
   const [expandedProcess, setExpandedProcess] = useState<string | null>('brand-identity');
   const [expandedProjectTypes, setExpandedProjectTypes] = useState<boolean>(true);
   const [expandedTechStack, setExpandedTechStack] = useState<boolean>(true);
@@ -29,42 +31,42 @@ export default function DesignServicesPage() {
     {
       id: 1,
       image: '/assets/services/creativity.jpeg',
-      title: 'Brand Identity Design',
-      description: 'Complete brand identity package including logo design, color palette, typography, and brand guidelines for a tech startup.',
-      tag: 'Brand Design',
+      title: t('design.caseStudy1.title'),
+      description: t('design.caseStudy1.description'),
+      tag: t('design.caseStudy1.tag'),
       href: '/case-studies/brand-identity-design'
     },
     {
       id: 2,
       image: '/assets/services/ecommerce.jpeg',
-      title: 'E-commerce UI/UX Design',
-      description: 'Modern, user-friendly e-commerce platform design with conversion-optimized user experience and responsive layouts.',
-      tag: 'UI/UX Design',
+      title: t('design.caseStudy2.title'),
+      description: t('design.caseStudy2.description'),
+      tag: t('design.caseStudy2.tag'),
       href: '/case-studies/ecommerce-ui-ux'
     },
     {
       id: 3,
       image: '/assets/services/health.jpeg',
-      title: 'Healthcare App Design',
-      description: 'Intuitive healthcare application design with accessibility features and user-centered design principles.',
-      tag: 'App Design',
+      title: t('design.caseStudy3.title'),
+      description: t('design.caseStudy3.description'),
+      tag: t('design.caseStudy3.tag'),
       href: '/case-studies/healthcare-app-design'
     }
   ];
 
   const techStackItems = [
-    { name: 'Figma', image: '/assets/tech/figma.jpg', logo: '/assets/logos/figma.svg', description: 'UI/UX Design Tool' },
-    { name: 'Adobe XD', image: '/assets/tech/adobe-xd.jpg', logo: '/assets/logos/adobe-xd.svg', description: 'Prototyping Tool' },
-    { name: 'Sketch', image: '/assets/tech/sketch.jpg', logo: '/assets/logos/sketch.svg', description: 'Digital Design' },
-    { name: 'Photoshop', image: '/assets/tech/photoshop.jpg', logo: '/assets/logos/photoshop.svg', description: 'Image Editing' },
-    { name: 'Illustrator', image: '/assets/tech/illustrator.jpg', logo: '/assets/logos/illustrator.svg', description: 'Vector Graphics' },
-    { name: 'InDesign', image: '/assets/tech/indesign.jpg', logo: '/assets/logos/indesign.svg', description: 'Layout Design' },
-    { name: 'After Effects', image: '/assets/tech/after-effects.jpg', logo: '/assets/logos/after-effects.svg', description: 'Motion Graphics' },
-    { name: 'Principle', image: '/assets/tech/principle.jpg', logo: '/assets/logos/principle.svg', description: 'Animation Tool' },
-    { name: 'Framer', image: '/assets/tech/framer.jpg', logo: '/assets/logos/framer.svg', description: 'Interactive Design' },
-    { name: 'Zeplin', image: '/assets/tech/zeplin.jpg', logo: '/assets/logos/zeplin.svg', description: 'Design Handoff' },
-    { name: 'InVision', image: '/assets/tech/invision.jpg', logo: '/assets/logos/invision.svg', description: 'Prototyping Platform' },
-    { name: 'Maze', image: '/assets/tech/maze.jpg', logo: '/assets/logos/maze.svg', description: 'User Testing' }
+    { name: 'Figma', image: '/assets/tech/figma.jpg', logo: '/assets/logos/figma.svg', description: t('design.tech.figma') },
+    { name: 'Adobe XD', image: '/assets/tech/adobe-xd.jpg', logo: '/assets/logos/adobe-xd.svg', description: t('design.tech.adobexd') },
+    { name: 'Sketch', image: '/assets/tech/sketch.jpg', logo: '/assets/logos/sketch.svg', description: t('design.tech.sketch') },
+    { name: 'Photoshop', image: '/assets/tech/photoshop.jpg', logo: '/assets/logos/photoshop.svg', description: t('design.tech.photoshop') },
+    { name: 'Illustrator', image: '/assets/tech/illustrator.jpg', logo: '/assets/logos/illustrator.svg', description: t('design.tech.illustrator') },
+    { name: 'InDesign', image: '/assets/tech/indesign.jpg', logo: '/assets/logos/indesign.svg', description: t('design.tech.indesign') },
+    { name: 'After Effects', image: '/assets/tech/after-effects.jpg', logo: '/assets/logos/after-effects.svg', description: t('design.tech.aftereffects') },
+    { name: 'Principle', image: '/assets/tech/principle.jpg', logo: '/assets/logos/principle.svg', description: t('design.tech.principle') },
+    { name: 'Framer', image: '/assets/tech/framer.jpg', logo: '/assets/logos/framer.svg', description: t('design.tech.framer') },
+    { name: 'Zeplin', image: '/assets/tech/zeplin.jpg', logo: '/assets/logos/zeplin.svg', description: t('design.tech.zeplin') },
+    { name: 'InVision', image: '/assets/tech/invision.jpg', logo: '/assets/logos/invision.svg', description: t('design.tech.invision') },
+    { name: 'Maze', image: '/assets/tech/maze.jpg', logo: '/assets/logos/maze.svg', description: t('design.tech.maze') }
   ];
 
   // Infinite carousel effect
@@ -81,106 +83,106 @@ export default function DesignServicesPage() {
   const developmentProcesses = [
     {
       type: 'brand-identity',
-      title: 'Brand Identity Design',
-      description: 'Complete brand identity packages that define and communicate your brand essence',
+      title: t('design.processes.brand.title'),
+      description: t('design.processes.brand.description'),
       platforms: ['Adobe Creative Suite', 'Figma', 'Sketch', 'Illustrator'],
       services: [
-        'Brand Strategy & Research',
-        'Logo Design',
-        'Color Palette Development',
-        'Typography Selection',
-        'Brand Guidelines',
-        'Business Card Design',
-        'Letterhead Design',
-        'Social Media Templates'
+        t('design.processes.brand.service1'),
+        t('design.processes.brand.service2'),
+        t('design.processes.brand.service3'),
+        t('design.processes.brand.service4'),
+        t('design.processes.brand.service5'),
+        t('design.processes.brand.service6'),
+        t('design.processes.brand.service7'),
+        t('design.processes.brand.service8')
       ],
       roadmap: [
         { 
           step: 1, 
-          title: 'Brand Discovery', 
-          description: 'Comprehensive brand research and strategy development to understand your vision and market position.',
-          details: 'We conduct thorough market research, competitor analysis, and brand positioning to create a foundation for your visual identity.',
+          title: t('design.processes.brand.roadmap1.title'), 
+          description: t('design.processes.brand.roadmap1.description'),
+          details: t('design.processes.brand.roadmap1.details'),
           image: '/assets/services/brand-discovery.jpg'
         },
         { 
           step: 2, 
-          title: 'Logo Design', 
-          description: 'Creating distinctive logo concepts that capture your brand essence and resonate with your target audience.',
-          details: 'Our designers develop multiple logo concepts, refine the best options, and create versatile logo variations for different applications.',
+          title: t('design.processes.brand.roadmap2.title'), 
+          description: t('design.processes.brand.roadmap2.description'),
+          details: t('design.processes.brand.roadmap2.details'),
           image: '/assets/services/logo-design.jpg'
         },
         { 
           step: 3, 
-          title: 'Visual Identity', 
-          description: 'Developing comprehensive visual identity including colors, typography, and design elements.',
-          details: 'We create a cohesive visual system with carefully selected colors, typography, and design elements that reflect your brand personality.',
+          title: t('design.processes.brand.roadmap3.title'), 
+          description: t('design.processes.brand.roadmap3.description'),
+          details: t('design.processes.brand.roadmap3.details'),
           image: '/assets/services/visual-identity.jpg'
         },
         { 
           step: 4, 
-          title: 'Brand Guidelines', 
-          description: 'Creating comprehensive brand guidelines to ensure consistent brand application across all touchpoints.',
-          details: 'We develop detailed brand guidelines with usage rules, examples, and best practices for maintaining brand consistency.',
+          title: t('design.processes.brand.roadmap4.title'), 
+          description: t('design.processes.brand.roadmap4.description'),
+          details: t('design.processes.brand.roadmap4.details'),
           image: '/assets/services/brand-guidelines.jpg'
         },
         { 
           step: 5, 
-          title: 'Brand Applications', 
-          description: 'Designing brand applications including business cards, letterheads, and marketing materials.',
-          details: 'We create practical brand applications that demonstrate how your brand identity works across different mediums and platforms.',
+          title: t('design.processes.brand.roadmap5.title'), 
+          description: t('design.processes.brand.roadmap5.description'),
+          details: t('design.processes.brand.roadmap5.details'),
           image: '/assets/services/brand-applications.jpg'
         },
         { 
           step: 6, 
-          title: 'Delivery & Support', 
-          description: 'Providing all brand assets and ongoing support for brand implementation.',
-          details: 'We deliver all brand assets in various formats and provide ongoing support to ensure successful brand implementation.',
+          title: t('design.processes.brand.roadmap6.title'), 
+          description: t('design.processes.brand.roadmap6.description'),
+          details: t('design.processes.brand.roadmap6.details'),
           image: '/assets/services/delivery.jpg'
         }
       ]
     },
     {
       type: 'ui-ux-design',
-      title: 'UI/UX Design',
-      description: 'User-centered design solutions that enhance user experience and drive engagement',
+      title: t('design.processes.uiux.title'),
+      description: t('design.processes.uiux.description'),
       platforms: ['Figma', 'Adobe XD', 'Sketch', 'Principle'],
       services: [
-        'User Research',
-        'Wireframing',
-        'Prototyping',
-        'Visual Design',
-        'Usability Testing',
-        'Design Systems'
+        t('design.processes.uiux.service1'),
+        t('design.processes.uiux.service2'),
+        t('design.processes.uiux.service3'),
+        t('design.processes.uiux.service4'),
+        t('design.processes.uiux.service5'),
+        t('design.processes.uiux.service6')
       ],
       roadmap: [
-        { step: 1, title: 'User Research', description: 'Understanding your users through research, interviews, and analysis.' },
-        { step: 2, title: 'Information Architecture', description: 'Structuring content and functionality for optimal user experience.' },
-        { step: 3, title: 'Wireframing', description: 'Creating low-fidelity wireframes to define layout and functionality.' },
-        { step: 4, title: 'Prototyping', description: 'Building interactive prototypes to test user flows and interactions.' },
-        { step: 5, title: 'Visual Design', description: 'Creating high-fidelity designs with brand-aligned visual elements.' },
-        { step: 6, title: 'Testing & Iteration', description: 'Conducting usability testing and iterating based on user feedback.' }
+        { step: 1, title: t('design.processes.uiux.roadmap1.title'), description: t('design.processes.uiux.roadmap1.description') },
+        { step: 2, title: t('design.processes.uiux.roadmap2.title'), description: t('design.processes.uiux.roadmap2.description') },
+        { step: 3, title: t('design.processes.uiux.roadmap3.title'), description: t('design.processes.uiux.roadmap3.description') },
+        { step: 4, title: t('design.processes.uiux.roadmap4.title'), description: t('design.processes.uiux.roadmap4.description') },
+        { step: 5, title: t('design.processes.uiux.roadmap5.title'), description: t('design.processes.uiux.roadmap5.description') },
+        { step: 6, title: t('design.processes.uiux.roadmap6.title'), description: t('design.processes.uiux.roadmap6.description') }
       ]
     },
     {
       type: 'graphic-design',
-      title: 'Graphic Design Services',
-      description: 'Creative visual solutions for marketing, advertising, and communication needs',
+      title: t('design.processes.graphic.title'),
+      description: t('design.processes.graphic.description'),
       platforms: ['Adobe Creative Suite', 'Canva', 'Figma', 'InDesign'],
       services: [
-        'Print Design',
-        'Digital Graphics',
-        'Social Media Graphics',
-        'Infographics',
-        'Presentation Design',
-        'Marketing Materials'
+        t('design.processes.graphic.service1'),
+        t('design.processes.graphic.service2'),
+        t('design.processes.graphic.service3'),
+        t('design.processes.graphic.service4'),
+        t('design.processes.graphic.service5'),
+        t('design.processes.graphic.service6')
       ],
       roadmap: [
-        { step: 1, title: 'Project Briefing', description: 'Understanding project requirements and creative direction.' },
-        { step: 2, title: 'Concept Development', description: 'Creating initial design concepts and creative approaches.' },
-        { step: 3, title: 'Design Creation', description: 'Developing final designs with attention to detail and quality.' },
-        { step: 4, title: 'Review & Feedback', description: 'Collaborating on revisions and refinements.' },
-        { step: 5, title: 'Finalization', description: 'Preparing final designs for production and delivery.' },
-        { step: 6, title: 'Asset Delivery', description: 'Providing all necessary files and formats for implementation.' }
+        { step: 1, title: t('design.processes.graphic.roadmap1.title'), description: t('design.processes.graphic.roadmap1.description') },
+        { step: 2, title: t('design.processes.graphic.roadmap2.title'), description: t('design.processes.graphic.roadmap2.description') },
+        { step: 3, title: t('design.processes.graphic.roadmap3.title'), description: t('design.processes.graphic.roadmap3.description') },
+        { step: 4, title: t('design.processes.graphic.roadmap4.title'), description: t('design.processes.graphic.roadmap4.description') },
+        { step: 5, title: t('design.processes.graphic.roadmap5.title'), description: t('design.processes.graphic.roadmap5.description') },
+        { step: 6, title: t('design.processes.graphic.roadmap6.title'), description: t('design.processes.graphic.roadmap6.description') }
       ]
     }
   ];
@@ -206,19 +208,19 @@ export default function DesignServicesPage() {
                 <span className={`w-2 h-2 rounded-full mr-3 ${
                   isDark ? 'bg-blue-400' : 'bg-white'
                 }`}></span>
-                Design Excellence
+                {t('design.hero.badge')}
               </div>
               <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight ${
                 isDark
                   ? 'bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent'
                   : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700 bg-clip-text text-transparent'
               }`}>
-                Design Services
+                {t('design.hero.title')}
               </h1>
               <p className={`text-lg sm:text-xl leading-relaxed ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                Transform your ideas into compelling visual experiences with our creative design solutions that engage, inspire, and convert.
+                {t('design.hero.description')}
               </p>
             </div>
             
@@ -244,12 +246,12 @@ export default function DesignServicesPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Types of Design Services
+              {t('design.projectTypes.heading')}
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              We provide comprehensive design solutions tailored to your brand and business needs
+              {t('design.projectTypes.subtitle')}
             </p>
           </div>
 
@@ -271,12 +273,12 @@ export default function DesignServicesPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    Types of Design Services
+                    {t('design.projectTypes.heading')}
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    We provide comprehensive design solutions tailored to your brand and business needs
+                    {t('design.projectTypes.subtitle')}
                   </p>
                 </div>
                 <svg
@@ -308,12 +310,12 @@ export default function DesignServicesPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Brand Identity Design
+                        {t('design.projectTypes.brandIdentity.title')}
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Complete brand identity packages including logo design, color palettes, typography, and comprehensive brand guidelines that define your visual presence.
+                        {t('design.projectTypes.brandIdentity.description')}
                       </p>
                     </div>
 
@@ -325,12 +327,12 @@ export default function DesignServicesPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        UI/UX Design
+                        {t('design.projectTypes.uiux.title')}
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        User-centered design solutions that enhance user experience, improve usability, and drive engagement through intuitive and beautiful interfaces.
+                        {t('design.projectTypes.uiux.description')}
                       </p>
                     </div>
 
@@ -342,12 +344,12 @@ export default function DesignServicesPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Graphic Design
+                        {t('design.projectTypes.graphic.title')}
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Creative visual solutions for marketing materials, social media graphics, presentations, and print designs that communicate your message effectively.
+                        {t('design.projectTypes.graphic.description')}
                       </p>
                     </div>
 
@@ -359,12 +361,12 @@ export default function DesignServicesPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Motion Graphics
+                        {t('design.projectTypes.motion.title')}
                       </h4>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Dynamic visual storytelling through animated graphics, video content, and motion design that brings your brand to life and engages your audience.
+                        {t('design.projectTypes.motion.description')}
                       </p>
                     </div>
                   </div>
@@ -382,12 +384,12 @@ export default function DesignServicesPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Our Design Technology Stack
+              {t('design.techStack.heading')}
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Professional design tools and platforms for creating exceptional visual experiences
+              {t('design.techStack.subtitle')}
             </p>
           </div>
 
@@ -409,12 +411,12 @@ export default function DesignServicesPage() {
                   <h3 className={`text-xl font-semibold mb-2 ${
                     isDark ? 'text-white' : 'text-gray-900'
                   }`}>
-                    Our Design Technology Stack
+                    {t('design.techStack.heading')}
                   </h3>
                   <p className={`${
                     isDark ? 'text-gray-300' : 'text-gray-600'
                   }`}>
-                    Professional design tools and platforms for creating exceptional visual experiences
+                    {t('design.techStack.subtitle')}
                   </p>
                 </div>
                 <svg
@@ -495,7 +497,7 @@ export default function DesignServicesPage() {
                                       : 'bg-blue-100 text-blue-700 border border-blue-200'
                                   }`}>
                                     <span className="w-2 h-2 rounded-full bg-blue-500 mr-3 animate-pulse"></span>
-                                    In Our Design Stack
+                                    {t('design.techStack.badge')}
                                   </div>
                                 </div>
                               </div>
@@ -534,17 +536,17 @@ export default function DesignServicesPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        UI/UX Design Tools
+                        {t('design.techStack.uiuxTools.title')}
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        We use industry-leading tools like Figma, Adobe XD, and Sketch for creating intuitive user interfaces and exceptional user experiences.
+                        {t('design.techStack.uiuxTools.description1')}
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Our design process includes wireframing, prototyping, and user testing to ensure optimal usability and engagement.
+                        {t('design.techStack.uiuxTools.description2')}
                       </p>
                     </div>
 
@@ -556,17 +558,17 @@ export default function DesignServicesPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Adobe Creative Suite
+                        {t('design.techStack.adobe.title')}
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        We leverage the full Adobe Creative Suite including Photoshop, Illustrator, and InDesign for professional graphic design and image editing.
+                        {t('design.techStack.adobe.description1')}
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Our expertise spans across print design, digital graphics, and brand identity development using industry-standard tools.
+                        {t('design.techStack.adobe.description2')}
                       </p>
                     </div>
 
@@ -578,17 +580,17 @@ export default function DesignServicesPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Motion Graphics & Animation
+                        {t('design.techStack.motion.title')}
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        We create dynamic visual content using After Effects, Principle, and Framer for engaging animations and interactive prototypes.
+                        {t('design.techStack.motion.description1')}
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Our motion graphics bring static designs to life, enhancing user engagement and creating memorable brand experiences.
+                        {t('design.techStack.motion.description2')}
                       </p>
                     </div>
 
@@ -600,17 +602,17 @@ export default function DesignServicesPage() {
                       <h4 className={`text-xl font-semibold mb-4 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        Collaboration & Handoff
+                        {t('design.techStack.collaboration.title')}
                       </h4>
                       <p className={`text-base leading-relaxed mb-4 ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        We use collaboration tools like Zeplin, InVision, and Maze for seamless design handoffs and user testing.
+                        {t('design.techStack.collaboration.description1')}
                       </p>
                       <p className={`text-base leading-relaxed ${
                         isDark ? 'text-gray-300' : 'text-gray-600'
                       }`}>
-                        Our streamlined workflow ensures efficient communication with development teams and stakeholders throughout the design process.
+                        {t('design.techStack.collaboration.description2')}
                       </p>
                     </div>
                   </div>
@@ -628,12 +630,12 @@ export default function DesignServicesPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Design Services Case Studies
+              {t('design.caseStudies.heading')}
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Explore our successful design projects and creative solutions
+              {t('design.caseStudies.subtitle')}
             </p>
           </div>
 
@@ -681,7 +683,7 @@ export default function DesignServicesPage() {
                       isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
                     } transition-colors`}
                   >
-                    Read More
+                    {t('design.caseStudies.readMore')}
                     <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -700,12 +702,12 @@ export default function DesignServicesPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Design Services Process
+              {t('design.processes.heading')}
             </h2>
             <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Our proven methodology ensures exceptional design outcomes with creativity and efficiency
+              {t('design.processes.subtitle')}
             </p>
           </div>
 
@@ -764,7 +766,7 @@ export default function DesignServicesPage() {
                         <h4 className={`text-lg font-semibold mb-6 ${
                           isDark ? 'text-white' : 'text-gray-900'
                         }`}>
-                          Design Process Roadmap
+                          {t('design.processes.roadmapHeading')}
                         </h4>
                         <div className="space-y-12">
                           {process.roadmap.map((step, index) => (
@@ -829,7 +831,7 @@ export default function DesignServicesPage() {
                                         ? 'bg-blue-600/80 text-white'
                                         : 'bg-blue-600 text-white'
                                     }`}>
-                                      Step {step.step}
+                                      {t('design.processes.step')} {step.step}
                                     </span>
                                   </div>
                                 </div>
@@ -844,7 +846,7 @@ export default function DesignServicesPage() {
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Tools & Platforms
+                            {t('design.processes.platformsHeading')}
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -863,7 +865,7 @@ export default function DesignServicesPage() {
                           <h4 className={`font-semibold mb-3 ${
                             isDark ? 'text-white' : 'text-gray-900'
                           }`}>
-                            Services Included
+                            {t('design.processes.servicesHeading')}
                           </h4>
                           <div className={`space-y-2 ${
                             isDark ? 'text-gray-300' : 'text-gray-600'
@@ -899,12 +901,12 @@ export default function DesignServicesPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Free Design Consultation
+              {t('design.consultation.title')}
             </h2>
             <p className={`text-lg sm:text-xl mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              Get expert design advice and creative direction with our complimentary consultation and design strategy session.
+              {t('design.consultation.description')}
             </p>
             
             <div className={`mb-8 p-6 rounded-2xl ${
@@ -915,26 +917,26 @@ export default function DesignServicesPage() {
               <h3 className={`text-xl font-semibold mb-4 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
-                Additional Services Included
+                {t('design.consultation.additionalServices')}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Brand Strategy</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Comprehensive brand strategy and positioning</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('design.consultation.service1.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('design.consultation.service1.description')}</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Design Assets</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Complete design asset library and guidelines</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('design.consultation.service2.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('design.consultation.service2.description')}</p>
                 </div>
                 <div className={`p-3 rounded-lg ${
                   isDark ? 'bg-white/5' : 'bg-white/50'
                 }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>Creative Direction</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>Ongoing creative direction and support</p>
+                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('design.consultation.service3.title')}</strong>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('design.consultation.service3.description')}</p>
                 </div>
               </div>
             </div>
@@ -945,7 +947,7 @@ export default function DesignServicesPage() {
                   ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
                   : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
               }`}>
-                Start Free Consultation
+                {t('design.consultation.button')}
               </button>
               <a
                 href="/assets/sample-operation-manual.pdf"
@@ -961,7 +963,7 @@ export default function DesignServicesPage() {
                   <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
                 </svg>
                 <span className="text-blue-600 underline hover:text-blue-700 transition-colors">
-                  Sample Operation Manual (PDF)
+                  {t('design.consultation.manualLink')}
                 </span>
               </a>
             </div>
@@ -976,12 +978,12 @@ export default function DesignServicesPage() {
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Our Mission
+              {t('design.mission.title')}
             </h2>
             <p className={`text-lg sm:text-xl leading-relaxed mb-8 ${
               isDark ? 'text-gray-300' : 'text-gray-600'
             }`}>
-              We are committed to creating exceptional visual experiences that communicate your brand story, engage your audience, and drive business success. Our mission is to transform ideas into compelling designs that make a lasting impact.
+              {t('design.mission.description')}
             </p>
           </div>
 
@@ -989,39 +991,39 @@ export default function DesignServicesPage() {
             <h3 className={`text-2xl font-semibold mb-8 text-center ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Industries We Serve
+              {t('design.mission.industriesHeading')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 { 
-                  name: 'Technology', 
+                  name: t('design.mission.industry1.name'), 
                   image: '/assets/services/tech.jpeg',
-                  description: 'Modern UI/UX design for software applications, websites, and digital platforms with focus on usability and innovation.'
+                  description: t('design.mission.industry1.description')
                 },
                 { 
-                  name: 'Healthcare', 
+                  name: t('design.mission.industry2.name'), 
                   image: '/assets/services/health.jpeg',
-                  description: 'Clean, accessible design solutions for healthcare applications, patient portals, and medical device interfaces.'
+                  description: t('design.mission.industry2.description')
                 },
                 { 
-                  name: 'E-commerce', 
+                  name: t('design.mission.industry3.name'), 
                   image: '/assets/services/ecommerce.jpeg',
-                  description: 'Conversion-optimized design for online stores, product catalogs, and shopping experiences that drive sales.'
+                  description: t('design.mission.industry3.description')
                 },
                 { 
-                  name: 'Education', 
+                  name: t('design.mission.industry4.name'), 
                   image: '/assets/services/edutech.jpeg',
-                  description: 'Engaging educational design for learning platforms, course materials, and interactive educational content.'
+                  description: t('design.mission.industry4.description')
                 },
                 { 
-                  name: 'Finance', 
+                  name: t('design.mission.industry5.name'), 
                   image: '/assets/services/fintech.jpeg',
-                  description: 'Trustworthy, secure design for financial applications, banking interfaces, and fintech platforms.'
+                  description: t('design.mission.industry5.description')
                 },
                 { 
-                  name: 'Creative Agencies', 
+                  name: t('design.mission.industry6.name'), 
                   image: '/assets/services/creativity.jpeg',
-                  description: 'Bold, creative design solutions for agencies, portfolios, and creative professionals showcasing their work.'
+                  description: t('design.mission.industry6.description')
                 }
               ].map((industry, index) => (
                 <div
@@ -1081,7 +1083,7 @@ export default function DesignServicesPage() {
             <p className={`text-lg font-medium ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Ready to elevate your brand with exceptional design? Let's create visual experiences that captivate your audience and drive your success.
+              {t('design.mission.ending')}
             </p>
           </div>
         </div>
