@@ -313,16 +313,16 @@ export default function EventsPage() {
     return filtered;
   }, [searchTerm, selectedCategory, selectedType, sortBy]);
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Technology': return isDark ? 'bg-blue-600/20 text-blue-300 border-blue-500/30' : 'bg-blue-100 text-blue-700 border-blue-200';
-      case 'Security': return isDark ? 'bg-red-600/20 text-red-300 border-red-500/30' : 'bg-red-100 text-red-700 border-red-200';
-      case 'DevOps': return isDark ? 'bg-green-600/20 text-green-300 border-green-500/30' : 'bg-green-100 text-green-700 border-green-200';
-      case 'Sustainability': return isDark ? 'bg-emerald-600/20 text-emerald-300 border-emerald-500/30' : 'bg-emerald-100 text-emerald-700 border-emerald-200';
-      case 'Data Engineering': return isDark ? 'bg-purple-600/20 text-purple-300 border-purple-500/30' : 'bg-purple-100 text-purple-700 border-purple-200';
-      default: return isDark ? 'bg-gray-600/20 text-gray-300 border-gray-500/30' : 'bg-gray-100 text-gray-700 border-gray-200';
-    }
-  };
+  // const getCategoryColor = (category: string) => {
+  //   switch (category) {
+  //     case 'Technology': return isDark ? 'bg-blue-600/20 text-blue-300 border-blue-500/30' : 'bg-blue-100 text-blue-700 border-blue-200';
+  //     case 'Security': return isDark ? 'bg-red-600/20 text-red-300 border-red-500/30' : 'bg-red-100 text-red-700 border-red-200';
+  //     case 'DevOps': return isDark ? 'bg-green-600/20 text-green-300 border-green-500/30' : 'bg-green-100 text-green-700 border-green-200';
+  //     case 'Sustainability': return isDark ? 'bg-emerald-600/20 text-emerald-300 border-emerald-500/30' : 'bg-emerald-100 text-emerald-700 border-emerald-200';
+  //     case 'Data Engineering': return isDark ? 'bg-purple-600/20 text-purple-300 border-purple-500/30' : 'bg-purple-100 text-purple-700 border-purple-200';
+  //     default: return isDark ? 'bg-gray-600/20 text-gray-300 border-gray-500/30' : 'bg-gray-100 text-gray-700 border-gray-200';
+  //   }
+  // };
 
   const getEventTypeColor = (type: string) => {
     switch (type) {

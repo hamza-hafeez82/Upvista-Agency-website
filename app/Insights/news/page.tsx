@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
-import { Calendar, Clock, User, TrendingUp } from 'lucide-react';
+import { Calendar, Clock, TrendingUp } from 'lucide-react';
 
 export default function NewsPage() {
   const { isDark } = useTheme();
