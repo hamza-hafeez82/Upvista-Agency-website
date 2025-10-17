@@ -30,7 +30,7 @@ export default function AIAutomationPage() {
   const caseStudies = [
     {
       id: 1,
-      image: '/assets/services/health.jpeg',
+      image: '/assets/services/software/48.jpeg',
       title: t('ai.caseStudy1.title'),
       description: t('ai.caseStudy1.description'),
       tag: t('ai.caseStudy1.tag'),
@@ -38,7 +38,7 @@ export default function AIAutomationPage() {
     },
     {
       id: 2,
-      image: '/assets/services/ecommerce.jpeg',
+      image: '/assets/services/software/49.jpeg',
       title: t('ai.caseStudy2.title'),
       description: t('ai.caseStudy2.description'),
       tag: t('ai.caseStudy2.tag'),
@@ -46,7 +46,7 @@ export default function AIAutomationPage() {
     },
     {
       id: 3,
-      image: '/assets/services/saas.jpeg',
+      image: '/assets/services/software/50.jpeg',
       title: t('ai.caseStudy3.title'),
       description: t('ai.caseStudy3.description'),
       tag: t('ai.caseStudy3.tag'),
@@ -55,18 +55,18 @@ export default function AIAutomationPage() {
   ];
 
   const techStackItems = [
-    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: t('ai.tech.python') },
-    { name: 'TensorFlow', image: '/assets/tech/tensorflow.jpg', logo: '/assets/logos/tensorflow.svg', description: t('ai.tech.tensorflow') },
-    { name: 'PyTorch', image: '/assets/tech/pytorch.jpg', logo: '/assets/logos/pytorch.svg', description: t('ai.tech.pytorch') },
-    { name: 'OpenAI GPT', image: '/assets/tech/openai.jpg', logo: '/assets/logos/openai.svg', description: t('ai.tech.openai') },
-    { name: 'Hugging Face', image: '/assets/tech/huggingface.jpg', logo: '/assets/logos/huggingface.svg', description: t('ai.tech.huggingface') },
-    { name: 'LangChain', image: '/assets/tech/langchain.jpg', logo: '/assets/logos/langchain.svg', description: t('ai.tech.langchain') },
-    { name: 'RAG Systems', image: '/assets/tech/rag.jpg', logo: '/assets/logos/rag.svg', description: t('ai.tech.rag') },
-    { name: 'Vector DB', image: '/assets/tech/vector.jpg', logo: '/assets/logos/vector.svg', description: t('ai.tech.vectordb') },
-    { name: 'AWS AI', image: '/assets/tech/aws-ai.jpg', logo: '/assets/logos/aws.svg', description: t('ai.tech.aws') },
-    { name: 'Azure AI', image: '/assets/tech/azure-ai.jpg', logo: '/assets/logos/azure.svg', description: t('ai.tech.azure') },
-    { name: 'Google AI', image: '/assets/tech/google-ai.jpg', logo: '/assets/logos/google.svg', description: t('ai.tech.google') },
-    { name: 'Computer Vision', image: '/assets/tech/cv.jpg', logo: '/assets/logos/cv.svg', description: t('ai.tech.cv') }
+    { name: 'Python', image: '/assets/services/software/51.jpeg', logo: '/assets/logos/python.svg', description: t('ai.tech.python') },
+    { name: 'TensorFlow', image: '/assets/services/software/52.jpeg', logo: '/assets/logos/tensorflow.svg', description: t('ai.tech.tensorflow') },
+    { name: 'PyTorch', image: '/assets/services/software/53.jpeg', logo: '/assets/logos/pytorch.svg', description: t('ai.tech.pytorch') },
+    { name: 'OpenAI GPT', image: '/assets/services/software/54.jpeg', logo: '/assets/logos/openai.svg', description: t('ai.tech.openai') },
+    { name: 'Hugging Face', image: '/assets/services/software/55.jpeg', logo: '/assets/logos/huggingface.svg', description: t('ai.tech.huggingface') },
+    { name: 'LangChain', image: '/assets/services/software/56.jpeg', logo: '/assets/logos/langchain.svg', description: t('ai.tech.langchain') },
+    { name: 'RAG Systems', image: '/assets/services/software/57.jpeg', logo: '/assets/logos/rag.svg', description: t('ai.tech.rag') },
+    { name: 'Vector DB', image: '/assets/services/software/58.jpeg', logo: '/assets/logos/vector.svg', description: t('ai.tech.vectordb') },
+    { name: 'AWS AI', image: '/assets/services/software/59.jpeg', logo: '/assets/logos/aws.svg', description: t('ai.tech.aws') },
+    { name: 'Azure AI', image: '/assets/services/software/60.jpeg', logo: '/assets/logos/azure.svg', description: t('ai.tech.azure') },
+    { name: 'Google AI', image: '/assets/services/software/61.jpeg', logo: '/assets/logos/google.svg', description: t('ai.tech.google') },
+    { name: 'Computer Vision', image: '/assets/services/software/62.jpeg', logo: '/assets/logos/cv.svg', description: t('ai.tech.cv') }
   ];
 
   // Infinite carousel effect
@@ -102,42 +102,42 @@ export default function AIAutomationPage() {
           title: t('ai.processes.aidev.roadmap1.title'), 
           description: t('ai.processes.aidev.roadmap1.description'),
           details: t('ai.processes.aidev.roadmap1.details'),
-          image: '/assets/services/consultation.jpg'
+          image: '/assets/services/process/consultation.jpeg'
         },
         { 
           step: 2, 
           title: t('ai.processes.aidev.roadmap2.title'), 
           description: t('ai.processes.aidev.roadmap2.description'),
           details: t('ai.processes.aidev.roadmap2.details'),
-          image: '/assets/services/data-analysis.jpg'
+          image: '/assets/services/software/63.jpeg'
         },
         { 
           step: 3, 
           title: t('ai.processes.aidev.roadmap3.title'), 
           description: t('ai.processes.aidev.roadmap3.description'),
           details: t('ai.processes.aidev.roadmap3.details'),
-          image: '/assets/services/ai-development.jpg'
+          image: '/assets/services/software/64.jpeg'
         },
         { 
           step: 4, 
           title: t('ai.processes.aidev.roadmap4.title'), 
           description: t('ai.processes.aidev.roadmap4.description'),
           details: t('ai.processes.aidev.roadmap4.details'),
-          image: '/assets/services/integration.jpg'
+          image: '/assets/services/software/65.jpeg'
         },
         { 
           step: 5, 
           title: t('ai.processes.aidev.roadmap5.title'), 
           description: t('ai.processes.aidev.roadmap5.description'),
           details: t('ai.processes.aidev.roadmap5.details'),
-          image: '/assets/services/deployment.jpg'
+          image: '/assets/services/process/launch.jpeg'
         },
         { 
           step: 6, 
           title: t('ai.processes.aidev.roadmap6.title'), 
           description: t('ai.processes.aidev.roadmap6.description'),
           details: t('ai.processes.aidev.roadmap6.details'),
-          image: '/assets/services/training.jpg'
+          image: '/assets/services/process/training.jpeg'
         }
       ]
     },
@@ -226,14 +226,11 @@ export default function AIAutomationPage() {
             
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
               <Image
-                src="/assets/services/ai-automation-banner.jpeg"
+                src="/assets/services/software/47.jpeg"
                 alt="AI & Automation Services"
                 fill
                 className="object-cover rounded-3xl"
               />
-              {isDark && (
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl"></div>
-              )}
             </div>
           </div>
         </div>
@@ -459,14 +456,6 @@ export default function AIAutomationPage() {
                                     fill
                                     className="object-contain"
                                   />
-                                  <div className="absolute top-3 right-3 w-12 h-12 rounded-lg overflow-hidden shadow-lg">
-                                    <Image
-                                      src={tech.logo}
-                                      alt={`${tech.name} logo`}
-                                      fill
-                                      className="object-contain p-1 bg-white/90"
-                                    />
-                                  </div>
                                 </div>
                                 
                                 <div className="flex-1 text-center lg:text-left">
@@ -997,32 +986,32 @@ export default function AIAutomationPage() {
               {[
                 { 
                   name: t('ai.mission.industry1.name'), 
-                  image: '/assets/services/health.jpeg',
+                  image: '/assets/services/software/66.jpeg',
                   description: t('ai.mission.industry1.description')
                 },
                 { 
                   name: t('ai.mission.industry2.name'), 
-                  image: '/assets/services/fintech.jpeg',
+                  image: '/assets/services/software/67.jpeg',
                   description: t('ai.mission.industry2.description')
                 },
                 { 
                   name: t('ai.mission.industry3.name'), 
-                  image: '/assets/services/ecommerce.jpeg',
+                  image: '/assets/services/software/68.jpeg',
                   description: t('ai.mission.industry3.description')
                 },
                 { 
                   name: t('ai.mission.industry4.name'), 
-                  image: '/assets/services/manufacturing.jpeg',
+                  image: '/assets/services/software/69.jpeg',
                   description: t('ai.mission.industry4.description')
                 },
                 { 
                   name: t('ai.mission.industry5.name'), 
-                  image: '/assets/services/edutech.jpeg',
+                  image: '/assets/services/software/70.jpeg',
                   description: t('ai.mission.industry5.description')
                 },
                 { 
                   name: t('ai.mission.industry6.name'), 
-                  image: '/assets/services/customer-service.jpeg',
+                  image: '/assets/services/software/71.jpeg',
                   description: t('ai.mission.industry6.description')
                 }
               ].map((industry, index) => (

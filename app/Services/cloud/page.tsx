@@ -30,7 +30,7 @@ export default function CloudServicesPage() {
   const caseStudies = [
     {
       id: 1,
-      image: '/assets/services/saas.jpeg',
+      image: '/assets/services/software/73.jpeg',
       title: t('cloud.caseStudy1.title'),
       description: t('cloud.caseStudy1.description'),
       tag: t('cloud.caseStudy1.tag'),
@@ -38,7 +38,7 @@ export default function CloudServicesPage() {
     },
     {
       id: 2,
-      image: '/assets/services/ecommerce.jpeg',
+      image: '/assets/services/software/74.jpeg',
       title: t('cloud.caseStudy2.title'),
       description: t('cloud.caseStudy2.description'),
       tag: t('cloud.caseStudy2.tag'),
@@ -46,7 +46,7 @@ export default function CloudServicesPage() {
     },
     {
       id: 3,
-      image: '/assets/services/health.jpeg',
+      image: '/assets/services/software/75.jpeg',
       title: t('cloud.caseStudy3.title'),
       description: t('cloud.caseStudy3.description'),
       tag: t('cloud.caseStudy3.tag'),
@@ -55,18 +55,18 @@ export default function CloudServicesPage() {
   ];
 
   const techStackItems = [
-    { name: 'AWS', image: '/assets/tech/aws.jpg', logo: '/assets/logos/aws.svg', description: t('cloud.tech.aws') },
-    { name: 'Azure', image: '/assets/tech/azure.jpg', logo: '/assets/logos/azure.svg', description: t('cloud.tech.azure') },
-    { name: 'Google Cloud', image: '/assets/tech/google-cloud.jpg', logo: '/assets/logos/google.svg', description: t('cloud.tech.googlecloud') },
-    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: t('cloud.tech.docker') },
-    { name: 'Kubernetes', image: '/assets/tech/kubernetes.jpg', logo: '/assets/logos/kubernetes.svg', description: t('cloud.tech.kubernetes') },
-    { name: 'Terraform', image: '/assets/tech/terraform.jpg', logo: '/assets/logos/terraform.svg', description: t('cloud.tech.terraform') },
-    { name: 'Ansible', image: '/assets/tech/ansible.jpg', logo: '/assets/logos/ansible.svg', description: t('cloud.tech.ansible') },
-    { name: 'Jenkins', image: '/assets/tech/jenkins.jpg', logo: '/assets/logos/jenkins.svg', description: t('cloud.tech.jenkins') },
-    { name: 'GitLab CI', image: '/assets/tech/gitlab.jpg', logo: '/assets/logos/gitlab.svg', description: t('cloud.tech.gitlab') },
-    { name: 'Prometheus', image: '/assets/tech/prometheus.jpg', logo: '/assets/logos/prometheus.svg', description: t('cloud.tech.prometheus') },
-    { name: 'Grafana', image: '/assets/tech/grafana.jpg', logo: '/assets/logos/grafana.svg', description: t('cloud.tech.grafana') },
-    { name: 'ELK Stack', image: '/assets/tech/elk.jpg', logo: '/assets/logos/elk.svg', description: t('cloud.tech.elk') }
+    { name: 'AWS', image: '/assets/services/software/76.jpeg', logo: '/assets/logos/aws.svg', description: t('cloud.tech.aws') },
+    { name: 'Azure', image: '/assets/services/software/77.jpeg', logo: '/assets/logos/azure.svg', description: t('cloud.tech.azure') },
+    { name: 'Google Cloud', image: '/assets/services/software/78.jpeg', logo: '/assets/logos/google.svg', description: t('cloud.tech.googlecloud') },
+    { name: 'Docker', image: '/assets/services/software/79.jpeg', logo: '/assets/logos/docker.svg', description: t('cloud.tech.docker') },
+    { name: 'Kubernetes', image: '/assets/services/software/80.jpeg', logo: '/assets/logos/kubernetes.svg', description: t('cloud.tech.kubernetes') },
+    { name: 'Terraform', image: '/assets/services/software/81.jpeg', logo: '/assets/logos/terraform.svg', description: t('cloud.tech.terraform') },
+    { name: 'Ansible', image: '/assets/services/software/82.jpeg', logo: '/assets/logos/ansible.svg', description: t('cloud.tech.ansible') },
+    { name: 'Jenkins', image: '/assets/services/software/83.jpeg', logo: '/assets/logos/jenkins.svg', description: t('cloud.tech.jenkins') },
+    { name: 'GitLab CI', image: '/assets/services/software/84.jpeg', logo: '/assets/logos/gitlab.svg', description: t('cloud.tech.gitlab') },
+    { name: 'Prometheus', image: '/assets/services/software/85.jpeg', logo: '/assets/logos/prometheus.svg', description: t('cloud.tech.prometheus') },
+    { name: 'Grafana', image: '/assets/services/software/86.jpeg', logo: '/assets/logos/grafana.svg', description: t('cloud.tech.grafana') },
+    { name: 'ELK Stack', image: '/assets/services/software/87.jpeg', logo: '/assets/logos/elk.svg', description: t('cloud.tech.elk') }
   ];
 
   // Infinite carousel effect
@@ -102,42 +102,42 @@ export default function CloudServicesPage() {
           title: t('cloud.processes.migration.roadmap1.title'), 
           description: t('cloud.processes.migration.roadmap1.description'),
           details: t('cloud.processes.migration.roadmap1.details'),
-          image: '/assets/services/consultation.jpg'
+          image: '/assets/services/process/consultation.jpeg'
         },
         { 
           step: 2, 
           title: t('cloud.processes.migration.roadmap2.title'), 
           description: t('cloud.processes.migration.roadmap2.description'),
           details: t('cloud.processes.migration.roadmap2.details'),
-          image: '/assets/services/planning.jpg'
+          image: '/assets/services/process/proposal.jpeg'
         },
         { 
           step: 3, 
           title: t('cloud.processes.migration.roadmap3.title'), 
           description: t('cloud.processes.migration.roadmap3.description'),
           details: t('cloud.processes.migration.roadmap3.details'),
-          image: '/assets/services/cloud-setup.jpg'
+          image: '/assets/services/software/88.jpeg'
         },
         { 
           step: 4, 
           title: t('cloud.processes.migration.roadmap4.title'), 
           description: t('cloud.processes.migration.roadmap4.description'),
           details: t('cloud.processes.migration.roadmap4.details'),
-          image: '/assets/services/migration.jpg'
+          image: '/assets/services/software/89.jpeg'
         },
         { 
           step: 5, 
           title: t('cloud.processes.migration.roadmap5.title'), 
           description: t('cloud.processes.migration.roadmap5.description'),
           details: t('cloud.processes.migration.roadmap5.details'),
-          image: '/assets/services/testing.jpg'
+          image: '/assets/services/process/qa.jpeg'
         },
         { 
           step: 6, 
           title: t('cloud.processes.migration.roadmap6.title'), 
           description: t('cloud.processes.migration.roadmap6.description'),
           details: t('cloud.processes.migration.roadmap6.details'),
-          image: '/assets/services/support.jpg'
+          image: '/assets/services/process/maintenance.jpeg'
         }
       ]
     },
@@ -226,14 +226,11 @@ export default function CloudServicesPage() {
             
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
               <Image
-                src="/assets/services/cloud-banner.jpeg"
+                src="/assets/services/software/72.jpeg"
                 alt="Cloud Services"
                 fill
                 className="object-cover rounded-3xl"
               />
-              {isDark && (
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl"></div>
-              )}
             </div>
           </div>
         </div>
@@ -459,14 +456,6 @@ export default function CloudServicesPage() {
                                     fill
                                     className="object-contain"
                                   />
-                                  <div className="absolute top-3 right-3 w-12 h-12 rounded-lg overflow-hidden shadow-lg">
-                                    <Image
-                                      src={tech.logo}
-                                      alt={`${tech.name} logo`}
-                                      fill
-                                      className="object-contain p-1 bg-white/90"
-                                    />
-                                  </div>
                                 </div>
                                 
                                 <div className="flex-1 text-center lg:text-left">
@@ -997,32 +986,32 @@ export default function CloudServicesPage() {
               {[
                 { 
                   name: t('cloud.mission.industry1.name'), 
-                  image: '/assets/services/health.jpeg',
+                  image: '/assets/services/software/90.jpeg',
                   description: t('cloud.mission.industry1.description')
                 },
                 { 
                   name: t('cloud.mission.industry2.name'), 
-                  image: '/assets/services/fintech.jpeg',
+                  image: '/assets/services/software/91.jpeg',
                   description: t('cloud.mission.industry2.description')
                 },
                 { 
                   name: t('cloud.mission.industry3.name'), 
-                  image: '/assets/services/ecommerce.jpeg',
+                  image: '/assets/services/software/92.jpeg',
                   description: t('cloud.mission.industry3.description')
                 },
                 { 
                   name: t('cloud.mission.industry4.name'), 
-                  image: '/assets/services/manufacturing.jpeg',
+                  image: '/assets/services/software/93.jpeg',
                   description: t('cloud.mission.industry4.description')
                 },
                 { 
                   name: t('cloud.mission.industry5.name'), 
-                  image: '/assets/services/edutech.jpeg',
+                  image: '/assets/services/software/94.jpeg',
                   description: t('cloud.mission.industry5.description')
                 },
                 { 
                   name: t('cloud.mission.industry6.name'), 
-                  image: '/assets/services/saas.jpeg',
+                  image: '/assets/services/software/95.jpeg',
                   description: t('cloud.mission.industry6.description')
                 }
               ].map((industry, index) => (

@@ -30,7 +30,7 @@ export default function SoftwareDevelopmentPage() {
   const caseStudies = [
     {
       id: 1,
-      image: '/assets/services/ecommerce.jpeg',
+      image: '/assets/services/software/26.jpeg',
       title: t('softdev.caseStudies.enterprise.title'),
       description: t('softdev.caseStudies.enterprise.description'),
       tag: t('softdev.caseStudies.enterprise.tag'),
@@ -38,7 +38,7 @@ export default function SoftwareDevelopmentPage() {
     },
     {
       id: 2,
-      image: '/assets/services/health.jpeg',
+      image: '/assets/services/software/3.jpeg',
       title: t('softdev.caseStudies.healthcare.title'),
       description: t('softdev.caseStudies.healthcare.description'),
       tag: t('softdev.caseStudies.healthcare.tag'),
@@ -46,7 +46,7 @@ export default function SoftwareDevelopmentPage() {
     },
     {
       id: 3,
-      image: '/assets/services/edutech.jpeg',
+      image: '/assets/services/software/4.jpeg',
       title: t('softdev.caseStudies.lms.title'),
       description: t('softdev.caseStudies.lms.description'),
       tag: t('softdev.caseStudies.lms.tag'),
@@ -55,18 +55,18 @@ export default function SoftwareDevelopmentPage() {
   ];
 
   const techStackItems = [
-    { name: 'React Native', image: '/assets/tech/react-native.jpg', logo: '/assets/logos/react.svg', description: t('softdev.tech.reactNative') },
-    { name: 'Flutter', image: '/assets/tech/flutter.jpg', logo: '/assets/logos/flutter.svg', description: t('softdev.tech.flutter') },
-    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: t('softdev.tech.python') },
-    { name: 'Java', image: '/assets/tech/java.jpg', logo: '/assets/logos/java.svg', description: t('softdev.tech.java') },
-    { name: 'C#', image: '/assets/tech/csharp.jpg', logo: '/assets/logos/csharp.svg', description: t('softdev.tech.csharp') },
-    { name: 'Go', image: '/assets/tech/go.jpg', logo: '/assets/logos/golang.svg', description: t('softdev.tech.go') },
-    { name: 'Kubernetes', image: '/assets/tech/kubernetes.jpg', logo: '/assets/logos/kubernetes.svg', description: t('softdev.tech.kubernetes') },
-    { name: 'AWS', image: '/assets/tech/aws.jpg', logo: '/assets/logos/aws.svg', description: t('softdev.tech.aws') },
-    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: t('softdev.tech.docker') },
-    { name: 'PostgreSQL', image: '/assets/tech/postgresql.jpg', logo: '/assets/logos/postgresql.svg', description: t('softdev.tech.postgresql') },
-    { name: 'Redis', image: '/assets/tech/redis.jpg', logo: '/assets/logos/redis.svg', description: t('softdev.tech.redis') },
-    { name: 'Elasticsearch', image: '/assets/tech/elasticsearch.jpg', logo: '/assets/logos/elasticsearch.svg', description: t('softdev.tech.elasticsearch') }
+    { name: 'React Native', image: '/assets/services/software/5.jpeg', logo: '/assets/services/software/6.jpeg', description: t('softdev.tech.reactNative') },
+    { name: 'Flutter', image: '/assets/services/software/6.jpeg', logo: '/assets/logos/flutter.svg', description: t('softdev.tech.flutter') },
+    { name: 'Python', image: '/assets/services/software/7.jpeg', logo: '/assets/logos/python.svg', description: t('softdev.tech.python') },
+    { name: 'Java', image: '/assets/services/software/8.jpeg', logo: '/assets/logos/java.svg', description: t('softdev.tech.java') },
+    { name: 'C#', image: '/assets/services/software/9.jpeg', logo: '/assets/logos/csharp.svg', description: t('softdev.tech.csharp') },
+    { name: 'Go', image: '/assets/services/software/10.jpeg', logo: '/assets/logos/golang.svg', description: t('softdev.tech.go') },
+    { name: 'Kubernetes', image: '/assets/services/software/11.jpeg', logo: '/assets/logos/kubernetes.svg', description: t('softdev.tech.kubernetes') },
+    { name: 'AWS', image: '/assets/services/software/12.jpeg', logo: '/assets/logos/aws.svg', description: t('softdev.tech.aws') },
+    { name: 'Docker', image: '/assets/services/software/13.jpeg', logo: '/assets/logos/docker.svg', description: t('softdev.tech.docker') },
+    { name: 'PostgreSQL', image: '/assets/services/software/14.jpeg', logo: '/assets/logos/postgresql.svg', description: t('softdev.tech.postgresql') },
+    { name: 'Redis', image: '/assets/services/software/15.jpeg', logo: '/assets/logos/redis.svg', description: t('softdev.tech.redis') },
+    { name: 'Elasticsearch', image: '/assets/services/software/16.jpeg', logo: '/assets/logos/elasticsearch.svg', description: t('softdev.tech.elasticsearch') }
   ];
 
   // Infinite carousel effect
@@ -102,49 +102,49 @@ export default function SoftwareDevelopmentPage() {
           title: t('softdev.processes.custom.roadmap1.title'), 
           description: t('softdev.processes.custom.roadmap1.description'),
           details: t('softdev.processes.custom.roadmap1.details'),
-          image: '/assets/services/consultation.jpg'
+          image: '/assets/services/process/consultation.jpeg'
         },
         { 
           step: 2, 
           title: t('softdev.processes.custom.roadmap2.title'), 
           description: t('softdev.processes.custom.roadmap2.description'),
           details: t('softdev.processes.custom.roadmap2.details'),
-          image: '/assets/services/architecture.jpg'
+          image: '/assets/services/software/17.jpeg'
         },
         { 
           step: 3, 
           title: t('softdev.processes.custom.roadmap3.title'), 
           description: t('softdev.processes.custom.roadmap3.description'),
           details: t('softdev.processes.custom.roadmap3.details'),
-          image: '/assets/services/design.jpg'
+          image: '/assets/services/process/uiux.jpeg'
         },
         { 
           step: 4, 
           title: t('softdev.processes.custom.roadmap4.title'), 
           description: t('softdev.processes.custom.roadmap4.description'),
           details: t('softdev.processes.custom.roadmap4.details'),
-          image: '/assets/services/development.jpg'
+          image: '/assets/services/process/development.jpeg'
         },
         { 
           step: 5, 
           title: t('softdev.processes.custom.roadmap5.title'), 
           description: t('softdev.processes.custom.roadmap5.description'),
           details: t('softdev.processes.custom.roadmap5.details'),
-          image: '/assets/services/testing.jpg'
+          image: '/assets/services/process/qa.jpeg'
         },
         { 
           step: 6, 
           title: t('softdev.processes.custom.roadmap6.title'), 
           description: t('softdev.processes.custom.roadmap6.description'),
           details: t('softdev.processes.custom.roadmap6.details'),
-          image: '/assets/services/deployment.jpg'
+          image: '/assets/services/process/launch.jpeg'
         },
         { 
           step: 7, 
           title: t('softdev.processes.custom.roadmap7.title'), 
           description: t('softdev.processes.custom.roadmap7.description'),
           details: t('softdev.processes.custom.roadmap7.details'),
-          image: '/assets/services/support.jpg'
+          image: '/assets/services/process/maintenance.jpeg'
         }
       ]
     },
@@ -292,14 +292,11 @@ export default function SoftwareDevelopmentPage() {
             {/* Right Side - Hero Image */}
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
               <Image
-                src="/assets/services/software-dev-banner.jpeg"
+                src="/assets/services/software/26.jpeg"
                 alt="Software Development Services"
                 fill
                 className="object-cover rounded-3xl"
               />
-              {isDark && (
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl"></div>
-              )}
             </div>
           </div>
         </div>
@@ -526,15 +523,6 @@ export default function SoftwareDevelopmentPage() {
                                     fill
                                     className="object-contain"
                                   />
-                                  {/* Logo Overlay */}
-                                  <div className="absolute top-3 right-3 w-12 h-12 rounded-lg overflow-hidden shadow-lg">
-                                    <Image
-                                      src={tech.logo}
-                                      alt={`${tech.name} logo`}
-                                      fill
-                                      className="object-contain p-1 bg-white/90"
-                                    />
-                                  </div>
                                 </div>
                                 
                                 {/* Tech Info */}
@@ -967,11 +955,22 @@ export default function SoftwareDevelopmentPage() {
       {/* Consultation Section */}
       <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className={`text-center p-8 sm:p-12 rounded-3xl ${
+          <div className={`relative text-center p-8 sm:p-12 rounded-3xl overflow-hidden ${
             isDark
               ? 'bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-white/10'
               : 'bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200'
           }`}>
+            {/* Background Image */}
+            <div className="absolute inset-0 opacity-10">
+              <Image
+                src="/assets/services/software/24.jpeg"
+                alt="Software Development Consultation"
+                fill
+                className="object-cover"
+              />
+            </div>
+            {/* Content */}
+            <div className="relative z-10">
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
@@ -1042,6 +1041,7 @@ export default function SoftwareDevelopmentPage() {
                 </span>
               </a>
             </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1072,32 +1072,32 @@ export default function SoftwareDevelopmentPage() {
               {[
                 { 
                   name: t('softdev.mission.industry1.name'), 
-                  image: '/assets/services/health.jpeg',
+                  image: '/assets/services/software/18.jpeg',
                   description: t('softdev.mission.industry1.description')
                 },
                 { 
                   name: t('softdev.mission.industry2.name'), 
-                  image: '/assets/services/fintech.jpeg',
+                  image: '/assets/services/software/19.jpeg',
                   description: t('softdev.mission.industry2.description')
                 },
                 { 
                   name: t('softdev.mission.industry3.name'), 
-                  image: '/assets/services/ecommerce.jpeg',
+                  image: '/assets/services/software/20.jpeg',
                   description: t('softdev.mission.industry3.description')
                 },
                 { 
                   name: t('softdev.mission.industry4.name'), 
-                  image: '/assets/services/edutech.jpeg',
+                  image: '/assets/services/software/21.jpeg',
                   description: t('softdev.mission.industry4.description')
                 },
                 { 
                   name: t('softdev.mission.industry5.name'), 
-                  image: '/assets/services/saas.jpeg',
+                  image: '/assets/services/software/22.jpeg',
                   description: t('softdev.mission.industry5.description')
                 },
                 { 
                   name: t('softdev.mission.industry6.name'), 
-                  image: '/assets/services/manufacturing.jpeg',
+                  image: '/assets/services/software/23.jpeg',
                   description: t('softdev.mission.industry6.description')
                 }
               ].map((industry, index) => (

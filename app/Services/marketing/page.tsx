@@ -28,7 +28,7 @@ export default function MarketingServicesPage() {
   const caseStudies = [
     {
       id: 1,
-      image: '/assets/services/ecommerce.jpeg',
+      image: '/assets/services/software/97.jpeg',
       title: 'E-commerce Growth Campaign',
       description: 'Comprehensive digital marketing campaign that increased online sales by 300% and improved brand visibility across multiple channels.',
       tag: 'Digital Marketing',
@@ -36,7 +36,7 @@ export default function MarketingServicesPage() {
     },
     {
       id: 2,
-      image: '/assets/services/saas.jpeg',
+      image: '/assets/services/software/98.jpeg',
       title: 'SaaS Product Launch',
       description: 'Strategic product launch campaign that achieved 50,000 signups in the first month and established strong market presence.',
       tag: 'Product Launch',
@@ -44,7 +44,7 @@ export default function MarketingServicesPage() {
     },
     {
       id: 3,
-      image: '/assets/services/health.jpeg',
+      image: '/assets/services/software/99.jpeg',
       title: 'Healthcare Brand Awareness',
       description: 'Healthcare brand awareness campaign that improved patient engagement and increased appointment bookings by 250%.',
       tag: 'Brand Awareness',
@@ -53,18 +53,18 @@ export default function MarketingServicesPage() {
   ];
 
   const techStackItems = [
-    { name: 'Google Ads', image: '/assets/tech/google-ads.jpg', logo: '/assets/logos/google-ads.svg', description: 'Search & Display Advertising' },
-    { name: 'Facebook Ads', image: '/assets/tech/facebook-ads.jpg', logo: '/assets/logos/facebook-ads.svg', description: 'Social Media Advertising' },
-    { name: 'HubSpot', image: '/assets/tech/hubspot.jpg', logo: '/assets/logos/hubspot.svg', description: 'Marketing Automation' },
-    { name: 'Mailchimp', image: '/assets/tech/mailchimp.jpg', logo: '/assets/logos/mailchimp.svg', description: 'Email Marketing' },
-    { name: 'Google Analytics', image: '/assets/tech/google-analytics.jpg', logo: '/assets/logos/google-analytics.svg', description: 'Web Analytics' },
-    { name: 'Hootsuite', image: '/assets/tech/hootsuite.jpg', logo: '/assets/logos/hootsuite.svg', description: 'Social Media Management' },
-    { name: 'Canva', image: '/assets/tech/canva.jpg', logo: '/assets/logos/canva.svg', description: 'Graphic Design' },
-    { name: 'Buffer', image: '/assets/tech/buffer.jpg', logo: '/assets/logos/buffer.svg', description: 'Content Scheduling' },
-    { name: 'SEMrush', image: '/assets/tech/semrush.jpg', logo: '/assets/logos/semrush.svg', description: 'SEO & Competitor Analysis' },
-    { name: 'Ahrefs', image: '/assets/tech/ahrefs.jpg', logo: '/assets/logos/ahrefs.svg', description: 'SEO Tools' },
-    { name: 'LinkedIn Ads', image: '/assets/tech/linkedin-ads.jpg', logo: '/assets/logos/linkedin-ads.svg', description: 'B2B Advertising' },
-    { name: 'TikTok Ads', image: '/assets/tech/tiktok-ads.jpg', logo: '/assets/logos/tiktok-ads.svg', description: 'Video Advertising' }
+    { name: 'Google Ads', image: '/assets/services/software/100.jpeg', logo: '/assets/logos/google-ads.svg', description: 'Search & Display Advertising' },
+    { name: 'Facebook Ads', image: '/assets/services/software/101.jpeg', logo: '/assets/logos/facebook-ads.svg', description: 'Social Media Advertising' },
+    { name: 'HubSpot', image: '/assets/services/software/102.jpeg', logo: '/assets/logos/hubspot.svg', description: 'Marketing Automation' },
+    { name: 'Mailchimp', image: '/assets/services/software/103.jpeg', logo: '/assets/logos/mailchimp.svg', description: 'Email Marketing' },
+    { name: 'Google Analytics', image: '/assets/services/software/104.jpeg', logo: '/assets/logos/google-analytics.svg', description: 'Web Analytics' },
+    { name: 'Hootsuite', image: '/assets/services/software/105.jpeg', logo: '/assets/logos/hootsuite.svg', description: 'Social Media Management' },
+    { name: 'Canva', image: '/assets/services/software/106.jpeg', logo: '/assets/logos/canva.svg', description: 'Graphic Design' },
+    { name: 'Buffer', image: '/assets/services/software/107.jpeg', logo: '/assets/logos/buffer.svg', description: 'Content Scheduling' },
+    { name: 'SEMrush', image: '/assets/services/software/108.jpeg', logo: '/assets/logos/semrush.svg', description: 'SEO & Competitor Analysis' },
+    { name: 'Ahrefs', image: '/assets/services/software/109.jpeg', logo: '/assets/logos/ahrefs.svg', description: 'SEO Tools' },
+    { name: 'LinkedIn Ads', image: '/assets/services/software/110.jpeg', logo: '/assets/logos/linkedin-ads.svg', description: 'B2B Advertising' },
+    { name: 'TikTok Ads', image: '/assets/services/software/111.jpeg', logo: '/assets/logos/tiktok-ads.svg', description: 'Video Advertising' }
   ];
 
   // Infinite carousel effect
@@ -98,42 +98,42 @@ export default function MarketingServicesPage() {
           title: 'Market Research & Analysis', 
           description: 'Comprehensive market research to understand your audience, competitors, and market opportunities.',
           details: 'We conduct thorough market analysis, competitor research, and audience profiling to create data-driven marketing strategies.',
-          image: '/assets/services/market-research.jpg'
+          image: '/assets/services/process/consultation.jpeg'
         },
         { 
           step: 2, 
           title: 'Strategy Development', 
           description: 'Creating comprehensive marketing strategies tailored to your business goals and target audience.',
           details: 'Our team develops multi-channel marketing strategies that align with your business objectives and maximize ROI.',
-          image: '/assets/services/strategy-development.jpg'
+          image: '/assets/services/process/proposal.jpeg'
         },
         { 
           step: 3, 
           title: 'Campaign Creation', 
           description: 'Designing and developing high-converting marketing campaigns across multiple platforms.',
           details: 'We create compelling ad creatives, landing pages, and marketing materials that drive engagement and conversions.',
-          image: '/assets/services/campaign-creation.jpg'
+          image: '/assets/services/process/uiux.jpeg'
         },
         { 
           step: 4, 
           title: 'Launch & Optimization', 
           description: 'Launching campaigns and continuously optimizing for maximum performance and ROI.',
           details: 'We monitor campaign performance in real-time and make data-driven optimizations to improve results.',
-          image: '/assets/services/launch-optimization.jpg'
+          image: '/assets/services/process/launch.jpeg'
         },
         { 
           step: 5, 
           title: 'Analytics & Reporting', 
           description: 'Comprehensive tracking and reporting of campaign performance and business impact.',
           details: 'We provide detailed analytics and regular reports on campaign performance, ROI, and business growth metrics.',
-          image: '/assets/services/analytics-reporting.jpg'
+          image: '/assets/services/process/qa.jpeg'
         },
         { 
           step: 6, 
           title: 'Scaling & Growth', 
           description: 'Scaling successful campaigns and expanding marketing efforts for sustained growth.',
           details: 'We identify successful strategies and scale them while exploring new opportunities for continued growth.',
-          image: '/assets/services/scaling-growth.jpg'
+          image: '/assets/services/process/maintenance.jpeg'
         }
       ]
     },
@@ -222,14 +222,11 @@ export default function MarketingServicesPage() {
             
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
               <Image
-                src="/assets/services/marketing-banner.jpeg"
+                src="/assets/services/software/96.jpeg"
                 alt="Marketing Services"
                 fill
                 className="object-cover rounded-3xl"
               />
-              {isDark && (
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl"></div>
-              )}
             </div>
           </div>
         </div>
@@ -455,14 +452,6 @@ export default function MarketingServicesPage() {
                                     fill
                                     className="object-contain"
                                   />
-                                  <div className="absolute top-3 right-3 w-12 h-12 rounded-lg overflow-hidden shadow-lg">
-                                    <Image
-                                      src={tech.logo}
-                                      alt={`${tech.name} logo`}
-                                      fill
-                                      className="object-contain p-1 bg-white/90"
-                                    />
-                                  </div>
                                 </div>
                                 
                                 <div className="flex-1 text-center lg:text-left">
@@ -993,32 +982,32 @@ export default function MarketingServicesPage() {
               {[
                 { 
                   name: 'E-commerce', 
-                  image: '/assets/services/ecommerce.jpeg',
+                  image: '/assets/services/software/112.jpeg',
                   description: 'Conversion-optimized marketing campaigns, product launches, and customer acquisition strategies for online retailers.'
                 },
                 { 
                   name: 'SaaS & Technology', 
-                  image: '/assets/services/saas.jpeg',
+                  image: '/assets/services/software/113.jpeg',
                   description: 'Product-led growth strategies, user acquisition campaigns, and retention marketing for software companies.'
                 },
                 { 
                   name: 'Healthcare', 
-                  image: '/assets/services/health.jpeg',
+                  image: '/assets/services/software/114.jpeg',
                   description: 'Compliance-focused marketing, patient acquisition, and healthcare brand awareness campaigns.'
                 },
                 { 
                   name: 'Education', 
-                  image: '/assets/services/edutech.jpeg',
+                  image: '/assets/services/software/115.jpeg',
                   description: 'Student recruitment, course promotion, and educational content marketing strategies.'
                 },
                 { 
                   name: 'Finance & FinTech', 
-                  image: '/assets/services/fintech.jpeg',
+                  image: '/assets/services/software/116.jpeg',
                   description: 'Trust-building marketing campaigns, financial product promotion, and regulatory-compliant strategies.'
                 },
                 { 
                   name: 'Manufacturing', 
-                  image: '/assets/services/manufacturing.jpeg',
+                  image: '/assets/services/software/117.jpeg',
                   description: 'B2B marketing strategies, industrial lead generation, and supply chain marketing solutions.'
                 }
               ].map((industry, index) => (

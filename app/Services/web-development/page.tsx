@@ -30,7 +30,7 @@ export default function WebDevelopmentPage() {
   const caseStudies = [
     {
       id: 1,
-      image: '/assets/services/ecommerce.jpeg',
+      image: '/assets/services/software/26.jpeg',
       title: t('webdev.caseStudies.aon.title'),
       description: t('webdev.caseStudies.aon.description'),
       tag: t('webdev.caseStudies.aon.tag'),
@@ -38,7 +38,7 @@ export default function WebDevelopmentPage() {
     },
     {
       id: 2,
-      image: '/assets/services/health.jpeg',
+      image: '/assets/services/software/27.jpeg',
       title: t('webdev.caseStudies.vigours.title'),
       description: t('webdev.caseStudies.vigours.description'),
       tag: t('webdev.caseStudies.vigours.tag'),
@@ -46,7 +46,7 @@ export default function WebDevelopmentPage() {
     },
     {
       id: 3,
-      image: '/assets/services/edutech.jpeg',
+      image: '/assets/services/software/28.jpeg',
       title: t('webdev.caseStudies.celtis.title'),
       description: t('webdev.caseStudies.celtis.description'),
       tag: t('webdev.caseStudies.celtis.tag'),
@@ -55,18 +55,18 @@ export default function WebDevelopmentPage() {
   ];
 
   const techStackItems = [
-    { name: 'React', image: '/assets/tech/react.jpg', logo: '/assets/logos/react.svg', description: t('webdev.tech.react') },
-    { name: 'Next.js', image: '/assets/tech/nextjs.jpg', logo: '/assets/logos/nextjs.svg', description: t('webdev.tech.nextjs') },
-    { name: 'Vue.js', image: '/assets/tech/vuejs.jpg', logo: '/assets/logos/vuejs.svg', description: t('webdev.tech.vuejs') },
-    { name: 'Angular', image: '/assets/tech/angular.jpg', logo: '/assets/logos/angular.svg', description: t('webdev.tech.angular') },
-    { name: 'Node.js', image: '/assets/tech/nodejs.jpg', logo: '/assets/logos/nodejs.svg', description: t('webdev.tech.nodejs') },
-    { name: 'Python', image: '/assets/tech/python.jpg', logo: '/assets/logos/python.svg', description: t('webdev.tech.python') },
-    { name: 'PHP', image: '/assets/tech/php.jpg', logo: '/assets/logos/php.svg', description: t('webdev.tech.php') },
-    { name: 'MySQL', image: '/assets/tech/mysql.jpg', logo: '/assets/logos/mysql.svg', description: t('webdev.tech.mysql') },
-    { name: 'MongoDB', image: '/assets/tech/mongodb.jpg', logo: '/assets/logos/mongodb.svg', description: t('webdev.tech.mongodb') },
-    { name: 'WordPress', image: '/assets/tech/wordpress.jpg', logo: '/assets/logos/wordpress.svg', description: t('webdev.tech.wordpress') },
-    { name: 'Webflow', image: '/assets/tech/webflow.jpg', logo: '/assets/logos/webflow.svg', description: t('webdev.tech.webflow') },
-    { name: 'Docker', image: '/assets/tech/docker.jpg', logo: '/assets/logos/docker.svg', description: t('webdev.tech.docker') }
+    { name: 'React', image: '/assets/services/software/29.jpeg', logo: '/assets/logos/react.svg', description: t('webdev.tech.react') },
+    { name: 'Next.js', image: '/assets/services/software/30.jpeg', logo: '/assets/logos/nextjs.svg', description: t('webdev.tech.nextjs') },
+    { name: 'Vue.js', image: '/assets/services/software/31.jpeg', logo: '/assets/logos/vuejs.svg', description: t('webdev.tech.vuejs') },
+    { name: 'Angular', image: '/assets/services/software/32.jpeg', logo: '/assets/logos/angular.svg', description: t('webdev.tech.angular') },
+    { name: 'Node.js', image: '/assets/services/software/33.jpeg', logo: '/assets/logos/nodejs.svg', description: t('webdev.tech.nodejs') },
+    { name: 'Python', image: '/assets/services/software/34.jpeg', logo: '/assets/logos/python.svg', description: t('webdev.tech.python') },
+    { name: 'PHP', image: '/assets/services/software/35.jpeg', logo: '/assets/logos/php.svg', description: t('webdev.tech.php') },
+    { name: 'MySQL', image: '/assets/services/software/36.jpeg', logo: '/assets/logos/mysql.svg', description: t('webdev.tech.mysql') },
+    { name: 'MongoDB', image: '/assets/services/software/37.jpeg', logo: '/assets/logos/mongodb.svg', description: t('webdev.tech.mongodb') },
+    { name: 'WordPress', image: '/assets/services/software/38.jpeg', logo: '/assets/logos/wordpress.svg', description: t('webdev.tech.wordpress') },
+    { name: 'Webflow', image: '/assets/services/software/39.jpeg', logo: '/assets/logos/webflow.svg', description: t('webdev.tech.webflow') },
+    { name: 'Docker', image: '/assets/services/software/40.jpeg', logo: '/assets/logos/docker.svg', description: t('webdev.tech.docker') }
   ];
 
   // Infinite carousel effect
@@ -100,49 +100,49 @@ export default function WebDevelopmentPage() {
           title: t('webdev.processes.custom.roadmap1.title'), 
           description: t('webdev.processes.custom.roadmap1.description'),
           details: t('webdev.processes.custom.roadmap1.details'),
-          image: '/assets/services/consultation.jpg'
+          image: '/assets/services/process/consultation.jpeg'
         },
         { 
           step: 2, 
           title: t('webdev.processes.custom.roadmap2.title'), 
           description: t('webdev.processes.custom.roadmap2.description'),
           details: t('webdev.processes.custom.roadmap2.details'),
-          image: '/assets/services/proposal.jpg'
+          image: '/assets/services/process/proposal.jpeg'
         },
         { 
           step: 3, 
           title: t('webdev.processes.custom.roadmap3.title'), 
           description: t('webdev.processes.custom.roadmap3.description'),
           details: t('webdev.processes.custom.roadmap3.details'),
-          image: '/assets/services/design.jpg'
+          image: '/assets/services/process/uiux.jpeg'
         },
         { 
           step: 4, 
           title: t('webdev.processes.custom.roadmap4.title'), 
           description: t('webdev.processes.custom.roadmap4.description'),
           details: t('webdev.processes.custom.roadmap4.details'),
-          image: '/assets/services/development.jpg'
+          image: '/assets/services/process/development.jpeg'
         },
         { 
           step: 5, 
           title: t('webdev.processes.custom.roadmap5.title'), 
           description: t('webdev.processes.custom.roadmap5.description'),
           details: t('webdev.processes.custom.roadmap5.details'),
-          image: '/assets/services/testing.jpg'
+          image: '/assets/services/process/qa.jpeg'
         },
         { 
           step: 6, 
           title: t('webdev.processes.custom.roadmap6.title'), 
           description: t('webdev.processes.custom.roadmap6.description'),
           details: t('webdev.processes.custom.roadmap6.details'),
-          image: '/assets/services/deployment.jpg'
+          image: '/assets/services/process/launch.jpeg'
         },
         { 
           step: 7, 
           title: t('webdev.processes.custom.roadmap7.title'), 
           description: t('webdev.processes.custom.roadmap7.description'),
           details: t('webdev.processes.custom.roadmap7.details'),
-          image: '/assets/services/support.jpg'
+          image: '/assets/services/process/maintenance.jpeg'
         }
       ]
     },
@@ -282,14 +282,11 @@ export default function WebDevelopmentPage() {
             {/* Right Side - Hero Image */}
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
               <Image
-                src="/assets/services/web-dev-banner.jpeg"
+                src="/assets/services/software/25.jpeg"
                 alt="Web Development Services"
                 fill
                 className="object-cover rounded-3xl"
               />
-              {isDark && (
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl"></div>
-              )}
             </div>
           </div>
         </div>
@@ -517,15 +514,6 @@ export default function WebDevelopmentPage() {
                                     fill
                                     className="object-contain"
                                   />
-                                  {/* Logo Overlay */}
-                                  <div className="absolute top-3 right-3 w-12 h-12 rounded-lg overflow-hidden shadow-lg">
-                                    <Image
-                                      src={tech.logo}
-                                      alt={`${tech.name} logo`}
-                                      fill
-                                      className="object-contain p-1 bg-white/90"
-                                    />
-                                  </div>
                                 </div>
                                 
                                 {/* Tech Info */}
@@ -1063,32 +1051,32 @@ export default function WebDevelopmentPage() {
               {[
                 { 
                   name: t('webdev.mission.industry1.name'), 
-                  image: '/assets/services/ecommerce.jpeg',
+                  image: '/assets/services/software/41.jpeg',
                   description: t('webdev.mission.industry1.description')
                 },
                 { 
                   name: t('webdev.mission.industry2.name'), 
-                  image: '/assets/services/saas.jpeg',
+                  image: '/assets/services/software/42.jpeg',
                   description: t('webdev.mission.industry2.description')
                 },
                 { 
                   name: t('webdev.mission.industry3.name'), 
-                  image: '/assets/services/health.jpeg',
+                  image: '/assets/services/software/43.jpeg',
                   description: t('webdev.mission.industry3.description')
                 },
                 { 
                   name: t('webdev.mission.industry4.name'), 
-                  image: '/assets/services/edutech.jpeg',
+                  image: '/assets/services/software/44.jpeg',
                   description: t('webdev.mission.industry4.description')
                 },
                 { 
                   name: t('webdev.mission.industry5.name'), 
-                  image: '/assets/services/fintech.jpeg',
+                  image: '/assets/services/software/45.jpeg',
                   description: t('webdev.mission.industry5.description')
                 },
                 { 
                   name: t('webdev.mission.industry6.name'), 
-                  image: '/assets/services/creativity.jpeg',
+                  image: '/assets/services/software/46.jpeg',
                   description: t('webdev.mission.industry6.description')
                 }
               ].map((industry, index) => (

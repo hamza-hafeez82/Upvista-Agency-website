@@ -8,6 +8,8 @@ import { FaInstagram, FaLinkedin, FaWhatsapp, FaEnvelope, FaFacebook, FaDiscord,
 import Head from "next/head";
 import Link from "next/link";
 import { createClient } from '@supabase/supabase-js';
+import { useTheme } from "@/contexts/ThemeContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -31,6 +33,7 @@ interface CustomDropdownProps {
 const CustomDropdown: React.FC<CustomDropdownProps> = ({ name, value, onChange, options, placeholder }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { isDark } = useTheme();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -58,13 +61,17 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ name, value, onChange, 
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 py-3 bg-gradient-to-r from-white/5 to-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-purple-400 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/15 focus:ring-2 focus:ring-purple-500/30 focus:shadow-lg focus:shadow-purple-500/10 transition-all duration-300 hover:border-white/30 hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12 backdrop-blur-sm text-left flex items-center justify-between"
+        className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all duration-300 backdrop-blur-sm text-left flex items-center justify-between ${
+          isDark 
+            ? 'bg-gradient-to-r from-white/5 to-white/10 border-white/20 text-white focus:border-purple-400 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/15 focus:ring-purple-500/30 focus:shadow-lg focus:shadow-purple-500/10 hover:border-white/30 hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12'
+            : 'bg-gradient-to-r from-white/80 to-white/90 border-gray-300/50 text-gray-900 focus:border-blue-500 focus:bg-gradient-to-r focus:from-white/90 focus:to-white/95 focus:ring-blue-500/30 focus:shadow-lg focus:shadow-blue-500/10 hover:border-gray-400/70 hover:bg-gradient-to-r hover:from-white/85 hover:to-white/95'
+        }`}
       >
-        <span className={value ? "text-white" : "text-gray-400"}>
+        <span className={value ? (isDark ? "text-white" : "text-gray-900") : (isDark ? "text-gray-400" : "text-gray-500")}>
           {value || placeholder}
         </span>
         <ChevronDown 
-          className={`w-5 h-5 text-gray-300 transition-transform duration-300 ${isOpen ? 'rotate-180 text-purple-400' : ''}`} 
+          className={`w-5 h-5 transition-transform duration-300 ${isOpen ? (isDark ? 'rotate-180 text-purple-400' : 'rotate-180 text-blue-500') : (isDark ? 'text-gray-300' : 'text-gray-600')}`} 
         />
       </button>
       
@@ -75,20 +82,30 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ name, value, onChange, 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute z-50 w-full mt-2 bg-gradient-to-b from-gray-900/95 to-gray-800/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl shadow-purple-500/10 overflow-hidden"
+            className={`absolute z-50 w-full mt-2 backdrop-blur-xl border rounded-xl shadow-2xl overflow-hidden ${
+              isDark 
+                ? 'bg-gradient-to-b from-gray-900/95 to-gray-800/95 border-white/20 shadow-purple-500/10'
+                : 'bg-gradient-to-b from-white/95 to-gray-50/95 border-gray-300/50 shadow-blue-500/10'
+            }`}
           >
             {options.map((option) => (
               <motion.button
                 key={option}
                 type="button"
                 onClick={() => handleSelect(option)}
-                className="w-full px-4 py-3 text-left text-white hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-indigo-600/20 transition-all duration-200 border-b border-white/5 last:border-b-0 group"
+                className={`w-full px-4 py-3 text-left transition-all duration-200 border-b last:border-b-0 group ${
+                  isDark 
+                    ? 'text-white hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-indigo-600/20 border-white/5'
+                    : 'text-gray-900 hover:bg-gradient-to-r hover:from-blue-100/50 hover:to-indigo-100/50 border-gray-200/50'
+                }`}
                 whileHover={{ x: 4 }}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.05 }}
               >
-                <span className="group-hover:text-purple-300 transition-colors duration-200">
+                <span className={`transition-colors duration-200 ${
+                  isDark ? 'group-hover:text-purple-300' : 'group-hover:text-blue-600'
+                }`}>
                   {option}
                 </span>
               </motion.button>
@@ -100,45 +117,70 @@ const CustomDropdown: React.FC<CustomDropdownProps> = ({ name, value, onChange, 
   );
 };
 
-const consultMethods = [
-  { label: "Chat", icon: <MessageSquare className="w-5 h-5" />, value: "chat" },
-  { label: "Schedule Call", icon: <Phone className="w-5 h-5" />, value: "schedule" },
-  { label: "Video Meeting", icon: <Video className="w-5 h-5" />, value: "video" },
-  { label: "Social Media", icon: <Globe className="w-5 h-5" />, value: "social" },
+const getConsultMethods = (t: (key: string) => string) => [
+  { label: t('contact.consultMethod.chat'), icon: <MessageSquare className="w-5 h-5" />, value: "chat" },
+  { label: t('contact.consultMethod.schedule'), icon: <Phone className="w-5 h-5" />, value: "schedule" },
+  { label: t('contact.consultMethod.video'), icon: <Video className="w-5 h-5" />, value: "video" },
+  { label: t('contact.consultMethod.social'), icon: <Globe className="w-5 h-5" />, value: "social" },
 ];
 
 // Consultation form data
-const consultationForm = {
-  title: "Schedule Your Free Consultation",
-  subtitle: "Tell us about your project and we'll get back to you within 24 hours",
+const getConsultationForm = (t: (key: string) => string) => ({
+  title: t('consultation.formTitle'),
+  subtitle: t('consultation.formSubtitle'),
   fields: [
-    { name: "name", label: "Full Name", type: "text", required: true },
-    { name: "email", label: "Email Address", type: "email", required: true },
-    { name: "company", label: "Company/Organization Name", type: "text", required: false },
-    { name: "phone", label: "Phone Number", type: "tel", required: false },
-    { name: "website", label: "Current Website (if any)", type: "url", required: false, placeholder: "https://yourwebsite.com" },
-    { name: "projectType", label: "Project Type", type: "select", required: true, options: ["Web Development", "Mobile App Development", "UI/UX Design", "Digital Marketing", "AI Solutions", "E-commerce", "Software Development", "Consulting", "Other"] },
-    { name: "budget", label: "Project Budget", type: "select", required: true, options: ["Under $5K", "$5K - $10K", "$10K - $25K", "$25K - $50K", "$50K - $100K", "Over $100K", "Not Sure"] },
-    { name: "timeline", label: "Project Timeline", type: "select", required: true, options: ["ASAP (Rush Project)", "1-2 months", "2-3 months", "3-6 months", "6+ months", "Flexible"] },
-    { name: "urgency", label: "Project Urgency", type: "select", required: false, options: ["Low - Just exploring options", "Medium - Planning for next quarter", "High - Need to start soon", "Critical - Must launch ASAP"] },
-    { name: "teamSize", label: "Your Team Size", type: "select", required: false, options: ["Solo Entrepreneur", "2-5 people", "6-20 people", "20+ people", "Enterprise"] },
-    { name: "experience", label: "Previous Tech Experience", type: "select", required: false, options: ["None - Complete beginner", "Some - Basic understanding", "Moderate - Some technical background", "Advanced - Very technical"] },
-    { name: "message", label: "Project Description & Goals", type: "textarea", required: true, placeholder: "Please describe your project in detail:\n• What are your main goals?\n• What challenges are you facing?\n• What features do you need?\n• Any specific requirements or preferences?\n• What would success look like for you?" }
+    { name: "name", label: t('consultation.name'), type: "text", required: true },
+    { name: "email", label: t('consultation.email'), type: "email", required: true },
+    { name: "company", label: t('consultation.company'), type: "text", required: false },
+    { name: "phone", label: t('consultation.phone'), type: "tel", required: false },
+    { name: "website", label: t('consultation.website'), type: "url", required: false, placeholder: t('consultation.websitePlaceholder') },
+    { name: "projectType", label: t('consultation.projectType'), type: "select", required: true, options: [
+      t('consultation.projectTypes.webDev'), t('consultation.projectTypes.mobileApp'), 
+      t('consultation.projectTypes.uiux'), t('consultation.projectTypes.marketing'), 
+      t('consultation.projectTypes.ai'), t('consultation.projectTypes.ecommerce'), 
+      t('consultation.projectTypes.software'), t('consultation.projectTypes.consulting'), 
+      t('consultation.projectTypes.other')
+    ] },
+    { name: "budget", label: t('consultation.budget'), type: "select", required: true, options: [
+      t('consultation.budgetOptions.under5k'), t('consultation.budgetOptions.5k10k'), 
+      t('consultation.budgetOptions.10k25k'), t('consultation.budgetOptions.25k50k'), 
+      t('consultation.budgetOptions.50k100k'), t('consultation.budgetOptions.over100k'), 
+      t('consultation.budgetOptions.notSure')
+    ] },
+    { name: "timeline", label: t('consultation.timeline'), type: "select", required: true, options: [
+      t('consultation.timelineOptions.asap'), t('consultation.timelineOptions.1-2months'), 
+      t('consultation.timelineOptions.2-3months'), t('consultation.timelineOptions.3-6months'), 
+      t('consultation.timelineOptions.6+months'), t('consultation.timelineOptions.flexible')
+    ] },
+    { name: "urgency", label: t('consultation.urgency'), type: "select", required: false, options: [
+      t('consultation.urgencyOptions.low'), t('consultation.urgencyOptions.medium'), 
+      t('consultation.urgencyOptions.high'), t('consultation.urgencyOptions.critical')
+    ] },
+    { name: "teamSize", label: t('consultation.teamSize'), type: "select", required: false, options: [
+      t('consultation.teamSizeOptions.solo'), t('consultation.teamSizeOptions.2-5'), 
+      t('consultation.teamSizeOptions.6-20'), t('consultation.teamSizeOptions.20+'), 
+      t('consultation.teamSizeOptions.enterprise')
+    ] },
+    { name: "experience", label: t('consultation.experience'), type: "select", required: false, options: [
+      t('consultation.experienceOptions.none'), t('consultation.experienceOptions.some'), 
+      t('consultation.experienceOptions.moderate'), t('consultation.experienceOptions.advanced')
+    ] },
+    { name: "message", label: t('consultation.message'), type: "textarea", required: true, placeholder: t('consultation.messagePlaceholder') }
   ]
-};
+});
 
-const valueProps = [
+const getValueProps = (t: (key: string) => string) => [
   {
-    title: "Free Initial Consultation",
-    description: "No cost, no commitment. Just a conversation about your goals and how we can help."
+    title: t('consultation.freeConsultation'),
+    description: t('consultation.freeConsultationDesc')
   },
   {
-    title: "24-Hour Response",
-    description: "We respond to all consultation requests within 24 hours, often much sooner."
+    title: t('consultation.response24h'),
+    description: t('consultation.response24hDesc')
   },
   {
-    title: "Custom Proposal",
-    description: "Every project gets a tailored proposal with timeline, deliverables, and investment."
+    title: t('consultation.customProposal'),
+    description: t('consultation.customProposalDesc')
   }
 ];
 
@@ -156,41 +198,43 @@ const chatLinks = [
   { name: "Email", icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:info@upvistadigital.com" },
 ];
 
-const scheduleOptions = [
+const getScheduleOptions = (t: (key: string) => string) => [
   { 
     name: "Calendly", 
     icon: <Calendar className="w-8 h-8" />, 
     href: "https://calendly.com/upvistadigital/30min", 
-    desc: "Professional scheduling system" 
+    desc: t('consultation.schedule.calendlyDesc')
   },
   { 
     name: "WhatsApp", 
     icon: <MessageCircle className="w-8 h-8" />, 
     href: "https://wa.me/923320486955?text=Hi! I'd like to schedule a consultation call.", 
-    desc: "Quick scheduling via chat" 
+    desc: t('consultation.schedule.whatsappDesc')
   },
   { 
     name: "Email", 
     icon: <Mail className="w-8 h-8" />, 
     href: "mailto:support@upvistadigital.com?subject=Consultation Request&body=Hi! I'd like to schedule a consultation call. Please let me know your available times.", 
-    desc: "Traditional email scheduling" 
+    desc: t('consultation.schedule.emailDesc')
   },
 ];
 
-const videoOptions = [
+const getVideoOptions = (t: (key: string) => string) => [
   { 
     name: "Zoom Meeting", 
     icon: <Video className="w-8 h-8" />, 
-    desc: "Professional video consultation via Zoom" 
+    desc: t('consultation.video.zoomDesc')
   },
   { 
     name: "Google Meet", 
     icon: <Video className="w-8 h-8" />, 
-    desc: "Easy browser-based meeting via Google Meet" 
+    desc: t('consultation.video.googleMeetDesc')
   },
 ];
 
 export default function ConsultPage() {
+  const { isDark } = useTheme();
+  const { t } = useLanguage();
   const [selectedMethod, setSelectedMethod] = useState("chat");
   const [formData, setFormData] = useState({
     name: "",
@@ -348,12 +392,20 @@ export default function ConsultPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group"
+                className={`flex flex-col items-center p-6 backdrop-blur-sm border rounded-xl transition-all duration-300 group ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-500/30'
+                    : 'bg-white/80 border-gray-200/50 hover:bg-white/90 hover:border-blue-500/30'
+                }`}
               >
-                <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
+                <div className={`group-hover:scale-110 transition-transform duration-300 mb-4 ${
+                  isDark ? 'text-purple-400' : 'text-blue-500'
+                }`}>
                   {link.icon}
             </div>
-                <h3 className="text-white font-semibold text-lg">{link.name}</h3>
+                <h3 className={`font-semibold text-lg ${
+                  isDark ? 'text-white' : 'text-gray-900'
+                }`}>{link.name}</h3>
               </motion.a>
                 ))}
               </div>
@@ -361,7 +413,7 @@ export default function ConsultPage() {
       case "schedule":
         return (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {scheduleOptions.map((option) => (
+            {getScheduleOptions(t).map((option) => (
               <motion.a
                 key={option.name}
                 href={option.href}
@@ -370,13 +422,23 @@ export default function ConsultPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group"
+                className={`flex flex-col items-center p-6 backdrop-blur-sm border rounded-xl transition-all duration-300 group ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-500/30'
+                    : 'bg-white/80 border-gray-200/50 hover:bg-white/90 hover:border-blue-500/30'
+                }`}
               >
-                <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
+                <div className={`group-hover:scale-110 transition-transform duration-300 mb-4 ${
+                  isDark ? 'text-purple-400' : 'text-blue-500'
+                }`}>
                   {option.icon}
               </div>
-                <h3 className="text-white font-semibold text-lg mb-2">{option.name}</h3>
-                <p className="text-gray-400 text-sm text-center">{option.desc}</p>
+                <h3 className={`font-semibold text-lg mb-2 ${
+                  isDark ? 'text-white' : 'text-gray-900'
+                }`}>{option.name}</h3>
+                <p className={`text-sm text-center ${
+                  isDark ? 'text-gray-400' : 'text-gray-600'
+                }`}>{option.desc}</p>
               </motion.a>
             ))}
           </div>
@@ -384,20 +446,30 @@ export default function ConsultPage() {
       case "video":
         return (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {videoOptions.map((option) => (
+            {getVideoOptions(t).map((option) => (
               <motion.div
                 key={option.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="flex items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group"
+                className={`flex items-center p-6 backdrop-blur-sm border rounded-xl transition-all duration-300 group ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-500/30'
+                    : 'bg-white/80 border-gray-200/50 hover:bg-white/90 hover:border-blue-500/30'
+                }`}
               >
-                <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mr-4">
+                <div className={`group-hover:scale-110 transition-transform duration-300 mr-4 ${
+                  isDark ? 'text-purple-400' : 'text-blue-500'
+                }`}>
                   {option.icon}
                 </div>
                     <div>
-                  <h3 className="text-white font-semibold text-lg">{option.name}</h3>
-                  <p className="text-gray-400 text-sm">{option.desc}</p>
+                  <h3 className={`font-semibold text-lg ${
+                    isDark ? 'text-white' : 'text-gray-900'
+                  }`}>{option.name}</h3>
+                  <p className={`text-sm ${
+                    isDark ? 'text-gray-400' : 'text-gray-600'
+                  }`}>{option.desc}</p>
                     </div>
               </motion.div>
                 ))}
@@ -415,12 +487,20 @@ export default function ConsultPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="flex flex-col items-center p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 group"
+                className={`flex flex-col items-center p-6 backdrop-blur-sm border rounded-xl transition-all duration-300 group ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-500/30'
+                    : 'bg-white/80 border-gray-200/50 hover:bg-white/90 hover:border-blue-500/30'
+                }`}
               >
-                <div className="text-purple-400 group-hover:scale-110 transition-transform duration-300 mb-4">
+                <div className={`group-hover:scale-110 transition-transform duration-300 mb-4 ${
+                  isDark ? 'text-purple-400' : 'text-blue-500'
+                }`}>
                   {link.icon}
         </div>
-                <h3 className="text-white font-semibold text-sm">{link.name}</h3>
+                <h3 className={`font-semibold text-sm ${
+                  isDark ? 'text-white' : 'text-gray-900'
+                }`}>{link.name}</h3>
               </motion.a>
             ))}
           </div>
@@ -449,16 +529,24 @@ export default function ConsultPage() {
       </Head>
 
       <Header />
-      <div className="min-h-screen bg-black text-white pt-20 relative overflow-hidden">
+      <div className={`min-h-screen pt-20 relative overflow-hidden ${
+        isDark 
+          ? 'bg-black text-white' 
+          : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 text-gray-900'
+      }`}>
         {/* 3D Background with Purple Wave */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className={`absolute inset-0 ${
+          isDark 
+            ? 'bg-gradient-to-br from-black via-gray-900 to-black'
+            : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
+        }`}>
           {/* Animated Purple Wave SVG */}
-          <svg className="absolute top-0 left-0 w-full h-full opacity-20" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <svg className={`absolute top-0 left-0 w-full h-full ${isDark ? 'opacity-20' : 'opacity-10'}`} viewBox="0 0 1200 800" preserveAspectRatio="none">
             <defs>
               <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.3" />
-                <stop offset="50%" stopColor="#A855F7" stopOpacity="0.5" />
-                <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.3" />
+                <stop offset="0%" stopColor={isDark ? "#8B5CF6" : "#3B82F6"} stopOpacity={isDark ? "0.3" : "0.2"} />
+                <stop offset="50%" stopColor={isDark ? "#A855F7" : "#6366F1"} stopOpacity={isDark ? "0.5" : "0.3"} />
+                <stop offset="100%" stopColor={isDark ? "#7C3AED" : "#8B5CF6"} stopOpacity={isDark ? "0.3" : "0.2"} />
               </linearGradient>
             </defs>
             <path
@@ -475,9 +563,15 @@ export default function ConsultPage() {
           </svg>
           
           {/* Floating Elements */}
-          <div className="absolute top-20 left-20 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute top-40 right-32 w-24 h-24 bg-blue-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-32 left-1/3 w-40 h-40 bg-pink-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '3s' }}></div>
+          <div className={`absolute top-20 left-20 w-32 h-32 rounded-full blur-xl animate-pulse ${
+            isDark ? 'bg-purple-500/10' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+          }`}></div>
+          <div className={`absolute top-40 right-32 w-24 h-24 rounded-full blur-xl animate-pulse ${
+            isDark ? 'bg-blue-500/10' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+          }`} style={{ animationDelay: '2s' }}></div>
+          <div className={`absolute bottom-32 left-1/3 w-40 h-40 rounded-full blur-xl animate-pulse ${
+            isDark ? 'bg-pink-500/10' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
+          }`} style={{ animationDelay: '3s' }}></div>
         </div>
 
         <div className="relative z-10">
@@ -488,11 +582,15 @@ export default function ConsultPage() {
               animate={{ opacity: 1, y: 0 }}
               className="text-center mb-12"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                Let&apos;s Talk Business
+              <h1 className={`text-4xl md:text-6xl font-bold mb-4 ${
+                isDark ? 'text-white' : 'bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600'
+              }`}>
+                {t('consultation.title')}
               </h1>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Choose your preferred way to connect with us and start building your digital future.
+              <p className={`text-xl max-w-3xl mx-auto ${
+                isDark ? 'text-gray-300' : 'text-gray-700'
+              }`}>
+                {t('consultation.subtitle')}
               </p>
             </motion.div>
 
@@ -507,34 +605,52 @@ export default function ConsultPage() {
                 {/* Value Propositions */}
                 <div className="lg:col-span-1 space-y-6">
                   <div className="text-center lg:text-left mb-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                      Ready to Start?
+                    <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>
+                      {t('consultation.readyToStart')}
                     </h2>
-                    <p className="text-xl text-gray-300">
-                      Get a free consultation tailored to your specific needs.
+                    <p className={`text-xl ${
+                      isDark ? 'text-gray-300' : 'text-gray-700'
+                    }`}>
+                      {t('consultation.getConsultation')}
                     </p>
                   </div>
                   
-                  {valueProps.map((prop) => (
+                  {getValueProps(t).map((prop) => (
                     <motion.div
                       key={prop.title}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.3 }}
-                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+                      className={`backdrop-blur-sm border rounded-xl p-6 ${
+                        isDark 
+                          ? 'bg-white/5 border-white/10'
+                          : 'bg-white/80 border-gray-200/50'
+                      }`}
                     >
-                      <h3 className="text-white font-semibold text-lg mb-2">{prop.title}</h3>
-                      <p className="text-gray-400 text-sm">{prop.description}</p>
+                      <h3 className={`font-semibold text-lg mb-2 ${
+                        isDark ? 'text-white' : 'text-gray-900'
+                      }`}>{prop.title}</h3>
+                      <p className={`text-sm ${
+                        isDark ? 'text-gray-400' : 'text-gray-600'
+                      }`}>{prop.description}</p>
                     </motion.div>
                   ))}
                 </div>
 
                 {/* Consultation Form */}
                 <div className="lg:col-span-2">
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+                  <div className={`backdrop-blur-sm border rounded-2xl p-8 ${
+                    isDark 
+                      ? 'bg-white/5 border-white/10'
+                      : 'bg-white/80 border-gray-200/50'
+                  }`}>
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold text-white mb-2">{consultationForm.title}</h3>
-                      <p className="text-gray-400">{consultationForm.subtitle}</p>
+                      <h3 className={`text-2xl font-bold mb-2 ${
+                        isDark ? 'text-white' : 'text-gray-900'
+                      }`}>{getConsultationForm(t).title}</h3>
+                      <p className={isDark ? 'text-gray-400' : 'text-gray-600'}>{getConsultationForm(t).subtitle}</p>
                     </div>
 
                     {isSubmitted ? (
@@ -544,16 +660,20 @@ export default function ConsultPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2">Thank You!</h3>
-                        <p className="text-gray-400">We'll be in touch within 24 hours.</p>
+                        <h3 className={`text-xl font-bold mb-2 ${
+                          isDark ? 'text-white' : 'text-gray-900'
+                        }`}>{t('consultation.thankYou')}</h3>
+                        <p className={isDark ? 'text-gray-400' : 'text-gray-600'}>{t('consultation.thankYouDesc')}</p>
                       </div>
                     ) : (
                       <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Basic Information */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          {consultationForm.fields.slice(0, 5).map((field) => (
+                          {getConsultationForm(t).fields.slice(0, 5).map((field) => (
                             <div key={field.name} className={field.name === "website" ? "md:col-span-2" : ""}>
-                              <label className="block text-white text-sm font-medium mb-2">
+                              <label className={`block text-sm font-medium mb-2 ${
+                                isDark ? 'text-white' : 'text-gray-900'
+                              }`}>
                                 {field.label}
                                 {field.required && <span className="text-red-400 ml-1">*</span>}
                               </label>
@@ -564,7 +684,11 @@ export default function ConsultPage() {
                                   onChange={handleInputChange}
                                   placeholder={field.placeholder}
                                   required={field.required}
-                                  className="w-full px-4 py-3 bg-gradient-to-r from-white/5 to-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/15 focus:ring-2 focus:ring-purple-500/30 focus:shadow-lg focus:shadow-purple-500/10 transition-all duration-300 resize-none hover:border-white/30 hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12 backdrop-blur-sm"
+                                  className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all duration-300 resize-none backdrop-blur-sm ${
+                                    isDark 
+                                      ? 'bg-gradient-to-r from-white/5 to-white/10 border-white/20 text-white placeholder-gray-400 focus:border-purple-400 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/15 focus:ring-purple-500/30 focus:shadow-lg focus:shadow-purple-500/10 hover:border-white/30 hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12'
+                                      : 'bg-gradient-to-r from-white/80 to-white/90 border-gray-300/50 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:bg-gradient-to-r focus:from-white/90 focus:to-white/95 focus:ring-blue-500/30 focus:shadow-lg focus:shadow-blue-500/10 hover:border-gray-400/70 hover:bg-gradient-to-r hover:from-white/85 hover:to-white/95'
+                                  }`}
                                   rows={4}
                                 />
                               ) : field.type === "select" ? (
@@ -585,7 +709,11 @@ export default function ConsultPage() {
                                   onChange={handleInputChange}
                                   placeholder={field.placeholder}
                                   required={field.required}
-                                  className="w-full px-4 py-3 bg-gradient-to-r from-white/5 to-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/15 focus:ring-2 focus:ring-purple-500/30 focus:shadow-lg focus:shadow-purple-500/10 transition-all duration-300 hover:border-white/30 hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12 backdrop-blur-sm"
+                                  className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all duration-300 backdrop-blur-sm ${
+                                    isDark 
+                                      ? 'bg-gradient-to-r from-white/5 to-white/10 border-white/20 text-white placeholder-gray-400 focus:border-purple-400 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/15 focus:ring-purple-500/30 focus:shadow-lg focus:shadow-purple-500/10 hover:border-white/30 hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12'
+                                      : 'bg-gradient-to-r from-white/80 to-white/90 border-gray-300/50 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:bg-gradient-to-r focus:from-white/90 focus:to-white/95 focus:ring-blue-500/30 focus:shadow-lg focus:shadow-blue-500/10 hover:border-gray-400/70 hover:bg-gradient-to-r hover:from-white/85 hover:to-white/95'
+                                  }`}
                                 />
                               )}
                             </div>
@@ -594,9 +722,11 @@ export default function ConsultPage() {
 
                         {/* Project Details */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          {consultationForm.fields.slice(5, 9).map((field) => (
+                          {getConsultationForm(t).fields.slice(5, 9).map((field) => (
                             <div key={field.name}>
-                              <label className="block text-white text-sm font-medium mb-2">
+                              <label className={`block text-sm font-medium mb-2 ${
+                                isDark ? 'text-white' : 'text-gray-900'
+                              }`}>
                                 {field.label}
                                 {field.required && <span className="text-red-400 ml-1">*</span>}
                               </label>
@@ -615,9 +745,11 @@ export default function ConsultPage() {
 
                         {/* Additional Information */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                          {consultationForm.fields.slice(9, 11).map((field) => (
+                          {getConsultationForm(t).fields.slice(9, 11).map((field) => (
                             <div key={field.name}>
-                              <label className="block text-white text-sm font-medium mb-2">
+                              <label className={`block text-sm font-medium mb-2 ${
+                                isDark ? 'text-white' : 'text-gray-900'
+                              }`}>
                                 {field.label}
                                 {field.required && <span className="text-red-400 ml-1">*</span>}
                               </label>
@@ -636,17 +768,23 @@ export default function ConsultPage() {
 
                         {/* Message field */}
                         <div>
-                          <label className="block text-white text-sm font-medium mb-2">
-                            {consultationForm.fields[11].label}
+                          <label className={`block text-sm font-medium mb-2 ${
+                            isDark ? 'text-white' : 'text-gray-900'
+                          }`}>
+                            {getConsultationForm(t).fields[11].label}
                             <span className="text-red-400 ml-1">*</span>
                           </label>
                           <textarea
                             name="message"
                             value={formData.message}
                             onChange={handleInputChange}
-                            placeholder={consultationForm.fields[11].placeholder}
+                            placeholder={getConsultationForm(t).fields[11].placeholder}
                             required
-                            className="w-full px-4 py-3 bg-gradient-to-r from-white/5 to-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/15 focus:ring-2 focus:ring-purple-500/30 focus:shadow-lg focus:shadow-purple-500/10 transition-all duration-300 resize-none hover:border-white/30 hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12 backdrop-blur-sm"
+                            className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all duration-300 resize-none backdrop-blur-sm ${
+                              isDark 
+                                ? 'bg-gradient-to-r from-white/5 to-white/10 border-white/20 text-white placeholder-gray-400 focus:border-purple-400 focus:bg-gradient-to-r focus:from-white/10 focus:to-white/15 focus:ring-purple-500/30 focus:shadow-lg focus:shadow-purple-500/10 hover:border-white/30 hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12'
+                                : 'bg-gradient-to-r from-white/80 to-white/90 border-gray-300/50 text-gray-900 placeholder-gray-500 focus:border-blue-500 focus:bg-gradient-to-r focus:from-white/90 focus:to-white/95 focus:ring-blue-500/30 focus:shadow-lg focus:shadow-blue-500/10 hover:border-gray-400/70 hover:bg-gradient-to-r hover:from-white/85 hover:to-white/95'
+                            }`}
                             rows={6}
                           />
                         </div>
@@ -654,15 +792,19 @@ export default function ConsultPage() {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 px-6 rounded-lg font-semibold hover:from-purple-700 hover:to-indigo-700 hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
+                          className={`w-full text-white py-4 px-6 rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98] ${
+                            isDark 
+                              ? 'bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 hover:shadow-lg hover:shadow-purple-500/25'
+                              : 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 hover:shadow-lg hover:shadow-blue-500/25'
+                          }`}
                         >
                           {isSubmitting ? (
                             <div className="flex items-center justify-center space-x-2">
                               <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                              <span>Submitting...</span>
+                              <span>{t('consultation.submitting')}</span>
                             </div>
                           ) : (
-                            "Send Consultation Request"
+                            t('consultation.submitButton')
                           )}
                         </button>
                       </form>
@@ -679,18 +821,28 @@ export default function ConsultPage() {
               transition={{ delay: 0.6 }}
               className="max-w-4xl mx-auto mb-16"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h2 className="text-2xl font-bold text-white mb-6 text-center">How would you like to connect?</h2>
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 ${
+                isDark 
+                  ? 'bg-white/5 border-white/10'
+                  : 'bg-white/80 border-gray-200/50'
+              }`}>
+                <h2 className={`text-2xl font-bold mb-6 text-center ${
+                  isDark ? 'text-white' : 'text-gray-900'
+                }`}>{t('consultation.howToConnect')}</h2>
                 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                  {consultMethods.map((method) => (
+                  {getConsultMethods(t).map((method) => (
                     <button
                       key={method.value}
                       onClick={() => setSelectedMethod(method.value)}
                       className={`p-4 rounded-xl transition-all duration-300 flex flex-col items-center ${
                         selectedMethod === method.value
+                          ? isDark 
                           ? "bg-purple-600 text-white shadow-lg shadow-purple-500/30"
-                          : "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white"
+                            : "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30"
+                          : isDark
+                            ? "bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white"
+                            : "bg-white/60 text-gray-700 hover:bg-white/80 hover:text-gray-900"
                       }`}
                     >
                       <div className="mb-2">{method.icon}</div>
@@ -713,23 +865,39 @@ export default function ConsultPage() {
               transition={{ delay: 1.0 }}
               className="text-center"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 max-w-2xl mx-auto">
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Ready to Start Your Journey?
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 max-w-2xl mx-auto ${
+                isDark 
+                  ? 'bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-purple-500/30'
+                  : 'bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/30'
+              }`}>
+                <h3 className={`text-2xl font-bold mb-4 ${
+                  isDark ? 'text-white' : 'text-gray-900'
+                }`}>
+                  {t('consultation.readyToStartJourney')}
                 </h3>
-                <p className="text-gray-300 mb-6">
-                  Let&apos;s transform your ideas into powerful digital solutions together.
+                <p className={`mb-6 ${
+                  isDark ? 'text-gray-300' : 'text-gray-700'
+                }`}>
+                  {t('consultation.transformIdeas')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                     onClick={() => setSelectedMethod("chat")}
-                    className="px-8 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors duration-300 font-semibold"
+                    className={`px-8 py-3 text-white rounded-lg transition-colors duration-300 font-semibold ${
+                      isDark 
+                        ? 'bg-purple-600 hover:bg-purple-700'
+                        : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
+                    }`}
                   >
-                    Start Consultation
+                    {t('consultation.startConsultation')}
                   </button>
                   <Link href="/contactPage">
-                    <button className="px-8 py-3 border border-purple-500/30 text-purple-400 rounded-lg hover:bg-purple-500/10 transition-colors duration-300 font-semibold">
-                      Learn More
+                    <button className={`px-8 py-3 border rounded-lg transition-colors duration-300 font-semibold ${
+                      isDark 
+                        ? 'border-purple-500/30 text-purple-400 hover:bg-purple-500/10'
+                        : 'border-blue-500/30 text-blue-600 hover:bg-blue-500/10'
+                    }`}>
+                      {t('consultation.learnMore')}
               </button>
                   </Link>
                 </div>

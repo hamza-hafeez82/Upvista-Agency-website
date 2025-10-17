@@ -47,10 +47,6 @@ const Header = () => {
 
   const communityLinks = [
     { label: t('dropdown.community.about'), href: "/community/about" },
-    { label: t('dropdown.community.events'), href: "/community/events" },
-    { label: t('dropdown.community.members'), href: "/community/members" },
-    { label: t('dropdown.community.achievements'), href: "/community/achievements" },
-    { label: t('dropdown.community.trainings'), href: "/community/trainings" },
     { label: t('dropdown.community.join'), href: "/community/join" },
   ];
 
