@@ -52,8 +52,9 @@ const Header = () => {
 
   const researchesLinks = [
     { label: t('dropdown.researches.about'), href: "/Researches" },
-    { label: t('dropdown.researches.cortex'), href: "/Researches/project-cortex" },
+    { label: t('Global Cyber Defense fabric'), href: "/Researches/GCDF" },
     { label: t('dropdown.researches.agi'), href: "/Researches/AGI" },
+    { label: t('dropdown.researches.cortex'), href: "/Researches/project-cortex" },
   ];
 
   const insightsLinks = [
