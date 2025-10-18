@@ -6,13 +6,18 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function PhilosophyPage() {
+  const { isDark } = useTheme();
+  
   return (
     <>
       <CareersHeader />
       
-      <div className="min-h-screen bg-black text-white pt-20 relative">
+      <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${
+        isDark ? 'bg-black text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'
+      }`}>
         {/* Vortex Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <Vortex
@@ -27,7 +32,9 @@ export default function PhilosophyPage() {
           <div className="max-w-7xl mx-auto px-4 py-4">
             <Link 
               href="/careers/basics" 
-              className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-200"
+              className={`flex items-center transition-colors duration-200 ${
+                isDark ? 'text-purple-400 hover:text-purple-300' : 'text-indigo-600 hover:text-indigo-700'
+              }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Learn the Basics
@@ -47,7 +54,9 @@ export default function PhilosophyPage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
               Corporate Philosophy
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+            <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>
               Discover the values, principles, and cultures that define who we are and guide everything we do at Upvista Digital.
             </p>
           </motion.div>
@@ -61,9 +70,13 @@ export default function PhilosophyPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 md:p-12 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Our Purpose</h2>
-                <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-8 md:p-12 text-center ${
+                isDark 
+                  ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
+                  : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Purpose</h2>
+                <p className={`text-lg md:text-xl leading-relaxed max-w-4xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   To create a world where technology serves humanity, empowering businesses and individuals to achieve their fullest potential through innovative digital solutions that make a meaningful impact on society.
                 </p>
               </div>
@@ -76,54 +89,80 @@ export default function PhilosophyPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="max-w-7xl mx-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Our Five Cultures</h2>
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Five Cultures</h2>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                   {/* Human-Centered */}
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Human-Centered</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                      : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Human-Centered</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       We prioritize people over technology. Every solution we create is designed with the human experience at its core, ensuring our innovations truly serve and enhance human life.
                     </p>
                   </div>
 
                   {/* Innovation-Driven */}
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Innovation-Driven</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                      : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Innovation-Driven</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       We embrace change and continuously seek new ways to solve problems. Our culture encourages experimentation, creativity, and thinking beyond conventional boundaries.
                     </p>
                   </div>
 
                   {/* Collaborative */}
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Collaborative</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                      : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Collaborative</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       We believe that the best solutions emerge from diverse perspectives working together. We foster an environment where every voice is heard and valued.
                     </p>
                   </div>
 
                   {/* Ethical */}
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Ethical</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                      : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Ethical</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       We conduct our business with the highest standards of integrity, transparency, and responsibility. We're committed to creating technology that benefits society.
                     </p>
                   </div>
 
                   {/* Excellence-Focused */}
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Excellence-Focused</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                      : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Excellence-Focused</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       We strive for excellence in everything we do, from the smallest detail to the grandest vision. Quality is not just a goal—it&apos;s our standard.
                     </p>
                   </div>
 
                   {/* Growth-Oriented */}
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Growth-Oriented</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                      : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Growth-Oriented</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       We believe in continuous learning and personal development. Every challenge is an opportunity to grow, both individually and as an organization.
                     </p>
                   </div>
@@ -138,34 +177,44 @@ export default function PhilosophyPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Guiding Principles</h2>
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Guiding Principles</h2>
                 
                 <div className="space-y-8">
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Growth Mindset</h3>
-                    <p className="text-lg text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border ${
+                    isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Growth Mindset</h3>
+                    <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       We believe that abilities and intelligence can be developed through dedication and hard work. Every challenge is an opportunity to learn and improve, and we encourage our team to embrace this mindset in all aspects of their work.
                     </p>
                   </div>
 
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Sustainable Innovation</h3>
-                    <p className="text-lg text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border ${
+                    isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Sustainable Innovation</h3>
+                    <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Our innovations are designed for long-term impact. We consider environmental, social, and economic sustainability in all our solutions, ensuring that our work creates positive change for future generations.
                     </p>
                   </div>
 
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Customer Success</h3>
-                    <p className="text-lg text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border ${
+                    isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Customer Success</h3>
+                    <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Our success is measured by our clients' success. We are committed to understanding their needs and delivering solutions that exceed expectations, building lasting partnerships based on mutual trust and achievement.
                     </p>
                   </div>
 
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Continuous Learning</h3>
-                    <p className="text-lg text-gray-300 leading-relaxed">
+                  <div className={`p-6 rounded-xl border ${
+                    isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Continuous Learning</h3>
+                    <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       In the rapidly evolving tech landscape, we maintain our competitive edge through continuous learning, skill development, and knowledge sharing. We invest in our team's growth and encourage curiosity and exploration.
                     </p>
                   </div>
@@ -180,9 +229,13 @@ export default function PhilosophyPage() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 md:p-12 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Our Vision</h2>
-                <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto italic">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-8 md:p-12 text-center ${
+                isDark 
+                  ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
+                  : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Vision</h2>
+                <p className={`text-lg md:text-xl leading-relaxed max-w-4xl mx-auto italic ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   "To be the global leader in creating technology solutions that not only solve today's challenges but anticipate tomorrow's opportunities, building a more connected, efficient, and prosperous world for all."
                 </p>
               </div>
@@ -195,13 +248,17 @@ export default function PhilosophyPage() {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Values in Action</h2>
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Values in Action</h2>
                 
                 <div className="grid md:grid-cols-2 gap-8">
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Workplace Culture</h3>
-                    <div className="space-y-3 text-gray-300">
+                  <div className={`p-6 rounded-xl border ${
+                    isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Workplace Culture</h3>
+                    <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       <p>• Open communication and transparency</p>
                       <p>• Flexible work arrangements</p>
                       <p>• Regular team building activities</p>
@@ -210,9 +267,11 @@ export default function PhilosophyPage() {
                     </div>
                   </div>
                   
-                  <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-4">Community Impact</h3>
-                    <div className="space-y-3 text-gray-300">
+                  <div className={`p-6 rounded-xl border ${
+                    isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Community Impact</h3>
+                    <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       <p>• Pro bono technology consulting</p>
                       <p>• Educational outreach programs</p>
                       <p>• Environmental sustainability initiatives</p>
@@ -231,9 +290,13 @@ export default function PhilosophyPage() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="text-center"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 md:p-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Ready to Join Our Mission?</h3>
-                <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark 
+                  ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
+                  : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
+              }`}>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Join Our Mission?</h3>
+                <p className={`text-lg mb-8 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   Be part of a team that lives by these values and principles. Explore exciting career opportunities at Upvista Digital.
                 </p>
                 <Link

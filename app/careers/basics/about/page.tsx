@@ -6,13 +6,18 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function AboutPage() {
+  const { isDark } = useTheme();
+  
   return (
     <>
       <CareersHeader />
       
-      <div className="min-h-screen bg-black text-white pt-20 relative">
+      <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${
+        isDark ? 'bg-black text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'
+      }`}>
         {/* Vortex Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <Vortex
@@ -27,7 +32,9 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 py-4">
             <Link 
               href="/careers/basics" 
-              className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-200"
+              className={`flex items-center transition-colors duration-200 ${
+                isDark ? 'text-purple-400 hover:text-purple-300' : 'text-indigo-600 hover:text-indigo-700'
+              }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Learn the Basics
@@ -47,7 +54,9 @@ export default function AboutPage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
               About Upvista Digital
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+            <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>
               A technology company at the forefront of digital innovation, empowering businesses through enterprise software, web development, AI automation, cloud solutions, and cutting-edge design.
             </p>
           </motion.div>
@@ -61,9 +70,11 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Who We Are</h2>
-                <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Who We Are</h2>
+                <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p>
                     Upvista Digital is a comprehensive technology company that bridges the gap between 
                     innovation and implementation. We specialize in transforming complex business 
@@ -86,14 +97,20 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="max-w-7xl mx-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Our Core Services</h2>
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Core Services</h2>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 {/* Enterprise Software Development */}
-                <div className="space-y-4 p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400">Enterprise Software Development</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`space-y-4 p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Enterprise Software Development</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• Custom Application Development</p>
                     <p>• Enterprise Resource Planning (ERP)</p>
                     <p>• Customer Relationship Management (CRM)</p>
@@ -105,9 +122,13 @@ export default function AboutPage() {
                 </div>
 
                 {/* Web Development */}
-                <div className="space-y-4 p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400">Web Development</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`space-y-4 p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Web Development</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• Frontend Development (React, Vue, Angular)</p>
                     <p>• Backend Development (Node.js, Python, Java)</p>
                     <p>• Full-Stack Web Applications</p>
@@ -119,9 +140,13 @@ export default function AboutPage() {
                 </div>
 
                 {/* AI and Automation */}
-                <div className="space-y-4 p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400">AI and Automation</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`space-y-4 p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>AI and Automation</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• Machine Learning Solutions</p>
                     <p>• Natural Language Processing</p>
                     <p>• Computer Vision Applications</p>
@@ -133,9 +158,13 @@ export default function AboutPage() {
                 </div>
 
                 {/* Cloud Solutions */}
-                <div className="space-y-4 p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400">Cloud Solutions</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`space-y-4 p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Cloud Solutions</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• Cloud Migration & Strategy</p>
                     <p>• AWS, Azure, Google Cloud Services</p>
                     <p>• Infrastructure as a Service (IaaS)</p>
@@ -147,9 +176,13 @@ export default function AboutPage() {
                 </div>
 
                 {/* Graphics and Design */}
-                <div className="space-y-4 p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400">Graphics and Design</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`space-y-4 p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Graphics and Design</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• UI/UX Design</p>
                     <p>• Brand Identity & Logo Design</p>
                     <p>• Digital Marketing Materials</p>
@@ -161,9 +194,13 @@ export default function AboutPage() {
                 </div>
 
                 {/* Additional Services */}
-                <div className="space-y-4 p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400">Additional Services</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`space-y-4 p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Additional Services</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• Cybersecurity Solutions</p>
                     <p>• Mobile App Development</p>
                     <p>• Blockchain Development</p>
@@ -184,9 +221,11 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Our Community</h2>
-                <div className="space-y-8 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Community</h2>
+                <div className={`space-y-8 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p className="text-center">
                     At Upvista Digital, we believe that the best innovations come from collaborative 
                     minds working together. Our community is a vibrant collective of engineers, 
@@ -195,9 +234,11 @@ export default function AboutPage() {
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-8 mt-12">
-                    <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                      <h3 className="text-xl font-semibold mb-6 text-purple-400">Collaboration & Events</h3>
-                      <div className="space-y-4 text-gray-300">
+                    <div className={`p-6 rounded-xl border ${
+                      isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Collaboration & Events</h3>
+                      <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         <p>• Cross-functional project teams</p>
                         <p>• Regular hackathons and coding challenges</p>
                         <p>• Industry meetups and networking events</p>
@@ -206,9 +247,11 @@ export default function AboutPage() {
                       </div>
                     </div>
                     
-                    <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                      <h3 className="text-xl font-semibold mb-6 text-purple-400">Training & Development</h3>
-                      <div className="space-y-4 text-gray-300">
+                    <div className={`p-6 rounded-xl border ${
+                      isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Training & Development</h3>
+                      <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         <p>• Comprehensive web development bootcamps</p>
                         <p>• Advanced software engineering courses</p>
                         <p>• AI and machine learning workshops</p>
@@ -228,9 +271,11 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Upvista Technologies Lab</h2>
-                <div className="space-y-8 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Technologies Lab</h2>
+                <div className={`space-y-8 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p className="text-center">
                     Our Technologies Lab serves as the innovation engine of Upvista Digital, where 
                     we experiment with emerging technologies and push the boundaries of what&apos;s 
@@ -239,9 +284,11 @@ export default function AboutPage() {
                   </p>
                   
                   <div className="mt-12">
-                    <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                      <h3 className="text-xl font-semibold mb-6 text-purple-400 text-center">Research Focus Areas</h3>
-                      <div className="grid md:grid-cols-2 gap-4 text-gray-300">
+                    <div className={`p-6 rounded-xl border ${
+                      isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-6 text-center ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Research Focus Areas</h3>
+                      <div className={`grid md:grid-cols-2 gap-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         <p>• Artificial General Intelligence (AGI) development</p>
                         <p>• Quantum computing applications</p>
                         <p>• Advanced neural network architectures</p>
@@ -270,9 +317,13 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="text-center"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 md:p-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Ready to Join Our Mission?</h3>
-                <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark 
+                  ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
+                  : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
+              }`}>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Join Our Mission?</h3>
+                <p className={`text-lg mb-8 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   Be part of a team that&apos;s shaping the future of technology. Explore exciting career opportunities at Upvista Digital.
                 </p>
                 <Link

@@ -6,13 +6,18 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function NewGraduatesPage() {
+  const { isDark } = useTheme();
+  
   return (
     <>
       <CareersHeader />
       
-      <div className="min-h-screen bg-black text-white pt-20 relative">
+      <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${
+        isDark ? 'bg-black text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'
+      }`}>
         {/* Vortex Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <Vortex
@@ -27,7 +32,9 @@ export default function NewGraduatesPage() {
           <div className="max-w-7xl mx-auto px-4 py-4">
             <Link 
               href="/careers/basics" 
-              className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-200"
+              className={`flex items-center transition-colors duration-200 ${
+                isDark ? 'text-purple-400 hover:text-purple-300' : 'text-indigo-600 hover:text-indigo-700'
+              }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Learn the Basics
@@ -47,7 +54,9 @@ export default function NewGraduatesPage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
               New Graduate Recruitment
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+            <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>
               Start your career journey with Upvista Digital. We provide the perfect environment for recent graduates to learn, grow, and make a meaningful impact in the technology industry.
             </p>
           </motion.div>
@@ -61,15 +70,15 @@ export default function NewGraduatesPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">To New Graduates</h2>
-              <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>To New Graduates</h2>
+              <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   At Upvista Digital, we believe that fresh perspectives and new ideas are the driving force behind innovation. We're committed to providing recent graduates with the tools, mentorship, and opportunities they need to thrive in their careers.
                 </p>
                 <p>
                   We understand that starting your first job can be both exciting and challenging. That's why we've created comprehensive programs designed specifically for new graduates, ensuring you have the support and guidance needed to succeed from day one.
                 </p>
-                <p className="italic text-purple-300">
+                <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
                   "We don't just hire new graduates—we invest in them. Your fresh perspective and eagerness to learn are exactly what we need to build the future."
                 </p>
               </div>
@@ -82,13 +91,17 @@ export default function NewGraduatesPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="max-w-6xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Programs for New Graduates</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Programs for New Graduates</h2>
               
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Graduate Training Program */}
-                <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400 mb-4">Graduate Training Program</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Graduate Training Program</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• 12-month comprehensive training program</p>
                     <p>• Rotations across different departments</p>
                     <p>• Hands-on project experience</p>
@@ -99,9 +112,13 @@ export default function NewGraduatesPage() {
                 </div>
 
                 {/* Mentorship Program */}
-                <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400 mb-4">Mentorship Program</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Mentorship Program</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• Assigned senior mentor for guidance</p>
                     <p>• Regular one-on-one meetings</p>
                     <p>• Career path planning and advice</p>
@@ -112,9 +129,13 @@ export default function NewGraduatesPage() {
                 </div>
 
                 {/* Leadership Development */}
-                <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400 mb-4">Leadership Development</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Leadership Development</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• Early leadership opportunities</p>
                     <p>• Team project leadership roles</p>
                     <p>• Management training courses</p>
@@ -125,9 +146,13 @@ export default function NewGraduatesPage() {
                 </div>
 
                 {/* Innovation Lab */}
-                <div className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300">
-                  <h3 className="text-xl font-semibold text-purple-400 mb-4">Innovation Lab</h3>
-                  <div className="space-y-3 text-gray-300">
+                <div className={`p-6 rounded-xl border transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
+                    : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Innovation Lab</h3>
+                  <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <p>• Access to cutting-edge technology</p>
                     <p>• Experimental project opportunities</p>
                     <p>• Hackathon participation</p>
@@ -146,27 +171,29 @@ export default function NewGraduatesPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="max-w-6xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Benefits and Support</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Benefits and Support</h2>
               
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Financial Benefits */}
-                <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                  <h3 className="text-xl font-semibold text-purple-400 mb-6">Financial Benefits</h3>
-                  <div className="space-y-4 text-gray-300">
+                <div className={`p-6 rounded-xl border ${
+                  isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Financial Benefits</h3>
+                  <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Competitive Starting Salaries</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Competitive Starting Salaries</h4>
                       <p>• Market-competitive compensation packages</p>
                       <p>• Performance-based bonuses and incentives</p>
                       <p>• Annual salary reviews and adjustments</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Student Loan Support</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Student Loan Support</h4>
                       <p>• Student loan repayment assistance</p>
                       <p>• Financial planning and budgeting guidance</p>
                       <p>• Educational reimbursement programs</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Relocation Assistance</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Relocation Assistance</h4>
                       <p>• Relocation package for out-of-town hires</p>
                       <p>• Temporary housing support</p>
                       <p>• Moving expense reimbursement</p>
@@ -175,23 +202,25 @@ export default function NewGraduatesPage() {
                 </div>
 
                 {/* Professional Development */}
-                <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                  <h3 className="text-xl font-semibold text-purple-400 mb-6">Professional Development</h3>
-                  <div className="space-y-4 text-gray-300">
+                <div className={`p-6 rounded-xl border ${
+                  isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Professional Development</h3>
+                  <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Learning Opportunities</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Learning Opportunities</h4>
                       <p>• Conference attendance and networking</p>
                       <p>• Online learning platform access</p>
                       <p>• Certification and credential support</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Skill Development</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Skill Development</h4>
                       <p>• Technical skill enhancement courses</p>
                       <p>• Soft skills training programs</p>
                       <p>• Industry-specific training</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Career Growth</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Career Growth</h4>
                       <p>• Clear promotion pathways</p>
                       <p>• Internal job posting opportunities</p>
                       <p>• Cross-functional project assignments</p>
@@ -200,23 +229,25 @@ export default function NewGraduatesPage() {
                 </div>
 
                 {/* Work-Life Balance */}
-                <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                  <h3 className="text-xl font-semibold text-purple-400 mb-6">Work-Life Balance</h3>
-                  <div className="space-y-4 text-gray-300">
+                <div className={`p-6 rounded-xl border ${
+                  isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Work-Life Balance</h3>
+                  <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Flexible Work Arrangements</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Flexible Work Arrangements</h4>
                       <p>• Remote and hybrid work options</p>
                       <p>• Flexible scheduling and hours</p>
                       <p>• Work-from-home setup support</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Time Off and Leave</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Time Off and Leave</h4>
                       <p>• Generous vacation and personal days</p>
                       <p>• Mental health days and wellness time</p>
                       <p>• Family and personal leave options</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Wellness Programs</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Wellness Programs</h4>
                       <p>• Health and wellness initiatives</p>
                       <p>• Fitness and recreation programs</p>
                       <p>• Mental health support resources</p>
@@ -225,23 +256,25 @@ export default function NewGraduatesPage() {
                 </div>
 
                 {/* Community and Culture */}
-                <div className="p-6 bg-white/5 rounded-xl border border-white/10">
-                  <h3 className="text-xl font-semibold text-purple-400 mb-6">Community and Culture</h3>
-                  <div className="space-y-4 text-gray-300">
+                <div className={`p-6 rounded-xl border ${
+                  isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
+                }`}>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Community and Culture</h3>
+                  <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Inclusive Environment</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Inclusive Environment</h4>
                       <p>• Diverse and inclusive workplace</p>
                       <p>• Employee resource groups</p>
                       <p>• Cultural awareness programs</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Team Building</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Team Building</h4>
                       <p>• Regular team building activities</p>
                       <p>• Social events and celebrations</p>
                       <p>• Volunteer and community service</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-white mb-2">Support Network</h4>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Support Network</h4>
                       <p>• New graduate buddy system</p>
                       <p>• Peer support groups</p>
                       <p>• Employee assistance programs</p>
@@ -258,7 +291,7 @@ export default function NewGraduatesPage() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="max-w-6xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Application Process</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Application Process</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                 {/* Step 1 */}
@@ -266,8 +299,8 @@ export default function NewGraduatesPage() {
                   <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
                     1
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Application Submission</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Application Submission</h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     Submit your resume, cover letter, and any relevant portfolio materials through our online application system.
                   </p>
                 </div>
@@ -277,8 +310,8 @@ export default function NewGraduatesPage() {
                   <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
                     2
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Initial Screening</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Initial Screening</h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     Our HR team reviews your application and conducts an initial phone or video screening.
                   </p>
                 </div>
@@ -288,8 +321,8 @@ export default function NewGraduatesPage() {
                   <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
                     3
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Technical Assessment</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technical Assessment</h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     Complete a technical assessment or coding challenge to demonstrate your skills and potential.
                   </p>
                 </div>
@@ -299,8 +332,8 @@ export default function NewGraduatesPage() {
                   <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
                     4
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Interview Process</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Interview Process</h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     Meet with our team for interviews covering technical skills, cultural fit, and growth potential.
                   </p>
                 </div>
@@ -310,8 +343,8 @@ export default function NewGraduatesPage() {
                   <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
                     5
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">Final Decision</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Final Decision</h3>
+                  <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We make our hiring decision and extend an offer, followed by comprehensive onboarding.
                   </p>
                 </div>
@@ -325,16 +358,20 @@ export default function NewGraduatesPage() {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 md:p-12 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">New Graduate Success Stories</h2>
-                <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-8 md:p-12 text-center ${
+                isDark 
+                  ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
+                  : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>New Graduate Success Stories</h2>
+                <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p>
                     Our new graduate program has launched countless successful careers. Recent graduates have gone on to become team leads, technical architects, and even department heads within just a few years of joining us.
                   </p>
                   <p>
                     Many of our current senior team members started as new graduates at Upvista Digital. They've brought fresh perspectives that have led to breakthrough innovations and helped shape our company culture.
                   </p>
-                  <p className="italic text-purple-300">
+                  <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
                     "Starting my career at Upvista Digital was the best decision I made. The mentorship, training, and opportunities for growth have been incredible. I've been able to work on meaningful projects and advance my career faster than I ever imagined."
                   </p>
                 </div>
@@ -348,9 +385,13 @@ export default function NewGraduatesPage() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="text-center"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 md:p-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Ready to Start Your Career?</h3>
-                <p className="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark 
+                  ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
+                  : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
+              }`}>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Start Your Career?</h3>
+                <p className={`text-lg mb-8 max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   If you&apos;re a recent graduate looking to start your career in technology, Upvista Digital offers the perfect environment for growth and learning. Join us and be part of building the future of digital solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -363,7 +404,11 @@ export default function NewGraduatesPage() {
                   </Link>
                   <Link
                     href="/careers/jobs"
-                    className="inline-flex items-center px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-200 border border-white/20"
+                    className={`inline-flex items-center px-8 py-4 font-semibold rounded-lg transition-all duration-200 border ${
+                      isDark 
+                        ? 'bg-white/10 text-white hover:bg-white/20 border-white/20' 
+                        : 'bg-gray-900/10 text-gray-900 hover:bg-gray-900/20 border-gray-900/20'
+                    }`}
                   >
                     View Open Positions
                   </Link>

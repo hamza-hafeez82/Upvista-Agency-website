@@ -6,6 +6,7 @@ import { ArrowLeft, Search, HelpCircle, ChevronDown, ChevronUp } from "lucide-re
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
 import Link from "next/link";
+import { useTheme } from "@/contexts/ThemeContext";
 
 interface FAQItem {
   id: number;
@@ -15,6 +16,7 @@ interface FAQItem {
 }
 
 export default function FAQPage() {
+  const { isDark } = useTheme();
   const [openItems, setOpenItems] = useState<number[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -122,12 +124,12 @@ export default function FAQPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-black' : 'bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50'}`}>
       <CareersHeader />
       
       <div className="fixed top-20 left-4 z-50">
         <Link href="/careers">
-          <button className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors duration-300">
+          <button className={`flex items-center gap-2 transition-colors duration-300 ${isDark ? 'text-white hover:text-gray-300' : 'text-gray-900 hover:text-purple-600'}`}>
             <ArrowLeft className="w-5 h-5" />
             Back to Careers
           </button>
@@ -143,10 +145,10 @@ export default function FAQPage() {
             className="text-center mb-16"
           >
             
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               FAQ
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Find answers to common questions about working at Upvista Digital and our recruitment process.
             </p>
           </motion.div>
@@ -161,22 +163,26 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="border border-gray-800 p-8 mb-8"
+            className={`border p-8 mb-8 ${isDark ? 'border-gray-800' : 'border-purple-200 bg-gradient-to-br from-white/60 to-indigo-50/40 backdrop-blur-sm'}`}
           >
             <div className="grid md:grid-cols-2 gap-6">
               {/* Search */}
               <div>
-                <label htmlFor="search" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="search" className={`block text-sm font-medium mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   Search Questions
                 </label>
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${isDark ? 'text-gray-400' : 'text-gray-500'}`} />
                   <input
                     type="text"
                     id="search"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600  text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+                    className={`w-full pl-10 pr-4 py-3 border focus:outline-none focus:ring-2 transition-all ${
+                      isDark 
+                        ? 'bg-gray-700/50 border-gray-600 text-white placeholder-gray-400 focus:border-purple-500 focus:ring-purple-500/20' 
+                        : 'bg-white border-purple-300 text-gray-900 placeholder-gray-500 focus:border-indigo-500 focus:ring-indigo-500/20'
+                    }`}
                     placeholder="Search for questions..."
                   />
                 </div>
@@ -184,14 +190,18 @@ export default function FAQPage() {
 
               {/* Category Filter */}
               <div>
-                <label htmlFor="category" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="category" className={`block text-sm font-medium mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   Filter by Category
                 </label>
                 <select
                   id="category"
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600  text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20"
+                  className={`w-full px-4 py-3 border focus:outline-none focus:ring-2 transition-all ${
+                    isDark 
+                      ? 'bg-gray-700/50 border-gray-600 text-white focus:border-purple-500 focus:ring-purple-500/20' 
+                      : 'bg-white border-purple-300 text-gray-900 focus:border-indigo-500 focus:ring-indigo-500/20'
+                  }`}
                 >
                   {categories.map(category => (
                     <option key={category.id} value={category.id}>
@@ -217,19 +227,23 @@ export default function FAQPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="border border-gray-800 overflow-hidden"
+                  className={`border overflow-hidden ${isDark ? 'border-gray-800' : 'border-purple-200 bg-white/60'}`}
                 >
                   <button
                     onClick={() => toggleItem(item.id)}
-                    className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-700/30 transition-colors duration-200"
+                    className={`w-full px-6 py-6 text-left flex items-center justify-between transition-colors duration-200 ${
+                      isDark 
+                        ? 'hover:bg-gray-700/30' 
+                        : 'hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50'
+                    }`}
                   >
-                    <h3 className="text-lg font-semibold text-white pr-4">
+                    <h3 className={`text-lg font-semibold pr-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                       {item.question}
                     </h3>
                     {openItems.includes(item.id) ? (
-                      <ChevronUp className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                      <ChevronUp className={`w-5 h-5 flex-shrink-0 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`} />
                     ) : (
-                      <ChevronDown className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                      <ChevronDown className={`w-5 h-5 flex-shrink-0 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`} />
                     )}
                   </button>
                   
@@ -241,7 +255,7 @@ export default function FAQPage() {
                       transition={{ duration: 0.3 }}
                       className="px-6 pb-6"
                     >
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         {item.answer}
                       </p>
                     </motion.div>
@@ -250,9 +264,9 @@ export default function FAQPage() {
               ))
             ) : (
               <div className="text-center py-12">
-                <HelpCircle className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">No questions found</h3>
-                <p className="text-gray-400">
+                <HelpCircle className={`w-16 h-16 mx-auto mb-4 ${isDark ? 'text-gray-400' : 'text-gray-500'}`} />
+                <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>No questions found</h3>
+                <p className={isDark ? 'text-gray-400' : 'text-gray-600'}>
                   Try adjusting your search terms or category filter.
                 </p>
               </div>
@@ -264,16 +278,20 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm border border-purple-500/30  p-8 mt-12 text-center"
+            className={`backdrop-blur-sm border p-8 mt-12 text-center ${
+              isDark 
+                ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-purple-500/30' 
+                : 'bg-gradient-to-r from-purple-100 via-indigo-100 to-blue-100 border-indigo-300'
+            }`}
           >
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Still Have Questions?
             </h2>
-            <p className="text-gray-300 mb-6">
+            <p className={`mb-6 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Can't find the answer you&apos;re looking for? Our recruitment team is here to help.
             </p>
-            <p className="text-gray-300">
-              Email us at: <a href="mailto:careers@upvistadigital.com" className="text-purple-400 hover:text-purple-300 underline">careers@upvistadigital.com</a>
+            <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>
+              Email us at: <a href="mailto:careers@upvistadigital.com" className={`underline ${isDark ? 'text-purple-400 hover:text-purple-300' : 'text-indigo-600 hover:text-indigo-700'}`}>careers@upvistadigital.com</a>
             </p>
           </motion.div>
 

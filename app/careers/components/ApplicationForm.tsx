@@ -10,13 +10,15 @@ interface ApplicationFormProps {
   technicalAnswers: { [key: number]: string };
   selectedPosition: string;
   onSubmit: (data: unknown) => void;
+  isDark: boolean;
 }
 
 export default function ApplicationForm({
   personalityAnswers,
   technicalAnswers,
   selectedPosition,
-  onSubmit
+  onSubmit,
+  isDark
 }: ApplicationFormProps) {
   const [formData, setFormData] = useState({
     fullName: "",
@@ -157,17 +159,21 @@ export default function ApplicationForm({
       transition={{ duration: 0.3 }}
       className="max-w-4xl mx-auto"
     >
-      <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 md:p-8">
-        <h2 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6">Application Form</h2>
-        <p className="text-gray-300 mb-6 md:mb-8 text-sm md:text-base">
-          Complete your application for the <span className="text-purple-400 font-semibold">{selectedPosition}</span> position.
+      <div className={`backdrop-blur-sm border rounded-2xl p-4 md:p-8 ${
+        isDark 
+          ? 'bg-gray-800/50 border-gray-700/50' 
+          : 'bg-gradient-to-br from-white/70 to-indigo-50/40 border-indigo-200'
+      }`}>
+        <h2 className={`text-xl md:text-2xl font-bold mb-4 md:mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Application Form</h2>
+        <p className={`mb-6 md:mb-8 text-sm md:text-base ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+          Complete your application for the <span className={`font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{selectedPosition}</span> position.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
           {/* Personal Information */}
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
             <div>
-              <label className="block text-white font-medium mb-2">
+              <label className={`block font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 <User className="w-4 h-4 inline mr-2" />
                 Full Name *
               </label>
@@ -176,8 +182,14 @@ export default function ApplicationForm({
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleInputChange}
-                className={`w-full p-3 md:p-4 rounded-lg border bg-gray-700/50 text-white placeholder-gray-400 focus:outline-none text-sm md:text-base ${
-                  errors.fullName ? "border-red-500" : "border-gray-600 focus:border-purple-500"
+                className={`w-full p-3 md:p-4 rounded-lg border focus:outline-none text-sm md:text-base ${
+                  isDark 
+                    ? 'bg-gray-700/50 text-white placeholder-gray-400' 
+                    : 'bg-white text-gray-900 placeholder-gray-500'
+                } ${
+                  errors.fullName 
+                    ? "border-red-500" 
+                    : (isDark ? "border-gray-600 focus:border-purple-500" : "border-indigo-200 focus:border-indigo-500")
                 }`}
                 placeholder="Enter your full name"
               />
@@ -185,7 +197,7 @@ export default function ApplicationForm({
             </div>
 
             <div>
-              <label className="block text-white font-medium mb-2">
+              <label className={`block font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 <Mail className="w-4 h-4 inline mr-2" />
                 Email Address *
               </label>
@@ -194,8 +206,14 @@ export default function ApplicationForm({
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`w-full p-4 rounded-lg border bg-gray-700/50 text-white placeholder-gray-400 focus:outline-none ${
-                  errors.email ? "border-red-500" : "border-gray-600 focus:border-purple-500"
+                className={`w-full p-4 rounded-lg border focus:outline-none ${
+                  isDark 
+                    ? 'bg-gray-700/50 text-white placeholder-gray-400' 
+                    : 'bg-white text-gray-900 placeholder-gray-500'
+                } ${
+                  errors.email 
+                    ? "border-red-500" 
+                    : (isDark ? "border-gray-600 focus:border-purple-500" : "border-indigo-200 focus:border-indigo-500")
                 }`}
                 placeholder="Enter your email address"
               />
@@ -204,7 +222,7 @@ export default function ApplicationForm({
           </div>
 
           <div>
-            <label className="block text-white font-medium mb-2">
+            <label className={`block font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               <Phone className="w-4 h-4 inline mr-2" />
               Phone Number *
             </label>
@@ -213,8 +231,14 @@ export default function ApplicationForm({
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}
-              className={`w-full p-4 rounded-lg border bg-gray-700/50 text-white placeholder-gray-400 focus:outline-none ${
-                errors.phone ? "border-red-500" : "border-gray-600 focus:border-purple-500"
+              className={`w-full p-4 rounded-lg border focus:outline-none ${
+                  isDark 
+                    ? 'bg-gray-700/50 text-white placeholder-gray-400' 
+                    : 'bg-white text-gray-900 placeholder-gray-500'
+                } ${
+                  errors.phone 
+                    ? "border-red-500" 
+                    : (isDark ? "border-gray-600 focus:border-purple-500" : "border-indigo-200 focus:border-indigo-500")
               }`}
               placeholder="Enter your phone number"
             />
@@ -223,11 +247,15 @@ export default function ApplicationForm({
 
           {/* CV Upload */}
           <div>
-            <label className="block text-white font-medium mb-2">
+            <label className={`block font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               <Upload className="w-4 h-4 inline mr-2" />
               CV Upload * (Max 10MB)
             </label>
-            <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-purple-500 transition-colors">
+            <div className={`border-2 border-dashed rounded-lg p-6 text-center transition-colors ${
+              isDark 
+                ? 'border-gray-600 hover:border-purple-500' 
+                : 'border-indigo-300 hover:border-indigo-500'
+            }`}>
               <input
                 type="file"
                 accept=".pdf,.doc,.docx"
@@ -236,11 +264,11 @@ export default function ApplicationForm({
                 id="cv-upload"
               />
               <label htmlFor="cv-upload" className="cursor-pointer">
-                <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
-                <p className="text-gray-300 mb-2">
+                <Upload className={`w-8 h-8 mx-auto mb-2 ${isDark ? 'text-gray-400' : 'text-gray-500'}`} />
+                <p className={`mb-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   {formData.cvFile ? formData.cvFile.name : "Click to upload your CV"}
                 </p>
-                <p className="text-gray-400 text-sm">PDF, DOC, or DOCX files only</p>
+                <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>PDF, DOC, or DOCX files only</p>
               </label>
             </div>
             {errors.cvFile && <p className="text-red-400 text-sm mt-1">{errors.cvFile}</p>}
@@ -248,7 +276,7 @@ export default function ApplicationForm({
 
           {/* Cover Letter */}
           <div>
-            <label className="block text-white font-medium mb-2">
+            <label className={`block font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               <FileText className="w-4 h-4 inline mr-2" />
               Cover Letter *
             </label>
@@ -257,8 +285,14 @@ export default function ApplicationForm({
               value={formData.coverLetter}
               onChange={handleInputChange}
               rows={6}
-              className={`w-full p-4 rounded-lg border bg-gray-700/50 text-white placeholder-gray-400 focus:outline-none resize-none ${
-                errors.coverLetter ? "border-red-500" : "border-gray-600 focus:border-purple-500"
+              className={`w-full p-4 rounded-lg border focus:outline-none resize-none ${
+                  isDark 
+                    ? 'bg-gray-700/50 text-white placeholder-gray-400' 
+                    : 'bg-white text-gray-900 placeholder-gray-500'
+                } ${
+                  errors.coverLetter 
+                    ? "border-red-500" 
+                    : (isDark ? "border-gray-600 focus:border-purple-500" : "border-indigo-200 focus:border-indigo-500")
               }`}
               placeholder="Tell us why you&apos;re interested in this position and what makes you a great fit..."
             />
@@ -272,7 +306,9 @@ export default function ApplicationForm({
               disabled={isSubmitting}
               className={`w-full px-8 py-4 rounded-lg font-semibold transition-all duration-200 ${
                 isSubmitting
-                  ? "bg-gray-700 text-gray-400 cursor-not-allowed"
+                  ? (isDark 
+                      ? "bg-gray-700 text-gray-400 cursor-not-allowed" 
+                      : "bg-gray-200 text-gray-400 cursor-not-allowed")
                   : "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transform hover:scale-105"
               }`}
             >
@@ -288,6 +324,7 @@ export default function ApplicationForm({
         candidateName={formData.fullName}
         position={selectedPosition}
         onClose={handleCloseSuccessPopup}
+        isDark={isDark}
       />
     </motion.div>
   );

@@ -6,8 +6,10 @@ import { motion } from "framer-motion";
 import { HelpCircle } from "lucide-react";
 import CareersHeader from "../components/CareersHeader";
 import CareersFooter from "../components/CareersFooter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function ApplyPage() {
+  const { isDark } = useTheme();
   const [activeFilter, setActiveFilter] = useState("all");
   const [hoveredTooltip, setHoveredTooltip] = useState<string | null>(null);
   const [clickedTooltip, setClickedTooltip] = useState<string | null>(null);
@@ -103,13 +105,23 @@ export default function ApplyPage() {
   );
 
   const getDepartmentColor = (department: string) => {
-    const colors: { [key: string]: string } = {
-      "Development Team": "bg-blue-500/20 text-blue-300 border-blue-500/30",
-      "UI/UX Design": "bg-purple-500/20 text-purple-300 border-purple-500/30",
-      "QA": "bg-green-500/20 text-green-300 border-green-500/30",
-      "IT Infrastructure": "bg-orange-500/20 text-orange-300 border-orange-500/30"
-    };
-    return colors[department] || "bg-gray-500/20 text-gray-300 border-gray-500/30";
+    if (isDark) {
+      const colors: { [key: string]: string } = {
+        "Development Team": "bg-blue-500/20 text-blue-300 border-blue-500/30",
+        "UI/UX Design": "bg-purple-500/20 text-purple-300 border-purple-500/30",
+        "QA": "bg-green-500/20 text-green-300 border-green-500/30",
+        "IT Infrastructure": "bg-orange-500/20 text-orange-300 border-orange-500/30"
+      };
+      return colors[department] || "bg-gray-500/20 text-gray-300 border-gray-500/30";
+    } else {
+      const colors: { [key: string]: string } = {
+        "Development Team": "bg-blue-100 text-blue-700 border-blue-400",
+        "UI/UX Design": "bg-purple-100 text-purple-700 border-purple-400",
+        "QA": "bg-green-100 text-green-700 border-green-400",
+        "IT Infrastructure": "bg-orange-100 text-orange-700 border-orange-400"
+      };
+      return colors[department] || "bg-gray-100 text-gray-700 border-gray-400";
+    }
   };
 
   return (
@@ -121,6 +133,7 @@ export default function ApplyPage() {
         {/* Video Background - Hidden on mobile, visible on md+ screens */}
         <div className="absolute inset-0 z-0 hidden md:block">
           <video
+            key={isDark ? 'dark-video' : 'light-video'}
             autoPlay
             loop
             muted
@@ -133,13 +146,13 @@ export default function ApplyPage() {
               objectPosition: 'center center'
             }}
           >
-            <source src="/assets/careers/company-video3.mp4" type="video/mp4" />
+            <source src={isDark ? "/assets/careers/company-video3.mp4" : "/assets/careers/upvista.mp4"} type="video/mp4" />
           </video>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="min-h-screen bg-black text-white">
+      <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-black text-white' : 'bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 text-gray-900'}`}>
         <div className="container mx-auto px-6 py-16">
           {/* Page Title */}
           <motion.div
@@ -151,7 +164,7 @@ export default function ApplyPage() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Join Our Team
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Discover exciting career opportunities and be part of building the future of technology
             </p>
           </motion.div>
@@ -170,14 +183,16 @@ export default function ApplyPage() {
                   className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                     activeFilter === filter.id
                       ? "bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg shadow-purple-500/25"
-                      : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white"
+                      : isDark 
+                        ? "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white"
+                        : "bg-white border border-purple-200 text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 hover:text-gray-900"
                   }`}
                 >
                   {filter.label}
                 </button>
                 
                 <HelpCircle 
-                  className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition-colors"
+                  className={`w-5 h-5 cursor-pointer transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-indigo-600'}`}
                   onMouseEnter={() => setHoveredTooltip(filter.id)}
                   onMouseLeave={() => setHoveredTooltip(null)}
                   onClick={() => setClickedTooltip(clickedTooltip === filter.id ? null : filter.id)}
@@ -185,9 +200,13 @@ export default function ApplyPage() {
                 
                 {/* Tooltip - Desktop hover / Mobile click */}
                 {(hoveredTooltip === filter.id || clickedTooltip === filter.id) && (
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-80 p-4 bg-gray-900/95 backdrop-blur-md border border-purple-500/30 rounded-lg shadow-xl z-50">
-                    <p className="text-sm text-gray-200">{filter.description}</p>
-                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900/95"></div>
+                  <div className={`absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-80 p-4 backdrop-blur-md border rounded-lg shadow-xl z-50 ${
+                    isDark 
+                      ? 'bg-gray-900/95 border-purple-500/30' 
+                      : 'bg-white/95 border-indigo-300'
+                  }`}>
+                    <p className={`text-sm ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>{filter.description}</p>
+                    <div className={`absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent ${isDark ? 'border-t-gray-900/95' : 'border-t-white/95'}`}></div>
                   </div>
                 )}
               </div>
@@ -207,7 +226,11 @@ export default function ApplyPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="group bg-gray-900/50 backdrop-blur-sm border border-gray-800/50 rounded-xl p-6 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10"
+                className={`group backdrop-blur-sm border rounded-xl p-6 transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-gray-900/50 border-gray-800/50 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10' 
+                    : 'bg-white/70 border-purple-200 hover:border-indigo-400 hover:shadow-lg hover:shadow-indigo-200/50'
+                }`}
               >
                 {/* Department Tag */}
                 <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${getDepartmentColor(position.department)} mb-4`}>
@@ -215,31 +238,35 @@ export default function ApplyPage() {
                 </div>
 
                 {/* Job Title */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors">
+                <h3 className={`text-xl font-bold mb-3 transition-colors ${
+                  isDark 
+                    ? 'text-white group-hover:text-purple-300' 
+                    : 'text-gray-900 group-hover:text-indigo-600'
+                }`}>
                   {position.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 mb-4 leading-relaxed">
+                <p className={`mb-4 leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                   {position.description}
                 </p>
 
                 {/* Job Details */}
                 <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                  <div className={`flex items-center gap-2 text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <span className="font-medium">Type:</span>
-                    <span className="text-purple-300">{position.type}</span>
+                    <span className={isDark ? 'text-purple-300' : 'text-purple-600'}>{position.type}</span>
                   </div>
                   {position.duration && (
-                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <div className={`flex items-center gap-2 text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       <span className="font-medium">Duration:</span>
-                      <span className="text-blue-300">{position.duration}</span>
+                      <span className={isDark ? 'text-blue-300' : 'text-indigo-600'}>{position.duration}</span>
                     </div>
                   )}
                   {position.experience && (
-                    <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <div className={`flex items-center gap-2 text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       <span className="font-medium">Experience:</span>
-                      <span className="text-green-300">{position.experience}</span>
+                      <span className={isDark ? 'text-green-300' : 'text-green-600'}>{position.experience}</span>
                     </div>
                   )}
                 </div>
@@ -261,7 +288,7 @@ export default function ApplyPage() {
               animate={{ opacity: 1 }}
               className="text-center py-16"
             >
-              <p className="text-xl text-gray-400">No positions available for the selected filter.</p>
+              <p className={`text-xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>No positions available for the selected filter.</p>
             </motion.div>
           )}
 
@@ -272,9 +299,13 @@ export default function ApplyPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center mt-20"
           >
-            <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-4">Don&apos;t See Your Perfect Role?</h2>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <div className={`backdrop-blur-sm border rounded-2xl p-8 ${
+              isDark 
+                ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-purple-500/30' 
+                : 'bg-gradient-to-r from-purple-100 via-indigo-100 to-blue-100 border-indigo-300'
+            }`}>
+              <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Don&apos;t See Your Perfect Role?</h2>
+              <p className={`mb-6 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 We're always looking for talented individuals. Send us your resume and let us know how you'd like to contribute to our team.
               </p>
               <Link

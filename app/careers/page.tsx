@@ -8,8 +8,10 @@ import CareersHeader from "./components/CareersHeader";
 import CareersFooter from "./components/CareersFooter";
 import { Vortex } from "@/components/ui/vortex";
 import { searchJobs, getJobByTitle, getAllJobTitles, type JobMapping } from "./data/jobMappings";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function CareersPage() {
+  const { isDark } = useTheme();
   const [selectedJob, setSelectedJob] = useState("");
   const [selectedRecruitmentType, setSelectedRecruitmentType] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -73,9 +75,13 @@ export default function CareersPage() {
     <>
       <CareersHeader />
       
-      <div className="min-h-screen bg-black text-white pt-20 relative overflow-hidden">
+      <div className={`min-h-screen pt-20 relative overflow-hidden transition-colors duration-300 ${
+        isDark ? 'bg-black text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'
+      }`}>
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className={`absolute inset-0 ${
+          isDark ? 'bg-gradient-to-br from-black via-gray-900 to-black' : 'bg-gradient-to-br from-blue-50/50 via-indigo-50/50 to-purple-50/50'
+        }`}>
           {/* Animated Background */}
           <div className="absolute top-20 left-20 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute top-40 right-32 w-24 h-24 bg-blue-500/10 rounded-full blur-xl animate-pulse" style={{ animationDelay: '2s' }}></div>
@@ -96,14 +102,14 @@ export default function CareersPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+            <h1 className={`text-5xl md:text-7xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Building a Society
               <br />
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Overflowing with Teamwork
               </span>
               </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+            <p className={`text-xl md:text-2xl max-w-4xl mx-auto mb-8 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Upvista Digital is<br />
               waiting for members to work together.
             </p>
@@ -114,7 +120,11 @@ export default function CareersPage() {
                 </button>
               </Link>
               <Link href="/careers/basics">
-                <button className="px-8 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+                <button className={`px-8 py-4 font-semibold rounded-lg transition-all duration-300 ${
+                  isDark 
+                    ? 'bg-white/10 text-white hover:bg-white/20 border border-white/20' 
+                    : 'bg-gray-900/10 text-gray-900 hover:bg-gray-900/20 border border-gray-900/20'
+                }`}>
                   Learn the Basics
                 </button>
               </Link>
@@ -129,15 +139,19 @@ export default function CareersPage() {
               transition={{ delay: 0.3 }}
               className="mb-16"
             >
-              <div className="bg-gradient-to-r from-purple-600/10 to-indigo-600/10 backdrop-blur-sm border border-purple-500/20 rounded-2xl p-8 max-w-4xl mx-auto">
-                <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-8">
+              <div className={`bg-gradient-to-r backdrop-blur-sm rounded-2xl p-8 max-w-4xl mx-auto ${
+                isDark 
+                  ? 'from-purple-600/10 to-indigo-600/10 border border-purple-500/20' 
+                  : 'from-purple-600/5 to-indigo-600/5 border border-purple-500/10 bg-white/40'
+              }`}>
+                <h2 className={`text-2xl md:text-3xl font-bold text-center mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   Find Recruitment Information
                 </h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   {/* Recruitment Type Selection */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-white mb-3">Recruitment Type</h3>
+                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Recruitment Type</h3>
                     <div className="space-y-3">
                       {recruitmentTypes.map((type) => (
                         <label key={Math.random()} className="flex items-center space-x-3 cursor-pointer group">
@@ -147,9 +161,13 @@ export default function CareersPage() {
                             value={type}
                             checked={selectedRecruitmentType === type}
                             onChange={(e) => handleRecruitmentTypeChange(e.target.value)}
-                            className="w-4 h-4 text-purple-600 bg-gray-800 border-gray-600 focus:ring-purple-500 focus:ring-2"
+                            className={`w-4 h-4 text-purple-600 border-gray-600 focus:ring-purple-500 focus:ring-2 ${
+                              isDark ? 'bg-gray-800' : 'bg-gray-100'
+                            }`}
                           />
-                          <span className="text-gray-300 group-hover:text-white transition-colors duration-200">
+                          <span className={`transition-colors duration-200 ${
+                            isDark ? 'text-gray-300 group-hover:text-white' : 'text-gray-700 group-hover:text-gray-900'
+                          }`}>
                             {type}
                           </span>
                         </label>
@@ -159,13 +177,17 @@ export default function CareersPage() {
 
                   {/* Job Category Dropdown */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-white mb-3">Select the Job</h3>
+                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Select the Job</h3>
                     <div className="relative" ref={dropdownRef}>
                       <button
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                        className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 cursor-pointer text-left flex items-center justify-between hover:border-purple-400 transition-colors duration-200"
+                        className={`w-full px-4 py-3 rounded-lg focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 cursor-pointer text-left flex items-center justify-between hover:border-purple-400 transition-colors duration-200 ${
+                          isDark 
+                            ? 'bg-gray-800 border border-gray-600 text-white' 
+                            : 'bg-white border border-gray-300 text-gray-900'
+                        }`}
                       >
-                        <span className={selectedJob ? "text-white" : "text-gray-400"}>
+                        <span className={selectedJob ? (isDark ? "text-white" : "text-gray-900") : "text-gray-400"}>
                           {selectedJob || "Select a position"}
                         </span>
                         <ChevronDown 
@@ -182,15 +204,25 @@ export default function CareersPage() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.95 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute bottom-full left-0 right-0 mb-1 bg-black/98 backdrop-blur-lg border border-purple-500/50 rounded-xl shadow-2xl shadow-purple-500/30 z-[99999] max-h-64 overflow-hidden"
+                            className={`absolute bottom-full left-0 right-0 mb-1 backdrop-blur-lg border rounded-xl shadow-2xl z-[99999] max-h-64 overflow-hidden ${
+                              isDark 
+                                ? 'bg-black/98 border-purple-500/50 shadow-purple-500/30' 
+                                : 'bg-white/98 border-purple-500/30 shadow-purple-500/20'
+                            }`}
                           >
-                            <div className="max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-gray-700">
+                            <div className={`max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-purple-600 ${
+                              isDark ? 'scrollbar-track-gray-700' : 'scrollbar-track-gray-200'
+                            }`}>
                               <div
                                 onClick={() => {
                                   setSelectedJob("");
                                   setIsDropdownOpen(false);
                                 }}
-                                className="px-4 py-3 text-gray-400 hover:bg-gradient-to-r hover:from-purple-600/30 hover:to-indigo-600/30 hover:text-white cursor-pointer transition-all duration-200 border-b border-gray-700/50"
+                                className={`px-4 py-3 text-gray-400 cursor-pointer transition-all duration-200 border-b ${
+                                  isDark 
+                                    ? 'hover:bg-gradient-to-r hover:from-purple-600/30 hover:to-indigo-600/30 hover:text-white border-gray-700/50' 
+                                    : 'hover:bg-gradient-to-r hover:from-blue-100 hover:to-indigo-100 hover:text-gray-900 border-gray-200/50'
+                                }`}
                               >
                                 Select a position
                 </div>
@@ -208,10 +240,16 @@ export default function CareersPage() {
                                         setSelectedJob(job);
                                         setIsDropdownOpen(false);
                                       }}
-                                      className="px-4 py-3 text-white hover:bg-gradient-to-r hover:from-purple-600/30 hover:to-indigo-600/30 cursor-pointer transition-all duration-200 border-b border-gray-700/50 last:border-b-0 group"
+                                      className={`px-4 py-3 cursor-pointer transition-all duration-200 border-b last:border-b-0 group ${
+                                        isDark 
+                                          ? 'text-white hover:bg-gradient-to-r hover:from-purple-600/30 hover:to-indigo-600/30 border-gray-700/50' 
+                                          : 'text-gray-900 hover:bg-gradient-to-r hover:from-blue-100 hover:to-indigo-100 border-gray-200/50'
+                                      }`}
                                     >
                                       <div className="flex items-center justify-between">
-                                        <span className="group-hover:text-purple-300 transition-colors">
+                                        <span className={`transition-colors ${
+                                          isDark ? 'group-hover:text-purple-300' : 'group-hover:text-indigo-700'
+                                        }`}>
                                           {job}
                                         </span>
                                         {jobMapping && (
@@ -237,7 +275,7 @@ export default function CareersPage() {
 
                   {/* Search Button */}
                   <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-white mb-3">Find Opportunities</h3>
+                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Find Opportunities</h3>
                     <button 
                       onClick={handleSearch}
                       disabled={isSearching}
@@ -261,7 +299,7 @@ export default function CareersPage() {
           </div>
 
                 <div className="text-center">
-                  <p className="text-gray-400 text-sm">
+                  <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                     Can't find what you&apos;re looking for? 
                     <Link href="/careers/apply" className="text-purple-400 hover:text-purple-300 ml-1 underline">
                       View all open positions
@@ -279,15 +317,19 @@ export default function CareersPage() {
                       transition={{ duration: 0.3 }}
                       className="mt-8"
                     >
-                      <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6">
+                      <div className={`backdrop-blur-sm border rounded-2xl p-6 ${
+                        isDark 
+                          ? 'bg-gray-800/30 border-gray-700/50' 
+                          : 'bg-white/40 border-gray-300/50'
+                      }`}>
                         <div className="flex items-center justify-between mb-6">
-                          <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                          <h3 className={`text-xl font-bold flex items-center gap-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                             <Briefcase className="w-6 h-6 text-purple-400" />
                             Search Results
                           </h3>
                 <button
                             onClick={() => setShowResults(false)}
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className={`transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
                           >
                             ✕
                 </button>
@@ -295,7 +337,7 @@ export default function CareersPage() {
 
                         {searchResults.length > 0 ? (
                           <div className="space-y-4">
-                            <p className="text-gray-300 text-sm mb-4">
+                            <p className={`text-sm mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                               Found {searchResults.length} position{searchResults.length !== 1 ? 's' : ''} matching your criteria:
                             </p>
                             
@@ -306,12 +348,18 @@ export default function CareersPage() {
                                   initial={{ opacity: 0, x: -20 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: 0.1 }}
-                                  className="bg-gray-700/50 border border-gray-600/50 rounded-lg p-4 hover:bg-gray-700/70 transition-all duration-300 group"
+                                  className={`border rounded-lg p-4 transition-all duration-300 group ${
+                                    isDark 
+                                      ? 'bg-gray-700/50 border-gray-600/50 hover:bg-gray-700/70' 
+                                      : 'bg-white/60 border-gray-300/50 hover:bg-white/80'
+                                  }`}
                                 >
                                   <div className="flex items-center justify-between">
                     <div className="flex-1">
                                       <div className="flex items-center gap-3 mb-2">
-                                        <h4 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors">
+                                        <h4 className={`text-lg font-semibold group-hover:text-purple-300 transition-colors ${
+                                          isDark ? 'text-white' : 'text-gray-900'
+                                        }`}>
                                           {job.title}
                                         </h4>
                                         <span className={`px-2 py-1 text-xs font-medium rounded-full ${
@@ -323,7 +371,7 @@ export default function CareersPage() {
                                            job.type === 'intern' ? 'Intern' : 'Potential'}
                         </span>
                       </div>
-                                      <p className="text-gray-400 text-sm mb-2">
+                                      <p className={`text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                                         {job.category} • {job.description}
                                       </p>
                     </div>
@@ -343,11 +391,13 @@ export default function CareersPage() {
                           </div>
                         ) : (
                           <div className="text-center py-8">
-                            <div className="w-16 h-16 bg-gray-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                              isDark ? 'bg-gray-700/50' : 'bg-gray-200/50'
+                            }`}>
                               <Search className="w-8 h-8 text-gray-400" />
                             </div>
-                            <h4 className="text-lg font-semibold text-white mb-2">No positions found</h4>
-                            <p className="text-gray-400 text-sm mb-4">
+                            <h4 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>No positions found</h4>
+                            <p className={`text-sm mb-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                               Try adjusting your search criteria or browse all available positions.
                             </p>
                             <Link href="/careers/apply">
@@ -388,37 +438,47 @@ export default function CareersPage() {
 
                 {/* Right side - Learn the Basics */}
                 <div className="pl-0 lg:pl-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
                     Learn the Basics
               </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Link href="/careers/basics" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Upvista Digital in 3 minutes</span>
                       </div>
                     </Link>
                     <Link href="/careers/basics" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Message from the CEO</span>
                       </div>
                     </Link>
                     <Link href="/careers/basics" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>New graduate recruitment starts here</span>
                       </div>
                     </Link>
                     <Link href="/careers/basics" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Corporate philosophy</span>
                       </div>
                     </Link>
                     <Link href="/careers/basics" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>What is important in recruitment</span>
                       </div>
@@ -438,31 +498,39 @@ export default function CareersPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
                 {/* Left side - Learn About Business */}
                 <div className="pr-0 lg:pr-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
                     Learn About Business
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Link href="/careers/business" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Upvista Digital's Business Strategy</span>
                       </div>
                     </Link>
                     <Link href="/careers/business" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Upvista Digital Products</span>
                       </div>
                     </Link>
                     <Link href="/careers/business" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Upvista Digital's Global Strategy</span>
                       </div>
                     </Link>
                     <Link href="/careers/business" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Digital Solutions and Teamwork</span>
                       </div>
@@ -510,43 +578,55 @@ export default function CareersPage() {
 
                 {/* Right side - Learn About Job */}
                 <div className="pl-0 lg:pl-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
                     Learn About Job
               </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Link href="/careers/jobs" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Development and Operation</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Marketing</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Customer Service</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Sales</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>System Consulting</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
-                      <div className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 mb-3">
+                      <div className={`flex items-center transition-colors duration-300 mb-3 ${
+                        isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+                      }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
                         <span>Corporate</span>
                       </div>
@@ -566,18 +646,20 @@ export default function CareersPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
                 {/* Left side - Get to Know People */}
                 <div className="pr-0 lg:pr-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
                     Get to Know People
                   </h2>
                   
                   <div className="space-y-6 mb-8">
-                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                      isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
                         Engineer/Designer
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         Our engineering and design teams are the creative minds behind innovative digital solutions. 
                         Engineers work on cutting-edge technologies, building scalable systems and applications that 
                         drive business success. Designers craft intuitive user experiences and visually stunning 
@@ -585,24 +667,28 @@ export default function CareersPage() {
                       </p>
                     </div>
                     
-                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                      isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
                         Corporate Positions
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         Our corporate team ensures smooth operations and strategic growth. From human resources 
                         managing talent acquisition to finance overseeing budgets and investments, these roles 
                         provide the foundation that enables our technical teams to focus on innovation and delivery.
                       </p>
                     </div>
                     
-                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                      isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
                         Business Jobs
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         Business roles at Upvista Digital focus on growth, customer success, and market expansion. 
                         From marketing specialists driving brand awareness to sales representatives building client 
                         relationships, these positions are crucial for our company's continued success and expansion.
@@ -651,54 +737,62 @@ export default function CareersPage() {
 
                 {/* Right side - Get to Know Workspace */}
                 <div className="pl-0 lg:pl-8">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
                     Get to Know Workspace
               </h2>
                   
                   <div className="space-y-6">
-                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                      isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
                         Office & Remote Work
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         We offer flexible work arrangements with modern office spaces and comprehensive remote work support. 
                         Our offices are designed for collaboration and productivity, while our remote work policies ensure 
                         you can work effectively from anywhere.
                       </p>
                     </div>
                     
-                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                      isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
                         Communication & Internal Systems
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         We use cutting-edge communication tools and internal systems to ensure seamless collaboration. 
                         From project management platforms to instant messaging systems, we've built an infrastructure 
                         that keeps teams connected and productive.
                       </p>
                     </div>
                     
-                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                      isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
                         Learning & Career Development
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         Our comprehensive onboarding process and continuous learning systems help you grow professionally. 
                         We provide career support, skill development programs, and regular performance evaluations to 
                         ensure your success and advancement.
                       </p>
                     </div>
                     
-                    <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                      <h3 className="text-xl font-semibold text-white mb-3 flex items-center">
+                    <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                      isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                    }`}>
+                      <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
                         Company Culture & Benefits
                       </h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                         We foster a vibrant company culture with regular team events, competitive salary packages, 
                         and comprehensive benefits. Our evaluation system recognizes and rewards excellence while 
                         supporting continuous improvement and growth.
@@ -719,31 +813,37 @@ export default function CareersPage() {
             >
               <div className="max-w-6xl mx-auto px-6">
                 <div className="text-center mb-12">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     What Upvista Digital Is
                   </h2>
                     </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-                  <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3">Innovation Leader</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                    isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Innovation Leader</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Upvista Digital is a pioneering force in digital transformation, constantly pushing boundaries 
                       and creating innovative solutions that shape the future of technology and business.
                     </p>
                     </div>
                   
-                  <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3">Global Impact</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                    isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Global Impact</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       We're building solutions that make a global impact while respecting local cultures and values. 
                       Our work touches millions of lives worldwide through technology that matters.
                     </p>
                   </div>
                   
-                  <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-3">Team Excellence</h3>
-                    <p className="text-gray-300 leading-relaxed">
+                  <div className={`backdrop-blur-sm border rounded-xl p-6 ${
+                    isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
+                  }`}>
+                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Team Excellence</h3>
+                    <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                       Our strength lies in our people - talented individuals who come together to create something 
                       greater than the sum of its parts through collaboration, innovation, and shared vision.
                     </p>
@@ -759,11 +859,19 @@ export default function CareersPage() {
               transition={{ delay: 1.0 }}
               className="text-center mb-16"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-6 md:p-8 max-w-4xl mx-auto mx-4 md:mx-auto">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6 text-center">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-6 md:p-8 max-w-4xl mx-auto mx-4 md:mx-auto ${
+                isDark 
+                  ? 'from-purple-600/20 to-pink-600/20 border-purple-500/30' 
+                  : 'from-purple-600/10 to-pink-600/10 border-purple-500/20 bg-white/30'
+              }`}>
+                <h3 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-center ${
+                  isDark ? 'text-white' : 'text-gray-900'
+                }`}>
                   Ready to Make Your Impact?
                 </h3>
-                <p className="text-gray-300 mb-6 md:mb-8 text-base md:text-lg text-center leading-relaxed">
+                <p className={`mb-6 md:mb-8 text-base md:text-lg text-center leading-relaxed ${
+                  isDark ? 'text-gray-300' : 'text-gray-700'
+                }`}>
                   Join a team that&apos;s building the future of digital solutions.<br className="hidden sm:block" />
                   Explore our open positions and start your journey with Upvista Digital today.
                 </p>
@@ -774,7 +882,11 @@ export default function CareersPage() {
                   </button>
                 </Link>
                   <Link href="/careers/events" className="w-full sm:w-auto">
-                    <button className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20 text-sm sm:text-base">
+                    <button className={`w-full px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-lg transition-all duration-300 text-sm sm:text-base ${
+                      isDark 
+                        ? 'bg-white/10 text-white hover:bg-white/20 border border-white/20' 
+                        : 'bg-gray-900/10 text-gray-900 hover:bg-gray-900/20 border border-gray-900/20'
+                    }`}>
                       Recruitment Events
                   </button>
                 </Link>

@@ -6,16 +6,19 @@ import { ArrowLeft } from "lucide-react";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
 import Link from "next/link";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function ApplicationTermsPage() {
+  const { isDark } = useTheme();
+  
   return (
-    <div className="min-h-screen bg-black">
+    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-black' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
       <CareersHeader />
       
       {/* Back Button */}
       <div className="fixed top-20 left-4 z-50">
         <Link href="/careers">
-          <button className="flex items-center gap-2 text-white hover:text-gray-300 transition-colors duration-300">
+          <button className={`flex items-center gap-2 transition-colors duration-300 ${isDark ? 'text-white hover:text-gray-300' : 'text-gray-900 hover:text-purple-600'}`}>
             <ArrowLeft className="w-5 h-5" />
             Back to Careers
           </button>
@@ -32,10 +35,10 @@ export default function ApplicationTermsPage() {
             className="text-center mb-16"
           >
             
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Recruitment Application Terms
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Terms and conditions governing your application for employment with Upvista Digital.
             </p>
           </motion.div>
@@ -51,12 +54,12 @@ export default function ApplicationTermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="border border-gray-800 p-8"
+            className={`border p-8 ${isDark ? 'border-gray-800' : 'border-purple-200 bg-white/40'}`}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Important Notice
             </h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               By submitting your application to Upvista Digital, you acknowledge that you have read, understood, 
               and agree to be bound by these terms and conditions. Please review them carefully before proceeding 
               with your application.
@@ -68,16 +71,16 @@ export default function ApplicationTermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="border border-gray-800 p-8"
+            className={`border p-8 ${isDark ? 'border-gray-800' : 'border-purple-200 bg-white/40'}`}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Application Process Terms
             </h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Assessment Integrity</h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Assessment Integrity</h3>
+                <ul className={`space-y-2 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• You must complete assessments independently and honestly</li>
                   <li>• Switching tabs or applications during assessments is prohibited</li>
                   <li>• Providing false or misleading information will result in disqualification</li>
@@ -86,8 +89,8 @@ export default function ApplicationTermsPage() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Information Accuracy</h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Information Accuracy</h3>
+                <ul className={`space-y-2 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• All provided information must be accurate and complete</li>
                   <li>• You are responsible for updating any changes to your information</li>
                   <li>• False statements may result in immediate disqualification</li>
@@ -96,8 +99,8 @@ export default function ApplicationTermsPage() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Communication Standards</h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Communication Standards</h3>
+                <ul className={`space-y-2 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• Maintain professional communication throughout the process</li>
                   <li>• Respond to communications within specified timeframes</li>
                   <li>• Provide accurate contact information for all communications</li>
@@ -112,14 +115,14 @@ export default function ApplicationTermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="border border-gray-800 p-8"
+            className={`border p-8 ${isDark ? 'border-gray-800' : 'border-purple-200 bg-white/40'}`}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">Your Rights and Responsibilities</h2>
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Your Rights and Responsibilities</h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-semibold text-white mb-4">Your Rights</h3>
-                <ul className="text-gray-300 space-y-3 ml-4">
+                <ul className={`space-y-3 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• Right to fair and equal consideration</li>
                   <li>• Right to privacy and data protection</li>
                   <li>• Right to withdraw your application at any time</li>
@@ -130,7 +133,7 @@ export default function ApplicationTermsPage() {
               
               <div>
                 <h3 className="text-lg font-semibold text-white mb-4">Your Responsibilities</h3>
-                <ul className="text-gray-300 space-y-3 ml-4">
+                <ul className={`space-y-3 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• Provide accurate and complete information</li>
                   <li>• Participate honestly in all assessments</li>
                   <li>• Maintain confidentiality of recruitment process</li>
@@ -146,16 +149,16 @@ export default function ApplicationTermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="border border-gray-800 p-8"
+            className={`border p-8 ${isDark ? 'border-gray-800' : 'border-purple-200 bg-white/40'}`}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Assessment Terms
             </h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Assessment Rules</h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Assessment Rules</h3>
+                <ul className={`space-y-2 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• No time limits are imposed on assessments</li>
                   <li>• You must complete assessments in one continuous session</li>
                   <li>• Switching between tabs or applications is strictly prohibited</li>
@@ -165,8 +168,8 @@ export default function ApplicationTermsPage() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Assessment Results</h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Assessment Results</h3>
+                <ul className={`space-y-2 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• Assessment results are confidential and proprietary</li>
                   <li>• Results may be used for hiring decisions and process improvement</li>
                   <li>• You may request general feedback on your performance</li>
@@ -182,14 +185,14 @@ export default function ApplicationTermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
-            className="border border-gray-800 p-8"
+            className={`border p-8 ${isDark ? 'border-gray-800' : 'border-purple-200 bg-white/40'}`}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">Company Rights</h2>
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Company Rights</h2>
             
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Hiring Decisions</h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Hiring Decisions</h3>
+                <ul className={`space-y-2 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• Upvista Digital reserves the right to make all hiring decisions</li>
                   <li>• We are not obligated to provide reasons for rejection</li>
                   <li>• We may withdraw job postings at any time</li>
@@ -199,8 +202,8 @@ export default function ApplicationTermsPage() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Process Modifications</h3>
-                <ul className="text-gray-300 space-y-2 ml-4">
+                <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Process Modifications</h3>
+                <ul className={`space-y-2 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <li>• We may modify the recruitment process at any time</li>
                   <li>• We reserve the right to conduct additional assessments</li>
                   <li>• We may request additional information or documentation</li>
@@ -216,13 +219,13 @@ export default function ApplicationTermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="border border-gray-800 p-8"
+            className={`border p-8 ${isDark ? 'border-gray-800' : 'border-purple-200 bg-white/40'}`}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">Limitation of Liability</h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Limitation of Liability</h2>
+            <p className={`leading-relaxed mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               By applying for a position with Upvista Digital, you acknowledge and agree that:
             </p>
-            <ul className="text-gray-300 space-y-2 ml-4">
+            <ul className={`space-y-2 ml-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               <li>• Upvista Digital is not liable for any costs incurred during the application process</li>
               <li>• We are not responsible for technical issues that may affect your application</li>
               <li>• We do not guarantee employment or any specific outcome</li>
@@ -236,17 +239,17 @@ export default function ApplicationTermsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className="border border-gray-800 p-8"
+            className={`border p-8 ${isDark ? 'border-gray-800' : 'border-purple-200 bg-white/40'}`}
           >
-            <h2 className="text-2xl font-bold text-white mb-6">Questions About These Terms</h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
+            <h2 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Questions About These Terms</h2>
+            <p className={`leading-relaxed mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               If you have any questions about these terms and conditions, please contact our recruitment team:
             </p>
-            <div className="border border-gray-700 p-6">
-              <p className="text-white font-medium mb-2">Recruitment Team</p>
-              <p className="text-gray-300">Email: careers@upvistadigital.com</p>
-              <p className="text-gray-300">Phone: +92 (0) 3320 486955</p>
-              <p className="text-gray-300">Address: Upvista Digital, Recruitment Department, 123 Tech Street, Digital City, DC 12345</p>
+            <div className={`border p-6 ${isDark ? 'border-gray-700' : 'border-purple-300 bg-white/60'}`}>
+              <p className={`font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Recruitment Team</p>
+              <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Email: careers@upvistadigital.com</p>
+              <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Phone: +92 (0) 3320 486955</p>
+              <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Address: Upvista Digital, Recruitment Department, 123 Tech Street, Digital City, DC 12345</p>
             </div>
           </motion.div>
 

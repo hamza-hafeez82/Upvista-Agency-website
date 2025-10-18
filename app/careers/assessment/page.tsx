@@ -5,8 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import PersonalityAssessment from "../components/PersonalityAssessment";
 import TechnicalAssessment from "../components/TechnicalAssessment";
 import ApplicationForm from "../components/ApplicationForm";
+import { useTheme } from "@/contexts/ThemeContext";
+import ThemeToggle from "@/components/ui/ThemeToggle";
+import LanguageToggle from "@/components/ui/LanguageToggle";
 
 export default function AssessmentPage() {
+  const { isDark } = useTheme();
   const [currentStep, setCurrentStep] = useState(1);
   const [personalityAnswers, setPersonalityAnswers] = useState<number[]>([]);
   const [technicalAnswers, setTechnicalAnswers] = useState<{ [key: number]: string }>({});
@@ -29,8 +33,18 @@ export default function AssessmentPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDark 
+        ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' 
+        : 'bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50'
+    }`}>
       <div className="container mx-auto px-4 py-6 md:py-8 max-w-6xl">
+        {/* Theme and Language Toggles */}
+        <div className="flex justify-end gap-4 mb-6">
+          <ThemeToggle />
+          <LanguageToggle />
+        </div>
+
         {/* Header */}
         <div className="text-center mb-8">
           <motion.div
@@ -39,10 +53,10 @@ export default function AssessmentPage() {
             transition={{ duration: 0.6 }}
             className="mb-6"
           >
-            <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">
+            <h1 className={`text-2xl md:text-3xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Upvista Digital Assessment
             </h1>
-            <p className="text-gray-400 text-sm md:text-base">
+            <p className={`text-sm md:text-base ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
               Complete your application process in 3 simple steps
             </p>
           </motion.div>
@@ -52,28 +66,32 @@ export default function AssessmentPage() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 mb-8"
+            className={`backdrop-blur-sm border rounded-2xl p-6 mb-8 ${
+              isDark 
+                ? 'bg-gray-800/50 border-gray-700/50' 
+                : 'bg-gradient-to-br from-white/70 to-indigo-50/40 border-indigo-200'
+            }`}
           >
             <div className="flex items-center justify-between mb-4">
               <div className="text-left">
-                <div className="text-lg font-semibold text-white">
+                <div className={`text-lg font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   Step {currentStep} of 3
                 </div>
-                <div className="text-sm text-gray-400">
+                <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                   {currentStep === 1 && "Personality Assessment"}
                   {currentStep === 2 && "Technical Assessment"}
                   {currentStep === 3 && "Application Form"}
                 </div>
               </div>
               <div className="text-right">
-                <div className="text-2xl font-bold text-purple-400">
+                <div className={`text-2xl font-bold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>
                   {Math.round((currentStep / 3) * 100)}%
                 </div>
-                <div className="text-xs text-gray-500">Complete</div>
+                <div className={`text-xs ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>Complete</div>
               </div>
             </div>
             
-            <div className="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
+            <div className={`w-full rounded-full h-3 overflow-hidden ${isDark ? 'bg-gray-700/50' : 'bg-gray-200'}`}>
               <motion.div
                 className="bg-gradient-to-r from-purple-600 to-blue-600 h-3 rounded-full shadow-lg"
                 initial={{ width: 0 }}
@@ -82,17 +100,17 @@ export default function AssessmentPage() {
               />
             </div>
             
-            <div className="flex justify-between mt-4 text-xs md:text-sm text-gray-400">
-              <div className={`flex items-center gap-2 ${currentStep >= 1 ? 'text-purple-400' : ''}`}>
-                <div className={`w-2 h-2 rounded-full ${currentStep >= 1 ? 'bg-purple-500' : 'bg-gray-600'}`}></div>
+            <div className={`flex justify-between mt-4 text-xs md:text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+              <div className={`flex items-center gap-2 ${currentStep >= 1 ? (isDark ? 'text-purple-400' : 'text-indigo-600') : ''}`}>
+                <div className={`w-2 h-2 rounded-full ${currentStep >= 1 ? (isDark ? 'bg-purple-500' : 'bg-indigo-600') : (isDark ? 'bg-gray-600' : 'bg-gray-300')}`}></div>
                 <span>Personality</span>
               </div>
-              <div className={`flex items-center gap-2 ${currentStep >= 2 ? 'text-purple-400' : ''}`}>
-                <div className={`w-2 h-2 rounded-full ${currentStep >= 2 ? 'bg-purple-500' : 'bg-gray-600'}`}></div>
+              <div className={`flex items-center gap-2 ${currentStep >= 2 ? (isDark ? 'text-purple-400' : 'text-indigo-600') : ''}`}>
+                <div className={`w-2 h-2 rounded-full ${currentStep >= 2 ? (isDark ? 'bg-purple-500' : 'bg-indigo-600') : (isDark ? 'bg-gray-600' : 'bg-gray-300')}`}></div>
                 <span>Technical</span>
               </div>
-              <div className={`flex items-center gap-2 ${currentStep >= 3 ? 'text-purple-400' : ''}`}>
-                <div className={`w-2 h-2 rounded-full ${currentStep >= 3 ? 'bg-purple-500' : 'bg-gray-600'}`}></div>
+              <div className={`flex items-center gap-2 ${currentStep >= 3 ? (isDark ? 'text-purple-400' : 'text-indigo-600') : ''}`}>
+                <div className={`w-2 h-2 rounded-full ${currentStep >= 3 ? (isDark ? 'bg-purple-500' : 'bg-indigo-600') : (isDark ? 'bg-gray-600' : 'bg-gray-300')}`}></div>
                 <span>Application</span>
               </div>
             </div>
@@ -105,6 +123,7 @@ export default function AssessmentPage() {
             <PersonalityAssessment
               key="personality"
               onComplete={handlePersonalityComplete}
+              isDark={isDark}
             />
           )}
           
@@ -112,6 +131,7 @@ export default function AssessmentPage() {
             <TechnicalAssessment
               key="technical"
               onComplete={handleTechnicalComplete}
+              isDark={isDark}
             />
           )}
           
@@ -122,6 +142,7 @@ export default function AssessmentPage() {
               technicalAnswers={technicalAnswers}
               selectedPosition={selectedPosition}
               onSubmit={handleApplicationSubmit}
+              isDark={isDark}
             />
           )}
         </AnimatePresence>

@@ -6,13 +6,16 @@ import { ArrowRight } from "lucide-react";
 import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function HumanResourcesPage() {
+  const { isDark } = useTheme();
+  
   return (
     <>
       <CareersHeader />
       
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-black to-pink-900 text-white pt-20">
+      <div className={`min-h-screen pt-20 transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-purple-900 via-black to-pink-900 text-white' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 text-gray-900'}`}>
         {/* Hero Section with Vortex Background */}
         <div className="relative h-screen flex items-center justify-center overflow-hidden">
           {/* Vortex Background - Only behind hero */}
@@ -32,23 +35,23 @@ export default function HumanResourcesPage() {
               transition={{ duration: 0.8 }}
               className="pt-8 pb-12"
             >
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 text-white drop-shadow-2xl">
+              <h1 className={`text-5xl md:text-7xl font-bold mb-8 drop-shadow-2xl ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Human Resources
               </h1>
-              <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed drop-shadow-lg mb-12">
+              <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg mb-12 ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
                 Build and nurture our most valuable asset - our people - through strategic HR initiatives and employee development programs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/careers/apply"
-                  className="inline-flex items-center px-8 py-4 bg-white text-slate-900 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg"
+                  className={`inline-flex items-center px-8 py-4 font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg ${isDark ? 'bg-white text-slate-900 hover:bg-gray-100' : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700'}`}
                 >
                   Apply Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
                   href="/careers/jobs"
-                  className="inline-flex items-center px-8 py-4 bg-transparent text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-200 border border-white/30"
+                  className={`inline-flex items-center px-8 py-4 bg-transparent font-semibold rounded-lg transition-all duration-200 border ${isDark ? 'text-white hover:bg-white/10 border-white/30' : 'text-gray-900 hover:bg-purple-100 border-purple-400'}`}
                 >
                   Back to Departments
                 </Link>
@@ -69,11 +72,11 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">About Human Resources</h2>
-                <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>About Human Resources</h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
-              <div className="space-y-8 text-lg text-gray-300 leading-relaxed">
+              <div className={`space-y-8 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   The Human Resources team at Upvista Digital is responsible for attracting, developing, and retaining the exceptional talent that drives our success. We create an environment where our people can thrive, grow, and contribute to our mission of delivering innovative digital solutions to clients worldwide.
                 </p>
@@ -94,35 +97,35 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">What We Do</h2>
-                <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>What We Do</h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="space-y-8">
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-2xl font-semibold text-white mb-4">Talent Acquisition</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Talent Acquisition</h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We identify, attract, and hire top talent from around the world to join our team. Our recruitment process includes sourcing, screening, interviewing, and onboarding to ensure we bring in the right people who align with our values and can contribute to our success.
                   </p>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-2xl font-semibold text-white mb-4">Employee Development</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Employee Development</h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We design and implement comprehensive learning and development programs that help our team members grow their skills and advance their careers. This includes training programs, mentorship opportunities, and career development planning.
                   </p>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-2xl font-semibold text-white mb-4">Performance Management</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Performance Management</h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We implement performance management systems that help employees understand their goals, receive regular feedback, and achieve their full potential. Our approach includes goal setting, regular check-ins, and performance reviews that support both individual and organizational success.
                   </p>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-2xl font-semibold text-white mb-4">Culture & Engagement</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Culture & Engagement</h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We foster a positive, inclusive, and engaging workplace culture that makes Upvista a great place to work. This includes organizing team events, recognition programs, wellness initiatives, and creating policies that support work-life balance and employee well-being.
                   </p>
                 </div>
@@ -137,8 +140,8 @@ export default function HumanResourcesPage() {
               className="max-w-6xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Team Structure & Roles</h2>
-                <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Team Structure & Roles</h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -180,9 +183,9 @@ export default function HumanResourcesPage() {
                     description: "Lead HR strategy, manage HR teams, and ensure alignment with organizational goals and objectives."
                   }
                 ].map((role) => (
-                  <div key={role.title} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-purple-500/30 hover:bg-white/10 transition-all duration-300">
-                    <h3 className="text-xl font-semibold text-purple-400 mb-3">{role.title}</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">{role.description}</p>
+                  <div key={role.title} className={`backdrop-blur-sm border rounded-xl p-6 transition-all duration-300 ${isDark ? 'bg-white/5 border-white/10 hover:border-purple-500/30 hover:bg-white/10' : 'bg-white/60 border-purple-300/50 hover:border-purple-500/60 hover:bg-white/80'}`}>
+                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>{role.title}</h3>
+                    <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{role.description}</p>
                   </div>
                 ))}
               </div>
@@ -196,31 +199,31 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Work Culture & Environment</h2>
-                <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Work Culture & Environment</h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">Remote-First People-Focused Environment</h3>
-                  <p className="text-gray-300 leading-relaxed mb-4">
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Remote-First People-Focused Environment</h3>
+                  <p className={`leading-relaxed mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     Our HR team operates in a remote-first environment that supports people-focused initiatives and collaboration. We provide access to HR management systems, communication tools, and collaboration platforms. Our communication emphasizes empathy, confidentiality, and supportive relationships with all team members.
                   </p>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We have flexible working hours to accommodate different time zones and personal schedules. Core collaboration hours are 10 AM - 3 PM EST, but we understand that supporting people often requires availability during their preferred working hours.
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">People-Centric Culture</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>People-Centric Culture</h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We foster a people-centric culture where employee well-being, growth, and satisfaction are prioritized. Regular team check-ins, employee feedback sessions, and culture-building activities ensure that our workplace remains positive, inclusive, and supportive for all team members.
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">Collaborative Partnership</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Collaborative Partnership</h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We emphasize collaborative partnership where HR works closely with all departments and leadership to support organizational goals. Regular meetings, feedback sessions, and strategic planning ensure that our HR initiatives align with business objectives and support overall success.
                   </p>
                 </div>
@@ -235,28 +238,28 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Career Development</h2>
-                <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Career Development</h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">Learning & Development</h3>
-                  <p className="text-gray-300 leading-relaxed mb-4">
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Learning & Development</h3>
+                  <p className={`leading-relaxed mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We invest heavily in our HR team's growth through access to HR conferences (SHRM, CIPD, HR Technology Conference), certification programs (PHR, SHRM-CP, CIPD), and advanced training programs. Each team member has a personal development budget for courses, books, tools, and conference attendance.
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">Career Paths</h3>
-                  <p className="text-gray-300 leading-relaxed mb-4">
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Career Paths</h3>
+                  <p className={`leading-relaxed mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     We offer multiple career paths: Individual Contributor (Specialist → Senior Specialist → Principal Specialist) and Leadership (Team Lead → Manager → Director of HR → CHRO). We support both paths equally and help you develop the skills needed for your chosen direction.
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-4">Onboarding Process</h3>
-                  <p className="text-gray-300 leading-relaxed">
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Onboarding Process</h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     New HR team members go through a comprehensive 4-week onboarding program that includes company culture training, HR systems familiarization, and policy overview. You'll be paired with a senior HR team member mentor who will guide you through your first HR initiatives and help you understand our people-focused approach.
                   </p>
                 </div>
@@ -271,34 +274,34 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">What We Expect</h2>
-                <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>What We Expect</h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="space-y-6">
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">People-First Mindset</h3>
-                  <p className="text-gray-300">Strong commitment to employee well-being, growth, and success with ability to understand people's needs, provide support, and create positive workplace experiences that drive engagement and retention.</p>
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>People-First Mindset</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Strong commitment to employee well-being, growth, and success with ability to understand people's needs, provide support, and create positive workplace experiences that drive engagement and retention.</p>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">Communication Excellence</h3>
-                  <p className="text-gray-300">Exceptional communication skills to interact effectively with employees, managers, and leadership while maintaining confidentiality, empathy, and professionalism in all interactions.</p>
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Communication Excellence</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Exceptional communication skills to interact effectively with employees, managers, and leadership while maintaining confidentiality, empathy, and professionalism in all interactions.</p>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">Strategic Thinking</h3>
-                  <p className="text-gray-300">Ability to think strategically about people initiatives, understand business objectives, and align HR programs with organizational goals to drive both employee satisfaction and business success.</p>
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Strategic Thinking</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Ability to think strategically about people initiatives, understand business objectives, and align HR programs with organizational goals to drive both employee satisfaction and business success.</p>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">Problem-Solving Skills</h3>
-                  <p className="text-gray-300">Strong analytical and problem-solving abilities to address employee relations issues, resolve conflicts, and implement solutions that support positive workplace relationships and organizational effectiveness.</p>
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Problem-Solving Skills</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Strong analytical and problem-solving abilities to address employee relations issues, resolve conflicts, and implement solutions that support positive workplace relationships and organizational effectiveness.</p>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">Continuous Learning</h3>
-                  <p className="text-gray-300">Commitment to staying updated with HR best practices, employment law, and industry trends while continuously improving skills and knowledge in human resources and people management.</p>
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Continuous Learning</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Commitment to staying updated with HR best practices, employment law, and industry trends while continuously improving skills and knowledge in human resources and people management.</p>
                 </div>
               </div>
             </motion.section>
@@ -310,9 +313,9 @@ export default function HumanResourcesPage() {
               transition={{ duration: 0.8, delay: 1.4 }}
               className="text-center"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Build Our People-First Culture?</h3>
-                <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-12 ${isDark ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' : 'from-purple-600/10 to-pink-600/10 border-purple-500/20 bg-white/30'}`}>
+                <h3 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Build Our People-First Culture?</h3>
+                <p className={`text-xl mb-10 max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   Be part of a team that&apos;s dedicated to nurturing talent and building a great workplace. Join us and help create an environment where everyone can thrive.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -325,7 +328,7 @@ export default function HumanResourcesPage() {
                   </Link>
                   <Link
                     href="/careers/jobs"
-                    className="inline-flex items-center px-10 py-4 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-200 border border-white/20"
+                    className={`inline-flex items-center px-10 py-4 font-semibold rounded-lg transition-all duration-200 border ${isDark ? 'bg-white/10 text-white hover:bg-white/20 border-white/20' : 'bg-white/30 text-gray-900 hover:bg-white/50 border-purple-400'}`}
                   >
                     View All Departments
                   </Link>

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 interface PersonalityAssessmentProps {
   onComplete: (answers: number[]) => void;
+  isDark: boolean;
 }
 
 const personalityQuestions = [
@@ -160,7 +161,7 @@ const personalityQuestions = [
   }
 ];
 
-export default function PersonalityAssessment({ onComplete }: PersonalityAssessmentProps) {
+export default function PersonalityAssessment({ onComplete, isDark }: PersonalityAssessmentProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>(new Array(15).fill(-1));
 
@@ -194,16 +195,20 @@ export default function PersonalityAssessment({ onComplete }: PersonalityAssessm
       transition={{ duration: 0.3 }}
       className="max-w-4xl mx-auto"
     >
-      <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 md:p-8">
+      <div className={`backdrop-blur-sm border rounded-2xl p-4 md:p-8 ${
+        isDark 
+          ? 'bg-gray-800/50 border-gray-700/50' 
+          : 'bg-gradient-to-br from-white/70 to-indigo-50/40 border-indigo-200'
+      }`}>
         {/* Question Progress */}
         <div className="mb-6 md:mb-8">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
-            <h2 className="text-lg md:text-xl font-semibold text-white">Personality Assessment</h2>
-            <span className="text-gray-400 text-sm md:text-base">
+            <h2 className={`text-lg md:text-xl font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Personality Assessment</h2>
+            <span className={`text-sm md:text-base ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
               Question {currentQuestion + 1} of 15
             </span>
           </div>
-          <div className="w-full bg-gray-700/50 rounded-full h-2 md:h-3">
+          <div className={`w-full rounded-full h-2 md:h-3 ${isDark ? 'bg-gray-700/50' : 'bg-gray-200'}`}>
             <motion.div
               className="bg-gradient-to-r from-purple-600 to-blue-600 h-2 md:h-3 rounded-full shadow-lg"
               initial={{ width: 0 }}
@@ -215,7 +220,7 @@ export default function PersonalityAssessment({ onComplete }: PersonalityAssessm
 
         {/* Question */}
         <div className="mb-6 md:mb-8">
-          <h3 className="text-lg md:text-2xl font-bold text-white mb-6 md:mb-8 leading-relaxed">
+          <h3 className={`text-lg md:text-2xl font-bold mb-6 md:mb-8 leading-relaxed ${isDark ? 'text-white' : 'text-gray-900'}`}>
             {personalityQuestions[currentQuestion].question}
           </h3>
 
@@ -227,8 +232,12 @@ export default function PersonalityAssessment({ onComplete }: PersonalityAssessm
                 onClick={() => handleAnswerSelect(index)}
                 className={`w-full text-left p-4 rounded-lg border transition-all duration-200 ${
                   currentAnswer === index
-                    ? "border-purple-500 bg-purple-500/20 text-white"
-                    : "border-gray-600 bg-gray-700/50 text-gray-300 hover:border-gray-500 hover:bg-gray-700"
+                    ? (isDark 
+                        ? "border-purple-500 bg-purple-500/20 text-white" 
+                        : "border-indigo-500 bg-indigo-100 text-gray-900")
+                    : (isDark 
+                        ? "border-gray-600 bg-gray-700/50 text-gray-300 hover:border-gray-500 hover:bg-gray-700" 
+                        : "border-indigo-200 bg-white text-gray-700 hover:border-indigo-300 hover:bg-indigo-50")
                 }`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -236,8 +245,8 @@ export default function PersonalityAssessment({ onComplete }: PersonalityAssessm
                 <div className="flex items-center gap-3">
                   <div className={`w-4 h-4 rounded-full border-2 ${
                     currentAnswer === index
-                      ? "border-purple-400 bg-purple-400"
-                      : "border-gray-500"
+                      ? (isDark ? "border-purple-400 bg-purple-400" : "border-indigo-600 bg-indigo-600")
+                      : (isDark ? "border-gray-500" : "border-gray-400")
                   }`} />
                   <span className="font-medium">{option}</span>
                 </div>
@@ -253,8 +262,12 @@ export default function PersonalityAssessment({ onComplete }: PersonalityAssessm
             disabled={currentQuestion === 0}
             className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 ${
               currentQuestion === 0
-                ? "bg-gray-700 text-gray-500 cursor-not-allowed"
-                : "bg-gray-700 text-white hover:bg-gray-600"
+                ? (isDark 
+                    ? "bg-gray-700 text-gray-500 cursor-not-allowed" 
+                    : "bg-gray-200 text-gray-400 cursor-not-allowed")
+                : (isDark 
+                    ? "bg-gray-700 text-white hover:bg-gray-600" 
+                    : "bg-white border border-indigo-200 text-gray-900 hover:bg-indigo-50")
             }`}
           >
             Previous
@@ -265,7 +278,9 @@ export default function PersonalityAssessment({ onComplete }: PersonalityAssessm
             disabled={currentAnswer === -1}
             className={`px-8 py-3 rounded-lg font-semibold transition-all duration-200 ${
               currentAnswer === -1
-                ? "bg-gray-700 text-gray-500 cursor-not-allowed"
+                ? (isDark 
+                    ? "bg-gray-700 text-gray-500 cursor-not-allowed" 
+                    : "bg-gray-200 text-gray-400 cursor-not-allowed")
                 : "bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white shadow-lg shadow-purple-500/25"
             }`}
           >

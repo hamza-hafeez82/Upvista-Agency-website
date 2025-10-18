@@ -7,8 +7,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function CEOMessagePage() {
+  const { isDark } = useTheme();
   const tableOfContents = [
     { id: "welcome", title: "A Personal Welcome", description: "Meet Hamza Hafeez and learn about our founding story" },
     { id: "journey", title: "Our Journey So Far", description: "From startup to global technology company" },
@@ -24,7 +26,9 @@ export default function CEOMessagePage() {
     <>
       <CareersHeader />
       
-      <div className="min-h-screen bg-black text-white pt-20 relative">
+      <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${
+        isDark ? 'bg-black text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'
+      }`}>
         {/* Vortex Background */}
         <div className="absolute inset-0 overflow-hidden z-0">
           <Vortex
@@ -39,7 +43,9 @@ export default function CEOMessagePage() {
           <div className="max-w-7xl mx-auto px-4 py-4">
             <Link 
               href="/careers/basics" 
-              className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-200"
+              className={`flex items-center transition-colors duration-200 ${
+                isDark ? 'text-purple-400 hover:text-purple-300' : 'text-indigo-600 hover:text-indigo-700'
+              }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Learn the Basics
@@ -59,7 +65,9 @@ export default function CEOMessagePage() {
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
               Message from Hamza Hafeez
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+            <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>
               A personal message from our CEO and founder about our vision, values, and the future we&apos;re building together at Upvista Digital.
             </p>
           </motion.div>
@@ -75,8 +83,8 @@ export default function CEOMessagePage() {
               className="max-w-6xl mx-auto"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">A Personal Welcome</h2>
+                <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>A Personal Welcome</h2>
                   <p>
                     Welcome to Upvista Digital. I'm Hamza Hafeez, the founder and CEO, and I'm excited to share our story and vision with you. 
                     When we started this company, we had one simple yet profound belief: technology should serve humanity, 
@@ -108,8 +116,10 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Table of Contents</h2>
+              <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
+              }`}>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Table of Contents</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {tableOfContents.map((item) => (
                     <motion.div
@@ -120,16 +130,26 @@ export default function CEOMessagePage() {
                       className="group cursor-pointer"
                       onClick={() => document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })}
                     >
-                      <div className="flex items-center p-4 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300 hover:bg-white/5">
+                      <div className={`flex items-center p-4 rounded-xl border transition-all duration-300 ${
+                        isDark 
+                          ? 'border-white/10 hover:border-purple-500/30 hover:bg-white/5' 
+                          : 'border-gray-300/50 hover:border-indigo-500/40 hover:bg-white/60'
+                      }`}>
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                          <h3 className={`text-lg font-semibold mb-2 transition-colors ${
+                            isDark ? 'text-white group-hover:text-purple-400' : 'text-gray-900 group-hover:text-indigo-600'
+                          }`}>
                             {item.title}
                           </h3>
-                          <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
+                          <p className={`text-sm transition-colors ${
+                            isDark ? 'text-gray-400 group-hover:text-gray-300' : 'text-gray-600 group-hover:text-gray-700'
+                          }`}>
                             {item.description}
                           </p>
                         </div>
-                        <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors" />
+                        <ArrowRight className={`w-5 h-5 transition-colors ${
+                          isDark ? 'text-gray-400 group-hover:text-purple-400' : 'text-gray-600 group-hover:text-indigo-600'
+                        }`} />
                       </div>
                     </motion.div>
                   ))}
@@ -145,8 +165,8 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Our Journey So Far</h2>
-              <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Journey So Far</h2>
+              <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   In just a small time, Upvista Digital has grown from a bold vision to a thriving technology company 
                   serving clients across multiple countries. We've established ourselves as a trusted partner for digital transformation.
@@ -173,8 +193,8 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Our Vision for the Future</h2>
-              <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Vision for the Future</h2>
+              <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   We envision a world where technology seamlessly integrates with human potential, creating opportunities 
                   that were previously unimaginable. Our goal is to be at the forefront of this transformation, not just 
@@ -185,7 +205,7 @@ export default function CEOMessagePage() {
                   intelligence research, sustainable technology solutions, and democratizing access to cutting-edge 
                   digital tools for businesses of all sizes.
                 </p>
-                <p className="italic text-purple-300">
+                <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
                   "The future belongs to organizations that can adapt, innovate, and grow. Our mission is to help our 
                   clients become those organizations, while simultaneously building a company that embodies these 
                   principles in everything we do."
@@ -201,8 +221,8 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Building the Right Team</h2>
-              <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Building the Right Team</h2>
+              <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   Success comes from having the right people in the right roles. We're committed to attracting, 
                   developing, and retaining exceptional talent who share our vision and values. But what makes someone 
@@ -218,7 +238,7 @@ export default function CEOMessagePage() {
                   We value diversity of thought, background, and experience because we know that the best solutions 
                   emerge from diverse perspectives working together toward a common goal.
                 </p>
-                <p className="italic text-purple-300">
+                <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
                   "Every great innovation starts with a simple question: 'What if we could do better?' That's the 
                   question that drives everything we do, and it&apos;s the question we want our team members to ask 
                   every single day."
@@ -234,8 +254,8 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Our Innovation Strategy</h2>
-              <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Innovation Strategy</h2>
+              <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   Innovation isn't just about new technology, it&apos;s about new ways of thinking, new approaches to problems, 
                   and new possibilities for growth. We foster an environment where innovation thrives through our 
@@ -262,8 +282,8 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.4 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Our Commitment to Values</h2>
-              <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Commitment to Values</h2>
+              <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   As we grow, we remain committed to the core values that have guided us from day one: human-centered 
                   design, ethical business practices, collaborative teamwork, and excellence in everything we do.
@@ -274,7 +294,7 @@ export default function CEOMessagePage() {
                   accessibility in our solutions. We're not just building products, we&apos;re building a company that 
                   we&apos;re proud to be part of.
                 </p>
-                <p className="italic text-purple-300">
+                <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
                   "At Upvista Digital, we don't just build technology; we build bridges between today's challenges 
                   and tomorrow's opportunities. Every line of code, every design decision, and every business 
                   relationship is guided by our commitment to creating positive change."
@@ -290,8 +310,8 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.6 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white text-center">Looking Ahead</h2>
-              <div className="space-y-6 text-lg md:text-xl text-gray-300 leading-relaxed">
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Looking Ahead</h2>
+              <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   The next few years will be transformative for Upvista Digital. We're planning to expand our team 
                   significantly, launch new product lines, and deepen our research capabilities. But more importantly, 
@@ -319,9 +339,13 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.8 }}
               className="text-center"
             >
-              <div className="bg-gradient-to-r from-purple-600/20 to-indigo-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 md:p-12">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Join Our Journey</h3>
-                <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed italic">
+              <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
+                isDark 
+                  ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
+                  : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
+              }`}>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Join Our Journey</h3>
+                <p className={`text-lg md:text-xl mb-8 max-w-4xl mx-auto leading-relaxed italic ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   "We are building a movement. A movement toward a future where 
                   technology empowers every individual and organization to reach their full potential."
                 </p>

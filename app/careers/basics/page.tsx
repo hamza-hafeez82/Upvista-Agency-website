@@ -7,8 +7,10 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import CareersHeader from "../components/CareersHeader";
 import CareersFooter from "../components/CareersFooter";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export default function BasicsPage() {
+  const { isDark } = useTheme();
   const basicSections = [
     {
       title: "About Upvista Digital",
@@ -58,9 +60,13 @@ export default function BasicsPage() {
     <>
       <CareersHeader />
       
-      <div className="min-h-screen bg-black text-white pt-20 relative overflow-hidden">
+      <div className={`min-h-screen pt-20 relative overflow-hidden transition-colors duration-300 ${
+        isDark ? 'bg-black text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 text-gray-900'
+      }`}>
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+        <div className={`absolute inset-0 ${
+          isDark ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900' : 'bg-gradient-to-br from-blue-50/50 via-indigo-50/50 to-purple-50/50'
+        }`}>
           {/* Galaxy Star Field */}
           <div className="absolute inset-0">
             {/* Bright White Stars */}
@@ -111,10 +117,10 @@ export default function BasicsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className={`text-4xl md:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               Learn the Basics
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               Discover what makes Upvista Digital a unique place to build your career.
             </p>
           </motion.div>
@@ -127,7 +133,11 @@ export default function BasicsPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02] cursor-pointer group-hover:border-purple-200 border-2 border-transparent"
+                  className={`rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02] cursor-pointer border-2 border-transparent ${
+                    isDark 
+                      ? 'bg-white group-hover:border-purple-200' 
+                      : 'bg-white group-hover:border-indigo-300'
+                  }`}
                 >
                   {/* Image */}
                   <div className="relative h-48 w-full overflow-hidden">
@@ -142,11 +152,17 @@ export default function BasicsPage() {
 
                   {/* Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors duration-300">
+                    <h3 className={`text-xl font-bold text-gray-900 mb-4 transition-colors duration-300 ${
+                      isDark ? 'group-hover:text-purple-700' : 'group-hover:text-indigo-700'
+                    }`}>
                       {section.title}
                     </h3>
                     
-                    <div className="flex items-center text-blue-600 group-hover:text-purple-600 transition-colors duration-300 mb-4">
+                    <div className={`flex items-center transition-colors duration-300 mb-4 ${
+                      isDark 
+                        ? 'text-blue-600 group-hover:text-purple-600' 
+                        : 'text-indigo-600 group-hover:text-indigo-700'
+                    }`}>
                       <ArrowRight className="w-4 h-4 mr-2 group-hover:translate-x-2 transition-transform duration-300" />
                       <span className="font-medium">{section.subtitle}</span>
                     </div>
@@ -167,11 +183,19 @@ export default function BasicsPage() {
             transition={{ delay: 1.0 }}
             className="text-center mt-20 mb-16"
           >
-            <div className="bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-6 md:p-8 mx-4 md:mx-auto max-w-4xl">
-              <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4 md:mb-6">
+            <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-6 md:p-8 mx-4 md:mx-auto max-w-4xl ${
+              isDark 
+                ? 'from-purple-600/20 to-pink-600/20 border-purple-500/30' 
+                : 'from-purple-600/10 to-pink-600/10 border-purple-500/20 bg-white/30'
+            }`}>
+              <h3 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 ${
+                isDark ? 'text-white' : 'text-gray-900'
+              }`}>
                 Upvista Digital is waiting for you
               </h3>
-              <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
+              <p className={`text-base md:text-lg mb-6 md:mb-8 leading-relaxed ${
+                isDark ? 'text-gray-300' : 'text-gray-700'
+              }`}>
                 Join Upvista Digital as a member and participate in projects that shape the future.<br className="hidden sm:block" />
                 We're looking for talented individuals who share our vision and passion for innovation.
               </p>
@@ -182,7 +206,11 @@ export default function BasicsPage() {
                   </button>
                 </Link>
                 <Link href="/careers/jobs" className="w-full sm:w-auto">
-                  <button className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-white/10 text-white font-semibold text-sm sm:text-base rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+                  <button className={`w-full px-6 sm:px-8 py-3 sm:py-4 font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 ${
+                    isDark 
+                      ? 'bg-white/10 text-white hover:bg-white/20 border border-white/20' 
+                      : 'bg-gray-900/10 text-gray-900 hover:bg-gray-900/20 border border-gray-900/20'
+                  }`}>
                     Learn About Jobs
                   </button>
                 </Link>
