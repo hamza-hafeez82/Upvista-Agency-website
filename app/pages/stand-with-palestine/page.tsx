@@ -4,11 +4,13 @@ import React from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const StandWithPalestinePage: React.FC = () => {
   const { isDark } = useTheme();
+  const { t } = useLanguage();
 
   return (
     <>
@@ -40,7 +42,7 @@ const StandWithPalestinePage: React.FC = () => {
             }`}
           >
             <ArrowLeft className="w-5 h-5" />
-            <span className="font-medium">Back to Home</span>
+            <span className="font-medium">{t('palestine.backHome')}</span>
           </Link>
 
           {/* Title Section */}
@@ -53,7 +55,7 @@ const StandWithPalestinePage: React.FC = () => {
               <span className={`text-sm font-medium ${
                 isDark ? 'text-purple-300' : 'text-white'
               }`}>
-                Humanity • Compassion • Justice
+                {t('palestine.badge')}
               </span>
             </div>
             
@@ -62,7 +64,7 @@ const StandWithPalestinePage: React.FC = () => {
                 ? 'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-300 to-pink-400'
                 : 'bg-clip-text text-transparent bg-gradient-to-r from-purple-700 via-purple-600 to-pink-600'
             }`}>
-              We Stand With Palestine
+              {t('palestine.title')}
             </h1>
             
             <div className={`w-24 h-1 mx-auto mb-8 rounded-full ${
@@ -81,13 +83,13 @@ const StandWithPalestinePage: React.FC = () => {
             <p className={`text-lg md:text-xl leading-relaxed mb-6 ${
               isDark ? 'text-gray-200' : 'text-gray-800'
             }`}>
-              At Upvista Digital, we believe that technology serves humanity, and humanity deserves dignity, freedom, and justice. We recognize that the pursuit of innovation must never come at the cost of human compassion. Today, we stand in solidarity with the Palestinian people—not as a political statement, but as a moral imperative rooted in our shared humanity.
+              {t('palestine.intro.p1')}
             </p>
             
             <p className={`text-lg md:text-xl leading-relaxed ${
               isDark ? 'text-gray-200' : 'text-gray-800'
             }`}>
-              We condemn the ongoing genocide, the displacement of families, and the systematic denial of basic human rights. We advocate for peace, justice, and the recognition of Palestinian voices in every possible way within our capacity as a digital agency.
+              {t('palestine.intro.p2')}
             </p>
           </div>
 
@@ -96,7 +98,7 @@ const StandWithPalestinePage: React.FC = () => {
             <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Our Position
+              {t('palestine.position.title')}
             </h2>
             
             <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-10 mb-8 ${
@@ -107,19 +109,19 @@ const StandWithPalestinePage: React.FC = () => {
               <p className={`text-lg leading-relaxed mb-6 ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                We firmly condemn the violence, persecution, and suffering inflicted upon innocent civilians. The loss of life—of children, mothers, fathers, and the elderly—is a tragedy that transcends borders, religions, and politics. We reject all forms of oppression and stand for the fundamental human rights that every person deserves: the right to live safely, the right to self-determination, and the right to exist with dignity.
+                {t('palestine.position.p1')}
               </p>
               
               <p className={`text-lg leading-relaxed mb-6 ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                We call for an immediate end to the violence, the lifting of blockades that prevent access to essential resources, and the establishment of a peaceful agreement that honors the rights and aspirations of the Palestinian people. We believe that lasting peace can only be built on the foundation of justice, mutual respect, and the recognition of shared humanity.
+                {t('palestine.position.p2')}
               </p>
               
               <p className={`text-lg leading-relaxed ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                As a company rooted in Pakistan, we understand the importance of standing up for oppressed communities. Our faith, our values, and our conscience compel us to speak out against injustice wherever it occurs.
+                {t('palestine.position.p3')}
               </p>
             </div>
           </div>
@@ -129,7 +131,7 @@ const StandWithPalestinePage: React.FC = () => {
             <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Voices of Compassion: Sacred Wisdom
+              {t('palestine.sacred.title')}
             </h2>
 
             {/* Quote from the Quran */}
@@ -141,17 +143,17 @@ const StandWithPalestinePage: React.FC = () => {
               <div className={`text-sm font-semibold mb-4 tracking-wider ${
                 isDark ? 'text-purple-400' : 'text-purple-700'
               }`}>
-                FROM THE HOLY QURAN
+                {t('palestine.sacred.quran.label')}
               </div>
               <blockquote className={`text-xl md:text-2xl font-serif italic leading-relaxed mb-6 ${
                 isDark ? 'text-purple-200' : 'text-purple-900'
               }`}>
-                "O you who have believed, be persistently standing firm in justice, witnesses for Allah, even if it be against yourselves or parents and relatives. Whether one is rich or poor, Allah is more worthy of both. So follow not [personal] inclination, lest you not be just. And if you distort [your testimony] or refuse [to give it], then indeed Allah is ever, with what you do, Acquainted."
+                "{t('palestine.sacred.quran.text')}"
               </blockquote>
               <p className={`text-base ${
                 isDark ? 'text-gray-400' : 'text-gray-700'
               }`}>
-                Surah An-Nisa (4:135)
+                {t('palestine.sacred.quran.reference')}
               </p>
             </div>
 
@@ -164,17 +166,17 @@ const StandWithPalestinePage: React.FC = () => {
               <div className={`text-sm font-semibold mb-4 tracking-wider ${
                 isDark ? 'text-pink-400' : 'text-pink-700'
               }`}>
-                FROM THE HOLY BIBLE
+                {t('palestine.sacred.bible.label')}
               </div>
               <blockquote className={`text-xl md:text-2xl font-serif italic leading-relaxed mb-6 ${
                 isDark ? 'text-pink-200' : 'text-pink-900'
               }`}>
-                "Learn to do right; seek justice. Defend the oppressed. Take up the cause of the fatherless; plead the case of the widow."
+                "{t('palestine.sacred.bible.text')}"
               </blockquote>
               <p className={`text-base ${
                 isDark ? 'text-gray-400' : 'text-gray-700'
               }`}>
-                Isaiah 1:17
+                {t('palestine.sacred.bible.reference')}
               </p>
             </div>
 
@@ -187,17 +189,17 @@ const StandWithPalestinePage: React.FC = () => {
               <div className={`text-sm font-semibold mb-4 tracking-wider ${
                 isDark ? 'text-purple-400' : 'text-purple-700'
               }`}>
-                FROM THE TORAH
+                {t('palestine.sacred.torah.label')}
               </div>
               <blockquote className={`text-xl md:text-2xl font-serif italic leading-relaxed mb-6 ${
                 isDark ? 'text-purple-200' : 'text-purple-900'
               }`}>
-                "Justice, justice shall you pursue, that you may live and inherit the land that the Lord your God is giving you."
+                "{t('palestine.sacred.torah.text')}"
               </blockquote>
               <p className={`text-base ${
                 isDark ? 'text-gray-400' : 'text-gray-700'
               }`}>
-                Deuteronomy 16:20
+                {t('palestine.sacred.torah.reference')}
               </p>
             </div>
           </div>
@@ -207,7 +209,7 @@ const StandWithPalestinePage: React.FC = () => {
             <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              What We Believe
+{t('palestine.believe.title')}
             </h2>
             
             <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-10 space-y-6 ${
@@ -219,12 +221,12 @@ const StandWithPalestinePage: React.FC = () => {
                 <h3 className={`text-xl font-semibold mb-3 ${
                   isDark ? 'text-purple-300' : 'text-purple-700'
                 }`}>
-                  Human Rights Are Universal
+{t('palestine.believe.humanRights.title')}
                 </h3>
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-200' : 'text-gray-800'
                 }`}>
-                  We believe that every human being, regardless of their nationality, religion, or ethnicity, has the inherent right to life, liberty, and security. The Palestinian people deserve the same rights and freedoms that we all cherish. No political agenda can justify the denial of these fundamental rights.
+{t('palestine.believe.humanRights.text')}
                 </p>
               </div>
 
@@ -232,12 +234,12 @@ const StandWithPalestinePage: React.FC = () => {
                 <h3 className={`text-xl font-semibold mb-3 ${
                   isDark ? 'text-pink-300' : 'text-pink-700'
                 }`}>
-                  Peace Must Prevail
+{t('palestine.believe.peace.title')}
                 </h3>
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-200' : 'text-gray-800'
                 }`}>
-                  We advocate for a peaceful resolution to this conflict—one that respects the dignity and rights of all people involved. True peace cannot be achieved through force or oppression; it must be built on mutual understanding, dialogue, and the genuine pursuit of justice. We pray for the day when children can play without fear, families can live without terror, and communities can thrive without walls.
+{t('palestine.believe.peace.text')}
                 </p>
               </div>
 
@@ -245,12 +247,12 @@ const StandWithPalestinePage: React.FC = () => {
                 <h3 className={`text-xl font-semibold mb-3 ${
                   isDark ? 'text-purple-300' : 'text-purple-700'
                 }`}>
-                  Voices Must Be Heard
+{t('palestine.believe.voices.title')}
                 </h3>
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-200' : 'text-gray-800'
                 }`}>
-                  We commit to amplifying Palestinian voices and stories through our platform. The world must hear the experiences, the struggles, and the hopes of the Palestinian people. In our work, in our communications, and in our community, we create space for these narratives to be shared, understood, and respected.
+{t('palestine.believe.voices.text')}
                 </p>
               </div>
 
@@ -258,12 +260,12 @@ const StandWithPalestinePage: React.FC = () => {
                 <h3 className={`text-xl font-semibold mb-3 ${
                   isDark ? 'text-pink-300' : 'text-pink-700'
                 }`}>
-                  Silence is Complicity
+{t('palestine.believe.silence.title')}
                 </h3>
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-200' : 'text-gray-800'
                 }`}>
-                  We cannot remain silent in the face of injustice. Our faith traditions teach us to stand with the oppressed, to speak for those who cannot speak for themselves, and to pursue justice with unwavering commitment. While we are a technology company, we recognize that our influence—however small—carries responsibility. We choose to use it for good.
+{t('palestine.believe.silence.text')}
                 </p>
               </div>
             </div>
@@ -274,7 +276,7 @@ const StandWithPalestinePage: React.FC = () => {
             <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              The Reality We Cannot Ignore
+{t('palestine.reality.title')}
             </h2>
             
             <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-10 ${
@@ -285,19 +287,19 @@ const StandWithPalestinePage: React.FC = () => {
               <p className={`text-lg leading-relaxed mb-6 ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                For decades, the Palestinian people have endured displacement, occupation, and the systematic erosion of their rights and freedoms. Families have been separated. Homes have been destroyed. Children have grown up knowing only conflict and uncertainty. This is not merely a political issue—it is a humanitarian crisis that demands our attention and our compassion.
+{t('palestine.reality.p1')}
               </p>
               
               <p className={`text-lg leading-relaxed mb-6 ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                We witness the destruction of communities, the denial of access to basic necessities like water, food, and medical care. We see the impact of blockades that strangle economies and crush hopes. We hear the stories of those who have lost loved ones, who have been forced from their ancestral lands, who live each day under the shadow of violence and fear.
+{t('palestine.reality.p2')}
               </p>
               
               <p className={`text-lg leading-relaxed ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                These are not statistics. These are human beings—mothers, fathers, brothers, sisters, sons, and daughters—who deserve to live with the same freedoms and opportunities that we often take for granted. To acknowledge their suffering is not to diminish anyone else's pain; it is to affirm that all human life has value, all human rights matter, and all voices deserve to be heard.
+{t('palestine.reality.p3')}
               </p>
             </div>
           </div>
@@ -312,12 +314,12 @@ const StandWithPalestinePage: React.FC = () => {
               <blockquote className={`text-2xl md:text-3xl font-serif italic leading-relaxed mb-8 ${
                 isDark ? 'text-purple-100' : 'text-purple-900'
               }`}>
-                "Whoever saves one life, it is as if they have saved all of humanity."
+{t('palestine.universal.quote')}
               </blockquote>
               <p className={`text-base font-medium ${
                 isDark ? 'text-purple-400' : 'text-purple-700'
               }`}>
-                Quran 5:32 | Talmud, Sanhedrin 37a
+{t('palestine.universal.reference')}
               </p>
             </div>
           </div>
@@ -327,7 +329,7 @@ const StandWithPalestinePage: React.FC = () => {
             <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              How We Stand With Palestine
+{t('palestine.howWeStand.title')}
             </h2>
             
             <div className="space-y-6">
@@ -339,12 +341,12 @@ const StandWithPalestinePage: React.FC = () => {
                 <h3 className={`text-xl font-semibold mb-3 ${
                   isDark ? 'text-purple-300' : 'text-purple-700'
                 }`}>
-                  Amplifying Voices
+{t('palestine.howWeStand.voices.title')}
                 </h3>
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-200' : 'text-gray-800'
                 }`}>
-                  We use our digital platform to share Palestinian stories, experiences, and perspectives. We recognize that representation matters, and we commit to ensuring that Palestinian voices are part of the conversations we facilitate and the communities we build.
+{t('palestine.howWeStand.voices.text')}
                 </p>
               </div>
 
@@ -356,12 +358,12 @@ const StandWithPalestinePage: React.FC = () => {
                 <h3 className={`text-xl font-semibold mb-3 ${
                   isDark ? 'text-pink-300' : 'text-pink-700'
                 }`}>
-                  Raising Awareness
+{t('palestine.howWeStand.awareness.title')}
                 </h3>
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-200' : 'text-gray-800'
                 }`}>
-                  We believe that understanding leads to empathy, and empathy leads to action. Through our communications, social media, and community engagement, we educate others about the realities faced by Palestinians, challenge misconceptions, and encourage informed, compassionate dialogue.
+{t('palestine.howWeStand.awareness.text')}
                 </p>
               </div>
 
@@ -373,12 +375,12 @@ const StandWithPalestinePage: React.FC = () => {
                 <h3 className={`text-xl font-semibold mb-3 ${
                   isDark ? 'text-purple-300' : 'text-purple-700'
                 }`}>
-                  Supporting Humanitarian Efforts
+{t('palestine.howWeStand.humanitarian.title')}
                 </h3>
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-200' : 'text-gray-800'
                 }`}>
-                  Where possible, we support and promote humanitarian organizations working to provide relief, medical aid, and essential services to Palestinian communities. We encourage our team, our clients, and our network to contribute to these efforts in whatever way they can.
+{t('palestine.howWeStand.humanitarian.text')}
                 </p>
               </div>
 
@@ -390,12 +392,12 @@ const StandWithPalestinePage: React.FC = () => {
                 <h3 className={`text-xl font-semibold mb-3 ${
                   isDark ? 'text-pink-300' : 'text-pink-700'
                 }`}>
-                  Advocating for Justice
+{t('palestine.howWeStand.justice.title')}
                 </h3>
                 <p className={`text-lg leading-relaxed ${
                   isDark ? 'text-gray-200' : 'text-gray-800'
                 }`}>
-                  We advocate for policies and actions that uphold international law, protect human rights, and work toward a just and lasting peace. We call upon leaders, organizations, and individuals to prioritize human dignity above all else and to work tirelessly for a future where Palestinians can live freely and safely.
+{t('palestine.howWeStand.justice.text')}
                 </p>
               </div>
             </div>
@@ -406,7 +408,7 @@ const StandWithPalestinePage: React.FC = () => {
             <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              A Message of Hope
+{t('palestine.hope.title')}
             </h2>
             
             <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-10 ${
@@ -417,19 +419,19 @@ const StandWithPalestinePage: React.FC = () => {
               <p className={`text-lg leading-relaxed mb-6 ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                Despite the darkness of the present moment, we hold onto hope. We believe in the resilience of the Palestinian people, in their strength, their courage, and their unwavering determination to live with dignity. We believe that justice will eventually prevail, that walls will fall, and that peace will be more than a distant dream.
+{t('palestine.hope.p1')}
               </p>
               
               <p className={`text-lg leading-relaxed mb-6 ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                History has shown us that oppression cannot last forever. The arc of the moral universe may be long, but it bends toward justice. We stand on the right side of that arc. We stand with those who have been marginalized, silenced, and forgotten. We stand with Palestine.
+{t('palestine.hope.p2')}
               </p>
               
               <p className={`text-lg leading-relaxed ${
                 isDark ? 'text-gray-200' : 'text-gray-800'
               }`}>
-                To the Palestinian people: You are not alone. Your struggle is seen. Your pain is acknowledged. Your right to freedom is supported. We stand with you today, tomorrow, and for as long as it takes for justice to be realized.
+{t('palestine.hope.p3')}
               </p>
             </div>
           </div>
@@ -444,12 +446,12 @@ const StandWithPalestinePage: React.FC = () => {
               <blockquote className={`text-2xl md:text-3xl lg:text-4xl font-serif italic leading-relaxed mb-6 ${
                 isDark ? 'text-purple-100' : 'text-purple-900'
               }`}>
-                "If you are neutral in situations of injustice, you have chosen the side of the oppressor."
+{t('palestine.closing.quote')}
               </blockquote>
               <p className={`text-base md:text-lg font-medium ${
                 isDark ? 'text-purple-400' : 'text-purple-700'
               }`}>
-                Desmond Tutu
+{t('palestine.closing.attribution')}
               </p>
             </div>
           </div>
@@ -465,13 +467,13 @@ const StandWithPalestinePage: React.FC = () => {
                 ? 'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400'
                 : 'bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-pink-700'
             }`}>
-              From Upvista Digital, With Solidarity
+{t('palestine.final.title')}
             </h2>
             
             <p className={`text-lg md:text-xl leading-relaxed ${
               isDark ? 'text-gray-200' : 'text-gray-800'
             }`}>
-              We are a small company, but we carry a big heart. We may not have the power to change the world overnight, but we have the power to choose compassion over indifference, justice over silence, and humanity over politics. We choose to stand with Palestine, and we will continue to stand until freedom is no longer a dream but a reality.
+{t('palestine.final.text')}
             </p>
           </div>
 
@@ -499,11 +501,11 @@ const StandWithPalestinePage: React.FC = () => {
             <p className={`text-xl md:text-2xl font-serif italic leading-relaxed ${
               isDark ? 'text-purple-200' : 'text-purple-800'
             }`}>
-              May peace find its way to every heart.
+{t('palestine.prayer.line1')}
               <br />
-              May justice flow like rivers.
+              {t('palestine.prayer.line2')}
               <br />
-              May freedom ring from every corner of the land.
+              {t('palestine.prayer.line3')}
             </p>
           </div>
 
@@ -512,7 +514,7 @@ const StandWithPalestinePage: React.FC = () => {
             <p className={`text-sm ${
               isDark ? 'text-gray-500' : 'text-gray-600'
             }`}>
-              Upvista Digital - 2024
+{t('palestine.footer')}
             </p>
           </div>
         </div>
