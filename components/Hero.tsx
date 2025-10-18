@@ -64,19 +64,19 @@ const Hero = memo(() => {
           <div className="w-full lg:w-1/2 text-center lg:text-left lg:ml-12">
         <div className={`inline-flex items-center px-3 py-2 rounded-full backdrop-blur-sm border text-sm font-medium mb-6 ${
           isDark 
-            ? 'bg-white/10 border-white/10 text-indigo-200'
-            : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 border-blue-500/70 text-white shadow-lg'
+            ? 'bg-white/10 border-white/10 text-purple-200'
+            : 'bg-gradient-to-r from-purple-600/90 to-pink-600/90 border-purple-500/70 text-white shadow-lg'
         }`}>
               <span className={`flex h-2 w-2 rounded-full mr-2 ${
-                isDark ? 'bg-indigo-400' : 'bg-white'
+                isDark ? 'bg-purple-400' : 'bg-white'
               }`}></span>
               {t('hero.badge')}
             </div>
 
             <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight ${
               isDark 
-                ? 'bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent' 
-                : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700 bg-clip-text text-transparent'
+                ? 'bg-gradient-to-r from-white via-purple-100 to-pink-200 bg-clip-text text-transparent' 
+                : 'bg-gradient-to-r from-gray-900 via-purple-700 to-pink-600 bg-clip-text text-transparent'
             }`}>
               {t('hero.title')}
             </h1>
@@ -90,27 +90,27 @@ const Hero = memo(() => {
             {/* SEO-optimized service highlights */}
             <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0">
               <div className={`flex items-center gap-2 text-sm ${
-                isDark ? 'text-indigo-200' : 'text-gray-700'
+                isDark ? 'text-purple-200' : 'text-gray-700'
               }`}>
-                <Code className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-blue-600'}`} />
+                <Code className={`w-4 h-4 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
                 <span>{t('hero.service1')}</span>
               </div>
               <div className={`flex items-center gap-2 text-sm ${
-                isDark ? 'text-indigo-200' : 'text-gray-700'
+                isDark ? 'text-purple-200' : 'text-gray-700'
               }`}>
-                <Globe className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-purple-600'}`} />
+                <Globe className={`w-4 h-4 ${isDark ? 'text-purple-400' : 'text-purple-600'}`} />
                 <span>{t('hero.service2')}</span>
               </div>
               <div className={`flex items-center gap-2 text-sm ${
-                isDark ? 'text-indigo-200' : 'text-gray-700'
+                isDark ? 'text-purple-200' : 'text-gray-700'
               }`}>
-                <Users className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-violet-600'}`} />
+                <Users className={`w-4 h-4 ${isDark ? 'text-purple-400' : 'text-pink-600'}`} />
                 <span>{t('hero.service3')}</span>
               </div>
               <div className={`flex items-center gap-2 text-sm ${
-                isDark ? 'text-indigo-200' : 'text-gray-700'
+                isDark ? 'text-purple-200' : 'text-gray-700'
               }`}>
-                <Star className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-indigo-600'}`} />
+                <Star className={`w-4 h-4 ${isDark ? 'text-purple-400' : 'text-pink-600'}`} />
                 <span>{t('hero.service4')}</span>
               </div>
             </div>
@@ -119,18 +119,18 @@ const Hero = memo(() => {
               <Link href="/Services/web-development">
                 <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 group transform hover:scale-105 w-full sm:w-auto ${
                   isDark 
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:shadow-indigo-500/25'
-                    : 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white hover:shadow-purple-500/25'
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-purple-500/50'
+                    : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-purple-500/50'
                 }`}>
                   {t('hero.cta')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
               <Link href="/pages/auth">
-                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto ${
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto ${
                   isDark 
-                    ? 'bg-white text-indigo-900 hover:bg-gray-50'
-                    : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700'
+                    ? 'bg-transparent text-white border-purple-500 hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-pink-600/20 hover:border-pink-500'
+                    : 'bg-transparent text-gray-900 border-purple-600 hover:bg-gradient-to-r hover:from-purple-600/10 hover:to-pink-600/10 hover:border-pink-600'
                 }`}>
                   {t('hero.register')}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -144,30 +144,30 @@ const Hero = memo(() => {
                 <div className={`text-2xl sm:text-3xl font-bold mb-1 ${
                   isDark 
                     ? 'text-white' 
-                    : 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600'
+                    : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600'
                 }`}>50+</div>
                 <div className={`text-sm ${
-                  isDark ? 'text-indigo-200/80' : 'text-blue-600/80'
+                  isDark ? 'text-purple-200/80' : 'text-purple-600/80'
                 }`}>{t('hero.stats1')}</div>
               </div>
               <div className="text-center lg:text-left">
                 <div className={`text-2xl sm:text-3xl font-bold mb-1 ${
                   isDark 
                     ? 'text-white' 
-                    : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600'
+                    : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600'
                 }`}>4.9/5</div>
                 <div className={`text-sm ${
-                  isDark ? 'text-indigo-200/80' : 'text-purple-600/80'
+                  isDark ? 'text-purple-200/80' : 'text-purple-600/80'
                 }`}>{t('hero.stats2')}</div>
               </div>
               <div className="text-center lg:text-left">
                 <div className={`text-2xl sm:text-3xl font-bold mb-1 ${
                   isDark 
                     ? 'text-white' 
-                    : 'text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-violet-600'
+                    : 'text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600'
                 }`}>24/7</div>
                 <div className={`text-sm ${
-                  isDark ? 'text-indigo-200/80' : 'text-indigo-600/80'
+                  isDark ? 'text-purple-200/80' : 'text-pink-600/80'
                 }`}>{t('hero.stats3')}</div>
               </div>
             </div>

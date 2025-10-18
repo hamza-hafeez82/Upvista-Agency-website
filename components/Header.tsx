@@ -470,22 +470,22 @@ const Header = () => {
             )}
           </div>
 
-          {/* Explore Careers Button */}
+          {/* Explore Careers Button - Purple to Pink Gradient */}
           <Link href="/careers" target="_blank" rel="noopener noreferrer" className="ml-3">
-            <button className={`px-6 py-2.5 font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
+            <button className={`px-6 py-2.5 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
               isDark 
-                ? 'bg-white text-gray-900 hover:bg-gray-50 border border-gray-200 hover:border-gray-300'
-                : 'bg-gray-900 text-white hover:bg-gray-800 border border-gray-700 hover:border-gray-600'
+                ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-purple-500/50'
+                : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-purple-500/50'
             }`}>
 {t('nav.careers')}
             </button>
           </Link>
-          {/* Let's Talk Business Button */}
+          {/* Let's Talk Business Button - Purple to Indigo Border */}
           <Link href="/Consult" className="ml-2">
             <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 ${
               isDark 
-                ? 'bg-transparent text-white border-white hover:bg-white hover:text-gray-900'
-                : 'bg-transparent text-gray-900 border-gray-900 hover:bg-gray-900 hover:text-white'
+                ? 'bg-transparent text-white border-purple-500 hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-pink-600/20 hover:border-pink-500'
+                : 'bg-transparent text-gray-900 border-purple-600 hover:bg-gradient-to-r hover:from-purple-600/10 hover:to-pink-600/10 hover:border-pink-600'
             }`}>
 {t('nav.contact')}
             </button>
