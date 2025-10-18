@@ -95,15 +95,15 @@ const Testimonials = memo(() => {
     <section className={`relative overflow-hidden p-20 ${
       isDark 
         ? 'bg-gradient-to-br from-black via-black/80 to-purple-950'
-        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
+        : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'
     }`}>
       {/* Abstract background shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
-          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-purple-400/25 to-pink-500/20'
         }`}></div>
         <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
-          isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+          isDark ? 'bg-pink-600/20' : 'bg-gradient-to-br from-pink-500/25 to-purple-600/20'
         }`}></div>
         <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
           isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
@@ -128,8 +128,8 @@ const Testimonials = memo(() => {
           <div className="flex justify-center">
             <div className={`border py-1 px-4 rounded-lg ${
               isDark 
-                ? 'border-violet-400 text-violet-300'
-                : 'border-blue-500 text-white bg-gradient-to-r from-blue-600/90 to-purple-600/90 shadow-lg'
+                ? 'border-purple-400 text-purple-300'
+                : 'border-purple-500 text-white bg-gradient-to-r from-purple-600/90 to-pink-600/90 shadow-lg'
             }`}>
               {t('home.testimonials.title')}
             </div>
@@ -138,7 +138,7 @@ const Testimonials = memo(() => {
           <h2 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold tracking-tight mt-5 leading-tight ${
             isDark 
               ? 'text-white'
-              : 'bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600'
+              : 'bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-600 to-pink-600'
           }`}>
             {t('home.testimonials.subtitle')}
           </h2>
