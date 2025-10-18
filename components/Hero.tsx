@@ -117,23 +117,31 @@ const Hero = memo(() => {
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-8 sm:mb-12">
               <Link href="/Services/web-development">
-                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-3 group cursor-pointer w-full sm:w-auto ${
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl border-2 transition-colors duration-300 flex items-center justify-center gap-3 group cursor-pointer w-full sm:w-auto relative overflow-hidden ${
                   isDark 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent hover:bg-transparent hover:border-purple-500 hover:text-white'
-                    : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent hover:bg-transparent hover:border-purple-600 hover:text-gray-900'
+                    ? 'text-white border-transparent hover:border-purple-500 hover:text-white'
+                    : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
                 }`}>
-                  {t('hero.cta')}
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {/* Gradient background that waves out on hover */}
+                  <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${
+                    isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+                  }`}></span>
+                  <span className="relative z-10">{t('hero.cta')}</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
                 </button>
               </Link>
               <Link href="/pages/auth">
-                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer w-full sm:w-auto ${
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl border-2 transition-colors duration-300 flex items-center justify-center gap-2 group cursor-pointer w-full sm:w-auto relative overflow-hidden ${
                   isDark 
-                    ? 'bg-transparent text-white border-purple-500 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent'
-                    : 'bg-transparent text-gray-900 border-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent hover:text-white'
+                    ? 'text-white border-purple-500 hover:border-transparent hover:text-white'
+                    : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
                 }`}>
-                  {t('hero.register')}
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  {/* Gradient background that waves in on hover */}
+                  <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${
+                    isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+                  }`}></span>
+                  <span className="relative z-10">{t('hero.register')}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />
                 </button>
               </Link>
             </div>

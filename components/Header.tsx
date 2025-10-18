@@ -470,24 +470,32 @@ const Header = () => {
             )}
           </div>
 
-          {/* Explore Careers Button - Purple to Pink Gradient */}
+          {/* Explore Careers Button - Purple to Pink Gradient with Wave Effect */}
           <Link href="/careers" target="_blank" rel="noopener noreferrer" className="ml-3">
-            <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-all duration-300 cursor-pointer ${
+            <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${
               isDark 
-                ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent hover:bg-transparent hover:border-purple-500 hover:text-white'
-                : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent hover:bg-transparent hover:border-purple-600 hover:text-gray-900'
+                ? 'text-white border-transparent hover:border-purple-500 hover:text-white'
+                : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
             }`}>
-{t('nav.careers')}
+              {/* Gradient background that waves out on hover */}
+              <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${
+                isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+              }`}></span>
+              <span className="relative z-10">{t('nav.careers')}</span>
             </button>
           </Link>
-          {/* Let's Talk Business Button - Purple to Indigo Border */}
+          {/* Let's Talk Business Button - Purple to Indigo Border with Wave Effect */}
           <Link href="/Consult" className="ml-2">
-            <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-all duration-300 cursor-pointer ${
+            <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${
               isDark 
-                ? 'bg-transparent text-white border-purple-500 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent'
-                : 'bg-transparent text-gray-900 border-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent hover:text-white'
+                ? 'text-white border-purple-500 hover:border-transparent hover:text-white'
+                : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
             }`}>
-{t('nav.contact')}
+              {/* Gradient background that waves in on hover */}
+              <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${
+                isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+              }`}></span>
+              <span className="relative z-10">{t('nav.contact')}</span>
             </button>
           </Link>
         </nav>
@@ -742,21 +750,29 @@ const Header = () => {
               {/* Main Buttons */}
               <div className="flex flex-col gap-3">
                 <Link href="/careers" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
-                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
+                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${
                     isDark 
-                      ? 'bg-white text-black hover:bg-gray-100' 
-                      : 'bg-gray-900 text-white hover:bg-gray-800'
+                      ? 'text-white border-transparent hover:border-purple-500 hover:text-white' 
+                      : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
                   }`}>
-      {t('nav.careers')}
+                    {/* Gradient background that waves out on hover */}
+                    <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${
+                      isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+                    }`}></span>
+                    <span className="relative z-10">{t('nav.careers')}</span>
                   </button>
                 </Link>
                 <Link href="/Consult" onClick={() => setMobileMenuOpen(false)}>
-                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border transition-all duration-200 ${
+                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${
                     isDark 
-                      ? 'bg-transparent text-white border-white/30 hover:bg-white/10' 
-                      : 'bg-transparent text-gray-900 border-gray-300 hover:bg-gray-100'
+                      ? 'text-white border-purple-500 hover:border-transparent hover:text-white' 
+                      : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
                   }`}>
-      {t('nav.contact')}
+                    {/* Gradient background that waves in on hover */}
+                    <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${
+                      isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+                    }`}></span>
+                    <span className="relative z-10">{t('nav.contact')}</span>
                   </button>
                 </Link>
               </div>
