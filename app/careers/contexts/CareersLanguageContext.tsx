@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface CareersLanguageContextType {
   currentLanguage: string;
@@ -161,22 +162,32 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
 };
 
 export function CareersLanguageProvider({ children }: { children: React.ReactNode }) {
+  // Get the main language context to sync with it
+  const { currentLanguage: mainLanguage } = useLanguage();
   const [currentLanguage, setCurrentLanguage] = useState('EN');
 
+  // Sync with main language context
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('careers-language');
-    if (savedLanguage) {
+    setCurrentLanguage(mainLanguage);
+  }, [mainLanguage]);
+
+  // Also check localStorage on mount for backward compatibility
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language'); // Use main language storage
+    if (savedLanguage && careersTranslations[savedLanguage]) {
       setCurrentLanguage(savedLanguage);
     }
   }, []);
 
   const setLanguage = (lang: string) => {
     setCurrentLanguage(lang);
-    localStorage.setItem('careers-language', lang);
+    // Sync with main language storage
+    localStorage.setItem('language', lang);
   };
 
   const t = (key: string): string => {
-    return careersTranslations[currentLanguage]?.[key] || key;
+    // Fallback to English if translation not found, or return the key
+    return careersTranslations[currentLanguage]?.[key] || careersTranslations['EN']?.[key] || key;
   };
 
   return (
