@@ -61,7 +61,7 @@ const Hero = memo(() => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-6">
           {/* Content section */}
-          <div className="w-full lg:w-1/2 text-center lg:text-left lg:ml-12">
+          <div className="w-full lg:w-1/2 text-center lg:text-left lg:ml-12 pt-8 sm:pt-0">
         <div className={`inline-flex items-center px-3 py-2 rounded-full backdrop-blur-sm border text-sm font-medium mb-6 ${
           isDark 
             ? 'bg-white/10 border-white/10 text-purple-200'
@@ -73,7 +73,7 @@ const Hero = memo(() => {
               {t('hero.badge')}
             </div>
 
-            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight ${
+            <h1 className={`text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight ${
               isDark 
                 ? 'bg-gradient-to-r from-white via-purple-100 to-pink-200 bg-clip-text text-transparent' 
                 : 'bg-gradient-to-r from-gray-900 via-purple-700 to-pink-600 bg-clip-text text-transparent'

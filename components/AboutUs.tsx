@@ -60,13 +60,13 @@ const AboutUs = memo(() => {
       {/* Abstract background shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
-          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-purple-400/25 to-pink-500/20'
         }`}></div>
         <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
-          isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+          isDark ? 'bg-pink-600/20' : 'bg-gradient-to-br from-pink-500/25 to-purple-600/20'
         }`}></div>
         <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
-          isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
+          isDark ? 'bg-purple-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
         }`}></div>
       </div>
 
@@ -92,19 +92,19 @@ const AboutUs = memo(() => {
           <div className="flex flex-col items-center text-center">
             <div className={`inline-block mb-6 px-4 py-1 rounded-full border ${
               isDark 
-                ? 'bg-violet-900/30 border-violet-700/40'
-                : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 border-blue-500/70 shadow-lg'
+                ? 'bg-purple-900/30 border-purple-700/40'
+                : 'bg-gradient-to-r from-purple-600/90 to-pink-600/90 border-purple-500/70 shadow-lg'
             }`}>
               <span className={`text-sm font-medium ${
-                isDark ? 'text-violet-300' : 'text-white'
+                isDark ? 'text-purple-300' : 'text-white'
               }`}>
                 {t('home.transform.title')}
               </span>
             </div>
             <h1 className={`text-4xl p-4 md:text-5xl lg:text-6xl font-bold mb-6 ${
               isDark 
-                ? 'bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400'
-                : 'bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600'
+                ? 'bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-purple-400 to-pink-400'
+                : 'bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-600 to-pink-600'
             }`}>
               {t('home.transform.subtitle')}
             </h1>
@@ -117,8 +117,8 @@ const AboutUs = memo(() => {
               <Link href="/Services">
                 <button className={`px-8 py-3 rounded-lg font-medium transition duration-300 flex items-center gap-2 shadow-lg ${
                   isDark 
-                    ? 'bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white shadow-violet-900/30'
-                    : 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 hover:from-blue-700 hover:via-purple-700 hover:to-indigo-700 text-white shadow-purple-500/25'
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-purple-900/30'
+                    : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-purple-500/25'
                 }`}>
                   {t('home.transform.exploreServices')}
                   <ArrowRight className="h-4 w-4" />
@@ -162,9 +162,9 @@ const AboutUs = memo(() => {
             <div className="relative w-96 h-96 flex items-center justify-center">
               {/* Central interactive card - Bigger and cleaner */}
               <div className={`relative z-10 backdrop-blur-lg border rounded-3xl shadow-2xl p-12 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300 cursor-pointer ${
-                isDark 
-                  ? 'bg-gradient-to-br from-white/10 to-white/5 border-white/10'
-                  : 'bg-gradient-to-br from-blue-50/80 to-purple-50/60 border-blue-200/50 shadow-blue-200/20'
+              isDark 
+                ? 'bg-gradient-to-br from-white/10 to-white/5 border-white/10'
+                : 'bg-gradient-to-br from-purple-50/80 to-pink-50/60 border-purple-200/50 shadow-purple-200/20'
               }`}>
                 <Brush className={`w-16 h-16 mb-6 animate-spin-slow ${
                   isDark ? 'text-purple-400' : 'text-purple-600'
@@ -190,14 +190,14 @@ const AboutUs = memo(() => {
         <div className="text-center mb-20">
           <div className={`inline-flex items-center px-4 py-2 rounded-full backdrop-blur-sm border mb-6 ${
             isDark 
-              ? 'bg-blue-50/10 border-blue-200/20'
-              : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 border-blue-500/70 shadow-lg'
+              ? 'bg-purple-50/10 border-purple-200/20'
+              : 'bg-gradient-to-r from-purple-600/90 to-pink-600/90 border-purple-500/70 shadow-lg'
           }`}>
             <span className={`w-2 h-2 rounded-full mr-3 ${
-              isDark ? 'bg-blue-400' : 'bg-white'
+              isDark ? 'bg-purple-400' : 'bg-white'
             }`}></span>
             <span className={`text-sm font-medium ${
-              isDark ? 'text-blue-200' : 'text-white'
+              isDark ? 'text-purple-200' : 'text-white'
             }`}>
               {t('home.expertise.title')}
             </span>
@@ -205,7 +205,7 @@ const AboutUs = memo(() => {
           <h2 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
             isDark 
               ? 'text-white'
-              : 'bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600'
+              : 'bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-600 to-pink-600'
           }`}>
             {t('home.expertise.subtitle')}
           </h2>
@@ -221,16 +221,16 @@ const AboutUs = memo(() => {
           {/* E-commerce */}
           <div className={`group backdrop-blur-sm border rounded-2xl p-8 transition-all duration-300 ${
             isDark 
-              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-blue-400/30'
-              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-blue-300/60'
+              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-400/30'
+              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-purple-300/60'
           }`}>
             <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
               isDark 
-                ? 'bg-blue-500/20 group-hover:bg-blue-500/30'
-                : 'bg-gradient-to-br from-blue-100 to-purple-100 group-hover:from-blue-200 group-hover:to-purple-200'
+                ? 'bg-purple-500/20 group-hover:bg-purple-500/30'
+                : 'bg-gradient-to-br from-purple-100 to-pink-100 group-hover:from-purple-200 group-hover:to-pink-200'
             }`}>
               <ShoppingCart className={`w-8 h-8 ${
-                isDark ? 'text-blue-400' : 'text-blue-600'
+                isDark ? 'text-purple-400' : 'text-purple-600'
               }`} />
             </div>
             <h3 className={`text-2xl font-semibold mb-4 ${
@@ -246,16 +246,16 @@ const AboutUs = memo(() => {
           {/* SaaS Platforms */}
           <div className={`group backdrop-blur-sm border rounded-2xl p-8 transition-all duration-300 ${
             isDark 
-              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-blue-400/30'
-              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-blue-300/60'
+              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-400/30'
+              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-purple-300/60'
           }`}>
             <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
               isDark 
-                ? 'bg-blue-500/20 group-hover:bg-blue-500/30'
-                : 'bg-gradient-to-br from-blue-100 to-purple-100 group-hover:from-blue-200 group-hover:to-purple-200'
+                ? 'bg-purple-500/20 group-hover:bg-purple-500/30'
+                : 'bg-gradient-to-br from-purple-100 to-pink-100 group-hover:from-purple-200 group-hover:to-pink-200'
             }`}>
               <Cloud className={`w-8 h-8 ${
-                isDark ? 'text-blue-400' : 'text-blue-600'
+                isDark ? 'text-purple-400' : 'text-purple-600'
               }`} />
           </div>
             <h3 className={`text-2xl font-semibold mb-4 ${
@@ -271,16 +271,16 @@ const AboutUs = memo(() => {
           {/* Healthcare */}
           <div className={`group backdrop-blur-sm border rounded-2xl p-8 transition-all duration-300 ${
             isDark 
-              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-blue-400/30'
-              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-blue-300/60'
+              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-400/30'
+              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-purple-300/60'
           }`}>
             <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
               isDark 
-                ? 'bg-blue-500/20 group-hover:bg-blue-500/30'
-                : 'bg-gradient-to-br from-blue-100 to-purple-100 group-hover:from-blue-200 group-hover:to-purple-200'
+                ? 'bg-purple-500/20 group-hover:bg-purple-500/30'
+                : 'bg-gradient-to-br from-purple-100 to-pink-100 group-hover:from-purple-200 group-hover:to-pink-200'
             }`}>
               <Stethoscope className={`w-8 h-8 ${
-                isDark ? 'text-blue-400' : 'text-blue-600'
+                isDark ? 'text-purple-400' : 'text-purple-600'
               }`} />
             </div>
             <h3 className={`text-2xl font-semibold mb-4 ${
@@ -296,16 +296,16 @@ const AboutUs = memo(() => {
           {/* EdTech */}
           <div className={`group backdrop-blur-sm border rounded-2xl p-8 transition-all duration-300 ${
             isDark 
-              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-blue-400/30'
-              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-blue-300/60'
+              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-400/30'
+              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-purple-300/60'
           }`}>
             <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
               isDark 
-                ? 'bg-blue-500/20 group-hover:bg-blue-500/30'
-                : 'bg-gradient-to-br from-blue-100 to-purple-100 group-hover:from-blue-200 group-hover:to-purple-200'
+                ? 'bg-purple-500/20 group-hover:bg-purple-500/30'
+                : 'bg-gradient-to-br from-purple-100 to-pink-100 group-hover:from-purple-200 group-hover:to-pink-200'
             }`}>
               <GraduationCap className={`w-8 h-8 ${
-                isDark ? 'text-blue-400' : 'text-blue-600'
+                isDark ? 'text-purple-400' : 'text-purple-600'
               }`} />
             </div>
             <h3 className={`text-2xl font-semibold mb-4 ${
@@ -321,16 +321,16 @@ const AboutUs = memo(() => {
           {/* FinTech */}
           <div className={`group backdrop-blur-sm border rounded-2xl p-8 transition-all duration-300 ${
             isDark 
-              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-blue-400/30'
-              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-blue-300/60'
+              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-400/30'
+              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-purple-300/60'
           }`}>
             <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
               isDark 
-                ? 'bg-blue-500/20 group-hover:bg-blue-500/30'
-                : 'bg-gradient-to-br from-blue-100 to-purple-100 group-hover:from-blue-200 group-hover:to-purple-200'
+                ? 'bg-purple-500/20 group-hover:bg-purple-500/30'
+                : 'bg-gradient-to-br from-purple-100 to-pink-100 group-hover:from-purple-200 group-hover:to-pink-200'
             }`}>
               <CreditCard className={`w-8 h-8 ${
-                isDark ? 'text-blue-400' : 'text-blue-600'
+                isDark ? 'text-purple-400' : 'text-purple-600'
               }`} />
             </div>
             <h3 className={`text-2xl font-semibold mb-4 ${
@@ -346,16 +346,16 @@ const AboutUs = memo(() => {
           {/* Portfolio & Creative */}
           <div className={`group backdrop-blur-sm border rounded-2xl p-8 transition-all duration-300 ${
             isDark 
-              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-blue-400/30'
-              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-blue-300/60'
+              ? 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-purple-400/30'
+              : 'bg-white/90 border-gray-200/60 hover:bg-white hover:border-purple-300/60'
           }`}>
             <div className={`w-16 h-16 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
               isDark 
-                ? 'bg-blue-500/20 group-hover:bg-blue-500/30'
-                : 'bg-gradient-to-br from-blue-100 to-purple-100 group-hover:from-blue-200 group-hover:to-purple-200'
+                ? 'bg-purple-500/20 group-hover:bg-purple-500/30'
+                : 'bg-gradient-to-br from-purple-100 to-pink-100 group-hover:from-purple-200 group-hover:to-pink-200'
             }`}>
               <Brush className={`w-8 h-8 ${
-                isDark ? 'text-blue-400' : 'text-blue-600'
+                isDark ? 'text-purple-400' : 'text-purple-600'
               }`} />
             </div>
             <h3 className={`text-2xl font-semibold mb-4 ${
@@ -371,7 +371,7 @@ const AboutUs = memo(() => {
 
         {/* Professional CTA Section */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors duration-300 shadow-lg shadow-blue-600/25">
+          <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl font-semibold transition-colors duration-300 shadow-lg shadow-purple-600/25">
             <span>{t('home.expertise.explore')}</span>
             <ArrowRight className="w-5 h-5" />
           </div>

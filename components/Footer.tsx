@@ -103,14 +103,14 @@ const Footer: React.FC = () => {
   const [selectedPayment, setSelectedPayment] = React.useState<number | null>(null);
 
   return (
-    <footer className={`relative overflow-hidden ${isDark ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 text-gray-900'}`} role="contentinfo" aria-label="Site Footer">
+    <footer className={`relative overflow-hidden ${isDark ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 text-gray-900'}`} role="contentinfo" aria-label="Site Footer">
       {/* Abstract background shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
-          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-purple-400/25 to-pink-500/20'
         }`}></div>
         <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
-          isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+          isDark ? 'bg-pink-600/20' : 'bg-gradient-to-br from-pink-500/25 to-purple-600/20'
         }`}></div>
         <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
           isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
@@ -158,7 +158,7 @@ const Footer: React.FC = () => {
               </div>
               <div>
                 <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h3>
-                <p className={`text-sm font-medium ${isDark ? 'text-purple-400' : 'text-blue-600'}`}>Solutions</p>
+                <p className={`text-sm font-medium ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>Solutions</p>
               </div>
             </div>
             <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -197,7 +197,7 @@ const Footer: React.FC = () => {
             
             {/* Payment Methods */}
             <div className="space-y-3 pt-6">
-              <h4 className={`text-sm font-semibold ${isDark ? 'text-purple-400' : 'text-blue-600'}`}>{t('footer.paymentMethods')}</h4>
+              <h4 className={`text-sm font-semibold ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>{t('footer.paymentMethods')}</h4>
               <div className="grid grid-cols-2 gap-2">
                 {[...paymentMethods, ...landscapePayments].map((method, idx) => (
                   <button
@@ -205,7 +205,7 @@ const Footer: React.FC = () => {
                     className={`font-semibold text-xs w-full text-left py-2 px-2 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 ${
                       isDark 
                         ? 'text-purple-300 hover:text-white bg-gray-800/60 hover:bg-purple-700/30 focus:ring-purple-500'
-                        : 'text-blue-700 hover:text-white bg-white/80 hover:bg-blue-600 border border-blue-200 focus:ring-blue-500'
+                        : 'text-purple-700 hover:text-white bg-white/80 hover:bg-purple-600 border border-purple-200 focus:ring-purple-500'
                     }`}
                     onClick={() => { setSelectedPayment(idx); setModalOpen(true); }}
                   >
@@ -334,7 +334,7 @@ const Footer: React.FC = () => {
                 className={`text-sm transition-colors duration-300 ${
                   isDark 
                     ? 'text-gray-400 hover:text-white' 
-                    : 'text-gray-600 hover:text-blue-700'
+                    : 'text-gray-600 hover:text-purple-700'
                 }`}
               >
                 {t('footer.termsConditions')}
@@ -344,7 +344,7 @@ const Footer: React.FC = () => {
                 className={`text-sm transition-colors duration-300 ${
                   isDark 
                     ? 'text-gray-400 hover:text-white' 
-                    : 'text-gray-600 hover:text-blue-700'
+                    : 'text-gray-600 hover:text-purple-700'
                 }`}
               >
                 {t('footer.privacyPolicy')}
@@ -354,7 +354,7 @@ const Footer: React.FC = () => {
                 className={`text-sm transition-colors duration-300 ${
                   isDark 
                     ? 'text-gray-400 hover:text-white' 
-                    : 'text-gray-600 hover:text-blue-700'
+                    : 'text-gray-600 hover:text-purple-700'
                 }`}
               >
                 {t('footer.trademarkCopyright')}
@@ -364,7 +364,7 @@ const Footer: React.FC = () => {
                 className={`text-sm transition-colors duration-300 ${
                   isDark 
                     ? 'text-gray-400 hover:text-white' 
-                    : 'text-gray-600 hover:text-blue-700'
+                    : 'text-gray-600 hover:text-purple-700'
                 }`}
               >
                 {t('footer.dataProtection')}
@@ -387,7 +387,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({ icon, href = "#" }) => {
       className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 ${
         isDark 
           ? 'bg-gray-800 hover:bg-purple-600 text-white' 
-          : 'bg-white hover:bg-blue-600 text-gray-700 hover:text-white shadow-lg border border-gray-200'
+          : 'bg-white hover:bg-purple-600 text-gray-700 hover:text-white shadow-lg border border-gray-200'
       }`}
       target="_blank"
       rel="noopener noreferrer"
@@ -407,10 +407,10 @@ const FooterLink: React.FC<FooterLinkProps> = ({ href, children }) => {
         <a className={`relative overflow-hidden group flex items-center ${
           isDark 
             ? 'text-gray-400 hover:text-white' 
-            : 'text-gray-600 hover:text-blue-700'
+            : 'text-gray-600 hover:text-purple-700'
         }`}>
           <span className={`absolute left-0 bottom-0 h-0.5 w-0 transition-all duration-300 group-hover:w-full ${
-            isDark ? 'bg-purple-500' : 'bg-blue-500'
+            isDark ? 'bg-purple-500' : 'bg-purple-500'
           }`}></span>
           <span className="transition-transform duration-300 group-hover:translate-x-2">
             {children}
@@ -427,14 +427,14 @@ const ContactItem: React.FC<ContactItemProps> = ({ icon, text, href }) => {
   
   return (
     <div className="flex items-center space-x-3">
-      <div className={`${isDark ? 'text-purple-500' : 'text-blue-600'}`}>{icon}</div>
+      <div className={`${isDark ? 'text-purple-500' : 'text-purple-600'}`}>{icon}</div>
       {href ? (
         <a
           href={href}
           className={`transition-colors duration-300 ${
             isDark 
               ? 'text-gray-400 hover:text-white' 
-              : 'text-gray-600 hover:text-blue-700'
+              : 'text-gray-600 hover:text-purple-700'
           }`}
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
