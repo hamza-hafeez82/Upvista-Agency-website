@@ -7,9 +7,11 @@ import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../../contexts/CareersLanguageContext";
 
 export default function PhilosophyPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   
   return (
     <>
@@ -37,7 +39,7 @@ export default function PhilosophyPage() {
               }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Learn the Basics
+              {t('careers.philosophy.back')}
             </Link>
           </div>
         </div>
@@ -52,12 +54,12 @@ export default function PhilosophyPage() {
             className="text-center mb-24 relative z-20 pt-8 pb-12"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
-              Corporate Philosophy
+              {t('careers.philosophy.hero.title')}
             </h1>
             <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Discover the values, principles, and cultures that define who we are and guide everything we do at Upvista Digital.
+              {t('careers.philosophy.hero.subtitle')}
             </p>
           </motion.div>
 
@@ -75,9 +77,9 @@ export default function PhilosophyPage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Purpose</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.philosophy.purpose.title')}</h2>
                 <p className={`text-lg md:text-xl leading-relaxed max-w-4xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  To create a world where technology serves humanity, empowering businesses and individuals to achieve their fullest potential through innovative digital solutions that make a meaningful impact on society.
+                  {t('careers.philosophy.purpose.description')}
                 </p>
               </div>
             </motion.section>
