@@ -63,7 +63,7 @@ const ITServices = memo(() => {
   // Memoized color classes function
   const getColorClasses = useCallback((color) => {
     const colorMap = {
-      blue: "from-blue-500/20 to-blue-600/30 text-blue-400 border-blue-400/30",
+      blue: "from-purple-500/20 to-pink-600/30 text-purple-400 border-purple-400/30",
       green: "from-green-500/20 to-green-600/30 text-green-400 border-green-400/30", 
       cyan: "from-cyan-500/20 to-cyan-600/30 text-cyan-400 border-cyan-400/30",
       purple: "from-purple-500/20 to-purple-600/30 text-purple-400 border-purple-400/30",
@@ -77,15 +77,15 @@ const ITServices = memo(() => {
     <section className={`relative overflow-hidden py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 ${
       isDark 
         ? 'bg-gradient-to-br from-black via-black/80 to-purple-950 text-white'
-        : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 text-gray-900'
+        : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 text-gray-900'
     }`}>
       {/* Abstract background shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
-          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+          isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-purple-400/25 to-pink-500/20'
         }`}></div>
         <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
-          isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+          isDark ? 'bg-pink-600/20' : 'bg-gradient-to-br from-pink-500/25 to-purple-600/20'
         }`}></div>
         <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
           isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
@@ -104,14 +104,14 @@ const ITServices = memo(() => {
         <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <div className={`inline-flex items-center px-4 py-2 rounded-full backdrop-blur-sm border mb-6 ${
             isDark 
-              ? 'bg-blue-50/10 border-blue-200/20'
-              : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 border-blue-500/70 shadow-lg'
+              ? 'bg-purple-50/10 border-purple-200/20'
+              : 'bg-gradient-to-r from-purple-600/90 to-pink-600/90 border-purple-500/70 shadow-lg'
           }`}>
             <span className={`w-2 h-2 rounded-full mr-3 ${
-              isDark ? 'bg-blue-400' : 'bg-white'
+              isDark ? 'bg-purple-400' : 'bg-white'
             }`}></span>
             <span className={`text-sm font-medium ${
-              isDark ? 'text-blue-200' : 'text-white'
+              isDark ? 'text-purple-200' : 'text-white'
             }`}>
               {t('home.services.title')}
             </span>
@@ -119,7 +119,7 @@ const ITServices = memo(() => {
           <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-tight ${
             isDark 
               ? 'text-white'
-              : 'bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600'
+              : 'bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-600 to-pink-600'
           }`}>
             {t('home.services.subtitle')}
           </h2>
@@ -141,8 +141,8 @@ const ITServices = memo(() => {
                 <div 
                   className={`group backdrop-blur-lg border rounded-2xl p-4 sm:p-6 transition-all duration-300 cursor-pointer h-full ${
                     isDark 
-                      ? 'bg-white/5 border-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 hover:bg-white/10 hover:border-gradient-to-r hover:from-blue-400/50 hover:via-purple-400/50 hover:to-pink-400/50'
-                      : 'bg-white/20 border-gradient-to-r from-blue-500/40 via-purple-500/40 to-indigo-500/40 hover:bg-white/30 hover:border-gradient-to-r hover:from-blue-400/60 hover:via-purple-400/60 hover:to-indigo-400/60'
+                      ? 'bg-white/5 border-gradient-to-r from-purple-500/30 via-purple-500/30 to-pink-500/30 hover:bg-white/10 hover:border-gradient-to-r hover:from-purple-400/50 hover:via-purple-400/50 hover:to-pink-400/50'
+                      : 'bg-white/20 border-gradient-to-r from-purple-500/40 via-purple-500/40 to-pink-500/40 hover:bg-white/30 hover:border-gradient-to-r hover:from-purple-400/60 hover:via-purple-400/60 hover:to-pink-400/60'
                   }`}
                   style={{
                     background: isDark 
@@ -156,10 +156,10 @@ const ITServices = memo(() => {
                 <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 ${
                   isDark 
                     ? `bg-gradient-to-br ${colorClasses.split(' ')[0]} ${colorClasses.split(' ')[1]}`
-                    : 'bg-gradient-to-br from-blue-100 to-purple-100 group-hover:from-blue-200 group-hover:to-purple-200'
+                    : 'bg-gradient-to-br from-purple-100 to-pink-100 group-hover:from-purple-200 group-hover:to-pink-200'
                 }`}>
                   <IconComponent className={`w-7 h-7 ${
-                    isDark ? colorClasses.split(' ')[2] : 'text-blue-600'
+                    isDark ? colorClasses.split(' ')[2] : 'text-purple-600'
                   }`} />
               </div>
                 <h3 className={`text-lg sm:text-xl font-semibold mb-2 sm:mb-3 ${
@@ -171,7 +171,7 @@ const ITServices = memo(() => {
                   {service.description}
                 </p>
                 <div className={`inline-flex items-center text-xs font-medium ${
-                    isDark ? colorClasses.split(' ')[2] : 'text-blue-600'
+                    isDark ? colorClasses.split(' ')[2] : 'text-purple-600'
                   } hover:opacity-80 transition-opacity duration-300`}>
                   {t('home.services.software.learnMore')}
                   <ArrowRight className="w-3 h-3 ml-1" />
@@ -185,7 +185,7 @@ const ITServices = memo(() => {
         {/* CTA Section */}
         <div className="text-center">
          <Link href="/Services/web-development">
-            <button className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors duration-300 shadow-lg shadow-blue-600/25 w-full sm:w-auto">
+            <button className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl font-semibold transition-colors duration-300 shadow-lg shadow-purple-600/25 w-full sm:w-auto">
               <span>{t('home.services.exploreAll')}</span>
               <ArrowRight className="w-5 h-5" />
         </button>
