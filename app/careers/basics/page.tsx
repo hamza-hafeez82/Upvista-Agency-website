@@ -8,49 +8,52 @@ import Image from "next/image";
 import CareersHeader from "../components/CareersHeader";
 import CareersFooter from "../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../contexts/CareersLanguageContext";
 
 export default function BasicsPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
+  
   const basicSections = [
     {
-      title: "About Upvista Digital",
-      subtitle: "Upvista Digital in 3 minutes",
-      description: "We will explain Upvista Digital's philosophy, business, work, and working style in an easy-to-understand manner using symbolic numbers and keywords.",
+      title: t('careers.basics.about.title'),
+      subtitle: t('careers.basics.about.subtitle'),
+      description: t('careers.basics.about.description'),
       link: "/careers/basics/about",
       image: "/assets/upvista.png"
     },
     {
-      title: "Corporate Philosophy",
-      subtitle: "Our Mindset and Culture",
-      description: "We would like to introduce Upvista Digital's corporate philosophy, which consists of our purpose and five cultures.",
+      title: t('careers.basics.philosophy.title'),
+      subtitle: t('careers.basics.philosophy.subtitle'),
+      description: t('careers.basics.philosophy.description'),
       link: "/careers/basics/philosophy",
       image: "/assets/careers/basic/coporate.jpeg"
     },
     {
-      title: "Message from the CEO",
-      subtitle: "Warm words from Hamza Hafeez",
-      description: "We present an interview with CEO about the company's future strategies and thoughts on building the organization.",
+      title: t('careers.basics.ceo.title'),
+      subtitle: t('careers.basics.ceo.subtitle'),
+      description: t('careers.basics.ceo.description'),
       link: "/careers/basics/ceo-message",
       image: "/assets/careers/basic/hamza-pic.jpeg"
     },
     {
-      title: "What is important in recruitment",
-      subtitle: "Best practices for recruitment",
-      description: "We will explain the cultural fit that we value in recruitment and the indicators we use to measure that match.",
+      title: t('careers.basics.recruitment.title'),
+      subtitle: t('careers.basics.recruitment.subtitle'),
+      description: t('careers.basics.recruitment.description'),
       link: "/careers/basics/recruitment-importance",
       image: "/assets/careers/basic/job.jpeg"
     },
     {
-      title: "Hiring people with disabilities",
-      subtitle: "Hiring people with disabilities",
-      description: "We will be sharing information about Upvista Digital's approach to hiring people with disabilities, working styles, and systems.",
+      title: t('careers.basics.inclusive.title'),
+      subtitle: t('careers.basics.inclusive.subtitle'),
+      description: t('careers.basics.inclusive.description'),
       link: "/careers/basics/inclusive-hiring",
       image: "/assets/careers/basic/disabale.jpeg"
     },
     {
-      title: "New graduate recruitment",
-      subtitle: "Instructions for new graduates",
-      description: "We provide comprehensive programs, mentorship, and opportunities specifically designed for recent graduates to launch their careers.",
+      title: t('careers.basics.graduates.title'),
+      subtitle: t('careers.basics.graduates.subtitle'),
+      description: t('careers.basics.graduates.description'),
       link: "/careers/basics/new-graduates",
       image: "/assets/careers/basic/new.jpeg"
     }
@@ -118,10 +121,10 @@ export default function BasicsPage() {
             className="text-center mb-16"
           >
             <h1 className={`text-4xl md:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              Learn the Basics
+              {t('careers.basics.hero.title')}
             </h1>
             <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-              Discover what makes Upvista Digital a unique place to build your career.
+              {t('careers.basics.hero.subtitle')}
             </p>
           </motion.div>
 
@@ -191,18 +194,18 @@ export default function BasicsPage() {
               <h3 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}>
-                Upvista Digital is waiting for you
+                {t('careers.basics.cta.title')}
               </h3>
               <p className={`text-base md:text-lg mb-6 md:mb-8 leading-relaxed ${
                 isDark ? 'text-gray-300' : 'text-gray-700'
               }`}>
-                Join Upvista Digital as a member and participate in projects that shape the future.<br className="hidden sm:block" />
-                We're looking for talented individuals who share our vision and passion for innovation.
+                {t('careers.basics.cta.description1')}<br className="hidden sm:block" />
+                {t('careers.basics.cta.description2')}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
                 <Link href="/careers/apply" className="w-full sm:w-auto">
                   <button className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm sm:text-base rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25">
-                    Job Openings & Applications
+                    {t('careers.basics.cta.applyButton')}
                   </button>
                 </Link>
                 <Link href="/careers/jobs" className="w-full sm:w-auto">
@@ -211,7 +214,7 @@ export default function BasicsPage() {
                       ? 'bg-white/10 text-white hover:bg-white/20 border border-white/20' 
                       : 'bg-gray-900/10 text-gray-900 hover:bg-gray-900/20 border border-gray-900/20'
                   }`}>
-                    Learn About Jobs
+                    {t('careers.basics.cta.jobsButton')}
                   </button>
                 </Link>
               </div>

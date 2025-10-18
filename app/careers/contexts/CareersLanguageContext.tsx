@@ -187,6 +187,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': 'Explore our open positions and start your journey with Upvista Digital today.',
     'careers.page.cta.viewJobsButton': 'View Job Openings',
     'careers.page.cta.eventsButton': 'Recruitment Events',
+    
+    // Basics Page
+    'careers.basics.hero.title': 'Learn the Basics',
+    'careers.basics.hero.subtitle': 'Discover what makes Upvista Digital a unique place to build your career.',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'About Upvista Digital',
+    'careers.basics.about.subtitle': 'Upvista Digital in 3 minutes',
+    'careers.basics.about.description': 'We will explain Upvista Digital\'s philosophy, business, work, and working style in an easy-to-understand manner using symbolic numbers and keywords.',
+    
+    'careers.basics.philosophy.title': 'Corporate Philosophy',
+    'careers.basics.philosophy.subtitle': 'Our Mindset and Culture',
+    'careers.basics.philosophy.description': 'We would like to introduce Upvista Digital\'s corporate philosophy, which consists of our purpose and five cultures.',
+    
+    'careers.basics.ceo.title': 'Message from the CEO',
+    'careers.basics.ceo.subtitle': 'Warm words from Hamza Hafeez',
+    'careers.basics.ceo.description': 'We present an interview with CEO about the company\'s future strategies and thoughts on building the organization.',
+    
+    'careers.basics.recruitment.title': 'What is important in recruitment',
+    'careers.basics.recruitment.subtitle': 'Best practices for recruitment',
+    'careers.basics.recruitment.description': 'We will explain the cultural fit that we value in recruitment and the indicators we use to measure that match.',
+    
+    'careers.basics.inclusive.title': 'Hiring people with disabilities',
+    'careers.basics.inclusive.subtitle': 'Hiring people with disabilities',
+    'careers.basics.inclusive.description': 'We will be sharing information about Upvista Digital\'s approach to hiring people with disabilities, working styles, and systems.',
+    
+    'careers.basics.graduates.title': 'New graduate recruitment',
+    'careers.basics.graduates.subtitle': 'Instructions for new graduates',
+    'careers.basics.graduates.description': 'We provide comprehensive programs, mentorship, and opportunities specifically designed for recent graduates to launch their careers.',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital is waiting for you',
+    'careers.basics.cta.description1': 'Join Upvista Digital as a member and participate in projects that shape the future.',
+    'careers.basics.cta.description2': 'We\'re looking for talented individuals who share our vision and passion for innovation.',
+    'careers.basics.cta.applyButton': 'Job Openings & Applications',
+    'careers.basics.cta.jobsButton': 'Learn About Jobs',
   },
   JA: {
     // Header Navigation
@@ -362,6 +398,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': '募集ポジションを探索し、今日からUpvista Digitalでのあなたの旅を始めましょう。',
     'careers.page.cta.viewJobsButton': '求人を見る',
     'careers.page.cta.eventsButton': '採用イベント',
+    
+    // Basics Page
+    'careers.basics.hero.title': '基本を学ぶ',
+    'careers.basics.hero.subtitle': 'Upvista Digitalがキャリアを築くユニークな場所である理由を発見してください。',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'Upvista Digitalについて',
+    'careers.basics.about.subtitle': 'Upvista Digitalを3分で',
+    'careers.basics.about.description': 'シンボリックな数字とキーワードを使って、Upvista Digitalの哲学、ビジネス、仕事、働き方をわかりやすく説明します。',
+    
+    'careers.basics.philosophy.title': '企業理念',
+    'careers.basics.philosophy.subtitle': '私たちのマインドセットと文化',
+    'careers.basics.philosophy.description': '私たちの目的と5つの文化から成るUpvista Digitalの企業理念を紹介します。',
+    
+    'careers.basics.ceo.title': 'CEOからのメッセージ',
+    'careers.basics.ceo.subtitle': 'Hamza Hafeezからの温かい言葉',
+    'careers.basics.ceo.description': '会社の将来戦略と組織構築についての考えについて、CEOとのインタビューをご紹介します。',
+    
+    'careers.basics.recruitment.title': '採用で重要なこと',
+    'careers.basics.recruitment.subtitle': '採用のベストプラクティス',
+    'careers.basics.recruitment.description': '採用で重視する文化的適合性と、そのマッチングを測定するために使用する指標について説明します。',
+    
+    'careers.basics.inclusive.title': '障害者の採用',
+    'careers.basics.inclusive.subtitle': '障害者の採用',
+    'careers.basics.inclusive.description': 'Upvista Digitalの障害者採用へのアプローチ、働き方、システムについての情報を共有します。',
+    
+    'careers.basics.graduates.title': '新卒採用',
+    'careers.basics.graduates.subtitle': '新卒者向けの案内',
+    'careers.basics.graduates.description': '新卒者がキャリアをスタートするために特別に設計された包括的なプログラム、メンターシップ、機会を提供します。',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digitalがあなたを待っています',
+    'careers.basics.cta.description1': 'Upvista Digitalのメンバーとして参加し、未来を形作るプロジェクトに参加してください。',
+    'careers.basics.cta.description2': '私たちのビジョンと革新への情熱を共有する才能ある個人を探しています。',
+    'careers.basics.cta.applyButton': '求人情報と応募',
+    'careers.basics.cta.jobsButton': '仕事について学ぶ',
   },
   AR: {
     // Header Navigation
@@ -537,6 +609,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': 'استكشف مناصبنا المفتوحة وابدأ رحلتك مع Upvista Digital اليوم.',
     'careers.page.cta.viewJobsButton': 'عرض الوظائف الشاغرة',
     'careers.page.cta.eventsButton': 'فعاليات التوظيف',
+    
+    // Basics Page
+    'careers.basics.hero.title': 'تعلم الأساسيات',
+    'careers.basics.hero.subtitle': 'اكتشف ما يجعل Upvista Digital مكانًا فريدًا لبناء مسيرتك المهنية.',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'حول Upvista Digital',
+    'careers.basics.about.subtitle': 'Upvista Digital في 3 دقائق',
+    'careers.basics.about.description': 'سنشرح فلسفة وأعمال وعمل وأسلوب عمل Upvista Digital بطريقة سهلة الفهم باستخدام أرقام ومصطلحات رمزية.',
+    
+    'careers.basics.philosophy.title': 'فلسفة الشركة',
+    'careers.basics.philosophy.subtitle': 'عقليتنا وثقافتنا',
+    'careers.basics.philosophy.description': 'نود أن نقدم فلسفة Upvista Digital للشركات، والتي تتكون من هدفنا وخمس ثقافات.',
+    
+    'careers.basics.ceo.title': 'رسالة من الرئيس التنفيذي',
+    'careers.basics.ceo.subtitle': 'كلمات دافئة من حمزة حفيظ',
+    'careers.basics.ceo.description': 'نقدم مقابلة مع الرئيس التنفيذي حول استراتيجيات الشركة المستقبلية والأفكار حول بناء المنظمة.',
+    
+    'careers.basics.recruitment.title': 'ما هو مهم في التوظيف',
+    'careers.basics.recruitment.subtitle': 'أفضل ممارسات التوظيف',
+    'careers.basics.recruitment.description': 'سنشرح التوافق الثقافي الذي نقدره في التوظيف والمؤشرات التي نستخدمها لقياس ذلك التطابق.',
+    
+    'careers.basics.inclusive.title': 'توظيف الأشخاص ذوي الإعاقة',
+    'careers.basics.inclusive.subtitle': 'توظيف الأشخاص ذوي الإعاقة',
+    'careers.basics.inclusive.description': 'سنشارك معلومات حول نهج Upvista Digital لتوظيف الأشخاص ذوي الإعاقة وأساليب العمل والأنظمة.',
+    
+    'careers.basics.graduates.title': 'توظيف الخريجين الجدد',
+    'careers.basics.graduates.subtitle': 'تعليمات للخريجين الجدد',
+    'careers.basics.graduates.description': 'نقدم برامج شاملة وإرشادًا وفرصًا مصممة خصيصًا للخريجين الجدد لإطلاق حياتهم المهنية.',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital في انتظارك',
+    'careers.basics.cta.description1': 'انضم إلى Upvista Digital كعضو وشارك في مشاريع تشكل المستقبل.',
+    'careers.basics.cta.description2': 'نحن نبحث عن أفراد موهوبين يشاركوننا رؤيتنا وشغفنا بالابتكار.',
+    'careers.basics.cta.applyButton': 'الوظائف الشاغرة والتطبيقات',
+    'careers.basics.cta.jobsButton': 'تعرف على الوظائف',
   },
   KO: {
     // Header Navigation
@@ -712,6 +820,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': '오픈 포지션을 탐색하고 오늘 Upvista Digital과 함께 여정을 시작하세요.',
     'careers.page.cta.viewJobsButton': '채용 공고 보기',
     'careers.page.cta.eventsButton': '채용 이벤트',
+    
+    // Basics Page
+    'careers.basics.hero.title': '기본 배우기',
+    'careers.basics.hero.subtitle': 'Upvista Digital이 경력을 쌓기에 독특한 장소인 이유를 알아보세요.',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'Upvista Digital 소개',
+    'careers.basics.about.subtitle': '3분 안에 Upvista Digital',
+    'careers.basics.about.description': '상징적인 숫자와 키워드를 사용하여 Upvista Digital의 철학, 비즈니스, 업무 및 업무 스타일을 이해하기 쉽게 설명합니다.',
+    
+    'careers.basics.philosophy.title': '기업 철학',
+    'careers.basics.philosophy.subtitle': '우리의 마인드셋과 문화',
+    'careers.basics.philosophy.description': '우리의 목적과 5가지 문화로 구성된 Upvista Digital의 기업 철학을 소개합니다.',
+    
+    'careers.basics.ceo.title': 'CEO 메시지',
+    'careers.basics.ceo.subtitle': 'Hamza Hafeez의 따뜻한 말씀',
+    'careers.basics.ceo.description': '회사의 미래 전략과 조직 구축에 대한 생각에 대한 CEO 인터뷰를 제공합니다.',
+    
+    'careers.basics.recruitment.title': '채용에서 중요한 것',
+    'careers.basics.recruitment.subtitle': '채용 모범 사례',
+    'careers.basics.recruitment.description': '채용에서 중요하게 생각하는 문화적 적합성과 그 일치를 측정하기 위해 사용하는 지표를 설명합니다.',
+    
+    'careers.basics.inclusive.title': '장애인 채용',
+    'careers.basics.inclusive.subtitle': '장애인 채용',
+    'careers.basics.inclusive.description': 'Upvista Digital의 장애인 채용 접근 방식, 근무 스타일 및 시스템에 대한 정보를 공유합니다.',
+    
+    'careers.basics.graduates.title': '신입 채용',
+    'careers.basics.graduates.subtitle': '신입생을 위한 안내',
+    'careers.basics.graduates.description': '최근 졸업생이 경력을 시작할 수 있도록 특별히 설계된 포괄적인 프로그램, 멘토십 및 기회를 제공합니다.',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital이 당신을 기다리고 있습니다',
+    'careers.basics.cta.description1': 'Upvista Digital의 멤버로 참여하고 미래를 형성하는 프로젝트에 참여하세요.',
+    'careers.basics.cta.description2': '우리의 비전과 혁신에 대한 열정을 공유하는 재능 있는 개인을 찾고 있습니다.',
+    'careers.basics.cta.applyButton': '채용 공고 및 지원',
+    'careers.basics.cta.jobsButton': '직무 알아보기',
   },
   ZH: {
     // Header Navigation
@@ -887,6 +1031,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': '探索我们的职位空缺，今天就开始您在Upvista Digital的旅程。',
     'careers.page.cta.viewJobsButton': '查看职位空缺',
     'careers.page.cta.eventsButton': '招聘活动',
+    
+    // Basics Page
+    'careers.basics.hero.title': '学习基础知识',
+    'careers.basics.hero.subtitle': '了解是什么让Upvista Digital成为您职业发展的独特之地。',
+    
+    // Basics Sections
+    'careers.basics.about.title': '关于Upvista Digital',
+    'careers.basics.about.subtitle': '3分钟了解Upvista Digital',
+    'careers.basics.about.description': '我们将使用象征性的数字和关键词，以易于理解的方式解释Upvista Digital的理念、业务、工作和工作方式。',
+    
+    'careers.basics.philosophy.title': '企业理念',
+    'careers.basics.philosophy.subtitle': '我们的思维方式和文化',
+    'careers.basics.philosophy.description': '我们想介绍Upvista Digital的企业理念，它由我们的目标和五种文化组成。',
+    
+    'careers.basics.ceo.title': 'CEO致辞',
+    'careers.basics.ceo.subtitle': 'Hamza Hafeez的温馨话语',
+    'careers.basics.ceo.description': '我们介绍与CEO关于公司未来战略和建设组织的想法的访谈。',
+    
+    'careers.basics.recruitment.title': '招聘中的重要事项',
+    'careers.basics.recruitment.subtitle': '招聘最佳实践',
+    'careers.basics.recruitment.description': '我们将解释我们在招聘中重视的文化契合度以及我们用来衡量该匹配度的指标。',
+    
+    'careers.basics.inclusive.title': '残疾人招聘',
+    'careers.basics.inclusive.subtitle': '残疾人招聘',
+    'careers.basics.inclusive.description': '我们将分享有关Upvista Digital招聘残疾人的方法、工作方式和系统的信息。',
+    
+    'careers.basics.graduates.title': '应届毕业生招聘',
+    'careers.basics.graduates.subtitle': '新毕业生指南',
+    'careers.basics.graduates.description': '我们提供专门为应届毕业生设计的全面计划、导师制和机会，帮助他们开启职业生涯。',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital在等你',
+    'careers.basics.cta.description1': '作为成员加入Upvista Digital，参与塑造未来的项目。',
+    'careers.basics.cta.description2': '我们正在寻找与我们共享愿景和创新热情的有才华的个人。',
+    'careers.basics.cta.applyButton': '职位空缺与申请',
+    'careers.basics.cta.jobsButton': '了解工作',
   },
   ID: {
     // Header Navigation
@@ -1062,6 +1242,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': 'Jelajahi posisi terbuka kami dan mulai perjalanan Anda dengan Upvista Digital hari ini.',
     'careers.page.cta.viewJobsButton': 'Lihat Lowongan Pekerjaan',
     'careers.page.cta.eventsButton': 'Acara Rekrutmen',
+    
+    // Basics Page
+    'careers.basics.hero.title': 'Pelajari Dasar-dasar',
+    'careers.basics.hero.subtitle': 'Temukan apa yang membuat Upvista Digital tempat unik untuk membangun karir Anda.',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'Tentang Upvista Digital',
+    'careers.basics.about.subtitle': 'Upvista Digital dalam 3 menit',
+    'careers.basics.about.description': 'Kami akan menjelaskan filosofi, bisnis, pekerjaan, dan gaya kerja Upvista Digital dengan cara yang mudah dipahami menggunakan angka dan kata kunci simbolis.',
+    
+    'careers.basics.philosophy.title': 'Filosofi Perusahaan',
+    'careers.basics.philosophy.subtitle': 'Pola Pikir dan Budaya Kami',
+    'careers.basics.philosophy.description': 'Kami ingin memperkenalkan filosofi perusahaan Upvista Digital, yang terdiri dari tujuan kami dan lima budaya.',
+    
+    'careers.basics.ceo.title': 'Pesan dari CEO',
+    'careers.basics.ceo.subtitle': 'Kata-kata hangat dari Hamza Hafeez',
+    'careers.basics.ceo.description': 'Kami menyajikan wawancara dengan CEO tentang strategi masa depan perusahaan dan pemikiran tentang membangun organisasi.',
+    
+    'careers.basics.recruitment.title': 'Apa yang penting dalam rekrutmen',
+    'careers.basics.recruitment.subtitle': 'Praktik terbaik untuk rekrutmen',
+    'careers.basics.recruitment.description': 'Kami akan menjelaskan kesesuaian budaya yang kami hargai dalam rekrutmen dan indikator yang kami gunakan untuk mengukur kecocokan tersebut.',
+    
+    'careers.basics.inclusive.title': 'Merekrut penyandang disabilitas',
+    'careers.basics.inclusive.subtitle': 'Merekrut penyandang disabilitas',
+    'careers.basics.inclusive.description': 'Kami akan membagikan informasi tentang pendekatan Upvista Digital terhadap perekrutan penyandang disabilitas, gaya kerja, dan sistem.',
+    
+    'careers.basics.graduates.title': 'Rekrutmen lulusan baru',
+    'careers.basics.graduates.subtitle': 'Instruksi untuk lulusan baru',
+    'careers.basics.graduates.description': 'Kami menyediakan program komprehensif, bimbingan, dan peluang yang dirancang khusus untuk lulusan baru untuk memulai karir mereka.',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital menunggu Anda',
+    'careers.basics.cta.description1': 'Bergabunglah dengan Upvista Digital sebagai anggota dan berpartisipasi dalam proyek yang membentuk masa depan.',
+    'careers.basics.cta.description2': 'Kami mencari individu berbakat yang berbagi visi dan semangat kami untuk inovasi.',
+    'careers.basics.cta.applyButton': 'Lowongan & Aplikasi Pekerjaan',
+    'careers.basics.cta.jobsButton': 'Pelajari Pekerjaan',
   },
   FR: {
     // Header Navigation
@@ -1237,6 +1453,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': 'Explorez nos postes ouverts et commencez votre parcours avec Upvista Digital aujourd\'hui.',
     'careers.page.cta.viewJobsButton': 'Voir les offres d\'emploi',
     'careers.page.cta.eventsButton': 'Événements de recrutement',
+    
+    // Basics Page
+    'careers.basics.hero.title': 'Apprendre les bases',
+    'careers.basics.hero.subtitle': 'Découvrez ce qui fait d\'Upvista Digital un endroit unique pour construire votre carrière.',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'À propos d\'Upvista Digital',
+    'careers.basics.about.subtitle': 'Upvista Digital en 3 minutes',
+    'careers.basics.about.description': 'Nous expliquerons la philosophie, les affaires, le travail et le style de travail d\'Upvista Digital de manière facile à comprendre en utilisant des chiffres et des mots-clés symboliques.',
+    
+    'careers.basics.philosophy.title': 'Philosophie d\'entreprise',
+    'careers.basics.philosophy.subtitle': 'Notre état d\'esprit et notre culture',
+    'careers.basics.philosophy.description': 'Nous aimerions présenter la philosophie d\'entreprise d\'Upvista Digital, qui se compose de notre objectif et de cinq cultures.',
+    
+    'careers.basics.ceo.title': 'Message du PDG',
+    'careers.basics.ceo.subtitle': 'Mots chaleureux de Hamza Hafeez',
+    'careers.basics.ceo.description': 'Nous présentons une interview avec le PDG sur les stratégies futures de l\'entreprise et les réflexions sur la construction de l\'organisation.',
+    
+    'careers.basics.recruitment.title': 'Ce qui est important dans le recrutement',
+    'careers.basics.recruitment.subtitle': 'Meilleures pratiques de recrutement',
+    'careers.basics.recruitment.description': 'Nous expliquerons l\'adéquation culturelle que nous valorisons dans le recrutement et les indicateurs que nous utilisons pour mesurer cette correspondance.',
+    
+    'careers.basics.inclusive.title': 'Embauche de personnes handicapées',
+    'careers.basics.inclusive.subtitle': 'Embauche de personnes handicapées',
+    'careers.basics.inclusive.description': 'Nous partagerons des informations sur l\'approche d\'Upvista Digital en matière d\'embauche de personnes handicapées, les styles de travail et les systèmes.',
+    
+    'careers.basics.graduates.title': 'Recrutement de nouveaux diplômés',
+    'careers.basics.graduates.subtitle': 'Instructions pour les nouveaux diplômés',
+    'careers.basics.graduates.description': 'Nous proposons des programmes complets, du mentorat et des opportunités spécialement conçus pour les nouveaux diplômés afin de lancer leur carrière.',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital vous attend',
+    'careers.basics.cta.description1': 'Rejoignez Upvista Digital en tant que membre et participez à des projets qui façonnent l\'avenir.',
+    'careers.basics.cta.description2': 'Nous recherchons des personnes talentueuses qui partagent notre vision et notre passion pour l\'innovation.',
+    'careers.basics.cta.applyButton': 'Offres d\'emploi et candidatures',
+    'careers.basics.cta.jobsButton': 'En savoir plus sur les emplois',
   },
   ES: {
     // Header Navigation
@@ -1412,6 +1664,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': 'Explore nuestras posiciones abiertas y comience su viaje con Upvista Digital hoy.',
     'careers.page.cta.viewJobsButton': 'Ver ofertas de empleo',
     'careers.page.cta.eventsButton': 'Eventos de reclutamiento',
+    
+    // Basics Page
+    'careers.basics.hero.title': 'Aprender lo básico',
+    'careers.basics.hero.subtitle': 'Descubra qué hace de Upvista Digital un lugar único para construir su carrera.',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'Acerca de Upvista Digital',
+    'careers.basics.about.subtitle': 'Upvista Digital en 3 minutos',
+    'careers.basics.about.description': 'Explicaremos la filosofía, el negocio, el trabajo y el estilo de trabajo de Upvista Digital de manera fácil de entender utilizando números y palabras clave simbólicas.',
+    
+    'careers.basics.philosophy.title': 'Filosofía corporativa',
+    'careers.basics.philosophy.subtitle': 'Nuestra mentalidad y cultura',
+    'careers.basics.philosophy.description': 'Nos gustaría presentar la filosofía corporativa de Upvista Digital, que consiste en nuestro propósito y cinco culturas.',
+    
+    'careers.basics.ceo.title': 'Mensaje del CEO',
+    'careers.basics.ceo.subtitle': 'Palabras cálidas de Hamza Hafeez',
+    'careers.basics.ceo.description': 'Presentamos una entrevista con el CEO sobre las estrategias futuras de la empresa y los pensamientos sobre la construcción de la organización.',
+    
+    'careers.basics.recruitment.title': 'Lo que es importante en el reclutamiento',
+    'careers.basics.recruitment.subtitle': 'Mejores prácticas para el reclutamiento',
+    'careers.basics.recruitment.description': 'Explicaremos el ajuste cultural que valoramos en el reclutamiento y los indicadores que utilizamos para medir ese ajuste.',
+    
+    'careers.basics.inclusive.title': 'Contratación de personas con discapacidad',
+    'careers.basics.inclusive.subtitle': 'Contratación de personas con discapacidad',
+    'careers.basics.inclusive.description': 'Compartiremos información sobre el enfoque de Upvista Digital para contratar personas con discapacidad, estilos de trabajo y sistemas.',
+    
+    'careers.basics.graduates.title': 'Reclutamiento de nuevos graduados',
+    'careers.basics.graduates.subtitle': 'Instrucciones para nuevos graduados',
+    'careers.basics.graduates.description': 'Proporcionamos programas integrales, mentoría y oportunidades diseñadas específicamente para graduados recientes para lanzar sus carreras.',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital te está esperando',
+    'careers.basics.cta.description1': 'Únete a Upvista Digital como miembro y participa en proyectos que dan forma al futuro.',
+    'careers.basics.cta.description2': 'Buscamos individuos talentosos que compartan nuestra visión y pasión por la innovación.',
+    'careers.basics.cta.applyButton': 'Ofertas de empleo y solicitudes',
+    'careers.basics.cta.jobsButton': 'Conocer los trabajos',
   },
   TR: {
     // Header Navigation
@@ -1587,6 +1875,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': 'Açık pozisyonlarımızı keşfedin ve bugün Upvista Digital ile yolculuğunuza başlayın.',
     'careers.page.cta.viewJobsButton': 'İş İlanlarını Görüntüle',
     'careers.page.cta.eventsButton': 'İşe Alım Etkinlikleri',
+    
+    // Basics Page
+    'careers.basics.hero.title': 'Temelleri Öğren',
+    'careers.basics.hero.subtitle': 'Upvista Digital\'ı kariyerinizi inşa etmek için benzersiz bir yer yapan şeyi keşfedin.',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'Upvista Digital Hakkında',
+    'careers.basics.about.subtitle': '3 dakikada Upvista Digital',
+    'careers.basics.about.description': 'Sembolik sayılar ve anahtar kelimeler kullanarak Upvista Digital\'ın felsefesini, işini, çalışmasını ve çalışma tarzını anlaşılır bir şekilde açıklayacağız.',
+    
+    'careers.basics.philosophy.title': 'Kurumsal Felsefe',
+    'careers.basics.philosophy.subtitle': 'Zihniyetimiz ve Kültürümüz',
+    'careers.basics.philosophy.description': 'Amacımız ve beş kültürden oluşan Upvista Digital\'ın kurumsal felsefesini tanıtmak istiyoruz.',
+    
+    'careers.basics.ceo.title': 'CEO\'dan Mesaj',
+    'careers.basics.ceo.subtitle': 'Hamza Hafeez\'den sıcak sözler',
+    'careers.basics.ceo.description': 'Şirketin gelecek stratejileri ve organizasyon inşası hakkındaki düşünceler hakkında CEO ile bir röportaj sunuyoruz.',
+    
+    'careers.basics.recruitment.title': 'İşe alımda önemli olan',
+    'careers.basics.recruitment.subtitle': 'İşe alım için en iyi uygulamalar',
+    'careers.basics.recruitment.description': 'İşe alımda değer verdiğimiz kültürel uyumu ve bu eşleşmeyi ölçmek için kullandığımız göstergeleri açıklayacağız.',
+    
+    'careers.basics.inclusive.title': 'Engelli kişileri işe alma',
+    'careers.basics.inclusive.subtitle': 'Engelli kişileri işe alma',
+    'careers.basics.inclusive.description': 'Upvista Digital\'ın engelli kişileri işe alma yaklaşımı, çalışma stilleri ve sistemleri hakkında bilgi paylaşacağız.',
+    
+    'careers.basics.graduates.title': 'Yeni mezun işe alımı',
+    'careers.basics.graduates.subtitle': 'Yeni mezunlar için talimatlar',
+    'careers.basics.graduates.description': 'Yeni mezunların kariyerlerine başlamaları için özel olarak tasarlanmış kapsamlı programlar, mentorluk ve fırsatlar sağlıyoruz.',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital sizi bekliyor',
+    'careers.basics.cta.description1': 'Upvista Digital\'a üye olarak katılın ve geleceği şekillendiren projelere katılın.',
+    'careers.basics.cta.description2': 'Vizyonumuzu ve inovasyon tutkumuzu paylaşan yetenekli bireyler arıyoruz.',
+    'careers.basics.cta.applyButton': 'İş İlanları ve Başvurular',
+    'careers.basics.cta.jobsButton': 'İşler Hakkında Bilgi Edin',
   },
   UR: {
     // Header Navigation
@@ -1762,6 +2086,42 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.page.cta.description2': 'ہماری کھلی پوزیشنوں کو دریافت کریں اور آج Upvista Digital کے ساتھ اپنا سفر شروع کریں۔',
     'careers.page.cta.viewJobsButton': 'ملازمت کی خالی جگہیں دیکھیں',
     'careers.page.cta.eventsButton': 'بھرتی کے واقعات',
+    
+    // Basics Page
+    'careers.basics.hero.title': 'بنیادی باتیں سیکھیں',
+    'careers.basics.hero.subtitle': 'دریافت کریں کہ Upvista Digital کو آپ کے کیریئر کی تعمیر کے لیے ایک منفرد جگہ کیا بناتا ہے۔',
+    
+    // Basics Sections
+    'careers.basics.about.title': 'Upvista Digital کے بارے میں',
+    'careers.basics.about.subtitle': '3 منٹ میں Upvista Digital',
+    'careers.basics.about.description': 'ہم علامتی اعداد اور کلیدی الفاظ استعمال کرتے ہوئے Upvista Digital کے فلسفے، کاروبار، کام، اور کام کرنے کے انداز کو سمجھنے میں آسان طریقے سے بیان کریں گے۔',
+    
+    'careers.basics.philosophy.title': 'کارپوریٹ فلسفہ',
+    'careers.basics.philosophy.subtitle': 'ہماری سوچ اور ثقافت',
+    'careers.basics.philosophy.description': 'ہم Upvista Digital کے کارپوریٹ فلسفے کو متعارف کرانا چاہیں گے، جو ہمارے مقصد اور پانچ ثقافتوں پر مشتمل ہے۔',
+    
+    'careers.basics.ceo.title': 'CEO کا پیغام',
+    'careers.basics.ceo.subtitle': 'حمزہ حفیظ کے گرم جوش الفاظ',
+    'careers.basics.ceo.description': 'ہم کمپنی کی مستقبل کی حکمت عملیوں اور تنظیم کی تعمیر کے بارے میں خیالات کے بارے میں CEO کے ساتھ ایک انٹرویو پیش کرتے ہیں۔',
+    
+    'careers.basics.recruitment.title': 'بھرتی میں کیا اہم ہے',
+    'careers.basics.recruitment.subtitle': 'بھرتی کے لیے بہترین طریقے',
+    'careers.basics.recruitment.description': 'ہم ثقافتی مطابقت کی وضاحت کریں گے جسے ہم بھرتی میں اہمیت دیتے ہیں اور وہ اشارے جو ہم اس مماثلت کو ماپنے کے لیے استعمال کرتے ہیں۔',
+    
+    'careers.basics.inclusive.title': 'معذور افراد کی بھرتی',
+    'careers.basics.inclusive.subtitle': 'معذور افراد کی بھرتی',
+    'careers.basics.inclusive.description': 'ہم معذور افراد کی بھرتی، کام کرنے کے انداز، اور نظام کے بارے میں Upvista Digital کے نقطہ نظر کے بارے میں معلومات شیئر کریں گے۔',
+    
+    'careers.basics.graduates.title': 'نئے گریجویٹ کی بھرتی',
+    'careers.basics.graduates.subtitle': 'نئے گریجویٹس کے لیے ہدایات',
+    'careers.basics.graduates.description': 'ہم نئے گریجویٹس کے لیے خاص طور پر ڈیزائن کیے گئے جامع پروگرام، رہنمائی، اور مواقع فراہم کرتے ہیں تاکہ وہ اپنے کیریئر کا آغاز کر سکیں۔',
+    
+    // Basics CTA
+    'careers.basics.cta.title': 'Upvista Digital آپ کا انتظار کر رہا ہے',
+    'careers.basics.cta.description1': 'Upvista Digital کے ممبر کے طور پر شامل ہوں اور ایسے منصوبوں میں حصہ لیں جو مستقبل کی تشکیل کرتے ہیں۔',
+    'careers.basics.cta.description2': 'ہم ایسے باصلاحیت افراد کی تلاش میں ہیں جو ہمارے وژن اور جدت کے جذبے کو شیئر کرتے ہیں۔',
+    'careers.basics.cta.applyButton': 'ملازمت کی خالی جگہیں اور درخواستیں',
+    'careers.basics.cta.jobsButton': 'ملازمتوں کے بارے میں جانیں',
   },
 };
 
