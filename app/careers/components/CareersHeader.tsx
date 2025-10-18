@@ -197,37 +197,58 @@ export default function CareersHeader() {
         </div>
       </div>
 
-      {/* SIMPLE Mobile Menu - NO PORTALS */}
-      {mobileMenuOpen && (
-        <>
-          {/* Overlay */}
-          <div 
-            className="fixed inset-0 bg-black/60 z-[999999] md:hidden"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          
-          {/* Sidebar */}
-          <div 
-            className={`fixed top-0 right-0 h-full w-80 z-[9999999] md:hidden ${
-              isDark ? 'bg-black' : 'bg-white'
-            }`}
-            style={{ 
-              transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(100%)',
-              transition: 'transform 0.3s ease-in-out'
-            }}
-          >
-            {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+      {/* BEAUTIFUL Mobile Menu with Smooth Transitions */}
+      <>
+        {/* Overlay with Fade Animation */}
+        <div 
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[999999] md:hidden transition-opacity duration-300 ${
+            mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+        
+        {/* Sidebar with Slide Animation */}
+        <div 
+          className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] z-[9999999] md:hidden shadow-2xl transition-transform duration-500 ease-out ${
+            isDark 
+              ? 'bg-gradient-to-b from-black via-black to-gray-900 border-l border-purple-500/20' 
+              : 'bg-gradient-to-b from-white via-gray-50 to-gray-100 border-l border-blue-500/20'
+          } ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        >
+          <div className="flex flex-col h-full">
+            {/* Header with Close Button */}
+            <div className={`flex items-center justify-between p-5 border-b transition-colors duration-300 ${
+              isDark ? 'border-purple-500/20 bg-black/50' : 'border-blue-500/20 bg-white/50'
+            }`}>
               <div className="flex items-center space-x-3">
-                <Image src="/u.png" alt="Logo" width={32} height={32} />
+                <div className="relative w-10 h-10">
+                  <div className={`absolute inset-0 rounded-lg blur-sm opacity-70 ${
+                    isDark ? 'bg-gradient-to-r from-indigo-500 to-purple-500' : 'bg-gradient-to-r from-blue-600 to-indigo-600'
+                  }`}></div>
+                  <div className={`relative rounded-lg p-0.5 w-full h-full flex items-center justify-center overflow-hidden ${
+                    isDark ? 'bg-black' : 'bg-white'
+                  }`}>
+                    <Image
+                      src="/u.png"
+                      alt="Company Logo"
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
                 <div>
-                  <h1 className={`font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h1>
-                  <p className={`text-xs ${isDark ? 'text-purple-400' : 'text-blue-600'}`}>Careers</p>
+                  <h1 className={`font-bold text-base ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista</h1>
+                  <p className={`text-xs font-medium ${isDark ? 'text-purple-400' : 'text-blue-600'}`}>Careers Portal</p>
                 </div>
               </div>
               <button
                 onClick={() => setMobileMenuOpen(false)}
-                className={`p-2 ${isDark ? 'text-white' : 'text-gray-900'}`}
+                className={`p-2 rounded-lg transition-all duration-200 hover:scale-110 ${
+                  isDark 
+                    ? 'text-white/70 hover:text-white hover:bg-purple-500/20' 
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-blue-500/10'
+                }`}
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -235,34 +256,124 @@ export default function CareersHeader() {
               </button>
             </div>
 
-            {/* Navigation */}
-            <nav className="flex-1 py-6">
-              {careersNavItems.map((item) => (
+            {/* Navigation Links with Enhanced Styling */}
+            <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+              {careersNavItems.map((item, index) => (
                 <Link
                   key={item.key}
                   href={item.href}
                   target={item.key === 'main-site' ? '_blank' : undefined}
+                  rel={item.key === 'main-site' ? 'noopener noreferrer' : undefined}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block px-4 py-3 ${isDark ? 'text-white hover:bg-gray-800' : 'text-gray-700 hover:bg-gray-100'}`}
+                  className={`flex items-center justify-between px-4 py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] group ${
+                    isDark
+                      ? `text-white/90 hover:text-white hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-pink-600/20 ${
+                          pathname.startsWith(item.href) ? "bg-gradient-to-r from-purple-600/30 to-pink-600/30 font-semibold shadow-lg shadow-purple-500/20" : ""
+                        }`
+                      : `text-gray-700 hover:text-gray-900 hover:bg-gradient-to-r hover:from-blue-600/10 hover:to-indigo-600/10 ${
+                          pathname.startsWith(item.href) ? "bg-gradient-to-r from-blue-600/20 to-indigo-600/20 font-semibold shadow-lg shadow-blue-500/20" : ""
+                        }`
+                  }`}
+                  style={{
+                    animationDelay: `${index * 50}ms`,
+                    animation: mobileMenuOpen ? 'slideInFromRight 0.4s ease-out forwards' : 'none'
+                  }}
                 >
-                  {item.label}
+                  <span className="flex items-center gap-3">
+                    {item.key === 'main-site' ? (
+                      <svg
+                        className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        className="w-5 h-5 transition-transform duration-300 group-hover:scale-110"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+                    )}
+                    <span className="text-sm font-medium">{item.label}</span>
+                  </span>
+                  {item.key !== 'main-site' && (
+                    <ArrowRight className={`w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 ${
+                      isDark ? 'text-purple-400' : 'text-blue-600'
+                    }`} />
+                  )}
                 </Link>
               ))}
             </nav>
 
-            {/* Apply Button */}
-            <div className="p-4">
+            {/* Enhanced Apply Button */}
+            <div className={`p-4 border-t ${
+              isDark ? 'border-purple-500/20 bg-black/30' : 'border-blue-500/20 bg-white/30'
+            }`}>
               <Link
                 href="/careers/apply"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-lg text-center"
+                className={`block w-full px-5 py-4 text-white font-semibold rounded-xl text-center transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg relative overflow-hidden group ${
+                  isDark
+                    ? `bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-purple-500/50 ${
+                        pathname.startsWith('/careers/apply') ? "ring-2 ring-purple-400 ring-offset-2 ring-offset-black" : ""
+                      }`
+                    : `bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-purple-500/50 ${
+                        pathname.startsWith('/careers/apply') ? "ring-2 ring-purple-400 ring-offset-2 ring-offset-white" : ""
+                      }`
+                }`}
               >
-                Job Openings & Applications
+                <span className="relative flex items-center justify-center gap-2">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <span>Job Openings & Applications</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    />
+                  </svg>
+                </span>
+                {/* Shine effect */}
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
               </Link>
             </div>
           </div>
-        </>
-      )}
+        </div>
+      </>
     </>
   );
 }
