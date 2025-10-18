@@ -198,17 +198,17 @@ export default function CareersHeader() {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
 
       {/* Mobile Menu Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm backdrop-blur-md z-50 md:hidden transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm z-[70] md:hidden transform transition-transform duration-300 ease-in-out ${
           isDark 
-            ? 'bg-black/95 border-l border-purple-500/20' 
-            : 'bg-white/95 border-l border-blue-500/20'
+            ? 'bg-black border-l border-purple-500/20' 
+            : 'bg-white border-l border-blue-500/20'
         } ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex flex-col h-full">
