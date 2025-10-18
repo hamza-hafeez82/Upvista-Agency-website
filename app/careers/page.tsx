@@ -204,7 +204,7 @@ export default function CareersPage() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.95 }}
                             transition={{ duration: 0.2 }}
-                            className={`absolute bottom-full left-0 right-0 mb-1 backdrop-blur-lg border rounded-xl shadow-2xl z-[99999] max-h-64 overflow-hidden ${
+                            className={`absolute bottom-full left-0 right-0 mb-1 backdrop-blur-lg border rounded-xl shadow-2xl z-[9990] max-h-64 overflow-hidden ${
                               isDark 
                                 ? 'bg-black/98 border-purple-500/50 shadow-purple-500/30' 
                                 : 'bg-white/98 border-purple-500/30 shadow-purple-500/20'
