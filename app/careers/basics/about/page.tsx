@@ -7,9 +7,11 @@ import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../../contexts/CareersLanguageContext";
 
 export default function AboutPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   
   return (
     <>
@@ -37,7 +39,7 @@ export default function AboutPage() {
               }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Learn the Basics
+              {t('careers.about.back')}
             </Link>
           </div>
         </div>
@@ -52,12 +54,12 @@ export default function AboutPage() {
             className="text-center mb-24 relative z-20 pt-8 pb-12"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
-              About Upvista Digital
+              {t('careers.about.hero.title')}
             </h1>
             <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              A technology company at the forefront of digital innovation, empowering businesses through enterprise software, web development, AI automation, cloud solutions, and cutting-edge design.
+              {t('careers.about.hero.subtitle')}
             </p>
           </motion.div>
 
@@ -73,18 +75,13 @@ export default function AboutPage() {
               <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Who We Are</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.about.whoWeAre.title')}</h2>
                 <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p>
-                    Upvista Digital is a comprehensive technology company that bridges the gap between 
-                    innovation and implementation. We specialize in transforming complex business 
-                    challenges into elegant digital solutions that drive growth and efficiency.
+                    {t('careers.about.whoWeAre.paragraph1')}
                   </p>
                   <p>
-                    Our expertise spans across multiple technology domains, enabling us to provide 
-                    end-to-end solutions for enterprises of all sizes. From custom software development 
-                    to AI-powered automation, we help organizations navigate the digital landscape 
-                    with confidence and clarity.
+                    {t('careers.about.whoWeAre.paragraph2')}
                   </p>
                 </div>
               </div>
@@ -100,7 +97,7 @@ export default function AboutPage() {
               <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Core Services</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.about.services.title')}</h2>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                 {/* Enterprise Software Development */}
@@ -109,15 +106,15 @@ export default function AboutPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Enterprise Software Development</h3>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.services.enterprise.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Custom Application Development</p>
-                    <p>• Enterprise Resource Planning (ERP)</p>
-                    <p>• Customer Relationship Management (CRM)</p>
-                    <p>• Business Process Management</p>
-                    <p>• Database Design & Management</p>
-                    <p>• API Development & Integration</p>
-                    <p>• Legacy System Modernization</p>
+                    <p>• {t('careers.about.services.enterprise.item1')}</p>
+                    <p>• {t('careers.about.services.enterprise.item2')}</p>
+                    <p>• {t('careers.about.services.enterprise.item3')}</p>
+                    <p>• {t('careers.about.services.enterprise.item4')}</p>
+                    <p>• {t('careers.about.services.enterprise.item5')}</p>
+                    <p>• {t('careers.about.services.enterprise.item6')}</p>
+                    <p>• {t('careers.about.services.enterprise.item7')}</p>
                   </div>
                 </div>
 
@@ -127,15 +124,15 @@ export default function AboutPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Web Development</h3>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.services.web.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Frontend Development (React, Vue, Angular)</p>
-                    <p>• Backend Development (Node.js, Python, Java)</p>
-                    <p>• Full-Stack Web Applications</p>
-                    <p>• E-commerce Solutions</p>
-                    <p>• Progressive Web Apps (PWA)</p>
-                    <p>• Content Management Systems</p>
-                    <p>• Web Performance Optimization</p>
+                    <p>• {t('careers.about.services.web.item1')}</p>
+                    <p>• {t('careers.about.services.web.item2')}</p>
+                    <p>• {t('careers.about.services.web.item3')}</p>
+                    <p>• {t('careers.about.services.web.item4')}</p>
+                    <p>• {t('careers.about.services.web.item5')}</p>
+                    <p>• {t('careers.about.services.web.item6')}</p>
+                    <p>• {t('careers.about.services.web.item7')}</p>
                   </div>
                 </div>
 
@@ -145,15 +142,15 @@ export default function AboutPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>AI and Automation</h3>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.services.ai.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Machine Learning Solutions</p>
-                    <p>• Natural Language Processing</p>
-                    <p>• Computer Vision Applications</p>
-                    <p>• Robotic Process Automation (RPA)</p>
-                    <p>• Predictive Analytics</p>
-                    <p>• Intelligent Chatbots</p>
-                    <p>• AI-powered Business Intelligence</p>
+                    <p>• {t('careers.about.services.ai.item1')}</p>
+                    <p>• {t('careers.about.services.ai.item2')}</p>
+                    <p>• {t('careers.about.services.ai.item3')}</p>
+                    <p>• {t('careers.about.services.ai.item4')}</p>
+                    <p>• {t('careers.about.services.ai.item5')}</p>
+                    <p>• {t('careers.about.services.ai.item6')}</p>
+                    <p>• {t('careers.about.services.ai.item7')}</p>
                   </div>
                 </div>
 
@@ -163,15 +160,15 @@ export default function AboutPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Cloud Solutions</h3>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.services.cloud.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Cloud Migration & Strategy</p>
-                    <p>• AWS, Azure, Google Cloud Services</p>
-                    <p>• Infrastructure as a Service (IaaS)</p>
-                    <p>• Platform as a Service (PaaS)</p>
-                    <p>• Software as a Service (SaaS)</p>
-                    <p>• Cloud Security & Compliance</p>
-                    <p>• DevOps & CI/CD Implementation</p>
+                    <p>• {t('careers.about.services.cloud.item1')}</p>
+                    <p>• {t('careers.about.services.cloud.item2')}</p>
+                    <p>• {t('careers.about.services.cloud.item3')}</p>
+                    <p>• {t('careers.about.services.cloud.item4')}</p>
+                    <p>• {t('careers.about.services.cloud.item5')}</p>
+                    <p>• {t('careers.about.services.cloud.item6')}</p>
+                    <p>• {t('careers.about.services.cloud.item7')}</p>
                   </div>
                 </div>
 
@@ -181,15 +178,15 @@ export default function AboutPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Graphics and Design</h3>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.services.design.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• UI/UX Design</p>
-                    <p>• Brand Identity & Logo Design</p>
-                    <p>• Digital Marketing Materials</p>
-                    <p>• Product Design & Prototyping</p>
-                    <p>• Motion Graphics & Animation</p>
-                    <p>• Web Design & Responsive Layouts</p>
-                    <p>• User Experience Research</p>
+                    <p>• {t('careers.about.services.design.item1')}</p>
+                    <p>• {t('careers.about.services.design.item2')}</p>
+                    <p>• {t('careers.about.services.design.item3')}</p>
+                    <p>• {t('careers.about.services.design.item4')}</p>
+                    <p>• {t('careers.about.services.design.item5')}</p>
+                    <p>• {t('careers.about.services.design.item6')}</p>
+                    <p>• {t('careers.about.services.design.item7')}</p>
                   </div>
                 </div>
 
@@ -199,15 +196,15 @@ export default function AboutPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Additional Services</h3>
+                  <h3 className={`text-xl font-semibold ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.services.additional.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Cybersecurity Solutions</p>
-                    <p>• Mobile App Development</p>
-                    <p>• Blockchain Development</p>
-                    <p>• IoT Solutions</p>
-                    <p>• Data Analytics & Visualization</p>
-                    <p>• Quality Assurance & Testing</p>
-                    <p>• Technical Consulting</p>
+                    <p>• {t('careers.about.services.additional.item1')}</p>
+                    <p>• {t('careers.about.services.additional.item2')}</p>
+                    <p>• {t('careers.about.services.additional.item3')}</p>
+                    <p>• {t('careers.about.services.additional.item4')}</p>
+                    <p>• {t('careers.about.services.additional.item5')}</p>
+                    <p>• {t('careers.about.services.additional.item6')}</p>
+                    <p>• {t('careers.about.services.additional.item7')}</p>
                   </div>
                 </div>
                 </div>
@@ -224,39 +221,36 @@ export default function AboutPage() {
               <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Community</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.about.community.title')}</h2>
                 <div className={`space-y-8 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p className="text-center">
-                    At Upvista Digital, we believe that the best innovations come from collaborative 
-                    minds working together. Our community is a vibrant collective of engineers, 
-                    designers, developers, and forward-thinking professionals who share a passion 
-                    for technology and innovation.
+                    {t('careers.about.community.intro')}
                   </p>
                   
                   <div className="grid md:grid-cols-2 gap-8 mt-12">
                     <div className={`p-6 rounded-xl border ${
                       isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                     }`}>
-                      <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Collaboration & Events</h3>
+                      <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.community.collaboration.title')}</h3>
                       <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Cross-functional project teams</p>
-                        <p>• Regular hackathons and coding challenges</p>
-                        <p>• Industry meetups and networking events</p>
-                        <p>• Knowledge sharing sessions</p>
-                        <p>• Open-source contributions</p>
+                        <p>• {t('careers.about.community.collaboration.item1')}</p>
+                        <p>• {t('careers.about.community.collaboration.item2')}</p>
+                        <p>• {t('careers.about.community.collaboration.item3')}</p>
+                        <p>• {t('careers.about.community.collaboration.item4')}</p>
+                        <p>• {t('careers.about.community.collaboration.item5')}</p>
                       </div>
                     </div>
                     
                     <div className={`p-6 rounded-xl border ${
                       isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                     }`}>
-                      <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Training & Development</h3>
+                      <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.community.training.title')}</h3>
                       <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Comprehensive web development bootcamps</p>
-                        <p>• Advanced software engineering courses</p>
-                        <p>• AI and machine learning workshops</p>
-                        <p>• Cloud computing certification programs</p>
-                        <p>• Design thinking and UX methodologies</p>
+                        <p>• {t('careers.about.community.training.item1')}</p>
+                        <p>• {t('careers.about.community.training.item2')}</p>
+                        <p>• {t('careers.about.community.training.item3')}</p>
+                        <p>• {t('careers.about.community.training.item4')}</p>
+                        <p>• {t('careers.about.community.training.item5')}</p>
                       </div>
                     </div>
                   </div>
@@ -274,37 +268,31 @@ export default function AboutPage() {
               <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Technologies Lab</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.about.lab.title')}</h2>
                 <div className={`space-y-8 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p className="text-center">
-                    Our Technologies Lab serves as the innovation engine of Upvista Digital, where 
-                    we experiment with emerging technologies and push the boundaries of what&apos;s 
-                    possible. This dedicated research facility allows us to stay ahead of technological 
-                    trends and develop next-generation solutions.
+                    {t('careers.about.lab.intro')}
                   </p>
                   
                   <div className="mt-12">
                     <div className={`p-6 rounded-xl border ${
                       isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                     }`}>
-                      <h3 className={`text-xl font-semibold mb-6 text-center ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Research Focus Areas</h3>
+                      <h3 className={`text-xl font-semibold mb-6 text-center ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.about.lab.focus.title')}</h3>
                       <div className={`grid md:grid-cols-2 gap-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Artificial General Intelligence (AGI) development</p>
-                        <p>• Quantum computing applications</p>
-                        <p>• Advanced neural network architectures</p>
-                        <p>• Human-computer interaction innovations</p>
-                        <p>• Next-generation web technologies</p>
-                        <p>• Autonomous systems and robotics</p>
-                        <p>• Sustainable technology solutions</p>
+                        <p>• {t('careers.about.lab.focus.item1')}</p>
+                        <p>• {t('careers.about.lab.focus.item2')}</p>
+                        <p>• {t('careers.about.lab.focus.item3')}</p>
+                        <p>• {t('careers.about.lab.focus.item4')}</p>
+                        <p>• {t('careers.about.lab.focus.item5')}</p>
+                        <p>• {t('careers.about.lab.focus.item6')}</p>
+                        <p>• {t('careers.about.lab.focus.item7')}</p>
                       </div>
                     </div>
                   </div>
 
                   <p className="text-center mt-8">
-                    The lab operates as an incubator for breakthrough ideas, where our researchers 
-                    and engineers collaborate with academic institutions and industry partners to 
-                    explore the frontiers of technology and create solutions that will shape the 
-                    future of digital innovation.
+                    {t('careers.about.lab.conclusion')}
                   </p>
                 </div>
               </div>
@@ -322,15 +310,15 @@ export default function AboutPage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Join Our Mission?</h3>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.about.cta.title')}</h3>
                 <p className={`text-lg mb-8 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Be part of a team that&apos;s shaping the future of technology. Explore exciting career opportunities at Upvista Digital.
+                  {t('careers.about.cta.description')}
                 </p>
                 <Link
                   href="/careers"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
                 >
-                  Join Our Team
+                  {t('careers.about.cta.button')}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </div>
