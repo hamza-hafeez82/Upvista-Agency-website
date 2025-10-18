@@ -8,12 +8,14 @@ import { ArrowRight } from "lucide-react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import LanguageToggle from "@/components/ui/LanguageToggle";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../contexts/CareersLanguageContext";
 
 export default function CareersHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +27,10 @@ export default function CareersHeader() {
   }, []);
 
   const careersNavItems = [
-    { label: "Back to Solution Site", href: "https://upvistadigital.com", key: "main-site" },
-    { label: "Learn the Basics", href: "/careers/basics", key: "basics" },
-    { label: "Learn About Business", href: "/careers/business", key: "business" },
-    { label: "Learn About Jobs", href: "/careers/jobs", key: "jobs" },
+    { label: t('careers.nav.backToSite'), href: "https://upvistadigital.com", key: "main-site" },
+    { label: t('careers.nav.basics'), href: "/careers/basics", key: "basics" },
+    { label: t('careers.nav.business'), href: "/careers/business", key: "business" },
+    { label: t('careers.nav.jobs'), href: "/careers/jobs", key: "jobs" },
   ];
 
   return (
@@ -69,9 +71,9 @@ export default function CareersHeader() {
               <h1 className={`font-bold transition-all duration-300 ${
                 scrolled ? "text-lg" : "text-xl"
               } ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                Upvista
+                {t('careers.header.companyName')}
               </h1>
-              <p className={`text-xs font-medium ${isDark ? 'text-purple-400' : 'text-blue-600'}`}>Careers</p>
+              <p className={`text-xs font-medium ${isDark ? 'text-purple-400' : 'text-blue-600'}`}>{t('careers.header.portal')}</p>
             </div>
           </Link>
 
@@ -134,7 +136,7 @@ export default function CareersHeader() {
               }`}
             >
               <span className="relative flex items-center">
-                Job Openings & Applications
+                {t('careers.nav.apply')}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-0 ml-0 group-hover:w-4 group-hover:ml-2 transition-all duration-300"
@@ -351,7 +353,7 @@ export default function CareersHeader() {
                       d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span>Job Openings & Applications</span>
+                  <span>{t('careers.nav.apply')}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"

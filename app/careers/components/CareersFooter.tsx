@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../contexts/CareersLanguageContext";
 import {
   FaFacebookF,
   FaTwitter,
@@ -43,6 +44,7 @@ interface ContactItemProps {
 
 export default function CareersFooter() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   
   return (
     <footer className={`${isDark ? 'bg-gray-900 text-white' : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100 text-gray-900'}`} role="contentinfo" aria-label="Careers Site Footer">
@@ -62,8 +64,8 @@ export default function CareersFooter() {
                 />
               </div>
               <div>
-                <h3 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h3>
-                <p className={`text-sm font-medium ${isDark ? 'text-purple-400' : 'text-blue-600'}`}>Recruitment Site</p>
+                <h3 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.footer.companyName')}</h3>
+                <p className={`text-sm font-medium ${isDark ? 'text-purple-400' : 'text-blue-600'}`}>{t('careers.footer.recruitmentSite')}</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -99,71 +101,71 @@ export default function CareersFooter() {
               />
             </div>
             <div className="space-y-3 text-sm pl-4">
-              <FooterLink href="/careers/policies/personal-information" isDark={isDark}>Handling of personal information in recruitment activities</FooterLink>
-              <FooterLink href="/careers/policies/application-terms" isDark={isDark}>Recruitment Application Terms</FooterLink>
-              <FooterLink href="/careers/policies/privacy-notice" isDark={isDark}>Recruitment Privacy Notice</FooterLink>
-              <FooterLink href="/careers/policies/employment-rules" isDark={isDark}>Rules regarding Applying for Employment</FooterLink>
-              <FooterLink href="/careers/policies/data-protection" isDark={isDark}>Data Protection Initiatives</FooterLink>
-              <FooterLink href="/careers/legal/trademark-copyright" isDark={isDark}>Trademark and Copyright Notice</FooterLink>
-              <FooterLink href="/careers/legal/terms-conditions" isDark={isDark}>Terms & Conditions</FooterLink>
-              <FooterLink href="/careers/legal/privacy-policy" isDark={isDark}>Privacy Policy</FooterLink>
-              <FooterLink href="/careers/support/faq" isDark={isDark}>FAQ</FooterLink>
+              <FooterLink href="/careers/policies/personal-information" isDark={isDark}>{t('careers.footer.policies.personalInfo')}</FooterLink>
+              <FooterLink href="/careers/policies/application-terms" isDark={isDark}>{t('careers.footer.policies.applicationTerms')}</FooterLink>
+              <FooterLink href="/careers/policies/privacy-notice" isDark={isDark}>{t('careers.footer.policies.privacyNotice')}</FooterLink>
+              <FooterLink href="/careers/policies/employment-rules" isDark={isDark}>{t('careers.footer.policies.employmentRules')}</FooterLink>
+              <FooterLink href="/careers/policies/data-protection" isDark={isDark}>{t('careers.footer.policies.dataProtection')}</FooterLink>
+              <FooterLink href="/careers/legal/trademark-copyright" isDark={isDark}>{t('careers.footer.policies.trademark')}</FooterLink>
+              <FooterLink href="/careers/legal/terms-conditions" isDark={isDark}>{t('careers.footer.policies.terms')}</FooterLink>
+              <FooterLink href="/careers/legal/privacy-policy" isDark={isDark}>{t('careers.footer.policies.privacy')}</FooterLink>
+              <FooterLink href="/careers/support/faq" isDark={isDark}>{t('careers.footer.policies.faq')}</FooterLink>
             </div>
           </div>
 
           {/* Learn the Basics */}
           <div className="space-y-5">
-            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Learn the Basics</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.footer.basics.title')}</h3>
             <ul className="space-y-3">
-              <FooterLink href="/careers/basics" isDark={isDark}>Upvista Digital in 3 minutes</FooterLink>
-              <FooterLink href="/careers/basics" isDark={isDark}>Corporate philosophy</FooterLink>
-              <FooterLink href="/careers/basics" isDark={isDark}>Message from the CEO</FooterLink>
-              <FooterLink href="/careers/basics" isDark={isDark}>Hiring people with disabilities</FooterLink>
-              <FooterLink href="/careers/basics" isDark={isDark}>What is important in recruitment</FooterLink>
-              <FooterLink href="/careers/basics" isDark={isDark}>New graduate recruitment starts here</FooterLink>
+              <FooterLink href="/careers/basics" isDark={isDark}>{t('careers.footer.basics.upvistaIn3')}</FooterLink>
+              <FooterLink href="/careers/basics" isDark={isDark}>{t('careers.footer.basics.philosophy')}</FooterLink>
+              <FooterLink href="/careers/basics" isDark={isDark}>{t('careers.footer.basics.ceoMessage')}</FooterLink>
+              <FooterLink href="/careers/basics" isDark={isDark}>{t('careers.footer.basics.disabilities')}</FooterLink>
+              <FooterLink href="/careers/basics" isDark={isDark}>{t('careers.footer.basics.recruitment')}</FooterLink>
+              <FooterLink href="/careers/basics" isDark={isDark}>{t('careers.footer.basics.graduates')}</FooterLink>
             </ul>
           </div>
 
           {/* Learn About the Business */}
           <div className="space-y-5">
-            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Learn About the Business</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.footer.business.title')}</h3>
             <ul className="space-y-3">
-              <FooterLink href="/careers/business" isDark={isDark}>Upvista Digital's Business Strategy</FooterLink>
-              <FooterLink href="/careers/business" isDark={isDark}>Upvista Digital Products</FooterLink>
-              <FooterLink href="/careers/business" isDark={isDark}>Upvista Digital's Global Strategy</FooterLink>
-              <FooterLink href="/careers/business" isDark={isDark}>Digital Solutions and Teamwork</FooterLink>
+              <FooterLink href="/careers/business" isDark={isDark}>{t('careers.footer.business.strategy')}</FooterLink>
+              <FooterLink href="/careers/business" isDark={isDark}>{t('careers.footer.business.products')}</FooterLink>
+              <FooterLink href="/careers/business" isDark={isDark}>{t('careers.footer.business.globalStrategy')}</FooterLink>
+              <FooterLink href="/careers/business" isDark={isDark}>{t('careers.footer.business.teamwork')}</FooterLink>
             </ul>
           </div>
 
           {/* Learn About the Job */}
           <div className="space-y-5">
-            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Learn About the Job</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.footer.jobs.title')}</h3>
             <ul className="space-y-3">
-              <FooterLink href="/careers/jobs" isDark={isDark}>Team Introduction</FooterLink>
-              <FooterLink href="/careers/jobs" isDark={isDark}>Service infrastructure development and operation</FooterLink>
-              <FooterLink href="/careers/jobs" isDark={isDark}>Sales</FooterLink>
-              <FooterLink href="/careers/jobs" isDark={isDark}>Customer Service</FooterLink>
-              <FooterLink href="/careers/jobs" isDark={isDark}>Marketing</FooterLink>
-              <FooterLink href="/careers/jobs" isDark={isDark}>System Consulting</FooterLink>
-              <FooterLink href="/careers/jobs" isDark={isDark}>Corporate</FooterLink>
+              <FooterLink href="/careers/jobs" isDark={isDark}>{t('careers.footer.jobs.teamIntro')}</FooterLink>
+              <FooterLink href="/careers/jobs" isDark={isDark}>{t('careers.footer.jobs.infrastructure')}</FooterLink>
+              <FooterLink href="/careers/jobs" isDark={isDark}>{t('careers.footer.jobs.sales')}</FooterLink>
+              <FooterLink href="/careers/jobs" isDark={isDark}>{t('careers.footer.jobs.customerService')}</FooterLink>
+              <FooterLink href="/careers/jobs" isDark={isDark}>{t('careers.footer.jobs.marketing')}</FooterLink>
+              <FooterLink href="/careers/jobs" isDark={isDark}>{t('careers.footer.jobs.consulting')}</FooterLink>
+              <FooterLink href="/careers/jobs" isDark={isDark}>{t('careers.footer.jobs.corporate')}</FooterLink>
             </ul>
           </div>
 
           {/* Application Guidelines and Entry */}
           <div className="space-y-5">
-            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Application Guidelines and Entry</h3>
+            <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.footer.application.title')}</h3>
             <ul className="space-y-3">
-              <FooterLink href="/careers/apply" isDark={isDark}>New graduate recruitment</FooterLink>
-              <FooterLink href="/careers/apply" isDark={isDark}>Career Recruitment</FooterLink>
-              <FooterLink href="/careers/apply" isDark={isDark}>Hiring people with disabilities</FooterLink>
-              <FooterLink href="/careers/apply" isDark={isDark}>Potential Recruitment</FooterLink>
-              <FooterLink href="/careers/apply" isDark={isDark}>Part-time jobs and internships</FooterLink>
+              <FooterLink href="/careers/apply" isDark={isDark}>{t('careers.footer.application.newGraduate')}</FooterLink>
+              <FooterLink href="/careers/apply" isDark={isDark}>{t('careers.footer.application.career')}</FooterLink>
+              <FooterLink href="/careers/apply" isDark={isDark}>{t('careers.footer.application.disabilities')}</FooterLink>
+              <FooterLink href="/careers/apply" isDark={isDark}>{t('careers.footer.application.potential')}</FooterLink>
+              <FooterLink href="/careers/apply" isDark={isDark}>{t('careers.footer.application.partTime')}</FooterLink>
             </ul>
           </div>
 
                  {/* Contact Us */}
                  <div className="space-y-5">
-                   <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Contact Us</h3>
+                   <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.footer.contact.title')}</h3>
                    <div className="space-y-4">
                      <ContactItem
                        icon={<FaEnvelope />}
@@ -212,8 +214,8 @@ export default function CareersFooter() {
                          isDark ? 'from-black/70' : 'from-white/70'
                        }`}></div>
                        <div className={`absolute bottom-4 left-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                         <h4 className="text-lg font-bold">Upvista Digital</h4>
-                         <p className={`text-sm ${isDark ? 'text-purple-300' : 'text-blue-600'}`}>Building the Future</p>
+                         <h4 className="text-lg font-bold">{t('careers.footer.companyName')}</h4>
+                         <p className={`text-sm ${isDark ? 'text-purple-300' : 'text-blue-600'}`}>{t('careers.footer.buildingFuture')}</p>
                        </div>
                      </div>
                    </div>
@@ -225,7 +227,7 @@ export default function CareersFooter() {
       <div className={`border-t ${isDark ? 'border-gray-800' : 'border-gray-300'}`} role="region" aria-label="Copyright and Policies">
         <div className="container mx-auto px-6 py-6">
           <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            Copyright © Upvista Digital. All rights reserved.
+            {t('careers.footer.copyright')}
           </p>
         </div>
       </div>
