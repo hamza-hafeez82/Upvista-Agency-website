@@ -117,20 +117,20 @@ const Hero = memo(() => {
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mb-8 sm:mb-12">
               <Link href="/Services/web-development">
-                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 group transform hover:scale-105 w-full sm:w-auto ${
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-3 group cursor-pointer w-full sm:w-auto ${
                   isDark 
-                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-purple-500/50'
-                    : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-purple-500/50'
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent hover:bg-transparent hover:border-purple-500 hover:text-white'
+                    : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white border-transparent hover:bg-transparent hover:border-purple-600 hover:text-gray-900'
                 }`}>
                   {t('hero.cta')}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
               <Link href="/pages/auth">
-                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-2 group w-full sm:w-auto ${
+                <button className={`px-6 sm:px-8 py-3 sm:py-4 font-semibold rounded-xl border-2 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer w-full sm:w-auto ${
                   isDark 
-                    ? 'bg-transparent text-white border-purple-500 hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-pink-600/20 hover:border-pink-500'
-                    : 'bg-transparent text-gray-900 border-purple-600 hover:bg-gradient-to-r hover:from-purple-600/10 hover:to-pink-600/10 hover:border-pink-600'
+                    ? 'bg-transparent text-white border-purple-500 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent'
+                    : 'bg-transparent text-gray-900 border-purple-600 hover:bg-gradient-to-r hover:from-purple-600 hover:to-pink-600 hover:border-transparent hover:text-white'
                 }`}>
                   {t('hero.register')}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
