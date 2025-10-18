@@ -75,16 +75,16 @@ export default function Home() {
         className={`h-screen w-full overflow-hidden items-center justify-center relative ${
           isDark 
             ? 'bg-gradient-to-br from-black via-black/80 to-purple-950'
-            : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
+            : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'
         }`}
       >
         {/* Abstract background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <div className={`absolute -top-40 -right-40 h-96 w-96 rounded-full blur-3xl ${
-            isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-blue-400/25 to-purple-500/20'
+            isDark ? 'bg-purple-600/20' : 'bg-gradient-to-br from-purple-400/25 to-pink-500/20'
           }`}></div>
           <div className={`absolute bottom-0 left-0 h-64 w-64 rounded-full blur-3xl ${
-            isDark ? 'bg-indigo-600/20' : 'bg-gradient-to-br from-indigo-500/25 to-violet-600/20'
+            isDark ? 'bg-pink-600/20' : 'bg-gradient-to-br from-pink-500/25 to-purple-600/20'
           }`}></div>
           <div className={`absolute top-1/4 left-1/3 h-80 w-80 rounded-full blur-3xl ${
             isDark ? 'bg-violet-800/15' : 'bg-gradient-to-br from-purple-400/20 to-pink-400/15'
@@ -113,11 +113,11 @@ export default function Home() {
             {/* Modern gradient badge */}
         <div className={`inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm ${
           isDark 
-            ? 'bg-gradient-to-r from-indigo-600/30 to-purple-600/30 text-indigo-300 border border-indigo-500/20'
-            : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white border border-blue-500/70 shadow-lg'
+            ? 'bg-gradient-to-r from-purple-600/30 to-pink-600/30 text-purple-300 border border-purple-500/20'
+            : 'bg-gradient-to-r from-purple-600/90 to-pink-600/90 text-white border border-purple-500/70 shadow-lg'
         }`}>
               <span className={`w-2 h-2 rounded-full mr-2 animate-pulse ${
-                isDark ? 'bg-indigo-400' : 'bg-white'
+                isDark ? 'bg-purple-400' : 'bg-white'
               }`}></span>
               {t('home.webDesign.title')}
             </div>
@@ -137,13 +137,13 @@ export default function Home() {
               <Link href="/Services/web-development">
                 <button className={`group relative px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium overflow-hidden shadow-lg transition-all duration-300 w-full sm:w-auto ${
                   isDark 
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-indigo-500/20 hover:shadow-indigo-500/40'
-                    : 'bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white shadow-purple-500/20 hover:shadow-purple-500/40'
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-purple-500/20 hover:shadow-purple-500/40'
+                    : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-purple-500/20 hover:shadow-purple-500/40'
                 }`}>
                   <span className={`absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                     isDark 
-                      ? 'bg-gradient-to-r from-purple-600 to-indigo-600'
-                      : 'bg-gradient-to-r from-indigo-600 to-blue-600'
+                      ? 'bg-gradient-to-r from-purple-700 to-pink-700'
+                      : 'bg-gradient-to-r from-purple-700 to-pink-700'
                   }`}></span>
                   <span className="relative flex items-center justify-center">
                     {t('home.webDesign.getStarted')}
@@ -168,8 +168,8 @@ export default function Home() {
               <Link href="/Services/software-development">
                 <button className={`px-6 sm:px-8 py-3 sm:py-4 border rounded-full font-medium backdrop-blur-sm transition-all duration-300 w-full sm:w-auto ${
                   isDark 
-                    ? 'border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/10'
-                    : 'border-blue-300/50 text-blue-700 hover:bg-blue-100/50'
+                    ? 'border-purple-500/30 text-purple-300 hover:bg-purple-500/10'
+                    : 'border-purple-300/50 text-purple-700 hover:bg-purple-100/50'
                 }`}>
                   {t('home.webDesign.viewWork')}
                 </button>
