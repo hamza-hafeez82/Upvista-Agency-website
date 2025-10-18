@@ -9,9 +9,11 @@ import CareersFooter from "./components/CareersFooter";
 import { Vortex } from "@/components/ui/vortex";
 import { searchJobs, getJobByTitle, getAllJobTitles, type JobMapping } from "./data/jobMappings";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "./contexts/CareersLanguageContext";
 
 export default function CareersPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   const [selectedJob, setSelectedJob] = useState("");
   const [selectedRecruitmentType, setSelectedRecruitmentType] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -37,9 +39,9 @@ export default function CareersPage() {
 
   
   const recruitmentTypes = [
-    "Career Recruitment",
-    "Potential Recruitment", 
-    "New Graduate Recruitment"
+    t('careers.page.recruitmentTypes.career'),
+    t('careers.page.recruitmentTypes.potential'), 
+    t('careers.page.recruitmentTypes.newGraduate')
   ];
 
   // Get job positions from the mapping
@@ -103,20 +105,20 @@ export default function CareersPage() {
             className="text-center mb-16"
           >
             <h1 className={`text-5xl md:text-7xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              Building a Society
+              {t('careers.page.hero.title1')}
               <br />
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Overflowing with Teamwork
+                {t('careers.page.hero.title2')}
               </span>
               </h1>
             <p className={`text-xl md:text-2xl max-w-4xl mx-auto mb-8 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-              Upvista Digital is<br />
-              waiting for members to work together.
+              {t('careers.page.hero.subtitle1')}<br />
+              {t('careers.page.hero.subtitle2')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/careers/apply">
                 <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25">
-                  Job Openings & Applications
+                  {t('careers.page.hero.applyButton')}
                 </button>
               </Link>
               <Link href="/careers/basics">
@@ -125,7 +127,7 @@ export default function CareersPage() {
                     ? 'bg-white/10 text-white hover:bg-white/20 border border-white/20' 
                     : 'bg-gray-900/10 text-gray-900 hover:bg-gray-900/20 border border-gray-900/20'
                 }`}>
-                  Learn the Basics
+                  {t('careers.page.hero.basicsButton')}
                 </button>
               </Link>
             </div>
@@ -145,13 +147,13 @@ export default function CareersPage() {
                   : 'from-purple-600/5 to-indigo-600/5 border border-purple-500/10 bg-white/40'
               }`}>
                 <h2 className={`text-2xl md:text-3xl font-bold text-center mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                  Find Recruitment Information
+                  {t('careers.page.findRecruitment.title')}
                 </h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   {/* Recruitment Type Selection */}
                   <div className="space-y-4">
-                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Recruitment Type</h3>
+                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.page.findRecruitment.recruitmentType')}</h3>
                     <div className="space-y-3">
                       {recruitmentTypes.map((type) => (
                         <label key={Math.random()} className="flex items-center space-x-3 cursor-pointer group">
@@ -177,7 +179,7 @@ export default function CareersPage() {
 
                   {/* Job Category Dropdown */}
                   <div className="space-y-4">
-                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Select the Job</h3>
+                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.page.findRecruitment.selectJob')}</h3>
                     <div className="relative" ref={dropdownRef}>
                       <button
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -188,7 +190,7 @@ export default function CareersPage() {
                         }`}
                       >
                         <span className={selectedJob ? (isDark ? "text-white" : "text-gray-900") : "text-gray-400"}>
-                          {selectedJob || "Select a position"}
+                          {selectedJob || t('careers.page.findRecruitment.selectPosition')}
                         </span>
                         <ChevronDown 
                           className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
@@ -224,7 +226,7 @@ export default function CareersPage() {
                                     : 'hover:bg-gradient-to-r hover:from-blue-100 hover:to-indigo-100 hover:text-gray-900 border-gray-200/50'
                                 }`}
                               >
-                                Select a position
+                                {t('careers.page.findRecruitment.selectPosition')}
                 </div>
                               {jobPositions
                                 .filter(job => 
@@ -258,8 +260,8 @@ export default function CareersPage() {
                                             jobMapping.type === 'intern' ? 'bg-blue-500/20 text-blue-400' :
                                             'bg-orange-500/20 text-orange-400'
                                           }`}>
-                                            {jobMapping.type === 'full-time' ? 'Active' :
-                                             jobMapping.type === 'intern' ? 'Intern' : 'Future'}
+                                            {jobMapping.type === 'full-time' ? t('careers.page.jobStatus.active') :
+                                             jobMapping.type === 'intern' ? t('careers.page.jobStatus.intern') : t('careers.page.jobStatus.future')}
                                           </span>
                                         )}
                 </div>
@@ -275,7 +277,7 @@ export default function CareersPage() {
 
                   {/* Search Button */}
                   <div className="space-y-4">
-                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Find Opportunities</h3>
+                    <h3 className={`text-lg font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.page.findRecruitment.findOpportunities')}</h3>
                     <button 
                       onClick={handleSearch}
                       disabled={isSearching}
@@ -286,12 +288,12 @@ export default function CareersPage() {
                       {isSearching ? (
                         <>
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                          <span>Searching...</span>
+                          <span>{t('careers.page.findRecruitment.searching')}</span>
                         </>
                       ) : (
                         <>
                           <Search className="w-5 h-5" />
-                          <span>Find Recruitment Information</span>
+                          <span>{t('careers.page.findRecruitment.searchButton')}</span>
                         </>
                       )}
                 </button>
@@ -300,9 +302,9 @@ export default function CareersPage() {
 
                 <div className="text-center">
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                    Can't find what you&apos;re looking for? 
+                    {t('careers.page.findRecruitment.cantFind')}
                     <Link href="/careers/apply" className="text-purple-400 hover:text-purple-300 ml-1 underline">
-                      View all open positions
+                      {t('careers.page.findRecruitment.viewAll')}
                     </Link>
                   </p>
           </div>
@@ -325,7 +327,7 @@ export default function CareersPage() {
                         <div className="flex items-center justify-between mb-6">
                           <h3 className={`text-xl font-bold flex items-center gap-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                             <Briefcase className="w-6 h-6 text-purple-400" />
-                            Search Results
+                            {t('careers.page.searchResults.title')}
                           </h3>
                 <button
                             onClick={() => setShowResults(false)}
@@ -338,7 +340,7 @@ export default function CareersPage() {
                         {searchResults.length > 0 ? (
                           <div className="space-y-4">
                             <p className={`text-sm mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                              Found {searchResults.length} position{searchResults.length !== 1 ? 's' : ''} matching your criteria:
+                              {t('careers.page.searchResults.found')} {searchResults.length} {searchResults.length !== 1 ? t('careers.page.searchResults.positionsPlural') : t('careers.page.searchResults.positions')} {t('careers.page.searchResults.matchingCriteria')}
                             </p>
                             
                             <div className="grid gap-4">
@@ -367,8 +369,8 @@ export default function CareersPage() {
                                           job.type === 'intern' ? 'bg-blue-500/20 text-blue-400' :
                                           'bg-orange-500/20 text-orange-400'
                                         }`}>
-                                          {job.type === 'full-time' ? 'Full-time' :
-                                           job.type === 'intern' ? 'Intern' : 'Potential'}
+                                          {job.type === 'full-time' ? t('careers.page.jobStatus.fullTime') :
+                                           job.type === 'intern' ? t('careers.page.jobStatus.intern') : t('careers.page.jobStatus.potential')}
                         </span>
                       </div>
                                       <p className={`text-sm mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -381,7 +383,7 @@ export default function CareersPage() {
                                         className="px-4 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 flex items-center gap-2 group-hover:scale-105"
                     >
                                         <ExternalLink className="w-4 h-4" />
-                                        View Details
+                                        {t('careers.page.searchResults.viewDetails')}
                     </button>
                                     </div>
                                   </div>
@@ -396,13 +398,13 @@ export default function CareersPage() {
                             }`}>
                               <Search className="w-8 h-8 text-gray-400" />
                             </div>
-                            <h4 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>No positions found</h4>
+                            <h4 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.page.searchResults.noPositions')}</h4>
                             <p className={`text-sm mb-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                              Try adjusting your search criteria or browse all available positions.
+                              {t('careers.page.searchResults.tryAdjusting')}
                             </p>
                             <Link href="/careers/apply">
                               <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300">
-                                View All Positions
+                                {t('careers.page.searchResults.viewAllPositions')}
                       </button>
                     </Link>
                   </div>
@@ -440,7 +442,7 @@ export default function CareersPage() {
                 <div className="pl-0 lg:pl-8">
                   <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
-                    Learn the Basics
+                    {t('careers.page.basics.title')}
               </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Link href="/careers/basics" className="group">
@@ -448,7 +450,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Upvista Digital in 3 minutes</span>
+                        <span>{t('careers.page.basics.upvistaIn3')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/basics" className="group">
@@ -456,7 +458,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Message from the CEO</span>
+                        <span>{t('careers.page.basics.ceoMessage')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/basics" className="group">
@@ -464,7 +466,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>New graduate recruitment starts here</span>
+                        <span>{t('careers.page.basics.newGraduate')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/basics" className="group">
@@ -472,7 +474,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Corporate philosophy</span>
+                        <span>{t('careers.page.basics.philosophy')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/basics" className="group">
@@ -480,7 +482,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>What is important in recruitment</span>
+                        <span>{t('careers.page.basics.recruitment')}</span>
                       </div>
                     </Link>
                         </div>
@@ -500,7 +502,7 @@ export default function CareersPage() {
                 <div className="pr-0 lg:pr-8">
                   <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
-                    Learn About Business
+                    {t('careers.page.business.title')}
                   </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Link href="/careers/business" className="group">
@@ -508,7 +510,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Upvista Digital's Business Strategy</span>
+                        <span>{t('careers.page.business.strategy')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/business" className="group">
@@ -516,7 +518,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Upvista Digital Products</span>
+                        <span>{t('careers.page.business.products')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/business" className="group">
@@ -524,7 +526,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Upvista Digital's Global Strategy</span>
+                        <span>{t('careers.page.business.globalStrategy')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/business" className="group">
@@ -532,7 +534,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Digital Solutions and Teamwork</span>
+                        <span>{t('careers.page.business.teamwork')}</span>
                       </div>
                     </Link>
                     </div>
@@ -580,7 +582,7 @@ export default function CareersPage() {
                 <div className="pl-0 lg:pl-8">
                   <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
-                    Learn About Job
+                    {t('careers.page.jobs.title')}
               </h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Link href="/careers/jobs" className="group">
@@ -588,7 +590,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Development and Operation</span>
+                        <span>{t('careers.page.jobs.development')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
@@ -596,7 +598,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Marketing</span>
+                        <span>{t('careers.page.jobs.marketing')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
@@ -604,7 +606,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Customer Service</span>
+                        <span>{t('careers.page.jobs.customerService')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
@@ -612,7 +614,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Sales</span>
+                        <span>{t('careers.page.jobs.sales')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
@@ -620,7 +622,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>System Consulting</span>
+                        <span>{t('careers.page.jobs.consulting')}</span>
                       </div>
                     </Link>
                     <Link href="/careers/jobs" className="group">
@@ -628,7 +630,7 @@ export default function CareersPage() {
                         isDark ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'
                       }`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        <span>Corporate</span>
+                        <span>{t('careers.page.jobs.corporate')}</span>
                       </div>
                     </Link>
                         </div>
@@ -648,7 +650,7 @@ export default function CareersPage() {
                 <div className="pr-0 lg:pr-8">
                   <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
-                    Get to Know People
+                    {t('careers.page.people.title')}
                   </h2>
                   
                   <div className="space-y-6 mb-8">
@@ -657,13 +659,10 @@ export default function CareersPage() {
                     }`}>
                       <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
-                        Engineer/Designer
+                        {t('careers.page.people.engineer.title')}
                       </h3>
                       <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Our engineering and design teams are the creative minds behind innovative digital solutions. 
-                        Engineers work on cutting-edge technologies, building scalable systems and applications that 
-                        drive business success. Designers craft intuitive user experiences and visually stunning 
-                        interfaces that users love.
+                        {t('careers.page.people.engineer.description')}
                       </p>
                     </div>
                     
@@ -672,12 +671,10 @@ export default function CareersPage() {
                     }`}>
                       <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
-                        Corporate Positions
+                        {t('careers.page.people.corporate.title')}
                       </h3>
                       <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Our corporate team ensures smooth operations and strategic growth. From human resources 
-                        managing talent acquisition to finance overseeing budgets and investments, these roles 
-                        provide the foundation that enables our technical teams to focus on innovation and delivery.
+                        {t('careers.page.people.corporate.description')}
                       </p>
                     </div>
                     
@@ -686,12 +683,10 @@ export default function CareersPage() {
                     }`}>
                       <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
-                        Business Jobs
+                        {t('careers.page.people.business.title')}
                       </h3>
                       <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Business roles at Upvista Digital focus on growth, customer success, and market expansion. 
-                        From marketing specialists driving brand awareness to sales representatives building client 
-                        relationships, these positions are crucial for our company's continued success and expansion.
+                        {t('careers.page.people.business.description')}
                       </p>
                     </div>
                   </div>
@@ -739,7 +734,7 @@ export default function CareersPage() {
                 <div className="pl-0 lg:pl-8">
                   <h2 className={`text-3xl md:text-4xl font-bold mb-8 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                     <ArrowRight className="w-8 h-8 text-purple-400 mr-3" />
-                    Get to Know Workspace
+                    {t('careers.page.workspace.title')}
               </h2>
                   
                   <div className="space-y-6">
@@ -748,12 +743,10 @@ export default function CareersPage() {
                     }`}>
                       <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
-                        Office & Remote Work
+                        {t('careers.page.workspace.office.title')}
                       </h3>
                       <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        We offer flexible work arrangements with modern office spaces and comprehensive remote work support. 
-                        Our offices are designed for collaboration and productivity, while our remote work policies ensure 
-                        you can work effectively from anywhere.
+                        {t('careers.page.workspace.office.description')}
                       </p>
                     </div>
                     
@@ -762,12 +755,10 @@ export default function CareersPage() {
                     }`}>
                       <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
-                        Communication & Internal Systems
+                        {t('careers.page.workspace.communication.title')}
                       </h3>
                       <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        We use cutting-edge communication tools and internal systems to ensure seamless collaboration. 
-                        From project management platforms to instant messaging systems, we've built an infrastructure 
-                        that keeps teams connected and productive.
+                        {t('careers.page.workspace.communication.description')}
                       </p>
                     </div>
                     
@@ -776,12 +767,10 @@ export default function CareersPage() {
                     }`}>
                       <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
-                        Learning & Career Development
+                        {t('careers.page.workspace.learning.title')}
                       </h3>
                       <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Our comprehensive onboarding process and continuous learning systems help you grow professionally. 
-                        We provide career support, skill development programs, and regular performance evaluations to 
-                        ensure your success and advancement.
+                        {t('careers.page.workspace.learning.description')}
                       </p>
                     </div>
                     
@@ -790,12 +779,10 @@ export default function CareersPage() {
                     }`}>
                       <h3 className={`text-xl font-semibold mb-3 flex items-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
                         <ArrowRight className="w-5 h-5 text-purple-400 mr-2" />
-                        Company Culture & Benefits
+                        {t('careers.page.workspace.culture.title')}
                       </h3>
                       <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        We foster a vibrant company culture with regular team events, competitive salary packages, 
-                        and comprehensive benefits. Our evaluation system recognizes and rewards excellence while 
-                        supporting continuous improvement and growth.
+                        {t('careers.page.workspace.culture.description')}
                       </p>
                     </div>
                   </div>
@@ -814,7 +801,7 @@ export default function CareersPage() {
               <div className="max-w-6xl mx-auto px-6">
                 <div className="text-center mb-12">
                   <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    What Upvista Digital Is
+                    {t('careers.page.about.title')}
                   </h2>
                     </div>
                 
@@ -822,30 +809,27 @@ export default function CareersPage() {
                   <div className={`backdrop-blur-sm border rounded-xl p-6 ${
                     isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Innovation Leader</h3>
+                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.page.about.innovation.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Upvista Digital is a pioneering force in digital transformation, constantly pushing boundaries 
-                      and creating innovative solutions that shape the future of technology and business.
+                      {t('careers.page.about.innovation.description')}
                     </p>
                     </div>
                   
                   <div className={`backdrop-blur-sm border rounded-xl p-6 ${
                     isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Global Impact</h3>
+                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.page.about.impact.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      We're building solutions that make a global impact while respecting local cultures and values. 
-                      Our work touches millions of lives worldwide through technology that matters.
+                      {t('careers.page.about.impact.description')}
                     </p>
                   </div>
                   
                   <div className={`backdrop-blur-sm border rounded-xl p-6 ${
                     isDark ? 'bg-gray-800/30 border-gray-700/50' : 'bg-white/40 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Team Excellence</h3>
+                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.page.about.team.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Our strength lies in our people - talented individuals who come together to create something 
-                      greater than the sum of its parts through collaboration, innovation, and shared vision.
+                      {t('careers.page.about.team.description')}
                     </p>
                   </div>
             </div>
@@ -867,18 +851,18 @@ export default function CareersPage() {
                 <h3 className={`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6 text-center ${
                   isDark ? 'text-white' : 'text-gray-900'
                 }`}>
-                  Ready to Make Your Impact?
+                  {t('careers.page.cta.title')}
                 </h3>
                 <p className={`mb-6 md:mb-8 text-base md:text-lg text-center leading-relaxed ${
                   isDark ? 'text-gray-300' : 'text-gray-700'
                 }`}>
-                  Join a team that&apos;s building the future of digital solutions.<br className="hidden sm:block" />
-                  Explore our open positions and start your journey with Upvista Digital today.
+                  {t('careers.page.cta.description1')}<br className="hidden sm:block" />
+                  {t('careers.page.cta.description2')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0">
                   <Link href="/careers/apply" className="w-full sm:w-auto">
                     <button className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 text-sm sm:text-base">
-                      View Job Openings
+                      {t('careers.page.cta.viewJobsButton')}
                   </button>
                 </Link>
                   <Link href="/careers/events" className="w-full sm:w-auto">
@@ -887,7 +871,7 @@ export default function CareersPage() {
                         ? 'bg-white/10 text-white hover:bg-white/20 border border-white/20' 
                         : 'bg-gray-900/10 text-gray-900 hover:bg-gray-900/20 border border-gray-900/20'
                     }`}>
-                      Recruitment Events
+                      {t('careers.page.cta.eventsButton')}
                   </button>
                 </Link>
               </div>

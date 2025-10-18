@@ -85,6 +85,108 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.footer.contact.linkedin': 'LinkedIn',
     'careers.footer.contact.whatsapp': 'WhatsApp',
     'careers.footer.contact.facebook': 'Facebook',
+    
+    // Careers Page - Hero Section
+    'careers.page.hero.title1': 'Building a Society',
+    'careers.page.hero.title2': 'Overflowing with Teamwork',
+    'careers.page.hero.subtitle1': 'Upvista Digital is',
+    'careers.page.hero.subtitle2': 'waiting for members to work together.',
+    'careers.page.hero.applyButton': 'Job Openings & Applications',
+    'careers.page.hero.basicsButton': 'Learn the Basics',
+    
+    // Careers Page - Find Recruitment Section
+    'careers.page.findRecruitment.title': 'Find Recruitment Information',
+    'careers.page.findRecruitment.recruitmentType': 'Recruitment Type',
+    'careers.page.findRecruitment.selectJob': 'Select the Job',
+    'careers.page.findRecruitment.selectPosition': 'Select a position',
+    'careers.page.findRecruitment.findOpportunities': 'Find Opportunities',
+    'careers.page.findRecruitment.searching': 'Searching...',
+    'careers.page.findRecruitment.searchButton': 'Find Recruitment Information',
+    'careers.page.findRecruitment.cantFind': 'Can\'t find what you\'re looking for?',
+    'careers.page.findRecruitment.viewAll': 'View all open positions',
+    
+    // Recruitment Types
+    'careers.page.recruitmentTypes.career': 'Career Recruitment',
+    'careers.page.recruitmentTypes.potential': 'Potential Recruitment',
+    'careers.page.recruitmentTypes.newGraduate': 'New Graduate Recruitment',
+    
+    // Job Status Labels
+    'careers.page.jobStatus.active': 'Active',
+    'careers.page.jobStatus.intern': 'Intern',
+    'careers.page.jobStatus.future': 'Future',
+    'careers.page.jobStatus.fullTime': 'Full-time',
+    'careers.page.jobStatus.potential': 'Potential',
+    
+    // Search Results
+    'careers.page.searchResults.title': 'Search Results',
+    'careers.page.searchResults.found': 'Found',
+    'careers.page.searchResults.positions': 'position',
+    'careers.page.searchResults.positionsPlural': 'positions',
+    'careers.page.searchResults.matchingCriteria': 'matching your criteria:',
+    'careers.page.searchResults.viewDetails': 'View Details',
+    'careers.page.searchResults.noPositions': 'No positions found',
+    'careers.page.searchResults.tryAdjusting': 'Try adjusting your search criteria or browse all available positions.',
+    'careers.page.searchResults.viewAllPositions': 'View All Positions',
+    
+    // Learn the Basics Section
+    'careers.page.basics.title': 'Learn the Basics',
+    'careers.page.basics.upvistaIn3': 'Upvista Digital in 3 minutes',
+    'careers.page.basics.ceoMessage': 'Message from the CEO',
+    'careers.page.basics.newGraduate': 'New graduate recruitment starts here',
+    'careers.page.basics.philosophy': 'Corporate philosophy',
+    'careers.page.basics.recruitment': 'What is important in recruitment',
+    
+    // Learn About Business Section
+    'careers.page.business.title': 'Learn About Business',
+    'careers.page.business.strategy': 'Upvista Digital\'s Business Strategy',
+    'careers.page.business.products': 'Upvista Digital Products',
+    'careers.page.business.globalStrategy': 'Upvista Digital\'s Global Strategy',
+    'careers.page.business.teamwork': 'Digital Solutions and Teamwork',
+    
+    // Learn About Job Section
+    'careers.page.jobs.title': 'Learn About Job',
+    'careers.page.jobs.development': 'Development and Operation',
+    'careers.page.jobs.marketing': 'Marketing',
+    'careers.page.jobs.customerService': 'Customer Service',
+    'careers.page.jobs.sales': 'Sales',
+    'careers.page.jobs.consulting': 'System Consulting',
+    'careers.page.jobs.corporate': 'Corporate',
+    
+    // Get to Know People Section
+    'careers.page.people.title': 'Get to Know People',
+    'careers.page.people.engineer.title': 'Engineer/Designer',
+    'careers.page.people.engineer.description': 'Our engineering and design teams are the creative minds behind innovative digital solutions. Engineers work on cutting-edge technologies, building scalable systems and applications that drive business success. Designers craft intuitive user experiences and visually stunning interfaces that users love.',
+    'careers.page.people.corporate.title': 'Corporate Positions',
+    'careers.page.people.corporate.description': 'Our corporate team ensures smooth operations and strategic growth. From human resources managing talent acquisition to finance overseeing budgets and investments, these roles provide the foundation that enables our technical teams to focus on innovation and delivery.',
+    'careers.page.people.business.title': 'Business Jobs',
+    'careers.page.people.business.description': 'Business roles at Upvista Digital focus on growth, customer success, and market expansion. From marketing specialists driving brand awareness to sales representatives building client relationships, these positions are crucial for our company\'s continued success and expansion.',
+    
+    // Get to Know Workspace Section
+    'careers.page.workspace.title': 'Get to Know Workspace',
+    'careers.page.workspace.office.title': 'Office & Remote Work',
+    'careers.page.workspace.office.description': 'We offer flexible work arrangements with modern office spaces and comprehensive remote work support. Our offices are designed for collaboration and productivity, while our remote work policies ensure you can work effectively from anywhere.',
+    'careers.page.workspace.communication.title': 'Communication & Internal Systems',
+    'careers.page.workspace.communication.description': 'We use cutting-edge communication tools and internal systems to ensure seamless collaboration. From project management platforms to instant messaging systems, we\'ve built an infrastructure that keeps teams connected and productive.',
+    'careers.page.workspace.learning.title': 'Learning & Career Development',
+    'careers.page.workspace.learning.description': 'Our comprehensive onboarding process and continuous learning systems help you grow professionally. We provide career support, skill development programs, and regular performance evaluations to ensure your success and advancement.',
+    'careers.page.workspace.culture.title': 'Company Culture & Benefits',
+    'careers.page.workspace.culture.description': 'We foster a vibrant company culture with regular team events, competitive salary packages, and comprehensive benefits. Our evaluation system recognizes and rewards excellence while supporting continuous improvement and growth.',
+    
+    // What Upvista Digital Is Section
+    'careers.page.about.title': 'What Upvista Digital Is',
+    'careers.page.about.innovation.title': 'Innovation Leader',
+    'careers.page.about.innovation.description': 'Upvista Digital is a pioneering force in digital transformation, constantly pushing boundaries and creating innovative solutions that shape the future of technology and business.',
+    'careers.page.about.impact.title': 'Global Impact',
+    'careers.page.about.impact.description': 'We\'re building solutions that make a global impact while respecting local cultures and values. Our work touches millions of lives worldwide through technology that matters.',
+    'careers.page.about.team.title': 'Team Excellence',
+    'careers.page.about.team.description': 'Our strength lies in our people - talented individuals who come together to create something greater than the sum of its parts through collaboration, innovation, and shared vision.',
+    
+    // CTA Section
+    'careers.page.cta.title': 'Ready to Make Your Impact?',
+    'careers.page.cta.description1': 'Join a team that\'s building the future of digital solutions.',
+    'careers.page.cta.description2': 'Explore our open positions and start your journey with Upvista Digital today.',
+    'careers.page.cta.viewJobsButton': 'View Job Openings',
+    'careers.page.cta.eventsButton': 'Recruitment Events',
   },
   JA: {
     // Header Navigation
@@ -158,6 +260,108 @@ const careersTranslations: { [key: string]: { [key: string]: string } } = {
     'careers.footer.contact.linkedin': 'LinkedIn',
     'careers.footer.contact.whatsapp': 'WhatsApp',
     'careers.footer.contact.facebook': 'Facebook',
+    
+    // Careers Page - Hero Section
+    'careers.page.hero.title1': '社会を築く',
+    'careers.page.hero.title2': 'チームワークに溢れた',
+    'careers.page.hero.subtitle1': 'Upvista Digitalは',
+    'careers.page.hero.subtitle2': '共に働くメンバーを待っています。',
+    'careers.page.hero.applyButton': '求人情報と応募',
+    'careers.page.hero.basicsButton': '基本を学ぶ',
+    
+    // Careers Page - Find Recruitment Section
+    'careers.page.findRecruitment.title': '採用情報を検索',
+    'careers.page.findRecruitment.recruitmentType': '採用タイプ',
+    'careers.page.findRecruitment.selectJob': '職種を選択',
+    'careers.page.findRecruitment.selectPosition': 'ポジションを選択',
+    'careers.page.findRecruitment.findOpportunities': '機会を見つける',
+    'careers.page.findRecruitment.searching': '検索中...',
+    'careers.page.findRecruitment.searchButton': '採用情報を検索',
+    'careers.page.findRecruitment.cantFind': 'お探しのものが見つかりませんか？',
+    'careers.page.findRecruitment.viewAll': 'すべての募集ポジションを見る',
+    
+    // Recruitment Types
+    'careers.page.recruitmentTypes.career': 'キャリア採用',
+    'careers.page.recruitmentTypes.potential': 'ポテンシャル採用',
+    'careers.page.recruitmentTypes.newGraduate': '新卒採用',
+    
+    // Job Status Labels
+    'careers.page.jobStatus.active': '募集中',
+    'careers.page.jobStatus.intern': 'インターン',
+    'careers.page.jobStatus.future': '今後',
+    'careers.page.jobStatus.fullTime': '正社員',
+    'careers.page.jobStatus.potential': 'ポテンシャル',
+    
+    // Search Results
+    'careers.page.searchResults.title': '検索結果',
+    'careers.page.searchResults.found': '見つかりました',
+    'careers.page.searchResults.positions': 'ポジション',
+    'careers.page.searchResults.positionsPlural': 'ポジション',
+    'careers.page.searchResults.matchingCriteria': '条件に一致する:',
+    'careers.page.searchResults.viewDetails': '詳細を見る',
+    'careers.page.searchResults.noPositions': 'ポジションが見つかりません',
+    'careers.page.searchResults.tryAdjusting': '検索条件を調整するか、すべての募集ポジションを閲覧してください。',
+    'careers.page.searchResults.viewAllPositions': 'すべてのポジションを見る',
+    
+    // Learn the Basics Section
+    'careers.page.basics.title': '基本を学ぶ',
+    'careers.page.basics.upvistaIn3': 'Upvista Digitalを3分で',
+    'careers.page.basics.ceoMessage': 'CEOからのメッセージ',
+    'careers.page.basics.newGraduate': '新卒採用はこちらから',
+    'careers.page.basics.philosophy': '企業理念',
+    'careers.page.basics.recruitment': '採用で重要なこと',
+    
+    // Learn About Business Section
+    'careers.page.business.title': 'ビジネスについて学ぶ',
+    'careers.page.business.strategy': 'Upvista Digitalのビジネス戦略',
+    'careers.page.business.products': 'Upvista Digital製品',
+    'careers.page.business.globalStrategy': 'Upvista Digitalのグローバル戦略',
+    'careers.page.business.teamwork': 'デジタルソリューションとチームワーク',
+    
+    // Learn About Job Section
+    'careers.page.jobs.title': '仕事について学ぶ',
+    'careers.page.jobs.development': '開発と運用',
+    'careers.page.jobs.marketing': 'マーケティング',
+    'careers.page.jobs.customerService': 'カスタマーサービス',
+    'careers.page.jobs.sales': '営業',
+    'careers.page.jobs.consulting': 'システムコンサルティング',
+    'careers.page.jobs.corporate': 'コーポレート',
+    
+    // Get to Know People Section
+    'careers.page.people.title': '人々を知る',
+    'careers.page.people.engineer.title': 'エンジニア/デザイナー',
+    'careers.page.people.engineer.description': '私たちのエンジニアリングとデザインチームは、革新的なデジタルソリューションの創造的な頭脳です。エンジニアは最先端技術に取り組み、ビジネスの成功を推進するスケーラブルなシステムとアプリケーションを構築します。デザイナーは、ユーザーが愛する直感的なユーザーエクスペリエンスと視覚的に美しいインターフェースを作成します。',
+    'careers.page.people.corporate.title': 'コーポレートポジション',
+    'careers.page.people.corporate.description': '私たちのコーポレートチームは、円滑な運営と戦略的成長を確保します。人材獲得を管理する人事から、予算と投資を監督する財務まで、これらの役割は、技術チームがイノベーションと提供に集中できる基盤を提供します。',
+    'careers.page.people.business.title': 'ビジネス職',
+    'careers.page.people.business.description': 'Upvista Digitalのビジネス職は、成長、顧客成功、市場拡大に焦点を当てています。ブランド認知度を高めるマーケティングスペシャリストから、クライアント関係を構築する営業担当者まで、これらのポジションは当社の継続的な成功と拡大に不可欠です。',
+    
+    // Get to Know Workspace Section
+    'careers.page.workspace.title': 'ワークスペースを知る',
+    'careers.page.workspace.office.title': 'オフィスとリモートワーク',
+    'careers.page.workspace.office.description': '私たちは、最新のオフィススペースと包括的なリモートワークサポートを備えた柔軟な勤務形態を提供しています。オフィスはコラボレーションと生産性のために設計されており、リモートワークポリシーにより、どこからでも効果的に作業できます。',
+    'careers.page.workspace.communication.title': 'コミュニケーションと社内システム',
+    'careers.page.workspace.communication.description': '最先端のコミュニケーションツールと社内システムを使用して、シームレスなコラボレーションを確保します。プロジェクト管理プラットフォームからインスタントメッセージングシステムまで、チームを接続し生産性を維持するインフラストラクチャを構築しました。',
+    'careers.page.workspace.learning.title': '学習とキャリア開発',
+    'careers.page.workspace.learning.description': '包括的なオンボーディングプロセスと継続的な学習システムは、プロフェッショナルとして成長するのに役立ちます。キャリアサポート、スキル開発プログラム、定期的なパフォーマンス評価を提供し、成功と昇進を確実にします。',
+    'careers.page.workspace.culture.title': '企業文化と福利厚生',
+    'careers.page.workspace.culture.description': '定期的なチームイベント、競争力のある給与パッケージ、包括的な福利厚生を備えた活気のある企業文化を育てています。評価システムは、継続的な改善と成長をサポートしながら、卓越性を認識し報酬を与えます。',
+    
+    // What Upvista Digital Is Section
+    'careers.page.about.title': 'Upvista Digitalとは',
+    'careers.page.about.innovation.title': 'イノベーションリーダー',
+    'careers.page.about.innovation.description': 'Upvista Digitalは、デジタルトランスフォーメーションの先駆者であり、常に境界を押し広げ、テクノロジーとビジネスの未来を形作る革新的なソリューションを創造しています。',
+    'careers.page.about.impact.title': 'グローバルな影響',
+    'careers.page.about.impact.description': '私たちは、地域の文化と価値観を尊重しながら、グローバルな影響を与えるソリューションを構築しています。重要なテクノロジーを通じて、私たちの仕事は世界中の何百万人もの生活に影響を与えています。',
+    'careers.page.about.team.title': 'チームの卓越性',
+    'careers.page.about.team.description': '私たちの強みは人々にあります。コラボレーション、イノベーション、共有されたビジョンを通じて、部分の合計よりも大きなものを創造するために集まる才能ある個人です。',
+    
+    // CTA Section
+    'careers.page.cta.title': 'あなたの影響を与える準備はできていますか？',
+    'careers.page.cta.description1': 'デジタルソリューションの未来を築くチームに参加しましょう。',
+    'careers.page.cta.description2': '募集ポジションを探索し、今日からUpvista Digitalでのあなたの旅を始めましょう。',
+    'careers.page.cta.viewJobsButton': '求人を見る',
+    'careers.page.cta.eventsButton': '採用イベント',
   },
   AR: {
     // Header Navigation
