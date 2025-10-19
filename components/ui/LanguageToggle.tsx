@@ -18,10 +18,6 @@ export default function LanguageToggle() {
     { code: 'KO', name: '한국어', flag: '🇰🇷' },
     { code: 'ZH', name: '中文', flag: '🇨🇳' },
     { code: 'ID', name: 'Bahasa Indonesia', flag: '🇮🇩' },
-    { code: 'FR', name: 'Français', flag: '🇫🇷' },
-    { code: 'ES', name: 'Español', flag: '🇪🇸' },
-    { code: 'TR', name: 'Türkçe', flag: '🇹🇷' },
-    { code: 'UR', name: 'اردو', flag: '🇵🇰' }
   ];
 
   // Handle outside click to close dropdown
