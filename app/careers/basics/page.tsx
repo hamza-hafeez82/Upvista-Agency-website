@@ -136,14 +136,14 @@ export default function BasicsPage() {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className={`rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02] cursor-pointer border-2 border-transparent ${
+                  className={`h-full flex flex-col rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02] cursor-pointer border-2 border-transparent ${
                     isDark 
                       ? 'bg-white group-hover:border-purple-200' 
                       : 'bg-white group-hover:border-indigo-300'
                   }`}
                 >
                   {/* Image */}
-                  <div className="relative h-48 w-full overflow-hidden">
+                  <div className="relative h-48 w-full overflow-hidden flex-shrink-0">
                     <Image
                       src={section.image}
                       alt={section.title}
@@ -154,7 +154,7 @@ export default function BasicsPage() {
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col flex-grow">
                     <h3 className={`text-xl font-bold text-gray-900 mb-4 transition-colors duration-300 ${
                       isDark ? 'group-hover:text-purple-700' : 'group-hover:text-indigo-700'
                     }`}>
@@ -170,7 +170,7 @@ export default function BasicsPage() {
                       <span className="font-medium">{section.subtitle}</span>
                     </div>
 
-                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                    <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300 flex-grow">
                       {section.description}
                     </p>
                   </div>

@@ -8,9 +8,11 @@ import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../components/CareersHeader";
 import CareersFooter from "../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../contexts/CareersLanguageContext";
 
 export default function JobsPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
 
   return (
     <>
@@ -41,12 +43,12 @@ export default function JobsPage() {
               className="pt-8 pb-12"
             >
               <h1 className={`text-5xl md:text-7xl font-bold mb-8 drop-shadow-2xl ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                Learn About Jobs
+                {t('careers.jobs.hero.title')}
               </h1>
               <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg mb-12 ${
                 isDark ? 'text-gray-200' : 'text-gray-700'
               }`}>
-                Discover exciting career opportunities at Upvista Digital and find your perfect role in shaping the future of technology.
+                {t('careers.jobs.hero.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -57,7 +59,7 @@ export default function JobsPage() {
                       : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700'
                   }`}
                 >
-                  Apply Now
+                  {t('careers.jobs.hero.applyButton')}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
@@ -68,7 +70,7 @@ export default function JobsPage() {
                       : 'bg-transparent text-gray-900 hover:bg-purple-100 border-purple-400'
                   }`}
                 >
-                  View All Positions
+                  {t('careers.jobs.hero.viewButton')}
                 </Link>
               </div>
             </motion.div>
@@ -85,86 +87,98 @@ export default function JobsPage() {
             className="max-w-7xl mx-auto"
           >
             <div className="text-center mb-16">
-              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Departments</h2>
+              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.jobs.departments.title')}</h2>
               <div className={`w-24 h-1 mx-auto mb-8 ${
                 isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
               }`}></div>
               <p className={`text-lg max-w-3xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                Explore our diverse departments and find where your skills and passions align with our mission.
+                {t('careers.jobs.departments.subtitle')}
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {[
                 {
-                  title: "Development Team",
-                  description: "Build innovative software solutions and cutting-edge applications.",
+                  title: t('careers.jobs.departments.development.title'),
+                  description: t('careers.jobs.departments.development.description'),
                   image: "/assets/careers/jobs/dev.jpeg"
                 },
                 {
-                  title: "UI/UX Design",
-                  description: "Create compelling user experiences and beautiful digital interfaces.",
+                  title: t('careers.jobs.departments.uiux.title'),
+                  description: t('careers.jobs.departments.uiux.description'),
                   image: "/assets/careers/jobs/design.jpeg"
                 },
                 {
-                  title: "Product Management",
-                  description: "Drive product strategy and roadmap development for success.",
+                  title: t('careers.jobs.departments.product.title'),
+                  description: t('careers.jobs.departments.product.description'),
                   image: "/assets/careers/jobs/management.jpeg"
                 },
                 {
-                  title: "Marketing & Sales",
-                  description: "Amplify our brand and drive business growth through strategic initiatives.",
+                  title: t('careers.jobs.departments.marketing.title'),
+                  description: t('careers.jobs.departments.marketing.description'),
                   image: "/assets/careers/jobs/marketing.jpeg"
                 },
                 {
-                  title: "Research & Development",
-                  description: "Pioneer breakthrough technologies and innovative solutions.",
+                  title: t('careers.jobs.departments.rnd.title'),
+                  description: t('careers.jobs.departments.rnd.description'),
                   image: "/assets/careers/jobs/rnd.jpeg"
                 },
                 {
-                  title: "Quality Assurance",
-                  description: "Ensure excellence and reliability in all our products and services.",
+                  title: t('careers.jobs.departments.qa.title'),
+                  description: t('careers.jobs.departments.qa.description'),
                   image: "/assets/careers/jobs/QA.jpeg"
                 },
                 {
-                  title: "IT Infrastructure",
-                  description: "Maintain and optimize our technology infrastructure and systems.",
+                  title: t('careers.jobs.departments.infrastructure.title'),
+                  description: t('careers.jobs.departments.infrastructure.description'),
                   image: "/assets/careers/jobs/infra.jpeg"
                 },
                 {
-                  title: "Customer Service",
-                  description: "Deliver exceptional support and build lasting client relationships.",
+                  title: t('careers.jobs.departments.service.title'),
+                  description: t('careers.jobs.departments.service.description'),
                   image: "/assets/careers/jobs/service.jpeg"
                 },
                 {
-                  title: "Human Resources",
-                  description: "Foster our culture and support our team's growth and development.",
+                  title: t('careers.jobs.departments.hr.title'),
+                  description: t('careers.jobs.departments.hr.description'),
                   image: "/assets/careers/jobs/HR.jpeg"
                 },
                 {
-                  title: "Finance",
-                  description: "Manage financial strategy and ensure sustainable business growth.",
+                  title: t('careers.jobs.departments.finance.title'),
+                  description: t('careers.jobs.departments.finance.description'),
                   image: "/assets/careers/jobs/finance.jpeg"
                 },
                 {
-                  title: "Operations",
-                  description: "Streamline processes and optimize business operations for efficiency.",
+                  title: t('careers.jobs.departments.operations.title'),
+                  description: t('careers.jobs.departments.operations.description'),
                   image: "/assets/careers/jobs/operations.jpeg"
                 },
                 {
-                  title: "Technical Writing",
-                  description: "Create clear documentation and technical content for our products.",
+                  title: t('careers.jobs.departments.writing.title'),
+                  description: t('careers.jobs.departments.writing.description'),
                   image: "/assets/careers/jobs/writing.jpeg"
                 }
-              ].map((department) => {
-                // Fix URL generation for UI/UX Design
-                const getDepartmentUrl = (title: string) => {
-                  if (title === "UI/UX Design") return "/careers/jobs/ui-ux-design";
-                  return `/careers/jobs/${title.toLowerCase().replace(/\s+/g, '-').replace('&', 'and')}`;
-                };
+              ].map((department, index) => {
+                // Department URLs mapped by index since titles are now translated
+                const departmentUrls = [
+                  "/careers/jobs/development-team",
+                  "/careers/jobs/ui-ux-design",
+                  "/careers/jobs/product-management",
+                  "/careers/jobs/marketing-and-sales",
+                  "/careers/jobs/research-and-development",
+                  "/careers/jobs/quality-assurance",
+                  "/careers/jobs/it-infrastructure",
+                  "/careers/jobs/customer-service",
+                  "/careers/jobs/human-resources",
+                  "/careers/jobs/finance",
+                  "/careers/jobs/operations",
+                  "/careers/jobs/technical-writing"
+                ];
+                
+                const getDepartmentUrl = () => departmentUrls[index];
 
                 return (
-                  <Link key={department.title} href={getDepartmentUrl(department.title)} className="h-full">
+                  <Link key={department.title} href={getDepartmentUrl()} className="h-full">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -223,18 +237,18 @@ export default function JobsPage() {
                 : 'from-purple-600/10 to-pink-600/10 border-purple-500/20 bg-white/30'
             }`}>
               <h3 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                Upvista Digital is waiting for you
+                {t('careers.jobs.cta.title')}
               </h3>
               <p className={`text-xl mb-10 max-w-3xl mx-auto leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                Join Upvista Digital as a member and participate in projects that shape the future.<br className="hidden sm:block" />
-                We're looking for talented individuals who share our vision and passion for innovation.
+                {t('careers.jobs.cta.description1')}<br className="hidden sm:block" />
+                {t('careers.jobs.cta.description2')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/careers/apply"
                   className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-purple-500/25"
                 >
-                  Job Openings & Applications
+                  {t('careers.jobs.cta.applyButton')}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
@@ -245,7 +259,7 @@ export default function JobsPage() {
                       : 'bg-white/30 text-gray-900 hover:bg-white/50 border-purple-400'
                   }`}
                 >
-                  Learn About Jobs
+                  {t('careers.jobs.cta.jobsButton')}
                 </Link>
               </div>
             </div>

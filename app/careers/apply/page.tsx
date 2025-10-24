@@ -7,9 +7,11 @@ import { HelpCircle } from "lucide-react";
 import CareersHeader from "../components/CareersHeader";
 import CareersFooter from "../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../contexts/CareersLanguageContext";
 
 export default function ApplyPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   const [activeFilter, setActiveFilter] = useState("all");
   const [hoveredTooltip, setHoveredTooltip] = useState<string | null>(null);
   const [clickedTooltip, setClickedTooltip] = useState<string | null>(null);
@@ -30,9 +32,9 @@ export default function ApplyPage() {
   }, []);
 
   const filters = [
-    { id: "intern", label: "Intern", description: "Entry-level positions for students and recent graduates. Perfect for gaining hands-on experience in web development and graphics design." },
-    { id: "potential", label: "Potential Recruitment", description: "Mid to senior-level positions requiring 2+ years of experience. Includes software engineering, QA, full-stack development, and DevOps roles." },
-    { id: "all", label: "All Positions", description: "View all available positions across all experience levels and departments." }
+    { id: "intern", label: t('careers.apply.filters.intern'), description: t('careers.apply.filters.intern.desc') },
+    { id: "potential", label: t('careers.apply.filters.potential'), description: t('careers.apply.filters.potential.desc') },
+    { id: "all", label: t('careers.apply.filters.all'), description: t('careers.apply.filters.all.desc') }
   ];
 
   const positions = [
@@ -40,20 +42,20 @@ export default function ApplyPage() {
     {
       id: "web-dev-intern",
       category: "intern",
-      department: "Development Team",
-      title: "Web Development Intern",
-      description: "Learn modern web technologies while contributing to real projects.",
-      type: "Internship",
+      department: t('careers.apply.departments.development'),
+      title: t('careers.apply.positions.webDevIntern.title'),
+      description: t('careers.apply.positions.webDevIntern.desc'),
+      type: t('careers.apply.jobTypes.internship'),
       duration: "3-6 months",
       href: "/careers/jobs/web-development-intern"
     },
     {
       id: "graphics-intern",
       category: "intern",
-      department: "UI/UX Design",
-      title: "Graphics Design Intern",
-      description: "Create stunning visual designs and learn industry-standard design tools.",
-      type: "Internship",
+      department: t('careers.apply.departments.uiux'),
+      title: t('careers.apply.positions.graphicsIntern.title'),
+      description: t('careers.apply.positions.graphicsIntern.desc'),
+      type: t('careers.apply.jobTypes.internship'),
       duration: "3-6 months",
       href: "/careers/jobs/graphics-design-intern"
     },
@@ -61,40 +63,40 @@ export default function ApplyPage() {
     {
       id: "software-engineer",
       category: "potential",
-      department: "Development Team",
-      title: "Software Engineer",
-      description: "Build scalable software solutions using modern technologies and best practices.",
-      type: "Full-time",
+      department: t('careers.apply.departments.development'),
+      title: t('careers.apply.positions.softwareEngineer.title'),
+      description: t('careers.apply.positions.softwareEngineer.desc'),
+      type: t('careers.apply.jobTypes.fulltime'),
       experience: "2-5 years",
       href: "/careers/jobs/software-engineer"
     },
     {
       id: "qa-engineer",
       category: "potential",
-      department: "QA",
-      title: "QA Engineer",
-      description: "Ensure software quality through comprehensive testing and quality assurance processes.",
-      type: "Full-time",
+      department: t('careers.apply.departments.qa'),
+      title: t('careers.apply.positions.qaEngineer.title'),
+      description: t('careers.apply.positions.qaEngineer.desc'),
+      type: t('careers.apply.jobTypes.fulltime'),
       experience: "2-4 years",
       href: "/careers/jobs/qa-engineer"
     },
     {
       id: "fullstack-developer",
       category: "potential",
-      department: "Development Team",
-      title: "Full Stack Web Developer",
-      description: "Develop end-to-end web applications with expertise in both frontend and backend technologies.",
-      type: "Full-time",
+      department: t('careers.apply.departments.development'),
+      title: t('careers.apply.positions.fullstackDeveloper.title'),
+      description: t('careers.apply.positions.fullstackDeveloper.desc'),
+      type: t('careers.apply.jobTypes.fulltime'),
       experience: "3-6 years",
       href: "/careers/jobs/full-stack-developer"
     },
     {
       id: "devops-engineer",
       category: "potential",
-      department: "IT Infrastructure",
-      title: "DevOps & Cloud Engineer",
-      description: "Manage cloud infrastructure and implement CI/CD pipelines for seamless deployments.",
-      type: "Full-time",
+      department: t('careers.apply.departments.infrastructure'),
+      title: t('careers.apply.positions.devopsEngineer.title'),
+      description: t('careers.apply.positions.devopsEngineer.desc'),
+      type: t('careers.apply.jobTypes.fulltime'),
       experience: "3-5 years",
       href: "/careers/jobs/devops-engineer"
     }
@@ -105,22 +107,24 @@ export default function ApplyPage() {
   );
 
   const getDepartmentColor = (department: string) => {
+    // Use original English names for color mapping since translations might vary
+    const isDevelopment = department === t('careers.apply.departments.development');
+    const isUIUX = department === t('careers.apply.departments.uiux');
+    const isQA = department === t('careers.apply.departments.qa');
+    const isInfrastructure = department === t('careers.apply.departments.infrastructure');
+    
     if (isDark) {
-      const colors: { [key: string]: string } = {
-        "Development Team": "bg-blue-500/20 text-blue-300 border-blue-500/30",
-        "UI/UX Design": "bg-purple-500/20 text-purple-300 border-purple-500/30",
-        "QA": "bg-green-500/20 text-green-300 border-green-500/30",
-        "IT Infrastructure": "bg-orange-500/20 text-orange-300 border-orange-500/30"
-      };
-      return colors[department] || "bg-gray-500/20 text-gray-300 border-gray-500/30";
+      if (isDevelopment) return "bg-blue-500/20 text-blue-300 border-blue-500/30";
+      if (isUIUX) return "bg-purple-500/20 text-purple-300 border-purple-500/30";
+      if (isQA) return "bg-green-500/20 text-green-300 border-green-500/30";
+      if (isInfrastructure) return "bg-orange-500/20 text-orange-300 border-orange-500/30";
+      return "bg-gray-500/20 text-gray-300 border-gray-500/30";
     } else {
-      const colors: { [key: string]: string } = {
-        "Development Team": "bg-blue-100 text-blue-700 border-blue-400",
-        "UI/UX Design": "bg-purple-100 text-purple-700 border-purple-400",
-        "QA": "bg-green-100 text-green-700 border-green-400",
-        "IT Infrastructure": "bg-orange-100 text-orange-700 border-orange-400"
-      };
-      return colors[department] || "bg-gray-100 text-gray-700 border-gray-400";
+      if (isDevelopment) return "bg-blue-100 text-blue-700 border-blue-400";
+      if (isUIUX) return "bg-purple-100 text-purple-700 border-purple-400";
+      if (isQA) return "bg-green-100 text-green-700 border-green-400";
+      if (isInfrastructure) return "bg-orange-100 text-orange-700 border-orange-400";
+      return "bg-gray-100 text-gray-700 border-gray-400";
     }
   };
 
@@ -162,10 +166,10 @@ export default function ApplyPage() {
             className="text-center mb-16 mt-12"
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Join Our Team
+              {t('careers.apply.hero.title')}
             </h1>
             <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-              Discover exciting career opportunities and be part of building the future of technology
+              {t('careers.apply.hero.subtitle')}
             </p>
           </motion.div>
 
@@ -254,18 +258,18 @@ export default function ApplyPage() {
                 {/* Job Details */}
                 <div className="space-y-2 mb-6">
                   <div className={`flex items-center gap-2 text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <span className="font-medium">Type:</span>
+                    <span className="font-medium">{t('careers.apply.jobDetails.type')}</span>
                     <span className={isDark ? 'text-purple-300' : 'text-purple-600'}>{position.type}</span>
                   </div>
                   {position.duration && (
                     <div className={`flex items-center gap-2 text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      <span className="font-medium">Duration:</span>
+                      <span className="font-medium">{t('careers.apply.jobDetails.duration')}</span>
                       <span className={isDark ? 'text-blue-300' : 'text-indigo-600'}>{position.duration}</span>
                     </div>
                   )}
                   {position.experience && (
                     <div className={`flex items-center gap-2 text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      <span className="font-medium">Experience:</span>
+                      <span className="font-medium">{t('careers.apply.jobDetails.experience')}</span>
                       <span className={isDark ? 'text-green-300' : 'text-green-600'}>{position.experience}</span>
                     </div>
                   )}
@@ -274,7 +278,7 @@ export default function ApplyPage() {
                 {/* View Button */}
                 <Link href={position.href}>
                   <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25">
-                    View Details & Apply
+                    {t('careers.apply.cta.viewDetails')}
                   </button>
                 </Link>
               </motion.div>
@@ -288,7 +292,7 @@ export default function ApplyPage() {
               animate={{ opacity: 1 }}
               className="text-center py-16"
             >
-              <p className={`text-xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>No positions available for the selected filter.</p>
+              <p className={`text-xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{t('careers.apply.noPositions')}</p>
             </motion.div>
           )}
 
@@ -304,15 +308,15 @@ export default function ApplyPage() {
                 ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-purple-500/30' 
                 : 'bg-gradient-to-r from-purple-100 via-indigo-100 to-blue-100 border-indigo-300'
             }`}>
-              <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Don&apos;t See Your Perfect Role?</h2>
+              <h2 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.apply.cta.title')}</h2>
               <p className={`mb-6 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                We're always looking for talented individuals. Send us your resume and let us know how you'd like to contribute to our team.
+                {t('careers.apply.cta.desc')}
               </p>
               <Link
                 href="/contact"
                 className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25"
               >
-                Contact Us
+                {t('careers.apply.cta.contact')}
               </Link>
             </div>
           </motion.div>

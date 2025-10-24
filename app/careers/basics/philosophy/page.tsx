@@ -94,7 +94,7 @@ export default function PhilosophyPage() {
               <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Five Cultures</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.philosophy.cultures.title')}</h2>
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                   {/* Human-Centered */}
@@ -103,9 +103,9 @@ export default function PhilosophyPage() {
                       ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                       : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Human-Centered</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.cultures.humanCentered.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      We prioritize people over technology. Every solution we create is designed with the human experience at its core, ensuring our innovations truly serve and enhance human life.
+                      {t('careers.philosophy.cultures.humanCentered.description')}
                     </p>
                   </div>
 
@@ -115,9 +115,9 @@ export default function PhilosophyPage() {
                       ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                       : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Innovation-Driven</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.cultures.innovation.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      We embrace change and continuously seek new ways to solve problems. Our culture encourages experimentation, creativity, and thinking beyond conventional boundaries.
+                      {t('careers.philosophy.cultures.innovation.description')}
                     </p>
                   </div>
 
@@ -127,9 +127,9 @@ export default function PhilosophyPage() {
                       ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                       : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Collaborative</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.cultures.collaborative.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      We believe that the best solutions emerge from diverse perspectives working together. We foster an environment where every voice is heard and valued.
+                      {t('careers.philosophy.cultures.collaborative.description')}
                     </p>
                   </div>
 
@@ -139,9 +139,9 @@ export default function PhilosophyPage() {
                       ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                       : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Ethical</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.cultures.ethical.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      We conduct our business with the highest standards of integrity, transparency, and responsibility. We're committed to creating technology that benefits society.
+                      {t('careers.philosophy.cultures.ethical.description')}
                     </p>
                   </div>
 
@@ -151,9 +151,9 @@ export default function PhilosophyPage() {
                       ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                       : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Excellence-Focused</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.cultures.excellence.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      We strive for excellence in everything we do, from the smallest detail to the grandest vision. Quality is not just a goal—it&apos;s our standard.
+                      {t('careers.philosophy.cultures.excellence.description')}
                     </p>
                   </div>
 
@@ -163,9 +163,9 @@ export default function PhilosophyPage() {
                       ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                       : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Growth-Oriented</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.cultures.growth.title')}</h3>
                     <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      We believe in continuous learning and personal development. Every challenge is an opportunity to grow, both individually and as an organization.
+                      {t('careers.philosophy.cultures.growth.description')}
                     </p>
                   </div>
                 </div>
@@ -182,42 +182,42 @@ export default function PhilosophyPage() {
               <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Guiding Principles</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.philosophy.principles.title')}</h2>
                 
                 <div className="space-y-8">
                   <div className={`p-6 rounded-xl border ${
                     isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Growth Mindset</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.principles.growthMindset.title')}</h3>
                     <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      We believe that abilities and intelligence can be developed through dedication and hard work. Every challenge is an opportunity to learn and improve, and we encourage our team to embrace this mindset in all aspects of their work.
+                      {t('careers.philosophy.principles.growthMindset.description')}
                     </p>
                   </div>
 
                   <div className={`p-6 rounded-xl border ${
                     isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Sustainable Innovation</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.principles.sustainable.title')}</h3>
                     <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Our innovations are designed for long-term impact. We consider environmental, social, and economic sustainability in all our solutions, ensuring that our work creates positive change for future generations.
+                      {t('careers.philosophy.principles.sustainable.description')}
                     </p>
                   </div>
 
                   <div className={`p-6 rounded-xl border ${
                     isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Customer Success</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.principles.customer.title')}</h3>
                     <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Our success is measured by our clients' success. We are committed to understanding their needs and delivering solutions that exceed expectations, building lasting partnerships based on mutual trust and achievement.
+                      {t('careers.philosophy.principles.customer.description')}
                     </p>
                   </div>
 
                   <div className={`p-6 rounded-xl border ${
                     isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Continuous Learning</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.principles.learning.title')}</h3>
                     <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      In the rapidly evolving tech landscape, we maintain our competitive edge through continuous learning, skill development, and knowledge sharing. We invest in our team's growth and encourage curiosity and exploration.
+                      {t('careers.philosophy.principles.learning.description')}
                     </p>
                   </div>
                 </div>
@@ -236,9 +236,9 @@ export default function PhilosophyPage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Vision</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.philosophy.vision.title')}</h2>
                 <p className={`text-lg md:text-xl leading-relaxed max-w-4xl mx-auto italic ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  "To be the global leader in creating technology solutions that not only solve today's challenges but anticipate tomorrow's opportunities, building a more connected, efficient, and prosperous world for all."
+                  "{t('careers.philosophy.vision.quote')}"
                 </p>
               </div>
             </motion.section>
@@ -253,32 +253,32 @@ export default function PhilosophyPage() {
               <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Values in Action</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.philosophy.values.title')}</h2>
                 
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className={`p-6 rounded-xl border ${
                     isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Workplace Culture</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.values.workplace.title')}</h3>
                     <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      <p>• Open communication and transparency</p>
-                      <p>• Flexible work arrangements</p>
-                      <p>• Regular team building activities</p>
-                      <p>• Mental health and wellness support</p>
-                      <p>• Recognition and reward programs</p>
+                      <p>• {t('careers.philosophy.values.workplace.item1')}</p>
+                      <p>• {t('careers.philosophy.values.workplace.item2')}</p>
+                      <p>• {t('careers.philosophy.values.workplace.item3')}</p>
+                      <p>• {t('careers.philosophy.values.workplace.item4')}</p>
+                      <p>• {t('careers.philosophy.values.workplace.item5')}</p>
                     </div>
                   </div>
                   
                   <div className={`p-6 rounded-xl border ${
                     isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                   }`}>
-                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Community Impact</h3>
+                    <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.philosophy.values.community.title')}</h3>
                     <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                      <p>• Pro bono technology consulting</p>
-                      <p>• Educational outreach programs</p>
-                      <p>• Environmental sustainability initiatives</p>
-                      <p>• Diversity and inclusion efforts</p>
-                      <p>• Technology accessibility advocacy</p>
+                      <p>• {t('careers.philosophy.values.community.item1')}</p>
+                      <p>• {t('careers.philosophy.values.community.item2')}</p>
+                      <p>• {t('careers.philosophy.values.community.item3')}</p>
+                      <p>• {t('careers.philosophy.values.community.item4')}</p>
+                      <p>• {t('careers.philosophy.values.community.item5')}</p>
                     </div>
                   </div>
                 </div>
@@ -297,15 +297,15 @@ export default function PhilosophyPage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Join Our Mission?</h3>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.philosophy.cta.title')}</h3>
                 <p className={`text-lg mb-8 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Be part of a team that lives by these values and principles. Explore exciting career opportunities at Upvista Digital.
+                  {t('careers.philosophy.cta.description')}
                 </p>
                 <Link
                   href="/careers"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
                 >
-                  Join Our Team
+                  {t('careers.philosophy.cta.button')}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </div>

@@ -7,9 +7,11 @@ import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../../contexts/CareersLanguageContext";
 
 export default function InclusiveHiringPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   
   return (
     <>
@@ -37,7 +39,7 @@ export default function InclusiveHiringPage() {
               }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Learn the Basics
+              {t('careers.inclusive.back')}
             </Link>
           </div>
         </div>
@@ -52,12 +54,12 @@ export default function InclusiveHiringPage() {
             className="text-center mb-24 relative z-20 pt-8 pb-12"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
-              Inclusive Hiring for People with Disabilities
+              {t('careers.inclusive.hero.title')}
             </h1>
             <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Our comprehensive commitment to hiring, supporting, and empowering people with disabilities through inclusive practices, accommodations, and development opportunities.
+              {t('careers.inclusive.hero.subtitle')}
             </p>
           </motion.div>
 
@@ -70,16 +72,16 @@ export default function InclusiveHiringPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Commitment to Inclusion</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.commitment.title')}</h2>
               <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  At Upvista Digital, we believe that diversity drives innovation and inclusion creates excellence. We are committed to hiring and supporting people with disabilities, recognizing that they bring unique perspectives, skills, and talents that strengthen our team and enhance our solutions.
+                  {t('careers.inclusive.commitment.paragraph1')}
                 </p>
                 <p>
-                  Our inclusive hiring practices go beyond compliance to create genuine opportunities for people with disabilities to thrive in their careers. We understand that disability is not a barrier to success, but rather a source of unique strengths and perspectives that benefit our entire organization.
+                  {t('careers.inclusive.commitment.paragraph2')}
                 </p>
                 <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
-                  "We don't just hire people with disabilities—we actively seek them out because we know they make us better."
+                  "{t('careers.inclusive.commitment.quote')}"
                 </p>
               </div>
             </motion.section>
@@ -91,7 +93,7 @@ export default function InclusiveHiringPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="max-w-6xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Disability Categories We Support</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.categories.title')}</h2>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Physical Disabilities */}
@@ -100,13 +102,13 @@ export default function InclusiveHiringPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Physical Disabilities</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.categories.physical.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Mild mobility impairments</p>
-                    <p>• Controlled chronic pain conditions</p>
-                    <p>• Limb differences</p>
-                    <p>• Mild arthritis and joint conditions</p>
-                    <p>• Repetitive strain injuries</p>
+                    <p>• {t('careers.inclusive.categories.physical.item1')}</p>
+                    <p>• {t('careers.inclusive.categories.physical.item2')}</p>
+                    <p>• {t('careers.inclusive.categories.physical.item3')}</p>
+                    <p>• {t('careers.inclusive.categories.physical.item4')}</p>
+                    <p>• {t('careers.inclusive.categories.physical.item5')}</p>
                   </div>
                 </div>
 
@@ -116,13 +118,13 @@ export default function InclusiveHiringPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Sensory Disabilities</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.categories.sensory.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Mild visual impairments</p>
-                    <p>• Hearing impairments with assistive technology</p>
-                    <p>• Speech differences</p>
-                    <p>• Tinnitus and mild auditory conditions</p>
-                    <p>• Color vision deficiency</p>
+                    <p>• {t('careers.inclusive.categories.sensory.item1')}</p>
+                    <p>• {t('careers.inclusive.categories.sensory.item2')}</p>
+                    <p>• {t('careers.inclusive.categories.sensory.item3')}</p>
+                    <p>• {t('careers.inclusive.categories.sensory.item4')}</p>
+                    <p>• {t('careers.inclusive.categories.sensory.item5')}</p>
                   </div>
                 </div>
 
@@ -132,13 +134,13 @@ export default function InclusiveHiringPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Learning Differences</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.categories.learning.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Dyslexia and reading differences</p>
-                    <p>• ADHD and attention differences</p>
-                    <p>• High-functioning autism spectrum</p>
-                    <p>• Dyscalculia and math differences</p>
-                    <p>• Processing speed differences</p>
+                    <p>• {t('careers.inclusive.categories.learning.item1')}</p>
+                    <p>• {t('careers.inclusive.categories.learning.item2')}</p>
+                    <p>• {t('careers.inclusive.categories.learning.item3')}</p>
+                    <p>• {t('careers.inclusive.categories.learning.item4')}</p>
+                    <p>• {t('careers.inclusive.categories.learning.item5')}</p>
                   </div>
                 </div>
 
@@ -148,13 +150,13 @@ export default function InclusiveHiringPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Mental Health Conditions</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.categories.mental.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Well-managed depression and anxiety</p>
-                    <p>• Stable bipolar disorder</p>
-                    <p>• Managed PTSD and trauma recovery</p>
-                    <p>• Controlled obsessive-compulsive tendencies</p>
-                    <p>• Stress-related conditions</p>
+                    <p>• {t('careers.inclusive.categories.mental.item1')}</p>
+                    <p>• {t('careers.inclusive.categories.mental.item2')}</p>
+                    <p>• {t('careers.inclusive.categories.mental.item3')}</p>
+                    <p>• {t('careers.inclusive.categories.mental.item4')}</p>
+                    <p>• {t('careers.inclusive.categories.mental.item5')}</p>
                   </div>
                 </div>
 
@@ -164,13 +166,13 @@ export default function InclusiveHiringPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Chronic Health Conditions</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.categories.chronic.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Well-controlled diabetes</p>
-                    <p>• Stable multiple sclerosis</p>
-                    <p>• Controlled epilepsy</p>
-                    <p>• Managed autoimmune disorders</p>
-                    <p>• Cancer survivors in remission</p>
+                    <p>• {t('careers.inclusive.categories.chronic.item1')}</p>
+                    <p>• {t('careers.inclusive.categories.chronic.item2')}</p>
+                    <p>• {t('careers.inclusive.categories.chronic.item3')}</p>
+                    <p>• {t('careers.inclusive.categories.chronic.item4')}</p>
+                    <p>• {t('careers.inclusive.categories.chronic.item5')}</p>
                   </div>
                 </div>
 
@@ -180,13 +182,13 @@ export default function InclusiveHiringPage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Invisible Conditions</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.categories.invisible.title')}</h3>
                   <div className={`space-y-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Managed fibromyalgia</p>
-                    <p>• Controlled migraine disorders</p>
-                    <p>• Managed sleep disorders</p>
-                    <p>• Controlled digestive conditions</p>
-                    <p>• Mild respiratory conditions</p>
+                    <p>• {t('careers.inclusive.categories.invisible.item1')}</p>
+                    <p>• {t('careers.inclusive.categories.invisible.item2')}</p>
+                    <p>• {t('careers.inclusive.categories.invisible.item3')}</p>
+                    <p>• {t('careers.inclusive.categories.invisible.item4')}</p>
+                    <p>• {t('careers.inclusive.categories.invisible.item5')}</p>
                   </div>
                 </div>
               </div>
@@ -199,32 +201,32 @@ export default function InclusiveHiringPage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="max-w-6xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Incentives and Benefits</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.title')}</h2>
               
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Financial Incentives */}
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Financial Incentives</h3>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.benefits.financial.title')}</h3>
                   <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Competitive Compensation</h4>
-                      <p>• Equal pay for equal work, regardless of disability status</p>
-                      <p>• Performance-based bonuses and incentives</p>
-                      <p>• Market-competitive salary packages</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.financial.compensation.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.financial.compensation.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.financial.compensation.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.financial.compensation.item3')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Tax Benefits</h4>
-                      <p>• Assistance with disability tax credits</p>
-                      <p>• Information on work opportunity tax credits</p>
-                      <p>• Financial planning and benefits consultation</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.financial.tax.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.financial.tax.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.financial.tax.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.financial.tax.item3')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Equipment and Technology</h4>
-                      <p>• Assistive technology and equipment provided</p>
-                      <p>• Software and hardware accommodations</p>
-                      <p>• Home office setup for remote work</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.financial.equipment.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.financial.equipment.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.financial.equipment.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.financial.equipment.item3')}</p>
                     </div>
                   </div>
                 </div>
@@ -233,25 +235,25 @@ export default function InclusiveHiringPage() {
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Health and Wellness Benefits</h3>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.benefits.health.title')}</h3>
                   <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Comprehensive Health Coverage</h4>
-                      <p>• Medical, dental, and vision insurance</p>
-                      <p>• Mental health coverage and counseling</p>
-                      <p>• Prescription drug coverage</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.health.coverage.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.health.coverage.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.health.coverage.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.health.coverage.item3')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Disability-Specific Benefits</h4>
-                      <p>• Coverage for assistive devices</p>
-                      <p>• Therapy and rehabilitation services</p>
-                      <p>• Specialized medical equipment</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.health.disability.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.health.disability.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.health.disability.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.health.disability.item3')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Wellness Programs</h4>
-                      <p>• Flexible sick leave and medical appointments</p>
-                      <p>• Wellness stipends and health incentives</p>
-                      <p>• Access to fitness and wellness programs</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.health.wellness.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.health.wellness.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.health.wellness.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.health.wellness.item3')}</p>
                     </div>
                   </div>
                 </div>
@@ -260,25 +262,25 @@ export default function InclusiveHiringPage() {
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Work-Life Balance</h3>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.benefits.balance.title')}</h3>
                   <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Flexible Work Arrangements</h4>
-                      <p>• Remote work and hybrid options</p>
-                      <p>• Flexible scheduling and hours</p>
-                      <p>• Part-time and job-sharing opportunities</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.balance.flexible.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.balance.flexible.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.balance.flexible.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.balance.flexible.item3')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Time Off and Leave</h4>
-                      <p>• Generous vacation and personal days</p>
-                      <p>• Medical and disability leave</p>
-                      <p>• Family and caregiver leave</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.balance.leave.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.balance.leave.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.balance.leave.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.balance.leave.item3')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Support Services</h4>
-                      <p>• Employee assistance programs</p>
-                      <p>• Caregiver support resources</p>
-                      <p>• Transportation assistance</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.balance.support.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.balance.support.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.balance.support.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.balance.support.item3')}</p>
                     </div>
                   </div>
                 </div>
@@ -287,25 +289,25 @@ export default function InclusiveHiringPage() {
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Career Development</h3>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.benefits.development.title')}</h3>
                   <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Professional Growth</h4>
-                      <p>• Mentorship and coaching programs</p>
-                      <p>• Leadership development opportunities</p>
-                      <p>• Internal promotion pathways</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.development.growth.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.development.growth.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.development.growth.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.development.growth.item3')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Learning and Training</h4>
-                      <p>• Professional development budgets</p>
-                      <p>• Conference and workshop attendance</p>
-                      <p>• Online learning platform access</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.development.learning.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.development.learning.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.development.learning.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.development.learning.item3')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Skill Building</h4>
-                      <p>• Technical skill development</p>
-                      <p>• Soft skills training</p>
-                      <p>• Certification and credential support</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.benefits.development.skills.title')}</h4>
+                      <p>• {t('careers.inclusive.benefits.development.skills.item1')}</p>
+                      <p>• {t('careers.inclusive.benefits.development.skills.item2')}</p>
+                      <p>• {t('careers.inclusive.benefits.development.skills.item3')}</p>
                     </div>
                   </div>
                 </div>
@@ -319,49 +321,49 @@ export default function InclusiveHiringPage() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="max-w-6xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Care and Support Systems</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.support.title')}</h2>
               
               <div className="space-y-8">
                 {/* Accommodation Support */}
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Accommodation Support</h3>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.support.accommodation.title')}</h3>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Application Process</h4>
+                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.support.accommodation.application.title')}</h4>
                       <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Alternative application formats (audio, video, written)</p>
-                        <p>• Extended application deadlines when needed</p>
-                        <p>• Assistance with application completion</p>
-                        <p>• Accessible online application system</p>
+                        <p>• {t('careers.inclusive.support.accommodation.application.item1')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.application.item2')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.application.item3')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.application.item4')}</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Interview Process</h4>
+                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.support.accommodation.interview.title')}</h4>
                       <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Flexible interview formats and locations</p>
-                        <p>• Sign language interpreters available</p>
-                        <p>• Assistive technology support</p>
-                        <p>• Extended time for assessments when needed</p>
+                        <p>• {t('careers.inclusive.support.accommodation.interview.item1')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.interview.item2')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.interview.item3')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.interview.item4')}</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Workplace Support</h4>
+                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.support.accommodation.workplace.title')}</h4>
                       <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Accessible office spaces and facilities</p>
-                        <p>• Assistive technology and equipment</p>
-                        <p>• Flexible work arrangements</p>
-                        <p>• Ongoing support and accommodations</p>
+                        <p>• {t('careers.inclusive.support.accommodation.workplace.item1')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.workplace.item2')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.workplace.item3')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.workplace.item4')}</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ongoing Support</h4>
+                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.support.accommodation.ongoing.title')}</h4>
                       <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Regular check-ins and support meetings</p>
-                        <p>• Accommodation adjustment and updates</p>
-                        <p>• Peer support and mentoring</p>
-                        <p>• Access to disability resource groups</p>
+                        <p>• {t('careers.inclusive.support.accommodation.ongoing.item1')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.ongoing.item2')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.ongoing.item3')}</p>
+                        <p>• {t('careers.inclusive.support.accommodation.ongoing.item4')}</p>
                       </div>
                     </div>
                   </div>
@@ -371,33 +373,33 @@ export default function InclusiveHiringPage() {
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Accessibility and Technology</h3>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.support.accessibility.title')}</h3>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div>
-                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Assistive Technology</h4>
+                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.support.accessibility.assistive.title')}</h4>
                       <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Screen readers and magnification software</p>
-                        <p>• Voice recognition software</p>
-                        <p>• Alternative input devices</p>
-                        <p>• Hearing assistance technology</p>
+                        <p>• {t('careers.inclusive.support.accessibility.assistive.item1')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.assistive.item2')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.assistive.item3')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.assistive.item4')}</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Digital Accessibility</h4>
+                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.support.accessibility.digital.title')}</h4>
                       <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• WCAG compliant websites and applications</p>
-                        <p>• Accessible document formats</p>
-                        <p>• Captioning and transcription services</p>
-                        <p>• Alternative text and descriptions</p>
+                        <p>• {t('careers.inclusive.support.accessibility.digital.item1')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.digital.item2')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.digital.item3')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.digital.item4')}</p>
                       </div>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Physical Accessibility</h4>
+                      <h4 className={`font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.support.accessibility.physical.title')}</h4>
                       <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        <p>• Wheelchair accessible facilities</p>
-                        <p>• Adjustable workstations and furniture</p>
-                        <p>• Accessible parking and transportation</p>
-                        <p>• Clear signage and wayfinding</p>
+                        <p>• {t('careers.inclusive.support.accessibility.physical.item1')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.physical.item2')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.physical.item3')}</p>
+                        <p>• {t('careers.inclusive.support.accessibility.physical.item4')}</p>
                       </div>
                     </div>
                   </div>
@@ -412,35 +414,35 @@ export default function InclusiveHiringPage() {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="max-w-6xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Development and Growth Opportunities</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.development.title')}</h2>
               
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Professional Development */}
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Professional Development</h3>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.development.professional.title')}</h3>
                   <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Training Programs</h4>
-                      <p>• Accessible training and development programs</p>
-                      <p>• Technical skill enhancement courses</p>
-                      <p>• Leadership and management training</p>
-                      <p>• Industry certification programs</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.development.professional.training.title')}</h4>
+                      <p>• {t('careers.inclusive.development.professional.training.item1')}</p>
+                      <p>• {t('careers.inclusive.development.professional.training.item2')}</p>
+                      <p>• {t('careers.inclusive.development.professional.training.item3')}</p>
+                      <p>• {t('careers.inclusive.development.professional.training.item4')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Mentorship</h4>
-                      <p>• One-on-one mentorship programs</p>
-                      <p>• Peer mentoring and support</p>
-                      <p>• Cross-functional collaboration</p>
-                      <p>• Career guidance and planning</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.development.professional.mentorship.title')}</h4>
+                      <p>• {t('careers.inclusive.development.professional.mentorship.item1')}</p>
+                      <p>• {t('careers.inclusive.development.professional.mentorship.item2')}</p>
+                      <p>• {t('careers.inclusive.development.professional.mentorship.item3')}</p>
+                      <p>• {t('careers.inclusive.development.professional.mentorship.item4')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Networking</h4>
-                      <p>• Industry conference attendance</p>
-                      <p>• Professional association memberships</p>
-                      <p>• Internal networking events</p>
-                      <p>• Community involvement opportunities</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.development.professional.networking.title')}</h4>
+                      <p>• {t('careers.inclusive.development.professional.networking.item1')}</p>
+                      <p>• {t('careers.inclusive.development.professional.networking.item2')}</p>
+                      <p>• {t('careers.inclusive.development.professional.networking.item3')}</p>
+                      <p>• {t('careers.inclusive.development.professional.networking.item4')}</p>
                     </div>
                   </div>
                 </div>
@@ -449,28 +451,28 @@ export default function InclusiveHiringPage() {
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Career Advancement</h3>
+                  <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.inclusive.development.advancement.title')}</h3>
                   <div className={`space-y-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Growth Pathways</h4>
-                      <p>• Clear promotion and advancement criteria</p>
-                      <p>• Internal job posting and transfers</p>
-                      <p>• Lateral movement opportunities</p>
-                      <p>• Special project assignments</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.development.advancement.growth.title')}</h4>
+                      <p>• {t('careers.inclusive.development.advancement.growth.item1')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.growth.item2')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.growth.item3')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.growth.item4')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Leadership Development</h4>
-                      <p>• Leadership training programs</p>
-                      <p>• Management development tracks</p>
-                      <p>• Team leadership opportunities</p>
-                      <p>• Executive coaching and support</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.development.advancement.leadership.title')}</h4>
+                      <p>• {t('careers.inclusive.development.advancement.leadership.item1')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.leadership.item2')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.leadership.item3')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.leadership.item4')}</p>
                     </div>
                     <div>
-                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Recognition</h4>
-                      <p>• Performance recognition programs</p>
-                      <p>• Achievement awards and incentives</p>
-                      <p>• Peer recognition systems</p>
-                      <p>• Professional milestone celebrations</p>
+                      <h4 className={`font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.development.advancement.recognition.title')}</h4>
+                      <p>• {t('careers.inclusive.development.advancement.recognition.item1')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.recognition.item2')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.recognition.item3')}</p>
+                      <p>• {t('careers.inclusive.development.advancement.recognition.item4')}</p>
                     </div>
                   </div>
                 </div>
@@ -489,16 +491,16 @@ export default function InclusiveHiringPage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Impact of Inclusive Hiring</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.impact.title')}</h2>
                 <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p>
-                    Our inclusive hiring practices have transformed our organization. Team members with disabilities have brought unique perspectives that led to breakthrough innovations in accessibility features across our products and services.
+                    {t('careers.inclusive.impact.paragraph1')}
                   </p>
                   <p>
-                    By including diverse voices in our design and development process, we've created more user-friendly and accessible solutions that benefit all our clients. Our inclusive team has strengthened collaboration and improved outcomes across all departments.
+                    {t('careers.inclusive.impact.paragraph2')}
                   </p>
                   <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
-                    "The best innovations come from diverse teams. Our colleagues with disabilities don't just bring their skills—they bring perspectives that make our entire team better."
+                    "{t('careers.inclusive.impact.quote')}"
                   </p>
                 </div>
               </div>
@@ -516,16 +518,16 @@ export default function InclusiveHiringPage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Join Our Inclusive Team?</h3>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.inclusive.cta.title')}</h3>
                 <p className={`text-lg mb-8 max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  If you&apos;re a person with a disability and interested in joining our team, we encourage you to apply. We're committed to providing the support and accommodations you need to succeed. Don&apos;t hesitate to reach out if you have any questions about our inclusive hiring process or need assistance with your application.
+                  {t('careers.inclusive.cta.description')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href="/careers"
                     className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
                   >
-                    Apply Today
+                    {t('careers.inclusive.cta.applyButton')}
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                   <Link
@@ -536,7 +538,7 @@ export default function InclusiveHiringPage() {
                         : 'bg-gray-900/10 text-gray-900 hover:bg-gray-900/20 border-gray-900/20'
                     }`}
                   >
-                    Contact Us for Support
+                    {t('careers.inclusive.cta.contactButton')}
                   </Link>
                 </div>
               </div>

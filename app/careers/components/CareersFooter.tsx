@@ -213,10 +213,6 @@ export default function CareersFooter() {
                        <div className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent ${
                          isDark ? 'from-black/70' : 'from-white/70'
                        }`}></div>
-                       <div className={`absolute bottom-4 left-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                         <h4 className="text-lg font-bold">{t('careers.footer.companyName')}</h4>
-                         <p className={`text-sm ${isDark ? 'text-purple-300' : 'text-blue-600'}`}>{t('careers.footer.buildingFuture')}</p>
-                       </div>
                      </div>
                    </div>
                  </div>

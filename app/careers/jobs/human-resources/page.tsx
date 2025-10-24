@@ -7,9 +7,11 @@ import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../../contexts/CareersLanguageContext";
 
 export default function HumanResourcesPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   
   return (
     <>
@@ -36,24 +38,24 @@ export default function HumanResourcesPage() {
               className="pt-8 pb-12"
             >
               <h1 className={`text-5xl md:text-7xl font-bold mb-8 drop-shadow-2xl ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                Human Resources
+                {t('careers.departments.hr.hero.title')}
               </h1>
               <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg mb-12 ${isDark ? 'text-gray-200' : 'text-gray-700'}`}>
-                Build and nurture our most valuable asset - our people - through strategic HR initiatives and employee development programs.
+                {t('careers.departments.hr.hero.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/careers/apply"
                   className={`inline-flex items-center px-8 py-4 font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg ${isDark ? 'bg-white text-slate-900 hover:bg-gray-100' : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700'}`}
                 >
-                  Apply Now
+                  {t('careers.departments.applyNow')}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
                 <Link
                   href="/careers/jobs"
                   className={`inline-flex items-center px-8 py-4 bg-transparent font-semibold rounded-lg transition-all duration-200 border ${isDark ? 'text-white hover:bg-white/10 border-white/30' : 'text-gray-900 hover:bg-purple-100 border-purple-400'}`}
                 >
-                  Back to Departments
+                  {t('careers.departments.backToDepartments')}
                 </Link>
               </div>
             </motion.div>
@@ -72,19 +74,19 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>About Human Resources</h2>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.about.title')}</h2>
                 <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className={`space-y-8 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  The Human Resources team at Upvista Digital is responsible for attracting, developing, and retaining the exceptional talent that drives our success. We create an environment where our people can thrive, grow, and contribute to our mission of delivering innovative digital solutions to clients worldwide.
+                  {t('careers.departments.hr.about.p1')}
                 </p>
                 <p>
-                  Our team manages all aspects of the employee lifecycle from recruitment and onboarding to performance management and career development. We work closely with leadership and all departments to ensure that our people policies, programs, and practices support both individual growth and organizational success.
+                  {t('careers.departments.hr.about.p2')}
                 </p>
                 <p>
-                  We believe that our people are our greatest competitive advantage. Our team is passionate about creating an inclusive, supportive, and dynamic workplace where every team member can reach their full potential and contribute to Upvista's continued growth and success.
+                  {t('careers.departments.hr.about.p3')}
                 </p>
               </div>
             </motion.section>
@@ -97,36 +99,36 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>What We Do</h2>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.whatWeDo')}</h2>
                 <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="space-y-8">
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Talent Acquisition</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.activities.talent.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We identify, attract, and hire top talent from around the world to join our team. Our recruitment process includes sourcing, screening, interviewing, and onboarding to ensure we bring in the right people who align with our values and can contribute to our success.
+                    {t('careers.departments.hr.activities.talent.desc')}
                   </p>
                 </div>
                 
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Employee Development</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.activities.development.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We design and implement comprehensive learning and development programs that help our team members grow their skills and advance their careers. This includes training programs, mentorship opportunities, and career development planning.
+                    {t('careers.departments.hr.activities.development.desc')}
                   </p>
                 </div>
                 
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Performance Management</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.activities.performance.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We implement performance management systems that help employees understand their goals, receive regular feedback, and achieve their full potential. Our approach includes goal setting, regular check-ins, and performance reviews that support both individual and organizational success.
+                    {t('careers.departments.hr.activities.performance.desc')}
                   </p>
                 </div>
                 
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Culture & Engagement</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.activities.culture.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We foster a positive, inclusive, and engaging workplace culture that makes Upvista a great place to work. This includes organizing team events, recognition programs, wellness initiatives, and creating policies that support work-life balance and employee well-being.
+                    {t('careers.departments.hr.activities.culture.desc')}
                   </p>
                 </div>
               </div>
@@ -140,52 +142,52 @@ export default function HumanResourcesPage() {
               className="max-w-6xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Team Structure & Roles</h2>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.teamStructure')}</h2>
                 <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                   {
-                    title: "Senior HR Manager",
-                    description: "Lead HR strategy, manage HR operations, and mentor team members. 5+ years HR experience required."
+                    titleKey: 'careers.departments.hr.roles.manager.title',
+                    descKey: 'careers.departments.hr.roles.manager.desc'
                   },
                   {
-                    title: "Talent Acquisition Specialist",
-                    description: "Source and recruit top talent, manage hiring processes, and build relationships with potential candidates."
+                    titleKey: 'careers.departments.hr.roles.talent.title',
+                    descKey: 'careers.departments.hr.roles.talent.desc'
                   },
                   {
-                    title: "HR Business Partner",
-                    description: "Partner with departments to provide HR support, handle employee relations, and implement HR initiatives."
+                    titleKey: 'careers.departments.hr.roles.business.title',
+                    descKey: 'careers.departments.hr.roles.business.desc'
                   },
                   {
-                    title: "Learning & Development Specialist",
-                    description: "Design and implement training programs, manage employee development, and coordinate learning initiatives."
+                    titleKey: 'careers.departments.hr.roles.learning.title',
+                    descKey: 'careers.departments.hr.roles.learning.desc'
                   },
                   {
-                    title: "Compensation & Benefits Specialist",
-                    description: "Manage compensation structures, benefits programs, and ensure competitive total rewards packages."
+                    titleKey: 'careers.departments.hr.roles.compensation.title',
+                    descKey: 'careers.departments.hr.roles.compensation.desc'
                   },
                   {
-                    title: "Employee Relations Specialist",
-                    description: "Handle employee relations, conflict resolution, and ensure positive workplace relationships."
+                    titleKey: 'careers.departments.hr.roles.relations.title',
+                    descKey: 'careers.departments.hr.roles.relations.desc'
                   },
                   {
-                    title: "HR Operations Specialist",
-                    description: "Manage HR systems, processes, and administrative tasks to support HR operations and compliance."
+                    titleKey: 'careers.departments.hr.roles.operations.title',
+                    descKey: 'careers.departments.hr.roles.operations.desc'
                   },
                   {
-                    title: "Culture & Engagement Coordinator",
-                    description: "Organize team events, manage recognition programs, and foster positive workplace culture."
+                    titleKey: 'careers.departments.hr.roles.culture.title',
+                    descKey: 'careers.departments.hr.roles.culture.desc'
                   },
                   {
-                    title: "HR Director",
-                    description: "Lead HR strategy, manage HR teams, and ensure alignment with organizational goals and objectives."
+                    titleKey: 'careers.departments.hr.roles.director.title',
+                    descKey: 'careers.departments.hr.roles.director.desc'
                   }
-                ].map((role) => (
-                  <div key={role.title} className={`backdrop-blur-sm border rounded-xl p-6 transition-all duration-300 ${isDark ? 'bg-white/5 border-white/10 hover:border-purple-500/30 hover:bg-white/10' : 'bg-white/60 border-purple-300/50 hover:border-purple-500/60 hover:bg-white/80'}`}>
-                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>{role.title}</h3>
-                    <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{role.description}</p>
+                ].map((role, index) => (
+                  <div key={index} className={`backdrop-blur-sm border rounded-xl p-6 transition-all duration-300 ${isDark ? 'bg-white/5 border-white/10 hover:border-purple-500/30 hover:bg-white/10' : 'bg-white/60 border-purple-300/50 hover:border-purple-500/60 hover:bg-white/80'}`}>
+                    <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-purple-400' : 'text-purple-600'}`}>{t(role.titleKey)}</h3>
+                    <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t(role.descKey)}</p>
                   </div>
                 ))}
               </div>
@@ -199,32 +201,32 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Work Culture & Environment</h2>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.workCulture')}</h2>
                 <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="space-y-8">
                 <div>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Remote-First People-Focused Environment</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.culture.remote.title')}</h3>
                   <p className={`leading-relaxed mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Our HR team operates in a remote-first environment that supports people-focused initiatives and collaboration. We provide access to HR management systems, communication tools, and collaboration platforms. Our communication emphasizes empathy, confidentiality, and supportive relationships with all team members.
+                    {t('careers.departments.hr.culture.remote.p1')}
                   </p>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We have flexible working hours to accommodate different time zones and personal schedules. Core collaboration hours are 10 AM - 3 PM EST, but we understand that supporting people often requires availability during their preferred working hours.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>People-Centric Culture</h3>
-                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We foster a people-centric culture where employee well-being, growth, and satisfaction are prioritized. Regular team check-ins, employee feedback sessions, and culture-building activities ensure that our workplace remains positive, inclusive, and supportive for all team members.
+                    {t('careers.departments.hr.culture.remote.p2')}
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Collaborative Partnership</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.culture.people.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We emphasize collaborative partnership where HR works closely with all departments and leadership to support organizational goals. Regular meetings, feedback sessions, and strategic planning ensure that our HR initiatives align with business objectives and support overall success.
+                    {t('careers.departments.hr.culture.people.desc')}
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.culture.collaborative.title')}</h3>
+                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    {t('careers.departments.hr.culture.collaborative.desc')}
                   </p>
                 </div>
               </div>
@@ -238,29 +240,29 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Career Development</h2>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.careerDevelopment')}</h2>
                 <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="space-y-8">
                 <div>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Learning & Development</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.career.learning.title')}</h3>
                   <p className={`leading-relaxed mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We invest heavily in our HR team's growth through access to HR conferences (SHRM, CIPD, HR Technology Conference), certification programs (PHR, SHRM-CP, CIPD), and advanced training programs. Each team member has a personal development budget for courses, books, tools, and conference attendance.
+                    {t('careers.departments.hr.career.learning.desc')}
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Career Paths</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.career.paths.title')}</h3>
                   <p className={`leading-relaxed mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We offer multiple career paths: Individual Contributor (Specialist → Senior Specialist → Principal Specialist) and Leadership (Team Lead → Manager → Director of HR → CHRO). We support both paths equally and help you develop the skills needed for your chosen direction.
+                    {t('careers.departments.hr.career.paths.desc')}
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Onboarding Process</h3>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.career.onboarding.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    New HR team members go through a comprehensive 4-week onboarding program that includes company culture training, HR systems familiarization, and policy overview. You'll be paired with a senior HR team member mentor who will guide you through your first HR initiatives and help you understand our people-focused approach.
+                    {t('careers.departments.hr.career.onboarding.desc')}
                   </p>
                 </div>
               </div>
@@ -274,34 +276,34 @@ export default function HumanResourcesPage() {
               className="max-w-5xl mx-auto"
             >
               <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>What We Expect</h2>
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.whatWeExpect')}</h2>
                 <div className={`w-24 h-1 mx-auto mb-8 ${isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'}`}></div>
               </div>
               
               <div className="space-y-6">
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>People-First Mindset</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Strong commitment to employee well-being, growth, and success with ability to understand people's needs, provide support, and create positive workplace experiences that drive engagement and retention.</p>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.expectations.mindset.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.departments.hr.expectations.mindset.desc')}</p>
                 </div>
                 
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Communication Excellence</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Exceptional communication skills to interact effectively with employees, managers, and leadership while maintaining confidentiality, empathy, and professionalism in all interactions.</p>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.expectations.communication.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.departments.hr.expectations.communication.desc')}</p>
                 </div>
                 
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Strategic Thinking</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Ability to think strategically about people initiatives, understand business objectives, and align HR programs with organizational goals to drive both employee satisfaction and business success.</p>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.expectations.strategic.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.departments.hr.expectations.strategic.desc')}</p>
                 </div>
                 
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Problem-Solving Skills</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Strong analytical and problem-solving abilities to address employee relations issues, resolve conflicts, and implement solutions that support positive workplace relationships and organizational effectiveness.</p>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.expectations.problemSolving.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.departments.hr.expectations.problemSolving.desc')}</p>
                 </div>
                 
                 <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-500' : 'border-purple-400'}`}>
-                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Continuous Learning</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Commitment to staying updated with HR best practices, employment law, and industry trends while continuously improving skills and knowledge in human resources and people management.</p>
+                  <h3 className={`text-xl font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.expectations.learning.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.departments.hr.expectations.learning.desc')}</p>
                 </div>
               </div>
             </motion.section>
@@ -314,23 +316,23 @@ export default function HumanResourcesPage() {
               className="text-center"
             >
               <div className={`bg-gradient-to-r backdrop-blur-sm border rounded-2xl p-12 ${isDark ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' : 'from-purple-600/10 to-pink-600/10 border-purple-500/20 bg-white/30'}`}>
-                <h3 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Build Our People-First Culture?</h3>
+                <h3 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.departments.hr.cta.title')}</h3>
                 <p className={`text-xl mb-10 max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Be part of a team that&apos;s dedicated to nurturing talent and building a great workplace. Join us and help create an environment where everyone can thrive.
+                  {t('careers.departments.hr.cta.desc')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Link
                     href="/careers/apply"
                     className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg shadow-purple-500/25"
                   >
-                    Apply Now
+                    {t('careers.departments.applyNow')}
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                   <Link
                     href="/careers/jobs"
                     className={`inline-flex items-center px-10 py-4 font-semibold rounded-lg transition-all duration-200 border ${isDark ? 'bg-white/10 text-white hover:bg-white/20 border-white/20' : 'bg-white/30 text-gray-900 hover:bg-white/50 border-purple-400'}`}
                   >
-                    View All Departments
+                    {t('careers.departments.viewAllDepartments')}
                   </Link>
                 </div>
               </div>

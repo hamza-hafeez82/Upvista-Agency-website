@@ -8,9 +8,11 @@ import CareersFooter from "../../components/CareersFooter";
 import AssessmentPopup from "../../components/AssessmentPopup";
 import Link from "next/link";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../../contexts/CareersLanguageContext";
 
 export default function GraphicsDesignInternPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   const [showAssessmentPopup, setShowAssessmentPopup] = useState(false);
 
   const handleApplyClick = () => {
@@ -27,7 +29,7 @@ export default function GraphicsDesignInternPage() {
         <Link href="/careers/apply">
           <button className="flex items-center gap-2 text-white hover:text-purple-300 transition-colors duration-300">
             <ArrowLeft className="w-5 h-5" />
-            Back to Job Openings
+            {t('careers.graphicsIntern.backButton')}
           </button>
         </Link>
       </div>
@@ -42,21 +44,21 @@ export default function GraphicsDesignInternPage() {
           >
             <div className="inline-flex items-center gap-2 bg-purple-600/20 border border-purple-500/30 rounded-full px-4 py-2 mb-6">
               <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-              <span className="text-purple-300 text-sm font-medium">Internship Program</span>
+              <span className="text-purple-300 text-sm font-medium">{t('careers.graphicsIntern.hero.badge')}</span>
             </div>
             
             <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-              Graphics Design Intern
+              {t('careers.graphicsIntern.hero.title')}
             </h1>
             
             <p className={`text-xl mb-8 max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-              Unleash your creativity and develop professional design skills while working on real client projects with our experienced design team.
+              {t('careers.graphicsIntern.hero.subtitle')}
             </p>
             
             <div className={`flex flex-wrap justify-center gap-6 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-              <span>Remote</span>
-              <span>Internship</span>
-              <span>Entry-level</span>
+              <span>{t('careers.graphicsIntern.hero.tags.remote')}</span>
+              <span>{t('careers.graphicsIntern.hero.tags.internship')}</span>
+              <span>{t('careers.graphicsIntern.hero.tags.entry')}</span>
             </div>
           </motion.div>
         </div>
@@ -70,7 +72,7 @@ export default function GraphicsDesignInternPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Application Process</h2>
+            <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.application.title')}</h2>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
@@ -78,8 +80,8 @@ export default function GraphicsDesignInternPage() {
                   <span className="text-white font-bold text-sm">1</span>
                 </div>
                 <div>
-                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Personality Assessment</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Complete our personality assessment to help us understand your creative style, communication preferences, and cultural fit.</p>
+                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.application.step1.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.application.step1.desc')}</p>
                 </div>
               </div>
               
@@ -88,8 +90,8 @@ export default function GraphicsDesignInternPage() {
                   <span className="text-white font-bold text-sm">2</span>
                 </div>
                 <div>
-                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Creative Portfolio Review</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Submit your creative portfolio showcasing your design work, artistic skills, and creative thinking process.</p>
+                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.application.step2.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.application.step2.desc')}</p>
                 </div>
               </div>
               
@@ -98,8 +100,8 @@ export default function GraphicsDesignInternPage() {
                   <span className="text-white font-bold text-sm">3</span>
                 </div>
                 <div>
-                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Application Form</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Submit your application with academic records, portfolio, and responses to design-specific questions.</p>
+                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.application.step3.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.application.step3.desc')}</p>
                 </div>
               </div>
               
@@ -108,8 +110,8 @@ export default function GraphicsDesignInternPage() {
                   <span className="text-white font-bold text-sm">4</span>
                 </div>
                 <div>
-                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Evaluation & Selection</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>We will evaluate your application and portfolio. Selected candidates will be notified about the next steps.</p>
+                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.application.step4.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.application.step4.desc')}</p>
                 </div>
               </div>
               
@@ -118,8 +120,8 @@ export default function GraphicsDesignInternPage() {
                   <span className="text-white font-bold text-sm">5</span>
                 </div>
                 <div>
-                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Interview Process</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>Selected candidates will be called for a creative interview to discuss your design philosophy and goals.</p>
+                  <h3 className={`text-lg font-semibold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.application.step5.title')}</h3>
+                  <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.application.step5.desc')}</p>
                 </div>
               </div>
             </div>
@@ -135,9 +137,9 @@ export default function GraphicsDesignInternPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Internship Overview</h2>
+            <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.overview.title')}</h2>
             <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-              Our Graphics Design Internship program is perfect for creative individuals who want to develop professional design skills and build a strong portfolio. You will work on real client projects under the guidance of experienced designers, learn industry-standard tools and processes, and contribute to actual design deliverables. This is an excellent opportunity to gain practical experience and kickstart your career in graphic design.
+              {t('careers.graphicsIntern.overview.desc')}
             </p>
           </motion.div>
         </div>
@@ -151,44 +153,44 @@ export default function GraphicsDesignInternPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>What You'll Learn</h2>
+            <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.learning.title')}</h2>
             
             {/* Learning Objectives */}
             <div className="mb-8">
-              <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Learning Objectives</h3>
+              <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.learning.objectives.title')}</h3>
               <ul className="space-y-4">
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Master industry-standard design tools (Adobe Creative Suite, Figma, Sketch)</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Develop skills in branding, logo design, and visual identity creation</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Learn web design principles and user interface design</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Understand print design and production processes</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Learn about design thinking and creative problem-solving</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Experience the complete design workflow from concept to delivery</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.learning.objectives.item1')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.learning.objectives.item2')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.learning.objectives.item3')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.learning.objectives.item4')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.learning.objectives.item5')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.learning.objectives.item6')}</li>
               </ul>
             </div>
 
             {/* Responsibilities */}
             <div className="mb-8">
-              <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Your Responsibilities</h3>
+              <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.responsibilities.title')}</h3>
               <ul className="space-y-4">
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Assist in creating visual designs for various client projects</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Participate in design brainstorming sessions and creative meetings</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Help with brand development and visual identity projects</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Contribute to web and mobile interface designs</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Learn and apply design best practices and principles</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Build a professional portfolio of design work</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.responsibilities.item1')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.responsibilities.item2')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.responsibilities.item3')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.responsibilities.item4')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.responsibilities.item5')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.responsibilities.item6')}</li>
               </ul>
             </div>
 
             {/* Requirements */}
             <div className="mb-8">
-              <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Requirements</h3>
+              <h3 className={`text-xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.requirements.title')}</h3>
               <ul className="space-y-4">
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Currently enrolled in or recently graduated from high school/university</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Basic knowledge of design principles and visual communication</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Familiarity with design software (Adobe Creative Suite, Figma, or similar)</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Strong creative thinking and artistic abilities</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Good communication skills and ability to work in a team</li>
-                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>Portfolio showcasing creative work and design projects</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.requirements.item1')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.requirements.item2')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.requirements.item3')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.requirements.item4')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.requirements.item5')}</li>
+                <li className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.requirements.item6')}</li>
               </ul>
             </div>
           </motion.div>
@@ -203,64 +205,64 @@ export default function GraphicsDesignInternPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Internship Details</h2>
+            <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.details.title')}</h2>
             
             <div className="grid md:grid-cols-2 gap-8">
               {/* Duration */}
               <div>
-                <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Duration</h3>
-                <p className="text-gray-300">3-6 months internship program with flexible start dates.</p>
+                <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.details.duration.title')}</h3>
+                <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{t('careers.graphicsIntern.details.duration.desc')}</p>
               </div>
 
               {/* Location */}
               <div>
-                <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Location</h3>
-                <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Fully remote internship with virtual mentorship.</p>
+                <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.details.location.title')}</h3>
+                <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t('careers.graphicsIntern.details.location.desc')}</p>
                 <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                  <p className="mb-2">Remote internship includes:</p>
+                  <p className="mb-2">{t('careers.graphicsIntern.details.location.includes')}</p>
                   <ul className="list-disc list-inside space-y-1">
-                    <li>Virtual design reviews and feedback</li>
-                    <li>Regular video meetings with mentors</li>
-                    <li>Digital collaboration tools access</li>
-                    <li>Flexible creative working hours</li>
+                    <li>{t('careers.graphicsIntern.details.location.item1')}</li>
+                    <li>{t('careers.graphicsIntern.details.location.item2')}</li>
+                    <li>{t('careers.graphicsIntern.details.location.item3')}</li>
+                    <li>{t('careers.graphicsIntern.details.location.item4')}</li>
                   </ul>
                 </div>
               </div>
 
               {/* Stipend */}
               <div>
-                <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Stipend</h3>
-                <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Competitive stipend based on performance and creative contribution.</p>
+                <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.details.stipend.title')}</h3>
+                <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t('careers.graphicsIntern.details.stipend.desc')}</p>
                 <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                  <p className="mb-2">Stipend factors:</p>
+                  <p className="mb-2">{t('careers.graphicsIntern.details.stipend.factors')}</p>
                   <ul className="list-disc list-inside space-y-1">
-                    <li>Creative quality and innovation</li>
-                    <li>Project contribution</li>
-                    <li>Learning progress</li>
-                    <li>Team collaboration</li>
+                    <li>{t('careers.graphicsIntern.details.stipend.item1')}</li>
+                    <li>{t('careers.graphicsIntern.details.stipend.item2')}</li>
+                    <li>{t('careers.graphicsIntern.details.stipend.item3')}</li>
+                    <li>{t('careers.graphicsIntern.details.stipend.item4')}</li>
                   </ul>
                 </div>
               </div>
 
               {/* Benefits */}
               <div>
-                <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Benefits</h3>
+                <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.details.benefits.title')}</h3>
                 <ul className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <li>• Mentorship from experienced designers</li>
-                  <li>• Real client project experience</li>
-                  <li>• Professional portfolio building</li>
-                  <li>• Certificate of completion</li>
-                  <li>• Potential job offer</li>
-                  <li>• Creative networking opportunities</li>
+                  <li>• {t('careers.graphicsIntern.details.benefits.item1')}</li>
+                  <li>• {t('careers.graphicsIntern.details.benefits.item2')}</li>
+                  <li>• {t('careers.graphicsIntern.details.benefits.item3')}</li>
+                  <li>• {t('careers.graphicsIntern.details.benefits.item4')}</li>
+                  <li>• {t('careers.graphicsIntern.details.benefits.item5')}</li>
+                  <li>• {t('careers.graphicsIntern.details.benefits.item6')}</li>
                 </ul>
               </div>
             </div>
 
             {/* Schedule */}
             <div className="mt-8">
-              <h3 className="text-xl font-semibold text-white mb-4">Schedule</h3>
-              <p className="text-gray-300">
-                Flexible 20-30 hours per week. Core collaboration hours are 9 AM - 6 PM PKT. Perfect for students balancing academics and creative work.
+              <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.graphicsIntern.details.schedule.title')}</h3>
+              <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>
+                {t('careers.graphicsIntern.details.schedule.desc')}
               </p>
             </div>
           </motion.div>
@@ -279,10 +281,10 @@ export default function GraphicsDesignInternPage() {
               onClick={handleApplyClick}
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40"
             >
-              Apply for Graphics Design Internship
+              {t('careers.graphicsIntern.cta.button')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
-            <p className={`mt-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Ready to unleash your creativity? Apply for our graphics design internship today.</p>
+            <p className={`mt-4 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{t('careers.graphicsIntern.cta.desc')}</p>
           </motion.div>
         </div>
       </section>
@@ -294,7 +296,7 @@ export default function GraphicsDesignInternPage() {
         isOpen={showAssessmentPopup}
         onClose={() => setShowAssessmentPopup(false)}
         
-        position="Graphics Design Intern"
+        position={t('careers.graphicsIntern.position')}
       />
     </div>
   );

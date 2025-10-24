@@ -8,18 +8,21 @@ import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../../contexts/CareersLanguageContext";
 
 export default function CEOMessagePage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
+  
   const tableOfContents = [
-    { id: "welcome", title: "A Personal Welcome", description: "Meet Hamza Hafeez and learn about our founding story" },
-    { id: "journey", title: "Our Journey So Far", description: "From startup to global technology company" },
-    { id: "vision", title: "Our Vision for the Future", description: "Where we&apos;re heading and what we&apos;re building" },
-    { id: "team", title: "Building the Right Team", description: "What makes someone perfect for Upvista Digital" },
-    { id: "innovation", title: "Our Innovation Strategy", description: "How we approach research and development" },
-    { id: "values", title: "Our Commitment to Values", description: "The principles that guide everything we do" },
-    { id: "future", title: "Looking Ahead", description: "Our growth plans and exciting opportunities" },
-    { id: "join", title: "Join Our Journey", description: "How to become part of our mission" }
+    { id: "welcome", title: t('careers.ceo.toc.welcome.title'), description: t('careers.ceo.toc.welcome.description') },
+    { id: "journey", title: t('careers.ceo.toc.journey.title'), description: t('careers.ceo.toc.journey.description') },
+    { id: "vision", title: t('careers.ceo.toc.vision.title'), description: t('careers.ceo.toc.vision.description') },
+    { id: "team", title: t('careers.ceo.toc.team.title'), description: t('careers.ceo.toc.team.description') },
+    { id: "innovation", title: t('careers.ceo.toc.innovation.title'), description: t('careers.ceo.toc.innovation.description') },
+    { id: "values", title: t('careers.ceo.toc.values.title'), description: t('careers.ceo.toc.values.description') },
+    { id: "future", title: t('careers.ceo.toc.future.title'), description: t('careers.ceo.toc.future.description') },
+    { id: "join", title: t('careers.ceo.toc.join.title'), description: t('careers.ceo.toc.join.description') }
   ];
 
   return (
@@ -48,7 +51,7 @@ export default function CEOMessagePage() {
               }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Learn the Basics
+              {t('careers.ceo.back')}
             </Link>
           </div>
         </div>
@@ -63,12 +66,12 @@ export default function CEOMessagePage() {
             className="text-center mb-24 relative z-20 pt-8 pb-12"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
-              Message from Hamza Hafeez
+              {t('careers.ceo.hero.title')}
             </h1>
             <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              A personal message from our CEO and founder about our vision, values, and the future we&apos;re building together at Upvista Digital.
+              {t('careers.ceo.hero.subtitle')}
             </p>
           </motion.div>
 
@@ -84,23 +87,18 @@ export default function CEOMessagePage() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>A Personal Welcome</h2>
+                  <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.welcome.title')}</h2>
                   <p>
-                    Welcome to Upvista Digital. I'm Hamza Hafeez, the founder and CEO, and I'm excited to share our story and vision with you. 
-                    When we started this company, we had one simple yet profound belief: technology should serve humanity, 
-                    not the other way around.
+                    {t('careers.ceo.welcome.paragraph1')}
                   </p>
                   <p>
-                    Today, that belief drives everything we do. From the solutions we create to the culture we build, 
-                    we&apos;re committed to making a positive impact on the world through innovation, integrity, and excellence. 
-                    We believe that great technology companies are built on great people, and that&apos;s why we&apos;re always looking 
-                    for exceptional individuals who share our vision.
+                    {t('careers.ceo.welcome.paragraph2')}
                   </p>
                 </div>
                 <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
                   <Image
                     src="/assets/hamza-pic.jpg"
-                    alt="Hamza Hafeez - CEO and Founder of Upvista Digital"
+                    alt={t('careers.ceo.welcome.imageAlt')}
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -119,7 +117,7 @@ export default function CEOMessagePage() {
               <div className={`backdrop-blur-sm border rounded-2xl p-8 md:p-12 ${
                 isDark ? 'bg-white/5 border-white/10' : 'bg-white/40 border-gray-300/50'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Table of Contents</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.toc.title')}</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {tableOfContents.map((item) => (
                     <motion.div
@@ -165,22 +163,16 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Journey So Far</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.journey.title')}</h2>
               <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  In just a small time, Upvista Digital has grown from a bold vision to a thriving technology company 
-                  serving clients across multiple countries. We've established ourselves as a trusted partner for digital transformation.
+                  {t('careers.ceo.journey.paragraph1')}
                 </p>
                 <p>
-                  But our journey is just beginning. We've witnessed firsthand how the right technology can transform 
-                  businesses, empower individuals, and create opportunities that didn't exist before. Every project 
-                  we undertake teaches us something new, and every client relationship strengthens our understanding 
-                  of what&apos;s possible when human creativity meets technological innovation.
+                  {t('careers.ceo.journey.paragraph2')}
                 </p>
                 <p>
-                  What excites me most is that we&apos;re operating at the intersection of multiple technological revolutions: 
-                  artificial intelligence, cloud computing, automation, and human-computer interaction. This convergence 
-                  creates unprecedented opportunities for innovation and impact.
+                  {t('careers.ceo.journey.paragraph3')}
                 </p>
               </div>
             </motion.section>
@@ -193,22 +185,16 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Vision for the Future</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.vision.title')}</h2>
               <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  We envision a world where technology seamlessly integrates with human potential, creating opportunities 
-                  that were previously unimaginable. Our goal is to be at the forefront of this transformation, not just 
-                  as observers, but as active architects of the future.
+                  {t('careers.ceo.vision.paragraph1')}
                 </p>
                 <p>
-                  In the coming years, we see ourselves expanding our impact across three key areas: artificial general 
-                  intelligence research, sustainable technology solutions, and democratizing access to cutting-edge 
-                  digital tools for businesses of all sizes.
+                  {t('careers.ceo.vision.paragraph2')}
                 </p>
                 <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
-                  "The future belongs to organizations that can adapt, innovate, and grow. Our mission is to help our 
-                  clients become those organizations, while simultaneously building a company that embodies these 
-                  principles in everything we do."
+                  "{t('careers.ceo.vision.quote')}"
                 </p>
               </div>
             </motion.section>
@@ -221,27 +207,19 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Building the Right Team</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.team.title')}</h2>
               <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  Success comes from having the right people in the right roles. We're committed to attracting, 
-                  developing, and retaining exceptional talent who share our vision and values. But what makes someone 
-                  "right" for Upvista Digital?
+                  {t('careers.ceo.team.paragraph1')}
                 </p>
                 <p>
-                  It's not just about technical skills, though those are important. It's about curiosity, adaptability, 
-                  and a genuine desire to make a positive impact. It's about being comfortable with ambiguity and 
-                  excited by the possibility of creating something that doesn&apos;t exist yet.
+                  {t('careers.ceo.team.paragraph2')}
                 </p>
                 <p>
-                  We look for people who are passionate learners, collaborative team players, and creative problem-solvers. 
-                  We value diversity of thought, background, and experience because we know that the best solutions 
-                  emerge from diverse perspectives working together toward a common goal.
+                  {t('careers.ceo.team.paragraph3')}
                 </p>
                 <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
-                  "Every great innovation starts with a simple question: 'What if we could do better?' That's the 
-                  question that drives everything we do, and it&apos;s the question we want our team members to ask 
-                  every single day."
+                  "{t('careers.ceo.team.quote')}"
                 </p>
               </div>
             </motion.section>
@@ -254,22 +232,16 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.2 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Innovation Strategy</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.innovation.title')}</h2>
               <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  Innovation isn't just about new technology, it&apos;s about new ways of thinking, new approaches to problems, 
-                  and new possibilities for growth. We foster an environment where innovation thrives through our 
-                  Upvista Technologies Lab, our commitment to continuous learning, and our willingness to take calculated risks.
+                  {t('careers.ceo.innovation.paragraph1')}
                 </p>
                 <p>
-                  Our research focuses on emerging technologies like artificial general intelligence, quantum computing, 
-                  and advanced human-computer interaction. But we&apos;re equally committed to finding innovative applications 
-                  for existing technologies that can solve real-world problems more effectively.
+                  {t('careers.ceo.innovation.paragraph2')}
                 </p>
                 <p>
-                  We believe that the best innovations happen at the intersection of multiple disciplines. That's why 
-                  we encourage cross-functional collaboration, support side projects and experimentation, and maintain 
-                  partnerships with academic institutions and other forward-thinking organizations.
+                  {t('careers.ceo.innovation.paragraph3')}
                 </p>
               </div>
             </motion.section>
@@ -282,22 +254,16 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.4 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Commitment to Values</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.values.title')}</h2>
               <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  As we grow, we remain committed to the core values that have guided us from day one: human-centered 
-                  design, ethical business practices, collaborative teamwork, and excellence in everything we do.
+                  {t('careers.ceo.values.paragraph1')}
                 </p>
                 <p>
-                  We believe that technology companies have a responsibility to consider the broader impact of their 
-                  work. That's why we prioritize sustainability in our operations, diversity in our hiring, and 
-                  accessibility in our solutions. We're not just building products, we&apos;re building a company that 
-                  we&apos;re proud to be part of.
+                  {t('careers.ceo.values.paragraph2')}
                 </p>
                 <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
-                  "At Upvista Digital, we don't just build technology; we build bridges between today's challenges 
-                  and tomorrow's opportunities. Every line of code, every design decision, and every business 
-                  relationship is guided by our commitment to creating positive change."
+                  "{t('careers.ceo.values.quote')}"
                 </p>
               </div>
             </motion.section>
@@ -310,23 +276,16 @@ export default function CEOMessagePage() {
               transition={{ duration: 0.6, delay: 1.6 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Looking Ahead</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.future.title')}</h2>
               <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  The next few years will be transformative for Upvista Digital. We're planning to expand our team 
-                  significantly, launch new product lines, and deepen our research capabilities. But more importantly, 
-                  we&apos;re committed to maintaining the culture of innovation, collaboration, and excellence that has 
-                  brought us this far.
+                  {t('careers.ceo.future.paragraph1')}
                 </p>
                 <p>
-                  We're looking for people who want to be part of something bigger than themselves... people who are 
-                  excited by the challenge of building the future and who believe that technology can be a force 
-                  for good in the world.
+                  {t('careers.ceo.future.paragraph2')}
                 </p>
                 <p>
-                  If you&apos;re reading this message, you&apos;re probably considering joining our team. I want you to know 
-                  that we&apos;re not just looking for employees, we&apos;re looking for partners in our mission to create 
-                  technology that serves humanity.
+                  {t('careers.ceo.future.paragraph3')}
                 </p>
               </div>
             </motion.section>
@@ -344,17 +303,16 @@ export default function CEOMessagePage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Join Our Journey</h3>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.ceo.join.title')}</h3>
                 <p className={`text-lg md:text-xl mb-8 max-w-4xl mx-auto leading-relaxed italic ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  "We are building a movement. A movement toward a future where 
-                  technology empowers every individual and organization to reach their full potential."
+                  "{t('careers.ceo.join.quote')}"
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link 
                     href="/careers"
                     className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
                   >
-                    Join Our Team
+                    {t('careers.ceo.join.button')}
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                 </div>

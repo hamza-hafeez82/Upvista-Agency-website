@@ -6,9 +6,11 @@ import { ArrowRight } from "lucide-react";
 import CareersHeader from "../components/CareersHeader";
 import CareersFooter from "../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../contexts/CareersLanguageContext";
 
 export default function BusinessPage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   
   return (
     <>
@@ -20,7 +22,7 @@ export default function BusinessPage() {
           : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100 text-gray-900'
       }`}>
         {/* Hero Section with Video Background */}
-        <div className="relative h-[20vh] sm:h-[25vh] md:h-screen w-full overflow-hidden">
+        <div className="relative h-[50vh] sm:h-[60vh] md:h-screen w-full overflow-hidden">
           {/* Video Background - Hidden on mobile, visible on md+ screens */}
           <div className="absolute inset-0 z-0 hidden md:block">
             <video
@@ -41,209 +43,319 @@ export default function BusinessPage() {
             </video>
           </div>
           
+          {/* Hero Content - Mobile Only */}
+          <div className="absolute inset-0 z-10 flex items-center justify-center md:hidden pt-20">
+            <div className="text-center px-4">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className={`text-4xl font-bold pt-14 pb-4 bg-clip-text text-transparent drop-shadow-2xl ${
+                  isDark 
+                    ? 'bg-gradient-to-r from-white via-purple-200 to-pink-200' 
+                    : 'bg-gradient-to-r from-purple-600 via-pink-600 to-purple-800'
+                }`}
+              >
+                {t('careers.business.hero.title')}
+              </motion.h1>
+            </div>
+          </div>
         </div>
 
         {/* Main Content */}
-        <div className="max-w-6xl mx-auto px-4 py-20">
+        <div className="max-w-5xl mx-auto px-4 py-20 relative z-10">
+          
           {/* Content Sections */}
-          <div className="space-y-24">
-            {/* Company Overview */}
+          <div className="space-y-20">
+            
+            {/* Executive Summary */}
             <motion.section
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>About Upvista Digital</h2>
+              <div className="text-center mb-12">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.summary.title')}
+                </h2>
                 <div className={`w-24 h-1 mx-auto mb-8 ${
                   isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
                 }`}></div>
               </div>
               
-              <div className={`space-y-8 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+              <div className={`space-y-6 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  Upvista Digital is a visionary digital innovation powerhouse that transcends traditional software development. We architect the future by merging cutting-edge AI, quantum-ready technologies, and human-centric design to create digital experiences that don't just solve problems, they redefine possibilities.
+                  {t('careers.business.summary.paragraph1')}
                 </p>
                 <p>
-                  From blockchain ecosystems to AI-driven transformations, we&apos;re building tomorrow's digital landscape today. Our approach combines strategic consulting with hands-on technical expertise, delivering solutions that empower organizations to achieve their most ambitious goals.
+                  {t('careers.business.summary.paragraph2')}
                 </p>
                 <p>
-                  We believe that technology should serve humanity and enhance human potential. Every project we undertake is an opportunity to push the boundaries of what&apos;s possible, creating digital experiences that inspire, engage, and transform the way people interact with technology.
+                  {t('careers.business.summary.paragraph3')}
                 </p>
               </div>
             </motion.section>
 
-            {/* Business Strategy */}
+            {/* Industry Analysis */}
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="text-center mb-12">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.industry.title')}
+                </h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${
+                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
+                }`}></div>
+              </div>
+              
+              <div className={`space-y-6 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p>
+                  {t('careers.business.industry.paragraph1')}
+                </p>
+                <p>
+                  {t('careers.business.industry.paragraph2')}
+                </p>
+                <p>
+                  {t('careers.business.industry.paragraph3')}
+                </p>
+                <p>
+                  {t('careers.business.industry.paragraph4')}
+                </p>
+              </div>
+            </motion.section>
+
+            {/* Company Description */}
             <motion.section
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="max-w-5xl mx-auto"
             >
-              <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Business Strategy</h2>
-                <div className={`w-24 h-1 mx-auto mb-8 ${
-                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
-                }`}></div>
-              </div>
-              
-              <div className="space-y-12">
-                <div>
-                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>Strategic Focus Areas</h3>
-                  <div className={`space-y-6 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <div>
-                      <h4 className={`text-xl font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technology Leadership</h4>
-                      <p>We maintain our position at the forefront of technological innovation through continuous research and development. Our Upvista Technologies Lab serves as the cornerstone of our innovation strategy, exploring emerging technologies such as artificial general intelligence, quantum computing, and advanced automation systems that will shape the future.</p>
-                    </div>
-                    <div>
-                      <h4 className={`text-xl font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Client-Centric Approach</h4>
-                      <p>Our business model is built on long-term partnerships rather than transactional relationships. We invest time in understanding our clients' industries, challenges, and growth objectives, enabling us to deliver solutions that provide sustained value and competitive advantage in an ever-evolving digital landscape.</p>
-                    </div>
-                    <div>
-                      <h4 className={`text-xl font-medium mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Global Market Expansion</h4>
-                      <p>We are strategically expanding our presence in key international markets, establishing partnerships with local technology leaders and adapting our solutions to meet regional requirements while maintaining our global standards of excellence and innovation.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.section>
-
-            {/* Service Portfolio */}
-            <motion.section
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="max-w-5xl mx-auto"
-            >
-              <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Service Portfolio</h2>
-                <div className={`w-24 h-1 mx-auto mb-8 ${
-                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
-                }`}></div>
-              </div>
-              
-              <div className="space-y-12">
-                <div>
-                  <h3 className={`text-2xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Core Service Lines</h3>
-                  <div className="space-y-8">
-                    <div className={`border-l-4 pl-6 ${
-                      isDark ? 'border-white/30' : 'border-purple-300'
-                    }`}>
-                      <h4 className={`text-xl font-medium mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Enterprise Software Development</h4>
-                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        We develop custom enterprise applications that streamline business processes, enhance operational efficiency, and provide scalable solutions for growing organizations. Our expertise spans across ERP systems, CRM platforms, business intelligence tools, and workflow automation solutions.
-                      </p>
-                    </div>
-                    <div className={`border-l-4 pl-6 ${
-                      isDark ? 'border-white/30' : 'border-purple-300'
-                    }`}>
-                      <h4 className={`text-xl font-medium mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Web Development and Digital Platforms</h4>
-                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Our web development services focus on creating modern, responsive, and scalable web applications that deliver exceptional user experiences. We specialize in progressive web applications, e-commerce platforms, content management systems, and web portals.
-                      </p>
-                    </div>
-                    <div className={`border-l-4 pl-6 ${
-                      isDark ? 'border-white/30' : 'border-purple-300'
-                    }`}>
-                      <h4 className={`text-xl font-medium mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Artificial Intelligence and Automation</h4>
-                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        We harness the power of AI to create intelligent solutions that automate complex processes, enhance decision-making, and unlock new opportunities for business growth. Our AI services include machine learning model development, natural language processing, computer vision, and robotic process automation.
-                      </p>
-                    </div>
-                    <div className={`border-l-4 pl-6 ${
-                      isDark ? 'border-white/30' : 'border-purple-300'
-                    }`}>
-                      <h4 className={`text-xl font-medium mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Cloud Solutions and Infrastructure</h4>
-                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Our cloud services enable organizations to leverage scalable, secure, and cost-effective infrastructure solutions. We provide cloud migration services, multi-cloud strategies, DevOps implementation, container orchestration, and cloud security solutions.
-                      </p>
-                    </div>
-                    <div className={`border-l-4 pl-6 ${
-                      isDark ? 'border-white/30' : 'border-purple-300'
-                    }`}>
-                      <h4 className={`text-xl font-medium mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Graphics and Digital Design</h4>
-                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        Our design services focus on creating compelling visual experiences that enhance brand presence and user engagement. We provide user experience design, brand identity development, digital marketing materials, and motion graphics services.
-                      </p>
-                    </div>
-                    <div className={`border-l-4 pl-6 ${
-                      isDark ? 'border-white/30' : 'border-purple-300'
-                    }`}>
-                      <h4 className={`text-xl font-medium mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>Technology Consulting and Strategy</h4>
-                      <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                        We offer strategic consulting services to help organizations navigate digital transformation, assess technology investments, optimize business processes, and develop comprehensive technology roadmaps aligned with business objectives.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.section>
-
-            {/* Global Strategy */}
-            <motion.section
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="max-w-5xl mx-auto"
-            >
-              <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Global Strategy</h2>
-                <div className={`w-24 h-1 mx-auto mb-8 ${
-                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
-                }`}></div>
-              </div>
-              
-              <div className="space-y-12">
-                <div>
-                  <h3 className={`text-2xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>International Expansion</h3>
-                  <div className={`space-y-6 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>
-                      Our global strategy focuses on establishing strategic partnerships with technology leaders in key markets while maintaining our commitment to quality and innovation. We have developed a network of delivery centers across multiple regions, enabling us to provide localized support while leveraging global expertise.
-                    </p>
-                    <p>
-                      We serve clients across various industries including healthcare, financial services, e-commerce, education, and manufacturing. Our industry-specific solutions are designed to address unique sector challenges while incorporating best practices and regulatory requirements.
-                    </p>
-                  </div>
-                </div>
-                
-                <div>
-                  <h3 className={`text-2xl font-semibold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Quality and Standards</h3>
-                  <div className={`space-y-6 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>
-                      We maintain the highest standards of quality through our ISO 9001 certified quality management systems, SOC 2 Type II compliance, and adherence to industry-specific security standards. Our development processes follow Agile methodologies and DevOps practices to ensure efficient delivery and continuous improvement.
-                    </p>
-                    <p>
-                      Our commitment to security and compliance extends to GDPR compliance, data privacy regulations, and industry-specific requirements. We implement comprehensive security measures to protect client data and ensure regulatory compliance across all our services.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </motion.section>
-
-            {/* Business Impact */}
-            <motion.section
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="max-w-5xl mx-auto"
-            >
-              <div className="text-center mb-16">
-                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Business Impact</h2>
+              <div className="text-center mb-12">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.company.title')}
+                </h2>
                 <div className={`w-24 h-1 mx-auto mb-8 ${
                   isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
                 }`}></div>
               </div>
               
               <div className={`space-y-8 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <div>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.company.vision.title')}</h3>
+                  <p>
+                    {t('careers.business.company.vision.content')}
+                  </p>
+                    </div>
+                    <div>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.company.mission.title')}</h3>
+                  <p>
+                    {t('careers.business.company.mission.content')}
+                  </p>
+                    </div>
+                    <div>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.company.values.title')}</h3>
+                  <ul className="space-y-3 list-disc list-inside">
+                    <li>{t('careers.business.company.values.innovation')}</li>
+                    <li>{t('careers.business.company.values.excellence')}</li>
+                    <li>{t('careers.business.company.values.collaboration')}</li>
+                    <li>{t('careers.business.company.values.social')}</li>
+                    <li>{t('careers.business.company.values.literacy')}</li>
+                  </ul>
+                </div>
+              </div>
+            </motion.section>
+
+            {/* What We Offer */}
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="text-center mb-12">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.offer.title')}
+                </h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${
+                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
+                }`}></div>
+              </div>
+              
+              <div className="space-y-6">
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-purple-400' : 'border-purple-500'}`}>
+                  <h3 className={`text-2xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.offer.services.title')}</h3>
+                  <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p>• {t('careers.business.offer.services.item1')}</p>
+                    <p>• {t('careers.business.offer.services.item2')}</p>
+                    <p>• {t('careers.business.offer.services.item3')}</p>
+                    <p>• {t('careers.business.offer.services.item4')}</p>
+                    </div>
+                    </div>
+                
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-indigo-400' : 'border-indigo-500'}`}>
+                  <h3 className={`text-2xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.offer.products.title')}</h3>
+                  <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p>• {t('careers.business.offer.products.item1')}</p>
+                    <p>• {t('careers.business.offer.products.item2')}</p>
+                    <p>• {t('careers.business.offer.products.item3')}</p>
+                    <p>• {t('careers.business.offer.products.item4')}</p>
+                    <p>• {t('careers.business.offer.products.item5')}</p>
+                    </div>
+                    </div>
+                
+                <div className={`border-l-4 pl-6 ${isDark ? 'border-pink-400' : 'border-pink-500'}`}>
+                  <h3 className={`text-2xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.offer.research.title')}</h3>
+                  <div className={`space-y-2 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <p>• {t('careers.business.offer.research.item1')}</p>
+                    <p>• {t('careers.business.offer.research.item2')}</p>
+                    <p>• {t('careers.business.offer.research.item3')}</p>
+                  </div>
+                </div>
+              </div>
+            </motion.section>
+
+            {/* Target Markets */}
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="text-center mb-12">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.markets.title')}
+                </h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${
+                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
+                }`}></div>
+              </div>
+              
+              <div className={`grid md:grid-cols-2 gap-6 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <div className={`p-6 rounded-xl border ${isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'}`}>
+                  <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.markets.ecommerce.title')}</h3>
+                  <p>{t('careers.business.markets.ecommerce.content')}</p>
+                    </div>
+                <div className={`p-6 rounded-xl border ${isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'}`}>
+                  <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.markets.saas.title')}</h3>
+                  <p>{t('careers.business.markets.saas.content')}</p>
+                    </div>
+                <div className={`p-6 rounded-xl border ${isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'}`}>
+                  <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.markets.healthcare.title')}</h3>
+                  <p>{t('careers.business.markets.healthcare.content')}</p>
+                    </div>
+                <div className={`p-6 rounded-xl border ${isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'}`}>
+                  <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.markets.edtech.title')}</h3>
+                  <p>{t('careers.business.markets.edtech.content')}</p>
+                    </div>
+                <div className={`p-6 rounded-xl border ${isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'}`}>
+                  <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.markets.fintech.title')}</h3>
+                  <p>{t('careers.business.markets.fintech.content')}</p>
+                    </div>
+                <div className={`p-6 rounded-xl border ${isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'}`}>
+                  <h3 className={`text-xl font-semibold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.markets.creative.title')}</h3>
+                  <p>{t('careers.business.markets.creative.content')}</p>
+                </div>
+              </div>
+            </motion.section>
+
+            {/* Competitive Advantage */}
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="text-center mb-12">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.advantage.title')}
+                </h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${
+                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
+                }`}></div>
+              </div>
+              
+              <div className={`space-y-6 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  Since our establishment, Upvista Digital has successfully delivered innovative solutions across multiple industries, helping organizations achieve their digital transformation goals and drive meaningful business outcomes. Our solutions have enabled clients to enhance operational efficiency, accelerate time-to-market, and improve customer satisfaction through strategic technology implementations.
+                  {t('careers.business.advantage.paragraph1')}
                 </p>
                 <p>
-                  We maintain high client satisfaction ratings and consistently deliver projects on time and within budget. Our strong client retention rate reflects the value we provide through long-term partnerships and continuous support. We take pride in being more than just a technology provider - we are strategic partners in our clients' success stories.
+                  {t('careers.business.advantage.paragraph2')}
+                    </p>
+                    <p>
+                  {t('careers.business.advantage.paragraph3')}
+                    </p>
+                  </div>
+            </motion.section>
+
+            {/* Technology & Development */}
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="text-center mb-12">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.technology.title')}
+                </h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${
+                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
+                }`}></div>
+              </div>
+              
+              <div className={`space-y-8 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <div>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.technology.approach.title')}</h3>
+                    <p>
+                    {t('careers.business.technology.approach.content')}
+                    </p>
+                </div>
+                <div>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.technology.cloud.title')}</h3>
+                    <p>
+                    {t('careers.business.technology.cloud.content')}
+                    </p>
+                  </div>
+                <div>
+                  <h3 className={`text-2xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.business.technology.research.title')}</h3>
+                    <p>
+                    {t('careers.business.technology.research.content')}
+                    </p>
+                </div>
+              </div>
+            </motion.section>
+
+            {/* Team & Culture */}
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+              className="max-w-5xl mx-auto"
+            >
+              <div className="text-center mb-12">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.team.title')}
+                </h2>
+                <div className={`w-24 h-1 mx-auto mb-8 ${
+                  isDark ? 'bg-white' : 'bg-gradient-to-r from-purple-500 to-pink-500'
+                }`}></div>
+              </div>
+              
+              <div className={`space-y-6 text-lg leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                <p>
+                  {t('careers.business.team.paragraph1')}
                 </p>
-                <p className={`text-center text-xl italic mt-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                  "Our business success is measured not just by our growth, but by the success of our clients and the positive impact we create in the communities we serve."
+                <p>
+                  {t('careers.business.team.paragraph2')}
+                </p>
+                <p>
+                  {t('careers.business.team.paragraph3')}
                 </p>
               </div>
             </motion.section>
@@ -252,7 +364,7 @@ export default function BusinessPage() {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
               className="text-center"
             >
               <div className={`backdrop-blur-sm border rounded-2xl p-12 ${
@@ -260,9 +372,11 @@ export default function BusinessPage() {
                   ? 'bg-white/5 border-white/10' 
                   : 'bg-white/40 border-purple-300/50'
               }`}>
-                <h3 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Join Our Business Journey</h3>
+                <h3 className={`text-3xl md:text-4xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('careers.business.cta.title')}
+                </h3>
                 <p className={`text-xl mb-10 max-w-3xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  Be part of a team that&apos;s transforming industries and shaping the future of technology. Join Upvista Digital and contribute to innovative projects that redefine what&apos;s possible in the digital world.
+                  {t('careers.business.cta.description')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Link
@@ -273,7 +387,7 @@ export default function BusinessPage() {
                         : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700'
                     }`}
                   >
-                    Explore Careers
+                    {t('careers.business.cta.explore')}
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                   <Link
@@ -284,7 +398,7 @@ export default function BusinessPage() {
                         : 'bg-transparent text-gray-900 hover:bg-purple-100 border-purple-400'
                     }`}
                   >
-                    View Open Positions
+                    {t('careers.business.cta.positions')}
                   </Link>
                 </div>
               </div>

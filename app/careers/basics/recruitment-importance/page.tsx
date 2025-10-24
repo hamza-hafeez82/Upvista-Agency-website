@@ -7,9 +7,11 @@ import { Vortex } from "@/components/ui/vortex";
 import CareersHeader from "../../components/CareersHeader";
 import CareersFooter from "../../components/CareersFooter";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useCareersLanguage } from "../../contexts/CareersLanguageContext";
 
 export default function RecruitmentImportancePage() {
   const { isDark } = useTheme();
+  const { t } = useCareersLanguage();
   
   return (
     <>
@@ -37,7 +39,7 @@ export default function RecruitmentImportancePage() {
               }`}
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Learn the Basics
+              {t('careers.recruitment.back')}
             </Link>
           </div>
         </div>
@@ -52,12 +54,12 @@ export default function RecruitmentImportancePage() {
             className="text-center mb-24 relative z-20 pt-8 pb-12"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-12 pb-4 bg-gradient-to-r from-purple-400 via-indigo-400 to-pink-400 bg-clip-text text-transparent drop-shadow-lg">
-              What is Important in Recruitment
+              {t('careers.recruitment.hero.title')}
             </h1>
             <p className={`text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed drop-shadow-lg ${
               isDark ? 'text-gray-300' : 'text-gray-700'
             }`}>
-              Understanding our recruitment philosophy and what makes someone the right fit for Upvista Digital.
+              {t('careers.recruitment.hero.subtitle')}
             </p>
           </motion.div>
 
@@ -70,16 +72,16 @@ export default function RecruitmentImportancePage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Recruitment Philosophy</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-8 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.recruitment.philosophy.title')}</h2>
               <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  At Upvista Digital, we believe that the right people make all the difference. Our recruitment process goes beyond technical skills to identify individuals who will thrive in our culture and contribute to our mission.
+                  {t('careers.recruitment.philosophy.paragraph1')}
                 </p>
                 <p>
-                  We look for candidates who share our values, demonstrate growth potential, and are committed to making a positive impact. The ideal candidate is someone who can not only do the job today but can grow with us as we continue to expand and evolve.
+                  {t('careers.recruitment.philosophy.paragraph2')}
                 </p>
                 <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
-                  "The right person in the right role at the right time can transform an entire organization. That's why we invest so much care in our recruitment process."
+                  "{t('careers.recruitment.philosophy.quote')}"
                 </p>
               </div>
             </motion.section>
@@ -91,7 +93,7 @@ export default function RecruitmentImportancePage() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="max-w-6xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>What We Value Most</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.recruitment.values.title')}</h2>
               
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Values Alignment */}
@@ -100,9 +102,9 @@ export default function RecruitmentImportancePage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Values Alignment</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.recruitment.values.alignment.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We seek individuals whose personal values align with our core principles of innovation, integrity, and excellence. This alignment ensures long-term satisfaction and success for both the individual and the company.
+                    {t('careers.recruitment.values.alignment.description')}
                   </p>
                 </div>
 
@@ -112,9 +114,9 @@ export default function RecruitmentImportancePage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Growth Mindset</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.recruitment.values.growth.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    We value candidates who demonstrate a genuine passion for learning and growth. The ability to adapt, evolve, and continuously improve is crucial in our fast-paced industry.
+                    {t('careers.recruitment.values.growth.description')}
                   </p>
                 </div>
 
@@ -124,9 +126,9 @@ export default function RecruitmentImportancePage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Collaborative Spirit</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.recruitment.values.collaborative.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Success at Upvista Digital requires strong collaboration skills. We look for team players who can work effectively with diverse groups and contribute to a positive team dynamic.
+                    {t('careers.recruitment.values.collaborative.description')}
                   </p>
                 </div>
 
@@ -136,9 +138,9 @@ export default function RecruitmentImportancePage() {
                     ? 'bg-white/5 border-white/10 hover:border-purple-500/30' 
                     : 'bg-white/60 border-gray-300/50 hover:border-indigo-500/40'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Results Orientation</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.recruitment.values.results.title')}</h3>
                   <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    While we value the journey, we also need team members who are focused on delivering results. We seek individuals who can balance creativity with execution and drive meaningful outcomes.
+                    {t('careers.recruitment.values.results.description')}
                   </p>
                 </div>
               </div>
@@ -151,20 +153,20 @@ export default function RecruitmentImportancePage() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="max-w-5xl mx-auto"
             >
-              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Evaluation Framework</h2>
+              <h2 className={`text-3xl md:text-4xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.recruitment.framework.title')}</h2>
               
               <div className="space-y-8">
                 {/* Technical Competence */}
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Technical Competence</h3>
-                  <p className={`text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Strong foundation in relevant technologies and the ability to learn new ones quickly.</p>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.recruitment.framework.technical.title')}</h3>
+                  <p className={`text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t('careers.recruitment.framework.technical.description')}</p>
                   <div className={`grid md:grid-cols-2 gap-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Relevant technical skills and certifications</p>
-                    <p>• Portfolio of previous work</p>
-                    <p>• Problem-solving approach to challenges</p>
-                    <p>• Continuous learning mindset</p>
+                    <p>• {t('careers.recruitment.framework.technical.item1')}</p>
+                    <p>• {t('careers.recruitment.framework.technical.item2')}</p>
+                    <p>• {t('careers.recruitment.framework.technical.item3')}</p>
+                    <p>• {t('careers.recruitment.framework.technical.item4')}</p>
                   </div>
                 </div>
 
@@ -172,13 +174,13 @@ export default function RecruitmentImportancePage() {
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Cultural Fit</h3>
-                  <p className={`text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Alignment with our values, mission, and collaborative work environment.</p>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.recruitment.framework.cultural.title')}</h3>
+                  <p className={`text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t('careers.recruitment.framework.cultural.description')}</p>
                   <div className={`grid md:grid-cols-2 gap-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Demonstrates our core values in action</p>
-                    <p>• Shows enthusiasm for our mission</p>
-                    <p>• Collaborative communication style</p>
-                    <p>• Positive attitude and team spirit</p>
+                    <p>• {t('careers.recruitment.framework.cultural.item1')}</p>
+                    <p>• {t('careers.recruitment.framework.cultural.item2')}</p>
+                    <p>• {t('careers.recruitment.framework.cultural.item3')}</p>
+                    <p>• {t('careers.recruitment.framework.cultural.item4')}</p>
                   </div>
                 </div>
 
@@ -186,13 +188,13 @@ export default function RecruitmentImportancePage() {
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Growth Potential</h3>
-                  <p className={`text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Capacity to grow with the company and take on increasing responsibilities.</p>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.recruitment.framework.growth.title')}</h3>
+                  <p className={`text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t('careers.recruitment.framework.growth.description')}</p>
                   <div className={`grid md:grid-cols-2 gap-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Clear career aspirations and goals</p>
-                    <p>• Learning agility and adaptability</p>
-                    <p>• Leadership potential</p>
-                    <p>• Commitment to professional development</p>
+                    <p>• {t('careers.recruitment.framework.growth.item1')}</p>
+                    <p>• {t('careers.recruitment.framework.growth.item2')}</p>
+                    <p>• {t('careers.recruitment.framework.growth.item3')}</p>
+                    <p>• {t('careers.recruitment.framework.growth.item4')}</p>
                   </div>
                 </div>
 
@@ -200,13 +202,13 @@ export default function RecruitmentImportancePage() {
                 <div className={`p-6 rounded-xl border ${
                   isDark ? 'bg-white/5 border-white/10' : 'bg-white/60 border-gray-300/50'
                 }`}>
-                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>Impact Orientation</h3>
-                  <p className={`text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>Focus on creating meaningful impact for clients, colleagues, and the broader community.</p>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-purple-400' : 'text-indigo-600'}`}>{t('careers.recruitment.framework.impact.title')}</h3>
+                  <p className={`text-lg mb-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>{t('careers.recruitment.framework.impact.description')}</p>
                   <div className={`grid md:grid-cols-2 gap-3 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <p>• Client-focused mindset</p>
-                    <p>• Community involvement</p>
-                    <p>• Innovation and creativity</p>
-                    <p>• Results-driven approach</p>
+                    <p>• {t('careers.recruitment.framework.impact.item1')}</p>
+                    <p>• {t('careers.recruitment.framework.impact.item2')}</p>
+                    <p>• {t('careers.recruitment.framework.impact.item3')}</p>
+                    <p>• {t('careers.recruitment.framework.impact.item4')}</p>
                   </div>
                 </div>
               </div>
@@ -224,13 +226,13 @@ export default function RecruitmentImportancePage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>Our Commitment to You</h2>
+                <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.recruitment.commitment.title')}</h2>
                 <div className={`space-y-6 text-lg md:text-xl leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
                   <p>
-                    We're committed to making our recruitment process transparent, fair, and focused on finding the right fit for both you and our team. We believe in giving every candidate a fair chance to showcase their potential.
+                    {t('careers.recruitment.commitment.paragraph1')}
                   </p>
                   <p className={`italic ${isDark ? 'text-purple-300' : 'text-indigo-600'}`}>
-                    "Our goal isn't just to fill positions—it&apos;s to build lasting relationships with people who share our vision and can help us create the future of technology."
+                    "{t('careers.recruitment.commitment.quote')}"
                   </p>
                 </div>
               </div>
@@ -248,15 +250,15 @@ export default function RecruitmentImportancePage() {
                   ? 'from-purple-600/20 to-indigo-600/20 border-purple-500/30' 
                   : 'from-purple-600/10 to-indigo-600/10 border-purple-500/20 bg-white/30'
               }`}>
-                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>Ready to Join Us?</h3>
+                <h3 className={`text-2xl md:text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('careers.recruitment.cta.title')}</h3>
                 <p className={`text-lg mb-8 max-w-2xl mx-auto ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                  If you share our values and are excited about the opportunity to make a meaningful impact, we'd love to hear from you.
+                  {t('careers.recruitment.cta.description')}
                 </p>
                 <Link
                   href="/careers"
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
                 >
-                  Explore Opportunities
+                  {t('careers.recruitment.cta.button')}
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </div>
