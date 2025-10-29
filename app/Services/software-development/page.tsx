@@ -30,43 +30,43 @@ export default function SoftwareDevelopmentPage() {
   const caseStudies = [
     {
       id: 1,
-      image: '/assets/services/software/26.jpeg',
+      image: '/assets/services/software/software-poster.jpeg',
       title: t('softdev.caseStudies.enterprise.title'),
       description: t('softdev.caseStudies.enterprise.description'),
       tag: t('softdev.caseStudies.enterprise.tag'),
-      href: '/case-studies/enterprise-crm'
+      href: '/Insights/case-studies/vigours-organic-crm'
     },
     {
       id: 2,
-      image: '/assets/services/software/3.jpeg',
+      image: '/assets/services/ecommerce.jpeg',
       title: t('softdev.caseStudies.healthcare.title'),
       description: t('softdev.caseStudies.healthcare.description'),
       tag: t('softdev.caseStudies.healthcare.tag'),
-      href: '/case-studies/healthcare-platform'
+      href: '/case-studies/retail-system'
     },
     {
       id: 3,
-      image: '/assets/services/software/4.jpeg',
+      image: '/assets/services/software/system.jpeg',
       title: t('softdev.caseStudies.lms.title'),
       description: t('softdev.caseStudies.lms.description'),
       tag: t('softdev.caseStudies.lms.tag'),
-      href: '/case-studies/lms-platform'
+      href: '/case-studies/erp-system'
     }
   ];
 
   const techStackItems = [
-    { name: 'React Native', image: '/assets/services/software/5.jpeg', logo: '/assets/services/software/6.jpeg', description: t('softdev.tech.reactNative') },
-    { name: 'Flutter', image: '/assets/services/software/6.jpeg', logo: '/assets/logos/flutter.svg', description: t('softdev.tech.flutter') },
-    { name: 'Python', image: '/assets/services/software/7.jpeg', logo: '/assets/logos/python.svg', description: t('softdev.tech.python') },
-    { name: 'Java', image: '/assets/services/software/8.jpeg', logo: '/assets/logos/java.svg', description: t('softdev.tech.java') },
-    { name: 'C#', image: '/assets/services/software/9.jpeg', logo: '/assets/logos/csharp.svg', description: t('softdev.tech.csharp') },
-    { name: 'Go', image: '/assets/services/software/10.jpeg', logo: '/assets/logos/golang.svg', description: t('softdev.tech.go') },
-    { name: 'Kubernetes', image: '/assets/services/software/11.jpeg', logo: '/assets/logos/kubernetes.svg', description: t('softdev.tech.kubernetes') },
-    { name: 'AWS', image: '/assets/services/software/12.jpeg', logo: '/assets/logos/aws.svg', description: t('softdev.tech.aws') },
-    { name: 'Docker', image: '/assets/services/software/13.jpeg', logo: '/assets/logos/docker.svg', description: t('softdev.tech.docker') },
-    { name: 'PostgreSQL', image: '/assets/services/software/14.jpeg', logo: '/assets/logos/postgresql.svg', description: t('softdev.tech.postgresql') },
-    { name: 'Redis', image: '/assets/services/software/15.jpeg', logo: '/assets/logos/redis.svg', description: t('softdev.tech.redis') },
-    { name: 'Elasticsearch', image: '/assets/services/software/16.jpeg', logo: '/assets/logos/elasticsearch.svg', description: t('softdev.tech.elasticsearch') }
+    { name: 'React Native', image: '/assets/services/software/mobile.jpeg', logo: '/assets/services/software/logos/react.jpg', description: t('softdev.tech.reactNative') },
+    { name: 'Flutter', image: '/assets/services/software/mobile-yellow.jpeg', logo: '/assets/services/software/logos/flutter.jpg', description: t('softdev.tech.flutter') },
+    { name: 'Python', image: '/assets/services/software/development.jpeg', logo: '/assets/services/software/logos/python.jpg', description: t('softdev.tech.python') },
+    { name: 'Java', image: '/assets/services/software/system.jpeg', logo: '/assets/services/software/logos/java.jpg', description: t('softdev.tech.java') },
+    { name: 'C#', image: '/assets/services/software/api.jpeg', logo: '/assets/services/software/logos/c.jpg', description: t('softdev.tech.csharp') },
+    { name: 'Go', image: '/assets/services/software/goals.jpeg', logo: '/assets/services/software/logos/golang.jpg', description: t('softdev.tech.go') },
+    { name: 'Kubernetes', image: '/assets/services/software/devops.jpeg', logo: '/assets/services/software/logos/kubernetes.jpg', description: t('softdev.tech.kubernetes') },
+    { name: 'AWS', image: '/assets/services/software/cloud.jpeg', logo: '/assets/services/software/logos/aws.jpg', description: t('softdev.tech.aws') },
+    { name: 'Docker', image: '/assets/services/software/cloud2.jpeg', logo: '/assets/services/software/logos/docker.jpg', description: t('softdev.tech.docker') },
+    { name: 'PostgreSQL', image: '/assets/services/software/check.jpeg', logo: '/assets/services/software/logos/postgres.jpg', description: t('softdev.tech.postgresql') },
+    { name: 'Redis', image: '/assets/services/software/cloud3.jpeg', logo: '/assets/services/software/logos/redis.jpg', description: t('softdev.tech.redis') },
+    { name: 'Elasticsearch', image: '/assets/services/software/cloud4.jpeg', logo: '/assets/services/software/logos/search.jpg', description: t('softdev.tech.elasticsearch') }
   ];
 
   // Infinite carousel effect
@@ -109,42 +109,42 @@ export default function SoftwareDevelopmentPage() {
           title: t('softdev.processes.custom.roadmap2.title'), 
           description: t('softdev.processes.custom.roadmap2.description'),
           details: t('softdev.processes.custom.roadmap2.details'),
-          image: '/assets/services/software/17.jpeg'
+          image: '/assets/services/software/planning.jpeg'
         },
         { 
           step: 3, 
           title: t('softdev.processes.custom.roadmap3.title'), 
           description: t('softdev.processes.custom.roadmap3.description'),
           details: t('softdev.processes.custom.roadmap3.details'),
-          image: '/assets/services/process/uiux.jpeg'
+          image: '/assets/services/software/uiux.jpeg'
         },
         { 
           step: 4, 
           title: t('softdev.processes.custom.roadmap4.title'), 
           description: t('softdev.processes.custom.roadmap4.description'),
           details: t('softdev.processes.custom.roadmap4.details'),
-          image: '/assets/services/process/development.jpeg'
+          image: '/assets/services/software/development.jpeg'
         },
         { 
           step: 5, 
           title: t('softdev.processes.custom.roadmap5.title'), 
           description: t('softdev.processes.custom.roadmap5.description'),
           details: t('softdev.processes.custom.roadmap5.details'),
-          image: '/assets/services/process/qa.jpeg'
+          image: '/assets/services/software/testing.jpeg'
         },
         { 
           step: 6, 
           title: t('softdev.processes.custom.roadmap6.title'), 
           description: t('softdev.processes.custom.roadmap6.description'),
           details: t('softdev.processes.custom.roadmap6.details'),
-          image: '/assets/services/process/launch.jpeg'
+          image: '/assets/services/software/launch2.jpeg'
         },
         { 
           step: 7, 
           title: t('softdev.processes.custom.roadmap7.title'), 
           description: t('softdev.processes.custom.roadmap7.description'),
           details: t('softdev.processes.custom.roadmap7.details'),
-          image: '/assets/services/process/maintenance.jpeg'
+          image: '/assets/services/software/maintenance.jpeg'
         }
       ]
     },
@@ -164,13 +164,13 @@ export default function SoftwareDevelopmentPage() {
         t('softdev.processes.mobile.service8')
       ],
       roadmap: [
-        { step: 1, title: t('softdev.processes.mobile.roadmap1.title'), description: t('softdev.processes.mobile.roadmap1.description') },
-        { step: 2, title: t('softdev.processes.mobile.roadmap2.title'), description: t('softdev.processes.mobile.roadmap2.description') },
-        { step: 3, title: t('softdev.processes.mobile.roadmap3.title'), description: t('softdev.processes.mobile.roadmap3.description') },
-        { step: 4, title: t('softdev.processes.mobile.roadmap4.title'), description: t('softdev.processes.mobile.roadmap4.description') },
-        { step: 5, title: t('softdev.processes.mobile.roadmap5.title'), description: t('softdev.processes.mobile.roadmap5.description') },
-        { step: 6, title: t('softdev.processes.mobile.roadmap6.title'), description: t('softdev.processes.mobile.roadmap6.description') },
-        { step: 7, title: t('softdev.processes.mobile.roadmap7.title'), description: t('softdev.processes.mobile.roadmap7.description') }
+        { step: 1, title: t('softdev.processes.mobile.roadmap1.title'), description: t('softdev.processes.mobile.roadmap1.description'), image: '/assets/services/process/consultation.jpeg' },
+        { step: 2, title: t('softdev.processes.mobile.roadmap2.title'), description: t('softdev.processes.mobile.roadmap2.description'), image: '/assets/services/software/planning.jpeg' },
+        { step: 3, title: t('softdev.processes.mobile.roadmap3.title'), description: t('softdev.processes.mobile.roadmap3.description'), image: '/assets/services/software/uiux.jpeg' },
+        { step: 4, title: t('softdev.processes.mobile.roadmap4.title'), description: t('softdev.processes.mobile.roadmap4.description'), image: '/assets/services/software/mobile.jpeg' },
+        { step: 5, title: t('softdev.processes.mobile.roadmap5.title'), description: t('softdev.processes.mobile.roadmap5.description'), image: '/assets/services/software/testing.jpeg' },
+        { step: 6, title: t('softdev.processes.mobile.roadmap6.title'), description: t('softdev.processes.mobile.roadmap6.description'), image: '/assets/services/software/google-play.jpeg' },
+        { step: 7, title: t('softdev.processes.mobile.roadmap7.title'), description: t('softdev.processes.mobile.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
       ]
     },
     {
@@ -189,13 +189,13 @@ export default function SoftwareDevelopmentPage() {
         t('softdev.processes.enterprise.service8')
       ],
       roadmap: [
-        { step: 1, title: t('softdev.processes.enterprise.roadmap1.title'), description: t('softdev.processes.enterprise.roadmap1.description') },
-        { step: 2, title: t('softdev.processes.enterprise.roadmap2.title'), description: t('softdev.processes.enterprise.roadmap2.description') },
-        { step: 3, title: t('softdev.processes.enterprise.roadmap3.title'), description: t('softdev.processes.enterprise.roadmap3.description') },
-        { step: 4, title: t('softdev.processes.enterprise.roadmap4.title'), description: t('softdev.processes.enterprise.roadmap4.description') },
-        { step: 5, title: t('softdev.processes.enterprise.roadmap5.title'), description: t('softdev.processes.enterprise.roadmap5.description') },
-        { step: 6, title: t('softdev.processes.enterprise.roadmap6.title'), description: t('softdev.processes.enterprise.roadmap6.description') },
-        { step: 7, title: t('softdev.processes.enterprise.roadmap7.title'), description: t('softdev.processes.enterprise.roadmap7.description') }
+        { step: 1, title: t('softdev.processes.enterprise.roadmap1.title'), description: t('softdev.processes.enterprise.roadmap1.description'), image: '/assets/services/process/consultation.jpeg' },
+        { step: 2, title: t('softdev.processes.enterprise.roadmap2.title'), description: t('softdev.processes.enterprise.roadmap2.description'), image: '/assets/services/software/planning.jpeg' },
+        { step: 3, title: t('softdev.processes.enterprise.roadmap3.title'), description: t('softdev.processes.enterprise.roadmap3.description'), image: '/assets/services/software/uiux.jpeg' },
+        { step: 4, title: t('softdev.processes.enterprise.roadmap4.title'), description: t('softdev.processes.enterprise.roadmap4.description'), image: '/assets/services/software/system.jpeg' },
+        { step: 5, title: t('softdev.processes.enterprise.roadmap5.title'), description: t('softdev.processes.enterprise.roadmap5.description'), image: '/assets/services/software/security.jpeg' },
+        { step: 6, title: t('softdev.processes.enterprise.roadmap6.title'), description: t('softdev.processes.enterprise.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
+        { step: 7, title: t('softdev.processes.enterprise.roadmap7.title'), description: t('softdev.processes.enterprise.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
       ]
     },
     {
@@ -214,13 +214,13 @@ export default function SoftwareDevelopmentPage() {
         t('softdev.processes.cloud.service8')
       ],
       roadmap: [
-        { step: 1, title: t('softdev.processes.cloud.roadmap1.title'), description: t('softdev.processes.cloud.roadmap1.description') },
-        { step: 2, title: t('softdev.processes.cloud.roadmap2.title'), description: t('softdev.processes.cloud.roadmap2.description') },
-        { step: 3, title: t('softdev.processes.cloud.roadmap3.title'), description: t('softdev.processes.cloud.roadmap3.description') },
-        { step: 4, title: t('softdev.processes.cloud.roadmap4.title'), description: t('softdev.processes.cloud.roadmap4.description') },
-        { step: 5, title: t('softdev.processes.cloud.roadmap5.title'), description: t('softdev.processes.cloud.roadmap5.description') },
-        { step: 6, title: t('softdev.processes.cloud.roadmap6.title'), description: t('softdev.processes.cloud.roadmap6.description') },
-        { step: 7, title: t('softdev.processes.cloud.roadmap7.title'), description: t('softdev.processes.cloud.roadmap7.description') }
+        { step: 1, title: t('softdev.processes.cloud.roadmap1.title'), description: t('softdev.processes.cloud.roadmap1.description'), image: '/assets/services/process/consultation.jpeg' },
+        { step: 2, title: t('softdev.processes.cloud.roadmap2.title'), description: t('softdev.processes.cloud.roadmap2.description'), image: '/assets/services/software/planning.jpeg' },
+        { step: 3, title: t('softdev.processes.cloud.roadmap3.title'), description: t('softdev.processes.cloud.roadmap3.description'), image: '/assets/services/software/cloud.jpeg' },
+        { step: 4, title: t('softdev.processes.cloud.roadmap4.title'), description: t('softdev.processes.cloud.roadmap4.description'), image: '/assets/services/software/devops.jpeg' },
+        { step: 5, title: t('softdev.processes.cloud.roadmap5.title'), description: t('softdev.processes.cloud.roadmap5.description'), image: '/assets/services/software/cloud2.jpeg' },
+        { step: 6, title: t('softdev.processes.cloud.roadmap6.title'), description: t('softdev.processes.cloud.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
+        { step: 7, title: t('softdev.processes.cloud.roadmap7.title'), description: t('softdev.processes.cloud.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
       ]
     },
     {
@@ -239,13 +239,13 @@ export default function SoftwareDevelopmentPage() {
         t('softdev.processes.integration.service8')
       ],
       roadmap: [
-        { step: 1, title: t('softdev.processes.integration.roadmap1.title'), description: t('softdev.processes.integration.roadmap1.description') },
-        { step: 2, title: t('softdev.processes.integration.roadmap2.title'), description: t('softdev.processes.integration.roadmap2.description') },
-        { step: 3, title: t('softdev.processes.integration.roadmap3.title'), description: t('softdev.processes.integration.roadmap3.description') },
-        { step: 4, title: t('softdev.processes.integration.roadmap4.title'), description: t('softdev.processes.integration.roadmap4.description') },
-        { step: 5, title: t('softdev.processes.integration.roadmap5.title'), description: t('softdev.processes.integration.roadmap5.description') },
-        { step: 6, title: t('softdev.processes.integration.roadmap6.title'), description: t('softdev.processes.integration.roadmap6.description') },
-        { step: 7, title: t('softdev.processes.integration.roadmap7.title'), description: t('softdev.processes.integration.roadmap7.description') }
+        { step: 1, title: t('softdev.processes.integration.roadmap1.title'), description: t('softdev.processes.integration.roadmap1.description'), image: '/assets/services/process/consultation.jpeg' },
+        { step: 2, title: t('softdev.processes.integration.roadmap2.title'), description: t('softdev.processes.integration.roadmap2.description'), image: '/assets/services/software/planning.jpeg' },
+        { step: 3, title: t('softdev.processes.integration.roadmap3.title'), description: t('softdev.processes.integration.roadmap3.description'), image: '/assets/services/software/api2.jpeg' },
+        { step: 4, title: t('softdev.processes.integration.roadmap4.title'), description: t('softdev.processes.integration.roadmap4.description'), image: '/assets/services/software/api.jpeg' },
+        { step: 5, title: t('softdev.processes.integration.roadmap5.title'), description: t('softdev.processes.integration.roadmap5.description'), image: '/assets/services/software/check.jpeg' },
+        { step: 6, title: t('softdev.processes.integration.roadmap6.title'), description: t('softdev.processes.integration.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
+        { step: 7, title: t('softdev.processes.integration.roadmap7.title'), description: t('softdev.processes.integration.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
       ]
     }
   ];
@@ -292,7 +292,7 @@ export default function SoftwareDevelopmentPage() {
             {/* Right Side - Hero Image */}
             <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
               <Image
-                src="/assets/services/software/26.jpeg"
+                src="/assets/services/software/software-poster.jpeg"
                 alt="Software Development Services"
                 fill
                 className="object-cover rounded-3xl"
@@ -528,7 +528,7 @@ export default function SoftwareDevelopmentPage() {
                                 {/* Tech Info */}
                                 <div className="flex-1 text-center lg:text-left">
                                   <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-xl overflow-hidden shadow-md">
+                                    <div className="w-12 h-12 rounded-xl overflow-hidden">
                                       <Image
                                         src={tech.logo}
                                         alt={`${tech.name} logo`}
@@ -885,7 +885,6 @@ export default function SoftwareDevelopmentPage() {
                                     fill
                                     className="object-cover"
                                   />
-                                  <div className="absolute inset-0 bg-black/20"></div>
                                   <div className="absolute bottom-4 left-4">
                                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                                       isDark
@@ -963,7 +962,7 @@ export default function SoftwareDevelopmentPage() {
             {/* Background Image */}
             <div className="absolute inset-0 opacity-10">
               <Image
-                src="/assets/services/software/24.jpeg"
+                src="/assets/services/software/planning.jpeg"
                 alt="Software Development Consultation"
                 fill
                 className="object-cover"
@@ -1072,32 +1071,32 @@ export default function SoftwareDevelopmentPage() {
               {[
                 { 
                   name: t('softdev.mission.industry1.name'), 
-                  image: '/assets/services/software/18.jpeg',
+                  image: '/assets/services/health.jpeg',
                   description: t('softdev.mission.industry1.description')
                 },
                 { 
                   name: t('softdev.mission.industry2.name'), 
-                  image: '/assets/services/software/19.jpeg',
+                  image: '/assets/services/fintech.jpeg',
                   description: t('softdev.mission.industry2.description')
                 },
                 { 
                   name: t('softdev.mission.industry3.name'), 
-                  image: '/assets/services/software/20.jpeg',
+                  image: '/assets/services/ecommerce.jpeg',
                   description: t('softdev.mission.industry3.description')
                 },
                 { 
                   name: t('softdev.mission.industry4.name'), 
-                  image: '/assets/services/software/21.jpeg',
+                  image: '/assets/services/edutech.jpeg',
                   description: t('softdev.mission.industry4.description')
                 },
                 { 
                   name: t('softdev.mission.industry5.name'), 
-                  image: '/assets/services/software/22.jpeg',
+                  image: '/assets/services/saas.jpeg',
                   description: t('softdev.mission.industry5.description')
                 },
                 { 
                   name: t('softdev.mission.industry6.name'), 
-                  image: '/assets/services/software/23.jpeg',
+                  image: '/assets/services/creativity.jpeg',
                   description: t('softdev.mission.industry6.description')
                 }
               ].map((industry, index) => (
@@ -1111,11 +1110,6 @@ export default function SoftwareDevelopmentPage() {
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className={`absolute inset-0 transition-opacity duration-300 ${
-                    isDark 
-                      ? 'bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-70 group-hover:opacity-90'
-                      : 'bg-gradient-to-t from-white/95 via-white/60 to-transparent opacity-80 group-hover:opacity-90'
-                  }`}></div>
                   
                   {/* Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-6">
@@ -1131,12 +1125,12 @@ export default function SoftwareDevelopmentPage() {
                     {/* Hover State */}
                     <div className="absolute inset-0 p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                       <h4 className={`text-2xl font-bold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
+                        isDark ? 'text-white drop-shadow-lg' : 'text-gray-900'
                       }`}>
                         {industry.name}
                       </h4>
                       <p className={`text-sm leading-relaxed ${
-                        isDark ? 'text-gray-200' : 'text-gray-700'
+                        isDark ? 'text-gray-100 drop-shadow-md' : 'text-gray-700'
                       }`}>
                         {industry.description}
                       </p>

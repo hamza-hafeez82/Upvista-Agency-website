@@ -14,43 +14,43 @@ export default function CaseStudiesPage() {
   // Simplified case studies data
   const caseStudies = [
     {
-      id: 'aon-corporate-website',
-      title: 'AON Corporate Website',
-      client: 'AON Corporation',
-      category: 'Web Development',
-      image: '/assets/case-studies/aon-corporate.jpg',
-      description: 'Modern corporate website with advanced animations and multi-language support.',
-      duration: '3 months',
+      id: 'vigours-organic-crm',
+      title: 'Vigours Organic CRM System',
+      client: 'Vigours Organic',
+      category: 'Software',
+      image: '/assets/services/software/system.jpeg',
+      description: 'Complete customer relationship management solution for organic e-commerce business delivered in 1.5 months using Agile methodology.',
+      duration: '1.5 months',
       team: '5 members',
-      technologies: ['Webflow', 'JavaScript', 'CSS3'],
-      results: ['300% faster loading', '40% more engagement', '12 languages'],
-      link: '/insights/case-studies/aon-corporate-website'
+      technologies: ['React.js', 'Node.js', 'PostgreSQL', 'AWS'],
+      results: ['250% sales increase', '180% retention boost', '95% automation'],
+      link: '/Insights/case-studies/vigours-organic-crm'
     },
     {
-      id: 'celtis-ngo-website',
-      title: 'Celtis NGO Platform',
-      client: 'Celtis Foundation',
+      id: 'celtis-ngo-platform',
+      title: 'CELTIS NGO Platform',
+      client: 'CELTIS Inc.',
       category: 'Web Development',
-      image: '/assets/case-studies/celtis-ngo.jpg',
-      description: 'Accessible NGO website with donation integration and volunteer management.',
-      duration: '2 months',
-      team: '3 members',
-      technologies: ['React', 'Node.js', 'Stripe'],
-      results: ['150% more donations', '80% more volunteers', 'WCAG compliant'],
-      link: '/insights/case-studies/celtis-ngo-website'
+      image: '/assets/case-studies/celtis-hero.jpg',
+      description: 'Complete digital transformation of Japanese NGO platform with modern UI/UX, CMS integration, and donation system.',
+      duration: '3 months',
+      team: '4 members',
+      technologies: ['Next.js', 'Strapi CMS', 'PostgreSQL', 'Vercel'],
+      results: ['300% donation increase', '500% content growth', 'Unified platform'],
+      link: '/Insights/case-studies/celtis-ngo-platform'
     },
     {
       id: 'vigours-ecommerce',
-      title: 'Vigours E-commerce',
+      title: 'Vigours Organic E-commerce Platform',
       client: 'Vigours Organic',
       category: 'E-commerce',
-      image: '/assets/case-studies/vigours-ecommerce.jpg',
-      description: 'Organic e-commerce platform with subscription management and inventory tracking.',
+      image: '/assets/case-studies/vigours-ecommerce-hero.jpg',
+      description: 'Full-stack organic food e-commerce platform with advanced features, secure payments, and comprehensive admin management.',
       duration: '4 months',
       team: '6 members',
-      technologies: ['Next.js', 'Shopify', 'Stripe'],
-      results: ['200% sales increase', '60% faster inventory', '99.9% uptime'],
-      link: '/insights/case-studies/vigours-ecommerce'
+      technologies: ['Next.js', 'Node.js', 'MongoDB', 'Stripe'],
+      results: ['200% sales increase', 'Nationwide reach', 'Streamlined operations'],
+      link: '/Insights/case-studies/vigours-ecommerce'
     },
     {
       id: 'retail-system-supermarket',
@@ -163,7 +163,6 @@ export default function CaseStudiesPage() {
                     fill
                     className="object-cover transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
 
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">

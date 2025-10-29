@@ -57,13 +57,13 @@ const Header = () => {
     { label: t('dropdown.researches.cortex'), href: "/Researches/project-cortex" },
   ];
 
-  const insightsLinks = [
-    { label: t('dropdown.insights.caseStudies'), href: "/Insights/case-studies" },
-    { label: t('dropdown.insights.news'), href: "/Insights/news" },
-    { label: t('dropdown.insights.blogs'), href: "/Insights/blogs" },
-    { label: t('dropdown.insights.whitepapers'), href: "/Insights/whitepapers" },
-    { label: t('dropdown.insights.events'), href: "/Insights/events" },
-  ];
+  // const insightsLinks = [
+  //   { label: t('dropdown.insights.caseStudies'), href: "/Insights/case-studies" },
+  //   { label: t('dropdown.insights.news'), href: "/Insights/news" },
+  //   { label: t('dropdown.insights.blogs'), href: "/Insights/blogs" },
+  //   { label: t('dropdown.insights.whitepapers'), href: "/Insights/whitepapers" },
+  //   { label: t('dropdown.insights.events'), href: "/Insights/events" },
+  // ];
 
   // Dropdown states for desktop navigation
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -83,7 +83,7 @@ const Header = () => {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileCommunityOpen, setMobileCommunityOpen] = useState(false);
   const [mobileResearchesOpen, setMobileResearchesOpen] = useState(false);
-  const [mobileInsightsOpen, setMobileInsightsOpen] = useState(false);
+  // const [mobileInsightsOpen, setMobileInsightsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -430,8 +430,8 @@ const Header = () => {
             )}
           </div>
 
-          {/* Insights Dropdown */}
-          <div className="relative dropdown-container">
+          {/* Insights Dropdown - COMMENTED OUT */}
+          {/* <div className="relative dropdown-container">
             <button 
               onClick={(e) => {
                 e.stopPropagation();
@@ -468,7 +468,7 @@ const Header = () => {
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
 
           {/* Explore Careers Button - Purple to Pink Gradient with Wave Effect */}
           <Link href="/careers" target="_blank" rel="noopener noreferrer" className="ml-3">
@@ -700,8 +700,8 @@ const Header = () => {
                 )}
               </div>
 
-              {/* Insights Accordion */}
-              <div className="mb-1">
+              {/* Insights Accordion - COMMENTED OUT */}
+              {/* <div className="mb-1">
                 <button
                   className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
                     isDark 
@@ -728,7 +728,7 @@ const Header = () => {
                     ))}
                   </div>
                 )}
-              </div>
+              </div> */}
 
               </div>
 

@@ -30,7 +30,7 @@ export default function WebDevelopmentPage() {
   const caseStudies = [
     {
       id: 1,
-      image: '/assets/services/software/26.jpeg',
+      image: '/assets/services/software/software-poster.jpeg',
       title: t('webdev.caseStudies.aon.title'),
       description: t('webdev.caseStudies.aon.description'),
       tag: t('webdev.caseStudies.aon.tag'),
@@ -38,35 +38,35 @@ export default function WebDevelopmentPage() {
     },
     {
       id: 2,
-      image: '/assets/services/software/27.jpeg',
+      image: '/assets/services/software/development.jpeg',
       title: t('webdev.caseStudies.vigours.title'),
       description: t('webdev.caseStudies.vigours.description'),
       tag: t('webdev.caseStudies.vigours.tag'),
-      href: '/case-studies/vigours-organic'
+      href: '/Insights/case-studies/vigours-ecommerce'
     },
     {
       id: 3,
-      image: '/assets/services/software/28.jpeg',
+      image: '/assets/services/software/system.jpeg',
       title: t('webdev.caseStudies.celtis.title'),
       description: t('webdev.caseStudies.celtis.description'),
       tag: t('webdev.caseStudies.celtis.tag'),
-      href: '/case-studies/celtis-ngo'
+      href: '/Insights/case-studies/celtis-ngo-platform'
     }
   ];
 
   const techStackItems = [
-    { name: 'React', image: '/assets/services/software/29.jpeg', logo: '/assets/logos/react.svg', description: t('webdev.tech.react') },
-    { name: 'Next.js', image: '/assets/services/software/30.jpeg', logo: '/assets/logos/nextjs.svg', description: t('webdev.tech.nextjs') },
-    { name: 'Vue.js', image: '/assets/services/software/31.jpeg', logo: '/assets/logos/vuejs.svg', description: t('webdev.tech.vuejs') },
-    { name: 'Angular', image: '/assets/services/software/32.jpeg', logo: '/assets/logos/angular.svg', description: t('webdev.tech.angular') },
-    { name: 'Node.js', image: '/assets/services/software/33.jpeg', logo: '/assets/logos/nodejs.svg', description: t('webdev.tech.nodejs') },
-    { name: 'Python', image: '/assets/services/software/34.jpeg', logo: '/assets/logos/python.svg', description: t('webdev.tech.python') },
-    { name: 'PHP', image: '/assets/services/software/35.jpeg', logo: '/assets/logos/php.svg', description: t('webdev.tech.php') },
-    { name: 'MySQL', image: '/assets/services/software/36.jpeg', logo: '/assets/logos/mysql.svg', description: t('webdev.tech.mysql') },
-    { name: 'MongoDB', image: '/assets/services/software/37.jpeg', logo: '/assets/logos/mongodb.svg', description: t('webdev.tech.mongodb') },
-    { name: 'WordPress', image: '/assets/services/software/38.jpeg', logo: '/assets/logos/wordpress.svg', description: t('webdev.tech.wordpress') },
-    { name: 'Webflow', image: '/assets/services/software/39.jpeg', logo: '/assets/logos/webflow.svg', description: t('webdev.tech.webflow') },
-    { name: 'Docker', image: '/assets/services/software/40.jpeg', logo: '/assets/logos/docker.svg', description: t('webdev.tech.docker') }
+    { name: 'React', image: '/assets/services/software/react.jpg', logo: '/assets/services/software/logos/react.jpg', description: t('webdev.tech.react') },
+    { name: 'Next.js', image: '/assets/services/software/development.jpeg', logo: '/assets/services/software/logos/react.jpg', description: t('webdev.tech.nextjs') },
+    { name: 'Vue.js', image: '/assets/services/software/uiux.jpeg', logo: '/assets/services/software/logos/react.jpg', description: t('webdev.tech.vuejs') },
+    { name: 'Angular', image: '/assets/services/software/api.jpeg', logo: '/assets/services/software/logos/react.jpg', description: t('webdev.tech.angular') },
+    { name: 'Node.js', image: '/assets/services/software/goals.jpeg', logo: '/assets/services/software/logos/golang.jpg', description: t('webdev.tech.nodejs') },
+    { name: 'Python', image: '/assets/services/software/development.jpeg', logo: '/assets/services/software/logos/python.jpg', description: t('webdev.tech.python') },
+    { name: 'PHP', image: '/assets/services/software/api2.jpeg', logo: '/assets/services/software/logos/react.jpg', description: t('webdev.tech.php') },
+    { name: 'MySQL', image: '/assets/services/software/check.jpeg', logo: '/assets/services/software/logos/postgres.jpg', description: t('webdev.tech.mysql') },
+    { name: 'MongoDB', image: '/assets/services/software/cloud.jpeg', logo: '/assets/services/software/logos/postgres.jpg', description: t('webdev.tech.mongodb') },
+    { name: 'WordPress', image: '/assets/services/software/marketing.jpeg', logo: '/assets/services/software/logos/react.jpg', description: t('webdev.tech.wordpress') },
+    { name: 'Webflow', image: '/assets/services/software/html.jpeg', logo: '/assets/services/software/logos/react.jpg', description: t('webdev.tech.webflow') },
+    { name: 'Docker', image: '/assets/services/software/devops.jpeg', logo: '/assets/services/software/logos/docker.jpg', description: t('webdev.tech.docker') }
   ];
 
   // Infinite carousel effect
@@ -1051,32 +1051,32 @@ export default function WebDevelopmentPage() {
               {[
                 { 
                   name: t('webdev.mission.industry1.name'), 
-                  image: '/assets/services/software/41.jpeg',
+                  image: '/assets/services/software/security.jpeg',
                   description: t('webdev.mission.industry1.description')
                 },
                 { 
                   name: t('webdev.mission.industry2.name'), 
-                  image: '/assets/services/software/42.jpeg',
+                  image: '/assets/services/software/marketing.jpeg',
                   description: t('webdev.mission.industry2.description')
                 },
                 { 
                   name: t('webdev.mission.industry3.name'), 
-                  image: '/assets/services/software/43.jpeg',
+                  image: '/assets/services/software/cloud2.jpeg',
                   description: t('webdev.mission.industry3.description')
                 },
                 { 
                   name: t('webdev.mission.industry4.name'), 
-                  image: '/assets/services/software/44.jpeg',
+                  image: '/assets/services/software/mobile.jpeg',
                   description: t('webdev.mission.industry4.description')
                 },
                 { 
                   name: t('webdev.mission.industry5.name'), 
-                  image: '/assets/services/software/45.jpeg',
+                  image: '/assets/services/software/planning.jpeg',
                   description: t('webdev.mission.industry5.description')
                 },
                 { 
                   name: t('webdev.mission.industry6.name'), 
-                  image: '/assets/services/software/46.jpeg',
+                  image: '/assets/services/software/testing.jpeg',
                   description: t('webdev.mission.industry6.description')
                 }
               ].map((industry, index) => (
