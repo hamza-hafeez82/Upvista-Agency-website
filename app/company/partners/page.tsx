@@ -1,6 +1,8 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -9,6 +11,23 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function PartnersPage() {
   const { isDark } = useTheme();
   const { t } = useLanguage();
+  const featuredPartners = [
+    {
+      name: 'Dravion Technologies',
+      summary: t('partners.featured.dravion.summary'),
+      logo: '/assets/company/dravion-logo2.png',
+      tagline: t('partners.featured.dravion.tagline'),
+      focusAreas: [
+        t('partners.featured.dravion.strength1'),
+        t('partners.featured.dravion.strength2'),
+        t('partners.featured.dravion.strength3'),
+        t('partners.featured.dravion.strength4'),
+        t('partners.featured.dravion.strength5'),
+      ],
+      value: t('partners.featured.dravion.value'),
+      link: '/company/partners/dravion-technologies',
+    },
+  ];
 
   return (
     <div className={`min-h-screen ${
@@ -44,6 +63,134 @@ export default function PartnersPage() {
             }`}>
               {t('partners.subtitle')}
             </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Partners */}
+      <div className="pb-10 sm:pb-14 md:pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col gap-6 sm:gap-8">
+            <div className="flex flex-col gap-2 text-center">
+              <span className={`text-xs sm:text-sm font-semibold tracking-widest uppercase ${
+                isDark ? 'text-blue-300' : 'text-blue-700'
+              }`}>
+                {t('partners.featured.badge')}
+              </span>
+              <h2 className={`text-2xl sm:text-3xl font-bold ${
+                isDark ? 'text-white' : 'text-gray-900'
+              }`}>
+                {t('partners.featured.title')}
+              </h2>
+              <p className={`text-base sm:text-lg ${
+                isDark ? 'text-gray-300' : 'text-gray-600'
+              }`}>
+                {t('partners.featured.subtitle')}
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:gap-8">
+              {featuredPartners.map((partner) => (
+                <Link
+                  key={partner.name}
+                  href={partner.link}
+                  className={`group rounded-3xl border transition-all duration-300 ${
+                    isDark
+                      ? 'border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/30'
+                      : 'border-gray-200/70 bg-white/80 hover:bg-white shadow-lg hover:shadow-2xl hover:-translate-y-1'
+                  }`}
+                >
+                  <div className="p-6 sm:p-8">
+                    <div className="flex flex-col gap-6">
+                      <div className="flex flex-col gap-3">
+                        <div className="flex items-center gap-4">
+                          <div className="relative">
+                            <div className={`absolute inset-0 rounded-full blur-3xl opacity-70 ${
+                              isDark
+                                ? 'bg-gradient-to-br from-blue-500/50 via-indigo-500/40 to-violet-500/40'
+                                : 'bg-gradient-to-br from-blue-200 via-indigo-200 to-purple-200'
+                            }`}></div>
+                            <div className={`relative h-[4.25rem] w-[4.25rem] sm:h-[5rem] sm:w-[5rem] rounded-full border-2 shadow-xl overflow-hidden ${
+                              isDark
+                                ? 'border-white/30 bg-gradient-to-br from-white/10 via-blue-900/30 to-white/5'
+                                : 'border-blue-200 bg-white'
+                            }`}>
+                              <Image
+                                src={partner.logo}
+                                alt={`${partner.name} logo`}
+                                fill
+                                sizes="(max-width: 640px) 64px, 80px"
+                                className="object-cover rounded-full"
+                                priority
+                              />
+                            </div>
+                          </div>
+                          <div>
+                            <h3 className={`text-xl sm:text-2xl font-bold ${
+                              isDark ? 'text-white' : 'text-gray-900'
+                            }`}>
+                              {partner.name}
+                            </h3>
+                            <p className={`text-sm sm:text-base ${
+                              isDark ? 'text-blue-200' : 'text-blue-700'
+                            }`}>
+                              {partner.tagline}
+                            </p>
+                          </div>
+                        </div>
+                        <p className={`text-base sm:text-lg leading-relaxed ${
+                          isDark ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                          {partner.summary}
+                        </p>
+                      </div>
+
+                      <div className="grid gap-4">
+                        <div>
+                          <p className={`text-xs uppercase tracking-widest font-semibold mb-2 ${
+                            isDark ? 'text-gray-400' : 'text-gray-500'
+                          }`}>
+                            {t('partners.featured.strengthsLabel')}
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {partner.focusAreas.map((area) => (
+                              <span
+                                key={area}
+                                className={`text-xs sm:text-sm px-3 py-1 rounded-full ${
+                                  isDark
+                                    ? 'bg-white/10 text-white/90'
+                                    : 'bg-blue-50 text-blue-800'
+                                }`}
+                              >
+                                {area}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <div className={`text-sm sm:text-base leading-relaxed ${
+                          isDark ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                          {partner.value}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2 text-sm font-semibold">
+                        <span className={`${
+                          isDark ? 'text-blue-300' : 'text-blue-700'
+                        }`}>
+                          {t('partners.featured.cta')}
+                        </span>
+                        <span className={`transform transition-transform group-hover:translate-x-1 ${
+                          isDark ? 'text-blue-300' : 'text-blue-700'
+                        }`}>
+                          →
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

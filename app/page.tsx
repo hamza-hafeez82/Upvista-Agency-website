@@ -6,6 +6,7 @@ import MarketingServices from "@/components/MarketingServices";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/Reviews";
 import InfiniteSliderBasic from "@/components/InfinityCarousel";
+import MVPSection from "@/components/MVPSection";
 import { Vortex } from "@/components/ui/vortex";
 import Link from "next/link";
 import ValueProposition from "@/components/ValueProposition";
@@ -60,6 +61,9 @@ export default function Home() {
       </div>
       <div id="infiniteSlider">
         <InfiniteSliderBasic />
+      </div>
+      <div id="mvp">
+        <MVPSection />
       </div>
       <div id="about">
         <AboutUs />

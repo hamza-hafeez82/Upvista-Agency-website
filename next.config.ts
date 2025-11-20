@@ -4,6 +4,14 @@ const nextConfig = {
     domains: ['i.pinimg.com', 'randomuser.me' , 'thumbs.dreamstime.com'], // Correctly formatted array
     unoptimized: true, // Disable Sharp optimization to avoid runtime errors
   },
+  async rewrites() {
+    return [
+      {
+        source: '/case-studies/:slug',
+        destination: '/Insights/case-studies/:slug',
+      },
+    ];
+  },
   // Turbopack-specific optimizations
   experimental: {
     // Enable Turbopack optimizations

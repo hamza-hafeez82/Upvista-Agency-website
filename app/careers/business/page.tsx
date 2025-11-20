@@ -10,7 +10,8 @@ import { useCareersLanguage } from "../contexts/CareersLanguageContext";
 
 export default function BusinessPage() {
   const { isDark } = useTheme();
-  const { t } = useCareersLanguage();
+  const { t: tRaw } = useCareersLanguage();
+  const t = (key: string) => String(tRaw(key)).replace(/\*/g, "");
   
   return (
     <>

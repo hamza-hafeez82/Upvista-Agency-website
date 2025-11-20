@@ -160,13 +160,13 @@ export default function WebDevelopmentPage() {
         t('webdev.processes.wordpress.service6')
       ],
       roadmap: [
-        { step: 1, title: t('webdev.processes.wordpress.roadmap1.title'), description: t('webdev.processes.wordpress.roadmap1.description') },
-        { step: 2, title: t('webdev.processes.wordpress.roadmap2.title'), description: t('webdev.processes.wordpress.roadmap2.description') },
-        { step: 3, title: t('webdev.processes.wordpress.roadmap3.title'), description: t('webdev.processes.wordpress.roadmap3.description') },
-        { step: 4, title: t('webdev.processes.wordpress.roadmap4.title'), description: t('webdev.processes.wordpress.roadmap4.description') },
-        { step: 5, title: t('webdev.processes.wordpress.roadmap5.title'), description: t('webdev.processes.wordpress.roadmap5.description') },
-        { step: 6, title: t('webdev.processes.wordpress.roadmap6.title'), description: t('webdev.processes.wordpress.roadmap6.description') },
-        { step: 7, title: t('webdev.processes.wordpress.roadmap7.title'), description: t('webdev.processes.wordpress.roadmap7.description') }
+        { step: 1, title: t('webdev.processes.wordpress.roadmap1.title'), description: t('webdev.processes.wordpress.roadmap1.description'), image: '/assets/services/software/html.jpeg' },
+        { step: 2, title: t('webdev.processes.wordpress.roadmap2.title'), description: t('webdev.processes.wordpress.roadmap2.description'), image: '/assets/services/software/marketing.jpeg' },
+        { step: 3, title: t('webdev.processes.wordpress.roadmap3.title'), description: t('webdev.processes.wordpress.roadmap3.description'), image: '/assets/services/software/uiux.jpeg' },
+        { step: 4, title: t('webdev.processes.wordpress.roadmap4.title'), description: t('webdev.processes.wordpress.roadmap4.description'), image: '/assets/services/software/development.jpeg' },
+        { step: 5, title: t('webdev.processes.wordpress.roadmap5.title'), description: t('webdev.processes.wordpress.roadmap5.description'), image: '/assets/services/software/testing.jpeg' },
+        { step: 6, title: t('webdev.processes.wordpress.roadmap6.title'), description: t('webdev.processes.wordpress.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
+        { step: 7, title: t('webdev.processes.wordpress.roadmap7.title'), description: t('webdev.processes.wordpress.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
       ]
     },
     {
@@ -183,13 +183,13 @@ export default function WebDevelopmentPage() {
         t('webdev.processes.webflow.service6')
       ],
       roadmap: [
-        { step: 1, title: t('webdev.processes.webflow.roadmap1.title'), description: t('webdev.processes.webflow.roadmap1.description') },
-        { step: 2, title: t('webdev.processes.webflow.roadmap2.title'), description: t('webdev.processes.webflow.roadmap2.description') },
-        { step: 3, title: t('webdev.processes.webflow.roadmap3.title'), description: t('webdev.processes.webflow.roadmap3.description') },
-        { step: 4, title: t('webdev.processes.webflow.roadmap4.title'), description: t('webdev.processes.webflow.roadmap4.description') },
-        { step: 5, title: t('webdev.processes.webflow.roadmap5.title'), description: t('webdev.processes.webflow.roadmap5.description') },
-        { step: 6, title: t('webdev.processes.webflow.roadmap6.title'), description: t('webdev.processes.webflow.roadmap6.description') },
-        { step: 7, title: t('webdev.processes.webflow.roadmap7.title'), description: t('webdev.processes.webflow.roadmap7.description') }
+        { step: 1, title: t('webdev.processes.webflow.roadmap1.title'), description: t('webdev.processes.webflow.roadmap1.description'), image: '/assets/services/software/uiux.jpeg' },
+        { step: 2, title: t('webdev.processes.webflow.roadmap2.title'), description: t('webdev.processes.webflow.roadmap2.description'), image: '/assets/services/software/html.jpeg' },
+        { step: 3, title: t('webdev.processes.webflow.roadmap3.title'), description: t('webdev.processes.webflow.roadmap3.description'), image: '/assets/services/software/marketing.jpeg' },
+        { step: 4, title: t('webdev.processes.webflow.roadmap4.title'), description: t('webdev.processes.webflow.roadmap4.description'), image: '/assets/services/software/development.jpeg' },
+        { step: 5, title: t('webdev.processes.webflow.roadmap5.title'), description: t('webdev.processes.webflow.roadmap5.description'), image: '/assets/services/software/testing.jpeg' },
+        { step: 6, title: t('webdev.processes.webflow.roadmap6.title'), description: t('webdev.processes.webflow.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
+        { step: 7, title: t('webdev.processes.webflow.roadmap7.title'), description: t('webdev.processes.webflow.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
       ]
     },
     {
@@ -206,13 +206,13 @@ export default function WebDevelopmentPage() {
         t('webdev.processes.migration.service6')
       ],
       roadmap: [
-        { step: 1, title: t('webdev.processes.migration.roadmap1.title'), description: t('webdev.processes.migration.roadmap1.description') },
-        { step: 2, title: t('webdev.processes.migration.roadmap2.title'), description: t('webdev.processes.migration.roadmap2.description') },
-        { step: 3, title: t('webdev.processes.migration.roadmap3.title'), description: t('webdev.processes.migration.roadmap3.description') },
-        { step: 4, title: t('webdev.processes.migration.roadmap4.title'), description: t('webdev.processes.migration.roadmap4.description') },
-        { step: 5, title: t('webdev.processes.migration.roadmap5.title'), description: t('webdev.processes.migration.roadmap5.description') },
-        { step: 6, title: t('webdev.processes.migration.roadmap6.title'), description: t('webdev.processes.migration.roadmap6.description') },
-        { step: 7, title: t('webdev.processes.migration.roadmap7.title'), description: t('webdev.processes.migration.roadmap7.description') }
+        { step: 1, title: t('webdev.processes.migration.roadmap1.title'), description: t('webdev.processes.migration.roadmap1.description'), image: '/assets/services/software/system.jpeg' },
+        { step: 2, title: t('webdev.processes.migration.roadmap2.title'), description: t('webdev.processes.migration.roadmap2.description'), image: '/assets/services/software/cloud2.jpeg' },
+        { step: 3, title: t('webdev.processes.migration.roadmap3.title'), description: t('webdev.processes.migration.roadmap3.description'), image: '/assets/services/software/cloud3.jpeg' },
+        { step: 4, title: t('webdev.processes.migration.roadmap4.title'), description: t('webdev.processes.migration.roadmap4.description'), image: '/assets/services/software/cloud4.jpeg' },
+        { step: 5, title: t('webdev.processes.migration.roadmap5.title'), description: t('webdev.processes.migration.roadmap5.description'), image: '/assets/services/software/testing.jpeg' },
+        { step: 6, title: t('webdev.processes.migration.roadmap6.title'), description: t('webdev.processes.migration.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
+        { step: 7, title: t('webdev.processes.migration.roadmap7.title'), description: t('webdev.processes.migration.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
       ]
     },
     {
@@ -229,13 +229,13 @@ export default function WebDevelopmentPage() {
         t('webdev.processes.maintenance.service6')
       ],
       roadmap: [
-        { step: 1, title: t('webdev.processes.maintenance.roadmap1.title'), description: t('webdev.processes.maintenance.roadmap1.description') },
-        { step: 2, title: t('webdev.processes.maintenance.roadmap2.title'), description: t('webdev.processes.maintenance.roadmap2.description') },
-        { step: 3, title: t('webdev.processes.maintenance.roadmap3.title'), description: t('webdev.processes.maintenance.roadmap3.description') },
-        { step: 4, title: t('webdev.processes.maintenance.roadmap4.title'), description: t('webdev.processes.maintenance.roadmap4.description') },
-        { step: 5, title: t('webdev.processes.maintenance.roadmap5.title'), description: t('webdev.processes.maintenance.roadmap5.description') },
-        { step: 6, title: t('webdev.processes.maintenance.roadmap6.title'), description: t('webdev.processes.maintenance.roadmap6.description') },
-        { step: 7, title: t('webdev.processes.maintenance.roadmap7.title'), description: t('webdev.processes.maintenance.roadmap7.description') }
+        { step: 1, title: t('webdev.processes.maintenance.roadmap1.title'), description: t('webdev.processes.maintenance.roadmap1.description'), image: '/assets/services/software/maintenance.jpeg' },
+        { step: 2, title: t('webdev.processes.maintenance.roadmap2.title'), description: t('webdev.processes.maintenance.roadmap2.description'), image: '/assets/services/software/security.jpeg' },
+        { step: 3, title: t('webdev.processes.maintenance.roadmap3.title'), description: t('webdev.processes.maintenance.roadmap3.description'), image: '/assets/services/software/check.jpeg' },
+        { step: 4, title: t('webdev.processes.maintenance.roadmap4.title'), description: t('webdev.processes.maintenance.roadmap4.description'), image: '/assets/services/software/goals.jpeg' },
+        { step: 5, title: t('webdev.processes.maintenance.roadmap5.title'), description: t('webdev.processes.maintenance.roadmap5.description'), image: '/assets/services/software/devops.jpeg' },
+        { step: 6, title: t('webdev.processes.maintenance.roadmap6.title'), description: t('webdev.processes.maintenance.roadmap6.description'), image: '/assets/services/software/testing.jpeg' },
+        { step: 7, title: t('webdev.processes.maintenance.roadmap7.title'), description: t('webdev.processes.maintenance.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
       ]
     }
   ];
@@ -876,7 +876,7 @@ export default function WebDevelopmentPage() {
                                     fill
                                     className="object-cover"
                                   />
-                                  <div className="absolute inset-0 bg-black/20"></div>
+                                  {/* Removed dark overlay for clearer photos */}
                                   <div className="absolute bottom-4 left-4">
                                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                                       isDark

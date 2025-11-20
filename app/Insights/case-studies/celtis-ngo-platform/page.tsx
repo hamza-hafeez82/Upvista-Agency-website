@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -75,15 +74,6 @@ export default function CeltisNGOPlatform() {
                   {t('celtis.overview.vision.description')}
                 </p>
               </div>
-            </div>
-
-            <div className="relative h-96 mb-12 rounded-lg overflow-hidden">
-              <Image
-                src="/assets/case-studies/celtis-hero.jpg"
-                alt="CELTIS Platform Overview"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
@@ -169,15 +159,6 @@ export default function CeltisNGOPlatform() {
                   {t('celtis.solution.cms.description')}
                 </p>
               </div>
-            </div>
-
-            <div className="relative h-96 mb-12 rounded-lg overflow-hidden">
-              <Image
-                src="/assets/case-studies/celtis-solution.jpg"
-                alt="CELTIS Modern Platform"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>
@@ -331,15 +312,6 @@ export default function CeltisNGOPlatform() {
                   <li>• {t('celtis.results.efficiency.maintenance')}</li>
                 </ul>
               </div>
-            </div>
-
-            <div className="relative h-96 mb-12 rounded-lg overflow-hidden">
-              <Image
-                src="/assets/case-studies/celtis-results.jpg"
-                alt="CELTIS Platform Results"
-                fill
-                className="object-cover"
-              />
             </div>
           </div>
         </div>

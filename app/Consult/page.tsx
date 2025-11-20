@@ -195,7 +195,7 @@ const socialMediaLinks = [
 const chatLinks = [
   { name: "WhatsApp", icon: <FaWhatsapp className="w-8 h-8" />, href: "https://wa.me/923320486955" },
   { name: "Messenger", icon: <FaFacebookMessenger className="w-8 h-8" />, href: "https://m.me/61576935582300?source=qr_link_share" },
-  { name: "Email", icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:info@upvistadigital.com" },
+  { name: "Email", icon: <FaEnvelope className="w-8 h-8" />, href: "mailto:hello@upvistadigital.com" },
 ];
 
 const getScheduleOptions = (t: (key: string) => string) => [
@@ -214,7 +214,7 @@ const getScheduleOptions = (t: (key: string) => string) => [
   { 
     name: "Email", 
     icon: <Mail className="w-8 h-8" />, 
-    href: "mailto:support@upvistadigital.com?subject=Consultation Request&body=Hi! I'd like to schedule a consultation call. Please let me know your available times.", 
+    href: "mailto:hello@upvistadigital.com?subject=Consultation Request&body=Hi! I'd like to schedule a consultation call. Please let me know your available times.", 
     desc: t('consultation.schedule.emailDesc')
   },
 ];

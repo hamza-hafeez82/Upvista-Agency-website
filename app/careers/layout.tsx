@@ -17,4 +17,3 @@ export default function CareersLayout({
     </LanguageProvider>
   );
 }
-
