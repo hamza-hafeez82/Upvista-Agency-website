@@ -12,13 +12,57 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <Head>
-        <title>Privacy Policy | Upvista Digital</title>
+        <title>Privacy Policy | Data Protection & Privacy | Upvista Digital</title>
         <meta
           name="description"
-          content="Privacy Policy describing how Upvista Digital collects, processes, protects, and shares personal data across global software, AI, cloud, web, and design services."
+          content="Upvista Digital Privacy Policy. Learn how we collect, process, protect, and share personal data. GDPR and CCPA compliant privacy practices for global software, AI, cloud, web, and design services."
         />
-        <meta name="robots" content="noindex, follow" />
+        <meta name="keywords" content="Privacy Policy, Data Protection, GDPR Compliance, CCPA Compliance, Privacy Notice, Data Privacy, Personal Data Protection, Privacy Rights, Data Security, Privacy Practices" />
+        <meta property="og:title" content="Privacy Policy | Data Protection & Privacy | Upvista Digital" />
+        <meta property="og:description" content="Upvista Digital Privacy Policy. Learn how we collect, process, protect, and share personal data. GDPR and CCPA compliant privacy practices." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/legal/privacy-policy" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Privacy Policy | Upvista Digital" />
+        <meta name="twitter:description" content="Upvista Digital Privacy Policy. GDPR and CCPA compliant privacy practices." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
         <link rel="canonical" href="https://www.upvistadigital.com/legal/privacy-policy" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Privacy Policy - Upvista Digital',
+          'description': 'Privacy Policy describing how Upvista Digital collects, processes, protects, and shares personal data across global software, AI, cloud, web, and design services.',
+          'url': 'https://www.upvistadigital.com/legal/privacy-policy',
+          'about': {
+            '@type': 'Thing',
+            'name': 'Privacy Policy',
+            'description': 'Data protection and privacy practices'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Legal',
+                'item': 'https://www.upvistadigital.com/legal'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Privacy Policy',
+                'item': 'https://www.upvistadigital.com/legal/privacy-policy'
+              }
+            ]
+          }
+        }) }} />
       </Head>
       <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
         <Header />

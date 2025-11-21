@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import CareersHeader from "../../components/CareersHeader";

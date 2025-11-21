@@ -47,10 +47,10 @@ export default function AssessmentPage() {
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <div className={`min-h-screen transition-colors duration-300 ${
-      isDark 
-        ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' 
-        : 'bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50'
-    }`}>
+        isDark 
+          ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' 
+          : 'bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50'
+      }`}>
       <div className="container mx-auto px-4 py-6 md:py-8 max-w-6xl">
         {/* Theme and Language Toggles */}
         <div className="flex justify-end gap-4 mb-6">

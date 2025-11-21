@@ -1,11 +1,111 @@
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export default function ProjectCortexPage() {
   return (
-    <div className="min-h-screen bg-black">
-      <Header />
+    <>
+      <Head>
+        <title>Project Cortex | Flagship AI Research Initiative | Upvista Digital</title>
+        <meta name="description" content="Project Cortex is Upvista Digital's flagship research initiative exploring the future of artificial intelligence and machine learning. Discover our research in neural networks, NLP, computer vision, reinforcement learning, and ethical AI." />
+        <meta name="keywords" content="Project Cortex, AI Research, Machine Learning Research, Neural Networks, Natural Language Processing, Computer Vision, Reinforcement Learning, Ethical AI, AI Innovation, Artificial Intelligence Research" />
+        <meta property="og:title" content="Project Cortex | Flagship AI Research Initiative | Upvista Digital" />
+        <meta property="og:description" content="Project Cortex is Upvista Digital's flagship research initiative exploring the future of artificial intelligence and machine learning." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.upvistadigital.com/Researches/project-cortex" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Project Cortex | Flagship AI Research Initiative" />
+        <meta name="twitter:description" content="Project Cortex is Upvista Digital's flagship research initiative exploring the future of AI and machine learning." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Researches/project-cortex" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ScholarlyArticle',
+          'headline': 'Project Cortex - Flagship AI Research Initiative',
+          'description': 'Project Cortex is Upvista Digital\'s flagship research initiative exploring the future of artificial intelligence and machine learning. Research areas include neural networks, natural language processing, computer vision, reinforcement learning, and ethical AI.',
+          'url': 'https://www.upvistadigital.com/Researches/project-cortex',
+          'author': {
+            '@type': 'Person',
+            'name': 'Hamza Hafeez',
+            'jobTitle': 'Founder & CEO',
+            'worksFor': {
+              '@type': 'Organization',
+              'name': 'Upvista Digital',
+              'url': 'https://www.upvistadigital.com'
+            }
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com',
+            'logo': 'https://www.upvistadigital.com/assets/icon.PNG'
+          },
+          'about': [
+            {
+              '@type': 'Thing',
+              'name': 'Artificial Intelligence',
+              'description': 'Advanced AI research and development'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Machine Learning',
+              'description': 'ML algorithms and methodologies'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Neural Networks',
+              'description': 'Advanced neural network architectures'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Natural Language Processing',
+              'description': 'NLP research and applications'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Computer Vision',
+              'description': 'Image and video analysis technologies'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Reinforcement Learning',
+              'description': 'AI systems that learn through interaction'
+            },
+            {
+              '@type': 'Thing',
+              'name': 'Ethical AI',
+              'description': 'Responsible AI development and deployment'
+            }
+          ],
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Researches',
+                'item': 'https://www.upvistadigital.com/Researches'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Project Cortex',
+                'item': 'https://www.upvistadigital.com/Researches/project-cortex'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className="min-h-screen bg-black">
+        <Header />
       
       {/* Hero Section */}
       <div className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">

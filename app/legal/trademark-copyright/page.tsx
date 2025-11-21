@@ -12,13 +12,57 @@ export default function TrademarkCopyrightPage() {
   return (
     <>
       <Head>
-        <title>Trademark and Copyright Notice | Upvista Digital</title>
+        <title>Trademark and Copyright Notice | Intellectual Property Rights | Upvista Digital</title>
         <meta
           name="description"
-          content="Trademark and Copyright Notice for Upvista Digital. Information about intellectual property rights, trademark usage, copyright protection, and licensing terms."
+          content="Trademark and Copyright Notice for Upvista Digital. Comprehensive information about intellectual property rights, trademark usage guidelines, copyright protection, DMCA compliance, licensing terms, and IP enforcement policies."
         />
-        <meta name="robots" content="noindex, follow" />
+        <meta name="keywords" content="Trademark Notice, Copyright Notice, Intellectual Property Rights, Trademark Usage, Copyright Protection, DMCA Compliance, IP Rights, Trademark Guidelines, Copyright Policy, Intellectual Property Policy" />
+        <meta property="og:title" content="Trademark and Copyright Notice | Intellectual Property Rights | Upvista Digital" />
+        <meta property="og:description" content="Trademark and Copyright Notice for Upvista Digital. Information about intellectual property rights, trademark usage, and copyright protection." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/legal/trademark-copyright" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Trademark and Copyright Notice | Upvista Digital" />
+        <meta name="twitter:description" content="Trademark and Copyright Notice for Upvista Digital. Information about intellectual property rights." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
         <link rel="canonical" href="https://www.upvistadigital.com/legal/trademark-copyright" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Trademark and Copyright Notice - Upvista Digital',
+          'description': 'Trademark and Copyright Notice for Upvista Digital. Information about intellectual property rights, trademark usage, copyright protection, and licensing terms.',
+          'url': 'https://www.upvistadigital.com/legal/trademark-copyright',
+          'about': {
+            '@type': 'Thing',
+            'name': 'Trademark and Copyright',
+            'description': 'Intellectual property rights and protection'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Legal',
+                'item': 'https://www.upvistadigital.com/legal'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Trademark and Copyright',
+                'item': 'https://www.upvistadigital.com/legal/trademark-copyright'
+              }
+            ]
+          }
+        }) }} />
       </Head>
       <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
         <Header />

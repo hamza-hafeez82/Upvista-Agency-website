@@ -12,10 +12,54 @@ export default function TermsAndConditionsPage() {
   return (
     <>
       <Head>
-        <title>Terms and Conditions | Upvista Digital</title>
-        <meta name="description" content="Terms and Conditions governing the use of Upvista Digital services including software development, AI systems, cloud integration, web development, and graphics design." />
-        <meta name="robots" content="noindex, follow" />
+        <title>Terms and Conditions | Service Agreement | Upvista Digital</title>
+        <meta name="description" content="Read Upvista Digital's Terms and Conditions. Comprehensive service agreement covering software development, AI systems, cloud integration, web development, graphics design, intellectual property, payment terms, and legal obligations for global clients." />
+        <meta name="keywords" content="Terms and Conditions, Service Agreement, Terms of Service, Legal Terms, Software Development Terms, AI Services Agreement, Cloud Services Terms, Web Development Terms, Business Terms, Contract Terms" />
+        <meta property="og:title" content="Terms and Conditions | Service Agreement | Upvista Digital" />
+        <meta property="og:description" content="Read Upvista Digital's Terms and Conditions covering software development, AI systems, cloud integration, and digital services for global clients." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/legal/terms-conditions" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Terms and Conditions | Upvista Digital" />
+        <meta name="twitter:description" content="Read Upvista Digital's Terms and Conditions covering software development, AI systems, and digital services." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
         <link rel="canonical" href="https://www.upvistadigital.com/legal/terms-conditions" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Terms and Conditions - Upvista Digital',
+          'description': 'Terms and Conditions governing the use of Upvista Digital services including software development, AI systems, cloud integration, web development, and graphics design.',
+          'url': 'https://www.upvistadigital.com/legal/terms-conditions',
+          'about': {
+            '@type': 'Thing',
+            'name': 'Terms and Conditions',
+            'description': 'Legal terms and conditions for digital services'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Legal',
+                'item': 'https://www.upvistadigital.com/legal'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Terms and Conditions',
+                'item': 'https://www.upvistadigital.com/legal/terms-conditions'
+              }
+            ]
+          }
+        }) }} />
       </Head>
       <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
         <Header />
