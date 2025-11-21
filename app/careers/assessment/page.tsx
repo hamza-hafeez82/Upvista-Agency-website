@@ -161,5 +161,6 @@ export default function AssessmentPage() {
         </AnimatePresence>
       </div>
     </div>
+    </>
   );
 }
