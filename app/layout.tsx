@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Upvista Digital is a visionary digital innovation powerhouse that transcends traditional software development. We architect the future by merging cutting-edge AI, quantum-ready technologies, and human-centric design to create digital experiences that don't just solve problems—they redefine possibilities. From blockchain ecosystems to AI-driven transformations, we're building tomorrow's digital landscape today.",
   keywords:
-    "upvista, upvista digital, upvista digital agency,Upvista Digital, Upvista, upvista software company, upvista web development, upvista pakistan, upvista digital solutions, upvista digital services, upvista digital agency pakistan, upvista software house, upvista digital marketing, upvista ui ux design, upvista ai automation, upvista branding, upvista website development, upvista mobile apps, upvista digital transformation, upvista tech solutions, upvista digital innovation, upvista software development, upvista digital agency lahore, upvista digital company, upvista digital studio, upvista digital experts, upvista digital consultants, upvista digital partners, upvista digital marketplace, upvista digital community, upvista digital blog, upvista digital portfolio, upvista digital testimonials, software agency pakistan, web development company pakistan, ui ux design pakistan, digital marketing pakistan, software house lahore, tech agency pakistan, digital solutions pakistan, software development pakistan, website development pakistan, mobile app development pakistan, ai automation pakistan, branding agency pakistan, digital transformation pakistan, tech solutions pakistan, software engineers pakistan, full stack developers pakistan, startup tech pakistan, software community pakistan, developers community pakistan, designers community pakistan, best software house pakistan, best software agency pakistan, trustworthy software agencies pakistan, scalable system engineering pakistan",
+    "Upvista Digital, Upvista, digital innovation company, global software development, AI automation services, cloud solutions, web development services, software development company, UI/UX design services, digital marketing agency, software engineering, technology solutions, digital transformation, custom software development, enterprise software solutions, mobile app development, e-commerce solutions, DevOps services, cloud migration, artificial intelligence solutions, machine learning services, research and development, global tech services, international software agency, cutting-edge technology, innovative digital solutions, software consulting, digital strategy, technology consulting, software outsourcing, remote development team, agile software development, full-stack development, frontend development, backend development, API development, microservices architecture, cloud infrastructure, digital agency, tech innovation, software house, software studio, digital experts, technology partners, software engineers, developers, designers, digital consultants",
   authors: [{ name: "Hamza Hafeez" }],
   creator: "Hamza Hafeez",
   publisher: "Hamza Hafeez",
@@ -195,17 +195,12 @@ export default function RootLayout({
                   "longitude": "74.3587"
                 },
                 "areaServed": {
-                  "@type": "Country",
-                  "name": "Pakistan"
+                  "@type": "Place",
+                  "name": "Worldwide"
                 },
                 "serviceArea": {
-                  "@type": "GeoCircle",
-                  "geoMidpoint": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "31.5204",
-                    "longitude": "74.3587"
-                  },
-                  "geoRadius": "50000"
+                  "@type": "Place",
+                  "name": "Worldwide"
                 }
               },
               "aggregateRating": {
@@ -255,8 +250,16 @@ export default function RootLayout({
                     "@type": "Offer",
                     "itemOffered": {
                       "@type": "Service",
-                      "name": "Branding",
-                      "description": "Brand identity and visual design services"
+                      "name": "Software Development",
+                      "description": "Custom software solutions and enterprise applications"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Cloud Solutions",
+                      "description": "Cloud infrastructure, migration, and DevOps services"
                     }
                   }
                 ]
@@ -430,7 +433,7 @@ export default function RootLayout({
                   "@type": "ContactPoint",
                   "contactType": "customer service",
                   "telephone": "+92-332-0486955",
-                  "email": "upvistadigital@gmail.com",
+                  "email": "info@upvistadigital.com",
                   "availableLanguage": ["English", "Japanese", "Korean", "Chinese", "Arabic", "Indonesian"],
                   "hoursAvailable": {
                     "@type": "OpeningHoursSpecification",
@@ -443,7 +446,7 @@ export default function RootLayout({
                   "@type": "ContactPoint",
                   "contactType": "sales",
                   "telephone": "+92-332-0486955",
-                  "email": "upvistadigital@gmail.com"
+                  "email": "info@upvistadigital.com"
                 }
               ],
               "sameAs": [
@@ -630,8 +633,8 @@ export default function RootLayout({
               "brand": {
                 "@type": "Brand",
                 "name": "Upvista Digital",
-                "description": "Leading software agency brand in Pakistan",
-                "logo": "https://upvistadigital.com/assets/icon.PNG"
+                "description": "Global digital innovation company providing cutting-edge software solutions worldwide",
+                "logo": "https://www.upvistadigital.com/assets/icon.PNG"
               },
               "parentOrganization": {
                 "@type": "Organization",
@@ -666,11 +669,11 @@ export default function RootLayout({
               "worksFor": {
                 "@type": "Organization",
                 "name": "Upvista Digital",
-                "url": "https://upvistadigital.com"
+                "url": "https://www.upvistadigital.com"
               },
               "description": "Founder and CEO of Upvista Digital, a visionary digital innovation powerhouse that transcends traditional software development. Hamza leads the company's mission to architect the future through cutting-edge AI, quantum-ready technologies, and human-centric design.",
-              "image": "https://upvistadigital.com/assets/hamza pic.jpg",
-              "url": "https://upvistadigital.com",
+              "image": "https://www.upvistadigital.com/assets/hamza pic.jpg",
+              "url": "https://www.upvistadigital.com",
               "birthDate": "2006",
               "birthPlace": {
                 "@type": "Place",
@@ -722,7 +725,7 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   "name": "Upvista Digital",
-                    "url": "https://upvistadigital.com"
+                    "url": "https://www.upvistadigital.com"
                   },
                
               ],

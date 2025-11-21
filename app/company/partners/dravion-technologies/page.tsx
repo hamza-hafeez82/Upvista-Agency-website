@@ -3,6 +3,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -135,6 +136,29 @@ export default function DravionTechnologiesPartnerPage() {
               }`}
             >
               {t('dravion.hero.badge')}
+            </div>
+            <div className="flex justify-center mb-6">
+              <div className="relative">
+                <div className={`absolute inset-0 rounded-full blur-3xl opacity-70 ${
+                  isDark
+                    ? 'bg-gradient-to-br from-blue-500/50 via-indigo-500/40 to-violet-500/40'
+                    : 'bg-gradient-to-br from-blue-200 via-indigo-200 to-purple-200'
+                }`}></div>
+                <div className={`relative h-24 w-24 sm:h-32 sm:w-32 rounded-full border-2 shadow-xl overflow-hidden ${
+                  isDark
+                    ? 'border-white/30 bg-gradient-to-br from-white/10 via-blue-900/30 to-white/5'
+                    : 'border-blue-200 bg-white'
+                }`}>
+                  <Image
+                    src="/assets/company/dravion-logo2.PNG"
+                    alt="Dravion Technologies logo"
+                    fill
+                    sizes="(max-width: 640px) 96px, 128px"
+                    className="object-cover rounded-full"
+                    priority
+                  />
+                </div>
+              </div>
             </div>
             <h1
               className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-relaxed ${

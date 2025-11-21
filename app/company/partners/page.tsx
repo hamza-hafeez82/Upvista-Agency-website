@@ -16,7 +16,7 @@ export default function PartnersPage() {
     {
       name: 'Dravion Technologies',
       summary: t('partners.featured.dravion.summary'),
-      logo: '/assets/company/dravion-logo2.png',
+      logo: '/assets/company/dravion-logo2.PNG',
       tagline: t('partners.featured.dravion.tagline'),
       focusAreas: [
         t('partners.featured.dravion.strength1'),
