@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -15,6 +16,56 @@ export default function RecruitmentImportancePage() {
   
   return (
     <>
+      <Head>
+        <title>What is Important in Recruitment | Upvista Digital Careers</title>
+        <meta name="description" content="Learn about Upvista Digital's recruitment philosophy and what makes someone the right fit. Understand the cultural fit we value and the indicators we use to measure that match." />
+        <meta name="keywords" content="Recruitment Philosophy, Hiring Process, Cultural Fit, Recruitment Best Practices, Hiring Criteria, Recruitment Values, Talent Acquisition" />
+        <meta property="og:title" content="What is Important in Recruitment | Upvista Digital Careers" />
+        <meta property="og:description" content="Learn about Upvista Digital's recruitment philosophy and what makes someone the right fit." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/basics/recruitment-importance" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/basic/job.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="What is Important in Recruitment | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Learn about Upvista Digital's recruitment philosophy and hiring criteria." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/basics/recruitment-importance" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'What is Important in Recruitment - Upvista Digital Careers',
+          'description': 'Learn about Upvista Digital\'s recruitment philosophy and what makes someone the right fit.',
+          'url': 'https://www.upvistadigital.com/careers/basics/recruitment-importance',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Learn the Basics',
+                'item': 'https://www.upvistadigital.com/careers/basics'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 4,
+                'name': 'Recruitment Importance',
+                'item': 'https://www.upvistadigital.com/careers/basics/recruitment-importance'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${

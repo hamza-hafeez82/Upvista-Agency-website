@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -61,6 +62,51 @@ export default function BasicsPage() {
 
   return (
     <>
+      <Head>
+        <title>Learn the Basics | Upvista Digital Careers - Company Culture & Values</title>
+        <meta name="description" content="Learn about Upvista Digital's corporate philosophy, company culture, CEO message, and recruitment values. Discover what makes Upvista Digital a unique place to build your career." />
+        <meta name="keywords" content="Upvista Digital Company Culture, Corporate Philosophy, CEO Message, Recruitment Values, Company Values, Corporate Culture, Upvista Digital Basics, Company Information" />
+        <meta property="og:title" content="Learn the Basics | Upvista Digital Careers" />
+        <meta property="og:description" content="Learn about Upvista Digital's corporate philosophy, company culture, CEO message, and recruitment values." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/basics" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/basic/coporate.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Learn the Basics | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Learn about Upvista Digital's corporate philosophy, company culture, and values." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/careers/basic/coporate.jpeg" />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/basics" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Learn the Basics - Upvista Digital Careers',
+          'description': 'Learn about Upvista Digital\'s corporate philosophy, company culture, CEO message, and recruitment values.',
+          'url': 'https://www.upvistadigital.com/careers/basics',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Learn the Basics',
+                'item': 'https://www.upvistadigital.com/careers/basics'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 relative overflow-hidden transition-colors duration-300 ${

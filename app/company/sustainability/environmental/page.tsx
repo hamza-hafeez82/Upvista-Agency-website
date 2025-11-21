@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,39 @@ export default function EnvironmentalPhilosophyPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Environmental Sustainability | Green Initiatives | Upvista Digital</title>
+        <meta name="description" content="Learn about Upvista Digital's environmental sustainability initiatives, green technology practices, carbon footprint reduction, and commitment to environmental stewardship." />
+        <meta name="keywords" content="Environmental Sustainability, Green Initiatives, Carbon Footprint Reduction, Environmental Stewardship, Sustainable Technology, Eco-Friendly Business" />
+        <meta property="og:title" content="Environmental Sustainability | Upvista Digital" />
+        <meta property="og:description" content="Learn about Upvista Digital's environmental sustainability initiatives and green technology practices." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability/environmental" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Environmental Sustainability | Upvista Digital" />
+        <meta name="twitter:description" content="Learn about Upvista Digital's environmental sustainability initiatives." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability/environmental" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Environmental Sustainability - Upvista Digital',
+          'description': 'Learn about Upvista Digital\'s environmental sustainability initiatives, green technology practices, and commitment to environmental stewardship.',
+          'url': 'https://www.upvistadigital.com/company/sustainability/environmental',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Company', 'item': 'https://www.upvistadigital.com/company' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Sustainability', 'item': 'https://www.upvistadigital.com/company/sustainability' },
+              { '@type': 'ListItem', 'position': 4, 'name': 'Environmental', 'item': 'https://www.upvistadigital.com/company/sustainability/environmental' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -173,6 +206,7 @@ export default function EnvironmentalPhilosophyPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

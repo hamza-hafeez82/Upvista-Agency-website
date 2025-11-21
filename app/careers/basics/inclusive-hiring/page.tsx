@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -15,6 +16,56 @@ export default function InclusiveHiringPage() {
   
   return (
     <>
+      <Head>
+        <title>Inclusive Hiring | Upvista Digital Careers - Diversity & Inclusion</title>
+        <meta name="description" content="Learn about Upvista Digital's commitment to inclusive hiring and diversity. Discover our initiatives to create an inclusive workplace that values diversity and equal opportunities." />
+        <meta name="keywords" content="Inclusive Hiring, Diversity and Inclusion, Equal Opportunities, Inclusive Workplace, Diversity Hiring, Inclusive Recruitment, Workplace Diversity" />
+        <meta property="og:title" content="Inclusive Hiring | Upvista Digital Careers" />
+        <meta property="og:description" content="Learn about Upvista Digital's commitment to inclusive hiring and diversity." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/basics/inclusive-hiring" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/basic/disabale.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Inclusive Hiring | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Learn about Upvista Digital's commitment to inclusive hiring and diversity." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/basics/inclusive-hiring" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Inclusive Hiring - Upvista Digital Careers',
+          'description': 'Learn about Upvista Digital\'s commitment to inclusive hiring and diversity.',
+          'url': 'https://www.upvistadigital.com/careers/basics/inclusive-hiring',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Learn the Basics',
+                'item': 'https://www.upvistadigital.com/careers/basics'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 4,
+                'name': 'Inclusive Hiring',
+                'item': 'https://www.upvistadigital.com/careers/basics/inclusive-hiring'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${

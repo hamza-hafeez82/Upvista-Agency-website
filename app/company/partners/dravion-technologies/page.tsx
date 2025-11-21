@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -76,7 +77,44 @@ export default function DravionTechnologiesPartnerPage() {
   ];
 
   return (
-    <div
+    <>
+      <Head>
+        <title>Dravion Technologies | Strategic Partner | Upvista Digital</title>
+        <meta name="description" content="Learn about Dravion Technologies, Upvista Digital's strategic technology partner specializing in 3D modeling, game development, AI solutions, web development, and software engineering." />
+        <meta name="keywords" content="Dravion Technologies, Technology Partner, Strategic Partnership, 3D Modeling, Game Development, AI Solutions, Software Engineering Partner" />
+        <meta property="og:title" content="Dravion Technologies | Strategic Partner | Upvista Digital" />
+        <meta property="og:description" content="Learn about Dravion Technologies, Upvista Digital's strategic technology partner specializing in 3D modeling, game development, and AI solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/partners/dravion-technologies" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dravion Technologies | Strategic Partner | Upvista Digital" />
+        <meta name="twitter:description" content="Learn about Dravion Technologies, Upvista Digital's strategic technology partner." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/partners/dravion-technologies" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Dravion Technologies - Strategic Partner',
+          'description': 'Learn about Dravion Technologies, Upvista Digital\'s strategic technology partner specializing in 3D modeling, game development, AI solutions, and software engineering.',
+          'url': 'https://www.upvistadigital.com/company/partners/dravion-technologies',
+          'about': {
+            '@type': 'Organization',
+            'name': 'Dravion Technologies',
+            'description': 'Technology partner specializing in 3D modeling, game development, AI solutions, and software engineering.'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Company', 'item': 'https://www.upvistadigital.com/company' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Partnerships', 'item': 'https://www.upvistadigital.com/company/partners' },
+              { '@type': 'ListItem', 'position': 4, 'name': 'Dravion Technologies', 'item': 'https://www.upvistadigital.com/company/partners/dravion-technologies' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div
       className={`min-h-screen ${
         isDark
           ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
@@ -253,6 +291,7 @@ export default function DravionTechnologiesPartnerPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

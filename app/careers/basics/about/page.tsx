@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -15,6 +16,56 @@ export default function AboutPage() {
   
   return (
     <>
+      <Head>
+        <title>About Upvista Digital | Careers - Company Overview in 3 Minutes</title>
+        <meta name="description" content="Learn about Upvista Digital in 3 minutes. Discover our philosophy, business model, work culture, and working style. Understand what makes Upvista Digital a unique place to work." />
+        <meta name="keywords" content="About Upvista Digital, Company Overview, Upvista Digital Philosophy, Company Culture, Work Culture, Digital Innovation Company, Tech Company Overview" />
+        <meta property="og:title" content="About Upvista Digital | Careers" />
+        <meta property="og:description" content="Learn about Upvista Digital in 3 minutes. Discover our philosophy, business model, and work culture." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/basics/about" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/upvista.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Upvista Digital | Careers" />
+        <meta name="twitter:description" content="Learn about Upvista Digital in 3 minutes. Discover our philosophy and work culture." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/basics/about" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'About Upvista Digital - Careers',
+          'description': 'Learn about Upvista Digital in 3 minutes. Discover our philosophy, business model, and work culture.',
+          'url': 'https://www.upvistadigital.com/careers/basics/about',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Learn the Basics',
+                'item': 'https://www.upvistadigital.com/careers/basics'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 4,
+                'name': 'About',
+                'item': 'https://www.upvistadigital.com/careers/basics/about'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${

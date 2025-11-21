@@ -14,20 +14,20 @@ export default function CommunityPage() {
         <meta property="og:title" content="Upvista Community | Where Innovators Belong" />
         <meta property="og:description" content="Join the Upvista Community where developers, designers, and visionaries collaborate, learn, and grow together. Experience belonging, support, and shared purpose." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://upvistadigital.com/community" />
-        <meta property="og:image" content="https://upvistadigital.com/assets/heroimg.png" />
+        <meta property="og:url" content="https://www.upvistadigital.com/community" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/heroimg.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Upvista Community | Where Innovators Belong" />
         <meta name="twitter:description" content="Join the Upvista Community—where developers, designers, and visionaries collaborate, learn, and grow together. Experience belonging, support, and shared purpose." />
-        <meta name="twitter:image" content="https://upvistadigital.com/assets/heroimg.png" />
-        <link rel="canonical" href="https://upvistadigital.com/community" />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/heroimg.png" />
+        <link rel="canonical" href="https://www.upvistadigital.com/community" />
         {/* Community Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'Upvista Digital Community',
-          url: 'https://upvistadigital.com/community',
-          logo: 'https://upvistadigital.com/assets/u.png',
+          url: 'https://www.upvistadigital.com/community',
+          logo: 'https://www.upvistadigital.com/assets/u.png',
           sameAs: [
             'https://www.linkedin.com/in/hamza-hafeez-b0233731a',
             'https://www.facebook.com/share/1DXUJFcwit/',

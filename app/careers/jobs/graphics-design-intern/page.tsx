@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import CareersHeader from "../../components/CareersHeader";
@@ -21,8 +22,52 @@ export default function GraphicsDesignInternPage() {
 
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
-      <CareersHeader />
+    <>
+      <Head>
+        <title>Graphics Design Intern | Upvista Digital Careers - Design Internship</title>
+        <meta name="description" content="Apply for Graphics Design Internship at Upvista Digital. Learn design principles, work on real projects, and develop your creative skills in a professional environment." />
+        <meta name="keywords" content="Graphics Design Internship, Graphic Designer Intern, Design Intern Position, Creative Internship, Visual Design Intern, Design Training, Graphics Intern Opportunity" />
+        <meta property="og:title" content="Graphics Design Intern | Upvista Digital Careers" />
+        <meta property="og:description" content="Apply for Graphics Design Internship at Upvista Digital. Learn design principles and work on real projects." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/jobs/graphics-design-intern" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/jobs/design.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Graphics Design Intern | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Apply for Graphics Design Internship at Upvista Digital." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/jobs/graphics-design-intern" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'JobPosting',
+          'title': 'Graphics Design Intern',
+          'description': 'Apply for Graphics Design Internship at Upvista Digital. Learn design principles, work on real projects, and develop your creative skills.',
+          'identifier': {
+            '@type': 'PropertyValue',
+            'name': 'Upvista Digital',
+            'value': 'GRAPHICS_INTERN_001'
+          },
+          'datePosted': '2024-01-01',
+          'validThrough': '2025-12-31',
+          'employmentType': 'INTERN',
+          'hiringOrganization': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'sameAs': 'https://www.upvistadigital.com'
+          },
+          'jobLocation': {
+            '@type': 'Place',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Lahore',
+              'addressRegion': 'Punjab',
+              'addressCountry': 'PK'
+            }
+          },
+          'url': 'https://www.upvistadigital.com/careers/jobs/graphics-design-intern'
+        }) }} />
+      </Head>
+      <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
+        <CareersHeader />
       
       {/* Back Button */}
       <div className="fixed top-20 left-4 z-50">
@@ -298,6 +343,7 @@ export default function GraphicsDesignInternPage() {
         
         position={t('careers.graphicsIntern.position')}
       />
-    </div>
+      </div>
+    </>
   );
 }

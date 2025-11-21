@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,59 @@ export default function CorporateValuesPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Corporate Values | Company Values & Culture | Upvista Digital</title>
+        <meta name="description" content="Discover Upvista Digital's core corporate values including innovation, integrity, excellence, collaboration, and customer-centricity that drive our global digital innovation mission." />
+        <meta name="keywords" content="Corporate Values, Company Values, Corporate Culture, Business Values, Innovation Values, Integrity, Excellence, Collaboration" />
+        <meta property="og:title" content="Corporate Values | Company Values & Culture | Upvista Digital" />
+        <meta property="og:description" content="Discover Upvista Digital's core corporate values including innovation, integrity, excellence, and collaboration." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability/values" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Corporate Values | Upvista Digital" />
+        <meta name="twitter:description" content="Discover Upvista Digital's core corporate values." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability/values" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Corporate Values - Upvista Digital',
+          'description': 'Discover Upvista Digital\'s core corporate values including innovation, integrity, excellence, collaboration, and customer-centricity.',
+          'url': 'https://www.upvistadigital.com/company/sustainability/values',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Company',
+                'item': 'https://www.upvistadigital.com/company'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Sustainability',
+                'item': 'https://www.upvistadigital.com/company/sustainability'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 4,
+                'name': 'Corporate Values',
+                'item': 'https://www.upvistadigital.com/company/sustainability/values'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -141,6 +194,7 @@ export default function CorporateValuesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

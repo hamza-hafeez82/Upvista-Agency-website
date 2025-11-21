@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Head from "next/head";
 import { motion, AnimatePresence } from "framer-motion";
 import PersonalityAssessment from "../components/PersonalityAssessment";
 import TechnicalAssessment from "../components/TechnicalAssessment";
@@ -33,7 +34,19 @@ export default function AssessmentPage() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${
+    <>
+      <Head>
+        <title>Career Assessment | Upvista Digital - Complete Your Application</title>
+        <meta name="description" content="Complete your career assessment at Upvista Digital. Take personality and technical assessments as part of your job application process." />
+        <meta name="keywords" content="Career Assessment, Job Assessment, Personality Assessment, Technical Assessment, Application Process, Upvista Digital Assessment" />
+        <meta property="og:title" content="Career Assessment | Upvista Digital" />
+        <meta property="og:description" content="Complete your career assessment at Upvista Digital. Take personality and technical assessments." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/assessment" />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/assessment" />
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <div className={`min-h-screen transition-colors duration-300 ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' 
         : 'bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50'

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import CareersHeader from "../../components/CareersHeader";
@@ -19,8 +20,62 @@ export default function SoftwareEngineerPage() {
 
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
-      <CareersHeader />
+    <>
+      <Head>
+        <title>Software Engineer Job | Upvista Digital Careers - Apply Now</title>
+        <meta name="description" content="Join Upvista Digital as a Software Engineer. Work on cutting-edge projects, build scalable applications, and grow your career with a global digital innovation company. Apply now." />
+        <meta name="keywords" content="Software Engineer Job, Software Developer Position, Software Engineering Careers, Full Stack Developer Jobs, Backend Developer Jobs, Software Engineer Application" />
+        <meta property="og:title" content="Software Engineer Job | Upvista Digital Careers" />
+        <meta property="og:description" content="Join Upvista Digital as a Software Engineer. Work on cutting-edge projects and build scalable applications." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/jobs/software-engineer" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/jobs/dev.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Software Engineer Job | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Join Upvista Digital as a Software Engineer. Apply now." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/jobs/software-engineer" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'JobPosting',
+          'title': 'Software Engineer',
+          'description': 'Join Upvista Digital as a Software Engineer. Work on cutting-edge projects, build scalable applications, and grow your career with a global digital innovation company.',
+          'identifier': {
+            '@type': 'PropertyValue',
+            'name': 'Upvista Digital',
+            'value': 'SOFTWARE_ENGINEER_001'
+          },
+          'datePosted': '2024-01-01',
+          'validThrough': '2025-12-31',
+          'employmentType': 'FULL_TIME',
+          'hiringOrganization': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'sameAs': 'https://www.upvistadigital.com'
+          },
+          'jobLocation': {
+            '@type': 'Place',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Lahore',
+              'addressRegion': 'Punjab',
+              'addressCountry': 'PK'
+            }
+          },
+          'baseSalary': {
+            '@type': 'MonetaryAmount',
+            'currency': 'USD',
+            'value': {
+              '@type': 'QuantitativeValue',
+              'value': 'Competitive',
+              'unitText': 'YEAR'
+            }
+          },
+          'workHours': '40 hours per week',
+          'url': 'https://www.upvistadigital.com/careers/jobs/software-engineer'
+        }) }} />
+      </Head>
+      <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
+        <CareersHeader />
       
       {/* Back Button */}
       <div className="fixed top-20 left-4 z-50">
@@ -324,6 +379,7 @@ export default function SoftwareEngineerPage() {
         
         position="Software Engineer"
       />
-    </div>
+      </div>
+    </>
   );
 }

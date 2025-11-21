@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -188,12 +189,50 @@ export default function AIAutomationPage() {
   ];
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>AI Automation Services | Machine Learning & AI Solutions | Upvista Digital</title>
+        <meta name="description" content="Advanced AI automation services by Upvista Digital. Machine learning solutions, AI development, natural language processing, computer vision, chatbot development using Python, TensorFlow, PyTorch, OpenAI, and LangChain." />
+        <meta name="keywords" content="AI Automation Services, Machine Learning Services, AI Development, Natural Language Processing, Computer Vision, Chatbot Development, TensorFlow, PyTorch, OpenAI, LangChain, AI Solutions" />
+        <meta property="og:title" content="AI Automation Services | Machine Learning & AI Solutions | Upvista Digital" />
+        <meta property="og:description" content="Advanced AI automation services including machine learning solutions, AI development, and natural language processing." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/Services/ai-automation" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Automation Services | Upvista Digital" />
+        <meta name="twitter:description" content="Advanced AI automation services including machine learning and AI development." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Services/ai-automation" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          'name': 'AI Automation Services',
+          'description': 'Advanced AI automation services including machine learning solutions, AI development, natural language processing, computer vision, and chatbot development using Python, TensorFlow, PyTorch, OpenAI, and LangChain.',
+          'url': 'https://www.upvistadigital.com/Services/ai-automation',
+          'provider': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com'
+          },
+          'serviceType': 'AI Automation',
+          'areaServed': 'Worldwide',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://www.upvistadigital.com/Services' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'AI Automation', 'item': 'https://www.upvistadigital.com/Services/ai-automation' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
     }`}>
-      <Header />
+        <Header />
 
       {/* Hero Section */}
       <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
@@ -1080,5 +1119,6 @@ export default function AIAutomationPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

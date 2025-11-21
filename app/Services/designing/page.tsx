@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -188,12 +189,50 @@ export default function DesignServicesPage() {
   ];
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>UI/UX Design Services | Brand Identity & Web Design | Upvista Digital</title>
+        <meta name="description" content="Professional UI/UX design services by Upvista Digital. Brand identity design, user interface design, user experience design, web design, mobile app design using Figma, Adobe XD, and modern design tools." />
+        <meta name="keywords" content="UI/UX Design Services, Brand Identity Design, User Interface Design, User Experience Design, Web Design, Mobile App Design, Figma Design, Adobe XD Design, Graphic Design" />
+        <meta property="og:title" content="UI/UX Design Services | Brand Identity & Web Design | Upvista Digital" />
+        <meta property="og:description" content="Professional UI/UX design services including brand identity design, user interface design, and user experience design." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/Services/designing" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="UI/UX Design Services | Upvista Digital" />
+        <meta name="twitter:description" content="Professional UI/UX design services including brand identity and web design." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Services/designing" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          'name': 'UI/UX Design Services',
+          'description': 'Professional UI/UX design services including brand identity design, user interface design, user experience design, web design, and mobile app design using Figma, Adobe XD, and modern design tools.',
+          'url': 'https://www.upvistadigital.com/Services/designing',
+          'provider': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com'
+          },
+          'serviceType': 'UI/UX Design',
+          'areaServed': 'Worldwide',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://www.upvistadigital.com/Services' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'UI/UX Design', 'item': 'https://www.upvistadigital.com/Services/designing' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
     }`}>
-      <Header />
+        <Header />
 
       {/* Hero Section */}
       <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
@@ -1091,5 +1130,6 @@ export default function DesignServicesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

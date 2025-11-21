@@ -23,24 +23,24 @@ export default function Home() {
       <Head>
         <title>Upvista Digital | Transforming Lives Through Digital Innovation</title>
         <meta name="description" content="Upvista Digital is more than an agency, we are a movement. We empower visionaries, nurture talent, and build lasting relationships. Join us to co-create the digital future." />
-        <meta name="keywords" content="Upvista, Upvista Digital, upvista, upvista digital Digital Agency, Web Development, AI Training, Software Training, Community, Digital Transformation, Pakistan, Global, Innovation, Collaboration, Research, Empowerment" />
+        <meta name="keywords" content="Upvista, Upvista Digital, upvista, upvista digital Digital Agency, Web Development, AI Training, Software Training, Community, Digital Transformation, Global, Innovation, Collaboration, Research, Empowerment, Global Software Development, International Digital Solutions, Worldwide Tech Services" />
         <meta property="og:title" content="Upvista Digital | Transforming Lives Through Digital Innovation" />
         <meta property="og:description" content="Upvista Digital is more than an agency, we are a movement. We empower visionaries, nurture talent, and build lasting relationships. Join us to co-create the digital future." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://upvistadigital.com/" />
-        <meta property="og:image" content="https://upvistadigital.com/assets/heroimg.png" />
+        <meta property="og:url" content="https://www.upvistadigital.com/" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/heroimg.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Upvista Digital | Transforming Lives Through Digital Innovation" />
         <meta name="twitter:description" content="Upvista Digital is more than an agency, we are a movement. We empower visionaries, nurture talent, and build lasting relationships. Join us to co-create the digital future." />
-        <meta name="twitter:image" content="https://upvistadigital.com/assets/heroimg.png" />
-        <link rel="canonical" href="https://upvistadigital.com/" />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/heroimg.png" />
+        <link rel="canonical" href="https://www.upvistadigital.com/" />
         {/* Organization Structured Data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'Upvista Digital',
-          url: 'https://upvistadigital.com/',
-          logo: 'https://upvistadigital.com/assets/u.png',
+          url: 'https://www.upvistadigital.com/',
+          logo: 'https://www.upvistadigital.com/assets/u.png',
           sameAs: [
             'https://www.linkedin.com/in/hamza-hafeez-b0233731a',
             'https://www.facebook.com/share/1DXUJFcwit/',

@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -15,6 +16,56 @@ export default function PhilosophyPage() {
   
   return (
     <>
+      <Head>
+        <title>Corporate Philosophy | Upvista Digital Careers - Our Mindset & Culture</title>
+        <meta name="description" content="Discover Upvista Digital's corporate philosophy, including our purpose and five core cultures. Learn about our mindset, values, and what drives our organization." />
+        <meta name="keywords" content="Corporate Philosophy, Company Values, Corporate Culture, Company Mindset, Organizational Culture, Upvista Digital Values, Company Purpose" />
+        <meta property="og:title" content="Corporate Philosophy | Upvista Digital Careers" />
+        <meta property="og:description" content="Discover Upvista Digital's corporate philosophy, including our purpose and five core cultures." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/basics/philosophy" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/basic/coporate.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Corporate Philosophy | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Discover Upvista Digital's corporate philosophy and core values." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/basics/philosophy" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Corporate Philosophy - Upvista Digital Careers',
+          'description': 'Discover Upvista Digital\'s corporate philosophy, including our purpose and five core cultures.',
+          'url': 'https://www.upvistadigital.com/careers/basics/philosophy',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Learn the Basics',
+                'item': 'https://www.upvistadigital.com/careers/basics'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 4,
+                'name': 'Corporate Philosophy',
+                'item': 'https://www.upvistadigital.com/careers/basics/philosophy'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${

@@ -330,7 +330,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex flex-wrap gap-4 justify-center sm:justify-end">
               <Link
-                href="/pages/terms"
+                href="/legal/terms-conditions"
                 className={`text-sm transition-colors duration-300 ${
                   isDark 
                     ? 'text-gray-400 hover:text-white' 
@@ -340,7 +340,7 @@ const Footer: React.FC = () => {
                 {t('footer.termsConditions')}
               </Link>
               <Link
-                href="/pages/privacy"
+                href="/legal/privacy-policy"
                 className={`text-sm transition-colors duration-300 ${
                   isDark 
                     ? 'text-gray-400 hover:text-white' 
@@ -350,7 +350,7 @@ const Footer: React.FC = () => {
                 {t('footer.privacyPolicy')}
               </Link>
               <Link
-                href="/careers/legal/trademark-copyright"
+                href="/legal/trademark-copyright"
                 className={`text-sm transition-colors duration-300 ${
                   isDark 
                     ? 'text-gray-400 hover:text-white' 

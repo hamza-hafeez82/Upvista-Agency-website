@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,39 @@ export default function SocialPhilosophyPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Social Responsibility | Community Impact | Upvista Digital</title>
+        <meta name="description" content="Explore Upvista Digital's social responsibility initiatives, community engagement programs, social impact projects, and commitment to making a positive difference in society." />
+        <meta name="keywords" content="Social Responsibility, Community Impact, Social Impact, Community Engagement, Corporate Social Responsibility, CSR, Social Initiatives" />
+        <meta property="og:title" content="Social Responsibility | Upvista Digital" />
+        <meta property="og:description" content="Explore Upvista Digital's social responsibility initiatives and community engagement programs." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability/social" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Social Responsibility | Upvista Digital" />
+        <meta name="twitter:description" content="Explore Upvista Digital's social responsibility initiatives." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability/social" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Social Responsibility - Upvista Digital',
+          'description': 'Explore Upvista Digital\'s social responsibility initiatives, community engagement programs, and social impact projects.',
+          'url': 'https://www.upvistadigital.com/company/sustainability/social',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Company', 'item': 'https://www.upvistadigital.com/company' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Sustainability', 'item': 'https://www.upvistadigital.com/company/sustainability' },
+              { '@type': 'ListItem', 'position': 4, 'name': 'Social Responsibility', 'item': 'https://www.upvistadigital.com/company/sustainability/social' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -173,6 +206,7 @@ export default function SocialPhilosophyPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

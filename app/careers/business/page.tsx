@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -15,6 +16,50 @@ export default function BusinessPage() {
   
   return (
     <>
+      <Head>
+        <title>Learn About Business | Upvista Digital Careers - Business Overview</title>
+        <meta name="description" content="Learn about Upvista Digital's business operations, services, and industry focus. Understand our business model, client relationships, and how we create value in the global digital market." />
+        <meta name="keywords" content="Upvista Digital Business, Company Business Model, Digital Services Business, Software Business, Tech Company Overview, Business Operations, Company Services" />
+        <meta property="og:title" content="Learn About Business | Upvista Digital Careers" />
+        <meta property="og:description" content="Learn about Upvista Digital's business operations, services, and industry focus." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/business" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/company-video3.mp4" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Learn About Business | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Learn about Upvista Digital's business operations and services." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/business" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Learn About Business - Upvista Digital Careers',
+          'description': 'Learn about Upvista Digital\'s business operations, services, and industry focus.',
+          'url': 'https://www.upvistadigital.com/careers/business',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Learn About Business',
+                'item': 'https://www.upvistadigital.com/careers/business'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen transition-colors duration-300 ${

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import Head from "next/head";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Search, ExternalLink, Briefcase } from "lucide-react";
@@ -75,6 +76,61 @@ export default function CareersPage() {
 
   return (
     <>
+      <Head>
+        <title>Careers | Join Upvista Digital - Global Career Opportunities</title>
+        <meta name="description" content="Join Upvista Digital and build your career with a global digital innovation company. Explore career opportunities, internships, and recruitment programs. Work with cutting-edge technology and join a diverse, inclusive team." />
+        <meta name="keywords" content="Upvista Digital Careers, Software Jobs, Tech Careers, IT Jobs, Web Development Careers, Software Engineer Jobs, Global Tech Jobs, Career Opportunities, Tech Recruitment, Software Development Jobs, AI Jobs, Digital Innovation Careers" />
+        <meta property="og:title" content="Careers | Join Upvista Digital - Global Career Opportunities" />
+        <meta property="og:description" content="Join Upvista Digital and build your career with a global digital innovation company. Explore career opportunities, internships, and recruitment programs." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/Upvista Digital.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Careers | Join Upvista Digital" />
+        <meta name="twitter:description" content="Join Upvista Digital and build your career with a global digital innovation company. Explore career opportunities worldwide." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/careers/Upvista Digital.png" />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Careers at Upvista Digital',
+          'description': 'Join Upvista Digital and build your career with a global digital innovation company. Explore career opportunities, internships, and recruitment programs.',
+          'url': 'https://www.upvistadigital.com/careers',
+          'mainEntity': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com',
+            'logo': 'https://www.upvistadigital.com/assets/icon.PNG',
+            'sameAs': [
+              'https://www.linkedin.com/groups/13302224',
+              'https://x.com/Upvista_Digital/',
+              'https://www.facebook.com/share/1ZTVBZV6rT/',
+              'https://www.instagram.com/upvista_digital/'
+            ],
+            'hiringOrganization': {
+              '@type': 'Organization',
+              'name': 'Upvista Digital'
+            }
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 relative overflow-hidden transition-colors duration-300 ${

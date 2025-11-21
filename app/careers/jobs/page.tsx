@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,6 +17,51 @@ export default function JobsPage() {
 
   return (
     <>
+      <Head>
+        <title>Job Openings | Upvista Digital Careers - Explore Available Positions</title>
+        <meta name="description" content="Explore job openings at Upvista Digital. Browse available positions across development, design, marketing, operations, and more. Find your perfect role in a global digital innovation company." />
+        <meta name="keywords" content="Upvista Digital Jobs, Software Engineer Jobs, Web Developer Jobs, UI UX Designer Jobs, Tech Jobs, IT Jobs, Software Development Jobs, Job Openings, Career Opportunities, Tech Careers" />
+        <meta property="og:title" content="Job Openings | Upvista Digital Careers" />
+        <meta property="og:description" content="Explore job openings at Upvista Digital. Browse available positions across development, design, marketing, and more." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/jobs" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/jobs/dev.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Job Openings | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Explore job openings at Upvista Digital across development, design, and more." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/careers/jobs/dev.jpeg" />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/jobs" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Job Openings - Upvista Digital Careers',
+          'description': 'Explore job openings at Upvista Digital. Browse available positions across development, design, marketing, and more.',
+          'url': 'https://www.upvistadigital.com/careers/jobs',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Job Openings',
+                'item': 'https://www.upvistadigital.com/careers/jobs'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 transition-colors duration-300 ${

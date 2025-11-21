@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Head from "next/head";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { HelpCircle } from "lucide-react";
@@ -130,6 +131,50 @@ export default function ApplyPage() {
 
   return (
     <>
+      <Head>
+        <title>Apply for Jobs | Upvista Digital Careers - Submit Your Application</title>
+        <meta name="description" content="Apply for jobs at Upvista Digital. Browse internship and full-time positions. Submit your application and start your career journey with a global digital innovation company." />
+        <meta name="keywords" content="Apply for Jobs, Job Application, Career Application, Internship Application, Software Job Application, Tech Job Application, Upvista Digital Application" />
+        <meta property="og:title" content="Apply for Jobs | Upvista Digital Careers" />
+        <meta property="og:description" content="Apply for jobs at Upvista Digital. Browse internship and full-time positions and submit your application." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/apply" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/jobs/dev.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Apply for Jobs | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Apply for jobs at Upvista Digital. Browse positions and submit your application." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/apply" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Apply for Jobs - Upvista Digital Careers',
+          'description': 'Apply for jobs at Upvista Digital. Browse internship and full-time positions and submit your application.',
+          'url': 'https://www.upvistadigital.com/careers/apply',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Apply',
+                'item': 'https://www.upvistadigital.com/careers/apply'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       {/* Hero Section with Video Background */}

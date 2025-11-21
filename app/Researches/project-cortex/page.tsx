@@ -56,6 +56,7 @@ export default function ProjectCortexPage() {
       </div>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

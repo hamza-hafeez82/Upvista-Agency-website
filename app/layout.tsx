@@ -37,9 +37,18 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-  metadataBase: new URL('https://upvistadigital.com'),
+  metadataBase: new URL('https://www.upvistadigital.com'),
   alternates: {
     canonical: '/',
+    languages: {
+      'en': 'https://www.upvistadigital.com',
+      'ja': 'https://www.upvistadigital.com/ja',
+      'ko': 'https://www.upvistadigital.com/ko',
+      'zh': 'https://www.upvistadigital.com/zh',
+      'ar': 'https://www.upvistadigital.com/ar',
+      'id': 'https://www.upvistadigital.com/id',
+      'x-default': 'https://www.upvistadigital.com',
+    },
   },
   robots: {
     index: true,
@@ -62,7 +71,7 @@ export const metadata: Metadata = {
     title: "Upvista Digital - A cutting edge software Agency",
     description:
       "Upvista Digital is a visionary digital innovation powerhouse that transcends traditional software development. We architect the future by merging cutting-edge AI, quantum-ready technologies, and human-centric design to create digital experiences that don't just solve problems—they redefine possibilities. From blockchain ecosystems to AI-driven transformations, we're building tomorrow's digital landscape today.",
-    url: "https://upvistadigital.com",
+    url: "https://www.upvistadigital.com",
     siteName: "Upvista Digital",
     images: [
       {
@@ -103,7 +112,33 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#240046" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Service Worker Registration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                      console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                      console.log('SW registration failed: ', registrationError);
+                    });
+                });
+              }
+            `,
+          }}
+        />
         <link rel="canonical" href="https://www.upvistadigital.com/" />
+        {/* Hreflang tags for multi-language support */}
+        <link rel="alternate" hrefLang="en" href="https://www.upvistadigital.com" />
+        <link rel="alternate" hrefLang="ja" href="https://www.upvistadigital.com/ja" />
+        <link rel="alternate" hrefLang="ko" href="https://www.upvistadigital.com/ko" />
+        <link rel="alternate" hrefLang="zh" href="https://www.upvistadigital.com/zh" />
+        <link rel="alternate" hrefLang="ar" href="https://www.upvistadigital.com/ar" />
+        <link rel="alternate" hrefLang="id" href="https://www.upvistadigital.com/id" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.upvistadigital.com" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Upvista Digital – Web & Software Solutions" />
         <meta name="twitter:description" content="We build stunning websites, intuitive user experiences, and scalable apps for startups and enterprises. Elevate your digital presence with Upvista." />
@@ -118,10 +153,10 @@ export default function RootLayout({
               "@type": "SoftwareApplication",
               "name": "Upvista Digital",
               "alternateName": ["Upvista", "Upvista Digital Agency", "Upvista Software Company"],
-              "url": "https://upvistadigital.com",
-              "logo": "https://upvistadigital.com/assets/icon.PNG",
-              "image": "https://upvistadigital.com/assets/hero.jpeg",
-              "description": "Upvista Digital is Pakistan's premier software agency specializing in web development, UI/UX design, AI automation, and digital marketing. We transform businesses with innovative digital solutions.",
+              "url": "https://www.upvistadigital.com",
+              "logo": "https://www.upvistadigital.com/assets/icon.PNG",
+              "image": "https://www.upvistadigital.com/assets/hero.jpeg",
+              "description": "Upvista Digital is a global digital innovation company specializing in software development, AI automation, research, and digital transformation. We serve clients worldwide with cutting-edge solutions.",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
               "offers": {
@@ -133,8 +168,8 @@ export default function RootLayout({
               "provider": {
                 "@type": "Organization",
                 "name": "Upvista Digital",
-                "url": "https://upvistadigital.com",
-                "logo": "https://upvistadigital.com/assets/icon.PNG",
+              "url": "https://www.upvistadigital.com",
+              "logo": "https://www.upvistadigital.com/assets/icon.PNG",
                 "sameAs": [
                   "https://www.facebook.com/share/1ZTVBZV6rT/",
                   "https://x.com/Upvista_Digital/",
@@ -240,8 +275,8 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "name": "Upvista Digital",
               "alternateName": ["Upvista", "Upvista Digital Agency"],
-              "description": "Leading software agency in Pakistan specializing in web development, UI/UX design, and digital marketing",
-              "url": "https://upvistadigital.com",
+              "description": "Global digital innovation company specializing in software development, AI automation, research, and digital transformation. Serving clients worldwide.",
+              "url": "https://www.upvistadigital.com",
               "telephone": "+92-332-0486955",
               "email": "info@upvistadigital.com",
               "address": {
@@ -270,17 +305,12 @@ export default function RootLayout({
                 "closes": "18:00"
               },
               "priceRange": "$$",
-              "currenciesAccepted": "PKR, USD",
+              "currenciesAccepted": "PKR, USD, EUR, GBP",
               "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-              "areaServed": "Pakistan",
+              "areaServed": "Worldwide",
               "serviceArea": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": "31.5204",
-                  "longitude": "74.3587"
-                },
-                "geoRadius": "50000"
+                "@type": "Place",
+                "name": "Worldwide"
               },
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
@@ -338,10 +368,10 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Upvista Digital",
               "alternateName": ["Upvista", "Upvista Digital Agency", "Upvista Software Company"],
-              "url": "https://upvistadigital.com",
-              "logo": "https://upvistadigital.com/assets/icon.PNG",
-              "image": "https://upvistadigital.com/assets/hero.jpeg",
-              "description": "Upvista Digital is a visionary digital innovation powerhouse that transcends traditional software development. We architect the future by merging cutting-edge AI, quantum-ready technologies, and human-centric design to create digital experiences that don't just solve problems—they redefine possibilities. From blockchain ecosystems to AI-driven transformations, we're building tomorrow's digital landscape today.",
+              "url": "https://www.upvistadigital.com",
+              "logo": "https://www.upvistadigital.com/assets/icon.PNG",
+              "image": "https://www.upvistadigital.com/assets/hero.jpeg",
+              "description": "Upvista Digital is a global digital innovation powerhouse that transcends traditional software development. We architect the future by merging cutting-edge AI, quantum-ready technologies, and human-centric design to create digital experiences that don't just solve problems—they redefine possibilities. From blockchain ecosystems to AI-driven transformations, we're building tomorrow's digital landscape today.",
               "foundingDate": "2023",
               "foundingLocation": {
                 "@type": "Place",
@@ -358,7 +388,7 @@ export default function RootLayout({
                 "name": "Hamza Hafeez",
                 "jobTitle": "Founder & CEO",
                 "description": "Founder and CEO of Upvista Digital, a visionary digital innovation powerhouse that transcends traditional software development. Hamza leads the company's mission to architect the future through cutting-edge AI, quantum-ready technologies, and human-centric design.",
-                "image": "https://upvistadigital.com/assets/hamza pic.jpg",
+                "image": "https://www.upvistadigital.com/assets/hamza pic.jpg",
                 "sameAs": [
                   "https://www.facebook.com/share/1ZTVBZV6rT/",
                   "https://x.com/Upvista_Digital/",
@@ -401,7 +431,7 @@ export default function RootLayout({
                   "contactType": "customer service",
                   "telephone": "+92-332-0486955",
                   "email": "upvistadigital@gmail.com",
-                  "availableLanguage": ["English", "Japanese", "Urdu"],
+                  "availableLanguage": ["English", "Japanese", "Korean", "Chinese", "Arabic", "Indonesian"],
                   "hoursAvailable": {
                     "@type": "OpeningHoursSpecification",
                     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
@@ -437,36 +467,10 @@ export default function RootLayout({
                 "DevOps",
                 "Blockchain Technology"
               ],
-              "areaServed": [
-                {
-                  "@type": "Country",
-                  "name": "Pakistan"
-                },
-                {
-                  "@type": "Country",
-                  "name": "United States"
-                },
-                {
-                  "@type": "Country",
-                  "name": "United Kingdom"
-                },
-                {
-                  "@type": "Country",
-                  "name": "Canada"
-                },
-                {
-                  "@type": "Country",
-                  "name": "Australia"
-                }
-              ],
+              "areaServed": "Worldwide",
               "serviceArea": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": "31.5204",
-                  "longitude": "74.3587"
-                },
-                "geoRadius": "50000"
+                "@type": "Place",
+                "name": "Worldwide"
               },
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
@@ -726,7 +730,7 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   "name": "Upvista Digital",
-                  "url": "https://upvistadigital.com"
+                  "url": "https://www.upvistadigital.com"
                 }
               ],
               "publisher": {
@@ -736,13 +740,13 @@ export default function RootLayout({
               "author": [
                 {
                   "@type": "Article",
-                  "name": "The Future of Digital Transformation in Pakistan",
-                  "url": "https://upvistadigital.com/blog/digital-transformation-pakistan"
+                  "name": "The Future of Digital Transformation",
+                  "url": "https://www.upvistadigital.com/blog/digital-transformation"
                 },
                 {
                   "@type": "Article",
                   "name": "Building Successful Software Teams",
-                  "url": "https://upvistadigital.com/blog/building-software-teams"
+                  "url": "https://www.upvistadigital.com/blog/building-software-teams"
                 }
               ],
               
@@ -837,6 +841,60 @@ export default function RootLayout({
                     "@type": "Answer",
                     "text": "Yes, Upvista Digital provides comprehensive ongoing support including website maintenance, updates, security monitoring, and 24/7 technical support for all our clients."
                   }
+                }
+              ]
+            }),
+          }}
+        />
+        
+        {/* WebSite Schema with Search Action for Sitelinks */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Upvista Digital",
+              "url": "https://www.upvistadigital.com",
+              "description": "Global digital innovation company providing software development, AI automation, research, and digital transformation services worldwide",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Upvista Digital",
+                "url": "https://www.upvistadigital.com",
+                "logo": "https://www.upvistadigital.com/assets/icon.PNG"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.upvistadigital.com/search?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              },
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Upvista Digital",
+                "url": "https://www.upvistadigital.com"
+              }
+            }),
+          }}
+        />
+        
+        {/* BreadcrumbList Schema for Homepage */}
+        <Script
+          id="breadcrumb-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.upvistadigital.com"
                 }
               ]
             }),

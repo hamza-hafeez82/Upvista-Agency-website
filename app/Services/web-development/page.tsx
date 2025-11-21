@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -241,6 +242,44 @@ export default function WebDevelopmentPage() {
   ];
 
   return (
+    <>
+      <Head>
+        <title>Web Development Services | Custom Website Development | Upvista Digital</title>
+        <meta name="description" content="Professional web development services by Upvista Digital. Custom websites, web applications, e-commerce solutions using React, Next.js, Vue.js, Angular, Node.js, and modern technologies." />
+        <meta name="keywords" content="Web Development Services, Custom Website Development, Web Application Development, React Development, Next.js Development, Vue.js Development, E-commerce Development, Responsive Web Design" />
+        <meta property="og:title" content="Web Development Services | Custom Website Development | Upvista Digital" />
+        <meta property="og:description" content="Professional web development services including custom websites, web applications, and e-commerce solutions using modern technologies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/Services/web-development" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Web Development Services | Upvista Digital" />
+        <meta name="twitter:description" content="Professional web development services including custom websites and web applications." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Services/web-development" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          'name': 'Web Development Services',
+          'description': 'Professional web development services including custom websites, web applications, and e-commerce solutions using React, Next.js, Vue.js, Angular, Node.js, and modern technologies.',
+          'url': 'https://www.upvistadigital.com/Services/web-development',
+          'provider': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com'
+          },
+          'serviceType': 'Web Development',
+          'areaServed': 'Worldwide',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://www.upvistadigital.com/Services' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Web Development', 'item': 'https://www.upvistadigital.com/Services/web-development' }
+            ]
+          }
+        }) }} />
+      </Head>
     <div className={`min-h-screen ${
       isDark
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
@@ -1149,5 +1188,6 @@ export default function WebDevelopmentPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

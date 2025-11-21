@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from '@/components/Header';
@@ -30,7 +31,58 @@ export default function PartnersPage() {
   ];
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Partnerships | Strategic Partners | Upvista Digital</title>
+        <meta name="description" content="Discover Upvista Digital's strategic partnerships. Learn about our technology partners including Dravion Technologies and how we collaborate to deliver innovative digital solutions." />
+        <meta name="keywords" content="Upvista Digital Partners, Strategic Partnerships, Technology Partners, Dravion Technologies, Business Partnerships, Digital Solutions Partners" />
+        <meta property="og:title" content="Partnerships | Strategic Partners | Upvista Digital" />
+        <meta property="og:description" content="Discover Upvista Digital's strategic partnerships and how we collaborate to deliver innovative digital solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/partners" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Partnerships | Strategic Partners | Upvista Digital" />
+        <meta name="twitter:description" content="Discover Upvista Digital's strategic partnerships." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/partners" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Partnerships - Upvista Digital',
+          'description': 'Discover Upvista Digital\'s strategic partnerships and how we collaborate to deliver innovative digital solutions.',
+          'url': 'https://www.upvistadigital.com/company/partners',
+          'about': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'description': 'Global digital innovation company with strategic technology partnerships.'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Company',
+                'item': 'https://www.upvistadigital.com/company'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Partnerships',
+                'item': 'https://www.upvistadigital.com/company/partners'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -320,5 +372,6 @@ export default function PartnersPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

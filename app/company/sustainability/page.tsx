@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -73,7 +74,58 @@ export default function SustainabilityPage() {
   ];
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Sustainability | Corporate Responsibility | Upvista Digital</title>
+        <meta name="description" content="Learn about Upvista Digital's commitment to sustainability, corporate responsibility, environmental stewardship, social impact, and ethical governance practices." />
+        <meta name="keywords" content="Upvista Digital Sustainability, Corporate Responsibility, Environmental Stewardship, Social Impact, Ethical Governance, Sustainable Business Practices" />
+        <meta property="og:title" content="Sustainability | Corporate Responsibility | Upvista Digital" />
+        <meta property="og:description" content="Learn about Upvista Digital's commitment to sustainability, corporate responsibility, and ethical governance practices." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sustainability | Corporate Responsibility | Upvista Digital" />
+        <meta name="twitter:description" content="Learn about Upvista Digital's commitment to sustainability and corporate responsibility." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Sustainability - Upvista Digital',
+          'description': 'Learn about Upvista Digital\'s commitment to sustainability, corporate responsibility, environmental stewardship, social impact, and ethical governance practices.',
+          'url': 'https://www.upvistadigital.com/company/sustainability',
+          'about': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'description': 'Global digital innovation company committed to sustainability and corporate responsibility.'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Company',
+                'item': 'https://www.upvistadigital.com/company'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Sustainability',
+                'item': 'https://www.upvistadigital.com/company/sustainability'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -166,5 +218,6 @@ export default function SustainabilityPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

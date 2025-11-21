@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Head from 'next/head';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -12,8 +13,65 @@ export default function ResearchesPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-black' : 'bg-white'}`}>
-      <Header />
+    <>
+      <Head>
+        <title>Research & Innovation | Upvista Digital - Global Research Initiatives</title>
+        <meta name="description" content="Upvista Digital conducts cutting-edge research in AI, cybersecurity, and digital innovation. Explore our research initiatives including GCDF, AGI, and Project Cortex." />
+        <meta name="keywords" content="Upvista Digital Research, AI Research, Cybersecurity Research, GCDF, AGI Research, Project Cortex, Digital Innovation Research, Global Research" />
+        <meta property="og:title" content="Research & Innovation | Upvista Digital" />
+        <meta property="og:description" content="Upvista Digital conducts cutting-edge research in AI, cybersecurity, and digital innovation. Explore our global research initiatives." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/Researches" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Research & Innovation | Upvista Digital" />
+        <meta name="twitter:description" content="Upvista Digital conducts cutting-edge research in AI, cybersecurity, and digital innovation." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Researches" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ResearchProject',
+          'name': 'Upvista Digital Research & Innovation',
+          'description': 'Global research initiatives in AI, cybersecurity, and digital innovation',
+          'url': 'https://www.upvistadigital.com/Researches',
+          'funder': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Researches',
+                'item': 'https://www.upvistadigital.com/Researches'
+              }
+            ]
+          },
+          'principalInvestigator': {
+            '@type': 'Person',
+            'name': 'Hamza Hafeez',
+            'jobTitle': 'Founder & CEO'
+          },
+          'knowsAbout': [
+            'Artificial Intelligence',
+            'Cybersecurity',
+            'Digital Innovation',
+            'Global Cyber Defense',
+            'AGI Research'
+          ]
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${isDark ? 'bg-black' : 'bg-white'}`}>
+        <Header />
       
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8">
@@ -338,6 +396,7 @@ export default function ResearchesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,59 @@ export default function SustainabilityPolicyPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Sustainability Policy | Environmental & Social Responsibility | Upvista Digital</title>
+        <meta name="description" content="Read Upvista Digital's sustainability policy covering environmental responsibility, social impact, governance, and our commitment to sustainable business practices." />
+        <meta name="keywords" content="Sustainability Policy, Environmental Policy, Social Responsibility Policy, Corporate Governance, Sustainable Business Practices, ESG Policy" />
+        <meta property="og:title" content="Sustainability Policy | Upvista Digital" />
+        <meta property="og:description" content="Read Upvista Digital's sustainability policy covering environmental responsibility, social impact, and governance." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability/policy" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sustainability Policy | Upvista Digital" />
+        <meta name="twitter:description" content="Read Upvista Digital's sustainability policy." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability/policy" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Sustainability Policy - Upvista Digital',
+          'description': 'Read Upvista Digital\'s sustainability policy covering environmental responsibility, social impact, governance, and sustainable business practices.',
+          'url': 'https://www.upvistadigital.com/company/sustainability/policy',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Company',
+                'item': 'https://www.upvistadigital.com/company'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Sustainability',
+                'item': 'https://www.upvistadigital.com/company/sustainability'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 4,
+                'name': 'Sustainability Policy',
+                'item': 'https://www.upvistadigital.com/company/sustainability/policy'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -125,6 +178,7 @@ export default function SustainabilityPolicyPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

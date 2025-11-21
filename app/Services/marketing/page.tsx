@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -184,12 +185,50 @@ export default function MarketingServicesPage() {
   ];
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Digital Marketing Services | SEO, Social Media & PPC | Upvista Digital</title>
+        <meta name="description" content="Comprehensive digital marketing services by Upvista Digital. SEO, social media marketing, PPC advertising, content marketing, email marketing, and marketing automation to grow your business." />
+        <meta name="keywords" content="Digital Marketing Services, SEO Services, Social Media Marketing, PPC Advertising, Content Marketing, Email Marketing, Marketing Automation, Google Ads, Facebook Ads" />
+        <meta property="og:title" content="Digital Marketing Services | SEO, Social Media & PPC | Upvista Digital" />
+        <meta property="og:description" content="Comprehensive digital marketing services including SEO, social media marketing, PPC advertising, and marketing automation." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/Services/marketing" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Digital Marketing Services | Upvista Digital" />
+        <meta name="twitter:description" content="Comprehensive digital marketing services including SEO, social media, and PPC." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Services/marketing" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          'name': 'Digital Marketing Services',
+          'description': 'Comprehensive digital marketing services including SEO, social media marketing, PPC advertising, content marketing, email marketing, and marketing automation.',
+          'url': 'https://www.upvistadigital.com/Services/marketing',
+          'provider': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com'
+          },
+          'serviceType': 'Digital Marketing',
+          'areaServed': 'Worldwide',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://www.upvistadigital.com/Services' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Digital Marketing', 'item': 'https://www.upvistadigital.com/Services/marketing' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
     }`}>
-      <Header />
+        <Header />
 
       {/* Hero Section */}
       <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
@@ -1076,5 +1115,6 @@ export default function MarketingServicesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

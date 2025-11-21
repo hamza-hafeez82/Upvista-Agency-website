@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,39 @@ export default function HumanCapitalInitiativesPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Human Capital | Talent Development & Employee Growth | Upvista Digital</title>
+        <meta name="description" content="Discover Upvista Digital's human capital initiatives including talent development, employee growth programs, professional training, and career advancement opportunities." />
+        <meta name="keywords" content="Human Capital, Talent Development, Employee Growth, Professional Training, Career Development, Workforce Development, Employee Training" />
+        <meta property="og:title" content="Human Capital | Talent Development | Upvista Digital" />
+        <meta property="og:description" content="Discover Upvista Digital's human capital initiatives including talent development and employee growth programs." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability/human-capital" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Human Capital | Upvista Digital" />
+        <meta name="twitter:description" content="Discover Upvista Digital's human capital initiatives." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability/human-capital" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Human Capital - Upvista Digital',
+          'description': 'Discover Upvista Digital\'s human capital initiatives including talent development, employee growth programs, and professional training.',
+          'url': 'https://www.upvistadigital.com/company/sustainability/human-capital',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Company', 'item': 'https://www.upvistadigital.com/company' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Sustainability', 'item': 'https://www.upvistadigital.com/company/sustainability' },
+              { '@type': 'ListItem', 'position': 4, 'name': 'Human Capital', 'item': 'https://www.upvistadigital.com/company/sustainability/human-capital' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -157,6 +190,7 @@ export default function HumanCapitalInitiativesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

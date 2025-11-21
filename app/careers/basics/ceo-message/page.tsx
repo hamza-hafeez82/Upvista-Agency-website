@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -27,6 +28,66 @@ export default function CEOMessagePage() {
 
   return (
     <>
+      <Head>
+        <title>Message from CEO | Upvista Digital Careers - Hamza Hafeez</title>
+        <meta name="description" content="Read a message from Hamza Hafeez, Founder & CEO of Upvista Digital. Learn about the company's future strategies, vision, and thoughts on building a world-class organization." />
+        <meta name="keywords" content="CEO Message, Hamza Hafeez, Upvista Digital CEO, Company Vision, Leadership Message, Founder Message, CEO Interview" />
+        <meta property="og:title" content="Message from CEO | Upvista Digital Careers" />
+        <meta property="og:description" content="Read a message from Hamza Hafeez, Founder & CEO of Upvista Digital. Learn about the company's vision and future strategies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/basics/ceo-message" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/basic/hamza-pic.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Message from CEO | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Read a message from Hamza Hafeez, Founder & CEO of Upvista Digital." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/careers/basic/hamza-pic.jpeg" />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/basics/ceo-message" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Message from CEO - Upvista Digital Careers',
+          'description': 'Read a message from Hamza Hafeez, Founder & CEO of Upvista Digital. Learn about the company\'s vision and future strategies.',
+          'url': 'https://www.upvistadigital.com/careers/basics/ceo-message',
+          'about': {
+            '@type': 'Person',
+            'name': 'Hamza Hafeez',
+            'jobTitle': 'Founder & CEO',
+            'worksFor': {
+              '@type': 'Organization',
+              'name': 'Upvista Digital'
+            }
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Learn the Basics',
+                'item': 'https://www.upvistadigital.com/careers/basics'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 4,
+                'name': 'CEO Message',
+                'item': 'https://www.upvistadigital.com/careers/basics/ceo-message'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${

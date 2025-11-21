@@ -1,26 +1,23 @@
-# *
+# robots.txt for Upvista Digital
+# https://www.upvistadigital.com/robots.txt
+
 User-agent: *
 Allow: /
-Disallow: /admin/*
-Disallow: /api/*
-Disallow: /_next/*
-
-# Googlebot
-User-agent: Googlebot
-Allow: /
-Disallow: /admin/*
-Disallow: /api/*
-Disallow: /_next/*
-
-# Bingbot
-User-agent: Bingbot
-Allow: /
-Disallow: /admin/*
-Disallow: /api/*
-Disallow: /_next/*
-
-# Host
-Host: https://upvistadigital.com
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /pages/auth/
 
 # Sitemaps
-Sitemap: https://upvistadigital.com/sitemap.xml
+Sitemap: https://www.upvistadigital.com/sitemap.xml
+Sitemap: https://www.upvistadigital.com/sitemap-company.xml
+Sitemap: https://www.upvistadigital.com/sitemap-careers.xml
+Sitemap: https://www.upvistadigital.com/sitemap-researches.xml
+Sitemap: https://www.upvistadigital.com/sitemap-community.xml
+Sitemap: https://www.upvistadigital.com/sitemap-consult.xml
+Sitemap: https://www.upvistadigital.com/sitemap-services.xml
+Sitemap: https://www.upvistadigital.com/sitemap-insights.xml
+
+# Crawl-delay (optional, remove if not needed)
+# Crawl-delay: 1
+

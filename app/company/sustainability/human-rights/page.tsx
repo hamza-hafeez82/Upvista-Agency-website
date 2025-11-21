@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,39 @@ export default function HumanRightsPolicyPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Human Rights Policy | Human Rights Commitment | Upvista Digital</title>
+        <meta name="description" content="Learn about Upvista Digital's commitment to human rights, workplace equality, diversity, inclusion, and ethical business practices that respect human dignity." />
+        <meta name="keywords" content="Human Rights Policy, Workplace Equality, Diversity and Inclusion, Human Rights Commitment, Ethical Business Practices, Corporate Human Rights" />
+        <meta property="og:title" content="Human Rights Policy | Upvista Digital" />
+        <meta property="og:description" content="Learn about Upvista Digital's commitment to human rights, workplace equality, and diversity." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability/human-rights" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Human Rights Policy | Upvista Digital" />
+        <meta name="twitter:description" content="Learn about Upvista Digital's commitment to human rights." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability/human-rights" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Human Rights Policy - Upvista Digital',
+          'description': 'Learn about Upvista Digital\'s commitment to human rights, workplace equality, diversity, inclusion, and ethical business practices.',
+          'url': 'https://www.upvistadigital.com/company/sustainability/human-rights',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Company', 'item': 'https://www.upvistadigital.com/company' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Sustainability', 'item': 'https://www.upvistadigital.com/company/sustainability' },
+              { '@type': 'ListItem', 'position': 4, 'name': 'Human Rights', 'item': 'https://www.upvistadigital.com/company/sustainability/human-rights' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -157,6 +190,7 @@ export default function HumanRightsPolicyPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

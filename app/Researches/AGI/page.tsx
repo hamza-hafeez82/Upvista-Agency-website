@@ -483,9 +483,9 @@ export default function AGIResearchPage() {
   return (
     <>
       <Head>
-        <title>Project Cortex: An AGI Research Mimiking Human Brain&apos;s Prefrontal Cortex | Upvista Digital</title>
-        <meta name="description" content="Revolutionary brain-inspired AGI architecture by Hamza Hafeez at Upvista Digital. Discover Project Cortex - a distributed cognitive system uniting specialized AI agents through orchestrated coordination toward true artificial general intelligence." />
-        <meta name="keywords" content="Project Cortex, AGI, Artificial General Intelligence, Brain-Inspired AI, Hamza Hafeez, Upvista Digital, Cognitive Architecture, Multi-Agent Systems, AI Research, Neural Networks, Machine Learning, Deep Learning, AI Orchestration, Pakistan AI, Lahore Tech, AI Innovation" />
+        <title>AGI Research | Artificial General Intelligence - Project Cortex | Upvista Digital</title>
+        <meta name="description" content="Explore Upvista Digital's groundbreaking AGI research. Project Cortex is a brain-inspired artificial general intelligence system that unites specialized AI agents through orchestrated coordination, mimicking human prefrontal cortex architecture." />
+        <meta name="keywords" content="AGI Research, Artificial General Intelligence, Project Cortex, Brain-Inspired AI, Cognitive Architecture, Multi-Agent Systems, AI Research, Neural Networks, Machine Learning, AGI Development, Cognitive AI, Distributed Intelligence, AI Orchestration" />
         <meta name="author" content="Hamza Hafeez, Upvista Digital" />
         <meta name="robots" content="index, follow" />
         <meta name="language" content="English" />
@@ -493,11 +493,11 @@ export default function AGIResearchPage() {
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="Project Cortex: Our AGI Architecture Research and Development" />
-        <meta property="og:description" content="Discover Project Cortex by Hamza Hafeez. A groundbreaking approach to AGI through distributed cognitive architectures. Join our research team building the future of artificial general intelligence." />
-        <meta property="og:url" content="https://upvistadigital.com/researches/agi" />
+        <meta property="og:title" content="AGI Research | Artificial General Intelligence - Project Cortex" />
+        <meta property="og:description" content="Explore Upvista Digital's groundbreaking AGI research. Project Cortex is a brain-inspired artificial general intelligence system that unites specialized AI agents through orchestrated coordination." />
+        <meta property="og:url" content="https://www.upvistadigital.com/Researches/AGI" />
         <meta property="og:site_name" content="Upvista Digital" />
-        <meta property="og:image" content="https://upvistadigital.com/public/assets/u.png" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_US" />
@@ -512,36 +512,36 @@ export default function AGIResearchPage() {
         <meta name="twitter:creator" content="@HamzaHafeez" />
         <meta name="twitter:title" content="Project Cortex:An AGI Research Project Led by Hamza Hafeez at Upvista Digital" />
         <meta name="twitter:description" content="AGI will not emerge from a single model growing infinitely large. It will emerge from integration... the orchestration of specialized intelligences into a synthetic cognitive system. Project Cortex provides that integration: A modular, brain-inspired, orchestrated cognitive system capable of uniting fragmented AI models into a coordinated intelligence greater than the sum of its parts. Help us Build it!" />
-        <meta name="twitter:image" content="https://upvistadigital.com/assets/project-cortex-twitter.png" />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
         
         {/* Additional Meta Tags */}
         <meta name="theme-color" content="#8b5cf6" />
         <meta name="msapplication-TileColor" content="#8b5cf6" />
-        <link rel="canonical" href="https://upvistadigital.com/researches/agi" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Researches/AGI" />
         
         {/* Structured Data - Research Project */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@type": "ResearchProject",
           "name": "Project Cortex: Brain-Inspired AGI System",
           "description": "A revolutionary approach to Artificial General Intelligence through distributed cognitive architectures and emergent intelligence coordination",
-          "url": "https://upvistadigital.com/researches/agi",
+          "url": "https://www.upvistadigital.com/Researches/AGI",
           "author": {
             "@type": "Person",
             "name": "Hamza Hafeez",
-            "jobTitle": "CEO",
+            "jobTitle": "Founder & CEO",
             "worksFor": {
               "@type": "Organization",
               "name": "Upvista Digital",
-              "url": "https://upvistadigital.com"
+              "url": "https://www.upvistadigital.com"
             }
           },
           "publisher": {
             "@type": "Organization",
             "name": "Upvista Digital",
-            "url": "https://upvistadigital.com",
+            "url": "https://www.upvistadigital.com",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://upvistadigital.com/public/assets/u.png"
+              "url": "https://www.upvistadigital.com/assets/icon.PNG"
             }
           },
           "keywords": ["AGI", "Artificial General Intelligence", "Brain-Inspired AI", "Cognitive Architecture", "Multi-Agent Systems"],
@@ -551,7 +551,30 @@ export default function AGIResearchPage() {
           "isPartOf": {
             "@type": "WebSite",
             "name": "Upvista Digital Research",
-            "url": "https://upvistadigital.com"
+            "url": "https://www.upvistadigital.com"
+          },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.upvistadigital.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Researches",
+                "item": "https://www.upvistadigital.com/Researches"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "AGI Research",
+                "item": "https://www.upvistadigital.com/Researches/AGI"
+              }
+            ]
           }
         }) }} />
         
@@ -559,8 +582,8 @@ export default function AGIResearchPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@type": "Organization",
           "name": "Upvista Digital",
-          "url": "https://upvistadigital.com",
-          "description": "Leading AI research and development company specializing in artificial general intelligence and cognitive architectures",
+          "url": "https://www.upvistadigital.com",
+          "description": "Global AI research and development company specializing in artificial general intelligence and cognitive architectures",
           "founder": {
             "@type": "Person",
             "name": "Hamza Hafeez"

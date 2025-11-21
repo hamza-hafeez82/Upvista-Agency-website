@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Head from 'next/head';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Header from '@/components/Header';
@@ -12,8 +13,70 @@ export default function GCDFPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${isDark ? 'bg-black' : 'bg-white'}`}>
-      <Header />
+    <>
+      <Head>
+        <title>Global Cyber Defense Fabric (GCDF) | Upvista Digital Research</title>
+        <meta name="description" content="Global Cyber Defense Fabric (GCDF) - A comprehensive cybersecurity research initiative by Upvista Digital focusing on global cyber defense strategies and technologies." />
+        <meta name="keywords" content="GCDF, Global Cyber Defense Fabric, Cybersecurity Research, Cyber Defense, Upvista Digital Research" />
+        <meta property="og:title" content="Global Cyber Defense Fabric (GCDF) | Upvista Digital" />
+        <meta property="og:description" content="Global Cyber Defense Fabric (GCDF) - A comprehensive cybersecurity research initiative focusing on global cyber defense strategies." />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://www.upvistadigital.com/Researches/GCDF" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Global Cyber Defense Fabric (GCDF) | Upvista Digital" />
+        <meta name="twitter:description" content="Global Cyber Defense Fabric (GCDF) - A comprehensive cybersecurity research initiative." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Researches/GCDF" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ScholarlyArticle',
+          'headline': 'Global Cyber Defense Fabric (GCDF)',
+          'description': 'A comprehensive cybersecurity research initiative focusing on global cyber defense strategies and technologies',
+          'url': 'https://www.upvistadigital.com/Researches/GCDF',
+          'author': {
+            '@type': 'Person',
+            'name': 'Hamza Hafeez',
+            'jobTitle': 'Founder & CEO'
+          },
+          'publisher': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com',
+            'logo': 'https://www.upvistadigital.com/assets/icon.PNG'
+          },
+          'about': {
+            '@type': 'Thing',
+            'name': 'Cybersecurity',
+            'description': 'Global cyber defense strategies and technologies'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Researches',
+                'item': 'https://www.upvistadigital.com/Researches'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'GCDF',
+                'item': 'https://www.upvistadigital.com/Researches/GCDF'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${isDark ? 'bg-black' : 'bg-white'}`}>
+        <Header />
       
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-4 sm:px-6 lg:px-8">
@@ -427,6 +490,7 @@ export default function GCDFPage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -188,12 +189,50 @@ export default function CloudServicesPage() {
   ];
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Cloud Solutions & DevOps Services | AWS, Azure, GCP | Upvista Digital</title>
+        <meta name="description" content="Professional cloud solutions and DevOps services by Upvista Digital. Cloud migration, cloud infrastructure, DevOps automation, containerization using AWS, Azure, Google Cloud, Docker, Kubernetes, and Terraform." />
+        <meta name="keywords" content="Cloud Solutions, Cloud Migration, DevOps Services, AWS Services, Azure Services, Google Cloud Services, Docker, Kubernetes, Terraform, Cloud Infrastructure, CI/CD" />
+        <meta property="og:title" content="Cloud Solutions & DevOps Services | Upvista Digital" />
+        <meta property="og:description" content="Professional cloud solutions and DevOps services including cloud migration, infrastructure, and automation." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/Services/cloud" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cloud Solutions & DevOps Services | Upvista Digital" />
+        <meta name="twitter:description" content="Professional cloud solutions and DevOps services." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/Services/cloud" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          'name': 'Cloud Solutions & DevOps Services',
+          'description': 'Professional cloud solutions and DevOps services including cloud migration, cloud infrastructure, DevOps automation, and containerization using AWS, Azure, Google Cloud, Docker, Kubernetes, and Terraform.',
+          'url': 'https://www.upvistadigital.com/Services/cloud',
+          'provider': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'url': 'https://www.upvistadigital.com'
+          },
+          'serviceType': 'Cloud Solutions',
+          'areaServed': 'Worldwide',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://www.upvistadigital.com/Services' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Cloud Solutions', 'item': 'https://www.upvistadigital.com/Services/cloud' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
     }`}>
-      <Header />
+        <Header />
 
       {/* Hero Section */}
       <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
@@ -1080,5 +1119,6 @@ export default function CloudServicesPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

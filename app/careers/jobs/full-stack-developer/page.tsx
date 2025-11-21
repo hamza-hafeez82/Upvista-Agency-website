@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import CareersHeader from "../../components/CareersHeader";
@@ -19,8 +20,52 @@ export default function FullStackDeveloperPage() {
 
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
-      <CareersHeader />
+    <>
+      <Head>
+        <title>Full Stack Developer Job | Upvista Digital Careers - Apply Now</title>
+        <meta name="description" content="Join Upvista Digital as a Full Stack Developer. Build end-to-end applications, work with modern technologies, and develop scalable solutions. Apply for this exciting opportunity." />
+        <meta name="keywords" content="Full Stack Developer Job, Full Stack Engineer Position, Full Stack Developer Careers, Full Stack Application, Backend Frontend Developer, Full Stack Software Engineer" />
+        <meta property="og:title" content="Full Stack Developer Job | Upvista Digital Careers" />
+        <meta property="og:description" content="Join Upvista Digital as a Full Stack Developer. Build end-to-end applications with modern technologies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/jobs/full-stack-developer" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/jobs/dev.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Full Stack Developer Job | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Join Upvista Digital as a Full Stack Developer. Apply now." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/jobs/full-stack-developer" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'JobPosting',
+          'title': 'Full Stack Developer',
+          'description': 'Join Upvista Digital as a Full Stack Developer. Build end-to-end applications, work with modern technologies, and develop scalable solutions.',
+          'identifier': {
+            '@type': 'PropertyValue',
+            'name': 'Upvista Digital',
+            'value': 'FULL_STACK_DEV_001'
+          },
+          'datePosted': '2024-01-01',
+          'validThrough': '2025-12-31',
+          'employmentType': 'FULL_TIME',
+          'hiringOrganization': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'sameAs': 'https://www.upvistadigital.com'
+          },
+          'jobLocation': {
+            '@type': 'Place',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Lahore',
+              'addressRegion': 'Punjab',
+              'addressCountry': 'PK'
+            }
+          },
+          'url': 'https://www.upvistadigital.com/careers/jobs/full-stack-developer'
+        }) }} />
+      </Head>
+      <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
+        <CareersHeader />
       
       {/* Back Button */}
       <div className="fixed top-20 left-4 z-50">
@@ -306,6 +351,7 @@ export default function FullStackDeveloperPage() {
         
         position="Full Stack Developer"
       />
-    </div>
+      </div>
+    </>
   );
 }

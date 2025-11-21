@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,79 @@ export default function CompanyProfilePage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Company Profile | About Upvista Digital | Global Digital Innovation Company</title>
+        <meta name="description" content="Learn about Upvista Digital - a global digital innovation company specializing in software development, AI automation, web development, and digital marketing services. Founded by Hamza Hafeez." />
+        <meta name="keywords" content="Upvista Digital, Company Profile, About Upvista, Digital Innovation Company, Software Development Company, AI Company, Web Development, Digital Marketing, Hamza Hafeez" />
+        <meta property="og:title" content="Company Profile | About Upvista Digital" />
+        <meta property="og:description" content="Learn about Upvista Digital - a global digital innovation company specializing in software development, AI automation, and digital services." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/profile" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Company Profile | About Upvista Digital" />
+        <meta name="twitter:description" content="Learn about Upvista Digital - a global digital innovation company." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/profile" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          'name': 'Company Profile - Upvista Digital',
+          'description': 'Learn about Upvista Digital - a global digital innovation company specializing in software development, AI automation, web development, and digital marketing services.',
+          'url': 'https://www.upvistadigital.com/company/profile',
+          'mainEntity': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'alternateName': 'Upvista',
+            'url': 'https://www.upvistadigital.com',
+            'logo': 'https://www.upvistadigital.com/assets/icon.PNG',
+            'foundingDate': '2023',
+            'founder': {
+              '@type': 'Person',
+              'name': 'Hamza Hafeez',
+              'jobTitle': 'Founder & CEO'
+            },
+            'description': 'Global digital innovation company specializing in software development, AI automation, web development, and digital marketing services.',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Lahore',
+              'addressRegion': 'Punjab',
+              'addressCountry': 'PK'
+            },
+            'contactPoint': {
+              '@type': 'ContactPoint',
+              'email': 'upvistadigital@gmail.com',
+              'telephone': '+92-332-0486955',
+              'contactType': 'customer service'
+            }
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Company',
+                'item': 'https://www.upvistadigital.com/company'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Company Profile',
+                'item': 'https://www.upvistadigital.com/company/profile'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -216,5 +289,6 @@ export default function CompanyProfilePage() {
 
       <Footer />
     </div>
+    </>
   );
 }

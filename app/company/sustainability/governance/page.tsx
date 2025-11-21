@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,39 @@ export default function CorporateGovernancePage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Corporate Governance | Ethical Governance Practices | Upvista Digital</title>
+        <meta name="description" content="Learn about Upvista Digital's corporate governance framework, ethical business practices, transparency, accountability, and responsible management principles." />
+        <meta name="keywords" content="Corporate Governance, Ethical Governance, Business Ethics, Transparency, Accountability, Responsible Management, Governance Framework" />
+        <meta property="og:title" content="Corporate Governance | Upvista Digital" />
+        <meta property="og:description" content="Learn about Upvista Digital's corporate governance framework and ethical business practices." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability/governance" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Corporate Governance | Upvista Digital" />
+        <meta name="twitter:description" content="Learn about Upvista Digital's corporate governance framework." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability/governance" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Corporate Governance - Upvista Digital',
+          'description': 'Learn about Upvista Digital\'s corporate governance framework, ethical business practices, transparency, and accountability.',
+          'url': 'https://www.upvistadigital.com/company/sustainability/governance',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Company', 'item': 'https://www.upvistadigital.com/company' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Sustainability', 'item': 'https://www.upvistadigital.com/company/sustainability' },
+              { '@type': 'ListItem', 'position': 4, 'name': 'Corporate Governance', 'item': 'https://www.upvistadigital.com/company/sustainability/governance' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -173,6 +206,7 @@ export default function CorporateGovernancePage() {
 
       <Footer />
     </div>
+    </>
   );
 }
 

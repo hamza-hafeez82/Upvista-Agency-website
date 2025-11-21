@@ -19,8 +19,52 @@ export default function WebDevelopmentInternPage() {
 
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
-      <CareersHeader />
+    <>
+      <Head>
+        <title>Web Development Intern | Upvista Digital Careers - Internship Opportunity</title>
+        <meta name="description" content="Apply for Web Development Internship at Upvista Digital. Gain hands-on experience in modern web technologies, work on real projects, and kickstart your career in software development." />
+        <meta name="keywords" content="Web Development Internship, Web Developer Intern, Frontend Intern, Web Development Training, Software Internship, Tech Internship, Web Dev Intern Position" />
+        <meta property="og:title" content="Web Development Intern | Upvista Digital Careers" />
+        <meta property="og:description" content="Apply for Web Development Internship at Upvista Digital. Gain hands-on experience in modern web technologies." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/jobs/web-development-intern" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/jobs/dev.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Web Development Intern | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Apply for Web Development Internship at Upvista Digital." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/jobs/web-development-intern" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'JobPosting',
+          'title': 'Web Development Intern',
+          'description': 'Apply for Web Development Internship at Upvista Digital. Gain hands-on experience in modern web technologies, work on real projects, and kickstart your career in software development.',
+          'identifier': {
+            '@type': 'PropertyValue',
+            'name': 'Upvista Digital',
+            'value': 'WEB_DEV_INTERN_001'
+          },
+          'datePosted': '2024-01-01',
+          'validThrough': '2025-12-31',
+          'employmentType': 'INTERN',
+          'hiringOrganization': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'sameAs': 'https://www.upvistadigital.com'
+          },
+          'jobLocation': {
+            '@type': 'Place',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Lahore',
+              'addressRegion': 'Punjab',
+              'addressCountry': 'PK'
+            }
+          },
+          'url': 'https://www.upvistadigital.com/careers/jobs/web-development-intern'
+        }) }} />
+      </Head>
+      <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900' : 'bg-gradient-to-br from-purple-50 via-pink-50 to-purple-100'}`}>
+        <CareersHeader />
       
       {/* Back Button */}
       <section className="pt-32 pb-8 px-4">

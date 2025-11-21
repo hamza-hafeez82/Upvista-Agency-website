@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -15,6 +16,49 @@ export default function UIDesignPage() {
   
   return (
     <>
+      <Head>
+        <title>UI/UX Designer Job | Upvista Digital Careers - Design Opportunities</title>
+        <meta name="description" content="Join Upvista Digital as a UI/UX Designer. Create beautiful, intuitive user experiences, work on innovative digital products, and shape the future of design. Apply now." />
+        <meta name="keywords" content="UI UX Designer Job, User Interface Designer, User Experience Designer, Product Designer Jobs, Digital Designer Position, UX Designer Careers, UI Designer Application" />
+        <meta property="og:title" content="UI/UX Designer Job | Upvista Digital Careers" />
+        <meta property="og:description" content="Join Upvista Digital as a UI/UX Designer. Create beautiful, intuitive user experiences." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/jobs/ui-ux-design" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/jobs/design.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="UI/UX Designer Job | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Join Upvista Digital as a UI/UX Designer. Apply now." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/jobs/ui-ux-design" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'JobPosting',
+          'title': 'UI/UX Designer',
+          'description': 'Join Upvista Digital as a UI/UX Designer. Create beautiful, intuitive user experiences, work on innovative digital products, and shape the future of design.',
+          'identifier': {
+            '@type': 'PropertyValue',
+            'name': 'Upvista Digital',
+            'value': 'UIUX_DESIGNER_001'
+          },
+          'datePosted': '2024-01-01',
+          'validThrough': '2025-12-31',
+          'employmentType': 'FULL_TIME',
+          'hiringOrganization': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'sameAs': 'https://www.upvistadigital.com'
+          },
+          'jobLocation': {
+            '@type': 'Place',
+            'address': {
+              '@type': 'PostalAddress',
+              'addressLocality': 'Lahore',
+              'addressRegion': 'Punjab',
+              'addressCountry': 'PK'
+            }
+          },
+          'url': 'https://www.upvistadigital.com/careers/jobs/ui-ux-design'
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 transition-colors duration-300 ${

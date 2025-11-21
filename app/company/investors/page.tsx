@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,58 @@ export default function InvestorsPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Investor Relations | Investment Opportunities | Upvista Digital</title>
+        <meta name="description" content="Explore investment opportunities with Upvista Digital. Learn about our vision, leadership, innovation, and growth potential in the global digital technology market." />
+        <meta name="keywords" content="Upvista Digital Investors, Investment Opportunities, Investor Relations, Tech Investment, Digital Innovation Investment, Startup Investment" />
+        <meta property="og:title" content="Investor Relations | Investment Opportunities | Upvista Digital" />
+        <meta property="og:description" content="Explore investment opportunities with Upvista Digital. Learn about our vision, leadership, and innovation." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/investors" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Investor Relations | Investment Opportunities | Upvista Digital" />
+        <meta name="twitter:description" content="Explore investment opportunities with Upvista Digital." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/investors" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Investor Relations - Upvista Digital',
+          'description': 'Explore investment opportunities with Upvista Digital. Learn about our vision, leadership, innovation, and growth potential.',
+          'url': 'https://www.upvistadigital.com/company/investors',
+          'about': {
+            '@type': 'Organization',
+            'name': 'Upvista Digital',
+            'description': 'Global digital innovation company offering investment opportunities in technology and digital services.'
+          },
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Company',
+                'item': 'https://www.upvistadigital.com/company'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Investor Relations',
+                'item': 'https://www.upvistadigital.com/company/investors'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -173,5 +225,6 @@ export default function InvestorsPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
@@ -11,7 +12,39 @@ export default function ResearchDevelopmentPage() {
   const { t } = useLanguage();
 
   return (
-    <div className={`min-h-screen ${
+    <>
+      <Head>
+        <title>Research & Development | Innovation & R&D Initiatives | Upvista Digital</title>
+        <meta name="description" content="Discover Upvista Digital's research and development initiatives, innovation programs, R&D investments, and commitment to advancing technology through cutting-edge research." />
+        <meta name="keywords" content="Research and Development, R&D, Innovation Programs, Technology Research, R&D Investment, Research Initiatives, Innovation R&D" />
+        <meta property="og:title" content="Research & Development | Upvista Digital" />
+        <meta property="og:description" content="Discover Upvista Digital's research and development initiatives and innovation programs." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/company/sustainability/research" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Research & Development | Upvista Digital" />
+        <meta name="twitter:description" content="Discover Upvista Digital's research and development initiatives." />
+        <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
+        <link rel="canonical" href="https://www.upvistadigital.com/company/sustainability/research" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'Research & Development - Upvista Digital',
+          'description': 'Discover Upvista Digital\'s research and development initiatives, innovation programs, and R&D investments.',
+          'url': 'https://www.upvistadigital.com/company/sustainability/research',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+              { '@type': 'ListItem', 'position': 2, 'name': 'Company', 'item': 'https://www.upvistadigital.com/company' },
+              { '@type': 'ListItem', 'position': 3, 'name': 'Sustainability', 'item': 'https://www.upvistadigital.com/company/sustainability' },
+              { '@type': 'ListItem', 'position': 4, 'name': 'Research & Development', 'item': 'https://www.upvistadigital.com/company/sustainability/research' }
+            ]
+          }
+        }) }} />
+      </Head>
+      <div className={`min-h-screen ${
       isDark 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
@@ -189,5 +222,6 @@ export default function ResearchDevelopmentPage() {
 
       <Footer />
     </div>
+    </>
   );
 }

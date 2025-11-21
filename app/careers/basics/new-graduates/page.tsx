@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -15,6 +16,56 @@ export default function NewGraduatesPage() {
   
   return (
     <>
+      <Head>
+        <title>New Graduates Program | Upvista Digital Careers - Graduate Opportunities</title>
+        <meta name="description" content="Explore career opportunities for new graduates at Upvista Digital. Learn about our graduate program, training opportunities, and how we support fresh talent in building successful careers." />
+        <meta name="keywords" content="New Graduates, Graduate Program, Entry Level Jobs, Fresh Graduate Opportunities, Graduate Training, New Graduate Careers, Entry Level Tech Jobs" />
+        <meta property="og:title" content="New Graduates Program | Upvista Digital Careers" />
+        <meta property="og:description" content="Explore career opportunities for new graduates at Upvista Digital. Learn about our graduate program and training opportunities." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/basics/new-graduates" />
+        <meta property="og:image" content="https://www.upvistadigital.com/assets/careers/basic/new.jpeg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="New Graduates Program | Upvista Digital Careers" />
+        <meta name="twitter:description" content="Explore career opportunities for new graduates at Upvista Digital." />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/basics/new-graduates" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          'name': 'New Graduates Program - Upvista Digital Careers',
+          'description': 'Explore career opportunities for new graduates at Upvista Digital. Learn about our graduate program and training opportunities.',
+          'url': 'https://www.upvistadigital.com/careers/basics/new-graduates',
+          'breadcrumb': {
+            '@type': 'BreadcrumbList',
+            'itemListElement': [
+              {
+                '@type': 'ListItem',
+                'position': 1,
+                'name': 'Home',
+                'item': 'https://www.upvistadigital.com'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 2,
+                'name': 'Careers',
+                'item': 'https://www.upvistadigital.com/careers'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 3,
+                'name': 'Learn the Basics',
+                'item': 'https://www.upvistadigital.com/careers/basics'
+              },
+              {
+                '@type': 'ListItem',
+                'position': 4,
+                'name': 'New Graduates',
+                'item': 'https://www.upvistadigital.com/careers/basics/new-graduates'
+              }
+            ]
+          }
+        }) }} />
+      </Head>
       <CareersHeader />
       
       <div className={`min-h-screen pt-20 relative transition-colors duration-300 ${

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { ArrowLeft, Search, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
 import CareersHeader from "../../components/CareersHeader";
@@ -124,8 +125,31 @@ export default function FAQPage() {
   };
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-black' : 'bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50'}`}>
-      <CareersHeader />
+    <>
+      <Head>
+        <title>Careers FAQ | Upvista Digital - Frequently Asked Questions</title>
+        <meta name="description" content="Find answers to frequently asked questions about careers at Upvista Digital. Learn about the application process, benefits, work culture, and more." />
+        <meta name="keywords" content="Upvista Digital FAQ, Careers FAQ, Job Application FAQ, Recruitment Questions, Career Questions, Employment FAQ, Hiring Process FAQ" />
+        <meta property="og:title" content="Careers FAQ | Upvista Digital" />
+        <meta property="og:description" content="Find answers to frequently asked questions about careers at Upvista Digital." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.upvistadigital.com/careers/support/faq" />
+        <link rel="canonical" href="https://www.upvistadigital.com/careers/support/faq" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          'mainEntity': faqItems.map(item => ({
+            '@type': 'Question',
+            'name': item.question,
+            'acceptedAnswer': {
+              '@type': 'Answer',
+              'text': item.answer
+            }
+          }))
+        }) }} />
+      </Head>
+      <div className={`min-h-screen transition-colors duration-300 ${isDark ? 'bg-black' : 'bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50'}`}>
+        <CareersHeader />
       
       <div className="fixed top-20 left-4 z-50">
         <Link href="/careers">
@@ -299,6 +323,7 @@ export default function FAQPage() {
       </section>
 
       <CareersFooter />
-    </div>
+      </div>
+    </>
   );
 }
