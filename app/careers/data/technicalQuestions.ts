@@ -604,5 +604,106 @@ export const technicalQuestions: { [key: string]: unknown[] } = {
       options: ["Add colors", "Communicate information", "Create animations", "Edit images"],
       correct: 1
     }
+  ],
+  "Motion Graphics Designer": [
+    {
+      id: 1,
+      type: "mcq",
+      question: "Which Adobe software is primarily used for motion graphics and animation?",
+      options: ["Photoshop", "After Effects", "Illustrator", "Premiere Pro"],
+      correct: 1
+    },
+    {
+      id: 2,
+      type: "fill",
+      question: "What does FPS stand for in video and animation?",
+      correct: "Frames Per Second"
+    },
+    {
+      id: 3,
+      type: "mcq",
+      question: "What is the standard frame rate for web videos?",
+      options: ["24 fps", "30 fps", "60 fps", "120 fps"],
+      correct: 1
+    },
+    {
+      id: 4,
+      type: "fill",
+      question: "What animation principle creates the illusion of weight and mass in motion?",
+      correct: "Squash and Stretch"
+    },
+    {
+      id: 5,
+      type: "mcq",
+      question: "Which of the following is a key principle of motion graphics timing?",
+      options: ["Ease In/Ease Out", "Color Theory", "Typography", "Grid Systems"],
+      correct: 0
+    },
+    {
+      id: 6,
+      type: "mcq",
+      question: "What does keyframe mean in animation?",
+      options: ["A locked frame", "A frame that defines a starting or ending point", "A frame rate", "A color value"],
+      correct: 1
+    },
+    {
+      id: 7,
+      type: "fill",
+      question: "What does MP4 stand for?",
+      correct: "MPEG-4"
+    },
+    {
+      id: 8,
+      type: "mcq",
+      question: "Which technique is used to create smooth transitions between keyframes?",
+      options: ["Interpolation", "Rasterization", "Vectorization", "Pixelation"],
+      correct: 0
+    },
+    {
+      id: 9,
+      type: "fill",
+      question: "What is the standard resolution for HD video (width x height)?",
+      correct: "1920x1080"
+    },
+    {
+      id: 10,
+      type: "mcq",
+      question: "What does alpha channel control in video editing?",
+      options: ["Audio levels", "Transparency", "Color saturation", "Frame rate"],
+      correct: 1
+    },
+    {
+      id: 11,
+      type: "mcq",
+      question: "Which principle of animation involves preparing the audience for an action?",
+      options: ["Anticipation", "Staging", "Follow Through", "Arc"],
+      correct: 0
+    },
+    {
+      id: 12,
+      type: "fill",
+      question: "What does compositing mean in motion graphics?",
+      correct: "Combining multiple visual elements"
+    },
+    {
+      id: 13,
+      type: "mcq",
+      question: "What is the purpose of a motion graphics explainer video?",
+      options: ["Entertainment only", "Explain complex concepts visually", "Record live events", "Edit photos"],
+      correct: 1
+    },
+    {
+      id: 14,
+      type: "fill",
+      question: "What does render mean in motion graphics?",
+      correct: "Process and export final video"
+    },
+    {
+      id: 15,
+      type: "mcq",
+      question: "Which file format is commonly used for exporting motion graphics videos?",
+      options: ["PSD", "AI", "MP4", "PDF"],
+      correct: 2
+    }
   ]
 };

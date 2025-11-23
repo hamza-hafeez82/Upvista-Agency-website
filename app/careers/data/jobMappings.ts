@@ -60,6 +60,14 @@ export const jobMappings: JobMapping[] = [
     href: "/careers/jobs/graphics-design-intern",
     description: "Graphic design internship, creative design learning"
   },
+  {
+    title: "Motion Graphics Designer",
+    slug: "motion-graphics-designer",
+    category: "Design",
+    type: "intern",
+    href: "/careers/jobs/motion-graphics-designer",
+    description: "Motion graphics and explainer video creation for SaaS products"
+  },
 
   // Additional existing positions
   {

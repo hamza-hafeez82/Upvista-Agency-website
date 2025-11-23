@@ -220,7 +220,6 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-5">
             <h3 className={`text-lg font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('footer.company')}</h3>
             <ul className="space-y-3">
-              <FooterLink href="/About">{t('footer.aboutUs')}</FooterLink>
               <FooterLink href="/company/profile">{t('footer.companyProfile')}</FooterLink>
               <FooterLink href="/company/sustainability">{t('footer.sustainability')}</FooterLink>
               <FooterLink href="/company/investors">{t('footer.investorRelations')}</FooterLink>

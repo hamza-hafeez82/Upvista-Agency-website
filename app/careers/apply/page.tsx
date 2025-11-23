@@ -60,6 +60,16 @@ export default function ApplyPage() {
       duration: "3-6 months",
       href: "/careers/jobs/graphics-design-intern"
     },
+    {
+      id: "motion-graphics-designer",
+      category: "intern",
+      department: t('careers.apply.departments.uiux'),
+      title: t('careers.apply.positions.motionGraphicsDesigner.title'),
+      description: t('careers.apply.positions.motionGraphicsDesigner.desc'),
+      type: t('careers.apply.jobTypes.internship'),
+      duration: "3-4 months → Full-Time",
+      href: "/careers/jobs/motion-graphics-designer"
+    },
     // Potential Recruitment Positions
     {
       id: "software-engineer",

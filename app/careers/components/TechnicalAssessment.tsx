@@ -15,7 +15,8 @@ const positionOptions = [
   "Full Stack Developer",
   "DevOps & Cloud Engineer",
   "Full Stack Web Development Intern",
-  "Graphics Design Intern"
+  "Graphics Design Intern",
+  "Motion Graphics Designer"
 ];
 
 
