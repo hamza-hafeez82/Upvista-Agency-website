@@ -77,6 +77,13 @@ const translations: Record<string, Record<string, string>> = {
     'dropdown.services.cloud': 'Cloud',
     'dropdown.services.design': 'Graphics and Design',
     'dropdown.services.marketing': 'Digital Marketing',
+    // Products dropdown section
+    'dropdown.products.erp': 'Customizable ERP & CRM',
+    'dropdown.products.pos': 'Customizable POS & LMS',
+    'dropdown.products.templates': 'Full Website, App & E-commerce Templates',
+    'dropdown.products.ai': 'AI Automation Workflows',
+    'dropdown.products.chatbots': 'Chatbots & Custom AI Agents',
+    'dropdown.products.marketplace': 'Explore our Marketplace',
     // Community dropdown
     'dropdown.community.about': 'About Community',
     'dropdown.community.events': 'Events',
@@ -94,7 +101,7 @@ const translations: Record<string, Record<string, string>> = {
     'dropdown.insights.blogs': 'Blogs',
     'dropdown.insights.whitepapers': 'WhitePapers',
     'dropdown.insights.events': 'Events',
-    
+
     // Research Page
     'research.hero.title': 'Research & Development',
     'research.hero.subtitle': 'Pioneering innovation through dedicated research in client experience optimization and breakthrough technologies that shape tomorrow.',
@@ -128,7 +135,7 @@ const translations: Record<string, Record<string, string>> = {
     'research.mission.title': 'Driven by Vision, Powered by Innovation',
     'research.mission.description': 'Through rigorous research, passionate pursuit of knowledge, and collaborative contribution, we are building the foundation for transformative technological advancement. Every challenge we solve and every technology we explore brings us closer to shaping a better future.',
     'research.learnMore': 'Learn More',
-    
+
     // GCDF Page
     'gcdf.backToResearch': 'Back to Research',
     'gcdf.label': 'RESEARCH INITIATIVE',
@@ -181,7 +188,7 @@ const translations: Record<string, Record<string, string>> = {
     'gcdf.future.title': 'The Path Forward',
     'gcdf.future.description': 'As Project Cortex progresses and our capabilities in AGI development mature, we will be better positioned to advance the Global Cyber Defence Fabric from concept to implementation. This vision drives our research efforts and guides our long-term strategic planning.',
     'gcdf.future.projectCortexLink': 'Learn About Project Cortex',
-    
+
     // Homepage sections
     'home.transform.title': 'Transforming Digital Presence',
     'home.transform.subtitle': 'Designing Experiences That Inspire Action',
@@ -574,7 +581,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.contact.title': 'Connect with Our Partnership Team',
     'partners.contact.content1': 'Ready to explore partnership opportunities with Upvista Digital? Our partnership team is available to discuss how we can create value together. We welcome the opportunity to learn about your organization and explore potential collaboration opportunities.',
     'partners.contact.content2': 'For partnership inquiries, collaboration opportunities, or to learn more about our partnership philosophy, please contact our partnership team. We look forward to building strategic alliances that drive innovation and create exceptional value for all stakeholders.',
-    
+
     // Featured Partners Section
     'partners.featured.badge': 'Strategic collaborators',
     'partners.featured.title': 'Partners expanding our frontier projects',
@@ -589,7 +596,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.featured.dravion.value': 'Extends Upvista\'s build capacity for complex interactive systems and accelerates delivery on multi-disciplinary projects.',
     'partners.featured.strengthsLabel': 'Core strengths',
     'partners.featured.cta': 'Explore partnership',
-    
+
     // Dravion Technologies Detail Page
     'dravion.hero.badge': 'Strategic partner profile',
     'dravion.hero.title': 'Dravion Technologies x Upvista Digital',
@@ -712,7 +719,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.mission.content': 'We believe that every business deserves a powerful, professional web presence that reflects their brand and drives results. Our mission is to democratize high-quality web development, making advanced digital solutions accessible to businesses of all sizes. From startups to enterprise corporations, we provide the expertise, technology, and support needed to succeed in the digital age.',
     'webdev.mission.industries': 'Industries We Serve',
     'webdev.mission.ending': 'Ready to transform your digital presence? Let\'s build something amazing together.',
-    
+
     'webdev.tech.react': 'Modern UI Library',
     'webdev.tech.nextjs': 'Full-Stack Framework',
     'webdev.tech.vuejs': 'Progressive Framework',
@@ -725,7 +732,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.tech.wordpress': 'CMS Platform',
     'webdev.tech.webflow': 'No-Code Platform',
     'webdev.tech.docker': 'Containerization',
-    
+
     'webdev.processes.custom.title': 'Custom Coded Solutions',
     'webdev.processes.custom.description': 'Complete development from scratch using modern frameworks and best practices',
     'webdev.processes.custom.service1': 'Frontend Development (HTML, CSS, JavaScript)',
@@ -755,7 +762,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.custom.roadmap7.title': 'Maintenance & Support',
     'webdev.processes.custom.roadmap7.description': 'Ongoing maintenance, updates, monitoring, and 1-month free support with operation manual provided.',
     'webdev.processes.custom.roadmap7.details': 'Comprehensive maintenance plan including regular updates, security patches, performance monitoring, and detailed operation manual for long-term success.',
-    
+
     'webdev.processes.wordpress.title': 'WordPress Development',
     'webdev.processes.wordpress.description': 'Custom WordPress themes, plugins, and full-site development with advanced functionality',
     'webdev.processes.wordpress.service1': 'Custom Theme Development',
@@ -778,7 +785,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.wordpress.roadmap6.description': 'Seamless content migration from existing platforms with data integrity and SEO preservation.',
     'webdev.processes.wordpress.roadmap7.title': 'Launch & Training',
     'webdev.processes.wordpress.roadmap7.description': 'Site launch with admin training, documentation, and ongoing maintenance support.',
-    
+
     'webdev.processes.webflow.title': 'Webflow Development',
     'webdev.processes.webflow.description': 'No-code web development with custom interactions, animations, and CMS integration',
     'webdev.processes.webflow.service1': 'Design to Webflow Conversion',
@@ -801,7 +808,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.webflow.roadmap6.description': 'Optimizing for search engines, implementing meta tags, and ensuring fast loading times.',
     'webdev.processes.webflow.roadmap7.title': 'Launch & Handover',
     'webdev.processes.webflow.roadmap7.description': 'Site launch with CMS training, documentation, and ongoing support for content updates.',
-    
+
     'webdev.processes.migration.title': 'Platform Migration',
     'webdev.processes.migration.description': 'Seamless migration between different platforms with data preservation and SEO maintenance',
     'webdev.processes.migration.service1': 'Data Analysis & Planning',
@@ -824,7 +831,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.migration.roadmap6.description': 'Maintaining all SEO elements, redirects, and ensuring search engine visibility remains intact.',
     'webdev.processes.migration.roadmap7.title': 'Testing & Launch',
     'webdev.processes.migration.roadmap7.description': 'Comprehensive testing and smooth launch with monitoring and immediate support for any issues.',
-    
+
     'webdev.processes.maintenance.title': 'Maintenance & Updates',
     'webdev.processes.maintenance.description': 'Ongoing support, bug fixes, security updates, and feature additions for existing websites',
     'webdev.processes.maintenance.service1': 'Bug Fixes & Debugging',
@@ -847,14 +854,14 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.maintenance.roadmap6.description': 'Adding new features, improving functionality, and implementing user feedback suggestions.',
     'webdev.processes.maintenance.roadmap7.title': 'Monitoring & Reporting',
     'webdev.processes.maintenance.roadmap7.description': 'Continuous monitoring with regular reports on performance, security, and maintenance activities.',
-    
+
     'webdev.processes.roadmapHeading': 'Development Roadmap',
     'webdev.processes.step': 'Step',
     'webdev.processes.platformsHeading': 'Platforms & Technologies',
     'webdev.processes.servicesHeading': 'Services Included',
-    
+
     'webdev.techStack.badge': 'In Our Tech Stack',
-    
+
     'webdev.consultation.additionalServices': 'Additional Services Included',
     'webdev.consultation.service1.title': 'Basic SEO',
     'webdev.consultation.service1.description': 'Meta tags, sitemap, optimization',
@@ -863,7 +870,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.consultation.service3.title': 'Complete Design',
     'webdev.consultation.service3.description': 'Full Figma design included',
     'webdev.consultation.manualLink': 'Sample Operation Manual (PDF)',
-    
+
     'webdev.mission.industry1.name': 'E-commerce',
     'webdev.mission.industry1.description': 'Custom online stores, payment integration, product management, and conversion optimization for B2C & B2B brands.',
     'webdev.mission.industry2.name': 'SaaS Platforms',
@@ -876,12 +883,12 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.mission.industry5.description': 'Secure payment gateways, digital wallets, and financial analytics platforms.',
     'webdev.mission.industry6.name': 'Portfolio & Creative',
     'webdev.mission.industry6.description': 'Personal portfolios, creative agency sites, and digital showcases for artists and professionals.',
-    
+
     // AI & Automation Page
     'ai.hero.badge': 'AI & Automation Excellence',
     'ai.hero.title': 'AI & Automation',
     'ai.hero.description': 'Transform your business with intelligent automation and AI solutions that enhance productivity and drive innovation.',
-    
+
     'ai.projectTypes.heading': 'Types of AI & Automation Solutions',
     'ai.projectTypes.subtitle': 'We develop comprehensive AI and automation solutions tailored to your business needs',
     'ai.projectTypes.aiPowered.title': 'AI-Powered Solutions',
@@ -892,11 +899,11 @@ const translations: Record<string, Record<string, string>> = {
     'ai.projectTypes.conversational.description': 'Advanced chatbots and voice assistants that provide intelligent customer service, support, and engagement across multiple communication channels.',
     'ai.projectTypes.document.title': 'Document Intelligence',
     'ai.projectTypes.document.description': 'AI-powered document processing, analysis, and data extraction systems that transform unstructured data into actionable business insights.',
-    
+
     'ai.techStack.heading': 'Our AI & Automation Technology Stack',
     'ai.techStack.subtitle': 'Cutting-edge AI technologies and frameworks for intelligent automation solutions',
     'ai.techStack.badge': 'In Our AI Stack',
-    
+
     'ai.tech.python': 'AI Development',
     'ai.tech.tensorflow': 'Machine Learning',
     'ai.tech.pytorch': 'Deep Learning',
@@ -909,7 +916,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.tech.azure': 'Microsoft AI',
     'ai.tech.google': 'Google AI Platform',
     'ai.tech.cv': 'Image Processing',
-    
+
     'ai.techStack.ml.title': 'Machine Learning & AI',
     'ai.techStack.ml.description1': 'We specialize in custom machine learning models using TensorFlow, PyTorch, and scikit-learn for predictive analytics and intelligent automation.',
     'ai.techStack.ml.description2': 'Our AI solutions include natural language processing, computer vision, and deep learning applications tailored to your specific business needs.',
@@ -922,7 +929,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.techStack.cloud.title': 'Cloud AI Services',
     'ai.techStack.cloud.description1': 'We leverage cloud AI services from AWS, Azure, and Google Cloud for scalable, enterprise-grade AI solutions.',
     'ai.techStack.cloud.description2': 'Our cloud AI implementations include managed ML services, AI APIs, and hybrid cloud architectures for optimal performance and cost efficiency.',
-    
+
     'ai.caseStudies.heading': 'AI & Automation Case Studies',
     'ai.caseStudies.subtitle': 'Explore our successful AI and automation projects across various industries',
     'ai.caseStudies.readMore': 'Read More',
@@ -935,14 +942,14 @@ const translations: Record<string, Record<string, string>> = {
     'ai.caseStudy3.title': 'Intelligent Document Processing',
     'ai.caseStudy3.description': 'AI-powered document analysis and data extraction system for enterprise workflows.',
     'ai.caseStudy3.tag': 'Document AI',
-    
+
     'ai.processes.heading': 'AI & Automation Development Process',
     'ai.processes.subtitle': 'Our proven methodology ensures successful AI implementation with quality and efficiency',
     'ai.processes.roadmapHeading': 'Development Roadmap',
     'ai.processes.step': 'Step',
     'ai.processes.platformsHeading': 'Technologies & Platforms',
     'ai.processes.servicesHeading': 'Services Included',
-    
+
     'ai.processes.aidev.title': 'AI Solution Development',
     'ai.processes.aidev.description': 'Custom AI solutions built from scratch to solve specific business challenges',
     'ai.processes.aidev.service1': 'AI Strategy & Planning',
@@ -971,7 +978,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.processes.aidev.roadmap6.title': 'Training & Support',
     'ai.processes.aidev.roadmap6.description': 'User training and ongoing support for AI solution adoption and optimization.',
     'ai.processes.aidev.roadmap6.details': 'We provide comprehensive training for your team and ongoing support to maximize AI solution effectiveness.',
-    
+
     'ai.processes.automation.title': 'Business Process Automation',
     'ai.processes.automation.description': 'Intelligent automation of repetitive business processes for improved efficiency',
     'ai.processes.automation.service1': 'Process Analysis',
@@ -992,7 +999,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.processes.automation.roadmap5.description': 'Comprehensive testing to ensure automation reliability and performance.',
     'ai.processes.automation.roadmap6.title': 'Deployment',
     'ai.processes.automation.roadmap6.description': 'Smooth deployment with monitoring and ongoing optimization.',
-    
+
     'ai.processes.chatbot.title': 'Intelligent Chatbots & Voice AI',
     'ai.processes.chatbot.description': 'Advanced conversational AI solutions for customer service and business automation',
     'ai.processes.chatbot.service1': 'Conversation Design',
@@ -1013,7 +1020,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.processes.chatbot.roadmap5.description': 'Launch chatbots with monitoring and continuous improvement capabilities.',
     'ai.processes.chatbot.roadmap6.title': 'Optimization',
     'ai.processes.chatbot.roadmap6.description': 'Continuous optimization based on user interactions and feedback.',
-    
+
     'ai.consultation.title': 'Free AI & Automation Consultation',
     'ai.consultation.description': 'Get expert advice on your AI and automation project with our complimentary consultation and 1-month free support after project completion.',
     'ai.consultation.button': 'Start Free Consultation',
@@ -1025,7 +1032,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.consultation.service3.title': 'Training & Support',
     'ai.consultation.service3.description': 'Team training and ongoing support',
     'ai.consultation.manualLink': 'Sample Operation Manual (PDF)',
-    
+
     'ai.mission.title': 'Our Mission',
     'ai.mission.description': 'We are committed to democratizing AI and automation technology, making intelligent solutions accessible to businesses of all sizes. Our mission is to empower organizations with cutting-edge AI that enhances productivity, reduces costs, and drives innovation.',
     'ai.mission.industriesHeading': 'Industries We Serve',
@@ -1042,7 +1049,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.mission.industry6.name': 'Customer Service',
     'ai.mission.industry6.description': 'Intelligent chatbots, automated ticket routing, sentiment analysis, and AI-powered customer insights for improved service delivery.',
     'ai.mission.ending': 'Ready to transform your business with AI and automation? Let\'s build intelligent solutions that drive real results.',
-    
+
     // Cloud Services Page
     'cloud.hero.badge': 'Cloud Services Excellence',
     'cloud.hero.title': 'Cloud Services',
@@ -1197,8 +1204,8 @@ const translations: Record<string, Record<string, string>> = {
     'cloud.mission.industry6.name': 'SaaS Platforms',
     'cloud.mission.industry6.description': 'Multi-tenant SaaS architectures, subscription management systems, API platforms, and scalable microservices solutions.',
     'cloud.mission.ending': 'Ready to transform your business with cloud technology? Let\'s build scalable, secure solutions that drive your success.',
-    
-   
+
+
     // Design Services Page
     'design.hero.badge': 'Design Excellence',
     'design.hero.title': 'Design Services',
@@ -1353,7 +1360,7 @@ const translations: Record<string, Record<string, string>> = {
     'design.mission.industry6.name': 'Creative Agencies',
     'design.mission.industry6.description': 'Bold, creative design solutions for agencies, portfolios, and creative professionals showcasing their work.',
     'design.mission.ending': 'Ready to elevate your brand with exceptional design? Let\'s create visual experiences that captivate your audience and drive your success.',
-    
+
     // Project Types Details
     'webdev.projectTypes.custom.title': 'Custom Development from Scratch',
     'webdev.projectTypes.custom.description': 'We build complete web solutions from the ground up using modern technologies and frameworks. Our custom development approach ensures your website is perfectly tailored to your business needs, with clean code architecture and scalable infrastructure that grows with your business.',
@@ -1363,7 +1370,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.projectTypes.fixes.description': 'Our experienced developers quickly identify and resolve technical issues, performance bottlenecks, and compatibility problems. We provide comprehensive debugging services with detailed reports and implement preventive measures to avoid future issues.',
     'webdev.projectTypes.features.title': 'Feature Enhancement & Additions',
     'webdev.projectTypes.features.description': 'Enhance your existing website with new features, improved functionality, and modern integrations. We analyze your current setup and recommend strategic enhancements that improve user experience and business performance while maintaining system stability.',
-    
+
     // Development Roadmap
     'webdev.roadmap.title': 'Development Roadmap',
     'webdev.roadmap.step1.title': 'Consultation & Discovery',
@@ -1407,7 +1414,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.badge': 'Software Development Excellence',
     'softdev.title': 'Software Development',
     'softdev.subtitle': 'Transform your business with custom software solutions that drive efficiency, innovation, and growth.',
-    
+
     'softdev.projectTypes.title': 'Types of Software Solutions',
     'softdev.projectTypes.subtitle': 'We develop comprehensive software solutions tailored to your business needs',
     'softdev.projectTypes.custom.title': 'Custom Software Development',
@@ -1418,7 +1425,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.projectTypes.enterprise.description': 'Large-scale enterprise applications with advanced features, security, compliance, and integration capabilities for complex business environments.',
     'softdev.projectTypes.integration.title': 'System Integration Services',
     'softdev.projectTypes.integration.description': 'Seamless integration of disparate systems with robust APIs, middleware, data synchronization, and workflow automation for unified operations.',
-    
+
     'softdev.techStack.title': 'Our Technology Stack',
     'softdev.techStack.subtitle': 'Cutting-edge technologies and frameworks for robust, scalable software solutions',
     'softdev.techStack.mobile': 'Mobile Development',
@@ -1433,7 +1440,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.techStack.database': 'Database & Analytics',
     'softdev.techStack.database.desc1': 'We work with advanced databases like PostgreSQL, MongoDB, Redis, and Elasticsearch for optimal data management and performance.',
     'softdev.techStack.database.desc2': 'Our solutions include data analytics, real-time processing, caching strategies, and comprehensive search capabilities for enhanced user experience.',
-    
+
     'softdev.caseStudies.title': 'Software Development Case Studies',
     'softdev.caseStudies.subtitle': 'Explore our successful software development projects across various industries',
     'softdev.caseStudies.readMore': 'Read More',
@@ -1446,23 +1453,23 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.caseStudies.lms.title': 'ERP System for Enterprises',
     'softdev.caseStudies.lms.description': 'Advanced enterprise resource planning system with integrated modules for finance, HR, inventory, and business operations.',
     'softdev.caseStudies.lms.tag': 'Enterprise Solution',
-    
+
     'softdev.process.title': 'Software Development Process',
     'softdev.process.subtitle': 'Our proven methodology ensures successful software delivery with quality and efficiency',
-    
+
     'softdev.consultation.title': 'Free Software Development Consultation',
     'softdev.consultation.content': 'Get expert advice on your software project with our complimentary consultation and 1-month free support after project completion.',
     'softdev.consultation.button': 'Start Free Consultation',
-    
+
     'softdev.mission.title': 'Our Mission',
     'softdev.mission.content': 'We are committed to delivering innovative software solutions that transform businesses and drive digital success. Our mission is to empower organizations with cutting-edge technology that enhances productivity, efficiency, and growth.',
     'softdev.mission.industries': 'Industries We Serve',
     'softdev.mission.ending': 'Ready to transform your business with custom software solutions? Let\'s build something extraordinary together.',
-    
+
     'softdev.projectTypes.heading': 'Types of Software Solutions',
     'softdev.techStack.heading': 'Our Technology Stack',
     'softdev.techStack.badge': 'In Our Tech Stack',
-    
+
     'softdev.tech.reactNative': 'Cross-Platform Mobile',
     'softdev.tech.flutter': 'Mobile Development',
     'softdev.tech.python': 'Backend & AI',
@@ -1475,7 +1482,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.tech.postgresql': 'Advanced Database',
     'softdev.tech.redis': 'Caching & Sessions',
     'softdev.tech.elasticsearch': 'Search & Analytics',
-    
+
     'softdev.processes.custom.title': 'Custom Software Development',
     'softdev.processes.custom.description': 'Tailored software solutions built from scratch to meet your specific business requirements',
     'softdev.processes.custom.service1': 'Requirements Analysis & Planning',
@@ -1507,7 +1514,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.custom.roadmap7.title': 'Support & Maintenance',
     'softdev.processes.custom.roadmap7.description': 'Ongoing support, updates, and maintenance with detailed documentation and training provided.',
     'softdev.processes.custom.roadmap7.details': 'Comprehensive support plan including bug fixes, feature updates, performance monitoring, and user training for sustained success.',
-    
+
     'softdev.processes.mobile.title': 'Mobile Application Development',
     'softdev.processes.mobile.description': 'Native and cross-platform mobile applications for iOS and Android with seamless user experience',
     'softdev.processes.mobile.service1': 'Cross-Platform Development',
@@ -1532,7 +1539,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.mobile.roadmap6.description': 'Preparing app store submissions with optimized metadata and compliance requirements.',
     'softdev.processes.mobile.roadmap7.title': 'Launch & Marketing',
     'softdev.processes.mobile.roadmap7.description': 'App launch with marketing support and ongoing updates based on user feedback.',
-    
+
     'softdev.processes.enterprise.title': 'Enterprise Software Solutions',
     'softdev.processes.enterprise.description': 'Large-scale enterprise applications with advanced features, security, and integration capabilities',
     'softdev.processes.enterprise.service1': 'Enterprise Architecture',
@@ -1557,7 +1564,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.enterprise.roadmap6.description': 'Enterprise deployment with monitoring, backup, and disaster recovery systems.',
     'softdev.processes.enterprise.roadmap7.title': 'Training & Support',
     'softdev.processes.enterprise.roadmap7.description': 'Comprehensive user training and ongoing enterprise support with documentation.',
-    
+
     'softdev.processes.cloud.title': 'Cloud-Based Solutions',
     'softdev.processes.cloud.description': 'Scalable cloud applications with modern DevOps practices and infrastructure automation',
     'softdev.processes.cloud.service1': 'Cloud Architecture Design',
@@ -1582,7 +1589,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.cloud.roadmap6.description': 'Smooth migration with monitoring and immediate support for any issues.',
     'softdev.processes.cloud.roadmap7.title': 'Optimization',
     'softdev.processes.cloud.roadmap7.description': 'Continuous optimization of cloud resources, costs, and performance monitoring.',
-    
+
     'softdev.processes.integration.title': 'System Integration Services',
     'softdev.processes.integration.description': 'Seamless integration of disparate systems with APIs, middleware, and data synchronization',
     'softdev.processes.integration.service1': 'API Development',
@@ -1607,7 +1614,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.integration.roadmap6.description': 'Deploying integration solutions with monitoring and rollback capabilities.',
     'softdev.processes.integration.roadmap7.title': 'Monitoring',
     'softdev.processes.integration.roadmap7.description': 'Continuous monitoring of integration health, performance, and data quality.',
-    
+
     // Vigours Organic CRM Case Study
     'vigours.badge': 'E-commerce CRM Success Story',
     'vigours.title': 'Vigours Organic CRM System',
@@ -1618,20 +1625,20 @@ const translations: Record<string, Record<string, string>> = {
     'vigours.agile': 'Agile Development',
     'vigours.industry': 'Industry',
     'vigours.ecommerce': 'E-commerce',
-    
+
     'vigours.tabs.overview': 'Overview',
     'vigours.tabs.challenge': 'Challenge',
     'vigours.tabs.solution': 'Solution',
     'vigours.tabs.process': 'Process',
     'vigours.tabs.results': 'Results',
     'vigours.tabs.technologies': 'Technologies',
-    
+
     'vigours.overview.title': 'Project Overview',
     'vigours.overview.description': 'Vigours Organic, a growing e-commerce business specializing in organic products, needed a comprehensive CRM system to manage their expanding customer base, streamline operations, and boost sales. We delivered a complete solution in just 1.5 months using Agile methodology.',
     'vigours.overview.feature1': 'Complete customer lifecycle management from lead to purchase',
     'vigours.overview.feature2': 'Automated marketing campaigns and email sequences',
     'vigours.overview.feature3': 'Real-time analytics and business intelligence dashboard',
-    
+
     'vigours.challenge.title': 'Business Challenges',
     'vigours.challenge.problem1.title': 'Manual Customer Management',
     'vigours.challenge.problem1.description': 'Customer data scattered across multiple spreadsheets and systems, leading to inefficiency and missed opportunities.',
@@ -1641,7 +1648,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigours.challenge.problem3.description': 'Manual email campaigns and lack of customer segmentation affecting marketing ROI.',
     'vigours.challenge.problem4.title': 'Scalability Issues',
     'vigours.challenge.problem4.description': 'Existing tools couldn\'t handle growing customer base and increasing transaction volume.',
-    
+
     'vigours.solution.title': 'Our Solution',
     'vigours.solution.solution1.title': 'Unified CRM Platform',
     'vigours.solution.solution1.description': 'Centralized customer database with complete contact history, purchase patterns, and interaction tracking.',
@@ -1649,7 +1656,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigours.solution.solution2.description': 'Smart automation for lead nurturing, follow-ups, and customer onboarding processes.',
     'vigours.solution.solution3.title': 'Advanced Analytics',
     'vigours.solution.solution3.description': 'Real-time dashboards with sales metrics, customer insights, and performance tracking.',
-    
+
     'vigours.process.title': 'Agile Development Process',
     'vigours.agile.sprint1.title': 'Sprint 1: Discovery & Planning',
     'vigours.agile.sprint1.duration': 'Week 1',
@@ -1687,7 +1694,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigours.agile.sprint6.deliverable2': 'User acceptance testing and feedback',
     'vigours.agile.sprint6.deliverable3': 'Production deployment and monitoring',
     'vigours.agile.sprint6.deliverable4': 'User training and documentation',
-    
+
     'vigours.results.title': 'Project Results',
     'vigours.benefits.salesIncrease': 'Increase in Sales Revenue',
     'vigours.benefits.customerRetention': 'Improvement in Customer Retention',
@@ -1703,7 +1710,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigours.results.operationalEfficiency.point2': '95% automation of customer follow-up processes',
     'vigours.results.operationalEfficiency.point3': '80% faster lead response time',
     'vigours.results.operationalEfficiency.point4': '50% improvement in team productivity',
-    
+
     'vigours.technologies.title': 'Technology Stack',
     'vigours.tech.react': 'Modern frontend framework for responsive user interface',
     'vigours.tech.nodejs': 'Scalable backend server for API and business logic',
@@ -1713,12 +1720,12 @@ const translations: Record<string, Record<string, string>> = {
     'vigours.tech.docker': 'Containerization for consistent deployment',
     'vigours.tech.stripe': 'Secure payment processing integration',
     'vigours.tech.sendgrid': 'Reliable email delivery service',
-    
+
     'vigours.cta.title': 'Ready to Transform Your Business?',
     'vigours.cta.description': 'Let us help you build a custom CRM solution that drives growth and efficiency for your business.',
     'vigours.cta.button1': 'View Our Services',
     'vigours.cta.button2': 'Start Your Project',
-    
+
     // CELTIS NGO Platform Case Study
     'celtis.badge': 'NGO Digital Transformation',
     'celtis.title': 'CELTIS NGO Platform',
@@ -1730,7 +1737,7 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.industry': 'Industry',
     'celtis.ngo': 'NGO/Non-Profit',
     'celtis.visitSite': 'Visit Live Site',
-    
+
     'celtis.tabs.overview': 'Overview',
     'celtis.tabs.challenge': 'Challenge',
     'celtis.tabs.solution': 'Solution',
@@ -1738,14 +1745,14 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.tabs.process': 'Process',
     'celtis.tabs.results': 'Results',
     'celtis.tabs.technologies': 'Technologies',
-    
+
     'celtis.overview.title': 'Project Overview',
     'celtis.overview.description': 'CELTIS Inc., a Japanese NGO focused on disability inclusion and support, needed a complete digital transformation. Their existing simple HTML/CSS website had poor UI/UX and failed to attract visitors or facilitate donations. We delivered a modern, comprehensive platform using Next.js and Strapi CMS.',
     'celtis.overview.mission.title': 'Mission',
     'celtis.overview.mission.description': 'Creating a society where everyone can coexist and prosper, eliminate loneliness, and empower people with disabilities to become contributors.',
     'celtis.overview.vision.title': 'Vision',
     'celtis.overview.vision.description': 'Building a world where people with disabilities are empowered taxpayers, not passive recipients of support.',
-    
+
     'celtis.challenge.title': 'Business Challenges',
     'celtis.challenge.description': 'CELTIS faced significant challenges with their outdated digital presence that hindered their mission of supporting people with disabilities.',
     'celtis.challenge.problem1.title': 'Poor Digital Presence',
@@ -1756,14 +1763,14 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.challenge.problem3.description': 'Manual content updates, no CMS, and difficulty managing videos, blogs, and educational materials.',
     'celtis.challenge.problem4.title': 'Low Engagement',
     'celtis.challenge.problem4.description': 'Poor user experience led to low visitor engagement and limited community building.',
-    
+
     'celtis.solution.title': 'Our Solution',
     'celtis.solution.description': 'We created a comprehensive digital platform that transformed CELTIS\'s online presence and operational capabilities.',
     'celtis.solution.modern.title': 'Modern UI/UX Design',
     'celtis.solution.modern.description': 'Beautiful, accessible design with intuitive navigation, responsive layout, and engaging visual elements.',
     'celtis.solution.cms.title': 'Strapi CMS Integration',
     'celtis.solution.cms.description': 'Powerful content management system allowing easy updates of videos, blogs, events, and educational content.',
-    
+
     'celtis.features.title': 'Platform Features',
     'celtis.features.content.title': 'Content Management',
     'celtis.features.content.video': 'Small Step TV video episodes',
@@ -1785,7 +1792,7 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.features.admin.analytics': 'User engagement analytics',
     'celtis.features.admin.users': 'User management system',
     'celtis.features.admin.content': 'Content approval workflow',
-    
+
     'celtis.process.title': 'Development Process',
     'celtis.process.phase1.title': 'Phase 1: Discovery & Design',
     'celtis.process.phase1.description': 'Understanding CELTIS\'s mission and designing a platform that serves their community needs.',
@@ -1802,7 +1809,7 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.process.phase3.deliverable1': 'Donation system integration',
     'celtis.process.phase3.deliverable2': 'Content management workflows',
     'celtis.process.phase3.deliverable3': 'Community features and user management',
-    
+
     'celtis.results.title': 'Project Results',
     'celtis.results.impact.title': 'Social Impact',
     'celtis.results.impact.donations': '300% increase in donation collection',
@@ -1814,7 +1821,7 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.results.efficiency.automation': 'Automated donation processing',
     'celtis.results.efficiency.scalability': 'Scalable platform for future growth',
     'celtis.results.efficiency.maintenance': 'Reduced maintenance overhead',
-    
+
     'celtis.technologies.title': 'Technology Stack',
     'celtis.tech.frontend.title': 'Frontend Technologies',
     'celtis.tech.frontend.nextjs': 'Modern React framework for optimal performance',
@@ -1826,12 +1833,12 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.tech.backend.nodejs': 'JavaScript runtime for APIs',
     'celtis.tech.backend.postgresql': 'Reliable database for data storage',
     'celtis.tech.backend.vercel': 'Cloud platform for deployment',
-    
+
     'celtis.cta.title': 'Ready to Transform Your Organization?',
     'celtis.cta.description': 'Let us help you build a modern digital platform that amplifies your mission and impact.',
     'celtis.cta.button1': 'View Our Services',
     'celtis.cta.button2': 'Start Your Project',
-    
+
     // Vigours Organic E-commerce Case Study
     'vigoursEcommerce.badge': 'E-commerce Platform Success',
     'vigoursEcommerce.title': 'Vigours Organic E-commerce Platform',
@@ -1843,7 +1850,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.industry': 'Industry',
     'vigoursEcommerce.ecommerce': 'E-commerce',
     'vigoursEcommerce.contactUs': 'Contact Us',
-    
+
     'vigoursEcommerce.tabs.overview': 'Overview',
     'vigoursEcommerce.tabs.challenge': 'Challenge',
     'vigoursEcommerce.tabs.solution': 'Solution',
@@ -1851,7 +1858,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.tabs.process': 'Process',
     'vigoursEcommerce.tabs.results': 'Results',
     'vigoursEcommerce.tabs.technologies': 'Technologies',
-    
+
     'vigoursEcommerce.overview.title': 'Project Overview',
     'vigoursEcommerce.overview.description': 'Vigours Organic, a family initiative from the valleys of Hunza, needed a comprehensive e-commerce platform to bring pure, authentic organic foods to customers worldwide. We built a full-stack solution with modern frontend, backend, and database technologies.',
     'vigoursEcommerce.overview.mission.title': 'Mission',
@@ -1862,7 +1869,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.overview.values.sustainability': 'Sustainability & Ethics',
     'vigoursEcommerce.overview.values.community': 'Community Empowerment',
     'vigoursEcommerce.overview.values.transparency': 'Transparency & Trust',
-    
+
     'vigoursEcommerce.challenge.title': 'Business Challenges',
     'vigoursEcommerce.challenge.description': 'Vigours Organic faced several challenges in establishing their online presence and reaching customers with their organic products.',
     'vigoursEcommerce.challenge.problem1.title': 'No Online Presence',
@@ -1873,14 +1880,14 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.challenge.problem3.description': 'No secure online payment system, limiting customer convenience and trust.',
     'vigoursEcommerce.challenge.problem4.title': 'Product Management',
     'vigoursEcommerce.challenge.problem4.description': 'Difficulty managing product catalog, pricing, and inventory across different organic food categories.',
-    
+
     'vigoursEcommerce.solution.title': 'Our Solution',
     'vigoursEcommerce.solution.description': 'We created a comprehensive full-stack e-commerce platform tailored for organic food businesses with advanced features and modern technology.',
     'vigoursEcommerce.solution.frontend.title': 'Modern Frontend',
     'vigoursEcommerce.solution.frontend.description': 'Responsive, user-friendly interface with advanced product filtering, search functionality, and seamless shopping experience.',
     'vigoursEcommerce.solution.backend.title': 'Robust Backend',
     'vigoursEcommerce.solution.backend.description': 'Scalable server architecture with secure API endpoints, user authentication, and comprehensive business logic.',
-    
+
     'vigoursEcommerce.features.title': 'Platform Features',
     'vigoursEcommerce.features.product.title': 'Product Management',
     'vigoursEcommerce.features.product.catalog': 'Comprehensive product catalog with categories',
@@ -1902,7 +1909,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.features.admin.inventory': 'Inventory management and tracking',
     'vigoursEcommerce.features.admin.orders': 'Order processing and fulfillment',
     'vigoursEcommerce.features.admin.analytics': 'Sales analytics and reporting',
-    
+
     'vigoursEcommerce.process.title': 'Development Process',
     'vigoursEcommerce.process.phase1.title': 'Phase 1: Planning & Design',
     'vigoursEcommerce.process.phase1.description': 'Understanding Vigours Organic\'s business model and designing a platform that reflects their values.',
@@ -1924,7 +1931,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.process.phase4.deliverable1': 'Admin dashboard and user management',
     'vigoursEcommerce.process.phase4.deliverable2': 'Analytics and reporting system',
     'vigoursEcommerce.process.phase4.deliverable3': 'Testing, deployment, and launch',
-    
+
     'vigoursEcommerce.results.title': 'Project Results',
     'vigoursEcommerce.results.business.title': 'Business Impact',
     'vigoursEcommerce.results.business.sales': '200% increase in sales revenue',
@@ -1936,7 +1943,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.results.technical.scalability': 'Scalable architecture for future growth',
     'vigoursEcommerce.results.technical.security': 'Secure payment processing and data protection',
     'vigoursEcommerce.results.technical.maintenance': 'Easy maintenance and content management',
-    
+
     'vigoursEcommerce.technologies.title': 'Technology Stack',
     'vigoursEcommerce.tech.frontend.title': 'Frontend Technologies',
     'vigoursEcommerce.tech.frontend.nextjs': 'Modern React framework for optimal performance',
@@ -1953,7 +1960,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.tech.database.redis': 'High-performance caching system',
     'vigoursEcommerce.tech.database.cloudinary': 'Cloud-based image and media management',
     'vigoursEcommerce.tech.database.stripe': 'Secure payment processing platform',
-    
+
     'vigoursEcommerce.cta.title': 'Ready to Build Your E-commerce Platform?',
     'vigoursEcommerce.cta.description': 'Let us help you create a powerful e-commerce solution that drives sales and grows your business.',
     'vigoursEcommerce.cta.button1': 'View Our Services',
@@ -1961,7 +1968,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.step': 'Step',
     'softdev.processes.technologiesHeading': 'Technologies & Platforms',
     'softdev.processes.servicesHeading': 'Services Included',
-    
+
     'softdev.consultation.additionalServices': 'Additional Services Included',
     'softdev.consultation.service1.title': 'Code Documentation',
     'softdev.consultation.service1.description': 'Comprehensive technical documentation',
@@ -1970,7 +1977,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.consultation.service3.title': 'Training & Support',
     'softdev.consultation.service3.description': 'User training and ongoing support',
     'softdev.consultation.manualLink': 'Sample Operation Manual (PDF)',
-    
+
     'softdev.mission.industry1.name': 'Healthcare',
     'softdev.mission.industry1.description': 'HIPAA-compliant healthcare software, patient management systems, telemedicine platforms, and secure medical data management solutions.',
     'softdev.mission.industry2.name': 'FinTech',
@@ -1983,7 +1990,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.mission.industry5.description': 'Scalable software-as-a-service solutions, multi-tenant applications, subscription management, and cloud-based business tools.',
     'softdev.mission.industry6.name': 'Manufacturing',
     'softdev.mission.industry6.description': 'Enterprise resource planning systems, supply chain management, production monitoring, and industrial automation software.',
-    
+
     // Contact Page
     'contact.title': 'Contact Us',
     'contact.subtitle': 'Get in touch with us to discuss your project',
@@ -2044,7 +2051,7 @@ const translations: Record<string, Record<string, string>> = {
     'contact.founder.name': 'Hamza Hafeez',
     'contact.founder.title': 'Founder & CEO, Upvista Digital',
     'contact.founder.quote': 'At Upvista Digital, we believe in transforming ideas into digital excellence. Our mission is to empower businesses with innovative solutions that drive growth and success in the digital landscape. With a team of passionate experts and cutting-edge technology, we\'re committed to delivering exceptional results that exceed expectations. Let\'s build something extraordinary together.',
-    
+
     // Consultation Page
     'consultation.title': 'Let\'s Talk Business',
     'consultation.subtitle': 'Choose your preferred way to connect with us and start building your digital future.',
@@ -2121,7 +2128,7 @@ const translations: Record<string, Record<string, string>> = {
     'consultation.schedule.emailDesc': 'Traditional email scheduling',
     'consultation.video.zoomDesc': 'Professional video consultation via Zoom',
     'consultation.video.googleMeetDesc': 'Easy browser-based meeting via Google Meet',
-    
+
     // Services Page
     'services.hero.portfolio': 'Explore our portfolio',
     'services.hero.weBuild': 'We build',
@@ -2336,7 +2343,7 @@ const translations: Record<string, Record<string, string>> = {
     'services.standards.item5.description': 'We learn, adapt, and grow with every project.',
     'services.cta.button': 'Start Your Transformation',
     'services.cta.text': 'Ready to elevate your business? Let\'s build something extraordinary together.',
-    
+
     // Community Page
     'community.hero.title': 'Upvista Community',
     'community.hero.subtitle': 'An open source place where developers, designers, engineers from all around the world collaborate, learn, recognize, grow and even earn.',
@@ -2362,7 +2369,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.p1': 'The Upvista Community is open to anyone with a passion for technology and a desire to collaborate, learn, and grow. Whether you\'re a student just starting your journey, a seasoned professional looking to share your expertise, or an entrepreneur seeking collaborators for your next big idea, there\'s a place for you here.',
     'community.join.p2': 'By joining our community, you become part of a global movement that\'s shaping the future of technology. You\'ll have access to a network of talented professionals, opportunities for collaboration and earning, and a platform to showcase your work and grow your reputation.',
     'community.join.p3': 'Together, we\'re building more than just software—we\'re building connections, opportunities, and a community that empowers everyone to reach their full potential in the digital world.',
-    
+
     // Community Join Page
     'community.join.hero.title': 'Join Our Community',
     'community.join.hero.subtitle': 'Connect with developers, designers, and engineers worldwide',
@@ -2378,7 +2385,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.button': 'Join Community',
     'community.join.cta.title': 'Join Multiple Platforms',
     'community.join.cta.description': 'You can join us on multiple platforms to stay connected in the way that works best for you. Each platform offers unique benefits and opportunities.',
-    
+
     // Stand With Palestine Page
     'palestine.backHome': 'Back to Home',
     'palestine.badge': 'Humanity • Compassion • Justice',
@@ -2501,6 +2508,13 @@ const translations: Record<string, Record<string, string>> = {
     'dropdown.services.cloud': 'クラウド',
     'dropdown.services.design': 'グラフィックとデザイン',
     'dropdown.services.marketing': 'デジタルマーケティング',
+    // Products dropdown section
+    'dropdown.products.erp': 'カスタマイズ可能なERP & CRM',
+    'dropdown.products.pos': 'カスタマイズ可能なPOS & LMS',
+    'dropdown.products.templates': 'フルウェブサイト、アプリ、Eコマーステンプレート',
+    'dropdown.products.ai': 'AI自動化ワークフロー',
+    'dropdown.products.chatbots': 'チャットボット&カスタムAIエージェント',
+    'dropdown.products.marketplace': 'マーケットプレイスを探索',
     // Community dropdown
     'dropdown.community.about': 'コミュニティについて',
     'dropdown.community.events': 'イベント',
@@ -2910,7 +2924,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.contact.title': 'パートナーシップチームとつながる',
     'partners.contact.content1': 'Upvista Digitalとのパートナーシップ機会を探る準備はできていますか？私たちのパートナーシップチームは、一緒に価値を創造する方法について話し合う準備ができています。あなたの組織について学び、潜在的なコラボレーション機会を探る機会を歓迎します。',
     'partners.contact.content2': 'パートナーシップのお問い合わせ、コラボレーション機会、または私たちのパートナーシップ哲学について詳しく知りたい場合は、パートナーシップチームまでお問い合わせください。イノベーションを推進し、すべてのステークホルダーに卓越した価値を創造する戦略的同盟を築くことを楽しみにしています。',
-    
+
     // Featured Partners Section
     'partners.featured.badge': '戦略的コラボレーター',
     'partners.featured.title': 'フロンティアプロジェクトを拡大するパートナー',
@@ -2925,7 +2939,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.featured.dravion.value': 'Upvistaの複雑なインタラクティブシステムの構築能力を拡張し、多分野プロジェクトの配信を加速します。',
     'partners.featured.strengthsLabel': 'コア強み',
     'partners.featured.cta': 'パートナーシップを探索',
-    
+
     // Dravion Technologies Detail Page
     'dravion.hero.badge': '戦略的パートナープロフィール',
     'dravion.hero.title': 'Dravion Technologies x Upvista Digital',
@@ -3046,7 +3060,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.mission.content': 'すべてのビジネスが、ブランドを反映し、結果を生み出す強力でプロフェッショナルなウェブプレゼンスを持つに値すると信じています。私たちの使命は、高品質なウェブ開発を民主化し、あらゆる規模のビジネスが先進的なデジタルソリューションにアクセスできるようにすることです。スタートアップから企業法人まで、デジタル時代に成功するために必要な専門知識、技術、サポートを提供します。',
     'webdev.mission.industries': '私たちが提供する業界',
     'webdev.mission.ending': 'デジタルプレゼンスを変革する準備はできましたか？一緒に素晴らしいものを作りましょう。',
-    
+
     'webdev.tech.react': 'モダンUIライブラリ',
     'webdev.tech.nextjs': 'フルスタックフレームワーク',
     'webdev.tech.vuejs': 'プログレッシブフレームワーク',
@@ -3059,7 +3073,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.tech.wordpress': 'CMSプラットフォーム',
     'webdev.tech.webflow': 'ノーコードプラットフォーム',
     'webdev.tech.docker': 'コンテナ化',
-    
+
     'webdev.processes.custom.title': 'カスタムコードソリューション',
     'webdev.processes.custom.description': 'モダンフレームワークとベストプラクティスを使用した一からの完全開発',
     'webdev.processes.custom.service1': 'フロントエンド開発（HTML、CSS、JavaScript）',
@@ -3089,7 +3103,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.custom.roadmap7.title': 'メンテナンスとサポート',
     'webdev.processes.custom.roadmap7.description': '継続的なメンテナンス、更新、監視、および操作マニュアル付きの1ヶ月間無料サポート。',
     'webdev.processes.custom.roadmap7.details': '定期的な更新、セキュリティパッチ、パフォーマンス監視、長期成功のための詳細な操作マニュアルを含む包括的なメンテナンスプラン。',
-    
+
     'webdev.processes.wordpress.title': 'WordPress開発',
     'webdev.processes.wordpress.description': 'カスタムWordPressテーマ、プラグイン、高度な機能を持つフルサイト開発',
     'webdev.processes.wordpress.service1': 'カスタムテーマ開発',
@@ -3112,7 +3126,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.wordpress.roadmap6.description': 'データ整合性とSEO保持を伴う既存プラットフォームからのシームレスなコンテンツ移行。',
     'webdev.processes.wordpress.roadmap7.title': 'ローンチとトレーニング',
     'webdev.processes.wordpress.roadmap7.description': '管理トレーニング、ドキュメント、継続的なメンテナンスサポートを含むサイトローンチ。',
-    
+
     'webdev.processes.webflow.title': 'Webflow開発',
     'webdev.processes.webflow.description': 'カスタムインタラクション、アニメーション、CMS統合を含むノーコードWeb開発',
     'webdev.processes.webflow.service1': 'デザインからWebflowへの変換',
@@ -3135,7 +3149,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.webflow.roadmap6.description': '検索エンジン最適化、メタタグ実装、高速読み込み時間の確保。',
     'webdev.processes.webflow.roadmap7.title': 'ローンチと引き渡し',
     'webdev.processes.webflow.roadmap7.description': 'CMSトレーニング、ドキュメント、コンテンツ更新の継続的サポートを含むサイトローンチ。',
-    
+
     'webdev.processes.migration.title': 'プラットフォーム移行',
     'webdev.processes.migration.description': 'データ保持とSEO維持を伴う異なるプラットフォーム間のシームレスな移行',
     'webdev.processes.migration.service1': 'データ分析と計画',
@@ -3158,7 +3172,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.migration.roadmap6.description': 'すべてのSEO要素、リダイレクトの維持、検索エンジンの可視性の維持。',
     'webdev.processes.migration.roadmap7.title': 'テストとローンチ',
     'webdev.processes.migration.roadmap7.description': '問題の監視と即座のサポートを含む包括的なテストとスムーズなローンチ。',
-    
+
     'webdev.processes.maintenance.title': 'メンテナンスと更新',
     'webdev.processes.maintenance.description': '既存Webサイトの継続的サポート、バグ修正、セキュリティ更新、機能追加',
     'webdev.processes.maintenance.service1': 'バグ修正とデバッグ',
@@ -3181,14 +3195,14 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.processes.maintenance.roadmap6.description': '新機能の追加、機能の改善、ユーザーフィードバック提案の実装。',
     'webdev.processes.maintenance.roadmap7.title': '監視とレポート',
     'webdev.processes.maintenance.roadmap7.description': 'パフォーマンス、セキュリティ、メンテナンス活動に関する定期的なレポートを含む継続的監視。',
-    
+
     'webdev.processes.roadmapHeading': '開発ロードマップ',
     'webdev.processes.step': 'ステップ',
     'webdev.processes.platformsHeading': 'プラットフォームと技術',
     'webdev.processes.servicesHeading': '含まれるサービス',
-    
+
     'webdev.techStack.badge': '私たちの技術スタック',
-    
+
     'webdev.consultation.additionalServices': '含まれる追加サービス',
     'webdev.consultation.service1.title': '基本SEO',
     'webdev.consultation.service1.description': 'メタタグ、サイトマップ、最適化',
@@ -3197,7 +3211,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.consultation.service3.title': '完全デザイン',
     'webdev.consultation.service3.description': '完全なFigmaデザイン含む',
     'webdev.consultation.manualLink': 'サンプル操作マニュアル（PDF）',
-    
+
     'webdev.mission.industry1.name': 'Eコマース',
     'webdev.mission.industry1.description': 'B2C・B2Bブランド向けのカスタムオンラインストア、決済統合、商品管理、コンバージョン最適化。',
     'webdev.mission.industry2.name': 'SaaSプラットフォーム',
@@ -3210,12 +3224,12 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.mission.industry5.description': '安全な決済ゲートウェイ、デジタルウォレット、金融分析プラットフォーム。',
     'webdev.mission.industry6.name': 'ポートフォリオとクリエイティブ',
     'webdev.mission.industry6.description': '個人ポートフォリオ、クリエイティブエージェンシーサイト、アーティストとプロフェッショナル向けデジタルショーケース。',
-    
+
     // AI & Automation Page
     'ai.hero.badge': 'AI・自動化エクセレンス',
     'ai.hero.title': 'AI・自動化',
     'ai.hero.description': 'インテリジェントな自動化とAIソリューションでビジネスを変革し、生産性を向上させ、イノベーションを推進します。',
-    
+
     'ai.projectTypes.heading': 'AI・自動化ソリューションの種類',
     'ai.projectTypes.subtitle': 'ビジネスニーズに合わせた包括的なAI・自動化ソリューションを開発します',
     'ai.projectTypes.aiPowered.title': 'AI駆動ソリューション',
@@ -3226,11 +3240,11 @@ const translations: Record<string, Record<string, string>> = {
     'ai.projectTypes.conversational.description': '複数のコミュニケーションチャネルで、インテリジェントなカスタマーサービス、サポート、エンゲージメントを提供する高度なチャットボットと音声アシスタント。',
     'ai.projectTypes.document.title': 'ドキュメントインテリジェンス',
     'ai.projectTypes.document.description': '非構造化データをアクションブルなビジネスインサイトに変換するAI駆動のドキュメント処理、分析、データ抽出システム。',
-    
+
     'ai.techStack.heading': '私たちのAI・自動化技術スタック',
     'ai.techStack.subtitle': 'インテリジェントな自動化ソリューション向けの最先端AI技術とフレームワーク',
     'ai.techStack.badge': '私たちのAIスタック',
-    
+
     'ai.tech.python': 'AI開発',
     'ai.tech.tensorflow': '機械学習',
     'ai.tech.pytorch': 'ディープラーニング',
@@ -3243,7 +3257,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.tech.azure': 'Microsoft AI',
     'ai.tech.google': 'Google AIプラットフォーム',
     'ai.tech.cv': '画像処理',
-    
+
     'ai.techStack.ml.title': '機械学習とAI',
     'ai.techStack.ml.description1': 'TensorFlow、PyTorch、scikit-learnを使用した予測分析とインテリジェント自動化のためのカスタム機械学習モデルを専門としています。',
     'ai.techStack.ml.description2': '私たちのAIソリューションには、特定のビジネスニーズに合わせた自然言語処理、コンピュータビジョン、ディープラーニングアプリケーションが含まれます。',
@@ -3256,7 +3270,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.techStack.cloud.title': 'クラウドAIサービス',
     'ai.techStack.cloud.description1': 'AWS、Azure、Google Cloudのクラウドサービスを活用して、スケーラブルでエンタープライズグレードのAIソリューションを提供します。',
     'ai.techStack.cloud.description2': '私たちのクラウドAI実装には、マネージドMLサービス、AI API、最適なパフォーマンスとコスト効率のためのハイブリッドクラウドアーキテクチャが含まれます。',
-    
+
     'ai.caseStudies.heading': 'AI・自動化ケーススタディ',
     'ai.caseStudies.subtitle': 'さまざまな業界における成功したAI・自動化プロジェクトをご覧ください',
     'ai.caseStudies.readMore': '詳細を読む',
@@ -3269,14 +3283,14 @@ const translations: Record<string, Record<string, string>> = {
     'ai.caseStudy3.title': 'インテリジェントドキュメント処理',
     'ai.caseStudy3.description': 'エンタープライズワークフロー向けのAI駆動ドキュメント分析とデータ抽出システム。',
     'ai.caseStudy3.tag': 'ドキュメントAI',
-    
+
     'ai.processes.heading': 'AI・自動化開発プロセス',
     'ai.processes.subtitle': '実証済みの方法論により、品質と効率を確保したAI実装を成功させます',
     'ai.processes.roadmapHeading': '開発ロードマップ',
     'ai.processes.step': 'ステップ',
     'ai.processes.platformsHeading': '技術とプラットフォーム',
     'ai.processes.servicesHeading': '含まれるサービス',
-    
+
     'ai.processes.aidev.title': 'AIソリューション開発',
     'ai.processes.aidev.description': '特定のビジネス課題を解決するための一からのカスタムAIソリューション',
     'ai.processes.aidev.service1': 'AI戦略と計画',
@@ -3305,7 +3319,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.processes.aidev.roadmap6.title': 'トレーニングとサポート',
     'ai.processes.aidev.roadmap6.description': 'AIソリューションの採用と最適化のためのユーザートレーニングと継続的サポート。',
     'ai.processes.aidev.roadmap6.details': 'チームのための包括的なトレーニングとAIソリューションの効果を最大化するための継続的サポートを提供します。',
-    
+
     'ai.processes.automation.title': 'ビジネスプロセス自動化',
     'ai.processes.automation.description': '効率改善のための反復的なビジネスプロセスのインテリジェント自動化',
     'ai.processes.automation.service1': 'プロセス分析',
@@ -3326,7 +3340,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.processes.automation.roadmap5.description': '自動化の信頼性とパフォーマンスを確保するための包括的テスト。',
     'ai.processes.automation.roadmap6.title': 'デプロイ',
     'ai.processes.automation.roadmap6.description': '監視と継続的最適化を含むスムーズなデプロイ。',
-    
+
     'ai.processes.chatbot.title': 'インテリジェントチャットボットと音声AI',
     'ai.processes.chatbot.description': 'カスタマーサービスとビジネス自動化のための高度な会話型AIソリューション',
     'ai.processes.chatbot.service1': '会話設計',
@@ -3347,7 +3361,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.processes.chatbot.roadmap5.description': '監視と継続的改善機能を備えたチャットボットのローンチ。',
     'ai.processes.chatbot.roadmap6.title': '最適化',
     'ai.processes.chatbot.roadmap6.description': 'ユーザーインタラクションとフィードバックに基づく継続的最適化。',
-    
+
     'ai.consultation.title': '無料AI・自動化コンサルテーション',
     'ai.consultation.description': 'AI・自動化プロジェクトの専門家アドバイスを無料相談で受け、プロジェクト完了後1ヶ月間の無料サポートをお楽しみください。',
     'ai.consultation.button': '無料相談を開始',
@@ -3359,7 +3373,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.consultation.service3.title': 'トレーニングとサポート',
     'ai.consultation.service3.description': 'チームトレーニングと継続的サポート',
     'ai.consultation.manualLink': 'サンプル操作マニュアル（PDF）',
-    
+
     'ai.mission.title': '私たちのミッション',
     'ai.mission.description': 'AI・自動化技術の民主化に取り組み、あらゆる規模のビジネスにインテリジェントソリューションへのアクセスを提供します。私たちの使命は、生産性を向上させ、コストを削減し、イノベーションを推進する最先端のAIで組織を支援することです。',
     'ai.mission.industriesHeading': '対応業界',
@@ -3376,7 +3390,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.mission.industry6.name': 'カスタマーサービス',
     'ai.mission.industry6.description': 'インテリジェントチャットボット、自動チケットルーティング、感情分析、サービス提供改善のためのAI駆動カスタマーインサイト。',
     'ai.mission.ending': 'AI・自動化でビジネスを変革する準備はできていますか？実際の結果をもたらすインテリジェントソリューションを構築しましょう。',
-    
+
     // Cloud Services Page
     'cloud.hero.badge': 'クラウドサービスエクセレンス',
     'cloud.hero.title': 'クラウドサービス',
@@ -3531,7 +3545,7 @@ const translations: Record<string, Record<string, string>> = {
     'cloud.mission.industry6.name': 'SaaSプラットフォーム',
     'cloud.mission.industry6.description': 'マルチテナントSaaSアーキテクチャ、サブスクリプション管理システム、APIプラットフォーム、スケーラブルなマイクロサービスソリューション。',
     'cloud.mission.ending': 'クラウド技術でビジネスを変革する準備はできていますか？成功を推進するスケーラブルで安全なソリューションを構築しましょう。',
-    
+
     // Design Services Page
     'design.hero.badge': 'デザインエクセレンス',
     'design.hero.title': 'デザインサービス',
@@ -3686,7 +3700,7 @@ const translations: Record<string, Record<string, string>> = {
     'design.mission.industry6.name': 'クリエイティブエージェンシー',
     'design.mission.industry6.description': 'エージェンシー、ポートフォリオ、作品を展示するクリエイティブプロフェッショナル向けの大胆でクリエイティブなデザインソリューション。',
     'design.mission.ending': '卓越したデザインでブランドを向上させる準備はできていますか？観客を魅了し成功を推進するビジュアル体験を創造しましょう。',
-    
+
     // Project Types Details
     'webdev.projectTypes.custom.title': 'スクラッチからのカスタム開発',
     'webdev.projectTypes.custom.description': '最新の技術とフレームワークを使用して、ゼロから完全なウェブソリューションを構築します。カスタム開発アプローチにより、ウェブサイトがビジネスニーズに完璧に適合し、ビジネスの成長と共に拡張できるクリーンなコードアーキテクチャとスケーラブルなインフラストラクチャを提供します。',
@@ -3696,7 +3710,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.projectTypes.fixes.description': '経験豊富な開発者が技術的な問題、パフォーマンスのボトルネック、互換性の問題を迅速に特定し解決します。詳細なレポートと共に包括的なデバッグサービスを提供し、将来の問題を防ぐための予防措置を実装します。',
     'webdev.projectTypes.features.title': '機能強化と追加',
     'webdev.projectTypes.features.description': '新しい機能、改善された機能性、最新の統合で既存のウェブサイトを強化します。現在の設定を分析し、システムの安定性を維持しながら、ユーザー体験とビジネスパフォーマンスを改善する戦略的強化を推奨します。',
-    
+
     // Development Roadmap
     'webdev.roadmap.title': '開発ロードマップ',
     'webdev.roadmap.step1.title': 'コンサルテーションとディスカバリー',
@@ -3740,7 +3754,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.badge': 'ソフトウェア開発の卓越性',
     'softdev.title': 'ソフトウェア開発',
     'softdev.subtitle': '効率性、革新性、成長を促進するカスタムソフトウェアソリューションでビジネスを変革しましょう。',
-    
+
     'softdev.projectTypes.title': 'ソフトウェアソリューションの種類',
     'softdev.projectTypes.subtitle': 'お客様のビジネスニーズに合わせた包括的なソフトウェアソリューションを開発します',
     'softdev.projectTypes.custom.title': 'カスタムソフトウェア開発',
@@ -3751,7 +3765,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.projectTypes.enterprise.description': '複雑なビジネス環境向けの高度な機能、セキュリティ、コンプライアンス、統合機能を備えた大規模エンタープライズアプリケーション。',
     'softdev.projectTypes.integration.title': 'システム統合サービス',
     'softdev.projectTypes.integration.description': '堅牢なAPI、ミドルウェア、データ同期、ワークフロー自動化による異種システムのシームレスな統合で、統一された運用を実現します。',
-    
+
     'softdev.techStack.title': '私たちの技術スタック',
     'softdev.techStack.subtitle': '堅牢でスケーラブルなソフトウェアソリューションのための最先端技術とフレームワーク',
     'softdev.techStack.mobile': 'モバイル開発',
@@ -3766,7 +3780,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.techStack.database': 'データベースとアナリティクス',
     'softdev.techStack.database.desc1': 'PostgreSQL、MongoDB、Redis、Elasticsearchなどの高度なデータベースで最適なデータ管理とパフォーマンスを提供します。',
     'softdev.techStack.database.desc2': 'データアナリティクス、リアルタイム処理、キャッシング戦略、ユーザー体験向上のための包括的な検索機能を含むソリューションを提供します。',
-    
+
     'softdev.caseStudies.title': 'ソフトウェア開発事例研究',
     'softdev.caseStudies.subtitle': '様々な業界での成功したソフトウェア開発プロジェクトを探索してください',
     'softdev.caseStudies.readMore': '続きを読む',
@@ -3779,23 +3793,23 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.caseStudies.lms.title': '企業向けERPシステム',
     'softdev.caseStudies.lms.description': '財務、人事、在庫、ビジネス運営の統合モジュールを備えた高度な企業資源計画システム。',
     'softdev.caseStudies.lms.tag': 'エンタープライズソリューション',
-    
+
     'softdev.process.title': 'ソフトウェア開発プロセス',
     'softdev.process.subtitle': '品質と効率性を確保する実証済みの方法論で成功するソフトウェア配信を保証します',
-    
+
     'softdev.consultation.title': '無料ソフトウェア開発相談',
     'softdev.consultation.content': 'プロジェクト完了後の1ヶ月間無料サポートと共に、無料相談でソフトウェアプロジェクトについて専門家のアドバイスを受けてください。',
     'softdev.consultation.button': '無料相談を開始',
-    
+
     'softdev.mission.title': '私たちのミッション',
     'softdev.mission.content': 'ビジネスを変革し、デジタル成功を促進する革新的なソフトウェアソリューションの提供にコミットしています。私たちのミッションは、生産性、効率性、成長を向上させる最先端技術で組織を強化することです。',
     'softdev.mission.industries': '私たちがサービスを提供する業界',
     'softdev.mission.ending': 'カスタムソフトウェアソリューションでビジネスを変革する準備はできていますか？一緒に何か特別なものを構築しましょう。',
-    
+
     'softdev.projectTypes.heading': 'ソフトウェアソリューションの種類',
     'softdev.techStack.heading': '私たちの技術スタック',
     'softdev.techStack.badge': '私たちの技術スタックに含まれています',
-    
+
     'softdev.tech.reactNative': 'クロスプラットフォームモバイル',
     'softdev.tech.flutter': 'モバイル開発',
     'softdev.tech.python': 'バックエンドとAI',
@@ -3808,7 +3822,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.tech.postgresql': '高度なデータベース',
     'softdev.tech.redis': 'キャッシングとセッション',
     'softdev.tech.elasticsearch': '検索と分析',
-    
+
     'softdev.processes.custom.title': 'カスタムソフトウェア開発',
     'softdev.processes.custom.description': '特定のビジネス要件を満たすために一から構築されたオーダーメイドソフトウェアソリューション',
     'softdev.processes.custom.service1': '要件分析と計画',
@@ -3840,7 +3854,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.custom.roadmap7.title': 'サポートとメンテナンス',
     'softdev.processes.custom.roadmap7.description': '詳細なドキュメンテーションとトレーニングを提供する継続的なサポート、更新、メンテナンス。',
     'softdev.processes.custom.roadmap7.details': 'バグ修正、機能更新、パフォーマンス監視、持続的成功のためのユーザートレーニングを含む包括的なサポートプラン。',
-    
+
     'softdev.processes.mobile.title': 'モバイルアプリケーション開発',
     'softdev.processes.mobile.description': 'iOSとAndroid向けのシームレスなユーザー体験を備えたネイティブおよびクロスプラットフォームモバイルアプリケーション',
     'softdev.processes.mobile.service1': 'クロスプラットフォーム開発',
@@ -3865,7 +3879,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.mobile.roadmap6.description': '最適化されたメタデータとコンプライアンス要件によるアプリストア申請の準備。',
     'softdev.processes.mobile.roadmap7.title': '起動とマーケティング',
     'softdev.processes.mobile.roadmap7.description': 'マーケティングサポートとユーザーフィードバックに基づく継続的な更新を伴うアプリの起動。',
-    
+
     'softdev.processes.enterprise.title': 'エンタープライズソフトウェアソリューション',
     'softdev.processes.enterprise.description': '高度な機能、セキュリティ、統合機能を備えた大規模エンタープライズアプリケーション',
     'softdev.processes.enterprise.service1': 'エンタープライズアーキテクチャ',
@@ -3890,7 +3904,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.enterprise.roadmap6.description': '監視、バックアップ、災害復旧システムを伴うエンタープライズデプロイメント。',
     'softdev.processes.enterprise.roadmap7.title': 'トレーニングとサポート',
     'softdev.processes.enterprise.roadmap7.description': 'ドキュメンテーションを伴う包括的なユーザートレーニングと継続的なエンタープライズサポート。',
-    
+
     'softdev.processes.cloud.title': 'クラウドベースソリューション',
     'softdev.processes.cloud.description': '最新のDevOpsプラクティスとインフラストラクチャ自動化によるスケーラブルなクラウドアプリケーション',
     'softdev.processes.cloud.service1': 'クラウドアーキテクチャ設計',
@@ -3915,7 +3929,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.cloud.roadmap6.description': '監視と問題への即時サポートを伴うスムーズな移行。',
     'softdev.processes.cloud.roadmap7.title': '最適化',
     'softdev.processes.cloud.roadmap7.description': 'クラウドリソース、コスト、パフォーマンス監視の継続的な最適化。',
-    
+
     'softdev.processes.integration.title': 'システム統合サービス',
     'softdev.processes.integration.description': 'API、ミドルウェア、データ同期による異種システムのシームレスな統合',
     'softdev.processes.integration.service1': 'API開発',
@@ -3940,12 +3954,12 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.integration.roadmap6.description': '監視とロールバック機能を伴う統合ソリューションのデプロイメント。',
     'softdev.processes.integration.roadmap7.title': '監視',
     'softdev.processes.integration.roadmap7.description': '統合の健全性、パフォーマンス、データ品質の継続的な監視。',
-    
+
     'softdev.processes.roadmapHeading': '開発ロードマップ',
     'softdev.processes.step': 'ステップ',
     'softdev.processes.technologiesHeading': '技術とプラットフォーム',
     'softdev.processes.servicesHeading': '含まれるサービス',
-    
+
     'softdev.consultation.additionalServices': '追加サービスが含まれています',
     'softdev.consultation.service1.title': 'コードドキュメンテーション',
     'softdev.consultation.service1.description': '包括的な技術ドキュメンテーション',
@@ -3954,7 +3968,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.consultation.service3.title': 'トレーニングとサポート',
     'softdev.consultation.service3.description': 'ユーザートレーニングと継続的なサポート',
     'softdev.consultation.manualLink': 'サンプル操作マニュアル（PDF）',
-    
+
     'softdev.mission.industry1.name': 'ヘルスケア',
     'softdev.mission.industry1.description': 'HIPAA準拠のヘルスケアソフトウェア、患者管理システム、遠隔医療プラットフォーム、安全な医療データ管理ソリューション。',
     'softdev.mission.industry2.name': 'フィンテック',
@@ -3967,7 +3981,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.mission.industry5.description': 'スケーラブルなソフトウェアアズアサービスソリューション、マルチテナントアプリケーション、サブスクリプション管理、クラウドベースのビジネスツール。',
     'softdev.mission.industry6.name': '製造業',
     'softdev.mission.industry6.description': 'エンタープライズリソース計画システム、サプライチェーン管理、生産監視、産業オートメーションソフトウェア。',
-    
+
     // Contact Page
     'contact.title': 'お問い合わせ',
     'contact.subtitle': 'プロジェクトについてご相談ください',
@@ -4028,7 +4042,7 @@ const translations: Record<string, Record<string, string>> = {
     'contact.founder.name': 'ハムザ・ハフィーズ',
     'contact.founder.title': '創設者兼CEO、Upvista Digital',
     'contact.founder.quote': 'Upvista Digitalでは、アイデアをデジタルの卓越性に変えることを信じています。私たちのミッションは、デジタル環境での成長と成功を促進する革新的なソリューションでビジネスを強化することです。情熱的な専門家チームと最先端技術により、期待を超える優れた結果を提供することにコミットしています。一緒に特別なものを構築しましょう。',
-    
+
     // Consultation Page
     'consultation.title': 'ビジネスについて話しましょう',
     'consultation.subtitle': 'お好みの方法でお気軽にお問い合わせください。デジタルな未来を一緒に築きましょう。',
@@ -4105,7 +4119,7 @@ const translations: Record<string, Record<string, string>> = {
     'consultation.schedule.emailDesc': '従来のメールスケジューリング',
     'consultation.video.zoomDesc': 'Zoomでのプロフェッショナルなビデオ相談',
     'consultation.video.googleMeetDesc': 'Google Meetでの簡単なブラウザベースの会議',
-    
+
     // Services Page
     'services.hero.portfolio': 'ポートフォリオを見る',
     'services.hero.weBuild': '私たちは構築します',
@@ -4320,7 +4334,7 @@ const translations: Record<string, Record<string, string>> = {
     'services.standards.item5.description': 'すべてのプロジェクトで学び、適応し、成長します。',
     'services.cta.button': '変革を開始',
     'services.cta.text': 'ビジネスを向上させる準備はできていますか？一緒に特別なものを構築しましょう。',
-    
+
     // Community Page
     'community.hero.title': 'Upvistaコミュニティ',
     'community.hero.subtitle': '世界中の開発者、デザイナー、エンジニアが協力し、学び、認められ、成長し、さらには収益を得るオープンソースの場所。',
@@ -4346,7 +4360,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.p1': 'Upvistaコミュニティは、テクノロジーへの情熱と協力、学習、成長への願望を持つすべての人に開放されています。旅を始めたばかりの学生、専門知識を共有したい経験豊富なプロフェッショナル、次の大きなアイデアの協力者を求める起業家であるかにかかわらず、ここにあなたの場所があります。',
     'community.join.p2': 'コミュニティに参加することで、テクノロジーの未来を形作るグローバル運動の一部になります。才能あるプロフェッショナルのネットワーク、協力と収益の機会、作品を紹介し評判を築くプラットフォームにアクセスできます。',
     'community.join.p3': '一緒に、ソフトウェア以上のものを構築しています—接続、機会、デジタル世界で誰もが自分の可能性を最大限に発揮できるコミュニティを構築しています。',
-    
+
     // Community Join Page
     'community.join.hero.title': 'コミュニティに参加',
     'community.join.hero.subtitle': '世界中の開発者、デザイナー、エンジニアとつながる',
@@ -4362,7 +4376,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.button': 'コミュニティに参加',
     'community.join.cta.title': '複数のプラットフォームに参加',
     'community.join.cta.description': '複数のプラットフォームで私たちに参加して、自分に最適な方法で接続を維持できます。各プラットフォームはユニークな利点と機会を提供します。',
-    
+
     // Stand With Palestine Page
     'palestine.backHome': 'ホームに戻る',
     'palestine.badge': '人間性・思いやり・正義',
@@ -4419,7 +4433,7 @@ const translations: Record<string, Record<string, string>> = {
     'palestine.prayer.line2': '正義が川のように流れますように。',
     'palestine.prayer.line3': '自由が土地のあらゆる隅から鳴り響きますように。',
     'palestine.footer': 'Upvista Digital',
-    
+
     // Research Page
     'research.hero.title': '研究とイノベーション',
     'research.hero.subtitle': 'クライアントのニーズに応え、未来の技術を開拓する',
@@ -4453,7 +4467,7 @@ const translations: Record<string, Record<string, string>> = {
     'research.mission.title': 'ビジョンに駆動され、イノベーションによって力づけられる',
     'research.mission.description': '厳格な研究、知識への情熱的な追求、そして協力的な貢献を通じて、私たちは変革的な技術進歩の基盤を構築しています。私たちが解決する課題や探求する技術は、より良い未来を形作ることに近づけます。',
     'research.learnMore': '詳細を見る',
-    
+
     // GCDF Page
     'gcdf.backToResearch': '研究に戻る',
     'gcdf.label': '研究イニシアチブ',
@@ -4506,7 +4520,7 @@ const translations: Record<string, Record<string, string>> = {
     'gcdf.future.title': '前進への道',
     'gcdf.future.description': 'プロジェクトコルテックスが進展し、AGI開発における能力が成熟するにつれて、グローバルサイバー防衛ファブリックを概念から実装へと進める準備が整います。このビジョンが私たちの研究努力を推進し、長期的な戦略計画を導きます。',
     'gcdf.future.projectCortexLink': 'プロジェクトコルテックスについて学ぶ',
-    
+
     // CELTIS NGO Platform Case Study
     'celtis.badge': 'NGOデジタル変革',
     'celtis.title': 'CELTIS NGOプラットフォーム',
@@ -4518,7 +4532,7 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.industry': '業界',
     'celtis.ngo': 'NGO/非営利',
     'celtis.visitSite': 'ライブサイトを訪問',
-    
+
     'celtis.tabs.overview': '概要',
     'celtis.tabs.challenge': '課題',
     'celtis.tabs.solution': 'ソリューション',
@@ -4526,14 +4540,14 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.tabs.process': 'プロセス',
     'celtis.tabs.results': '結果',
     'celtis.tabs.technologies': '技術',
-    
+
     'celtis.overview.title': 'プロジェクト概要',
     'celtis.overview.description': '障害者支援とインクルージョンに焦点を当てた日本のNGOであるCELTIS Inc.は、完全なデジタル変革を必要としていました。既存のシンプルなHTML/CSSウェブサイトはUI/UXが悪く、訪問者を引きつけたり寄付を促進したりすることができませんでした。Next.jsとStrapi CMSを使用して、モダンで包括的なプラットフォームを提供しました。',
     'celtis.overview.mission.title': 'ミッション',
     'celtis.overview.mission.description': '誰もが共存し繁栄できる社会を作り、孤独を排除し、障害者を貢献者に変えること。',
     'celtis.overview.vision.title': 'ビジョン',
     'celtis.overview.vision.description': '障害者が支援の受動的な受領者ではなく、力を与えられた納税者になる世界を構築すること。',
-    
+
     'celtis.challenge.title': 'ビジネス課題',
     'celtis.challenge.description': 'CELTISは、障害者支援の使命を妨げる古いデジタルプレゼンスに大きな課題を抱えていました。',
     'celtis.challenge.problem1.title': '貧弱なデジタルプレゼンス',
@@ -4544,14 +4558,14 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.challenge.problem3.description': '手動でのコンテンツ更新、CMSなし、動画、ブログ、教育資料の管理が困難。',
     'celtis.challenge.problem4.title': '低いエンゲージメント',
     'celtis.challenge.problem4.description': '悪いユーザーエクスペリエンスにより、訪問者のエンゲージメントが低く、コミュニティ構築が限定的。',
-    
+
     'celtis.solution.title': '私たちのソリューション',
     'celtis.solution.description': 'CELTISのオンラインプレゼンスと運営能力を変革する包括的なデジタルプラットフォームを作成しました。',
     'celtis.solution.modern.title': 'モダンなUI/UXデザイン',
     'celtis.solution.modern.description': '直感的なナビゲーション、レスポンシブレイアウト、魅力的な視覚要素を備えた美しくアクセシブルなデザイン。',
     'celtis.solution.cms.title': 'Strapi CMS統合',
     'celtis.solution.cms.description': '動画、ブログ、イベント、教育コンテンツの簡単な更新を可能にする強力なコンテンツ管理システム。',
-    
+
     'celtis.features.title': 'プラットフォーム機能',
     'celtis.features.content.title': 'コンテンツ管理',
     'celtis.features.content.video': 'Small Step TV動画エピソード',
@@ -4573,7 +4587,7 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.features.admin.analytics': 'ユーザーエンゲージメント分析',
     'celtis.features.admin.users': 'ユーザー管理システム',
     'celtis.features.admin.content': 'コンテンツ承認ワークフロー',
-    
+
     'celtis.process.title': '開発プロセス',
     'celtis.process.phase1.title': 'フェーズ1: 発見とデザイン',
     'celtis.process.phase1.description': 'CELTISのミッションを理解し、コミュニティのニーズに応えるプラットフォームをデザイン。',
@@ -4590,7 +4604,7 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.process.phase3.deliverable1': '寄付システム統合',
     'celtis.process.phase3.deliverable2': 'コンテンツ管理ワークフロー',
     'celtis.process.phase3.deliverable3': 'コミュニティ機能とユーザー管理',
-    
+
     'celtis.results.title': 'プロジェクト結果',
     'celtis.results.impact.title': '社会的インパクト',
     'celtis.results.impact.donations': '寄付収集300%増加',
@@ -4602,7 +4616,7 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.results.efficiency.automation': '自動寄付処理',
     'celtis.results.efficiency.scalability': '将来の成長のためのスケーラブルプラットフォーム',
     'celtis.results.efficiency.maintenance': 'メンテナンスオーバーヘッド削減',
-    
+
     'celtis.technologies.title': '技術スタック',
     'celtis.tech.frontend.title': 'フロントエンド技術',
     'celtis.tech.frontend.nextjs': '最適なパフォーマンスのためのモダンなReactフレームワーク',
@@ -4614,12 +4628,12 @@ const translations: Record<string, Record<string, string>> = {
     'celtis.tech.backend.nodejs': 'API用のJavaScriptランタイム',
     'celtis.tech.backend.postgresql': 'データストレージ用の信頼性の高いデータベース',
     'celtis.tech.backend.vercel': 'デプロイメント用のクラウドプラットフォーム',
-    
+
     'celtis.cta.title': '組織を変革する準備はできていますか？',
     'celtis.cta.description': 'ミッションとインパクトを増幅するモダンなデジタルプラットフォームの構築をお手伝いします。',
     'celtis.cta.button1': 'サービスを見る',
     'celtis.cta.button2': 'プロジェクトを開始',
-    
+
     // Vigours Organic E-commerce Case Study
     'vigoursEcommerce.badge': 'Eコマースプラットフォーム成功',
     'vigoursEcommerce.title': 'Vigours Organic Eコマースプラットフォーム',
@@ -4631,7 +4645,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.industry': '業界',
     'vigoursEcommerce.ecommerce': 'Eコマース',
     'vigoursEcommerce.contactUs': 'お問い合わせ',
-    
+
     'vigoursEcommerce.tabs.overview': '概要',
     'vigoursEcommerce.tabs.challenge': '課題',
     'vigoursEcommerce.tabs.solution': 'ソリューション',
@@ -4639,7 +4653,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.tabs.process': 'プロセス',
     'vigoursEcommerce.tabs.results': '結果',
     'vigoursEcommerce.tabs.technologies': '技術',
-    
+
     'vigoursEcommerce.overview.title': 'プロジェクト概要',
     'vigoursEcommerce.overview.description': 'フンザの谷から始まった家族の取り組みであるVigours Organicは、純粋で本物の有機食品を世界中の顧客に届けるための包括的なEコマースプラットフォームを必要としていました。最新のフロントエンド、バックエンド、データベース技術を使用してフルスタックソリューションを構築しました。',
     'vigoursEcommerce.overview.mission.title': 'ミッション',
@@ -4650,7 +4664,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.overview.values.sustainability': '持続可能性と倫理',
     'vigoursEcommerce.overview.values.community': 'コミュニティエンパワーメント',
     'vigoursEcommerce.overview.values.transparency': '透明性と信頼',
-    
+
     'vigoursEcommerce.challenge.title': 'ビジネス課題',
     'vigoursEcommerce.challenge.description': 'Vigours Organicは、オンラインプレゼンスの確立と有機製品で顧客にリーチする際にいくつかの課題に直面していました。',
     'vigoursEcommerce.challenge.problem1.title': 'オンラインプレゼンスなし',
@@ -4661,14 +4675,14 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.challenge.problem3.description': '安全なオンライン支払いシステムがなく、顧客の利便性と信頼を制限。',
     'vigoursEcommerce.challenge.problem4.title': '商品管理',
     'vigoursEcommerce.challenge.problem4.description': '異なる有機食品カテゴリーにわたる商品カタログ、価格設定、在庫の管理が困難。',
-    
+
     'vigoursEcommerce.solution.title': '私たちのソリューション',
     'vigoursEcommerce.solution.description': '高度な機能と最新技術を備えた有機食品ビジネス向けの包括的なフルスタックEコマースプラットフォームを作成しました。',
     'vigoursEcommerce.solution.frontend.title': 'モダンなフロントエンド',
     'vigoursEcommerce.solution.frontend.description': '高度な商品フィルタリング、検索機能、シームレスなショッピング体験を備えたレスポンシブでユーザーフレンドリーなインターフェース。',
     'vigoursEcommerce.solution.backend.title': '堅牢なバックエンド',
     'vigoursEcommerce.solution.backend.description': '安全なAPIエンドポイント、ユーザー認証、包括的なビジネスロジックを備えたスケーラブルなサーバーアーキテクチャ。',
-    
+
     'vigoursEcommerce.features.title': 'プラットフォーム機能',
     'vigoursEcommerce.features.product.title': '商品管理',
     'vigoursEcommerce.features.product.catalog': 'カテゴリー別の包括的な商品カタログ',
@@ -4690,7 +4704,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.features.admin.inventory': '在庫管理と追跡',
     'vigoursEcommerce.features.admin.orders': '注文処理と履行',
     'vigoursEcommerce.features.admin.analytics': '売上分析とレポート',
-    
+
     'vigoursEcommerce.process.title': '開発プロセス',
     'vigoursEcommerce.process.phase1.title': 'フェーズ1: 計画とデザイン',
     'vigoursEcommerce.process.phase1.description': 'Vigours Organicのビジネスモデルを理解し、彼らの価値を反映するプラットフォームをデザイン。',
@@ -4712,7 +4726,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.process.phase4.deliverable1': '管理者ダッシュボードとユーザー管理',
     'vigoursEcommerce.process.phase4.deliverable2': '分析とレポートシステム',
     'vigoursEcommerce.process.phase4.deliverable3': 'テスト、デプロイ、ローンチ',
-    
+
     'vigoursEcommerce.results.title': 'プロジェクト結果',
     'vigoursEcommerce.results.business.title': 'ビジネスインパクト',
     'vigoursEcommerce.results.business.sales': '売上収益200%増加',
@@ -4724,7 +4738,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.results.technical.scalability': '将来の成長のためのスケーラブルアーキテクチャ',
     'vigoursEcommerce.results.technical.security': '安全な支払い処理とデータ保護',
     'vigoursEcommerce.results.technical.maintenance': '簡単なメンテナンスとコンテンツ管理',
-    
+
     'vigoursEcommerce.technologies.title': '技術スタック',
     'vigoursEcommerce.tech.frontend.title': 'フロントエンド技術',
     'vigoursEcommerce.tech.frontend.nextjs': '最適なパフォーマンスのためのモダンなReactフレームワーク',
@@ -4741,7 +4755,7 @@ const translations: Record<string, Record<string, string>> = {
     'vigoursEcommerce.tech.database.redis': '高性能キャッシュシステム',
     'vigoursEcommerce.tech.database.cloudinary': 'クラウドベースの画像とメディア管理',
     'vigoursEcommerce.tech.database.stripe': '安全な支払い処理プラットフォーム',
-    
+
     'vigoursEcommerce.cta.title': 'Eコマースプラットフォームを構築する準備はできていますか？',
     'vigoursEcommerce.cta.description': '売上を促進し、ビジネスを成長させる強力なEコマースソリューションの作成をお手伝いします。',
     'vigoursEcommerce.cta.button1': 'サービスを見る',
@@ -4812,6 +4826,13 @@ const translations: Record<string, Record<string, string>> = {
     'dropdown.services.cloud': 'الحوسبة السحابية',
     'dropdown.services.design': 'الرسومات والتصميم',
     'dropdown.services.marketing': 'التسويق الرقمي',
+    // Products dropdown section
+    'dropdown.products.erp': 'نظام ERP و CRM قابل للتخصيص',
+    'dropdown.products.pos': 'نظام POS و LMS قابل للتخصيص',
+    'dropdown.products.templates': 'قوالب كاملة للمواقع والتطبيقات والتجارة الإلكترونية',
+    'dropdown.products.ai': 'سير عمل الأتمتة بالذكاء الاصطناعي',
+    'dropdown.products.chatbots': 'روبوتات الدردشة ووكلاء الذكاء الاصطناعي المخصصة',
+    'dropdown.products.marketplace': 'استكشف السوق الخاص بنا',
     // Community dropdown
     'dropdown.community.about': 'حول المجتمع',
     'dropdown.community.events': 'الأحداث',
@@ -5221,7 +5242,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.contact.title': 'تواصل مع فريق الشراكة لدينا',
     'partners.contact.content1': 'مستعد لاستكشاف فرص الشراكة مع Upvista Digital؟ فريق الشراكة لدينا متاح لمناقشة كيف يمكننا خلق قيمة معاً. نرحب بالفرصة لمعرفة المزيد عن منظمتك واستكشاف فرص التعاون المحتملة.',
     'partners.contact.content2': 'للاستفسارات حول الشراكة أو فرص التعاون أو لمعرفة المزيد عن فلسفة الشراكة لدينا، يرجى الاتصال بفريق الشراكة لدينا. نتطلع إلى بناء تحالفات استراتيجية تدفع الابتكار وتخلق قيمة استثنائية لجميع أصحاب المصلحة.',
-    
+
     // Featured Partners Section
     'partners.featured.badge': 'المتعاونون الاستراتيجيون',
     'partners.featured.title': 'شركاء يوسعون مشاريعنا الحدودية',
@@ -5236,7 +5257,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.featured.dravion.value': 'يمدد قدرة Upvista على بناء أنظمة تفاعلية معقدة ويسرع التسليم في المشاريع متعددة التخصصات.',
     'partners.featured.strengthsLabel': 'نقاط القوة الأساسية',
     'partners.featured.cta': 'استكشف الشراكة',
-    
+
     // Dravion Technologies Detail Page
     'dravion.hero.badge': 'ملف الشريك الاستراتيجي',
     'dravion.hero.title': 'Dravion Technologies x Upvista Digital',
@@ -5366,7 +5387,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.projectTypes.fixes.description': 'مطورونا ذوو الخبرة يحددون بسرعة المشاكل التقنية وعنق الزجاجة في الأداء ومشاكل التوافق ويحلونها. نحن نقدم خدمات تصحيح شاملة مع تقارير مفصلة وننفذ إجراءات وقائية لتجنب المشاكل المستقبلية.',
     'webdev.projectTypes.features.title': 'تحسين الميزات والإضافات',
     'webdev.projectTypes.features.description': 'عزز موقعك الإلكتروني الحالي بميزات جديدة ووظائف محسنة وتكاملات حديثة. نحن نحلل إعدادك الحالي ونوصي بتحسينات استراتيجية تحسن تجربة المستخدم وأداء الأعمال مع الحفاظ على استقرار النظام.',
-   
+
     // Development Roadmap
     'webdev.roadmap.title': 'خريطة طريق التطوير',
     'webdev.roadmap.step1.title': 'الاستشارة والاكتشاف',
@@ -5405,7 +5426,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.roadmap.services.auth': 'المصادقة والأمان',
     'webdev.roadmap.services.performance': 'تحسين الأداء',
     'webdev.roadmap.services.qa': 'الاختبار وضمان الجودة',
-    
+
     // Contact Page
     'contact.title': 'اتصل بنا',
     'contact.subtitle': 'تواصل معنا لمناقشة مشروعك',
@@ -5466,7 +5487,7 @@ const translations: Record<string, Record<string, string>> = {
     'contact.founder.name': 'حمزة حفيظ',
     'contact.founder.title': 'المؤسس والرئيس التنفيذي، Upvista Digital',
     'contact.founder.quote': 'في Upvista Digital، نؤمن بتحويل الأفكار إلى تميز رقمي. مهمتنا هي تمكين الشركات بحلول مبتكرة تدفع النمو والنجاح في المشهد الرقمي. مع فريق من الخبراء المتحمسين والتكنولوجيا المتطورة، نلتزم بتقديم نتائج استثنائية تتجاوز التوقعات. دعونا نبني شيئًا استثنائيًا معًا.',
-    
+
     // Consultation Page
     'consultation.title': 'دعنا نتحدث عن الأعمال',
     'consultation.subtitle': 'اختر الطريقة المفضلة لديك للتواصل معنا وابدأ في بناء مستقبلك الرقمي.',
@@ -5543,7 +5564,7 @@ const translations: Record<string, Record<string, string>> = {
     'consultation.schedule.emailDesc': 'جدولة إيميل تقليدية',
     'consultation.video.zoomDesc': 'استشارة فيديو احترافية عبر Zoom',
     'consultation.video.googleMeetDesc': 'اجتماع سهل عبر المتصفح عبر Google Meet',
-    
+
     // Services Page
     'services.hero.portfolio': 'استكشف محفظتنا',
     'services.hero.weBuild': 'نحن نبني',
@@ -5758,7 +5779,7 @@ const translations: Record<string, Record<string, string>> = {
     'services.standards.item5.description': 'نتعلم ونتكيف وننمو مع كل مشروع.',
     'services.cta.button': 'ابدأ تحولك',
     'services.cta.text': 'مستعد لرفع مستوى عملك؟ دعونا نبني شيئًا استثنائيًا معًا.',
-    
+
     // AI & Automation Page
     'ai.hero.badge': 'التميز في الذكاء الاصطناعي والأتمتة',
     'ai.hero.title': 'الذكاء الاصطناعي والأتمتة',
@@ -5913,7 +5934,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.mission.industry6.name': 'خدمة العملاء',
     'ai.mission.industry6.description': 'روبوتات محادثة ذكية، وتوجيه تذاكر تلقائي، وتحليل المشاعر، ورؤى عملاء مدعومة بالذكاء الاصطناعي لتحسين تقديم الخدمة.',
     'ai.mission.ending': 'هل أنت مستعد لتحويل عملك بالذكاء الاصطناعي والأتمتة؟ دعونا نبني حلولاً ذكية تحقق نتائج حقيقية.',
-    
+
     // Cloud Services Page
     'cloud.hero.badge': 'التميز في الخدمات السحابية',
     'cloud.hero.title': 'الخدمات السحابية',
@@ -6068,7 +6089,7 @@ const translations: Record<string, Record<string, string>> = {
     'cloud.mission.industry6.name': 'منصات SaaS',
     'cloud.mission.industry6.description': 'بنى SaaS متعددة المستأجرين، أنظمة إدارة الاشتراكات، منصات API، وحلول خدمات مصغرة قابلة للتوسع.',
     'cloud.mission.ending': 'هل أنت مستعد لتحويل عملك بتكنولوجيا السحابة؟ دعونا نبني حلولاً قابلة للتوسع وآمنة تدفع نجاحك.',
-    
+
     // Design Services Page
     'design.hero.badge': 'التميز في التصميم',
     'design.hero.title': 'خدمات التصميم',
@@ -6223,7 +6244,7 @@ const translations: Record<string, Record<string, string>> = {
     'design.mission.industry6.name': 'الوكالات الإبداعية',
     'design.mission.industry6.description': 'حلول تصميم جريئة وإبداعية للوكالات والمحافظ والمحترفين المبدعين الذين يعرضون أعمالهم.',
     'design.mission.ending': 'هل أنت مستعد لرفع علامتك التجارية بتصميم استثنائي؟ دعونا ننشئ تجارب بصرية تأسر جمهورك وتدفع نجاحك.',
-    
+
     // Community Page
     'community.hero.title': 'مجتمع أبفيستا',
     'community.hero.subtitle': 'مكان مفتوح المصدر حيث يتعاون المطورون والمصممون والمهندسون من جميع أنحاء العالم ويتعلمون ويتعرفون وينمون وحتى يكسبون.',
@@ -6249,7 +6270,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.p1': 'مجتمع أبفيستا مفتوح لأي شخص لديه شغف بالتكنولوجيا ورغبة في التعاون والتعلم والنمو. سواء كنت طالبًا بدأ للتو رحلته، أو محترفًا متمرسًا يتطلع لمشاركة خبرته، أو رائد أعمال يبحث عن متعاونين لفكرته الكبيرة التالية، هناك مكان لك هنا.',
     'community.join.p2': 'من خلال الانضمام إلى مجتمعنا، تصبح جزءًا من حركة عالمية تشكل مستقبل التكنولوجيا. ستحصل على الوصول إلى شبكة من المحترفين الموهوبين، وفرص للتعاون والكسب، ومنصة لعرض عملك وبناء سمعتك.',
     'community.join.p3': 'معًا، نبني أكثر من مجرد برمجيات—نبني اتصالات وفرص ومجتمع يمكن الجميع من الوصول إلى إمكاناتهم الكاملة في العالم الرقمي.',
-    
+
     // Community Join Page
     'community.join.hero.title': 'انضم إلى مجتمعنا',
     'community.join.hero.subtitle': 'تواصل مع المطورين والمصممين والمهندسين في جميع أنحاء العالم',
@@ -6265,7 +6286,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.button': 'انضم للمجتمع',
     'community.join.cta.title': 'انضم إلى منصات متعددة',
     'community.join.cta.description': 'يمكنك الانضمام إلينا على منصات متعددة للبقاء على اتصال بالطريقة التي تناسبك. كل منصة تقدم فوائد وفرص فريدة.',
-    
+
     // Research Page
     'research.hero.title': 'البحث والابتكار',
     'research.hero.subtitle': 'تلبية احتياجات العملاء وريادة تقنيات المستقبل',
@@ -6299,7 +6320,7 @@ const translations: Record<string, Record<string, string>> = {
     'research.mission.title': 'مدفوعون بالرؤية، مدعومون بالابتكار',
     'research.mission.description': 'من خلال البحث الدقيق، والسعي الشغوف للمعرفة، والمساهمة التعاونية، نبني أساس التقدم التكنولوجي التحويلي. كل تحدٍ نحله وكل تقنية نستكشفها تقربنا من تشكيل مستقبل أفضل.',
     'research.learnMore': 'معرفة المزيد',
-    
+
     // GCDF Page
     'gcdf.backToResearch': 'العودة إلى البحث',
     'gcdf.label': 'مبادرة بحثية',
@@ -6352,7 +6373,7 @@ const translations: Record<string, Record<string, string>> = {
     'gcdf.future.title': 'الطريق إلى الأمام',
     'gcdf.future.description': 'مع تقدم مشروع كورتكس ونضوج قدراتنا في تطوير الذكاء الاصطناعي العام، سنكون في وضع أفضل للتقدم بنسيج الدفاع السيبراني العالمي من المفهوم إلى التنفيذ. تدفع هذه الرؤية جهودنا البحثية وتوجه تخطيطنا الاستراتيجي طويل الأجل.',
     'gcdf.future.projectCortexLink': 'تعرف على مشروع كورتكس',
-    
+
     // Stand With Palestine Page
     'palestine.backHome': 'العودة إلى الصفحة الرئيسية',
     'palestine.badge': 'الإنسانية • الرحمة • العدالة',
@@ -6409,12 +6430,12 @@ const translations: Record<string, Record<string, string>> = {
     'palestine.prayer.line2': 'لتتدفق العدالة كالأنهار.',
     'palestine.prayer.line3': 'لتدق الحرية من كل ركن من أركان الأرض.',
     'palestine.footer': 'Upvista Digital',
-    
+
     // Software Development Page
     'softdev.badge': 'تطوير البرمجيات المتقدم',
     'softdev.title': 'تطوير البرمجيات المتقدم',
     'softdev.subtitle': 'حلول برمجية مبتكرة تحول الأعمال وتدفع النمو الرقمي',
-    
+
     'softdev.projectTypes.title': 'أنواع المشاريع',
     'softdev.projectTypes.subtitle': 'نقدم حلول برمجية شاملة لمجموعة متنوعة من احتياجات الأعمال',
     'softdev.projectTypes.heading': 'أنواع المشاريع التي نطورها',
@@ -6426,7 +6447,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.projectTypes.enterprise.description': 'تطبيقات مؤسسية واسعة النطاق مع ميزات متقدمة وأمان وتكامل شامل.',
     'softdev.projectTypes.integration.title': 'خدمات التكامل',
     'softdev.projectTypes.integration.description': 'تكامل سلس للأنظمة المختلفة مع APIs والبرمجيات الوسطية ومزامنة البيانات.',
-    
+
     'softdev.techStack.title': 'مجموعة التقنيات',
     'softdev.techStack.subtitle': 'أحدث التقنيات والأدوات لضمان أفضل النتائج',
     'softdev.techStack.heading': 'مجموعة التقنيات المتقدمة',
@@ -6455,7 +6476,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.techStack.database': 'قواعد البيانات',
     'softdev.techStack.database.desc1': 'نصمم وننفذ أنظمة قواعد بيانات متقدمة ومحسنة.',
     'softdev.techStack.database.desc2': 'حلولنا تشمل التحليلات ومعالجة البيانات في الوقت الفعلي.',
-    
+
     'softdev.caseStudies.title': 'دراسات حالة تطوير البرمجيات',
     'softdev.caseStudies.subtitle': 'استكشف مشاريع تطوير البرمجيات الناجحة عبر مختلف الصناعات',
     'softdev.caseStudies.readMore': 'اقرأ المزيد',
@@ -6468,10 +6489,10 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.caseStudies.lms.title': 'نظام تخطيط موارد المؤسسة',
     'softdev.caseStudies.lms.description': 'نظام تخطيط موارد المؤسسة متقدم مع وحدات متكاملة للتمويل والموارد البشرية والمخزون وعمليات الأعمال.',
     'softdev.caseStudies.lms.tag': 'حل مؤسسي',
-    
+
     'softdev.process.title': 'عملية تطوير البرمجيات',
     'softdev.process.subtitle': 'منهجيتنا المثبتة تضمن تسليم برمجيات ناجحة بجودة وكفاءة',
-    
+
     'softdev.consultation.title': 'استشارة مجانية لتطوير البرمجيات',
     'softdev.consultation.content': 'احصل على نصائح الخبراء حول مشروع البرمجيات الخاص بك مع استشارة مجانية ودعم مجاني لمدة شهر بعد اكتمال المشروع.',
     'softdev.consultation.button': 'ابدأ الاستشارة المجانية',
@@ -6483,7 +6504,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.consultation.service3.title': 'دعم ما بعد الإطلاق',
     'softdev.consultation.service3.description': 'صيانة مستمرة وتحديثات لضمان الأداء الأمثل.',
     'softdev.consultation.manualLink': 'تحميل دليل العمليات',
-    
+
     'softdev.mission.title': 'مهمتنا',
     'softdev.mission.content': 'نحن ملتزمون بتقديم حلول برمجية مبتكرة تحول الأعمال وتدفع النجاح الرقمي. مهمتنا هي تمكين المنظمات بتقنيات متطورة تعزز الإنتاجية والكفاءة والنمو.',
     'softdev.mission.industries': 'الصناعات التي نخدمها',
@@ -6500,12 +6521,12 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.mission.industry6.name': 'الإبداع والتصميم',
     'softdev.mission.industry6.description': 'حلول برمجية مخصصة للوكالات الإبداعية والمصممين والمهنيين المبدعين.',
     'softdev.mission.ending': 'هل أنت مستعد لتحويل عملك بحلول برمجية متطورة؟ دعنا ننشئ التطبيق المثالي لاحتياجاتك.',
-    
+
     'softdev.processes.roadmapHeading': 'خارطة طريق التطوير',
     'softdev.processes.step': 'الخطوة',
     'softdev.processes.technologiesHeading': 'التقنيات المستخدمة',
     'softdev.processes.servicesHeading': 'الخدمات المقدمة',
-    
+
     'softdev.processes.custom.title': 'البرمجيات المخصصة',
     'softdev.processes.custom.description': 'حلول برمجية مصممة خصيصًا لتلبية احتياجات عملك الفريدة',
     'softdev.processes.custom.service1': 'تحليل المتطلبات',
@@ -6537,7 +6558,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.custom.roadmap7.title': 'الصيانة والدعم',
     'softdev.processes.custom.roadmap7.description': 'دعم مستمر وصيانة دورية لضمان الأداء الأمثل.',
     'softdev.processes.custom.roadmap7.details': 'نقدم دعمًا فنيًا مستمرًا وتحديثات دورية.',
-    
+
     'softdev.processes.mobile.title': 'تطبيقات الهاتف المحمول',
     'softdev.processes.mobile.description': 'تطبيقات أصلية ومتعددة المنصات لنظامي iOS و Android',
     'softdev.processes.mobile.service1': 'تحليل المتطلبات',
@@ -6562,7 +6583,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.mobile.roadmap6.description': 'نشر التطبيق في متاجر التطبيقات الرسمية.',
     'softdev.processes.mobile.roadmap7.title': 'التسويق والدعم',
     'softdev.processes.mobile.roadmap7.description': 'تسويق التطبيق وتقديم الدعم الفني للمستخدمين.',
-    
+
     'softdev.processes.enterprise.title': 'حلول المؤسسات',
     'softdev.processes.enterprise.description': 'تطبيقات مؤسسية واسعة النطاق مع ميزات متقدمة وأمان',
     'softdev.processes.enterprise.service1': 'تحليل المتطلبات',
@@ -6587,7 +6608,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.enterprise.roadmap6.description': 'نشر النظام في البيئة المؤسسية مع مراقبة الأداء.',
     'softdev.processes.enterprise.roadmap7.title': 'التدريب والدعم',
     'softdev.processes.enterprise.roadmap7.description': 'تدريب الفريق وتقديم الدعم الفني المستمر.',
-    
+
     'softdev.processes.cloud.title': 'الحلول السحابية',
     'softdev.processes.cloud.description': 'تطبيقات سحابية قابلة للتوسع مع ممارسات DevOps حديثة',
     'softdev.processes.cloud.service1': 'تحليل المتطلبات',
@@ -6612,7 +6633,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.cloud.roadmap6.description': 'تطبيق مراقبة شاملة وأمان متقدم.',
     'softdev.processes.cloud.roadmap7.title': 'التدريب والدعم',
     'softdev.processes.cloud.roadmap7.description': 'تدريب الفريق وتقديم الدعم الفني المستمر.',
-    
+
     'softdev.processes.integration.title': 'خدمات التكامل',
     'softdev.processes.integration.description': 'تكامل سلس للأنظمة المختلفة مع APIs والبرمجيات الوسطية',
     'softdev.processes.integration.service1': 'تحليل المتطلبات',
@@ -6703,6 +6724,13 @@ const translations: Record<string, Record<string, string>> = {
     'dropdown.services.cloud': '클라우드',
     'dropdown.services.design': '그래픽 및 디자인',
     'dropdown.services.marketing': '디지털 마케팅',
+    // Products dropdown section
+    'dropdown.products.erp': '맞춤형 ERP & CRM',
+    'dropdown.products.pos': '맞춤형 POS & LMS',
+    'dropdown.products.templates': '전체 웹사이트, 앱 & 전자상거래 템플릿',
+    'dropdown.products.ai': 'AI 자동화 워크플로우',
+    'dropdown.products.chatbots': '챗봇 & 맞춤형 AI 에이전트',
+    'dropdown.products.marketplace': '마켓플레이스 탐색',
     // Community dropdown
     'dropdown.community.about': '커뮤니티 소개',
     'dropdown.community.events': '이벤트',
@@ -6987,7 +7015,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.contact.title': '파트너십 팀과 연결',
     'partners.contact.content1': 'Upvista Digital과의 파트너십 기회를 탐구할 준비가 되셨나요? 우리의 파트너십 팀은 함께 가치를 창조하는 방법에 대해 논의할 준비가 되어 있습니다. 우리는 귀하의 조직에 대해 배우고 잠재적인 협력 기회를 탐구할 기회를 환영합니다.',
     'partners.contact.content2': '파트너십 문의, 협력 기회, 또는 우리의 파트너십 철학에 대해 더 자세히 알아보려면 파트너십 팀에 문의하세요. 혁신을 추진하고 모든 이해관계자에게 탁월한 가치를 창조하는 전략적 동맹을 구축하기를 기대합니다.',
-    
+
     // Featured Partners Section
     'partners.featured.badge': '전략적 협력자',
     'partners.featured.title': '우리의 프론티어 프로젝트를 확장하는 파트너',
@@ -7002,7 +7030,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.featured.dravion.value': '복잡한 인터랙티브 시스템에 대한 Upvista의 구축 역량을 확장하고 다학제 프로젝트의 제공을 가속화합니다.',
     'partners.featured.strengthsLabel': '핵심 강점',
     'partners.featured.cta': '파트너십 탐색',
-    
+
     // Dravion Technologies Detail Page
     'dravion.hero.badge': '전략적 파트너 프로필',
     'dravion.hero.title': 'Dravion Technologies x Upvista Digital',
@@ -7132,7 +7160,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.projectTypes.fixes.description': '경험 많은 개발자들이 기술적 문제, 성능 병목 현상 및 호환성 문제를 빠르게 식별하고 해결합니다. 상세한 보고서와 함께 포괄적인 디버깅 서비스를 제공하고 향후 문제를 방지하기 위한 예방 조치를 구현합니다.',
     'webdev.projectTypes.features.title': '기능 향상 및 추가',
     'webdev.projectTypes.features.description': '새로운 기능, 개선된 기능 및 최신 통합으로 기존 웹사이트를 향상시킵니다. 현재 설정을 분석하고 시스템 안정성을 유지하면서 사용자 경험과 비즈니스 성과를 향상시키는 전략적 개선 사항을 권장합니다.',
-    
+
     // Development Roadmap
     'webdev.roadmap.title': '개발 로드맵',
     'webdev.roadmap.step1.title': '컨설팅 & 디스커버리',
@@ -7171,7 +7199,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.roadmap.services.auth': '인증 및 보안',
     'webdev.roadmap.services.performance': '성능 최적화',
     'webdev.roadmap.services.qa': '테스팅 및 품질 보증',
-    
+
     // Contact Page
     'contact.title': '문의하기',
     'contact.subtitle': '프로젝트에 대해 문의하세요',
@@ -7232,7 +7260,7 @@ const translations: Record<string, Record<string, string>> = {
     'contact.founder.name': '함자 하피즈',
     'contact.founder.title': '창립자 겸 CEO, Upvista Digital',
     'contact.founder.quote': 'Upvista Digital에서는 아이디어를 디지털 우수성으로 변환하는 것을 믿습니다. 우리의 사명은 디지털 환경에서 성장과 성공을 촉진하는 혁신적인 솔루션으로 비즈니스를 강화하는 것입니다. 열정적인 전문가 팀과 최첨단 기술로 기대를 뛰어넘는 탁월한 결과를 제공하기 위해 최선을 다하고 있습니다. 함께 특별한 것을 만들어봅시다.',
-    
+
     // Consultation Page
     'consultation.title': '비즈니스에 대해 이야기해봅시다',
     'consultation.subtitle': '우리와 연결하고 디지털 미래를 구축하기 시작하는 선호하는 방법을 선택하세요.',
@@ -7309,7 +7337,7 @@ const translations: Record<string, Record<string, string>> = {
     'consultation.schedule.emailDesc': '전통적인 이메일 스케줄링',
     'consultation.video.zoomDesc': 'Zoom을 통한 전문적인 비디오 상담',
     'consultation.video.googleMeetDesc': 'Google Meet를 통한 쉬운 브라우저 기반 회의',
-    
+
     // Services Page
     'services.hero.portfolio': '포트폴리오 탐색',
     'services.hero.weBuild': '우리는 구축합니다',
@@ -7524,7 +7552,7 @@ const translations: Record<string, Record<string, string>> = {
     'services.standards.item5.description': '모든 프로젝트에서 배우고 적응하고 성장합니다.',
     'services.cta.button': '혁신 시작',
     'services.cta.text': '비즈니스를 향상시킬 준비가 되셨나요? 함께 특별한 것을 만들어봅시다.',
-    
+
     // AI & Automation Page
     'ai.hero.badge': 'AI 및 자동화 우수성',
     'ai.hero.title': 'AI 및 자동화',
@@ -7679,7 +7707,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.mission.industry6.name': '고객 서비스',
     'ai.mission.industry6.description': '지능형 챗봇, 자동 티켓 라우팅, 감정 분석 및 서비스 제공 개선을 위한 AI 기반 고객 인사이트.',
     'ai.mission.ending': 'AI와 자동화로 비즈니스를 혁신할 준비가 되셨나요? 실제 결과를 제공하는 지능형 솔루션을 구축합시다.',
-    
+
     // Cloud Services Page
     'cloud.hero.badge': '클라우드 서비스 우수성',
     'cloud.hero.title': '클라우드 서비스',
@@ -7834,7 +7862,7 @@ const translations: Record<string, Record<string, string>> = {
     'cloud.mission.industry6.name': 'SaaS 플랫폼',
     'cloud.mission.industry6.description': '멀티 테넌트 SaaS 아키텍처, 구독 관리 시스템, API 플랫폼 및 확장 가능한 마이크로서비스 솔루션.',
     'cloud.mission.ending': '클라우드 기술로 비즈니스를 혁신할 준비가 되셨나요? 성공을 촉진하는 확장 가능하고 안전한 솔루션을 구축합시다.',
-    
+
     // Design Services Page
     'design.hero.badge': '디자인 우수성',
     'design.hero.title': '디자인 서비스',
@@ -7989,7 +8017,7 @@ const translations: Record<string, Record<string, string>> = {
     'design.mission.industry6.name': '크리에이티브 에이전시',
     'design.mission.industry6.description': '작품을 전시하는 에이전시, 포트폴리오 및 크리에이티브 전문가를 위한 대담하고 창의적인 디자인 솔루션.',
     'design.mission.ending': '탁월한 디자인으로 브랜드를 향상시킬 준비가 되셨나요? 청중을 사로잡고 성공을 촉진하는 시각적 경험을 만들어 봅시다.',
-    
+
     // Community Page
     'community.hero.title': '업비스타 커뮤니티',
     'community.hero.subtitle': '전 세계의 개발자, 디자이너, 엔지니어들이 협력하고, 학습하고, 인정받고, 성장하며, 심지어 수익을 얻는 오픈소스 공간.',
@@ -8015,7 +8043,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.p1': '업비스타 커뮤니티는 기술에 대한 열정과 협력, 학습, 성장에 대한 욕구를 가진 모든 사람에게 열려있습니다. 여행을 시작한 학생이든, 전문 지식을 공유하고자 하는 숙련된 전문가이든, 다음 큰 아이디어의 협력자를 찾는 기업가이든, 여기에 당신의 자리가 있습니다.',
     'community.join.p2': '우리 커뮤니티에 참여함으로써, 기술의 미래를 형성하는 글로벌 운동의 일부가 됩니다. 재능 있는 전문가들의 네트워크, 협력과 수익의 기회, 그리고 당신의 작품을 선보이고 평판을 쌓을 플랫폼에 접근할 수 있습니다.',
     'community.join.p3': '함께, 우리는 단순한 소프트웨어 이상을 구축하고 있습니다—연결, 기회, 그리고 디지털 세계에서 모든 사람이 자신의 잠재력을 최대한 발휘할 수 있도록 하는 커뮤니티를 구축하고 있습니다.',
-    
+
     // Community Join Page
     'community.join.hero.title': '커뮤니티 가입',
     'community.join.hero.subtitle': '전 세계 개발자, 디자이너, 엔지니어와 연결',
@@ -8031,7 +8059,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.button': '커뮤니티 가입',
     'community.join.cta.title': '여러 플랫폼 가입',
     'community.join.cta.description': '여러 플랫폼에서 우리와 함께하여 자신에게 가장 적합한 방식으로 연결을 유지할 수 있습니다. 각 플랫폼은 고유한 이점과 기회를 제공합니다.',
-    
+
     // Research Page
     'research.hero.title': '연구 및 혁신',
     'research.hero.subtitle': '고객 요구 충족 및 미래 기술 개척',
@@ -8065,7 +8093,7 @@ const translations: Record<string, Record<string, string>> = {
     'research.mission.title': '비전으로 추진되고 혁신으로 강화됨',
     'research.mission.description': '엄격한 연구, 지식에 대한 열정적인 추구, 협력적 기여를 통해 변혁적 기술 발전의 기반을 구축하고 있습니다. 우리가 해결하는 모든 과제와 탐구하는 모든 기술은 더 나은 미래를 형성하는 데 가깝게 합니다.',
     'research.learnMore': '자세히 보기',
-    
+
     // GCDF Page
     'gcdf.backToResearch': '연구로 돌아가기',
     'gcdf.label': '연구 이니셔티브',
@@ -8118,7 +8146,7 @@ const translations: Record<string, Record<string, string>> = {
     'gcdf.future.title': '앞으로 나아가는 길',
     'gcdf.future.description': '프로젝트 코르텍스가 진행되고 AGI 개발의 역량이 성숙함에 따라 글로벌 사이버 방어 패브릭을 개념에서 구현으로 진전시킬 준비가 더 잘 될 것입니다. 이 비전은 우리의 연구 노력을 추진하고 장기 전략 계획을 안내합니다.',
     'gcdf.future.projectCortexLink': '프로젝트 코르텍스에 대해 알아보기',
-    
+
     // Stand With Palestine Page
     'palestine.backHome': '홈으로 돌아가기',
     'palestine.badge': '인간성 • 연민 • 정의',
@@ -8175,12 +8203,12 @@ const translations: Record<string, Record<string, string>> = {
     'palestine.prayer.line2': '정의가 강처럼 흐르기를.',
     'palestine.prayer.line3': '자유가 땅의 모든 구석에서 울려 퍼지기를.',
     'palestine.footer': 'Upvista Digital',
-    
+
     // Software Development Page
     'softdev.badge': '고급 소프트웨어 개발',
     'softdev.title': '고급 소프트웨어 개발',
     'softdev.subtitle': '비즈니스를 변화시키고 디지털 성장을 이끄는 혁신적인 소프트웨어 솔루션',
-    
+
     'softdev.projectTypes.title': '프로젝트 유형',
     'softdev.projectTypes.subtitle': '다양한 비즈니스 요구사항에 대한 포괄적인 소프트웨어 솔루션을 제공합니다',
     'softdev.projectTypes.heading': '우리가 개발하는 프로젝트 유형',
@@ -8192,7 +8220,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.projectTypes.enterprise.description': '고급 기능, 보안 및 통합 기능을 갖춘 대규모 엔터프라이즈 애플리케이션.',
     'softdev.projectTypes.integration.title': '시스템 통합 서비스',
     'softdev.projectTypes.integration.description': 'API, 미들웨어 및 데이터 동기화를 통한 다양한 시스템의 원활한 통합.',
-    
+
     'softdev.techStack.title': '기술 스택',
     'softdev.techStack.subtitle': '최고의 결과를 보장하는 최신 기술과 도구',
     'softdev.techStack.heading': '고급 기술 스택',
@@ -8221,7 +8249,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.techStack.database': '데이터베이스',
     'softdev.techStack.database.desc1': '고급이고 최적화된 데이터베이스 시스템을 설계하고 구현합니다.',
     'softdev.techStack.database.desc2': '우리의 솔루션에는 분석, 실시간 처리 및 포괄적인 검색 기능이 포함됩니다.',
-    
+
     'softdev.caseStudies.title': '소프트웨어 개발 사례 연구',
     'softdev.caseStudies.subtitle': '다양한 산업 분야에서 성공한 소프트웨어 개발 프로젝트를 탐색하세요',
     'softdev.caseStudies.readMore': '더 읽기',
@@ -8234,10 +8262,10 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.caseStudies.lms.title': '엔터프라이즈용 ERP 시스템',
     'softdev.caseStudies.lms.description': '재무, 인사, 재고 및 비즈니스 운영을 위한 통합 모듈을 갖춘 고급 기업 자원 계획 시스템.',
     'softdev.caseStudies.lms.tag': '엔터프라이즈 솔루션',
-    
+
     'softdev.process.title': '소프트웨어 개발 프로세스',
     'softdev.process.subtitle': '검증된 방법론으로 품질과 효율성을 보장하는 성공적인 소프트웨어 전달',
-    
+
     'softdev.consultation.title': '무료 소프트웨어 개발 컨설팅',
     'softdev.consultation.content': '무료 컨설팅과 프로젝트 완료 후 1개월 무료 지원으로 소프트웨어 프로젝트에 대한 전문가 조언을 받으세요.',
     'softdev.consultation.button': '무료 컨설팅 시작',
@@ -8249,7 +8277,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.consultation.service3.title': '런칭 후 지원',
     'softdev.consultation.service3.description': '최적의 성능을 보장하기 위한 지속적인 유지보수 및 업데이트.',
     'softdev.consultation.manualLink': '운영 매뉴얼 다운로드',
-    
+
     'softdev.mission.title': '우리의 미션',
     'softdev.mission.content': '비즈니스를 변화시키고 디지털 성공을 이끄는 혁신적인 소프트웨어 솔루션 제공에 전념하고 있습니다. 우리의 미션은 생산성, 효율성 및 성장을 향상시키는 최첨단 기술로 조직을 강화하는 것입니다.',
     'softdev.mission.industries': '우리가 서비스하는 산업',
@@ -8266,12 +8294,12 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.mission.industry6.name': '크리에이티브',
     'softdev.mission.industry6.description': '크리에이티브 에이전시, 디자이너 및 크리에이티브 전문가를 위한 맞춤형 소프트웨어 솔루션.',
     'softdev.mission.ending': '고급 소프트웨어 솔루션으로 비즈니스를 변화시킬 준비가 되셨나요? 귀하의 요구사항에 완벽한 애플리케이션을 만들어보겠습니다.',
-    
+
     'softdev.processes.roadmapHeading': '개발 로드맵',
     'softdev.processes.step': '단계',
     'softdev.processes.technologiesHeading': '사용된 기술',
     'softdev.processes.servicesHeading': '제공되는 서비스',
-    
+
     'softdev.processes.custom.title': '맞춤형 소프트웨어',
     'softdev.processes.custom.description': '귀하의 고유한 비즈니스 요구사항을 충족하도록 설계된 소프트웨어 솔루션',
     'softdev.processes.custom.service1': '요구사항 분석',
@@ -8303,7 +8331,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.custom.roadmap7.title': '유지보수 및 지원',
     'softdev.processes.custom.roadmap7.description': '최적의 성능을 보장하기 위한 지속적인 지원 및 정기 유지보수.',
     'softdev.processes.custom.roadmap7.details': '지속적인 기술 지원과 정기 업데이트를 제공합니다.',
-    
+
     'softdev.processes.mobile.title': '모바일 애플리케이션',
     'softdev.processes.mobile.description': 'iOS와 Android를 위한 네이티브 및 크로스 플랫폼 애플리케이션',
     'softdev.processes.mobile.service1': '요구사항 분석',
@@ -8328,7 +8356,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.mobile.roadmap6.description': '공식 앱 스토어에 앱을 배포합니다.',
     'softdev.processes.mobile.roadmap7.title': '마케팅 및 지원',
     'softdev.processes.mobile.roadmap7.description': '앱 마케팅 및 사용자에 대한 기술 지원 제공.',
-    
+
     'softdev.processes.enterprise.title': '엔터프라이즈 솔루션',
     'softdev.processes.enterprise.description': '고급 기능과 보안을 갖춘 대규모 엔터프라이즈 애플리케이션',
     'softdev.processes.enterprise.service1': '요구사항 분석',
@@ -8353,7 +8381,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.enterprise.roadmap6.description': '성능 모니터링과 함께 엔터프라이즈 환경에 시스템을 배포합니다.',
     'softdev.processes.enterprise.roadmap7.title': '교육 및 지원',
     'softdev.processes.enterprise.roadmap7.description': '팀 교육 및 지속적인 기술 지원 제공.',
-    
+
     'softdev.processes.cloud.title': '클라우드 솔루션',
     'softdev.processes.cloud.description': '현대적인 DevOps 관행과 함께 확장 가능한 클라우드 애플리케이션',
     'softdev.processes.cloud.service1': '요구사항 분석',
@@ -8378,7 +8406,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.cloud.roadmap6.description': '포괄적인 모니터링과 고급 보안을 적용합니다.',
     'softdev.processes.cloud.roadmap7.title': '교육 및 지원',
     'softdev.processes.cloud.roadmap7.description': '팀 교육 및 지속적인 기술 지원 제공.',
-    
+
     'softdev.processes.integration.title': '통합 서비스',
     'softdev.processes.integration.description': 'API와 미들웨어를 통한 다양한 시스템의 원활한 통합',
     'softdev.processes.integration.service1': '요구사항 분석',
@@ -8469,6 +8497,13 @@ const translations: Record<string, Record<string, string>> = {
     'dropdown.services.cloud': '云计算',
     'dropdown.services.design': '图形设计',
     'dropdown.services.marketing': '数字营销',
+    // Products dropdown section
+    'dropdown.products.erp': '可定制的ERP和CRM',
+    'dropdown.products.pos': '可定制的POS和LMS',
+    'dropdown.products.templates': '完整的网站、应用和电子商务模板',
+    'dropdown.products.ai': 'AI自动化工作流',
+    'dropdown.products.chatbots': '聊天机器人和定制AI代理',
+    'dropdown.products.marketplace': '探索我们的市场',
     // Community dropdown
     'dropdown.community.about': '关于社区',
     'dropdown.community.events': '活动',
@@ -8878,7 +8913,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.contact.title': '与我们的合作伙伴团队联系',
     'partners.contact.content1': '准备好探索与Upvista Digital的合作伙伴机会了吗？我们的合作伙伴团队随时准备讨论如何共同创造价值。我们欢迎有机会了解您的组织并探索潜在的合作机会。',
     'partners.contact.content2': '如需合作伙伴咨询、合作机会或了解更多关于我们的合作伙伴理念，请联系我们的合作伙伴团队。我们期待建立推动创新并为所有利益相关者创造卓越价值的战略联盟。',
-    
+
     // Featured Partners Section
     'partners.featured.badge': '战略合作者',
     'partners.featured.title': '扩展我们前沿项目的合作伙伴',
@@ -8893,7 +8928,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.featured.dravion.value': '扩展Upvista构建复杂交互系统的能力，并加速多学科项目的交付。',
     'partners.featured.strengthsLabel': '核心优势',
     'partners.featured.cta': '探索合作伙伴关系',
-    
+
     // Dravion Technologies Detail Page
     'dravion.hero.badge': '战略合作伙伴简介',
     'dravion.hero.title': 'Dravion Technologies x Upvista Digital',
@@ -9061,7 +9096,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.roadmap.services.auth': '身份验证与安全',
     'webdev.roadmap.services.performance': '性能优化',
     'webdev.roadmap.services.qa': '测试与质量保证',
-    
+
     // Contact Page
     'contact.title': '联系我们',
     'contact.subtitle': '与我们联系讨论您的项目',
@@ -9122,7 +9157,7 @@ const translations: Record<string, Record<string, string>> = {
     'contact.founder.name': '哈姆扎·哈菲兹',
     'contact.founder.title': '创始人兼CEO，Upvista Digital',
     'contact.founder.quote': '在Upvista Digital，我们相信将想法转变为数字卓越。我们的使命是通过创新解决方案赋能企业，推动数字环境中的增长和成功。凭借充满激情的专家团队和尖端技术，我们致力于提供超越期望的卓越成果。让我们一起创造非凡的东西。',
-    
+
     // Consultation Page
     'consultation.title': '让我们谈谈业务',
     'consultation.subtitle': '选择您喜欢的联系方式，开始构建您的数字未来。',
@@ -9199,7 +9234,7 @@ const translations: Record<string, Record<string, string>> = {
     'consultation.schedule.emailDesc': '传统邮件调度',
     'consultation.video.zoomDesc': '通过Zoom进行专业视频咨询',
     'consultation.video.googleMeetDesc': '通过Google Meet进行简单的基于浏览器的会议',
-    
+
     // Services Page
     'services.hero.portfolio': '探索我们的作品集',
     'services.hero.weBuild': '我们构建',
@@ -9414,7 +9449,7 @@ const translations: Record<string, Record<string, string>> = {
     'services.standards.item5.description': '我们在每个项目中学习、适应和成长。',
     'services.cta.button': '开始您的转型',
     'services.cta.text': '准备提升您的业务了吗？让我们一起创造非凡的东西。',
-    
+
     // AI & Automation Page
     'ai.hero.badge': 'AI与自动化卓越',
     'ai.hero.title': 'AI与自动化',
@@ -9569,7 +9604,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.mission.industry6.name': '客户服务',
     'ai.mission.industry6.description': '智能聊天机器人、自动工单路由、情感分析和AI驱动的客户洞察，改善服务交付。',
     'ai.mission.ending': '准备好通过AI和自动化改变您的业务了吗？让我们构建能够带来实际成果的智能解决方案。',
-    
+
     // Cloud Services Page
     'cloud.hero.badge': '云服务卓越',
     'cloud.hero.title': '云服务',
@@ -9724,7 +9759,7 @@ const translations: Record<string, Record<string, string>> = {
     'cloud.mission.industry6.name': 'SaaS平台',
     'cloud.mission.industry6.description': '多租户SaaS架构、订阅管理系统、API平台和可扩展的微服务解决方案。',
     'cloud.mission.ending': '准备好用云技术改变您的业务了吗？让我们构建推动成功的可扩展、安全的解决方案。',
-    
+
     // Design Services Page
     'design.hero.badge': '设计卓越',
     'design.hero.title': '设计服务',
@@ -9879,7 +9914,7 @@ const translations: Record<string, Record<string, string>> = {
     'design.mission.industry6.name': '创意机构',
     'design.mission.industry6.description': '为展示作品的机构、作品集和创意专业人士提供大胆、创意的设计解决方案。',
     'design.mission.ending': '准备好用卓越的设计提升您的品牌了吗？让我们创造吸引观众并推动成功的视觉体验。',
-    
+
     // Community Page
     'community.hero.title': 'Upvista社区',
     'community.hero.subtitle': '一个开源的地方，全世界的开发者、设计师、工程师在这里协作、学习、认可、成长，甚至赚钱。',
@@ -9905,7 +9940,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.p1': 'Upvista社区对任何对技术充满热情并希望协作、学习和成长的人开放。无论您是刚开始旅程的学生、希望分享专业知识的经验丰富的专业人士，还是寻求下一个大想法合作者的企业家，这里都有您的位置。',
     'community.join.p2': '通过加入我们的社区，您成为塑造技术未来的全球运动的一部分。您将获得才华横溢的专业人士网络、协作和收入机会，以及展示您作品和建立声誉的平台。',
     'community.join.p3': '我们一起构建的不仅仅是软件——我们正在构建连接、机会和一个让每个人都能在数字世界中发挥全部潜力的社区。',
-    
+
     // Community Join Page
     'community.join.hero.title': '加入我们的社区',
     'community.join.hero.subtitle': '与全球开发者、设计师和工程师联系',
@@ -9921,7 +9956,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.button': '加入社区',
     'community.join.cta.title': '加入多个平台',
     'community.join.cta.description': '您可以在多个平台上加入我们，以最适合您的方式保持联系。每个平台都提供独特的优势和机会。',
-    
+
     // Research Page
     'research.hero.title': '研究与创新',
     'research.hero.subtitle': '满足客户需求并开拓未来技术',
@@ -9955,7 +9990,7 @@ const translations: Record<string, Record<string, string>> = {
     'research.mission.title': '由愿景驱动，由创新赋能',
     'research.mission.description': '通过严谨的研究、对知识的热情追求和协作贡献，我们正在为变革性技术进步奠定基础。我们解决的每一个挑战和探索的每一项技术都使我们更接近塑造更美好的未来。',
     'research.learnMore': '了解更多',
-    
+
     // GCDF Page
     'gcdf.backToResearch': '返回研究',
     'gcdf.label': '研究计划',
@@ -10008,7 +10043,7 @@ const translations: Record<string, Record<string, string>> = {
     'gcdf.future.title': '前进之路',
     'gcdf.future.description': '随着Project Cortex的进展和我们在AGI开发方面的能力成熟，我们将更好地准备将全球网络防御架构从概念推进到实施。这一愿景推动我们的研究努力并指导我们的长期战略规划。',
     'gcdf.future.projectCortexLink': '了解Project Cortex',
-    
+
     // Stand With Palestine Page
     'palestine.backHome': '返回首页',
     'palestine.badge': '人性 • 同情 • 正义',
@@ -10065,12 +10100,12 @@ const translations: Record<string, Record<string, string>> = {
     'palestine.prayer.line2': '愿正义像河流一样流淌。',
     'palestine.prayer.line3': '愿自由在土地的每个角落响起。',
     'palestine.footer': 'Upvista Digital',
-    
+
     // Software Development Page
     'softdev.badge': '高级软件开发',
     'softdev.title': '高级软件开发',
     'softdev.subtitle': '变革业务并推动数字增长的创新软件解决方案',
-    
+
     'softdev.projectTypes.title': '项目类型',
     'softdev.projectTypes.subtitle': '为各种业务需求提供全面的软件解决方案',
     'softdev.projectTypes.heading': '我们开发的项目类型',
@@ -10082,7 +10117,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.projectTypes.enterprise.description': '具有高级功能、安全性和集成功能的大规模企业应用程序。',
     'softdev.projectTypes.integration.title': '系统集成服务',
     'softdev.projectTypes.integration.description': '通过API、中间件和数据同步实现不同系统的无缝集成。',
-    
+
     'softdev.techStack.title': '技术栈',
     'softdev.techStack.subtitle': '确保最佳结果的最新技术和工具',
     'softdev.techStack.heading': '高级技术栈',
@@ -10111,7 +10146,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.techStack.database': '数据库',
     'softdev.techStack.database.desc1': '设计和实现高级优化的数据库系统。',
     'softdev.techStack.database.desc2': '我们的解决方案包括分析、实时处理和全面的搜索功能。',
-    
+
     'softdev.caseStudies.title': '软件开发案例研究',
     'softdev.caseStudies.subtitle': '探索各个行业成功的软件开发项目',
     'softdev.caseStudies.readMore': '阅读更多',
@@ -10124,10 +10159,10 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.caseStudies.lms.title': '企业ERP系统',
     'softdev.caseStudies.lms.description': '具有财务、人力资源、库存和业务运营集成模块的高级企业资源规划系统。',
     'softdev.caseStudies.lms.tag': '企业解决方案',
-    
+
     'softdev.process.title': '软件开发流程',
     'softdev.process.subtitle': '我们经过验证的方法论确保质量和效率的成功软件交付',
-    
+
     'softdev.consultation.title': '免费软件开发咨询',
     'softdev.consultation.content': '通过免费咨询和项目完成后1个月免费支持获得软件项目的专家建议。',
     'softdev.consultation.button': '开始免费咨询',
@@ -10139,7 +10174,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.consultation.service3.title': '发布后支持',
     'softdev.consultation.service3.description': '确保最佳性能的持续维护和更新。',
     'softdev.consultation.manualLink': '下载操作手册',
-    
+
     'softdev.mission.title': '我们的使命',
     'softdev.mission.content': '我们致力于提供变革业务并推动数字成功的创新软件解决方案。我们的使命是用增强生产力、效率和增长的尖端技术赋能组织。',
     'softdev.mission.industries': '我们服务的行业',
@@ -10156,12 +10191,12 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.mission.industry6.name': '创意设计',
     'softdev.mission.industry6.description': '为创意机构、设计师和创意专业人士定制的软件解决方案。',
     'softdev.mission.ending': '准备好用高级软件解决方案变革您的业务了吗？让我们为您的需求创建完美的应用程序。',
-    
+
     'softdev.processes.roadmapHeading': '开发路线图',
     'softdev.processes.step': '步骤',
     'softdev.processes.technologiesHeading': '使用的技术',
     'softdev.processes.servicesHeading': '提供的服务',
-    
+
     'softdev.processes.custom.title': '定制软件',
     'softdev.processes.custom.description': '满足您独特业务需求的软件解决方案',
     'softdev.processes.custom.service1': '需求分析',
@@ -10193,7 +10228,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.custom.roadmap7.title': '维护和支持',
     'softdev.processes.custom.roadmap7.description': '确保最佳性能的持续支持和定期维护。',
     'softdev.processes.custom.roadmap7.details': '我们提供持续的技术支持和定期更新。',
-    
+
     'softdev.processes.mobile.title': '移动应用程序',
     'softdev.processes.mobile.description': 'iOS和Android的原生和跨平台应用程序',
     'softdev.processes.mobile.service1': '需求分析',
@@ -10218,7 +10253,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.mobile.roadmap6.description': '在官方应用商店发布应用。',
     'softdev.processes.mobile.roadmap7.title': '营销和支持',
     'softdev.processes.mobile.roadmap7.description': '应用营销和为用户提供技术支持。',
-    
+
     'softdev.processes.enterprise.title': '企业解决方案',
     'softdev.processes.enterprise.description': '具有高级功能和安全的大规模企业应用程序',
     'softdev.processes.enterprise.service1': '需求分析',
@@ -10243,7 +10278,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.enterprise.roadmap6.description': '在性能监控下将系统部署到企业环境。',
     'softdev.processes.enterprise.roadmap7.title': '培训和支持',
     'softdev.processes.enterprise.roadmap7.description': '团队培训和持续技术支持。',
-    
+
     'softdev.processes.cloud.title': '云解决方案',
     'softdev.processes.cloud.description': '具有现代DevOps实践的可扩展云应用程序',
     'softdev.processes.cloud.service1': '需求分析',
@@ -10268,7 +10303,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.cloud.roadmap6.description': '应用全面监控和高级安全。',
     'softdev.processes.cloud.roadmap7.title': '培训和支持',
     'softdev.processes.cloud.roadmap7.description': '团队培训和持续技术支持。',
-    
+
     'softdev.processes.integration.title': '集成服务',
     'softdev.processes.integration.description': '通过API和中间件实现不同系统的无缝集成',
     'softdev.processes.integration.service1': '需求分析',
@@ -10359,6 +10394,13 @@ const translations: Record<string, Record<string, string>> = {
     'dropdown.services.cloud': 'Cloud',
     'dropdown.services.design': 'Grafis dan Desain',
     'dropdown.services.marketing': 'Pemasaran Digital',
+    // Products dropdown section
+    'dropdown.products.erp': 'ERP & CRM yang Dapat Disesuaikan',
+    'dropdown.products.pos': 'POS & LMS yang Dapat Disesuaikan',
+    'dropdown.products.templates': 'Template Lengkap Website, Aplikasi & E-commerce',
+    'dropdown.products.ai': 'Alur Kerja Otomasi AI',
+    'dropdown.products.chatbots': 'Chatbot & Agen AI Kustom',
+    'dropdown.products.marketplace': 'Jelajahi Marketplace Kami',
     // Community dropdown
     'dropdown.community.about': 'Tentang Komunitas',
     'dropdown.community.events': 'Acara',
@@ -10768,7 +10810,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.contact.title': 'Terhubung dengan Tim Kemitraan Kami',
     'partners.contact.content1': 'Siap untuk mengeksplorasi peluang kemitraan dengan Upvista Digital? Tim kemitraan kami siap mendiskusikan bagaimana kami dapat menciptakan nilai bersama. Kami menyambut kesempatan untuk mempelajari tentang organisasi Anda dan mengeksplorasi peluang kolaborasi potensial.',
     'partners.contact.content2': 'Untuk pertanyaan kemitraan, peluang kolaborasi, atau untuk mempelajari lebih lanjut tentang filosofi kemitraan kami, silakan hubungi tim kemitraan kami. Kami berharap dapat membangun aliansi strategis yang mendorong inovasi dan menciptakan nilai luar biasa bagi semua pemangku kepentingan.',
-    
+
     // Featured Partners Section
     'partners.featured.badge': 'Kolaborator Strategis',
     'partners.featured.title': 'Mitra yang Memperluas Proyek Perbatasan Kami',
@@ -10783,7 +10825,7 @@ const translations: Record<string, Record<string, string>> = {
     'partners.featured.dravion.value': 'Memperluas kapasitas pembangunan Upvista untuk sistem interaktif yang kompleks dan mempercepat pengiriman pada proyek multidisiplin.',
     'partners.featured.strengthsLabel': 'Kekuatan Inti',
     'partners.featured.cta': 'Jelajahi Kemitraan',
-    
+
     // Dravion Technologies Detail Page
     'dravion.hero.badge': 'Profil Mitra Strategis',
     'dravion.hero.title': 'Dravion Technologies x Upvista Digital',
@@ -10913,7 +10955,7 @@ const translations: Record<string, Record<string, string>> = {
     'webdev.projectTypes.fixes.description': 'Pengembang berpengalaman kami dengan cepat mengidentifikasi dan menyelesaikan masalah teknis, hambatan kinerja, dan masalah kompatibilitas. Kami menyediakan layanan debugging komprehensif dengan laporan detail dan mengimplementasikan langkah-langkah pencegahan untuk menghindari masalah di masa depan.',
     'webdev.projectTypes.features.title': 'Peningkatan Fitur & Penambahan',
     'webdev.projectTypes.features.description': 'Tingkatkan situs web yang ada dengan fitur baru, fungsionalitas yang diperbaiki, dan integrasi modern. Kami menganalisis setup Anda saat ini dan merekomendasikan peningkatan strategis yang meningkatkan pengalaman pengguna dan kinerja bisnis sambil mempertahankan stabilitas sistem.',
-    
+
     // Contact Page
     'contact.title': 'Hubungi Kami',
     'contact.subtitle': 'Hubungi kami untuk mendiskusikan proyek Anda',
@@ -10974,7 +11016,7 @@ const translations: Record<string, Record<string, string>> = {
     'contact.founder.name': 'Hamza Hafeez',
     'contact.founder.title': 'Pendiri & CEO, Upvista Digital',
     'contact.founder.quote': 'Di Upvista Digital, kami percaya dalam mengubah ide menjadi keunggulan digital. Misi kami adalah memberdayakan bisnis dengan solusi inovatif yang mendorong pertumbuhan dan kesuksesan di lanskap digital. Dengan tim ahli yang bersemangat dan teknologi canggih, kami berkomitmen untuk memberikan hasil luar biasa yang melampaui harapan. Mari kita bangun sesuatu yang luar biasa bersama.',
-    
+
     // Consultation Page
     'consultation.title': 'Mari Bicara Bisnis',
     'consultation.subtitle': 'Pilih cara yang Anda sukai untuk terhubung dengan kami dan mulai membangun masa depan digital Anda.',
@@ -11051,7 +11093,7 @@ const translations: Record<string, Record<string, string>> = {
     'consultation.schedule.emailDesc': 'Penjadwalan email tradisional',
     'consultation.video.zoomDesc': 'Konsultasi video profesional melalui Zoom',
     'consultation.video.googleMeetDesc': 'Rapat berbasis browser yang mudah melalui Google Meet',
-    
+
     // Services Page
     'services.hero.portfolio': 'Jelajahi portfolio kami',
     'services.hero.weBuild': 'Kami membangun',
@@ -11266,7 +11308,7 @@ const translations: Record<string, Record<string, string>> = {
     'services.standards.item5.description': 'Kami belajar, beradaptasi, dan tumbuh dengan setiap proyek.',
     'services.cta.button': 'Mulai Transformasi Anda',
     'services.cta.text': 'Siap meningkatkan bisnis Anda? Mari kita bangun sesuatu yang luar biasa bersama.',
-    
+
     // AI & Automation Page
     'ai.hero.badge': 'Keunggulan AI & Otomasi',
     'ai.hero.title': 'AI & Otomasi',
@@ -11421,7 +11463,7 @@ const translations: Record<string, Record<string, string>> = {
     'ai.mission.industry6.name': 'Layanan Pelanggan',
     'ai.mission.industry6.description': 'Chatbot cerdas, routing tiket otomatis, analisis sentimen, dan wawasan pelanggan bertenaga AI untuk penyampaian layanan yang lebih baik.',
     'ai.mission.ending': 'Siap mengubah bisnis Anda dengan AI dan otomasi? Mari kita bangun solusi cerdas yang memberikan hasil nyata.',
-    
+
     // Cloud Services Page
     'cloud.hero.badge': 'Keunggulan Layanan Cloud',
     'cloud.hero.title': 'Layanan Cloud',
@@ -11576,7 +11618,7 @@ const translations: Record<string, Record<string, string>> = {
     'cloud.mission.industry6.name': 'Platform SaaS',
     'cloud.mission.industry6.description': 'Arsitektur SaaS multi-tenant, sistem manajemen langganan, platform API, dan solusi mikroservis yang dapat diskalakan.',
     'cloud.mission.ending': 'Siap mengubah bisnis Anda dengan teknologi cloud? Mari kita bangun solusi yang dapat diskalakan dan aman yang mendorong kesuksesan Anda.',
-    
+
     // Design Services Page
     'design.hero.badge': 'Keunggulan Desain',
     'design.hero.title': 'Layanan Desain',
@@ -11731,7 +11773,7 @@ const translations: Record<string, Record<string, string>> = {
     'design.mission.industry6.name': 'Agensi Kreatif',
     'design.mission.industry6.description': 'Solusi desain yang berani dan kreatif untuk agensi, portofolio, dan profesional kreatif yang menampilkan karya mereka.',
     'design.mission.ending': 'Siap meningkatkan merek Anda dengan desain yang luar biasa? Mari ciptakan pengalaman visual yang memikat audiens Anda dan mendorong kesuksesan Anda.',
-    
+
     // Community Page
     'community.hero.title': 'Komunitas Upvista',
     'community.hero.subtitle': 'Tempat open source di mana pengembang, desainer, insinyur dari seluruh dunia berkolaborasi, belajar, diakui, tumbuh, dan bahkan menghasilkan uang.',
@@ -11757,7 +11799,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.p1': 'Komunitas Upvista terbuka untuk siapa saja yang memiliki hasrat untuk teknologi dan keinginan untuk berkolaborasi, belajar, dan tumbuh. Baik Anda seorang siswa yang baru memulai perjalanan, profesional berpengalaman yang ingin berbagi keahlian, atau wirausahawan yang mencari kolaborator untuk ide besar berikutnya, ada tempat untuk Anda di sini.',
     'community.join.p2': 'Dengan bergabung dengan komunitas kami, Anda menjadi bagian dari gerakan global yang membentuk masa depan teknologi. Anda akan memiliki akses ke jaringan profesional berbakat, peluang untuk kolaborasi dan penghasilan, dan platform untuk memamerkan karya Anda dan membangun reputasi.',
     'community.join.p3': 'Bersama-sama, kami membangun lebih dari sekadar perangkat lunak—kami membangun koneksi, peluang, dan komunitas yang memberdayakan semua orang untuk mencapai potensi penuh mereka di dunia digital.',
-    
+
     // Community Join Page
     'community.join.hero.title': 'Bergabung dengan Komunitas Kami',
     'community.join.hero.subtitle': 'Terhubung dengan pengembang, desainer, dan insinyur di seluruh dunia',
@@ -11773,7 +11815,7 @@ const translations: Record<string, Record<string, string>> = {
     'community.join.button': 'Bergabung dengan Komunitas',
     'community.join.cta.title': 'Bergabung dengan Banyak Platform',
     'community.join.cta.description': 'Anda dapat bergabung dengan kami di berbagai platform untuk tetap terhubung dengan cara yang paling cocok untuk Anda. Setiap platform menawarkan manfaat dan peluang unik.',
-    
+
     // Research Page
     'research.hero.title': 'Penelitian dan Inovasi',
     'research.hero.subtitle': 'Memenuhi Kebutuhan Klien dan Memelopori Teknologi Masa Depan',
@@ -11807,7 +11849,7 @@ const translations: Record<string, Record<string, string>> = {
     'research.mission.title': 'Didorong oleh Visi, Diperkuat oleh Inovasi',
     'research.mission.description': 'Melalui penelitian yang ketat, pengejaran pengetahuan yang penuh semangat, dan kontribusi kolaboratif, kami membangun fondasi untuk kemajuan teknologi transformatif. Setiap tantangan yang kami selesaikan dan setiap teknologi yang kami eksplorasi membawa kami lebih dekat untuk membentuk masa depan yang lebih baik.',
     'research.learnMore': 'Pelajari Lebih Lanjut',
-    
+
     // GCDF Page
     'gcdf.backToResearch': 'Kembali ke Penelitian',
     'gcdf.label': 'INISIATIF PENELITIAN',
@@ -11860,7 +11902,7 @@ const translations: Record<string, Record<string, string>> = {
     'gcdf.future.title': 'Jalan ke Depan',
     'gcdf.future.description': 'Seiring Project Cortex berkembang dan kemampuan kami dalam pengembangan AGI matang, kami akan lebih siap untuk memajukan Global Cyber Defence Fabric dari konsep ke implementasi. Visi ini mendorong upaya penelitian kami dan memandu perencanaan strategis jangka panjang kami.',
     'gcdf.future.projectCortexLink': 'Pelajari Tentang Project Cortex',
-    
+
     // Stand With Palestine Page
     'palestine.backHome': 'Kembali ke Beranda',
     'palestine.badge': 'Kemanusiaan • Kasih Sayang • Keadilan',
@@ -11917,12 +11959,12 @@ const translations: Record<string, Record<string, string>> = {
     'palestine.prayer.line2': 'Semoga keadilan mengalir seperti sungai.',
     'palestine.prayer.line3': 'Semoga kebebasan bergema dari setiap sudut tanah.',
     'palestine.footer': 'Upvista Digital',
-    
+
     // Software Development Page
     'softdev.badge': 'Pengembangan Perangkat Lunak Lanjutan',
     'softdev.title': 'Pengembangan Perangkat Lunak Lanjutan',
     'softdev.subtitle': 'Solusi perangkat lunak inovatif yang mengubah bisnis dan mendorong pertumbuhan digital',
-    
+
     'softdev.projectTypes.title': 'Jenis Proyek',
     'softdev.projectTypes.subtitle': 'Memberikan solusi perangkat lunak komprehensif untuk berbagai kebutuhan bisnis',
     'softdev.projectTypes.heading': 'Jenis Proyek yang Kami Kembangkan',
@@ -11934,7 +11976,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.projectTypes.enterprise.description': 'Aplikasi enterprise skala besar dengan fitur canggih, keamanan, dan kemampuan integrasi.',
     'softdev.projectTypes.integration.title': 'Layanan Integrasi Sistem',
     'softdev.projectTypes.integration.description': 'Integrasi mulus dari sistem yang berbeda dengan API, middleware, dan sinkronisasi data.',
-    
+
     'softdev.techStack.title': 'Tech Stack',
     'softdev.techStack.subtitle': 'Teknologi dan alat terbaru untuk memastikan hasil terbaik',
     'softdev.techStack.heading': 'Tech Stack Lanjutan',
@@ -11963,7 +12005,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.techStack.database': 'Database',
     'softdev.techStack.database.desc1': 'Kami merancang dan mengimplementasikan sistem database yang canggih dan dioptimalkan.',
     'softdev.techStack.database.desc2': 'Solusi kami mencakup analitik, pemrosesan real-time, dan kemampuan pencarian komprehensif.',
-    
+
     'softdev.caseStudies.title': 'Studi Kasus Pengembangan Perangkat Lunak',
     'softdev.caseStudies.subtitle': 'Jelajahi proyek pengembangan perangkat lunak yang berhasil di berbagai industri',
     'softdev.caseStudies.readMore': 'Baca Lebih Lanjut',
@@ -11976,10 +12018,10 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.caseStudies.lms.title': 'Sistem ERP untuk Enterprise',
     'softdev.caseStudies.lms.description': 'Sistem perencanaan sumber daya enterprise canggih dengan modul terintegrasi untuk keuangan, HR, inventori, dan operasi bisnis.',
     'softdev.caseStudies.lms.tag': 'Solusi Enterprise',
-    
+
     'softdev.process.title': 'Proses Pengembangan Perangkat Lunak',
     'softdev.process.subtitle': 'Metodologi teruji kami memastikan pengiriman perangkat lunak yang berhasil dengan kualitas dan efisiensi',
-    
+
     'softdev.consultation.title': 'Konsultasi Gratis Pengembangan Perangkat Lunak',
     'softdev.consultation.content': 'Dapatkan saran ahli tentang proyek perangkat lunak Anda dengan konsultasi gratis dan dukungan gratis 1 bulan setelah proyek selesai.',
     'softdev.consultation.button': 'Mulai Konsultasi Gratis',
@@ -11991,7 +12033,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.consultation.service3.title': 'Dukungan Pasca-Launch',
     'softdev.consultation.service3.description': 'Pemeliharaan berkelanjutan dan pembaruan untuk memastikan performa optimal.',
     'softdev.consultation.manualLink': 'Unduh Manual Operasi',
-    
+
     'softdev.mission.title': 'Misi Kami',
     'softdev.mission.content': 'Kami berkomitmen untuk menyediakan solusi perangkat lunak inovatif yang mengubah bisnis dan mendorong kesuksesan digital. Misi kami adalah memberdayakan organisasi dengan teknologi canggih yang meningkatkan produktivitas, efisiensi, dan pertumbuhan.',
     'softdev.mission.industries': 'Industri yang Kami Layani',
@@ -12008,12 +12050,12 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.mission.industry6.name': 'Kreatif',
     'softdev.mission.industry6.description': 'Solusi perangkat lunak yang disesuaikan untuk agensi kreatif, desainer, dan profesional kreatif.',
     'softdev.mission.ending': 'Siap mengubah bisnis Anda dengan solusi perangkat lunak canggih? Mari buat aplikasi yang sempurna untuk kebutuhan Anda.',
-    
+
     'softdev.processes.roadmapHeading': 'Roadmap Pengembangan',
     'softdev.processes.step': 'Langkah',
     'softdev.processes.technologiesHeading': 'Teknologi yang Digunakan',
     'softdev.processes.servicesHeading': 'Layanan yang Disediakan',
-    
+
     'softdev.processes.custom.title': 'Perangkat Lunak Kustom',
     'softdev.processes.custom.description': 'Solusi perangkat lunak yang dirancang untuk memenuhi kebutuhan bisnis unik Anda',
     'softdev.processes.custom.service1': 'Analisis Kebutuhan',
@@ -12045,7 +12087,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.custom.roadmap7.title': 'Pemeliharaan & Dukungan',
     'softdev.processes.custom.roadmap7.description': 'Dukungan berkelanjutan dan pemeliharaan rutin untuk memastikan performa optimal.',
     'softdev.processes.custom.roadmap7.details': 'Kami menyediakan dukungan teknis berkelanjutan dan pembaruan rutin.',
-    
+
     'softdev.processes.mobile.title': 'Aplikasi Mobile',
     'softdev.processes.mobile.description': 'Aplikasi native dan lintas platform untuk iOS dan Android',
     'softdev.processes.mobile.service1': 'Analisis Kebutuhan',
@@ -12070,7 +12112,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.mobile.roadmap6.description': 'Deploy aplikasi ke toko aplikasi resmi.',
     'softdev.processes.mobile.roadmap7.title': 'Pemasaran & Dukungan',
     'softdev.processes.mobile.roadmap7.description': 'Pemasaran aplikasi dan memberikan dukungan teknis kepada pengguna.',
-    
+
     'softdev.processes.enterprise.title': 'Solusi Enterprise',
     'softdev.processes.enterprise.description': 'Aplikasi enterprise skala besar dengan fitur canggih dan keamanan',
     'softdev.processes.enterprise.service1': 'Analisis Kebutuhan',
@@ -12095,7 +12137,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.enterprise.roadmap6.description': 'Deploy sistem ke lingkungan enterprise dengan monitoring performa.',
     'softdev.processes.enterprise.roadmap7.title': 'Pelatihan & Dukungan',
     'softdev.processes.enterprise.roadmap7.description': 'Pelatihan tim dan dukungan teknis berkelanjutan.',
-    
+
     'softdev.processes.cloud.title': 'Solusi Cloud',
     'softdev.processes.cloud.description': 'Aplikasi cloud yang dapat diskalakan dengan praktik DevOps modern',
     'softdev.processes.cloud.service1': 'Analisis Kebutuhan',
@@ -12120,7 +12162,7 @@ const translations: Record<string, Record<string, string>> = {
     'softdev.processes.cloud.roadmap6.description': 'Menerapkan monitoring komprehensif dan keamanan canggih.',
     'softdev.processes.cloud.roadmap7.title': 'Pelatihan & Dukungan',
     'softdev.processes.cloud.roadmap7.description': 'Pelatihan tim dan dukungan teknis berkelanjutan.',
-    
+
     'softdev.processes.integration.title': 'Layanan Integrasi',
     'softdev.processes.integration.description': 'Integrasi mulus dari sistem yang berbeda dengan API dan middleware',
     'softdev.processes.integration.service1': 'Analisis Kebutuhan',

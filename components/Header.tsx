@@ -45,6 +45,14 @@ const Header = () => {
     { label: t('dropdown.services.marketing'), href: "/Services/marketing" },
   ];
 
+  const productsLinks = [
+    { label: t('dropdown.products.erp'), href: "/products/erp-crm" },
+    { label: t('dropdown.products.pos'), href: "/products/pos-lms" },
+    { label: t('dropdown.products.templates'), href: "/products/templates" },
+    { label: t('dropdown.products.ai'), href: "/products/ai-automation" },
+    { label: t('dropdown.products.chatbots'), href: "/products/chatbots" },
+  ];
+
   const communityLinks = [
     { label: t('dropdown.community.about'), href: "/community/about" },
     { label: t('dropdown.community.join'), href: "/community/join" },
@@ -176,28 +184,24 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 w-full z-50 transition-all duration-300  ${
-        scrolled
-          ? isDark 
-          ? "py-2 md:bg-black/30 md:backdrop-blur-md bg-transparent shadow-lg shadow-purple-500/10"
+      className={`fixed top-0 w-full z-50 transition-all duration-300  ${scrolled
+          ? isDark
+            ? "py-2 md:bg-black/30 md:backdrop-blur-md bg-transparent shadow-lg shadow-purple-500/10"
             : "py-2 md:bg-white/30 md:backdrop-blur-md bg-transparent shadow-lg shadow-blue-500/10"
           : "py-4 md:bg-transparent md:backdrop-blur-sm bg-transparent"
-      }`}
+        }`}
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group cursor-pointer" aria-label="Upvista Home" role="link">
           <div
-            className={`relative transition-all duration-300 ${
-              scrolled ? "w-6 h-6 md:w-10 md:h-10" : "w-7 h-7 md:w-12 md:h-12"
-            }`}
+            className={`relative transition-all duration-300 ${scrolled ? "w-6 h-6 md:w-10 md:h-10" : "w-7 h-7 md:w-12 md:h-12"
+              }`}
           >
-            <div className={`absolute inset-0 rounded-lg blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300 ${
-              isDark ? 'bg-gradient-to-r from-indigo-500 to-purple-500' : 'bg-gradient-to-r from-blue-600 to-indigo-600'
-            }`}></div>
-            <div className={`relative rounded-lg p-0.5 w-full h-full flex items-center justify-center overflow-hidden ${
-              isDark ? 'bg-black' : 'bg-white'
-            }`}>
+            <div className={`absolute inset-0 rounded-lg blur-sm opacity-70 group-hover:opacity-100 transition-opacity duration-300 ${isDark ? 'bg-gradient-to-r from-indigo-500 to-purple-500' : 'bg-gradient-to-r from-blue-600 to-indigo-600'
+              }`}></div>
+            <div className={`relative rounded-lg p-0.5 w-full h-full flex items-center justify-center overflow-hidden ${isDark ? 'bg-black' : 'bg-white'
+              }`}>
               <Image
                 src="/u.png"
                 alt="Company Logo"
@@ -209,9 +213,8 @@ const Header = () => {
           </div>
           <div className="ml-2 md:ml-3">
             <h3 className={`text-base md:text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h3>
-            <span className={`block text-xs font-medium -mt-0 tracking-wider ${
-              isDark ? 'text-purple-300/80' : 'text-blue-600/80'
-            }`}>
+            <span className={`block text-xs font-medium -mt-0 tracking-wider ${isDark ? 'text-purple-300/80' : 'text-blue-600/80'
+              }`}>
               Solutions
             </span>
           </div>
@@ -229,122 +232,161 @@ const Header = () => {
 
         {/* Mobile Toggle Buttons + Menu Button */}
         <div className="md:hidden flex items-center gap-2">
-           {/* Compact Mobile Toggle Buttons */}
-           <div className="flex items-center transform scale-75">
-             <ThemeToggle />
-             <div className="-ml-px">
-               <LanguageToggle />
-             </div>
-           </div>
+          {/* Compact Mobile Toggle Buttons */}
+          <div className="flex items-center transform scale-75">
+            <ThemeToggle />
+            <div className="-ml-px">
+              <LanguageToggle />
+            </div>
+          </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            setMobileMenuOpen(!mobileMenuOpen);
-          }}
+          {/* Mobile Menu Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setMobileMenuOpen(!mobileMenuOpen);
+            }}
             className="flex flex-col gap-1.5 p-2 focus:outline-none z-50 mobile-menu-button"
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-6 h-0.5 transition-all duration-300 ${
-              isDark ? 'bg-white' : 'bg-gray-900'
-            } ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 transition-all duration-300 ${
-              isDark ? 'bg-white' : 'bg-gray-900'
-            } ${mobileMenuOpen ? "opacity-0" : ""}`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 transition-all duration-300 ${
-              isDark ? 'bg-white' : 'bg-gray-900'
-            } ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
-          ></span>
-        </button>
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-6 h-0.5 transition-all duration-300 ${isDark ? 'bg-white' : 'bg-gray-900'
+                } ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 transition-all duration-300 ${isDark ? 'bg-white' : 'bg-gray-900'
+                } ${mobileMenuOpen ? "opacity-0" : ""}`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 transition-all duration-300 ${isDark ? 'bg-white' : 'bg-gray-900'
+                } ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            ></span>
+          </button>
         </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-0.5" role="navigation" aria-label="Main Navigation">
           {/* Company Dropdown */}
           <div className="relative dropdown-container">
-            <button 
+            <button
               onClick={(e) => {
                 e.stopPropagation();
                 toggleDropdown('company');
               }}
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${
-                isDark 
+              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${isDark
                   ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'company' ? ' bg-white/10 text-white' : '')
                   : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'company' ? ' bg-gray-100/50 text-gray-900' : '')
-              }`}
+                }`}
             >
-{t('nav.company')}
+              {t('nav.company')}
               <svg className={`w-3.5 h-3.5 ml-1.5 transition-transform duration-300 ${activeDropdown === 'company' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
             {activeDropdown === 'company' && (
-              <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${
-                isDark 
-                  ? 'bg-white border-gray-200/50 bg-white/95' 
+              <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${isDark
+                  ? 'bg-white border-gray-200/50 bg-white/95'
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
-              }`}>
+                }`}>
                 <div className="py-3">
                   {companyLinks.map((link) => (
-                    <Link 
-                      key={link.label} 
-                      href={link.href} 
-                      className={`block px-5 py-3 text-sm font-medium border-l-2 border-transparent transition-all duration-200 ${
-                        isDark 
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className={`block px-5 py-3 text-sm font-medium border-l-2 border-transparent transition-all duration-200 ${isDark
                           ? 'text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-gray-900 hover:border-blue-500'
                           : 'text-gray-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-gray-900 hover:border-blue-500'
-                      }`}
+                        }`}
                       onClick={closeAllDropdowns}
                     >
                       {link.label}
-                      </Link>
-                    ))}
+                    </Link>
+                  ))}
                 </div>
               </div>
-                      )}
-                    </div>
+            )}
+          </div>
 
           {/* Services Dropdown */}
           <div className="relative dropdown-container">
-            <button 
+            <button
               onClick={(e) => {
                 e.stopPropagation();
                 toggleDropdown('services');
               }}
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${
-                isDark 
+              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${isDark
                   ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'services' ? ' bg-white/10 text-white' : '')
                   : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'services' ? ' bg-gray-100/50 text-gray-900' : '')
-              }`}
+                }`}
             >
-{t('nav.services')}
+              {t('nav.services')}
               <svg className={`w-3.5 h-3.5 ml-1.5 transition-transform duration-300 ${activeDropdown === 'services' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                          </svg>
-                      </button>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
             {activeDropdown === 'services' && (
-              <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${
-                isDark 
-                  ? 'bg-white border-gray-200/50 bg-white/95' 
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu overflow-hidden ${isDark
+                  ? 'bg-white border-gray-200/50 bg-white/95'
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
-              }`}>
-                <div className="py-3">
-                  {servicesLinks.map((link) => (
-                    <Link 
-                      key={link.label} 
-                      href={link.href} 
-                      className="block px-5 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 hover:text-gray-900 transition-all duration-200 text-sm font-medium border-l-2 border-transparent hover:border-green-500"
-                      onClick={closeAllDropdowns}
-                    >
-                      {link.label}
+                }`}>
+                <div className="flex">
+                  {/* Services Column */}
+                  <div className="flex-1 py-6">
+                    <div className={`px-5 pb-3 text-xs font-semibold uppercase tracking-wider ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
+                      {t('nav.services')}
+                    </div>
+                    {servicesLinks.map((link) => (
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        className="block px-5 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 hover:text-gray-900 transition-all duration-200 text-sm font-medium border-l-2 border-transparent hover:border-green-500"
+                        onClick={closeAllDropdowns}
+                      >
+                        {link.label}
                       </Link>
                     ))}
+                  </div>
+
+                  {/* Vertical Divider with Gradient */}
+                  <div className="w-[2px] self-stretch bg-gradient-to-b from-purple-500 via-pink-500 to-red-500 opacity-80 my-8 rounded-full"></div>
+
+                  {/* Products Column */}
+                  <div className="flex-1 py-6 bg-gray-50/50 flex flex-col">
+                    <div>
+                      <div className={`px-5 pb-3 text-xs font-semibold uppercase tracking-wider ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
+                        Products
+                      </div>
+                      {productsLinks.map((link) => (
+                        <Link
+                          key={link.label}
+                          href={link.href}
+                          className="block px-5 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-gray-900 transition-all duration-200 text-sm font-medium border-l-2 border-transparent hover:border-purple-500"
+                          onClick={closeAllDropdowns}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+
+                    {/* Marketplace Button with Dark Theme Support */}
+                    <div className={`mt-auto px-5 pt-4 border-t ${isDark ? 'border-gray-200/50' : 'border-gray-200/50'}`}>
+                      <Link href="/marketplace" className="w-full block">
+                        <button className={`w-full px-4 py-2 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
+                            ? 'text-white border-purple-400 hover:border-transparent hover:text-white'
+                            : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
+                          }`}>
+                          {/* Gradient background that waves in on hover */}
+                          <span className="absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 from-red-500 via-purple-500 via-blue-500 to-pink-500"></span>
+                          <span className="relative z-10 flex items-center justify-center gap-2 text-sm">
+                            {t('dropdown.products.marketplace')}
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                          </span>
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
@@ -352,33 +394,31 @@ const Header = () => {
 
           {/* Community Dropdown */}
           <div className="relative dropdown-container">
-            <button 
+            <button
               onClick={(e) => {
                 e.stopPropagation();
                 toggleDropdown('community');
               }}
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${
-                isDark 
+              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${isDark
                   ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'community' ? ' bg-white/10 text-white' : '')
                   : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'community' ? ' bg-gray-100/50 text-gray-900' : '')
-              }`}
+                }`}
             >
-{t('nav.community')}
+              {t('nav.community')}
               <svg className={`w-3.5 h-3.5 ml-1.5 transition-transform duration-300 ${activeDropdown === 'community' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {activeDropdown === 'community' && (
-              <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${
-                isDark 
-                  ? 'bg-white border-gray-200/50 bg-white/95' 
+              <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${isDark
+                  ? 'bg-white border-gray-200/50 bg-white/95'
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
-              }`}>
+                }`}>
                 <div className="py-3">
-                  {communityLinks.map((link)  => (
-                    <Link 
-                      key={link.label} 
-                      href={link.href} 
+                  {communityLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      href={link.href}
                       className="block px-5 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-violet-50 hover:text-gray-900 transition-all duration-200 text-sm font-medium border-l-2 border-transparent hover:border-purple-500"
                       onClick={closeAllDropdowns}
                     >
@@ -392,33 +432,31 @@ const Header = () => {
 
           {/* Researches Dropdown */}
           <div className="relative dropdown-container">
-            <button 
+            <button
               onClick={(e) => {
                 e.stopPropagation();
                 toggleDropdown('researches');
               }}
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${
-                isDark 
+              className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${isDark
                   ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'researches' ? ' bg-white/10 text-white' : '')
                   : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'researches' ? ' bg-gray-100/50 text-gray-900' : '')
-              }`}
+                }`}
             >
-{t('nav.researches')}
+              {t('nav.researches')}
               <svg className={`w-3.5 h-3.5 ml-1.5 transition-transform duration-300 ${activeDropdown === 'researches' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {activeDropdown === 'researches' && (
-              <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${
-                isDark 
-                  ? 'bg-white border-gray-200/50 bg-white/95' 
+              <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${isDark
+                  ? 'bg-white border-gray-200/50 bg-white/95'
                   : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
-              }`}>
+                }`}>
                 <div className="py-3">
                   {researchesLinks.map((link) => (
-                    <Link 
-                      key={link.label} 
-                      href={link.href} 
+                    <Link
+                      key={link.label}
+                      href={link.href}
                       className="block px-5 py-3 text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-gray-900 transition-all duration-200 text-sm font-medium border-l-2 border-transparent hover:border-orange-500"
                       onClick={closeAllDropdowns}
                     >
@@ -472,29 +510,25 @@ const Header = () => {
 
           {/* Explore Careers Button - Purple to Pink Gradient with Wave Effect */}
           <Link href="/careers" target="_blank" rel="noopener noreferrer" className="ml-3">
-            <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${
-              isDark 
+            <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
                 ? 'text-white border-transparent hover:border-purple-500 hover:text-white'
                 : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
-            }`}>
+              }`}>
               {/* Gradient background that waves out on hover */}
-              <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${
-                isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
-              }`}></span>
+              <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+                }`}></span>
               <span className="relative z-10">{t('nav.careers')}</span>
             </button>
           </Link>
           {/* Let's Talk Business Button - Purple to Indigo Border with Wave Effect */}
           <Link href="/Consult" className="ml-2">
-            <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${
-              isDark 
+            <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
                 ? 'text-white border-purple-500 hover:border-transparent hover:text-white'
                 : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
-            }`}>
+              }`}>
               {/* Gradient background that waves in on hover */}
-              <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${
-                isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
-              }`}></span>
+              <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+                }`}></span>
               <span className="relative z-10">{t('nav.contact')}</span>
             </button>
           </Link>
@@ -506,67 +540,60 @@ const Header = () => {
       {mobileMenuOpen && (
         <div className="md:hidden fixed inset-0 z-40 flex">
           {/* Backdrop */}
-          <div 
-            className={`absolute inset-0 backdrop-blur-md transition-all duration-250 ease-out ${
-              isDark ? 'bg-black/60' : 'bg-gray-900/60'
-            }`}
+          <div
+            className={`absolute inset-0 backdrop-blur-md transition-all duration-250 ease-out ${isDark ? 'bg-black/60' : 'bg-gray-900/60'
+              }`}
             onClick={() => setMobileMenuOpen(false)}
           />
           {/* Slide-in Panel */}
-          <div className={`relative w-full h-full flex flex-col shadow-2xl mobile-menu-slide-in ${
-            isDark 
-              ? 'bg-gradient-to-b from-gray-900 to-black' 
+          <div className={`relative w-full h-full flex flex-col shadow-2xl mobile-menu-slide-in ${isDark
+              ? 'bg-gradient-to-b from-gray-900 to-black'
               : 'bg-gradient-to-b from-white to-gray-50'
-          }`}>
-          <div className="pt-6 px-6 flex items-center justify-between pb-6">
-            {/* Logo in Mobile Menu */}
-            <div className="flex items-center">
-              <div className="relative w-10 h-10">
-                <div className={`absolute inset-0 rounded-lg blur-sm opacity-70 ${
-                  isDark ? 'bg-gradient-to-r from-indigo-500 to-purple-500' : 'bg-gradient-to-r from-blue-600 to-indigo-600'
-                }`}></div>
-                <div className={`relative rounded-lg p-0.5 w-full h-full flex items-center justify-center overflow-hidden ${
-                  isDark ? 'bg-black' : 'bg-white'
-                }`}>
-                  <Image
-                    src="/u.png"
-                    alt="Company Logo"
-                    width={36}
-                    height={36}
-                    className="rounded-md"
-                  />
+            }`}>
+            <div className="pt-6 px-6 flex items-center justify-between pb-6">
+              {/* Logo in Mobile Menu */}
+              <div className="flex items-center">
+                <div className="relative w-10 h-10">
+                  <div className={`absolute inset-0 rounded-lg blur-sm opacity-70 ${isDark ? 'bg-gradient-to-r from-indigo-500 to-purple-500' : 'bg-gradient-to-r from-blue-600 to-indigo-600'
+                    }`}></div>
+                  <div className={`relative rounded-lg p-0.5 w-full h-full flex items-center justify-center overflow-hidden ${isDark ? 'bg-black' : 'bg-white'
+                    }`}>
+                    <Image
+                      src="/u.png"
+                      alt="Company Logo"
+                      width={36}
+                      height={36}
+                      className="rounded-md"
+                    />
+                  </div>
+                </div>
+                <div className="ml-3">
+                  <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h3>
+                  <span className={`block text-xs font-medium -mt-1 tracking-wider ${isDark ? 'text-purple-300/80' : 'text-blue-600/80'
+                    }`}>
+                    Solutions
+                  </span>
                 </div>
               </div>
-              <div className="ml-3">
-                <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Upvista Digital</h3>
-                <span className={`block text-xs font-medium -mt-1 tracking-wider ${
-                  isDark ? 'text-purple-300/80' : 'text-blue-600/80'
-                }`}>
-                  Solutions
-                </span>
-              </div>
-            </div>
 
-          </div>
+            </div>
 
             {/* Navigation Content */}
             <div className="flex-1 overflow-y-auto px-6 py-4 space-y-1">
               {/* Navigation Links */}
               <Link
                 href="/"
-                className={`flex items-center py-2 text-base font-medium transition-all duration-200 ${
-                  isDark 
-                    ? 'text-white/90 hover:text-white' 
+                className={`flex items-center py-2 text-base font-medium transition-all duration-200 ${isDark
+                    ? 'text-white/90 hover:text-white'
                     : 'text-gray-900/90 hover:text-gray-900'
-                }`}
+                  }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span>{t('nav.home')}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className={`h-5 w-5 ml-auto ${
-                    isDark ? 'text-white/60' : 'text-gray-600/60'
-                  }`}
+                  className={`h-5 w-5 ml-auto ${isDark ? 'text-white/60' : 'text-gray-600/60'
+                    }`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -583,120 +610,108 @@ const Header = () => {
               {/* Company Accordion */}
               <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
-                    isDark 
-                      ? 'text-white/90' 
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${isDark
+                      ? 'text-white/90'
                       : 'text-gray-900/90'
-                  }`}
+                    }`}
                   onClick={() => setMobileCompanyOpen(prev => !prev)}
-              >
+                >
                   <span>{t('nav.company')}</span>
-                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileCompanyOpen ? "rotate-180" : ""} ${
-                    isDark ? 'text-white/60' : 'text-gray-600/60'
-                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                      </button>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileCompanyOpen ? "rotate-180" : ""} ${isDark ? 'text-white/60' : 'text-gray-600/60'
+                    }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
                 {mobileCompanyOpen && (
                   <div className="pl-4 py-1 space-y-1">
                     {companyLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
-                        isDark 
-                          ? 'text-white/80 hover:text-white' 
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
+                          ? 'text-white/80 hover:text-white'
                           : 'text-gray-700/80 hover:text-gray-900'
-                      }`} onClick={() => setMobileMenuOpen(false)}>
+                        }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
 
               {/* Services Accordion */}
               <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
-                    isDark 
-                      ? 'text-white/90' 
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${isDark
+                      ? 'text-white/90'
                       : 'text-gray-900/90'
-                  }`}
+                    }`}
                   onClick={() => setMobileServicesOpen(prev => !prev)}
                 >
                   <span>{t('nav.services')}</span>
-                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""} ${
-                    isDark ? 'text-white/60' : 'text-gray-600/60'
-                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""} ${isDark ? 'text-white/60' : 'text-gray-600/60'
+                    }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileServicesOpen && (
                   <div className="pl-4 py-1 space-y-1">
                     {servicesLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
-                        isDark 
-                          ? 'text-white/80 hover:text-white' 
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
+                          ? 'text-white/80 hover:text-white'
                           : 'text-gray-700/80 hover:text-gray-900'
-                      }`} onClick={() => setMobileMenuOpen(false)}>
+                        }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
                     ))}
-                </div>
+                  </div>
                 )}
-                </div>
+              </div>
 
               {/* Community Accordion */}
               <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
-                    isDark 
-                      ? 'text-white/90' 
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${isDark
+                      ? 'text-white/90'
                       : 'text-gray-900/90'
-                  }`}
+                    }`}
                   onClick={() => setMobileCommunityOpen(prev => !prev)}
                 >
                   <span>{t('nav.community')}</span>
-                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileCommunityOpen ? "rotate-180" : ""} ${
-                    isDark ? 'text-white/60' : 'text-gray-600/60'
-                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                        </button>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileCommunityOpen ? "rotate-180" : ""} ${isDark ? 'text-white/60' : 'text-gray-600/60'
+                    }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
                 {mobileCommunityOpen && (
                   <div className="pl-4 py-1 space-y-1">
                     {communityLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
-                        isDark 
-                          ? 'text-white/80 hover:text-white' 
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
+                          ? 'text-white/80 hover:text-white'
                           : 'text-gray-700/80 hover:text-gray-900'
-                      }`} onClick={() => setMobileMenuOpen(false)}>
+                        }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
                     ))}
-                    </div>
+                  </div>
                 )}
-                    </div>
+              </div>
 
               {/* Researches Accordion */}
               <div className="mb-1">
                 <button
-                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${
-                    isDark 
-                      ? 'text-white/90' 
+                  className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${isDark
+                      ? 'text-white/90'
                       : 'text-gray-900/90'
-                  }`}
+                    }`}
                   onClick={() => setMobileResearchesOpen(prev => !prev)}
                 >
                   <span>{t('nav.researches')}</span>
-                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileResearchesOpen ? "rotate-180" : ""} ${
-                    isDark ? 'text-white/60' : 'text-gray-600/60'
-                  }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <svg className={`w-5 h-5 ml-2 transition-transform duration-300 ${mobileResearchesOpen ? "rotate-180" : ""} ${isDark ? 'text-white/60' : 'text-gray-600/60'
+                    }`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
                 </button>
                 {mobileResearchesOpen && (
                   <div className="pl-4 py-1 space-y-1">
                     {researchesLinks.map(link => (
-                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${
-                        isDark 
-                          ? 'text-white/80 hover:text-white' 
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
+                          ? 'text-white/80 hover:text-white'
                           : 'text-gray-700/80 hover:text-gray-900'
-                      }`} onClick={() => setMobileMenuOpen(false)}>
+                        }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
-                        </Link>
-                      ))}
-                    </div>
+                      </Link>
+                    ))}
+                  </div>
                 )}
               </div>
 
@@ -730,35 +745,31 @@ const Header = () => {
                 )}
               </div> */}
 
-              </div>
+            </div>
 
             {/* Bottom Section */}
             <div className="p-6">
               {/* Main Buttons */}
               <div className="flex flex-col gap-3">
                 <Link href="/careers" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
-                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${
-                    isDark 
-                      ? 'text-white border-transparent hover:border-purple-500 hover:text-white' 
+                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
+                      ? 'text-white border-transparent hover:border-purple-500 hover:text-white'
                       : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
-                  }`}>
+                    }`}>
                     {/* Gradient background that waves out on hover */}
-                    <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${
-                      isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
-                    }`}></span>
+                    <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+                      }`}></span>
                     <span className="relative z-10">{t('nav.careers')}</span>
                   </button>
                 </Link>
                 <Link href="/Consult" onClick={() => setMobileMenuOpen(false)}>
-                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${
-                    isDark 
-                      ? 'text-white border-purple-500 hover:border-transparent hover:text-white' 
+                  <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
+                      ? 'text-white border-purple-500 hover:border-transparent hover:text-white'
                       : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
-                  }`}>
+                    }`}>
                     {/* Gradient background that waves in on hover */}
-                    <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${
-                      isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
-                    }`}></span>
+                    <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
+                      }`}></span>
                     <span className="relative z-10">{t('nav.contact')}</span>
                   </button>
                 </Link>
