@@ -185,10 +185,10 @@ const Header = () => {
   return (
     <div
       className={`fixed top-0 w-full z-50 transition-all duration-300  ${scrolled
-          ? isDark
-            ? "py-2 md:bg-black/30 md:backdrop-blur-md bg-transparent shadow-lg shadow-purple-500/10"
-            : "py-2 md:bg-white/30 md:backdrop-blur-md bg-transparent shadow-lg shadow-blue-500/10"
-          : "py-4 md:bg-transparent md:backdrop-blur-sm bg-transparent"
+        ? isDark
+          ? "py-2 md:bg-black/30 md:backdrop-blur-md bg-transparent shadow-lg shadow-purple-500/10"
+          : "py-2 md:bg-white/30 md:backdrop-blur-md bg-transparent shadow-lg shadow-blue-500/10"
+        : "py-4 md:bg-transparent md:backdrop-blur-sm bg-transparent"
         }`}
     >
       <div className="container mx-auto px-4 lg:px-8 flex items-center justify-between">
@@ -274,8 +274,8 @@ const Header = () => {
                 toggleDropdown('company');
               }}
               className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${isDark
-                  ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'company' ? ' bg-white/10 text-white' : '')
-                  : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'company' ? ' bg-gray-100/50 text-gray-900' : '')
+                ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'company' ? ' bg-white/10 text-white' : '')
+                : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'company' ? ' bg-gray-100/50 text-gray-900' : '')
                 }`}
             >
               {t('nav.company')}
@@ -285,8 +285,8 @@ const Header = () => {
             </button>
             {activeDropdown === 'company' && (
               <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${isDark
-                  ? 'bg-white border-gray-200/50 bg-white/95'
-                  : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
+                ? 'bg-white border-gray-200/50 bg-white/95'
+                : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
                 }`}>
                 <div className="py-3">
                   {companyLinks.map((link) => (
@@ -294,8 +294,8 @@ const Header = () => {
                       key={link.label}
                       href={link.href}
                       className={`block px-5 py-3 text-sm font-medium border-l-2 border-transparent transition-all duration-200 ${isDark
-                          ? 'text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-gray-900 hover:border-blue-500'
-                          : 'text-gray-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-gray-900 hover:border-blue-500'
+                        ? 'text-gray-700 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-gray-900 hover:border-blue-500'
+                        : 'text-gray-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 hover:text-gray-900 hover:border-blue-500'
                         }`}
                       onClick={closeAllDropdowns}
                     >
@@ -315,8 +315,8 @@ const Header = () => {
                 toggleDropdown('services');
               }}
               className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${isDark
-                  ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'services' ? ' bg-white/10 text-white' : '')
-                  : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'services' ? ' bg-gray-100/50 text-gray-900' : '')
+                ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'services' ? ' bg-white/10 text-white' : '')
+                : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'services' ? ' bg-gray-100/50 text-gray-900' : '')
                 }`}
             >
               {t('nav.services')}
@@ -326,8 +326,8 @@ const Header = () => {
             </button>
             {activeDropdown === 'services' && (
               <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu overflow-hidden ${isDark
-                  ? 'bg-white border-gray-200/50 bg-white/95'
-                  : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
+                ? 'bg-white border-gray-200/50 bg-white/95'
+                : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
                 }`}>
                 <div className="flex">
                   {/* Services Column */}
@@ -372,8 +372,8 @@ const Header = () => {
                     <div className={`mt-auto px-5 pt-4 border-t ${isDark ? 'border-gray-200/50' : 'border-gray-200/50'}`}>
                       <Link href="/marketplace" className="w-full block">
                         <button className={`w-full px-4 py-2 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
-                            ? 'text-white border-purple-400 hover:border-transparent hover:text-white'
-                            : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
+                          ? 'text-black border-purple-400 hover:border-transparent hover:text-white'
+                          : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
                           }`}>
                           {/* Gradient background that waves in on hover */}
                           <span className="absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 from-red-500 via-purple-500 via-blue-500 to-pink-500"></span>
@@ -400,8 +400,8 @@ const Header = () => {
                 toggleDropdown('community');
               }}
               className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${isDark
-                  ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'community' ? ' bg-white/10 text-white' : '')
-                  : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'community' ? ' bg-gray-100/50 text-gray-900' : '')
+                ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'community' ? ' bg-white/10 text-white' : '')
+                : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'community' ? ' bg-gray-100/50 text-gray-900' : '')
                 }`}
             >
               {t('nav.community')}
@@ -411,8 +411,8 @@ const Header = () => {
             </button>
             {activeDropdown === 'community' && (
               <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${isDark
-                  ? 'bg-white border-gray-200/50 bg-white/95'
-                  : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
+                ? 'bg-white border-gray-200/50 bg-white/95'
+                : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
                 }`}>
                 <div className="py-3">
                   {communityLinks.map((link) => (
@@ -438,8 +438,8 @@ const Header = () => {
                 toggleDropdown('researches');
               }}
               className={`px-3 py-2 text-sm font-medium transition-all duration-300 relative flex items-center rounded-lg ${isDark
-                  ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'researches' ? ' bg-white/10 text-white' : '')
-                  : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'researches' ? ' bg-gray-100/50 text-gray-900' : '')
+                ? 'text-white/90 hover:text-white hover:bg-white/10' + (activeDropdown === 'researches' ? ' bg-white/10 text-white' : '')
+                : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100/50' + (activeDropdown === 'researches' ? ' bg-gray-100/50 text-gray-900' : '')
                 }`}
             >
               {t('nav.researches')}
@@ -449,8 +449,8 @@ const Header = () => {
             </button>
             {activeDropdown === 'researches' && (
               <div className={`absolute top-full left-0 mt-2 w-72 border rounded-xl shadow-2xl z-50 backdrop-blur-sm dropdown-menu ${isDark
-                  ? 'bg-white border-gray-200/50 bg-white/95'
-                  : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
+                ? 'bg-white border-gray-200/50 bg-white/95'
+                : 'bg-white border-gray-300/50 bg-white/98 shadow-xl'
                 }`}>
                 <div className="py-3">
                   {researchesLinks.map((link) => (
@@ -511,8 +511,8 @@ const Header = () => {
           {/* Explore Careers Button - Purple to Pink Gradient with Wave Effect */}
           <Link href="/careers" target="_blank" rel="noopener noreferrer" className="ml-3">
             <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
-                ? 'text-white border-transparent hover:border-purple-500 hover:text-white'
-                : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
+              ? 'text-white border-transparent hover:border-purple-500 hover:text-white'
+              : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
               }`}>
               {/* Gradient background that waves out on hover */}
               <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
@@ -523,8 +523,8 @@ const Header = () => {
           {/* Let's Talk Business Button - Purple to Indigo Border with Wave Effect */}
           <Link href="/Consult" className="ml-2">
             <button className={`px-6 py-2.5 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
-                ? 'text-white border-purple-500 hover:border-transparent hover:text-white'
-                : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
+              ? 'text-white border-purple-500 hover:border-transparent hover:text-white'
+              : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
               }`}>
               {/* Gradient background that waves in on hover */}
               <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
@@ -547,8 +547,8 @@ const Header = () => {
           />
           {/* Slide-in Panel */}
           <div className={`relative w-full h-full flex flex-col shadow-2xl mobile-menu-slide-in ${isDark
-              ? 'bg-gradient-to-b from-gray-900 to-black'
-              : 'bg-gradient-to-b from-white to-gray-50'
+            ? 'bg-gradient-to-b from-gray-900 to-black'
+            : 'bg-gradient-to-b from-white to-gray-50'
             }`}>
             <div className="pt-6 px-6 flex items-center justify-between pb-6">
               {/* Logo in Mobile Menu */}
@@ -584,8 +584,8 @@ const Header = () => {
               <Link
                 href="/"
                 className={`flex items-center py-2 text-base font-medium transition-all duration-200 ${isDark
-                    ? 'text-white/90 hover:text-white'
-                    : 'text-gray-900/90 hover:text-gray-900'
+                  ? 'text-white/90 hover:text-white'
+                  : 'text-gray-900/90 hover:text-gray-900'
                   }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -611,8 +611,8 @@ const Header = () => {
               <div className="mb-1">
                 <button
                   className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${isDark
-                      ? 'text-white/90'
-                      : 'text-gray-900/90'
+                    ? 'text-white/90'
+                    : 'text-gray-900/90'
                     }`}
                   onClick={() => setMobileCompanyOpen(prev => !prev)}
                 >
@@ -624,8 +624,8 @@ const Header = () => {
                   <div className="pl-4 py-1 space-y-1">
                     {companyLinks.map(link => (
                       <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
-                          ? 'text-white/80 hover:text-white'
-                          : 'text-gray-700/80 hover:text-gray-900'
+                        ? 'text-white/80 hover:text-white'
+                        : 'text-gray-700/80 hover:text-gray-900'
                         }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
@@ -638,8 +638,8 @@ const Header = () => {
               <div className="mb-1">
                 <button
                   className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${isDark
-                      ? 'text-white/90'
-                      : 'text-gray-900/90'
+                    ? 'text-white/90'
+                    : 'text-gray-900/90'
                     }`}
                   onClick={() => setMobileServicesOpen(prev => !prev)}
                 >
@@ -651,8 +651,8 @@ const Header = () => {
                   <div className="pl-4 py-1 space-y-1">
                     {servicesLinks.map(link => (
                       <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
-                          ? 'text-white/80 hover:text-white'
-                          : 'text-gray-700/80 hover:text-gray-900'
+                        ? 'text-white/80 hover:text-white'
+                        : 'text-gray-700/80 hover:text-gray-900'
                         }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
@@ -665,8 +665,8 @@ const Header = () => {
               <div className="mb-1">
                 <button
                   className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${isDark
-                      ? 'text-white/90'
-                      : 'text-gray-900/90'
+                    ? 'text-white/90'
+                    : 'text-gray-900/90'
                     }`}
                   onClick={() => setMobileCommunityOpen(prev => !prev)}
                 >
@@ -678,8 +678,8 @@ const Header = () => {
                   <div className="pl-4 py-1 space-y-1">
                     {communityLinks.map(link => (
                       <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
-                          ? 'text-white/80 hover:text-white'
-                          : 'text-gray-700/80 hover:text-gray-900'
+                        ? 'text-white/80 hover:text-white'
+                        : 'text-gray-700/80 hover:text-gray-900'
                         }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
@@ -692,8 +692,8 @@ const Header = () => {
               <div className="mb-1">
                 <button
                   className={`w-full flex items-center justify-between font-medium py-2 px-2 text-base focus:outline-none ${isDark
-                      ? 'text-white/90'
-                      : 'text-gray-900/90'
+                    ? 'text-white/90'
+                    : 'text-gray-900/90'
                     }`}
                   onClick={() => setMobileResearchesOpen(prev => !prev)}
                 >
@@ -705,8 +705,8 @@ const Header = () => {
                   <div className="pl-4 py-1 space-y-1">
                     {researchesLinks.map(link => (
                       <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
-                          ? 'text-white/80 hover:text-white'
-                          : 'text-gray-700/80 hover:text-gray-900'
+                        ? 'text-white/80 hover:text-white'
+                        : 'text-gray-700/80 hover:text-gray-900'
                         }`} onClick={() => setMobileMenuOpen(false)}>
                         {link.label}
                       </Link>
@@ -753,8 +753,8 @@ const Header = () => {
               <div className="flex flex-col gap-3">
                 <Link href="/careers" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
                   <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
-                      ? 'text-white border-transparent hover:border-purple-500 hover:text-white'
-                      : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
+                    ? 'text-white border-transparent hover:border-purple-500 hover:text-white'
+                    : 'text-white border-transparent hover:border-purple-600 hover:text-gray-900'
                     }`}>
                     {/* Gradient background that waves out on hover */}
                     <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform translate-x-0 group-hover:translate-x-full ${isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
@@ -764,8 +764,8 @@ const Header = () => {
                 </Link>
                 <Link href="/Consult" onClick={() => setMobileMenuOpen(false)}>
                   <button className={`w-full px-4 py-2.5 text-sm font-medium rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
-                      ? 'text-white border-purple-500 hover:border-transparent hover:text-white'
-                      : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
+                    ? 'text-white border-purple-500 hover:border-transparent hover:text-white'
+                    : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
                     }`}>
                     {/* Gradient background that waves in on hover */}
                     <span className={`absolute inset-0 bg-gradient-to-r transition-transform duration-700 ease-in-out transform -translate-x-full group-hover:translate-x-0 ${isDark ? 'from-purple-600 to-pink-600' : 'from-purple-600 to-pink-600'
