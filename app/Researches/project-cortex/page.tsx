@@ -60,6 +60,17 @@ export default function ProjectCortexPage() {
     setTimeout(() => setHighlightedRef(null), 2000);
   };
 
+  const handleDownloadPDF = () => {
+    // Download the PDF file directly
+    const pdfUrl = '/assets/researches/Project Cortex - AGI Research by Hamza Hafeez.pdf';
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = 'Project-Cortex-AGI-Research-by-Hamza-Hafeez-Bhatti.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const Cite = ({ refs }: { refs: number | number[] }) => {
     const refArray = Array.isArray(refs) ? refs : [refs];
     return (
@@ -112,6 +123,109 @@ export default function ProjectCortexPage() {
           background-color: ${isDark ? '#374151' : '#d1d5db'};
           border-radius: 20px;
         }
+
+        /* Print Styles */
+        @media print {
+          @page {
+            size: A4;
+            margin: 2cm;
+          }
+
+          /* Hide non-essential elements */
+          header,
+          footer,
+          aside,
+          nav,
+          button,
+          .toc-scroll,
+          .social-share,
+          [class*="share"],
+          [class*="Social"],
+          [class*="Header"],
+          [class*="Footer"] {
+            display: none !important;
+          }
+
+          /* Hide hero section buttons */
+          div[class*="flex"] button {
+            display: none !important;
+          }
+
+          /* Ensure main content area is full width */
+          div[class*="flex-col"] {
+            flex-direction: column !important;
+          }
+
+          /* Full width for content */
+          article {
+            max-width: 100% !important;
+            padding: 0 !important;
+          }
+
+          /* Page breaks */
+          section {
+            page-break-inside: avoid;
+            break-inside: avoid;
+          }
+
+          h1, h2, h3 {
+            page-break-after: avoid;
+            break-after: avoid;
+          }
+
+          /* Typography */
+          body {
+            font-size: 12pt;
+            line-height: 1.6;
+            color: #000 !important;
+            background: #fff !important;
+          }
+
+          h1 {
+            font-size: 24pt;
+            margin-top: 0;
+          }
+
+          h2 {
+            font-size: 18pt;
+            margin-top: 20pt;
+          }
+
+          h3 {
+            font-size: 14pt;
+          }
+
+          /* Links */
+          a {
+            color: #000 !important;
+            text-decoration: underline;
+          }
+
+          a[href^="http"]:after {
+            content: " (" attr(href) ")";
+            font-size: 10pt;
+            color: #666;
+          }
+
+          /* Citations */
+          .citation-link {
+            color: #000 !important;
+            text-decoration: none;
+          }
+
+          /* Remove borders and backgrounds */
+          * {
+            border-color: #ddd !important;
+            background: transparent !important;
+          }
+
+          /* Keep images */
+          img {
+            max-width: 100%;
+            height: auto;
+            page-break-inside: avoid;
+          }
+        }
       `}</style>
 
       <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
@@ -153,6 +267,7 @@ export default function ProjectCortexPage() {
                 Read Abstract
               </button>
               <button
+                onClick={handleDownloadPDF}
                 className={`px-6 py-3 rounded font-semibold border-2 transition-all ${isDark ? 'border-gray-700 text-gray-300 hover:bg-gray-800' : 'border-gray-300 text-gray-700 hover:bg-gray-50'}`}
               >
                 Download PDF
@@ -160,7 +275,7 @@ export default function ProjectCortexPage() {
             </div>
 
             {/* Social Share Component */}
-            <div className="max-w-3xl mx-auto mt-8">
+            <div className="max-w-3xl mx-auto mt-8 social-share">
               <SocialShare />
             </div>
           </div>
@@ -171,12 +286,7 @@ export default function ProjectCortexPage() {
 
           {/* Sticky TOC Sidebar */}
           <aside className="lg:w-64 flex-shrink-0">
-            <div className="lg:sticky lg:top-24 max-h-[calc(100vh-8rem)] overflow-y-auto overflow-x-hidden toc-scroll space-y-6">
-              {/* Social Share - Sticky */}
-              <div className="lg:block hidden">
-                <SocialShare />
-              </div>
-              
+            <div className="lg:sticky lg:top-24 max-h-[calc(100vh-8rem)] overflow-y-auto overflow-x-hidden toc-scroll">
               <nav className={`pl-4 border-l-2 ${isDark ? 'border-gray-800' : 'border-gray-200'}`}>
                 <h3 className={`text-xs font-bold uppercase tracking-wider mb-6 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
                   Contents
