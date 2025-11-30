@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
+import SocialShare from './components/SocialShare';
 
 export default function ProjectCortexPage() {
   const { isDark } = useTheme();
@@ -157,6 +158,11 @@ export default function ProjectCortexPage() {
                 Download PDF
               </button>
             </div>
+
+            {/* Social Share Component */}
+            <div className="max-w-3xl mx-auto mt-8">
+              <SocialShare />
+            </div>
           </div>
         </div>
 
@@ -165,7 +171,12 @@ export default function ProjectCortexPage() {
 
           {/* Sticky TOC Sidebar */}
           <aside className="lg:w-64 flex-shrink-0">
-            <div className="lg:sticky lg:top-24 max-h-[calc(100vh-8rem)] overflow-y-auto overflow-x-hidden toc-scroll">
+            <div className="lg:sticky lg:top-24 max-h-[calc(100vh-8rem)] overflow-y-auto overflow-x-hidden toc-scroll space-y-6">
+              {/* Social Share - Sticky */}
+              <div className="lg:block hidden">
+                <SocialShare />
+              </div>
+              
               <nav className={`pl-4 border-l-2 ${isDark ? 'border-gray-800' : 'border-gray-200'}`}>
                 <h3 className={`text-xs font-bold uppercase tracking-wider mb-6 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
                   Contents
@@ -1384,27 +1395,53 @@ export default function ProjectCortexPage() {
             </section>
 
             {/* Author Biography */}
-            <section id="author-biography" className={`mb-16 p-8 rounded-xl ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`}>
+            <section id="author-biography" className={`mb-16 p-8 rounded-xl ${isDark ? 'bg-gray-800' : 'bg-gray-100'}`} itemScope itemType="https://schema.org/Person">
               <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
                 <div className="w-32 h-32 rounded-full overflow-hidden flex-shrink-0 border-4 border-blue-500 relative">
                   <Image
                     src="/assets/hamza-pic.jpg"
-                    alt="Hamza Hafeez Bhatti"
+                    alt="Hamza Hafeez Bhatti - CEO of Upvista Digital | Young AGI Researcher | Author of Project Cortex"
                     fill
                     className="object-cover"
+                    itemProp="image"
                   />
                 </div>
                 <div>
-                  <h2 className={`text-2xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Hamza Hafeez Bhatti</h2>
-                  <p className={`text-sm font-semibold mb-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
+                  <h2 className={`text-2xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`} itemProp="name">
+                    Hamza Hafeez Bhatti
+                  </h2>
+                  <p className={`text-sm font-semibold mb-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} itemProp="jobTitle">
                     CEO, Upvista Digital | Researcher in AGI & Cognitive Architectures
                   </p>
-                  <p className={`leading-relaxed text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    Hamza Hafeez Bhatti was born in Lahore, Pakistan, in march 2006. He is currently pursuing a Bachelor of Science degree in Computer Science at the National University of Modern Languages, Lahore Campus. His academic interests span artificial intelligence, cognitive architectures, neuroscience inspired computing, multi agent orchestration, and human aligned intelligence systems. Alongside his formal studies, he conducts independent research on AGI safety, decision making architectures, and computational models inspired by the human prefrontal cortex.
+                  
+                  {/* Key Achievements */}
+                  <div className={`mb-4 p-4 rounded-lg ${isDark ? 'bg-gray-700' : 'bg-white'} border-l-4 border-blue-500`}>
+                    <h3 className={`text-sm font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>Key Achievements</h3>
+                    <ul className={`text-xs space-y-1 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
+                      <li>✓ One of the youngest researchers in Artificial General Intelligence (AGI)</li>
+                      <li>✓ Author of Project Cortex - a groundbreaking biologically inspired AGI architecture</li>
+                      <li>✓ CEO & Founder of Upvista Digital - a leading digital innovation company</li>
+                      <li>✓ Pioneer in neuroscience-inspired computing and cognitive architectures</li>
+                      <li>✓ Researcher focused on safety-aligned and interpretable AI systems</li>
+                    </ul>
+                  </div>
+                  
+                  <p className={`leading-relaxed text-sm ${isDark ? 'text-gray-300' : 'text-gray-700'}`} itemProp="description">
+                    <strong>Hamza Hafeez Bhatti</strong> was born in Lahore, Pakistan, in March 2006. At just 19 years old, he has established himself as one of the youngest and most promising researchers in the field of Artificial General Intelligence. He is currently pursuing a Bachelor of Science degree in Computer Science at the National University of Modern Languages, Lahore Campus. His academic interests span artificial intelligence, cognitive architectures, neuroscience-inspired computing, multi-agent orchestration, and human-aligned intelligence systems.
                   </p>
                   <p className={`leading-relaxed text-sm mt-4 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
-                    He has experience developing full stack systems, distributed architectures, and collaborative social platforms, including Upvista Community. His broader research motivation centers on designing intelligent systems that are interpretable, reliable, and aligned with human values. His long term ambition is to contribute to global AGI research, build scalable real world intelligent systems, and advance the scientific understanding of safe machine cognition.
+                    Alongside his formal studies, Hamza conducts independent research on AGI safety, decision-making architectures, and computational models inspired by the human prefrontal cortex. He has experience developing full-stack systems, distributed architectures, and collaborative social platforms, including Upvista Community. His broader research motivation centers on designing intelligent systems that are interpretable, reliable, and aligned with human values. His long-term ambition is to contribute to global AGI research, build scalable real-world intelligent systems, and advance the scientific understanding of safe machine cognition.
                   </p>
+                  
+                  {/* Contact & Social */}
+                  <div className={`mt-6 pt-4 border-t ${isDark ? 'border-gray-700' : 'border-gray-300'}`}>
+                    <p className={`text-xs mb-2 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                      <strong>Contact:</strong> <a href="mailto:hamza@upvistadigital.com" className={`${isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}`} itemProp="email">hamza@upvistadigital.com</a>
+                    </p>
+                    <p className={`text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                      <strong>Organization:</strong> <span itemProp="affiliation">Upvista Digital</span> | <span itemProp="address">Lahore, Pakistan</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
