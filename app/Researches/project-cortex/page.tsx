@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -81,11 +80,6 @@ export default function ProjectCortexPage() {
 
   return (
     <>
-      <Head>
-        <title>Project Cortex: A Biologically Inspired Architecture for Artificial General Intelligence | Hamza Hafeez Bhatti</title>
-        <meta name="description" content="Project Cortex - A comprehensive research paper on biologically inspired AGI architecture modeled on the human prefrontal cortex." />
-        <meta name="author" content="Hamza Hafeez Bhatti" />
-      </Head>
 
       <style jsx global>{`
         .citation-link {
