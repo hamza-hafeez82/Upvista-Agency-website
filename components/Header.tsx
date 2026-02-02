@@ -37,20 +37,17 @@ const Header = () => {
 
   const servicesLinks = [
     { label: t('dropdown.services.about'), href: "/Services" },
-    { label: t('dropdown.services.software'), href: "/Services/software-development" },
-    { label: t('dropdown.services.web'), href: "/Services/web-development" },
+    { label: t('dropdown.services.software'), href: "/Services/web-development" },
+    { label: t('dropdown.services.web'), href: "/Services/app-development" },
     { label: t('dropdown.services.ai'), href: "/Services/ai-automation" },
-    { label: t('dropdown.services.cloud'), href: "/Services/cloud" },
-    { label: t('dropdown.services.design'), href: "/Services/designing" },
-    { label: t('dropdown.services.marketing'), href: "/Services/marketing" },
+    { label: t('dropdown.services.design'), href: "/Services/branding-marketing" },
   ];
 
   const productsLinks = [
     { label: t('dropdown.products.erp'), href: "/products/erp-crm" },
-    { label: t('dropdown.products.pos'), href: "/products/pos-lms" },
-    { label: t('dropdown.products.templates'), href: "/products/templates" },
-    { label: t('dropdown.products.ai'), href: "/products/ai-automation" },
-    { label: t('dropdown.products.chatbots'), href: "/products/chatbots" },
+    { label: t('dropdown.products.pos'), href: "/products/marketing-websites" },
+    { label: t('dropdown.products.templates'), href: "/products/ecommerce-platform" },
+    { label: t('dropdown.products.ai'), href: "/products/vista-ai" },
   ];
 
   const communityLinks = [
@@ -368,9 +365,8 @@ const Header = () => {
                       ))}
                     </div>
 
-                    {/* Marketplace Button with Dark Theme Support */}
                     <div className={`mt-auto px-5 pt-4 border-t ${isDark ? 'border-gray-200/50' : 'border-gray-200/50'}`}>
-                      <Link href="/marketplace" className="w-full block">
+                      <Link href="https://histeeria.upvistadigital.com" target="_blank" rel="noopener noreferrer" className="w-full block">
                         <button className={`w-full px-4 py-2 font-semibold rounded-lg border-2 transition-colors duration-300 cursor-pointer relative overflow-hidden group ${isDark
                           ? 'text-black border-purple-400 hover:border-transparent hover:text-white'
                           : 'text-gray-900 border-purple-600 hover:border-transparent hover:text-white'
@@ -657,6 +653,28 @@ const Header = () => {
                         {link.label}
                       </Link>
                     ))}
+                    <div className={`pt-2 mt-2 border-t text-xs font-semibold uppercase tracking-wider ${isDark ? 'text-gray-500 border-white/10' : 'text-gray-500 border-gray-200'}`}>
+                      Products
+                    </div>
+                    {productsLinks.map(link => (
+                      <Link key={link.label} href={link.href} className={`block py-1.5 text-sm transition-colors duration-200 ${isDark
+                        ? 'text-white/80 hover:text-white'
+                        : 'text-gray-700/80 hover:text-gray-900'
+                        }`} onClick={() => setMobileMenuOpen(false)}>
+                        {link.label}
+                      </Link>
+                    ))}
+                    <div className="pt-2 mt-2 border-t border-white/10">
+                      <Link
+                        href="https://histeeria.upvistadigital.com"
+                        className={`block py-2 text-sm font-semibold transition-colors duration-200 ${isDark ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-700'}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {t('dropdown.products.marketplace')}
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>

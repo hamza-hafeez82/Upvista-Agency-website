@@ -1,32 +1,20 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { motion } from 'framer-motion';
 
+import { Code2, Globe2, Cpu, Rocket, ShieldCheck, Zap, ArrowRight, Users2 } from 'lucide-react';
 export default function WebDevelopmentPage() {
   const { isDark } = useTheme();
   const { t } = useLanguage();
-  const [expandedProcess, setExpandedProcess] = useState<string | null>('custom-coded');
-  const [expandedProjectTypes, setExpandedProjectTypes] = useState<boolean>(true);
-  const [expandedTechStack, setExpandedTechStack] = useState<boolean>(true);
-  const [currentTechIndex, setCurrentTechIndex] = useState<number>(0);
 
-  const toggleProcess = (processType: string) => {
-    setExpandedProcess(expandedProcess === processType ? null : processType);
-  };
-
-  const toggleProjectTypes = () => {
-    setExpandedProjectTypes(!expandedProjectTypes);
-  };
-
-  const toggleTechStack = () => {
-    setExpandedTechStack(!expandedTechStack);
-  };
 
   const caseStudies = [
     {
@@ -70,177 +58,6 @@ export default function WebDevelopmentPage() {
     { name: 'Docker', image: '/assets/services/software/devops.jpeg', logo: '/assets/services/software/logos/docker.jpg', description: t('webdev.tech.docker') }
   ];
 
-  // Infinite carousel effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTechIndex((prevIndex) => 
-        prevIndex === techStackItems.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 3000); // Change every 3 seconds
-
-    return () => clearInterval(interval);
-  }, [techStackItems.length]);
-
-  const developmentProcesses = [
-    {
-      type: 'custom-coded',
-      title: t('webdev.processes.custom.title'),
-      description: t('webdev.processes.custom.description'),
-      platforms: ['React', 'Vue.js', 'Angular', 'Node.js', 'Python', 'PHP'],
-      services: [
-        t('webdev.processes.custom.service1'),
-        t('webdev.processes.custom.service2'),
-        t('webdev.processes.custom.service3'),
-        t('webdev.processes.custom.service4'),
-        t('webdev.processes.custom.service5'),
-        t('webdev.processes.custom.service6')
-      ],
-      roadmap: [
-        { 
-          step: 1, 
-          title: t('webdev.processes.custom.roadmap1.title'), 
-          description: t('webdev.processes.custom.roadmap1.description'),
-          details: t('webdev.processes.custom.roadmap1.details'),
-          image: '/assets/services/process/consultation.jpeg'
-        },
-        { 
-          step: 2, 
-          title: t('webdev.processes.custom.roadmap2.title'), 
-          description: t('webdev.processes.custom.roadmap2.description'),
-          details: t('webdev.processes.custom.roadmap2.details'),
-          image: '/assets/services/process/proposal.jpeg'
-        },
-        { 
-          step: 3, 
-          title: t('webdev.processes.custom.roadmap3.title'), 
-          description: t('webdev.processes.custom.roadmap3.description'),
-          details: t('webdev.processes.custom.roadmap3.details'),
-          image: '/assets/services/process/uiux.jpeg'
-        },
-        { 
-          step: 4, 
-          title: t('webdev.processes.custom.roadmap4.title'), 
-          description: t('webdev.processes.custom.roadmap4.description'),
-          details: t('webdev.processes.custom.roadmap4.details'),
-          image: '/assets/services/process/development.jpeg'
-        },
-        { 
-          step: 5, 
-          title: t('webdev.processes.custom.roadmap5.title'), 
-          description: t('webdev.processes.custom.roadmap5.description'),
-          details: t('webdev.processes.custom.roadmap5.details'),
-          image: '/assets/services/process/qa.jpeg'
-        },
-        { 
-          step: 6, 
-          title: t('webdev.processes.custom.roadmap6.title'), 
-          description: t('webdev.processes.custom.roadmap6.description'),
-          details: t('webdev.processes.custom.roadmap6.details'),
-          image: '/assets/services/process/launch.jpeg'
-        },
-        { 
-          step: 7, 
-          title: t('webdev.processes.custom.roadmap7.title'), 
-          description: t('webdev.processes.custom.roadmap7.description'),
-          details: t('webdev.processes.custom.roadmap7.details'),
-          image: '/assets/services/process/maintenance.jpeg'
-        }
-      ]
-    },
-    {
-      type: 'wordpress',
-      title: t('webdev.processes.wordpress.title'),
-      description: t('webdev.processes.wordpress.description'),
-      platforms: ['WordPress', 'WooCommerce', 'Custom Plugins', 'Themes'],
-      services: [
-        t('webdev.processes.wordpress.service1'),
-        t('webdev.processes.wordpress.service2'),
-        t('webdev.processes.wordpress.service3'),
-        t('webdev.processes.wordpress.service4'),
-        t('webdev.processes.wordpress.service5'),
-        t('webdev.processes.wordpress.service6')
-      ],
-      roadmap: [
-        { step: 1, title: t('webdev.processes.wordpress.roadmap1.title'), description: t('webdev.processes.wordpress.roadmap1.description'), image: '/assets/services/software/html.jpeg' },
-        { step: 2, title: t('webdev.processes.wordpress.roadmap2.title'), description: t('webdev.processes.wordpress.roadmap2.description'), image: '/assets/services/software/marketing.jpeg' },
-        { step: 3, title: t('webdev.processes.wordpress.roadmap3.title'), description: t('webdev.processes.wordpress.roadmap3.description'), image: '/assets/services/software/uiux.jpeg' },
-        { step: 4, title: t('webdev.processes.wordpress.roadmap4.title'), description: t('webdev.processes.wordpress.roadmap4.description'), image: '/assets/services/software/development.jpeg' },
-        { step: 5, title: t('webdev.processes.wordpress.roadmap5.title'), description: t('webdev.processes.wordpress.roadmap5.description'), image: '/assets/services/software/testing.jpeg' },
-        { step: 6, title: t('webdev.processes.wordpress.roadmap6.title'), description: t('webdev.processes.wordpress.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
-        { step: 7, title: t('webdev.processes.wordpress.roadmap7.title'), description: t('webdev.processes.wordpress.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
-      ]
-    },
-    {
-      type: 'webflow',
-      title: t('webdev.processes.webflow.title'),
-      description: t('webdev.processes.webflow.description'),
-      platforms: ['Webflow', 'Figma Integration', 'CMS', 'Interactions'],
-      services: [
-        t('webdev.processes.webflow.service1'),
-        t('webdev.processes.webflow.service2'),
-        t('webdev.processes.webflow.service3'),
-        t('webdev.processes.webflow.service4'),
-        t('webdev.processes.webflow.service5'),
-        t('webdev.processes.webflow.service6')
-      ],
-      roadmap: [
-        { step: 1, title: t('webdev.processes.webflow.roadmap1.title'), description: t('webdev.processes.webflow.roadmap1.description'), image: '/assets/services/software/uiux.jpeg' },
-        { step: 2, title: t('webdev.processes.webflow.roadmap2.title'), description: t('webdev.processes.webflow.roadmap2.description'), image: '/assets/services/software/html.jpeg' },
-        { step: 3, title: t('webdev.processes.webflow.roadmap3.title'), description: t('webdev.processes.webflow.roadmap3.description'), image: '/assets/services/software/marketing.jpeg' },
-        { step: 4, title: t('webdev.processes.webflow.roadmap4.title'), description: t('webdev.processes.webflow.roadmap4.description'), image: '/assets/services/software/development.jpeg' },
-        { step: 5, title: t('webdev.processes.webflow.roadmap5.title'), description: t('webdev.processes.webflow.roadmap5.description'), image: '/assets/services/software/testing.jpeg' },
-        { step: 6, title: t('webdev.processes.webflow.roadmap6.title'), description: t('webdev.processes.webflow.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
-        { step: 7, title: t('webdev.processes.webflow.roadmap7.title'), description: t('webdev.processes.webflow.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
-      ]
-    },
-    {
-      type: 'migration',
-      title: t('webdev.processes.migration.title'),
-      description: t('webdev.processes.migration.description'),
-      platforms: ['Any to Any', 'Data Migration', 'URL Preservation', 'SEO Maintenance'],
-      services: [
-        t('webdev.processes.migration.service1'),
-        t('webdev.processes.migration.service2'),
-        t('webdev.processes.migration.service3'),
-        t('webdev.processes.migration.service4'),
-        t('webdev.processes.migration.service5'),
-        t('webdev.processes.migration.service6')
-      ],
-      roadmap: [
-        { step: 1, title: t('webdev.processes.migration.roadmap1.title'), description: t('webdev.processes.migration.roadmap1.description'), image: '/assets/services/software/system.jpeg' },
-        { step: 2, title: t('webdev.processes.migration.roadmap2.title'), description: t('webdev.processes.migration.roadmap2.description'), image: '/assets/services/software/cloud2.jpeg' },
-        { step: 3, title: t('webdev.processes.migration.roadmap3.title'), description: t('webdev.processes.migration.roadmap3.description'), image: '/assets/services/software/cloud3.jpeg' },
-        { step: 4, title: t('webdev.processes.migration.roadmap4.title'), description: t('webdev.processes.migration.roadmap4.description'), image: '/assets/services/software/cloud4.jpeg' },
-        { step: 5, title: t('webdev.processes.migration.roadmap5.title'), description: t('webdev.processes.migration.roadmap5.description'), image: '/assets/services/software/testing.jpeg' },
-        { step: 6, title: t('webdev.processes.migration.roadmap6.title'), description: t('webdev.processes.migration.roadmap6.description'), image: '/assets/services/software/launch2.jpeg' },
-        { step: 7, title: t('webdev.processes.migration.roadmap7.title'), description: t('webdev.processes.migration.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
-      ]
-    },
-    {
-      type: 'maintenance',
-      title: t('webdev.processes.maintenance.title'),
-      description: t('webdev.processes.maintenance.description'),
-      platforms: ['All Platforms', 'Bug Fixes', 'Security Updates', 'Feature Additions'],
-      services: [
-        t('webdev.processes.maintenance.service1'),
-        t('webdev.processes.maintenance.service2'),
-        t('webdev.processes.maintenance.service3'),
-        t('webdev.processes.maintenance.service4'),
-        t('webdev.processes.maintenance.service5'),
-        t('webdev.processes.maintenance.service6')
-      ],
-      roadmap: [
-        { step: 1, title: t('webdev.processes.maintenance.roadmap1.title'), description: t('webdev.processes.maintenance.roadmap1.description'), image: '/assets/services/software/maintenance.jpeg' },
-        { step: 2, title: t('webdev.processes.maintenance.roadmap2.title'), description: t('webdev.processes.maintenance.roadmap2.description'), image: '/assets/services/software/security.jpeg' },
-        { step: 3, title: t('webdev.processes.maintenance.roadmap3.title'), description: t('webdev.processes.maintenance.roadmap3.description'), image: '/assets/services/software/check.jpeg' },
-        { step: 4, title: t('webdev.processes.maintenance.roadmap4.title'), description: t('webdev.processes.maintenance.roadmap4.description'), image: '/assets/services/software/goals.jpeg' },
-        { step: 5, title: t('webdev.processes.maintenance.roadmap5.title'), description: t('webdev.processes.maintenance.roadmap5.description'), image: '/assets/services/software/devops.jpeg' },
-        { step: 6, title: t('webdev.processes.maintenance.roadmap6.title'), description: t('webdev.processes.maintenance.roadmap6.description'), image: '/assets/services/software/testing.jpeg' },
-        { step: 7, title: t('webdev.processes.maintenance.roadmap7.title'), description: t('webdev.processes.maintenance.roadmap7.description'), image: '/assets/services/software/maintenance.jpeg' }
-      ]
-    }
-  ];
-
   return (
     <>
       <Head>
@@ -257,937 +74,646 @@ export default function WebDevelopmentPage() {
         <meta name="twitter:description" content="Professional web development services including custom websites and web applications." />
         <meta name="twitter:image" content="https://www.upvistadigital.com/assets/icon.PNG" />
         <link rel="canonical" href="https://www.upvistadigital.com/Services/web-development" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          'name': 'Web Development Services',
-          'description': 'Professional web development services including custom websites, web applications, and e-commerce solutions using React, Next.js, Vue.js, Angular, Node.js, and modern technologies.',
-          'url': 'https://www.upvistadigital.com/Services/web-development',
-          'provider': {
-            '@type': 'Organization',
-            'name': 'Upvista Digital',
-            'url': 'https://www.upvistadigital.com'
-          },
-          'serviceType': 'Web Development',
-          'areaServed': 'Worldwide',
-          'breadcrumb': {
-            '@type': 'BreadcrumbList',
-            'itemListElement': [
-              { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
-              { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://www.upvistadigital.com/Services' },
-              { '@type': 'ListItem', 'position': 3, 'name': 'Web Development', 'item': 'https://www.upvistadigital.com/Services/web-development' }
-            ]
-          }
-        }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            'name': 'Web Development Services',
+            'description': 'Professional web development services including custom websites, web applications, and e-commerce solutions using React, Next.js, Vue.js, Angular, Node.js, and modern technologies.',
+            'url': 'https://www.upvistadigital.com/Services/web-development',
+            'provider': {
+              '@type': 'Organization',
+              'name': 'Upvista Digital',
+              'url': 'https://www.upvistadigital.com'
+            },
+            'serviceType': 'Web Development',
+            'areaServed': 'Worldwide',
+            'breadcrumb': {
+              '@type': 'BreadcrumbList',
+              'itemListElement': [
+                { '@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://www.upvistadigital.com' },
+                { '@type': 'ListItem', 'position': 2, 'name': 'Services', 'item': 'https://www.upvistadigital.com/Services' },
+                { '@type': 'ListItem', 'position': 3, 'name': 'Web Development', 'item': 'https://www.upvistadigital.com/Services/web-development' }
+              ]
+            }
+          })
+        }} />
       </Head>
-    <div className={`min-h-screen ${
-      isDark
+      <div className={`min-h-screen ${isDark
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
-    }`}>
-      <Header />
+        }`}>
+        <Header />
 
-      {/* Hero Section */}
-      <div className="pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Hero Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Side - Text Content */}
-            <div className="text-left">
-              <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-8 ${
-                isDark
-                  ? 'bg-white/10 border border-white/20 text-indigo-200'
-                  : 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 border border-blue-500/70 text-white shadow-lg'
-              }`}>
-                <span className={`w-2 h-2 rounded-full mr-3 ${
-                  isDark ? 'bg-blue-400' : 'bg-white'
-                }`}></span>
-                {t('webdev.badge')}
-              </div>
-              <h1 className={`text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight ${
-                isDark
-                  ? 'bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent'
-                  : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700 bg-clip-text text-transparent'
-              }`}>
-                {t('webdev.title')}
-              </h1>
-              <p className={`text-lg sm:text-xl leading-relaxed ${
-                isDark ? 'text-gray-300' : 'text-gray-700'
-              }`}>
-                {t('webdev.subtitle')}
+        {/* Hero Section - The Artistic Premiere */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          {/* Background Artistic Glows */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 0.2, scale: 1 }}
+              transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+              className={`absolute -top-24 -left-24 w-96 h-96 rounded-full blur-[100px] ${isDark ? 'bg-blue-600' : 'bg-blue-300'}`}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 0.15, scale: 1.1 }}
+              transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+              className={`absolute top-1/2 -right-24 w-80 h-80 rounded-full blur-[80px] ${isDark ? 'bg-purple-600' : 'bg-purple-300'}`}
+            />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* Left Content - Animated Text */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-left"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold tracking-wide mb-8 backdrop-blur-md border ${isDark
+                    ? 'bg-white/5 border-white/10 text-blue-400'
+                    : 'bg-blue-50/80 border-blue-100 text-blue-700 shadow-sm'
+                    }`}
+                >
+                  <Zap className="w-4 h-4 mr-2 animate-pulse" />
+                  {t('webdev.badge')}
+                </motion.div>
+
+                <h1 className={`text-5xl md:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight tracking-tight ${isDark
+                  ? 'bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent'
+                  : 'bg-gradient-to-r from-gray-900 via-blue-900 to-purple-800 bg-clip-text text-transparent'
+                  }`}>
+                  {t('webdev.title')}
+                </h1>
+
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className={`text-xl md:text-2xl leading-relaxed mb-10 max-w-xl ${isDark ? 'text-gray-400' : 'text-gray-600'
+                    }`}
+                >
+                  {t('webdev.subtitle')}
+                </motion.p>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="flex flex-wrap gap-4"
+                >
+                  <button className={`px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ${isDark ? 'bg-blue-600 text-white hover:bg-blue-500' : 'bg-gray-900 text-white hover:bg-black'
+                    }`}>
+                    Start Your Journey
+                  </button>
+                  <button className={`px-8 py-4 rounded-2xl font-bold text-lg border-2 transition-all duration-300 hover:bg-white/5 ${isDark ? 'border-purple-500/30 text-purple-400' : 'border-gray-200 text-gray-700'
+                    }`}>
+                    View Artifacts
+                  </button>
+                </motion.div>
+              </motion.div>
+
+              {/* Right Side - Artistic Image Display */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
+                animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="relative"
+              >
+                <div className={`relative z-10 w-full aspect-square md:aspect-[4/3] rounded-[40px] overflow-hidden border-8 ${isDark ? 'border-white/5 shadow-blue-500/10' : 'border-white shadow-2xl shadow-blue-200/50'
+                  }`}>
+                  <Image
+                    src="/assets/services/software/25.jpeg"
+                    alt="Web Development Services"
+                    fill
+                    className="object-cover transform hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+
+                {/* Floating Decorative Elements */}
+                <motion.div
+                  animate={{
+                    y: [0, -20, 0],
+                    rotate: [0, 5, 0]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className={`absolute -top-10 -right-10 p-6 rounded-3xl backdrop-blur-xl border z-20 hidden md:block ${isDark ? 'bg-white/10 border-white/20' : 'bg-white/80 border-gray-100 shadow-xl'
+                    }`}
+                >
+                  <Code2 className="w-10 h-10 text-blue-500" />
+                </motion.div>
+
+                <motion.div
+                  animate={{
+                    y: [0, 20, 0],
+                    rotate: [0, -5, 0]
+                  }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                  className={`absolute -bottom-10 -left-10 p-6 rounded-3xl backdrop-blur-xl border z-20 hidden md:block ${isDark ? 'bg-white/10 border-white/20' : 'bg-white/80 border-gray-100 shadow-xl'
+                    }`}
+                >
+                  <Globe2 className="w-10 h-10 text-purple-500" />
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+
+        {/* Wave Divider */}
+        <div className="relative w-full overflow-hidden leading-[0] transform rotate-180">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className={`relative block w-full h-[60px] md:h-[100px] ${isDark ? 'fill-gray-900' : 'fill-blue-50'
+            }`}>
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+          </svg>
+        </div>
+
+        {/* Project Types - The Bento Grid Experience */}
+        <section className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-black' : 'bg-white'
+          }`}>
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'
+                }`}>
+                {t('webdev.projectTypes.title')}
+              </h2>
+              <p className={`text-xl max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'
+                }`}>
+                {t('webdev.projectTypes.subtitle')}
               </p>
-            </div>
-            
-            {/* Right Side - Hero Image */}
-            <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden transform hover:rotate-2 transition-transform duration-500 shadow-2xl hover:shadow-3xl">
-              <Image
-                src="/assets/services/software/25.jpeg"
-                alt="Web Development Services"
-                fill
-                className="object-cover rounded-3xl"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+            </motion.div>
 
-
-      {/* Project Types Section */}
-      <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {t('webdev.projectTypes.title')}
-            </h2>
-            <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              {t('webdev.projectTypes.subtitle')}
-            </p>
-          </div>
-
-          <div className={`rounded-2xl border overflow-hidden ${
-            isDark
-              ? 'bg-white/5 border-white/10'
-              : 'bg-white/70 border-gray-200 shadow-lg'
-          }`}>
-            <button
-              onClick={toggleProjectTypes}
-              className={`w-full p-6 text-left transition-colors ${
-                isDark
-                  ? 'hover:bg-white/10'
-                  : 'hover:bg-white/90'
-              }`}
-            >
-              <div className="flex justify-between items-center">
-                <div>
-                  <h3 className={`text-xl font-semibold mb-2 ${
-                    isDark ? 'text-white' : 'text-gray-900'
-                  }`}>
-                    {t('webdev.projectTypes.title')}
-                  </h3>
-                  <p className={`${
-                    isDark ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
-                    {t('webdev.projectTypes.subtitle')}
-                  </p>
-                </div>
-                <svg
-                  className={`w-6 h-6 transition-transform ${
-                    expandedProjectTypes ? 'rotate-180' : ''
-                  } ${
-                    isDark ? 'text-gray-400' : 'text-gray-500'
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
+              {/* Custom Web App - Large Bento Card */}
+              <motion.div
+                whileHover={{ y: -10 }}
+                className={`md:col-span-4 p-8 rounded-[32px] border relative overflow-hidden group ${isDark ? 'bg-white/[0.03] border-white/10' : 'bg-blue-50/50 border-blue-100'
                   }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </button>
-
-            {expandedProjectTypes && (
-              <div className={`px-6 pb-6 border-t ${
-                isDark ? 'border-white/10' : 'border-gray-200'
-              }`}>
-                <div className="pt-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className={`p-6 rounded-xl ${
-                      isDark
-                        ? 'bg-white/5 border border-white/10'
-                        : 'bg-white/50 border border-gray-200'
-                    }`}>
-                      <h4 className={`text-xl font-semibold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {t('webdev.projectTypes.custom.title')}
-                      </h4>
-                      <p className={`text-base leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.projectTypes.custom.description')}
-                      </p>
-                    </div>
-
-                    <div className={`p-6 rounded-xl ${
-                      isDark
-                        ? 'bg-white/5 border border-white/10'
-                        : 'bg-white/50 border border-gray-200'
-                    }`}>
-                      <h4 className={`text-xl font-semibold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {t('webdev.projectTypes.migration.title')}
-                      </h4>
-                      <p className={`text-base leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.projectTypes.migration.description')}
-                      </p>
-                    </div>
-
-                    <div className={`p-6 rounded-xl ${
-                      isDark
-                        ? 'bg-white/5 border border-white/10'
-                        : 'bg-white/50 border border-gray-200'
-                    }`}>
-                      <h4 className={`text-xl font-semibold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {t('webdev.projectTypes.fixes.title')}
-                      </h4>
-                      <p className={`text-base leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.projectTypes.fixes.description')}
-                      </p>
-                    </div>
-
-                    <div className={`p-6 rounded-xl ${
-                      isDark
-                        ? 'bg-white/5 border border-white/10'
-                        : 'bg-white/50 border border-gray-200'
-                    }`}>
-                      <h4 className={`text-xl font-semibold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {t('webdev.projectTypes.features.title')}
-                      </h4>
-                      <p className={`text-base leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.projectTypes.features.description')}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Tech Stack Section */}
-      <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {t('webdev.techStack.title')}
-            </h2>
-            <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              {t('webdev.techStack.subtitle')}
-            </p>
-          </div>
-
-          <div className={`rounded-2xl border overflow-hidden ${
-            isDark
-              ? 'bg-white/5 border-white/10'
-              : 'bg-white/70 border-gray-200 shadow-lg'
-          }`}>
-            <button
-              onClick={toggleTechStack}
-              className={`w-full p-6 text-left transition-colors ${
-                isDark
-                  ? 'hover:bg-white/10'
-                  : 'hover:bg-white/90'
-              }`}
-            >
-              <div className="flex justify-between items-center">
-                <div>
-                  <h3 className={`text-xl font-semibold mb-2 ${
-                    isDark ? 'text-white' : 'text-gray-900'
-                  }`}>
-                    {t('webdev.techStack.title')}
-                  </h3>
-                  <p className={`${
-                    isDark ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
-                    {t('webdev.techStack.subtitle')}
-                  </p>
-                </div>
-                <svg
-                  className={`w-6 h-6 transition-transform ${
-                    expandedTechStack ? 'rotate-180' : ''
-                  } ${
-                    isDark ? 'text-gray-400' : 'text-gray-500'
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-            </button>
-
-            {expandedTechStack && (
-              <div className={`px-6 pb-6 border-t ${
-                isDark ? 'border-white/10' : 'border-gray-200'
-              }`}>
-                <div className="pt-6">
-                  {/* Tech Stack Carousel */}
-                  <div className="mb-12">
-                    <div className="relative overflow-hidden rounded-2xl">
-                      <div className="flex transition-transform duration-500 ease-in-out"
-                           style={{ transform: `translateX(-${currentTechIndex * 100}%)` }}>
-                        {techStackItems.map((tech, index) => (
-                          <div key={index} className="w-full flex-shrink-0">
-                            <div className={`p-6 rounded-2xl ${
-                              isDark
-                                ? 'bg-white/5 border border-white/10'
-                                : 'bg-white/70 border border-gray-200 shadow-lg'
-                            }`}>
-                              <div className="flex flex-col lg:flex-row items-center gap-8">
-                                {/* Tech Image */}
-                                <div className="flex-shrink-0 w-full lg:w-80 h-48 rounded-xl overflow-hidden relative">
-                                  <Image
-                                    src={tech.image}
-                                    alt={tech.name}
-                                    fill
-                                    className="object-contain"
-                                  />
-                                </div>
-                                
-                                {/* Tech Info */}
-                                <div className="flex-1 text-center lg:text-left">
-                                  <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
-                                    <div className="w-12 h-12 rounded-xl overflow-hidden shadow-md">
-                                      <Image
-                                        src={tech.logo}
-                                        alt={`${tech.name} logo`}
-                                        width={48}
-                                        height={48}
-                                        className="w-full h-full object-contain p-1 bg-white/90"
-                                      />
-                                    </div>
-                                    <h3 className={`text-3xl font-bold ${
-                                      isDark ? 'text-white' : 'text-gray-900'
-                                    }`}>
-                                      {tech.name}
-                                    </h3>
-                                  </div>
-                                  <p className={`text-lg mb-6 ${
-                                    isDark ? 'text-gray-300' : 'text-gray-600'
-                                  }`}>
-                                    {tech.description}
-                                  </p>
-                                  <div className={`inline-flex items-center px-6 py-3 rounded-full text-sm font-medium ${
-                                    isDark
-                                      ? 'bg-blue-600/20 text-blue-300 border border-blue-500/30'
-                                      : 'bg-blue-100 text-blue-700 border border-blue-200'
-                                  }`}>
-                                    <span className="w-2 h-2 rounded-full bg-blue-500 mr-3 animate-pulse"></span>
-                                    {t('webdev.techStack.badge')}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      {/* Navigation Dots */}
-                      <div className="flex justify-center mt-6 space-x-2">
-                        {techStackItems.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentTechIndex(index)}
-                            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                              index === currentTechIndex
-                                ? isDark
-                                  ? 'bg-blue-500 scale-125'
-                                  : 'bg-blue-600 scale-125'
-                                : isDark
-                                  ? 'bg-white/30 hover:bg-white/50'
-                                  : 'bg-gray-300 hover:bg-gray-400'
-                            }`}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Tech Categories */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className={`p-6 rounded-xl ${
-                      isDark
-                        ? 'bg-white/5 border border-white/10'
-                        : 'bg-white/50 border border-gray-200'
-                    }`}>
-                      <h4 className={`text-xl font-semibold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {t('webdev.techStack.frontend')}
-                      </h4>
-                      <p className={`text-base leading-relaxed mb-4 ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.techStack.frontend.desc1')}
-                      </p>
-                      <p className={`text-base leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.techStack.frontend.desc2')}
-                      </p>
-                    </div>
-
-                    <div className={`p-6 rounded-xl ${
-                      isDark
-                        ? 'bg-white/5 border border-white/10'
-                        : 'bg-white/50 border border-gray-200'
-                    }`}>
-                      <h4 className={`text-xl font-semibold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {t('webdev.techStack.backend')}
-                      </h4>
-                      <p className={`text-base leading-relaxed mb-4 ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.techStack.backend.desc1')}
-                      </p>
-                      <p className={`text-base leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.techStack.backend.desc2')}
-                      </p>
-                    </div>
-
-                    <div className={`p-6 rounded-xl ${
-                      isDark
-                        ? 'bg-white/5 border border-white/10'
-                        : 'bg-white/50 border border-gray-200'
-                    }`}>
-                      <h4 className={`text-xl font-semibold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {t('webdev.techStack.database')}
-                      </h4>
-                      <p className={`text-base leading-relaxed mb-4 ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.techStack.database.desc1')}
-                      </p>
-                      <p className={`text-base leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.techStack.database.desc2')}
-                      </p>
-                    </div>
-
-                    <div className={`p-6 rounded-xl ${
-                      isDark
-                        ? 'bg-white/5 border border-white/10'
-                        : 'bg-white/50 border border-gray-200'
-                    }`}>
-                      <h4 className={`text-xl font-semibold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {t('webdev.techStack.platforms')}
-                      </h4>
-                      <p className={`text-base leading-relaxed mb-4 ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.techStack.platforms.desc1')}
-                      </p>
-                      <p className={`text-base leading-relaxed ${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {t('webdev.techStack.platforms.desc2')}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* Case Studies Section */}
-      <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {t('webdev.caseStudies.title')}
-            </h2>
-            <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              {t('webdev.caseStudies.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {caseStudies.map((study) => (
-              <div
-                key={study.id}
-                className={`group rounded-2xl overflow-hidden border ${
-                  isDark
-                    ? 'bg-white/5 border-white/10 hover:bg-white/10'
-                    : 'bg-white/70 border-gray-200 hover:bg-white shadow-lg hover:shadow-xl'
-                } transition-all duration-300`}
               >
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={study.image}
-                    alt={study.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      isDark
-                        ? 'bg-blue-600/80 text-white'
-                        : 'bg-blue-600 text-white'
-                    }`}>
-                      {study.tag}
-                    </span>
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Code2 className="w-8 h-8 text-blue-500" />
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className={`text-xl font-semibold mb-3 ${
-                    isDark ? 'text-white' : 'text-gray-900'
-                  }`}>
-                    {study.title}
+                  <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    {t('webdev.projectTypes.custom.title')}
                   </h3>
-                  <p className={`mb-4 ${
-                    isDark ? 'text-gray-300' : 'text-gray-600'
-                  }`}>
-                    {study.description}
+                  <p className={`text-lg leading-relaxed max-w-md ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {t('webdev.projectTypes.custom.description')}
                   </p>
-                  <a
-                    href={study.href}
-                    className={`inline-flex items-center text-sm font-medium ${
-                      isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
-                    } transition-colors`}
-                  >
-                    {t('webdev.caseStudies.readMore')}
-                    <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+                {/* Decorative SVG Pattern */}
+                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <Cpu className="w-40 h-40" />
+                </div>
+              </motion.div>
 
-      {/* Development Process Section */}
-      <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {t('webdev.process.title')}
-            </h2>
-            <p className={`text-lg sm:text-xl max-w-3xl mx-auto ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              {t('webdev.process.subtitle')}
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {developmentProcesses.map((process) => (
-              <div
-                key={process.type}
-                className={`rounded-2xl border ${
-                  isDark
-                    ? 'bg-white/5 border-white/10'
-                    : 'bg-white/70 border-gray-200 shadow-lg'
-                } overflow-hidden`}
-              >
-                <button
-                  onClick={() => toggleProcess(process.type)}
-                  className={`w-full p-6 text-left transition-colors ${
-                    isDark
-                      ? 'hover:bg-white/10'
-                      : 'hover:bg-white/90'
+              {/* Migration - Tall Bento Card */}
+              <motion.div
+                whileHover={{ y: -10 }}
+                className={`md:col-span-2 p-8 rounded-[32px] border relative overflow-hidden group ${isDark ? 'bg-white/[0.03] border-white/10' : 'bg-purple-500/5 border-purple-100'
                   }`}
-                >
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <h3 className={`text-xl font-semibold mb-2 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
-                        {process.title}
-                      </h3>
-                      <p className={`${
-                        isDark ? 'text-gray-300' : 'text-gray-600'
-                      }`}>
-                        {process.description}
-                      </p>
-                    </div>
-                    <svg
-                      className={`w-6 h-6 transition-transform ${
-                        expandedProcess === process.type ? 'rotate-180' : ''
-                      } ${
-                        isDark ? 'text-gray-400' : 'text-gray-500'
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+              >
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-purple-500/20 flex items-center justify-center mb-6">
+                    <Rocket className="w-8 h-8 text-purple-500" />
                   </div>
-                </button>
+                  <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    {t('webdev.projectTypes.migration.title')}
+                  </h3>
+                  <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {t('webdev.projectTypes.migration.description')}
+                  </p>
+                </div>
+              </motion.div>
 
-                {expandedProcess === process.type && (
-                  <div className={`px-6 pb-6 border-t ${
-                    isDark ? 'border-white/10' : 'border-gray-200'
-                  }`}>
-                    <div className="pt-6">
-                      {/* Enhanced Roadmap with Zig-Zag Layout */}
-                      <div className="mb-8">
-                        <h4 className={`text-lg font-semibold mb-6 ${
-                          isDark ? 'text-white' : 'text-gray-900'
+              {/* Fixes & Performance - Square Bento Card */}
+              <motion.div
+                whileHover={{ y: -10 }}
+                className={`md:col-span-3 p-8 rounded-[32px] border relative overflow-hidden group ${isDark ? 'bg-white/[0.03] border-white/10' : 'bg-indigo-50/50 border-indigo-100'
+                  }`}
+              >
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-indigo-500/20 flex items-center justify-center mb-6">
+                    <ShieldCheck className="w-8 h-8 text-indigo-500" />
+                  </div>
+                  <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    {t('webdev.projectTypes.fixes.title')}
+                  </h3>
+                  <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {t('webdev.projectTypes.fixes.description')}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* New Features - Square Bento Card */}
+              <motion.div
+                whileHover={{ y: -10 }}
+                className={`md:col-span-3 p-8 rounded-[32px] border relative overflow-hidden group ${isDark ? 'bg-white/[0.03] border-white/10' : 'bg-pink-50/50 border-pink-100'
+                  }`}
+              >
+                <div className="relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-pink-500/20 flex items-center justify-center mb-6">
+                    <Zap className="w-8 h-8 text-pink-500" />
+                  </div>
+                  <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    {t('webdev.projectTypes.features.title')}
+                  </h3>
+                  <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {t('webdev.projectTypes.features.description')}
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Tech Stack - The Innovation Lab */}
+        <section className={`py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden ${isDark ? 'bg-[#020617]' : 'bg-blue-50/30'
+          }`}>
+          {/* Background Decorative Blobs */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
+            <div className={`absolute top-0 left-1/4 w-64 h-64 blur-[120px] rounded-full ${isDark ? 'bg-blue-900/20' : 'bg-blue-200/40'}`} />
+            <div className={`absolute bottom-0 right-1/4 w-64 h-64 blur-[120px] rounded-full ${isDark ? 'bg-purple-900/20' : 'bg-purple-200/40'}`} />
+          </div>
+
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'
+                }`}>
+                {t('webdev.techStack.title')}
+              </h2>
+              <p className={`text-xl max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'
+                }`}>
+                {t('webdev.techStack.subtitle')}
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {techStackItems.map((tech, index) => (
+                <motion.div
+                  key={tech.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                  whileHover={{
+                    scale: 1.05,
+                    rotate: 2,
+                    boxShadow: isDark ? "0 20px 40px rgba(59, 130, 246, 0.2)" : "0 20px 40px rgba(59, 130, 246, 0.1)"
+                  }}
+                  className={`group p-6 rounded-3xl border transition-all duration-300 relative overflow-hidden flex flex-col items-center justify-center gap-4 ${isDark
+                    ? 'bg-white/[0.03] border-white/10 hover:border-blue-500/50 hover:bg-white/[0.08]'
+                    : 'bg-white border-gray-100 hover:border-blue-200 shadow-sm'
+                    }`}
+                >
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-blue-500/10 pointer-events-none" />
+
+                  <div className="relative w-16 h-16 mb-2">
+                    <Image
+                      src={tech.logo}
+                      alt={tech.name}
+                      width={64}
+                      height={64}
+                      className="w-full h-full object-contain filter group-hover:drop-shadow-lg transition-transform"
+                    />
+                  </div>
+                  <h3 className={`text-lg font-bold tracking-tight transition-colors ${isDark ? 'text-white' : 'text-gray-900'
+                    } group-hover:text-blue-500`}>
+                    {tech.name}
+                  </h3>
+
+                  {/* Micro-label on hover */}
+                  <span className="absolute -bottom-2 opacity-0 group-hover:opacity-100 group-hover:bottom-4 transition-all duration-300 text-[10px] font-bold uppercase tracking-widest text-blue-500">
+                    Reliable
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Tech Categories - Bento Secondary Row */}
+            <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className={`p-8 rounded-[32px] border ${isDark ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50/50 border-gray-100'
+                  }`}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 rounded-2xl bg-blue-500/10 text-blue-500">
+                    <Globe2 className="w-6 h-6" />
+                  </div>
+                  <h4 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('webdev.techStack.frontend')}</h4>
+                </div>
+                <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                  {t('webdev.techStack.frontend.desc1')}
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className={`p-8 rounded-[32px] border ${isDark ? 'bg-white/[0.02] border-white/5' : 'bg-gray-50/50 border-gray-100'
+                  }`}
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 rounded-2xl bg-purple-500/10 text-purple-500">
+                    <Cpu className="w-6 h-6" />
+                  </div>
+                  <h4 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>{t('webdev.techStack.backend')}</h4>
+                </div>
+                <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                  {t('webdev.techStack.backend.desc1')}
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Liquid Divider */}
+        <div className="relative w-full overflow-hidden leading-[0]">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className={`relative block w-full h-[60px] md:h-[100px] ${isDark ? 'fill-black' : 'fill-white'
+            }`}>
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45,0.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"></path>
+          </svg>
+        </div>
+
+        {/* Case Studies - The Gallery of Success */}
+        <section className={`py-24 px-4 sm:px-6 lg:px-8 ${isDark ? 'bg-black' : 'bg-white'
+          }`}>
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'
+                }`}>
+                {t('webdev.caseStudies.title')}
+              </h2>
+              <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'
+                }`}>
+                {t('webdev.caseStudies.subtitle')}
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+              {caseStudies.map((study, idx) => (
+                <motion.div
+                  key={study.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  whileHover={{ y: -15 }}
+                  className={`group rounded-[40px] overflow-hidden border transition-all duration-500 ${isDark
+                    ? 'bg-white/[0.03] border-white/10 hover:border-blue-500/30'
+                    : 'bg-gray-50/50 border-gray-100 hover:border-blue-200'
+                    }`}
+                >
+                  <div className="relative h-72 overflow-hidden">
+                    <Image
+                      src={study.image}
+                      alt={study.title}
+                      fill
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+
+                    <div className="absolute top-6 left-6">
+                      <span className={`px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider ${isDark ? 'bg-blue-600 text-white' : 'bg-blue-600 text-white shadow-lg'
                         }`}>
-                          {t('webdev.processes.roadmapHeading')}
-                        </h4>
-                        <div className="space-y-12">
-                          {process.roadmap.map((step, index) => (
-                            <div key={index} className={`flex flex-col ${
-                              index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                            } items-center gap-8`}>
-                              {/* Content */}
-                              <div className={`flex-1 ${
-                                index % 2 === 0 ? 'lg:pr-8' : 'lg:pl-8'
-                              }`}>
-                                <div className="flex items-start space-x-4">
-                                  <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold ${
-                                    isDark
-                                      ? 'bg-blue-600 text-white'
-                                      : 'bg-blue-600 text-white'
-                                  }`}>
-                                    {step.step}
-                                  </div>
-                                  <div className="flex-1">
-                                    <h5 className={`text-xl font-semibold mb-3 ${
-                                      isDark ? 'text-white' : 'text-gray-900'
-                                    }`}>
-                                      {step.title}
-                                    </h5>
-                                    <p className={`text-base leading-relaxed mb-4 ${
-                                      isDark ? 'text-gray-300' : 'text-gray-600'
-                                    }`}>
-                                      {step.description}
-                                    </p>
-                                    {(step as {details: string}).details && (
-                                      <div className={`p-4 rounded-lg ${
-                                        isDark
-                                          ? 'bg-white/5 border border-white/10'
-                                          : 'bg-gray-50 border border-gray-200'
-                                      }`}>
-                                        <p className={`text-sm ${
-                                          isDark ? 'text-gray-300' : 'text-gray-600'
-                                        }`}>
-                                        {(step as {details: string}).details}
-                                        </p>
-                                      </div>
-                                    )}
-                                  </div>
-                                </div>
-                              </div>
-                              
-                              {/* Image */}
-                              <div className="flex-shrink-0 w-full max-w-sm lg:w-80">
-                                <div className={`relative h-48 rounded-xl overflow-hidden ${
-                                  isDark
-                                    ? 'bg-white/5 border border-white/10'
-                                    : 'bg-gray-100 border border-gray-200'
-                                }`}>
-                                  <Image
-                                      src={(step as {image: string}).image || '/assets/services/process-step.jpg'}
-                                    alt={step.title}
-                                    fill
-                                    className="object-cover"
-                                  />
-                                  {/* Removed dark overlay for clearer photos */}
-                                  <div className="absolute bottom-4 left-4">
-                                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                                      isDark
-                                        ? 'bg-blue-600/80 text-white'
-                                        : 'bg-blue-600 text-white'
-                                    }`}>
-                                      {t('webdev.processes.step')} {step.step}
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Services Grid */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <h4 className={`font-semibold mb-3 ${
-                            isDark ? 'text-white' : 'text-gray-900'
-                          }`}>
-                            {t('webdev.processes.platformsHeading')}
-                          </h4>
-                          <div className={`space-y-2 ${
-                            isDark ? 'text-gray-300' : 'text-gray-600'
-                          }`}>
-                            {process.platforms.map((platform, index) => (
-                              <div key={index} className="flex items-center">
-                                <span className={`w-2 h-2 rounded-full mr-3 ${
-                                  isDark ? 'bg-blue-400' : 'bg-blue-600'
-                                }`}></span>
-                                {platform}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                        <div>
-                          <h4 className={`font-semibold mb-3 ${
-                            isDark ? 'text-white' : 'text-gray-900'
-                          }`}>
-                            {t('webdev.processes.servicesHeading')}
-                          </h4>
-                          <div className={`space-y-2 ${
-                            isDark ? 'text-gray-300' : 'text-gray-600'
-                          }`}>
-                            {process.services.map((service, index) => (
-                              <div key={index} className="flex items-center">
-                                <span className={`w-2 h-2 rounded-full mr-3 ${
-                                  isDark ? 'bg-green-400' : 'bg-green-600'
-                                }`}></span>
-                                {service}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+                        {study.tag}
+                      </span>
                     </div>
                   </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
-      {/* Consultation Section */}
-      <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className={`text-center p-8 sm:p-12 rounded-3xl ${
-            isDark
-              ? 'bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-white/10'
-              : 'bg-gradient-to-br from-blue-50 to-purple-50 border border-blue-200'
-          }`}>
-            <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {t('webdev.consultation.title')}
-            </h2>
-            <p className={`text-lg sm:text-xl mb-8 ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              {t('webdev.consultation.content')}
-            </p>
-            
-            {/* Additional Services */}
-            <div className={`mb-8 p-6 rounded-2xl ${
-              isDark
-                ? 'bg-white/5 border border-white/10'
-                : 'bg-white/70 border border-gray-200'
-            }`}>
-              <h3 className={`text-xl font-semibold mb-4 ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}>
-                {t('webdev.consultation.additionalServices')}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <div className={`p-3 rounded-lg ${
-                  isDark ? 'bg-white/5' : 'bg-white/50'
-                }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('webdev.consultation.service1.title')}</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('webdev.consultation.service1.description')}</p>
-                </div>
-                <div className={`p-3 rounded-lg ${
-                  isDark ? 'bg-white/5' : 'bg-white/50'
-                }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('webdev.consultation.service2.title')}</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('webdev.consultation.service2.description')}</p>
-                </div>
-                <div className={`p-3 rounded-lg ${
-                  isDark ? 'bg-white/5' : 'bg-white/50'
-                }`}>
-                  <strong className={isDark ? 'text-blue-400' : 'text-blue-600'}>{t('webdev.consultation.service3.title')}</strong>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{t('webdev.consultation.service3.description')}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className={`px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 ${
-                isDark
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
-                  : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
-              }`}>
-                {t('webdev.consultation.button')}
-              </button>
-              <a
-                href="/assets/sample-operation-manual.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
-                  isDark
-                    ? 'border border-white/20 text-white hover:bg-white/10'
-                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
-                }`}
-              >
-                <svg className="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
-                </svg>
-                <span className="text-blue-600 underline hover:text-blue-700 transition-colors">
-                  {t('webdev.consultation.manualLink')}
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Mission Section */}
-      <div className="pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {t('webdev.mission.title')}
-            </h2>
-            <p className={`text-lg sm:text-xl leading-relaxed mb-8 ${
-              isDark ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              {t('webdev.mission.content')}
-            </p>
-          </div>
-
-          <div className="mb-12">
-            <h3 className={`text-2xl font-semibold mb-8 text-center ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {t('webdev.mission.industries')}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { 
-                  name: t('webdev.mission.industry1.name'), 
-                  image: '/assets/services/software/security.jpeg',
-                  description: t('webdev.mission.industry1.description')
-                },
-                { 
-                  name: t('webdev.mission.industry2.name'), 
-                  image: '/assets/services/software/marketing.jpeg',
-                  description: t('webdev.mission.industry2.description')
-                },
-                { 
-                  name: t('webdev.mission.industry3.name'), 
-                  image: '/assets/services/software/cloud2.jpeg',
-                  description: t('webdev.mission.industry3.description')
-                },
-                { 
-                  name: t('webdev.mission.industry4.name'), 
-                  image: '/assets/services/software/mobile.jpeg',
-                  description: t('webdev.mission.industry4.description')
-                },
-                { 
-                  name: t('webdev.mission.industry5.name'), 
-                  image: '/assets/services/software/planning.jpeg',
-                  description: t('webdev.mission.industry5.description')
-                },
-                { 
-                  name: t('webdev.mission.industry6.name'), 
-                  image: '/assets/services/software/testing.jpeg',
-                  description: t('webdev.mission.industry6.description')
-                }
-              ].map((industry, index) => (
-                <div
-                  key={index}
-                  className="group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  <Image
-                    src={industry.image}
-                    alt={industry.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className={`absolute inset-0 transition-opacity duration-300 ${
-                    isDark 
-                      ? 'bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-70 group-hover:opacity-90'
-                      : 'bg-gradient-to-t from-white/95 via-white/60 to-transparent opacity-80 group-hover:opacity-90'
-                  }`}></div>
-                  
-                  {/* Content */}
-                  <div className="absolute inset-0 flex flex-col justify-end p-6">
-                    {/* Default State */}
-                    <div className="group-hover:opacity-0 transition-opacity duration-300">
-                      <h4 className={`text-xl font-bold mb-2 ${
-                        isDark ? 'text-white' : 'text-gray-900'
+                  <div className="p-8">
+                    <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'
                       }`}>
-                        {industry.name}
-                      </h4>
-                    </div>
-                    
-                    {/* Hover State */}
-                    <div className="absolute inset-0 p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                      <h4 className={`text-2xl font-bold mb-4 ${
-                        isDark ? 'text-white' : 'text-gray-900'
+                      {study.title}
+                    </h3>
+                    <p className={`text-lg leading-relaxed mb-8 ${isDark ? 'text-gray-400' : 'text-gray-600'
                       }`}>
-                        {industry.name}
-                      </h4>
-                      <p className={`text-sm leading-relaxed ${
-                        isDark ? 'text-gray-200' : 'text-gray-700'
-                      }`}>
-                        {industry.description}
-                      </p>
-                    </div>
+                      {t('webdev.caseStudies.description')}
+                    </p>
+
+                    <Link
+                      href={study.href}
+                      className={`inline-flex items-center font-bold text-lg group-hover:gap-4 transition-all ${isDark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'
+                        }`}
+                    >
+                      {t('webdev.caseStudies.readMore')}
+                      <ArrowRight className="ml-2 w-6 h-6 transform group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
-                  
-                  {/* Overlay Gradient for Better Text Readability */}
-                  <div className={`absolute inset-0 pointer-events-none ${
-                    isDark 
-                      ? 'bg-gradient-to-t from-black/60 via-transparent to-transparent'
-                      : 'bg-gradient-to-t from-white/70 via-transparent to-transparent'
-                  }`}></div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
+        </section>
 
-          <div className={`text-center p-6 rounded-2xl ${
-            isDark
-              ? 'bg-white/5 border border-white/10'
-              : 'bg-white/70 border border-gray-200 shadow-lg'
+        {/* Development Process - The Journey of Creation */}
+        <section className={`py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden ${isDark ? 'bg-black' : 'bg-white'
           }`}>
-            <p className={`text-lg font-medium ${
-              isDark ? 'text-white' : 'text-gray-900'
-            }`}>
-              {t('webdev.mission.ending')}
-            </p>
-          </div>
-        </div>
-      </div>
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-24"
+            >
+              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'
+                }`}>
+                {t('webdev.process.title')}
+              </h2>
+              <p className={`text-xl max-w-3xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'
+                }`}>
+                {t('webdev.process.subtitle')}
+              </p>
+            </motion.div>
 
-      <Footer />
-    </div>
+            <div className="relative">
+              {/* Vertical Line */}
+              <div className={`absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 hidden md:block ${isDark ? 'bg-gradient-to-b from-blue-500/0 via-blue-500/50 to-purple-500/0' : 'bg-gradient-to-b from-blue-200/0 via-blue-200 to-purple-200/0'
+                }`} />
+
+              <div className="space-y-32">
+                {[
+                  { step: "01", title: t('webdev.processes.custom.roadmap1.title'), desc: t('webdev.processes.custom.roadmap1.description'), icon: Users2, color: 'blue' },
+                  { step: "02", title: t('webdev.processes.custom.roadmap3.title'), desc: t('webdev.processes.custom.roadmap3.description'), icon: Globe2, color: 'purple' },
+                  { step: "03", title: t('webdev.processes.custom.roadmap4.title'), desc: t('webdev.processes.custom.roadmap4.description'), icon: Code2, color: 'indigo' },
+                  { step: "04", title: t('webdev.processes.custom.roadmap6.title'), desc: t('webdev.processes.custom.roadmap6.description'), icon: Rocket, color: 'pink' },
+                ].map((item, idx) => (
+                  <motion.div
+                    key={item.step}
+                    initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 relative`}
+                  >
+                    {/* Step Bubble */}
+                    <div className={`absolute left-1/2 -translate-x-1/2 top-0 md:top-1/2 -translate-y-1/2 w-16 h-16 rounded-full border-4 z-10 flex items-center justify-center font-bold text-xl backdrop-blur-xl ${isDark ? 'bg-black border-blue-500/50 text-blue-400' : 'bg-white border-blue-200 text-blue-600 shadow-xl'
+                      } hidden md:flex`}>
+                      {item.step}
+                    </div>
+
+                    <div className="w-full md:w-1/2">
+                      <div className={`p-10 rounded-[40px] border relative overflow-hidden group ${isDark ? 'bg-white/[0.03] border-white/10 hover:border-white/20' : 'bg-white border-gray-100 shadow-2xl shadow-gray-200/50'
+                        }`}>
+                        <div className={`w-14 h-14 rounded-2xl mb-6 flex items-center justify-center ${item.color === 'blue' ? 'bg-blue-500/20 text-blue-500' :
+                          item.color === 'purple' ? 'bg-purple-500/20 text-purple-500' :
+                            item.color === 'indigo' ? 'bg-indigo-500/20 text-indigo-500' :
+                              'bg-pink-500/20 text-pink-500'
+                          }`}>
+                          <item.icon className="w-8 h-8" />
+                        </div>
+                        <h3 className={`text-3xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>{item.title}</h3>
+                        <p className={`text-lg leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{item.desc}</p>
+                      </div>
+                    </div>
+                    <div className="hidden md:block md:w-1/2" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Consultation Section - The Power CTA */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className={`relative rounded-[50px] overflow-hidden p-12 md:p-20 text-center ${isDark ? 'bg-[#020617] border border-blue-500/30' : 'bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-3xl'
+                }`}
+            >
+              {/* Background Art */}
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_20%_30%,_rgba(59,130,246,0.8)_0%,_transparent_50%)]" />
+                <div className="absolute bottom-0 right-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_80%_70%,_rgba(139,92,246,0.8)_0%,_transparent_50%)]" />
+              </div>
+
+              <div className="relative z-10">
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  className={`text-4xl md:text-6xl font-extrabold mb-8 leading-tight ${isDark ? 'text-white' : 'text-white'}`}
+                >
+                  {t('webdev.consultation.title')}
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className={`text-xl md:text-2xl mb-12 max-w-3xl mx-auto ${isDark ? 'text-gray-400' : 'text-blue-100'}`}
+                >
+                  {t('webdev.consultation.content')}
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="flex flex-wrap justify-center gap-6"
+                >
+                  <button className={`px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 transform hover:-translate-y-2 ${isDark ? 'bg-blue-600 text-white hover:bg-blue-500' : 'bg-white text-blue-600 hover:bg-blue-50'
+                    }`}>
+                    {t('webdev.consultation.button')}
+                  </button>
+                  <Link
+                    href="/assets/sample-operation-manual.pdf"
+                    target="_blank"
+                    className={`px-12 py-5 rounded-2xl font-bold text-xl border-2 backdrop-blur-md transition-all duration-300 transform hover:-translate-y-2 ${isDark ? 'border-white/20 text-white hover:bg-white/5' : 'border-white/30 text-white hover:bg-white/10'
+                      }`}
+                  >
+                    {t('webdev.consultation.manualLink')}
+                  </Link>
+                </motion.div>
+
+                {/* Micro-stats */}
+                <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-12">
+                  {[
+                    { label: "Uptime", val: "99.9%" },
+                    { label: "Score", val: "100/100" },
+                    { label: "Support", val: "24/7" },
+                    { label: "Delivery", val: "2x Fast" },
+                  ].map((stat) => (
+                    <div key={stat.label}>
+                      <div className="text-3xl font-bold mb-1">{stat.val}</div>
+                      <div className="text-sm uppercase tracking-widest opacity-60 font-bold">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Mission Section - The Industry Cloud */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-end justify-between mb-20 gap-8">
+              <div className="max-w-2xl">
+                <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                  {t('webdev.mission.title')}
+                </h2>
+                <p className={`text-xl leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
+                  {t('webdev.mission.content')}
+                </p>
+              </div>
+              <div className={`p-6 rounded-[32px] border ${isDark ? 'bg-white/5 border-white/10' : 'bg-blue-50 border-blue-100 text-blue-700'} font-bold text-lg`}>
+                {t('webdev.mission.ending')}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { name: t('webdev.mission.industry1.name'), img: '/assets/services/software/security.jpeg' },
+                { name: t('webdev.mission.industry2.name'), img: '/assets/services/software/marketing.jpeg' },
+                { name: t('webdev.mission.industry3.name'), img: '/assets/services/software/cloud2.jpeg' },
+                { name: t('webdev.mission.industry4.name'), img: '/assets/services/software/mobile.jpeg' },
+                { name: t('webdev.mission.industry5.name'), img: '/assets/services/software/planning.jpeg' },
+                { name: t('webdev.mission.industry6.name'), img: '/assets/services/software/testing.jpeg' },
+              ].map((industry, id) => (
+                <motion.div
+                  key={id}
+                  whileHover={{ scale: 1.02 }}
+                  className="relative h-80 rounded-[40px] overflow-hidden group border border-transparent hover:border-blue-500/50 transition-all duration-500"
+                >
+                  <Image src={industry.img} alt={industry.name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
+                  <div className="absolute bottom-8 left-8 right-8">
+                    <h3 className="text-white text-2xl font-bold">{industry.name}</h3>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <Footer />
+      </div>
     </>
   );
 }
