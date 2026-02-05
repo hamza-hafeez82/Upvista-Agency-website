@@ -8,13 +8,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
 
 export default function CeltisNGOPlatform() {
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   const { isDark } = useTheme();
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-32">
         <div className="container mx-auto px-4">
@@ -31,8 +31,8 @@ export default function CeltisNGOPlatform() {
               <span><strong>{t('celtis.industry')}:</strong> {t('celtis.ngo')}</span>
             </div>
             <div className="mt-8">
-              <Link 
-                href="https://celtis-by-upvists.vercel.app/" 
+              <Link
+                href="https://celtis-by-upvists.vercel.app/"
                 target="_blank"
                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
@@ -56,7 +56,7 @@ export default function CeltisNGOPlatform() {
             <p className={`text-lg mb-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               {t('celtis.overview.description')}
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className={`p-6 rounded-lg ${isDark ? 'bg-gray-800' : 'bg-gray-50'}`}>
                 <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
@@ -365,14 +365,14 @@ export default function CeltisNGOPlatform() {
               {t('celtis.cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/Services/web-development" 
+              <Link
+                href="/Services/web-development"
                 className="px-8 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-lg hover:from-green-700 hover:to-blue-700 transition-all duration-300"
               >
                 {t('celtis.cta.button1')}
               </Link>
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="px-8 py-3 border-2 border-green-600 text-green-600 font-semibold rounded-lg hover:bg-green-600 hover:text-white transition-all duration-300"
               >
                 {t('celtis.cta.button2')}

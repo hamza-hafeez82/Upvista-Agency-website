@@ -8,28 +8,25 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
 
 export default function VigoursEcommerce() {
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   const { isDark } = useTheme();
 
   return (
-    <div className={`min-h-screen ${
-      isDark
+    <div className={`min-h-screen ${isDark
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
         : 'bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-100'
-    }`}>
+      }`}>
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto text-center rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
-            <h1 className={`text-5xl md:text-6xl font-bold mb-6 py-2 ${
-              isDark
+          <div className={`max-w-4xl mx-auto text-center rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
+            <h1 className={`text-5xl md:text-6xl font-bold mb-6 py-2 ${isDark
                 ? 'bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent'
                 : 'bg-gradient-to-r from-gray-900 via-blue-800 to-purple-700 bg-clip-text text-transparent'
-            }`}>
+              }`}>
               {t('vigoursEcommerce.title')}
             </h1>
             <p className={`text-xl mb-8 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
@@ -41,8 +38,8 @@ export default function VigoursEcommerce() {
               <span><strong>{t('vigoursEcommerce.industry')}:</strong> {t('vigoursEcommerce.ecommerce')}</span>
             </div>
             <div className="mt-6">
-              <Link 
-                href="http://vigoursorganic.store/" 
+              <Link
+                href="http://vigoursorganic.store/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${isDark ? 'text-blue-300 underline' : 'text-blue-700 underline'} font-medium`}
@@ -57,16 +54,15 @@ export default function VigoursEcommerce() {
       {/* Overview Section */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
+          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
             <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigoursEcommerce.overview.title')}
             </h2>
             <p className={`text-lg mb-6 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
               {t('vigoursEcommerce.overview.description')}
             </p>
-            
+
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className={`p-6 rounded-lg ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white'}`}>
                 <h3 className={`text-xl font-semibold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
@@ -96,9 +92,8 @@ export default function VigoursEcommerce() {
       {/* Challenge Section */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
+          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
             <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigoursEcommerce.challenge.title')}
             </h2>
@@ -150,9 +145,8 @@ export default function VigoursEcommerce() {
       {/* Solution Section */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
+          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
             <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigoursEcommerce.solution.title')}
             </h2>
@@ -185,9 +179,8 @@ export default function VigoursEcommerce() {
       {/* Features Section */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
+          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
             <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigoursEcommerce.features.title')}
             </h2>
@@ -248,9 +241,8 @@ export default function VigoursEcommerce() {
       {/* Process Section */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
+          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
             <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigoursEcommerce.process.title')}
             </h2>
@@ -305,9 +297,8 @@ export default function VigoursEcommerce() {
       {/* Results Section */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
+          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
             <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigoursEcommerce.results.title')}
             </h2>
@@ -344,9 +335,8 @@ export default function VigoursEcommerce() {
       {/* Technologies Section */}
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
+          <div className={`max-w-4xl mx-auto rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
             <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigoursEcommerce.technologies.title')}
             </h2>
@@ -395,9 +385,8 @@ export default function VigoursEcommerce() {
       {/* CTA Section */}
       <section className="pb-24">
         <div className="container mx-auto px-4">
-          <div className={`max-w-4xl mx-auto text-center rounded-2xl p-8 ${
-            isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
-          }`}>
+          <div className={`max-w-4xl mx-auto text-center rounded-2xl p-8 ${isDark ? 'bg-white/5 border border-white/10' : 'bg-white/70 border border-gray-200 shadow-lg'
+            }`}>
             <h2 className={`text-3xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigoursEcommerce.cta.title')}
             </h2>
@@ -405,23 +394,21 @@ export default function VigoursEcommerce() {
               {t('vigoursEcommerce.cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/Services/e-commerce-development" 
-                className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  isDark
+              <Link
+                href="/Services/e-commerce-development"
+                className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 ${isDark
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
                     : 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
-                }`}
+                  }`}
               >
                 {t('vigoursEcommerce.cta.button1')}
               </Link>
-              <Link 
-                href="/contact" 
-                className={`px-8 py-3 border rounded-xl font-semibold transition-all duration-300 ${
-                  isDark
+              <Link
+                href="/contact"
+                className={`px-8 py-3 border rounded-xl font-semibold transition-all duration-300 ${isDark
                     ? 'border-white/20 text-white hover:bg-white/10'
                     : 'border-gray-300 text-gray-700 hover:bg-gray-50'
-                }`}
+                  }`}
               >
                 {t('vigoursEcommerce.cta.button2')}
               </Link>

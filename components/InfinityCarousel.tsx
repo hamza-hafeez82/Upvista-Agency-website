@@ -22,8 +22,8 @@ const InfiniteSliderEnhanced = memo(() => {
 
   return (
     <div className={`relative w-full overflow-hidden py-32 ${isDark
-        ? 'bg-black'
-        : 'bg-white'
+      ? 'bg-black'
+      : 'bg-white'
       }`}>
       {/* Top SVG Divider - Soft Arc transition from previous section */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0] z-20 pointer-events-none">
@@ -101,10 +101,10 @@ const InfiniteSliderEnhanced = memo(() => {
                         } group-hover:opacity-100 group-hover:scale-110`}
                       onError={(e) => {
                         // Fallback name if image is missing
-                        (e.target as any).style.display = 'none';
-                        const parent = (e.target as any).parentNode.parentNode;
+                        (e.target as HTMLImageElement).style.display = 'none';
+                        const parent = (e.target as HTMLImageElement).parentNode?.parentNode as HTMLElement;
                         if (parent) {
-                          const fallback = parent.querySelector('.fallback-name');
+                          const fallback = parent.querySelector('.fallback-name') as HTMLElement;
                           if (fallback) fallback.style.display = 'block';
                         }
                       }}
@@ -152,10 +152,10 @@ const InfiniteSliderEnhanced = memo(() => {
                       className={`object-contain transition-all duration-500 ${isDark ? 'invert opacity-50' : 'opacity-40'
                         } group-hover:opacity-100 group-hover:scale-110`}
                       onError={(e) => {
-                        (e.target as any).style.display = 'none';
-                        const parent = (e.target as any).parentNode.parentNode;
+                        (e.target as HTMLImageElement).style.display = 'none';
+                        const parent = (e.target as HTMLImageElement).parentNode?.parentNode as HTMLElement;
                         if (parent) {
-                          const fallback = parent.querySelector('.fallback-name');
+                          const fallback = parent.querySelector('.fallback-name') as HTMLElement;
                           if (fallback) fallback.style.display = 'block';
                         }
                       }}

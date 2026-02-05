@@ -8,20 +8,19 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
 
 export default function ERPSystemCaseStudy() {
-  const { currentLanguage } = useLanguage();
+  useLanguage();
   const { isDark } = useTheme();
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gray-950' : 'bg-white'}`}>
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="pt-32 pb-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="pt-32 pb-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="mb-8">
-            <span className={`inline-block px-4 py-1.5 text-sm font-medium border ${
-              isDark ? 'border-gray-700 text-gray-300' : 'border-gray-300 text-gray-700'
-            }`}>
+            <span className={`inline-block px-4 py-1.5 text-sm font-medium border ${isDark ? 'border-gray-700 text-gray-300' : 'border-gray-300 text-gray-700'
+              }`}>
               CASE STUDY
             </span>
           </div>
@@ -31,9 +30,9 @@ export default function ERPSystemCaseStudy() {
           <p className={`text-xl md:text-2xl mb-12 max-w-4xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
             Advanced enterprise resource planning system with integrated modules for finance, HR, inventory, and business operations built with Spring Boot and Java.
           </p>
-          
+
           {/* Project Metadata */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
             <div>
               <div className={`text-sm font-medium mb-2 uppercase tracking-wide ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                 Client
@@ -71,7 +70,7 @@ export default function ERPSystemCaseStudy() {
       </section>
 
       {/* Executive Summary */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Executive Summary
@@ -90,15 +89,15 @@ export default function ERPSystemCaseStudy() {
                 Key Results
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#374151' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#374151' : '#e5e7eb' }}>
                   <div className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>55%</div>
                   <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Reduction in process cycle times</div>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#374151' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#374151' : '#e5e7eb' }}>
                   <div className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>98%</div>
                   <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Data accuracy across all modules</div>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#374151' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#374151' : '#e5e7eb' }}>
                   <div className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>$5M</div>
                   <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Annual cost savings realized</div>
                 </div>
@@ -113,7 +112,7 @@ export default function ERPSystemCaseStudy() {
       </section>
 
       {/* The Challenge */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             The Challenge
@@ -159,7 +158,7 @@ export default function ERPSystemCaseStudy() {
       </section>
 
       {/* The Solution */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             The Solution
@@ -209,7 +208,7 @@ export default function ERPSystemCaseStudy() {
       </section>
 
       {/* Core Modules */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Core Modules
@@ -242,7 +241,7 @@ export default function ERPSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Human Resource Management
               </h3>
@@ -268,7 +267,7 @@ export default function ERPSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Supply Chain and Inventory Management
               </h3>
@@ -294,7 +293,7 @@ export default function ERPSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Sales and Customer Management
               </h3>
@@ -320,7 +319,7 @@ export default function ERPSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Manufacturing Operations
               </h3>
@@ -346,7 +345,7 @@ export default function ERPSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Business Intelligence and Analytics
               </h3>
@@ -376,7 +375,7 @@ export default function ERPSystemCaseStudy() {
       </section>
 
       {/* Technical Architecture */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Technical Architecture
@@ -555,7 +554,7 @@ export default function ERPSystemCaseStudy() {
       </section>
 
       {/* Implementation Process */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Implementation Process
@@ -581,7 +580,7 @@ export default function ERPSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <div className="md:col-span-3">
                 <div className={`text-sm font-bold mb-2 uppercase tracking-wide ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                   Phase 02
@@ -600,7 +599,7 @@ export default function ERPSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <div className="md:col-span-3">
                 <div className={`text-sm font-bold mb-2 uppercase tracking-wide ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                   Phase 03
@@ -619,7 +618,7 @@ export default function ERPSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <div className="md:col-span-3">
                 <div className={`text-sm font-bold mb-2 uppercase tracking-wide ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                   Phase 04
@@ -642,7 +641,7 @@ export default function ERPSystemCaseStudy() {
       </section>
 
       {/* Business Impact */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Business Impact
@@ -654,15 +653,15 @@ export default function ERPSystemCaseStudy() {
                 Operational Efficiency
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>55% reduction in process cycle times</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Automated workflows eliminated manual handoffs and bottlenecks</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>80% faster financial close process</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Automated consolidation reduced month-end from 20 to 4 days</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>90% reduction in manual data entry</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>System integration eliminated duplicate entry across platforms</p>
                 </div>
@@ -678,15 +677,15 @@ export default function ERPSystemCaseStudy() {
                 Financial Performance
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>$5M annual cost savings</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Reduced IT infrastructure and operational overhead</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>35% improvement in working capital</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Better inventory management and cash flow optimization</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>40% reduction in procurement costs</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Consolidated supplier base and negotiated better terms</p>
                 </div>
@@ -702,15 +701,15 @@ export default function ERPSystemCaseStudy() {
                 Data Quality & Compliance
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>98% data accuracy</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Single source of truth eliminated data discrepancies</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>70% faster audit preparation</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Automated audit trails and reporting capabilities</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>100% regulatory compliance</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Built-in compliance controls for all jurisdictions</p>
                 </div>
@@ -726,15 +725,15 @@ export default function ERPSystemCaseStudy() {
                 Employee Productivity
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>45% increase in employee productivity</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Streamlined processes freed up time for value-added work</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>85% user satisfaction rate</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Intuitive interface and improved workflows</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>60% reduction in training time</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Consistent UX across all modules simplified onboarding</p>
                 </div>
@@ -773,13 +772,13 @@ export default function ERPSystemCaseStudy() {
       </section>
 
       {/* Client Testimonial */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-4xl">
           <div className={`p-12 border ${isDark ? 'bg-gray-900 border-gray-800' : 'bg-gray-50 border-gray-200'}`}>
             <p className={`text-2xl leading-relaxed mb-8 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               "Implementing this ERP system has been transformational for our organization. We've unified operations across 25 countries, eliminated legacy system complexity, and gained real-time visibility we never had before. The Upvista team's expertise in enterprise Java and Spring Boot was exceptional, and their agile approach kept us on track throughout the 12-month implementation."
             </p>
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#374151' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#374151' : '#e5e7eb' }}>
               <div className={`font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Chief Information Officer</div>
               <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Global Manufacturing Corporation</div>
             </div>
@@ -799,23 +798,21 @@ export default function ERPSystemCaseStudy() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/Services/software-development" 
-              className={`px-8 py-4 text-center font-semibold transition-all duration-300 ${
-                isDark
-                  ? 'bg-white text-gray-900 hover:bg-gray-100'
-                  : 'bg-gray-900 text-white hover:bg-gray-800'
-              }`}
+            <Link
+              href="/Services/software-development"
+              className={`px-8 py-4 text-center font-semibold transition-all duration-300 ${isDark
+                ? 'bg-white text-gray-900 hover:bg-gray-100'
+                : 'bg-gray-900 text-white hover:bg-gray-800'
+                }`}
             >
               Explore Our Services
             </Link>
-            <Link 
-              href="/contact" 
-              className={`px-8 py-4 text-center border font-semibold transition-all duration-300 ${
-                isDark
-                  ? 'border-gray-700 text-white hover:bg-gray-900'
-                  : 'border-gray-900 text-gray-900 hover:bg-gray-50'
-              }`}
+            <Link
+              href="/contact"
+              className={`px-8 py-4 text-center border font-semibold transition-all duration-300 ${isDark
+                ? 'border-gray-700 text-white hover:bg-gray-900'
+                : 'border-gray-900 text-gray-900 hover:bg-gray-50'
+                }`}
             >
               Get In Touch
             </Link>

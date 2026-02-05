@@ -9,13 +9,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
 
 export default function VigoursOrganicCRM() {
-  const { t, currentLanguage } = useLanguage();
+  const { t } = useLanguage();
   const { isDark } = useTheme();
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
       <Header />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-32">
         <div className="container mx-auto px-4">
@@ -324,7 +324,7 @@ export default function VigoursOrganicCRM() {
             <h2 className={`text-3xl font-bold mb-12 text-center ${isDark ? 'text-white' : 'text-gray-900'}`}>
               {t('vigours.results.title')}
             </h2>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
               <div className="text-center">
                 <div className={`text-4xl font-bold mb-2 ${isDark ? 'text-white' : 'text-gray-900'}`}>250%</div>
@@ -437,21 +437,19 @@ export default function VigoursOrganicCRM() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/Services/software-development"
-              className={`px-8 py-3 rounded-lg font-semibold transition-colors ${
-                isDark 
-                  ? 'bg-white text-gray-900 hover:bg-gray-100' 
+              className={`px-8 py-3 rounded-lg font-semibold transition-colors ${isDark
+                  ? 'bg-white text-gray-900 hover:bg-gray-100'
                   : 'bg-gray-900 text-white hover:bg-gray-800'
-              }`}
+                }`}
             >
               {t('vigours.cta.button1')}
             </Link>
             <Link
               href="/contact"
-              className={`px-8 py-3 border-2 rounded-lg font-semibold transition-colors ${
-                isDark 
-                  ? 'border-white text-white hover:bg-white hover:text-gray-900' 
+              className={`px-8 py-3 border-2 rounded-lg font-semibold transition-colors ${isDark
+                  ? 'border-white text-white hover:bg-white hover:text-gray-900'
                   : 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
-              }`}
+                }`}
             >
               {t('vigours.cta.button2')}
             </Link>

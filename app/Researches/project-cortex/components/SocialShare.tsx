@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import { 
-  FaFacebookF, 
-  FaTwitter, 
-  FaLinkedinIn, 
-  FaCopy, 
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaCopy,
   FaWhatsapp,
   FaReddit,
   FaTelegram
@@ -18,16 +18,14 @@ interface SocialShareProps {
   url?: string;
 }
 
-export default function SocialShare({ 
+export default function SocialShare({
   title = 'Project Cortex: A Biologically Inspired Architecture for Artificial General Intelligence',
-  description = 'A unified scientific framework for AGI based on the human prefrontal cortex. Authored by Hamza Hafeez Bhatti, CEO of Upvista Digital.',
   url = typeof window !== 'undefined' ? window.location.href : 'https://upvistadigital.com/Researches/project-cortex'
 }: SocialShareProps) {
   const { isDark } = useTheme();
 
   const shareUrl = encodeURIComponent(url);
   const shareTitle = encodeURIComponent(title);
-  const shareDescription = encodeURIComponent(description);
   const hashtags = encodeURIComponent('ProjectCortex,AGI,ArtificialIntelligence,Neuroscience,HamzaHafeezBhatti,UpvistaDigital');
 
   const shareLinks = {
@@ -43,7 +41,7 @@ export default function SocialShare({
     try {
       await navigator.clipboard.writeText(url);
       alert('Link copied to clipboard!');
-    } catch (err) {
+    } catch {
       // Fallback for older browsers
       const textArea = document.createElement('textarea');
       textArea.value = url;
@@ -64,45 +62,45 @@ export default function SocialShare({
   };
 
   const socialButtons = [
-    { 
-      name: 'Facebook', 
-      icon: <FaFacebookF className="w-5 h-5" />, 
+    {
+      name: 'Facebook',
+      icon: <FaFacebookF className="w-5 h-5" />,
       color: 'bg-[#1877F2] hover:bg-[#166FE5]',
       onClick: (e: React.MouseEvent) => handleShare('facebook', e)
     },
-    { 
-      name: 'Twitter', 
-      icon: <FaTwitter className="w-5 h-5" />, 
+    {
+      name: 'Twitter',
+      icon: <FaTwitter className="w-5 h-5" />,
       color: 'bg-[#1DA1F2] hover:bg-[#1A91DA]',
       onClick: (e: React.MouseEvent) => handleShare('twitter', e)
     },
-    { 
-      name: 'LinkedIn', 
-      icon: <FaLinkedinIn className="w-5 h-5" />, 
+    {
+      name: 'LinkedIn',
+      icon: <FaLinkedinIn className="w-5 h-5" />,
       color: 'bg-[#0077B5] hover:bg-[#006399]',
       onClick: (e: React.MouseEvent) => handleShare('linkedin', e)
     },
-    { 
-      name: 'WhatsApp', 
-      icon: <FaWhatsapp className="w-5 h-5" />, 
+    {
+      name: 'WhatsApp',
+      icon: <FaWhatsapp className="w-5 h-5" />,
       color: 'bg-[#25D366] hover:bg-[#22C55E]',
       onClick: (e: React.MouseEvent) => handleShare('whatsapp', e)
     },
-    { 
-      name: 'Reddit', 
-      icon: <FaReddit className="w-5 h-5" />, 
+    {
+      name: 'Reddit',
+      icon: <FaReddit className="w-5 h-5" />,
       color: 'bg-[#FF4500] hover:bg-[#E63E00]',
       onClick: (e: React.MouseEvent) => handleShare('reddit', e)
     },
-    { 
-      name: 'Telegram', 
-      icon: <FaTelegram className="w-5 h-5" />, 
+    {
+      name: 'Telegram',
+      icon: <FaTelegram className="w-5 h-5" />,
       color: 'bg-[#0088CC] hover:bg-[#0077B5]',
       onClick: (e: React.MouseEvent) => handleShare('telegram', e)
     },
-    { 
-      name: 'Copy Link', 
-      icon: <FaCopy className="w-5 h-5" />, 
+    {
+      name: 'Copy Link',
+      icon: <FaCopy className="w-5 h-5" />,
       color: isDark ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300',
       onClick: handleCopyLink
     },

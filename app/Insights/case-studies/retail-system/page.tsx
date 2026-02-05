@@ -8,20 +8,19 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
 
 export default function RetailSystemCaseStudy() {
-  const { currentLanguage } = useLanguage();
+  useLanguage();
   const { isDark } = useTheme();
 
   return (
     <div className={`min-h-screen ${isDark ? 'bg-gray-950' : 'bg-white'}`}>
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="pt-32 pb-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="pt-32 pb-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="mb-8">
-            <span className={`inline-block px-4 py-1.5 text-sm font-medium border ${
-              isDark ? 'border-gray-700 text-gray-300' : 'border-gray-300 text-gray-700'
-            }`}>
+            <span className={`inline-block px-4 py-1.5 text-sm font-medium border ${isDark ? 'border-gray-700 text-gray-300' : 'border-gray-300 text-gray-700'
+              }`}>
               CASE STUDY
             </span>
           </div>
@@ -31,9 +30,9 @@ export default function RetailSystemCaseStudy() {
           <p className={`text-xl md:text-2xl mb-12 max-w-4xl ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
             Comprehensive retail management software solution for inventory tracking, sales analytics, and customer management built with Spring Boot and Java.
           </p>
-          
+
           {/* Project Metadata */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
             <div>
               <div className={`text-sm font-medium mb-2 uppercase tracking-wide ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                 Client
@@ -71,7 +70,7 @@ export default function RetailSystemCaseStudy() {
       </section>
 
       {/* Executive Summary */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Executive Summary
@@ -90,15 +89,15 @@ export default function RetailSystemCaseStudy() {
                 Key Results
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#374151' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#374151' : '#e5e7eb' }}>
                   <div className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>40%</div>
                   <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Reduction in operational costs</div>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#374151' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#374151' : '#e5e7eb' }}>
                   <div className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>99.8%</div>
                   <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Inventory tracking accuracy</div>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#374151' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#374151' : '#e5e7eb' }}>
                   <div className={`text-3xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>25%</div>
                   <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Increase in overall revenue</div>
                 </div>
@@ -113,7 +112,7 @@ export default function RetailSystemCaseStudy() {
       </section>
 
       {/* The Challenge */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             The Challenge
@@ -159,7 +158,7 @@ export default function RetailSystemCaseStudy() {
       </section>
 
       {/* The Solution */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             The Solution
@@ -209,7 +208,7 @@ export default function RetailSystemCaseStudy() {
       </section>
 
       {/* Core Features */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Core Features
@@ -242,7 +241,7 @@ export default function RetailSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Point of Sale System
               </h3>
@@ -268,7 +267,7 @@ export default function RetailSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Customer Relationship Management
               </h3>
@@ -294,7 +293,7 @@ export default function RetailSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Advanced Analytics and Reporting
               </h3>
@@ -320,7 +319,7 @@ export default function RetailSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <h3 className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                 Supply Chain Management
               </h3>
@@ -350,7 +349,7 @@ export default function RetailSystemCaseStudy() {
       </section>
 
       {/* Technical Architecture */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Technical Architecture
@@ -529,7 +528,7 @@ export default function RetailSystemCaseStudy() {
       </section>
 
       {/* Implementation Process */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Implementation Process
@@ -555,7 +554,7 @@ export default function RetailSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <div className="md:col-span-3">
                 <div className={`text-sm font-bold mb-2 uppercase tracking-wide ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                   Phase 02
@@ -574,7 +573,7 @@ export default function RetailSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <div className="md:col-span-3">
                 <div className={`text-sm font-bold mb-2 uppercase tracking-wide ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                   Phase 03
@@ -593,7 +592,7 @@ export default function RetailSystemCaseStudy() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+            <div className="grid md:grid-cols-12 gap-8 pt-12 border-t" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
               <div className="md:col-span-3">
                 <div className={`text-sm font-bold mb-2 uppercase tracking-wide ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>
                   Phase 04
@@ -616,7 +615,7 @@ export default function RetailSystemCaseStudy() {
       </section>
 
       {/* Results */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-3xl font-bold mb-12 ${isDark ? 'text-white' : 'text-gray-900'}`}>
             Business Impact
@@ -628,15 +627,15 @@ export default function RetailSystemCaseStudy() {
                 Operational Efficiency
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>40% reduction in operational costs</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Through automation of manual processes and elimination of redundant systems</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>70% faster checkout process</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Streamlined POS system improved customer experience and throughput</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>85% reduction in manual data entry</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Automated integration between systems eliminated duplicate work</p>
                 </div>
@@ -652,15 +651,15 @@ export default function RetailSystemCaseStudy() {
                 Inventory Management
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>99.8% inventory accuracy</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Real-time tracking eliminated discrepancies and improved stock control</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>60% reduction in inventory shrinkage</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Better tracking and security measures reduced losses significantly</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>45% decrease in stockout incidents</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Automated reorder points ensured optimal stock levels</p>
                 </div>
@@ -676,15 +675,15 @@ export default function RetailSystemCaseStudy() {
                 Revenue Growth
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>25% increase in overall revenue</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Better inventory management and customer insights drove sales growth</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>35% increase in loyalty program participation</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Integrated CRM system made customer engagement seamless</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>18% improvement in profit margins</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Reduced costs and improved pricing strategies increased profitability</p>
                 </div>
@@ -700,15 +699,15 @@ export default function RetailSystemCaseStudy() {
                 Customer Experience
               </h3>
               <div className="space-y-4">
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>92% customer satisfaction rating</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Faster service and personalized experiences improved satisfaction</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>50% faster query resolution time</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Staff had immediate access to customer history and preferences</p>
                 </div>
-                <div className="pb-4 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+                <div className="pb-4 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
                   <div className={`font-semibold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Personalized recommendations</div>
                   <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Data-driven insights enabled targeted product suggestions</p>
                 </div>
@@ -747,13 +746,13 @@ export default function RetailSystemCaseStudy() {
       </section>
 
       {/* Client Testimonial */}
-      <section className="py-20 border-b" style={{borderColor: isDark ? '#1f2937' : '#e5e7eb'}}>
+      <section className="py-20 border-b" style={{ borderColor: isDark ? '#1f2937' : '#e5e7eb' }}>
         <div className="container mx-auto px-4 max-w-4xl">
           <div className={`p-12 border ${isDark ? 'bg-gray-900 border-gray-800' : 'bg-gray-50 border-gray-200'}`}>
             <p className={`text-2xl leading-relaxed mb-8 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}>
               "The retail management system developed by Upvista has completely transformed our operations. We now have real-time visibility across all our stores, inventory accuracy has never been better, and our staff loves how intuitive the system is. The ROI exceeded our expectations, and the team's expertise in Spring Boot and enterprise Java was evident throughout the project."
             </p>
-            <div className="pt-8 border-t" style={{borderColor: isDark ? '#374151' : '#e5e7eb'}}>
+            <div className="pt-8 border-t" style={{ borderColor: isDark ? '#374151' : '#e5e7eb' }}>
               <div className={`font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Operations Director</div>
               <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Leading Retail Chain</div>
             </div>
@@ -773,23 +772,21 @@ export default function RetailSystemCaseStudy() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/Services/software-development" 
-              className={`px-8 py-4 text-center font-semibold transition-all duration-300 ${
-                isDark
-                  ? 'bg-white text-gray-900 hover:bg-gray-100'
-                  : 'bg-gray-900 text-white hover:bg-gray-800'
-              }`}
+            <Link
+              href="/Services/software-development"
+              className={`px-8 py-4 text-center font-semibold transition-all duration-300 ${isDark
+                ? 'bg-white text-gray-900 hover:bg-gray-100'
+                : 'bg-gray-900 text-white hover:bg-gray-800'
+                }`}
             >
               Explore Our Services
             </Link>
-            <Link 
-              href="/contact" 
-              className={`px-8 py-4 text-center border font-semibold transition-all duration-300 ${
-                isDark
-                  ? 'border-gray-700 text-white hover:bg-gray-900'
-                  : 'border-gray-900 text-gray-900 hover:bg-gray-50'
-              }`}
+            <Link
+              href="/contact"
+              className={`px-8 py-4 text-center border font-semibold transition-all duration-300 ${isDark
+                ? 'border-gray-700 text-white hover:bg-gray-900'
+                : 'border-gray-900 text-gray-900 hover:bg-gray-50'
+                }`}
             >
               Get In Touch
             </Link>

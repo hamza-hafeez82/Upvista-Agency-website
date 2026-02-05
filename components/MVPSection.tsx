@@ -50,8 +50,6 @@ export default function MVPSection() {
   const mutedText = isDark ? "text-neutral-300" : "text-neutral-600";
   const headingText = isDark ? "text-white" : "text-neutral-900";
   const subHeadingText = isDark ? "text-neutral-200" : "text-neutral-800";
-  const primaryBorder = isDark ? "border-white/20 hover:bg-white/5" : "border-neutral-300 hover:bg-black/[0.03]";
-  const primaryText = isDark ? "text-white" : "text-neutral-900";
   const secondaryText = isDark ? "text-neutral-200 hover:text-white" : "text-neutral-700 hover:text-neutral-900";
 
   // Motion state
@@ -199,11 +197,10 @@ export default function MVPSection() {
                         </div>
                         <div>
                           <h3
-                            className={`text-lg md:text-xl ${headingText} transition-all duration-300 ${
-                              isActive ? "font-semibold" : "font-medium"
-                            }`}
+                            className={`text-lg md:text-xl ${headingText} transition-all duration-300 ${isActive ? "font-semibold" : "font-medium"
+                              }`}
                           >
-                          {t(`mvp.steps.${idx + 1}.title`)}
+                            {t(`mvp.steps.${idx + 1}.title`)}
                           </h3>
                           <p className={`mt-2 text-sm md:text-base leading-relaxed ${mutedText}`}>
                             {t(`mvp.steps.${idx + 1}.desc`)}

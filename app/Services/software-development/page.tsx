@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Header from '@/components/Header';
@@ -8,16 +8,22 @@ import Footer from '@/components/Footer';
 import { useTheme } from '@/contexts/ThemeContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { Smartphone, Laptop, Cpu, Layers, Zap, Rocket, ShieldCheck, ArrowRight, Code2, Globe2 } from 'lucide-react';
+import { Smartphone, Laptop, Cpu, Layers, Zap, ArrowRight, Code2 } from 'lucide-react';
 import Link from 'next/link';
 
 export default function SoftwareDevelopmentPage() {
   const { isDark } = useTheme();
   const { t } = useLanguage();
   const [expandedProcess, setExpandedProcess] = useState<string | null>('custom-software');
+  const [expandedTechStack, setExpandedTechStack] = useState(false);
+  const [currentTechIndex, setCurrentTechIndex] = useState(0);
 
   const toggleProcess = (processType: string) => {
     setExpandedProcess(expandedProcess === processType ? null : processType);
+  };
+
+  const toggleTechStack = () => {
+    setExpandedTechStack(!expandedTechStack);
   };
 
   const caseStudies = [
