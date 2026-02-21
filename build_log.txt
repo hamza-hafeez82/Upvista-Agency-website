@@ -1,0 +1,10 @@
+npm warn Unknown project config "sharp_binary_host". This will stop working in the next major version of npm.
+npm warn Unknown project config "sharp_libvips_binary_host". This will stop working in the next major version of npm.
+
+> my-next-app@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.7
+   - Environments: .env
+
+   Creating an optimized production build ...
