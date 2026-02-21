@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['i.pinimg.com', 'randomuser.me' , 'thumbs.dreamstime.com'], // Correctly formatted array
+    remotePatterns: [
+      { protocol: 'https', hostname: 'i.pinimg.com' },
+      { protocol: 'https', hostname: 'randomuser.me' },
+      { protocol: 'https', hostname: 'thumbs.dreamstime.com' },
+    ],
     unoptimized: true, // Disable Sharp optimization to avoid runtime errors
   },
   async rewrites() {
@@ -12,22 +16,7 @@ const nextConfig = {
       },
     ];
   },
-  // Turbopack-specific optimizations
-  experimental: {
-    // Enable Turbopack optimizations
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-      resolveAlias: {
-        // Optimize react-icons imports
-        'react-icons': 'react-icons',
-      },
-    },
-  },
+
   // Webpack configuration for better chunk handling
   webpack: (config: any, { dev, isServer }: { dev: boolean; isServer: boolean }) => {
     if (dev && !isServer) {

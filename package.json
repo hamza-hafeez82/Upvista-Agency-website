@@ -28,7 +28,7 @@
     "googleapis": "^146.0.0",
     "lucide-react": "^0.479.0",
     "motion": "^12.10.5",
-    "next": "15.2.1",
+    "next": "^16.1.6",
     "next-auth": "^4.24.11",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^6.10.1",
@@ -58,7 +58,7 @@
     "@types/ws": "^8.18.1",
     "cross-env": "^10.1.0",
     "eslint": "^9",
-    "eslint-config-next": "15.2.1",
+    "eslint-config-next": "^16.1.6",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
