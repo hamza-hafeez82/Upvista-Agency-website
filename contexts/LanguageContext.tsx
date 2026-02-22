@@ -23,29 +23,23 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
       switch (lang) {
         case 'JA':
-          const { JA } = await import('../locales/ja');
-          data = JA;
+          data = (await import('../locales/ja.json')).default;
           break;
         case 'AR':
-          const { AR } = await import('../locales/ar');
-          data = AR;
+          data = (await import('../locales/ar.json')).default;
           break;
         case 'KO':
-          const { KO } = await import('../locales/ko');
-          data = KO;
+          data = (await import('../locales/ko.json')).default;
           break;
         case 'ZH':
-          const { ZH } = await import('../locales/zh');
-          data = ZH;
+          data = (await import('../locales/zh.json')).default;
           break;
         case 'ID':
-          const { ID } = await import('../locales/id');
-          data = ID;
+          data = (await import('../locales/id.json')).default;
           break;
         case 'EN':
         default:
-          const { EN } = await import('../locales/en');
-          data = EN;
+          data = (await import('../locales/en.json')).default;
           break;
       }
 
@@ -55,8 +49,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       // Fallback: try to load EN if it failed for another language
       if (lang !== 'EN') {
         try {
-          const { EN } = await import('../locales/en');
-          setTranslations(EN);
+          const data = (await import('../locales/en.json')).default;
+          setTranslations(data);
         } catch (fallbackError) {
           console.error('Fallback translation loading failed:', fallbackError);
         }
